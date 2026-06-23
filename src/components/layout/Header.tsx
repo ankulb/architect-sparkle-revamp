@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { Menu, X } from "lucide-react";
 import { nav } from "@/data/home";
+import { ThemeToggle } from "@/components/ThemeToggle";
 import logoAsset from "@/assets/toa-logo.png.asset.json";
 
 export function Header() {
