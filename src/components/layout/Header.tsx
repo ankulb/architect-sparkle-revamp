@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { Menu, X } from "lucide-react";
 import { nav } from "@/data/home";
+import { ThemeToggle } from "@/components/ThemeToggle";
 import logoAsset from "@/assets/toa-logo.png.asset.json";
 
 export function Header() {
@@ -29,26 +30,32 @@ export function Header() {
             <img src={logoAsset.url} alt="Team One Architects" className="h-10 w-auto" />
           </a>
 
-          <nav className="hidden items-center gap-10 md:flex">
-            {nav.map((item) => (
-              <a
-                key={item.label}
-                href={item.href}
-                className="group relative text-sm font-medium uppercase tracking-[0.14em] text-muted-foreground transition-colors hover:text-foreground"
-              >
-                {item.label}
-                <span className="absolute -bottom-1.5 left-0 h-px w-0 bg-gold transition-all duration-300 group-hover:w-full" />
-              </a>
-            ))}
-          </nav>
+          <div className="hidden items-center gap-8 md:flex">
+            <nav className="flex items-center gap-10">
+              {nav.map((item) => (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  className="group relative text-sm font-medium uppercase tracking-[0.14em] text-muted-foreground transition-colors hover:text-foreground"
+                >
+                  {item.label}
+                  <span className="absolute -bottom-1.5 left-0 h-px w-0 bg-gold transition-all duration-300 group-hover:w-full" />
+                </a>
+              ))}
+            </nav>
+            <ThemeToggle />
+          </div>
 
-          <button
-            onClick={() => setOpen(true)}
-            className="flex items-center gap-2 text-foreground md:hidden"
-            aria-label="Open menu"
-          >
-            <Menu className="h-6 w-6" />
-          </button>
+          <div className="flex items-center gap-3 md:hidden">
+            <ThemeToggle />
+            <button
+              onClick={() => setOpen(true)}
+              className="flex items-center gap-2 text-foreground"
+              aria-label="Open menu"
+            >
+              <Menu className="h-6 w-6" />
+            </button>
+          </div>
         </div>
       </header>
 
