@@ -1,4 +1,5 @@
 import { nav } from "@/data/home";
+import logoAsset from "@/assets/toa-logo.png.asset.json";
 
 export function Footer() {
   return (
@@ -6,6 +7,7 @@ export function Footer() {
       <div className="mx-auto max-w-[1600px] px-6 py-16 md:px-10 md:py-20">
         <div className="grid gap-12 md:grid-cols-12">
           <div className="md:col-span-5">
+            <img src={logoAsset.url} alt="Team One Architects" className="mb-7 h-11 w-auto" />
             <div className="font-display text-3xl font-light tracking-tight">
               We design as one.
               <br />

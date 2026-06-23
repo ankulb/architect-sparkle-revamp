@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { Menu, X } from "lucide-react";
 import { nav } from "@/data/home";
+import logoAsset from "@/assets/toa-logo.png.asset.json";
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -24,8 +25,8 @@ export function Header() {
         }`}
       >
         <div className="mx-auto flex h-20 max-w-[1600px] items-center justify-between px-6 md:px-10">
-          <a href="#top" className="font-display text-2xl font-semibold tracking-[0.2em] text-foreground">
-            TOA
+          <a href="#top" className="flex items-center" aria-label="Team One Architects home">
+            <img src={logoAsset.url} alt="Team One Architects" className="h-10 w-auto" />
           </a>
 
           <nav className="hidden items-center gap-10 md:flex">
@@ -61,7 +62,7 @@ export function Header() {
             className="fixed inset-0 z-[60] flex flex-col bg-background px-6 py-7"
           >
             <div className="flex items-center justify-between">
-              <span className="font-display text-2xl font-semibold tracking-[0.2em]">TOA</span>
+              <img src={logoAsset.url} alt="Team One Architects" className="h-9 w-auto" />
               <button onClick={() => setOpen(false)} aria-label="Close menu">
                 <X className="h-7 w-7" />
               </button>
