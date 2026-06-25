@@ -38,7 +38,7 @@ export function Header() {
                 item.children ? (
                   <div key={item.label} className="group relative">
                     <Link
-                      to={item.href}
+                      to={item.href ?? "/about"}
                       className="flex items-center gap-1.5 text-sm font-medium uppercase tracking-[0.14em] text-muted-foreground transition-colors hover:text-foreground"
                     >
                       {item.label}
