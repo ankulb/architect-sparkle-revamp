@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as PortfolioRouteImport } from './routes/portfolio'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as PortfolioIndexRouteImport } from './routes/portfolio.index'
 import { Route as AboutIndexRouteImport } from './routes/about.index'
 import { Route as AboutTeamRouteImport } from './routes/about.team'
 import { Route as AboutLifeRouteImport } from './routes/about.life'
@@ -33,6 +34,11 @@ const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
+} as any)
+const PortfolioIndexRoute = PortfolioIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => PortfolioRoute,
 } as any)
 const AboutIndexRoute = AboutIndexRouteImport.update({
   id: '/',
@@ -68,35 +74,37 @@ const AboutBoardRoute = AboutBoardRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRouteWithChildren
-  '/portfolio': typeof PortfolioRoute
+  '/portfolio': typeof PortfolioRouteWithChildren
   '/about/board': typeof AboutBoardRoute
   '/about/clientele': typeof AboutClienteleRoute
   '/about/csr': typeof AboutCsrRoute
   '/about/life': typeof AboutLifeRoute
   '/about/team': typeof AboutTeamRoute
   '/about/': typeof AboutIndexRoute
+  '/portfolio/': typeof PortfolioIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/portfolio': typeof PortfolioRoute
   '/about/board': typeof AboutBoardRoute
   '/about/clientele': typeof AboutClienteleRoute
   '/about/csr': typeof AboutCsrRoute
   '/about/life': typeof AboutLifeRoute
   '/about/team': typeof AboutTeamRoute
   '/about': typeof AboutIndexRoute
+  '/portfolio': typeof PortfolioIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRouteWithChildren
-  '/portfolio': typeof PortfolioRoute
+  '/portfolio': typeof PortfolioRouteWithChildren
   '/about/board': typeof AboutBoardRoute
   '/about/clientele': typeof AboutClienteleRoute
   '/about/csr': typeof AboutCsrRoute
   '/about/life': typeof AboutLifeRoute
   '/about/team': typeof AboutTeamRoute
   '/about/': typeof AboutIndexRoute
+  '/portfolio/': typeof PortfolioIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -110,16 +118,17 @@ export interface FileRouteTypes {
     | '/about/life'
     | '/about/team'
     | '/about/'
+    | '/portfolio/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
-    | '/portfolio'
     | '/about/board'
     | '/about/clientele'
     | '/about/csr'
     | '/about/life'
     | '/about/team'
     | '/about'
+    | '/portfolio'
   id:
     | '__root__'
     | '/'
@@ -131,12 +140,13 @@ export interface FileRouteTypes {
     | '/about/life'
     | '/about/team'
     | '/about/'
+    | '/portfolio/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRouteWithChildren
-  PortfolioRoute: typeof PortfolioRoute
+  PortfolioRoute: typeof PortfolioRouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
@@ -161,6 +171,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
+    }
+    '/portfolio/': {
+      id: '/portfolio/'
+      path: '/'
+      fullPath: '/portfolio/'
+      preLoaderRoute: typeof PortfolioIndexRouteImport
+      parentRoute: typeof PortfolioRoute
     }
     '/about/': {
       id: '/about/'
@@ -227,10 +244,22 @@ const AboutRouteChildren: AboutRouteChildren = {
 
 const AboutRouteWithChildren = AboutRoute._addFileChildren(AboutRouteChildren)
 
+interface PortfolioRouteChildren {
+  PortfolioIndexRoute: typeof PortfolioIndexRoute
+}
+
+const PortfolioRouteChildren: PortfolioRouteChildren = {
+  PortfolioIndexRoute: PortfolioIndexRoute,
+}
+
+const PortfolioRouteWithChildren = PortfolioRoute._addFileChildren(
+  PortfolioRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRouteWithChildren,
-  PortfolioRoute: PortfolioRoute,
+  PortfolioRoute: PortfolioRouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
