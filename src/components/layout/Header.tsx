@@ -155,6 +155,14 @@ export function Header() {
                         )}
                       </AnimatePresence>
                     </div>
+                  ) : item.to ? (
+                    <Link
+                      to={item.to}
+                      onClick={() => setOpen(false)}
+                      className="font-display text-3xl font-light tracking-tight text-foreground"
+                    >
+                      {item.label}
+                    </Link>
                   ) : (
                     <a
                       href={item.href}
