@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
+import { InteractiveGrid } from "@/components/graphics/InteractiveGrid";
 
 export function PageHero({
   eyebrow,
@@ -39,6 +40,9 @@ export function PageHero({
       <div className="absolute inset-0 bg-background/55" />
       <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/20 to-background" />
       <div className="absolute inset-0 bg-gradient-to-r from-background/70 via-transparent to-transparent" />
+
+      {/* Blueprint grid that reacts to the cursor */}
+      <InteractiveGrid radius={260} baseOpacity={0.45} />
 
       {/* Content */}
       <div className="relative z-10 mx-auto w-full max-w-[1600px] px-6 pb-20 md:px-10 md:pb-28">

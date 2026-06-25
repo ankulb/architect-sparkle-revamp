@@ -4,6 +4,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { PageHero } from "@/components/about/PageHero";
 import { Reveal } from "@/components/Reveal";
+import { GridBackdrop } from "@/components/graphics/GridBackdrop";
 import { life } from "@/data/about";
 
 const title = "Life at TOA — Team One Architects";
@@ -110,8 +111,9 @@ function LifePage() {
         </section>
 
         {/* Why TOA */}
-        <section className="border-t border-border bg-card/40">
-          <div className="mx-auto max-w-[1000px] px-6 py-28 text-center md:px-10 md:py-36">
+        <section className="relative overflow-hidden border-t border-border bg-card/40">
+          <GridBackdrop glow radius={260} baseOpacity={0.4} />
+          <div className="relative z-10 mx-auto max-w-[1000px] px-6 py-28 text-center md:px-10 md:py-36">
             <Reveal as="p" className="text-xs font-medium uppercase tracking-[0.28em] text-gold">
               {life.why.title}
             </Reveal>

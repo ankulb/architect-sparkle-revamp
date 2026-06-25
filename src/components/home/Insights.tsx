@@ -1,10 +1,12 @@
 import { insights } from "@/data/home";
 import { Reveal } from "@/components/Reveal";
+import { GridBackdrop } from "@/components/graphics/GridBackdrop";
 
 export function Insights() {
   return (
-    <section id="insights" className="border-t border-border">
-      <div className="mx-auto max-w-[1600px] px-6 py-24 md:px-10 md:py-36">
+    <section id="insights" className="relative overflow-hidden border-t border-border">
+      <GridBackdrop radius={220} baseOpacity={0.35} />
+      <div className="relative z-10 mx-auto max-w-[1600px] px-6 py-24 md:px-10 md:py-36">
         <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
           <div>
             <Reveal>

@@ -1,66 +1,62 @@
-# About Section — Cinematic Page Suite
+# Graphic Elements + Interactive Grid Hover Effect
 
-Build the six About-section pages as real TanStack routes, styled in the same dark cinematic system as the homepage (Outfit/Figtree fonts, gold accent, `Reveal`/`CountUp`, motion). Each page opens with a full-height **animated, story-driven hero** and continues with scroll-revealed editorial sections. All content is pulled from the live site.
+## Goal
+Recreate the reference video's "drafting grid" mouse effect — a faint blueprint grid where cells near the cursor illuminate and trail the pointer — and layer in additional architectural graphic accents on the sections that currently feel too empty, across the homepage and all six About pages. Theme-aware (dark + light), performant, and respectful of reduced-motion / touch devices.
 
-## Routes & files
+## Hover glow color
+The cursor glow uses the TOA brand **orange-gold blend** — driven by the existing `--gold` token (`oklch(0.76 0.092 78)` in dark, the darkened bronze in light). The reveal will blend warm orange into gold via a radial gradient (hot orange-gold core fading to soft bronze at the edge), matching the warmth of the TOA logo/site. No neutral white highlight.
 
-```text
-src/routes/about.tsx              -> /about            (About Us)
-src/routes/about.board.tsx        -> /about/board      (Board of Directors)
-src/routes/about.team.tsx         -> /about/team       (Our Team)
-src/routes/about.clientele.tsx    -> /about/clientele  (Clientele)
-src/routes/about.csr.tsx          -> /about/csr        (CSR)
-src/routes/about.life.tsx         -> /about/life       (Life at TOA)
-```
+## What the reference shows
+- A subtle full-bleed grid of thin lines (graph-paper / blueprint look).
+- As the mouse moves, grid cells closest to the cursor brighten with a soft radial glow that follows the pointer and fades behind it.
+- Used as a background layer behind content, never interfering with text legibility.
 
-Each route gets its own `head()` (unique title, description, og:title/description, and a leaf-level og:image). Each page reuses `<Header />` + `<Footer />` and the `bg-background text-foreground` shell.
+## New components
 
-## Shared building blocks (new components)
+### 1. `src/components/graphics/InteractiveGrid.tsx`
+The core hover effect. Absolutely-positioned background layer (`absolute inset-0 -z-0 pointer-events-none`).
+- Base grid: tiled CSS background of thin `--border`-colored lines (~48px cells).
+- Tracks the cursor on the parent section, writing `--mx` / `--my` CSS variables.
+- A second masked layer paints an orange-gold grid revealed only through a radial mask centered on `--mx/--my`, so cells glow warm near the cursor and fade out behind it.
+- Glow gradient blends warm orange → `--gold` → transparent for the TOA look.
+- Props: `cellSize`, `radius` (glow size), `className`, `interactive` (default true).
+- Performance: pointer updates throttled via `requestAnimationFrame`; listener on the section, not window.
+- Accessibility: `prefers-reduced-motion` or coarse pointer (touch) → static faint grid only, no tracking.
 
-- **`PageHero.tsx`** — the cinematic, reusable hero used by every page. Features:
-  - Full-screen background image with slow Ken-Burns zoom + dark cinematic gradient overlays (same treatment as homepage `Hero`).
-  - **Storytelling narrative**: a small gold eyebrow/kicker, a large display headline that animates in word-by-word (staggered mask reveal), and a sub-narrative line that fades up after it.
-  - Optional rotating/sequenced "story phrases" for pages that benefit (e.g. Life at TOA), and a scroll cue.
-  - Props: `eyebrow`, `title`, `lead`, `image`, optional `phrases[]`. Keeps motion consistent across all six pages.
-- **`StorySection.tsx`** — a small editorial text block (eyebrow + heading + body) wrapped in `Reveal`, for vision/mission/objective copy.
-- **`PeopleGrid.tsx`** — responsive card grid for people (photo with grayscale→color hover, name, role), staggered reveal. Used by Board and Team.
-- **`home.ts` companion data file `about.ts`** — all About-section content (hero copy, people, values, CSR partners, clientele categories, Life-at-TOA blocks) in one typed module, mirroring the `home.ts` pattern.
+### 2. `src/components/graphics/GridBackdrop.tsx` (thin wrapper)
+Drops the grid plus an optional soft orange-gold gradient glow + corner crosshair markers behind a section's content, so each section opts in with one line.
 
-## Page-by-page content & layout
+### 3. Decorative accents (static, CSS/SVG only)
+- `CornerMarks` — thin L-shaped crosshair brackets in section corners (architectural drawing cue).
+- `PlusMarkers` — small `+` registration marks at fixed grid intersections.
+- Soft radial gold glow blob utility for depth.
 
-**1. About Us (`/about`)**
-- Hero: eyebrow "Decades of Design. Driven by Vision", headline "Creating spaces that matter", lead = the firm intro (founders, 25-year legacy, Fortune 500, GCC, IGBC/wellness).
-- Sections: Vision & Mission (two `StorySection`s side by side), an impact stat strip (Repeat Clients / Design Awards / Increase in Productivity / Drop in Attrition) using `CountUp`, and **TOA Core Values** cards (Design First, Experiential Architecture, Innovation Beyond AI, Collaboration Excellence).
+## Where it gets applied
+Flat-background sections get the grid + accents behind content:
 
-**2. Board of Directors (`/about/board`)**
-- Hero narrative: "The future isn't imagined alone — it's built together, brick by brick, mind by mind."
-- `PeopleGrid` of the 5 directors (Parish S. Kapse, Aditya B. Yamsanwar, Bharat Yamsanwar, Jyoti Yamsanwar, Rupali Kapse) with their live photo URLs.
+Homepage (`src/routes/index.tsx`):
+- `StatsAbout` — grid behind the stats band + corner marks.
+- `Responsibilities` — grid backdrop.
+- `Testimonials` — grid backdrop with a centered gold glow.
+- `Insights` — subtle grid.
+- Hero & ProjectsGallery already carry imagery — restrained corner marks only, no full grid.
 
-**3. Our Team (`/about/team`)**
-- Hero same narrative thread, headline "The people behind the practice".
-- Two `PeopleGrid` blocks: **Core Team** (Laxmikant Sawant, Suraj Lazar, Varsha Changedia) and **Emerging Leaders** (Tasheen Issani, Mahesh Dhanawade, Abhijit Sutar, Archiit Chatterjee, Hiral Parekh, Hiral Chouhan, Alpesh Parab) with live photos/roles.
+About pages:
+- `PageHero` — faint interactive grid over the darkened image overlay (matches the reference, grid floating above the visual).
+- `StorySection`, `PeopleGrid` bands, `about.clientele`, `about.csr`, `about.life` flat blocks — grid backdrop (the clientele logo wall is the closest match to the reference clip).
 
-**4. Clientele (`/about/clientele`)**
-- Hero: "Trusted by the Best. Chosen for Vision."
-- Logo wall grouped by sector (Engineering, IT & Software, etc.) using the live client logo image URLs, each group in a `Reveal` with a subtle hover lift. (Logos shown on light cards so brand marks stay legible.)
-
-**5. CSR (`/about/csr`)**
-- Hero: "Our Commitment to Social Impact", lead = design-for-social-impact intro.
-- Sections: CSR Objective `StorySection`, the two CSR images, and a partner grid (Jivan Jyot, XL Target, Dharti, Sant Gadge Maharaj, Give Welfare, Vijay Shikshan Sanstha, Lift for Upliftment, Yuva Unstoppable, Manilal Gandhi Trust, Deepstambh) as cards with name, description, and outbound website links.
-
-**6. Life at TOA (`/about/life`)**
-- Most cinematic hero: rotating story phrases ("Where spaces are built. And so are people.", "A team that owns, builds, and evolves.").
-- Narrative scroll sections for: A Culture of Builders, Where Learning is Real, Collaboration Without Boundaries, Driven by Scale, Moments That Define Us, A Place to Grow, The TOA Mindset, Why TOA — alternating image/text editorial layout with the Family Day photo and bullet lists styled as accent-marked items.
-
-## Navigation wiring
-
-- Convert the header "About" item into a dropdown (desktop) / nested links (mobile menu) pointing to the six internal routes, using TanStack `<Link>`. Keep the other nav items as-is.
-- Footer "Explore" list gains the About sub-links.
-- Internal navigation uses `<Link to=...>`; external links (client/CSR/portfolio sites) stay as `<a>`.
+All placements use semantic tokens (`--border`, `--gold`, `--background`) so they invert in light mode (grid lines become faint ink lines, glow stays warm bronze).
 
 ## Technical notes
+- Front-end / presentation only; no data or backend changes.
+- Grid glow via CSS variables + CSS mask (GPU-friendly, no per-cell DOM nodes).
+- Host sections set `position: relative` with real content at `z-10` so the `-z-0` grid sits behind — minor className additions where needed.
+- No new dependencies expected.
 
-- Images load directly from `teamonearchitects.com/wp-content/...` URLs (same approach already used in `home.ts`) — no asset downloads needed.
-- Motion via `motion/react` (already installed); reuse `Reveal` and `CountUp`; no new dependencies.
-- All colors use existing semantic tokens (`bg-background`, `text-foreground`, `text-gold`, `text-muted-foreground`, `border-border`) so both dark and light themes work.
-- Pure frontend/presentation work — no backend, no data layer changes beyond the new static `about.ts` content module.
+## Out of scope
+- The robot/human "Creation of Adam" hand visuals from the reference (bespoke hero art, not TOA content).
+- Any copy or data changes.
+
+## Verification
+- Typecheck/build.
+- Playwright: load `/` and a couple of About routes, move the pointer across a gridded section, screenshot to confirm cells illuminate with the orange-gold glow and trail the cursor in both themes; confirm text stays legible and touch/reduced-motion falls back to the static grid.

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { testimonials } from "@/data/home";
 import { Reveal } from "@/components/Reveal";
+import { GridBackdrop } from "@/components/graphics/GridBackdrop";
 
 export function Testimonials() {
   const [i, setI] = useState(0);
@@ -14,8 +15,9 @@ export function Testimonials() {
   const current = testimonials[i];
 
   return (
-    <section className="border-t border-border bg-card/40">
-      <div className="mx-auto max-w-[1100px] px-6 py-24 text-center md:px-10 md:py-36">
+    <section className="relative overflow-hidden border-t border-border bg-card/40">
+      <GridBackdrop glow radius={260} baseOpacity={0.38} />
+      <div className="relative z-10 mx-auto max-w-[1100px] px-6 py-24 text-center md:px-10 md:py-36">
         <Reveal>
           <p className="text-xs font-medium uppercase tracking-[0.3em] text-gold">In their words</p>
         </Reveal>

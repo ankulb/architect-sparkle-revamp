@@ -1,11 +1,13 @@
 import { stats, about } from "@/data/home";
 import { Reveal } from "@/components/Reveal";
 import { CountUp } from "@/components/CountUp";
+import { GridBackdrop } from "@/components/graphics/GridBackdrop";
 
 export function StatsAbout() {
   return (
     <section id="about" className="relative mx-auto max-w-[1600px] px-6 py-24 md:px-10 md:py-36">
-      <div className="grid gap-16 lg:grid-cols-12 lg:gap-12">
+      <GridBackdrop corners radius={240} baseOpacity={0.45} />
+      <div className="relative z-10 grid gap-16 lg:grid-cols-12 lg:gap-12">
         <div className="lg:col-span-5">
           <Reveal>
             <p className="text-xs font-medium uppercase tracking-[0.3em] text-gold">We design as one</p>
@@ -35,7 +37,7 @@ export function StatsAbout() {
         </div>
       </div>
 
-      <div className="mt-20 grid grid-cols-1 gap-px overflow-hidden border-y border-border sm:grid-cols-2 lg:grid-cols-4">
+      <div className="relative z-10 mt-20 grid grid-cols-1 gap-px overflow-hidden border-y border-border sm:grid-cols-2 lg:grid-cols-4">
         {stats.map((stat, i) => (
           <Reveal
             key={stat.label}
