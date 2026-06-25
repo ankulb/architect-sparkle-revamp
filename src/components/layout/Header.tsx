@@ -38,7 +38,7 @@ export function Header() {
                 item.children ? (
                   <div key={item.label} className="group relative">
                     <Link
-                      to={item.href}
+                      to={item.href ?? "/about"}
                       className="flex items-center gap-1.5 text-sm font-medium uppercase tracking-[0.14em] text-muted-foreground transition-colors hover:text-foreground"
                     >
                       {item.label}
@@ -59,6 +59,16 @@ export function Header() {
                       </div>
                     </div>
                   </div>
+                ) : item.to ? (
+                  <Link
+                    key={item.label}
+                    to={item.to}
+                    activeProps={{ className: "text-foreground" }}
+                    className="group relative text-sm font-medium uppercase tracking-[0.14em] text-muted-foreground transition-colors hover:text-foreground"
+                  >
+                    {item.label}
+                    <span className="absolute -bottom-1.5 left-0 h-px w-0 bg-gold transition-all duration-300 group-hover:w-full" />
+                  </Link>
                 ) : (
                   <a
                     key={item.label}
@@ -145,6 +155,14 @@ export function Header() {
                         )}
                       </AnimatePresence>
                     </div>
+                  ) : item.to ? (
+                    <Link
+                      to={item.to}
+                      onClick={() => setOpen(false)}
+                      className="font-display text-3xl font-light tracking-tight text-foreground"
+                    >
+                      {item.label}
+                    </Link>
                   ) : (
                     <a
                       href={item.href}

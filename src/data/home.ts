@@ -12,9 +12,16 @@ export const aboutNav = [
   { label: "Life at TOA", to: "/about/life" },
 ] as const;
 
-export const nav = [
+export type NavItem = {
+  label: string;
+  href?: string;
+  to?: string;
+  children?: typeof aboutNav;
+};
+
+export const nav: NavItem[] = [
   { label: "Expertise", href: "https://teamonearchitects.com/portfolio-category/expertise/" },
-  { label: "Projects", href: "/#projects" },
+  { label: "Projects", to: "/portfolio" },
   { label: "About", href: "/about", children: aboutNav },
   { label: "Insights", href: "/#insights" },
   { label: "Contact", href: "https://teamonearchitects.com/contact/" },

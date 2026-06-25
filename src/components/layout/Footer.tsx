@@ -26,7 +26,14 @@ export function Footer() {
                 <li key={item.label}>
                   {item.children ? (
                     <Link
-                      to={item.href}
+                      to={item.href ?? "/about"}
+                      className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+                    >
+                      {item.label}
+                    </Link>
+                  ) : item.to ? (
+                    <Link
+                      to={item.to}
                       className="text-sm text-muted-foreground transition-colors hover:text-foreground"
                     >
                       {item.label}
