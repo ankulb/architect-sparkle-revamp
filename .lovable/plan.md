@@ -1,55 +1,57 @@
-# Refinements + LinkedIn, brand logos & clientele carousel
+# Portfolio Archive + One Reference Project Page
 
-Presentation-layer work across the homepage and About suite. No backend/business-logic changes.
+Build the Portfolio archive page plus a single individual project page (Atomberg, used as the reference/template) — matching the existing dark cinematic theme, inspired by Ultra Confidentiel's `/projects` (archive) and `/projects/trilegal-bangalore` (detail), with architecture-firm graphic motifs (blueprint grids + self-drawing structural line art) that build up as the user scrolls.
 
-## 1. Grid glow + bigger grid (from prior request)
+## Routes
 
-`src/components/graphics/InteractiveGrid.tsx`
-- Reduce the warm orange-gold core glow so it no longer dominates section text: drop opacity multiplier `0.5 → ~0.22`, smaller/softer falloff.
-- Lower the revealed gold-grid line opacity (~`0.7×`) so it reads as a subtle trace.
-- Increase default `cellSize` `48 → ~96px` for a larger blueprint scale; nudge base-grid opacity down.
+```text
+/portfolio              -> archive (all projects, category filter)
+/portfolio/$slug        -> individual project page (dynamic; only "atomberg" fully built for now)
+```
 
-`src/components/graphics/GridBackdrop.tsx`
-- Update default `cellSize` to match (~96px).
+- `src/routes/portfolio.tsx` — layout wrapper rendering `<Outlet />`
+- `src/routes/portfolio.index.tsx` — archive page
+- `src/routes/portfolio.$slug.tsx` — project detail page (path param; `notFound()` for any slug without detail data)
 
-## 2. About hero — remove overlay, add "big reveal"
+## Data
 
-`src/components/about/PageHero.tsx`
-- Remove the heavy stacked dark overlays.
-- Animate the hero image in with a cinematic `clip-path` wipe opening from center (~1.2s) combined with the existing slow Ken-Burns zoom, plus a thin gold sweep line on the reveal edge.
-- Keep text legible with a localized bottom-left scrim behind the headline only (not the full frame) + subtle text shadow.
-- Keep word-by-word headline rise, rotating phrases, scroll cue; retime to start as the reveal completes.
-- Respect `prefers-reduced-motion` (skip wipe, fade only).
+Create `src/data/portfolio.ts`:
+- `projects`: all 27 items from the live archive (title, slug, category, hero image) so the archive grid is complete and every card links to its `/portfolio/$slug`.
+- `projectDetails`: full detail for **Atomberg only** for now (sector, area, status, description, client, location, year, category, gallery images). The detail route renders from this map; slugs not present render a "coming soon" notice or `notFound()`, so the rest of the archive cards are visible but only Atomberg opens a complete page.
 
-## 3. LinkedIn on team & board members
+## Archive page (`/portfolio`)
 
-All members link to the **Team One Architects company LinkedIn page** (single URL, stored once in `src/data/about.ts`).
+- Reuse cinematic `PageHero` (curtain-wipe reveal, Ken-Burns, interactive blueprint grid) — eyebrow "Our Work", headline like "Showcasing the spaces we shape".
+- Category filter row (Show All / the two categories) with animated count badges; filtering animates the grid via Framer Motion layout transitions.
+- Responsive project grid of cards: image with grayscale→color + zoom on hover, location/name/category overlay (Ultra Confidentiel style). Cards link to `/portfolio/$slug`.
+- Scroll-driven blueprint backdrop behind the grid using existing `GridBackdrop` plus the new self-drawing structural line motif.
 
-`src/components/about/PeopleGrid.tsx`
-- Add a LinkedIn icon button (Lucide `Linkedin`) that appears on each card (visible, gold on hover) linking to the company LinkedIn in a new tab with `rel="noopener noreferrer"` and an aria-label like "View {name} on LinkedIn".
-- Used by both `/about/board` and `/about/team` (both already render `PeopleGrid`).
+## Project detail page (`/portfolio/atomberg`)
 
-## 4. Brand logos where brand names appear
+- Full-bleed cinematic hero with the project's lead image and curtain-wipe reveal; title overlaid.
+- Meta strip: Client, Location, Year, Sector, Area, Status, Category — staggered reveal.
+- Overview copy as editorial sections (reusing `StorySection` styling) from the scraped description.
+- Large gallery images that parallax / reveal on scroll, interleaved with blueprint graphics.
+- "More Projects" section: 3 other projects as cards linking onward.
+- Back-to-portfolio link and per-route `head()` metadata (title, description, og:image = hero image).
 
-Auto-source each brand's logo (from its website/favicon via Clearbit-style logo URL or the org's own site), download, host through `lovable-assets`, and store the pointer URL in data. Skip any with no resolvable logo (keep the styled text name as fallback).
+## Architecture-firm graphic elements
 
-- **Testimonials** (`src/data/home.ts` + `src/components/home/Testimonials.tsx`): add a `logo` field (e.g. Johnson Controls) and render a small monochrome logo near the attribution; text-only fallback when absent.
-- **CSR partners** (`src/data/about.ts` + `src/routes/about.csr.tsx`): add a `logo` field per partner; render the logo in/above each partner card. Partners with a `href` already link out; logos become the visual anchor.
+Create `src/components/graphics/BlueprintReveal.tsx`: a scroll-linked SVG of structural/building line art (floor-plan grids, column grids, elevation outlines) that "draws" itself via `pathLength` tied to `useScroll` progress, in the gold token at low opacity. Layer it into section backdrops on both pages alongside `InteractiveGrid`/`GridBackdrop` so the blueprint feel intensifies as the user scrolls forward. Respects `useReducedMotion`.
 
-## 5. Clientele — infinite carousel, sector-grouped, grayscale→color
+## Navigation wiring
 
-- Re-scrape `https://teamonearchitects.com/clientele/` to collect the full client-logo set and organize into the sectors shown live (e.g. Engineering, IT & Software, and any others), replacing the current placeholder/duplicated logos in `clientele.groups`.
-- New `src/components/about/LogoMarquee.tsx`: a CSS-transform infinite marquee (duplicated track for seamless loop) that pauses on hover. Logos render **grayscale + dimmed**, transitioning to **full color** on hover of the individual logo.
-- `src/routes/about.clientele.tsx`: keep each sector's label heading (Reveal), render one `LogoMarquee` per sector; alternate scroll direction per row for visual rhythm. Respect `prefers-reduced-motion` (static wrapped grid fallback).
+- Add `Projects` → `/portfolio` to the header nav (`src/data/home.ts`), replacing the current `/#projects` anchor.
+- Update homepage `ProjectsGallery` "View all projects" → `/portfolio`; cards link to internal `/portfolio/$slug` instead of external WordPress URLs.
+- Add a Portfolio link to the footer.
 
 ## Technical notes
-- Reveal/marquee use Motion (`motion/react`) / CSS transforms; GPU-friendly.
-- Brand/client logos go through `lovable-assets` (CDN pointers committed as `.asset.json`), not committed binaries.
-- Verify with Playwright screenshots: one About hero (legibility without full overlay), a homepage section (softer glow), the clientele carousel (grayscale→color), and a team card (LinkedIn icon).
+
+- Path param per TanStack rules: `createFileRoute("/portfolio/$slug")`, read via `Route.useParams()`, navigate with `<Link to="/portfolio/$slug" params={{ slug }}>`.
+- All visuals use existing semantic tokens (`--gold`, `bg-background`, `text-foreground`, etc.) so light/dark themes both work.
+- Reuse `Reveal`, `PageHero`, `StorySection`, `GridBackdrop`; no new dependencies.
 
 ## Files
-- `src/components/graphics/InteractiveGrid.tsx`, `GridBackdrop.tsx`
-- `src/components/about/PageHero.tsx`, `PeopleGrid.tsx`, new `LogoMarquee.tsx`
-- `src/components/home/Testimonials.tsx`
-- `src/routes/about.clientele.tsx`, `about.csr.tsx`
-- `src/data/about.ts`, `src/data/home.ts`
+
+- New: `src/data/portfolio.ts`, `src/routes/portfolio.tsx`, `src/routes/portfolio.index.tsx`, `src/routes/portfolio.$slug.tsx`, `src/components/portfolio/ProjectCard.tsx`, `src/components/portfolio/ProjectGrid.tsx`, `src/components/graphics/BlueprintReveal.tsx`
+- Edit: `src/data/home.ts` (nav), `src/components/home/ProjectsGallery.tsx` (internal links), `src/components/layout/Footer.tsx` (portfolio link)
