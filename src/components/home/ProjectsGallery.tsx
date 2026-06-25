@@ -1,14 +1,20 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "motion/react";
+import { Link } from "@tanstack/react-router";
 import { projects } from "@/data/home";
 import { Reveal } from "@/components/Reveal";
 
 type Project = (typeof projects)[number];
 
+function slugFromHref(href: string) {
+  return href.replace(/\/$/, "").split("/").pop() ?? "";
+}
+
 function ProjectCard({ project }: { project: Project }) {
   return (
-    <a
-      href={project.href}
+    <Link
+      to="/portfolio/$slug"
+      params={{ slug: slugFromHref(project.href) }}
       className="group relative block overflow-hidden bg-card"
     >
       <img
@@ -26,7 +32,7 @@ function ProjectCard({ project }: { project: Project }) {
           {project.title}
         </h3>
       </div>
-    </a>
+    </Link>
   );
 }
 
