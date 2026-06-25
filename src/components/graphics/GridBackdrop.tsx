@@ -19,9 +19,9 @@ type GridBackdropProps = {
  * higher stacking context (e.g. wrap content in a `relative z-10` element).
  */
 export function GridBackdrop({
-  cellSize = 48,
+  cellSize = 96,
   radius = 220,
-  baseOpacity = 0.5,
+  baseOpacity = 0.32,
   interactive = true,
   corners = false,
   glow = false,

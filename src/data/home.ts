@@ -1,4 +1,5 @@
 // Content sourced from teamonearchitects.com (current homepage).
+import johnsonControlsLogo from "@/assets/brands/johnson-controls.png.asset.json";
 
 const UP = "https://teamonearchitects.com/wp-content/uploads";
 
@@ -93,17 +94,20 @@ export const testimonials = [
       "TOA took our input very carefully and worked on it very effectively. Very impressed with the designs, timely visits and professional attitude. My team and I are very pleased with the final look of our office premises.",
     name: "Rashmi Arya",
     role: "Head HR (India / Malaysia)",
+    logo: "",
   },
   {
     quote: "An exceptional service matched with an excellent quality of work.",
     name: "Subrata Bhattacharya",
     role: "GM & MD, Johnson Controls India",
+    logo: johnsonControlsLogo.url,
   },
   {
     quote:
       "TOA is full of positive energy and wonderful ideas! I would recommend Team One to anyone looking for an inspirational, thoughtful and concept-based interior design.",
     name: "Tan Kwang Liang",
     role: "Regional Head, Facilities & Real Estate, Singapore",
+    logo: "",
   },
 ];
 

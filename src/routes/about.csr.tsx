@@ -82,6 +82,16 @@ function CsrPage() {
                     transition={{ duration: 0.7, delay: (i % 3) * 0.07, ease: [0.22, 1, 0.36, 1] }}
                     className="group flex h-full flex-col border border-border bg-background p-7 transition-colors duration-300 hover:border-gold/50"
                   >
+                    {p.logo && (
+                      <div className="mb-5 flex h-12 items-center">
+                        <img
+                          src={p.logo}
+                          alt={`${p.name} logo`}
+                          loading="lazy"
+                          className="max-h-12 w-auto max-w-[160px] object-contain opacity-80 grayscale transition duration-500 group-hover:opacity-100 group-hover:grayscale-0"
+                        />
+                      </div>
+                    )}
                     <div className="flex items-start justify-between gap-3">
                       <h3 className="font-display text-lg font-light tracking-tight text-foreground">{p.name}</h3>
                       {p.href && (

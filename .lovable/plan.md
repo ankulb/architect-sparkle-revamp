@@ -1,62 +1,55 @@
-# Graphic Elements + Interactive Grid Hover Effect
+# Refinements + LinkedIn, brand logos & clientele carousel
 
-## Goal
-Recreate the reference video's "drafting grid" mouse effect — a faint blueprint grid where cells near the cursor illuminate and trail the pointer — and layer in additional architectural graphic accents on the sections that currently feel too empty, across the homepage and all six About pages. Theme-aware (dark + light), performant, and respectful of reduced-motion / touch devices.
+Presentation-layer work across the homepage and About suite. No backend/business-logic changes.
 
-## Hover glow color
-The cursor glow uses the TOA brand **orange-gold blend** — driven by the existing `--gold` token (`oklch(0.76 0.092 78)` in dark, the darkened bronze in light). The reveal will blend warm orange into gold via a radial gradient (hot orange-gold core fading to soft bronze at the edge), matching the warmth of the TOA logo/site. No neutral white highlight.
+## 1. Grid glow + bigger grid (from prior request)
 
-## What the reference shows
-- A subtle full-bleed grid of thin lines (graph-paper / blueprint look).
-- As the mouse moves, grid cells closest to the cursor brighten with a soft radial glow that follows the pointer and fades behind it.
-- Used as a background layer behind content, never interfering with text legibility.
+`src/components/graphics/InteractiveGrid.tsx`
+- Reduce the warm orange-gold core glow so it no longer dominates section text: drop opacity multiplier `0.5 → ~0.22`, smaller/softer falloff.
+- Lower the revealed gold-grid line opacity (~`0.7×`) so it reads as a subtle trace.
+- Increase default `cellSize` `48 → ~96px` for a larger blueprint scale; nudge base-grid opacity down.
 
-## New components
+`src/components/graphics/GridBackdrop.tsx`
+- Update default `cellSize` to match (~96px).
 
-### 1. `src/components/graphics/InteractiveGrid.tsx`
-The core hover effect. Absolutely-positioned background layer (`absolute inset-0 -z-0 pointer-events-none`).
-- Base grid: tiled CSS background of thin `--border`-colored lines (~48px cells).
-- Tracks the cursor on the parent section, writing `--mx` / `--my` CSS variables.
-- A second masked layer paints an orange-gold grid revealed only through a radial mask centered on `--mx/--my`, so cells glow warm near the cursor and fade out behind it.
-- Glow gradient blends warm orange → `--gold` → transparent for the TOA look.
-- Props: `cellSize`, `radius` (glow size), `className`, `interactive` (default true).
-- Performance: pointer updates throttled via `requestAnimationFrame`; listener on the section, not window.
-- Accessibility: `prefers-reduced-motion` or coarse pointer (touch) → static faint grid only, no tracking.
+## 2. About hero — remove overlay, add "big reveal"
 
-### 2. `src/components/graphics/GridBackdrop.tsx` (thin wrapper)
-Drops the grid plus an optional soft orange-gold gradient glow + corner crosshair markers behind a section's content, so each section opts in with one line.
+`src/components/about/PageHero.tsx`
+- Remove the heavy stacked dark overlays.
+- Animate the hero image in with a cinematic `clip-path` wipe opening from center (~1.2s) combined with the existing slow Ken-Burns zoom, plus a thin gold sweep line on the reveal edge.
+- Keep text legible with a localized bottom-left scrim behind the headline only (not the full frame) + subtle text shadow.
+- Keep word-by-word headline rise, rotating phrases, scroll cue; retime to start as the reveal completes.
+- Respect `prefers-reduced-motion` (skip wipe, fade only).
 
-### 3. Decorative accents (static, CSS/SVG only)
-- `CornerMarks` — thin L-shaped crosshair brackets in section corners (architectural drawing cue).
-- `PlusMarkers` — small `+` registration marks at fixed grid intersections.
-- Soft radial gold glow blob utility for depth.
+## 3. LinkedIn on team & board members
 
-## Where it gets applied
-Flat-background sections get the grid + accents behind content:
+All members link to the **Team One Architects company LinkedIn page** (single URL, stored once in `src/data/about.ts`).
 
-Homepage (`src/routes/index.tsx`):
-- `StatsAbout` — grid behind the stats band + corner marks.
-- `Responsibilities` — grid backdrop.
-- `Testimonials` — grid backdrop with a centered gold glow.
-- `Insights` — subtle grid.
-- Hero & ProjectsGallery already carry imagery — restrained corner marks only, no full grid.
+`src/components/about/PeopleGrid.tsx`
+- Add a LinkedIn icon button (Lucide `Linkedin`) that appears on each card (visible, gold on hover) linking to the company LinkedIn in a new tab with `rel="noopener noreferrer"` and an aria-label like "View {name} on LinkedIn".
+- Used by both `/about/board` and `/about/team` (both already render `PeopleGrid`).
 
-About pages:
-- `PageHero` — faint interactive grid over the darkened image overlay (matches the reference, grid floating above the visual).
-- `StorySection`, `PeopleGrid` bands, `about.clientele`, `about.csr`, `about.life` flat blocks — grid backdrop (the clientele logo wall is the closest match to the reference clip).
+## 4. Brand logos where brand names appear
 
-All placements use semantic tokens (`--border`, `--gold`, `--background`) so they invert in light mode (grid lines become faint ink lines, glow stays warm bronze).
+Auto-source each brand's logo (from its website/favicon via Clearbit-style logo URL or the org's own site), download, host through `lovable-assets`, and store the pointer URL in data. Skip any with no resolvable logo (keep the styled text name as fallback).
+
+- **Testimonials** (`src/data/home.ts` + `src/components/home/Testimonials.tsx`): add a `logo` field (e.g. Johnson Controls) and render a small monochrome logo near the attribution; text-only fallback when absent.
+- **CSR partners** (`src/data/about.ts` + `src/routes/about.csr.tsx`): add a `logo` field per partner; render the logo in/above each partner card. Partners with a `href` already link out; logos become the visual anchor.
+
+## 5. Clientele — infinite carousel, sector-grouped, grayscale→color
+
+- Re-scrape `https://teamonearchitects.com/clientele/` to collect the full client-logo set and organize into the sectors shown live (e.g. Engineering, IT & Software, and any others), replacing the current placeholder/duplicated logos in `clientele.groups`.
+- New `src/components/about/LogoMarquee.tsx`: a CSS-transform infinite marquee (duplicated track for seamless loop) that pauses on hover. Logos render **grayscale + dimmed**, transitioning to **full color** on hover of the individual logo.
+- `src/routes/about.clientele.tsx`: keep each sector's label heading (Reveal), render one `LogoMarquee` per sector; alternate scroll direction per row for visual rhythm. Respect `prefers-reduced-motion` (static wrapped grid fallback).
 
 ## Technical notes
-- Front-end / presentation only; no data or backend changes.
-- Grid glow via CSS variables + CSS mask (GPU-friendly, no per-cell DOM nodes).
-- Host sections set `position: relative` with real content at `z-10` so the `-z-0` grid sits behind — minor className additions where needed.
-- No new dependencies expected.
+- Reveal/marquee use Motion (`motion/react`) / CSS transforms; GPU-friendly.
+- Brand/client logos go through `lovable-assets` (CDN pointers committed as `.asset.json`), not committed binaries.
+- Verify with Playwright screenshots: one About hero (legibility without full overlay), a homepage section (softer glow), the clientele carousel (grayscale→color), and a team card (LinkedIn icon).
 
-## Out of scope
-- The robot/human "Creation of Adam" hand visuals from the reference (bespoke hero art, not TOA content).
-- Any copy or data changes.
-
-## Verification
-- Typecheck/build.
-- Playwright: load `/` and a couple of About routes, move the pointer across a gridded section, screenshot to confirm cells illuminate with the orange-gold glow and trail the cursor in both themes; confirm text stays legible and touch/reduced-motion falls back to the static grid.
+## Files
+- `src/components/graphics/InteractiveGrid.tsx`, `GridBackdrop.tsx`
+- `src/components/about/PageHero.tsx`, `PeopleGrid.tsx`, new `LogoMarquee.tsx`
+- `src/components/home/Testimonials.tsx`
+- `src/routes/about.clientele.tsx`, `about.csr.tsx`
+- `src/data/about.ts`, `src/data/home.ts`
