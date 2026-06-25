@@ -2,11 +2,20 @@
 
 const UP = "https://teamonearchitects.com/wp-content/uploads";
 
+export const aboutNav = [
+  { label: "About Us", to: "/about" },
+  { label: "Board of Directors", to: "/about/board" },
+  { label: "Our Team", to: "/about/team" },
+  { label: "Clientele", to: "/about/clientele" },
+  { label: "CSR", to: "/about/csr" },
+  { label: "Life at TOA", to: "/about/life" },
+] as const;
+
 export const nav = [
   { label: "Expertise", href: "https://teamonearchitects.com/portfolio-category/expertise/" },
-  { label: "Projects", href: "#projects" },
-  { label: "About", href: "#about" },
-  { label: "Insights", href: "#insights" },
+  { label: "Projects", href: "/#projects" },
+  { label: "About", href: "/about", children: aboutNav },
+  { label: "Insights", href: "/#insights" },
   { label: "Contact", href: "https://teamonearchitects.com/contact/" },
 ];
 

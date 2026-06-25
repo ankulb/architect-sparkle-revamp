@@ -9,38 +9,132 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutIndexRouteImport } from './routes/about.index'
+import { Route as AboutTeamRouteImport } from './routes/about.team'
+import { Route as AboutLifeRouteImport } from './routes/about.life'
+import { Route as AboutCsrRouteImport } from './routes/about.csr'
+import { Route as AboutClienteleRouteImport } from './routes/about.clientele'
+import { Route as AboutBoardRouteImport } from './routes/about.board'
 
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutIndexRoute = AboutIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => AboutRoute,
+} as any)
+const AboutTeamRoute = AboutTeamRouteImport.update({
+  id: '/team',
+  path: '/team',
+  getParentRoute: () => AboutRoute,
+} as any)
+const AboutLifeRoute = AboutLifeRouteImport.update({
+  id: '/life',
+  path: '/life',
+  getParentRoute: () => AboutRoute,
+} as any)
+const AboutCsrRoute = AboutCsrRouteImport.update({
+  id: '/csr',
+  path: '/csr',
+  getParentRoute: () => AboutRoute,
+} as any)
+const AboutClienteleRoute = AboutClienteleRouteImport.update({
+  id: '/clientele',
+  path: '/clientele',
+  getParentRoute: () => AboutRoute,
+} as any)
+const AboutBoardRoute = AboutBoardRouteImport.update({
+  id: '/board',
+  path: '/board',
+  getParentRoute: () => AboutRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRouteWithChildren
+  '/about/board': typeof AboutBoardRoute
+  '/about/clientele': typeof AboutClienteleRoute
+  '/about/csr': typeof AboutCsrRoute
+  '/about/life': typeof AboutLifeRoute
+  '/about/team': typeof AboutTeamRoute
+  '/about/': typeof AboutIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about/board': typeof AboutBoardRoute
+  '/about/clientele': typeof AboutClienteleRoute
+  '/about/csr': typeof AboutCsrRoute
+  '/about/life': typeof AboutLifeRoute
+  '/about/team': typeof AboutTeamRoute
+  '/about': typeof AboutIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRouteWithChildren
+  '/about/board': typeof AboutBoardRoute
+  '/about/clientele': typeof AboutClienteleRoute
+  '/about/csr': typeof AboutCsrRoute
+  '/about/life': typeof AboutLifeRoute
+  '/about/team': typeof AboutTeamRoute
+  '/about/': typeof AboutIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/about/board'
+    | '/about/clientele'
+    | '/about/csr'
+    | '/about/life'
+    | '/about/team'
+    | '/about/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about/board'
+    | '/about/clientele'
+    | '/about/csr'
+    | '/about/life'
+    | '/about/team'
+    | '/about'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/about/board'
+    | '/about/clientele'
+    | '/about/csr'
+    | '/about/life'
+    | '/about/team'
+    | '/about/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -48,22 +142,75 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about/': {
+      id: '/about/'
+      path: '/'
+      fullPath: '/about/'
+      preLoaderRoute: typeof AboutIndexRouteImport
+      parentRoute: typeof AboutRoute
+    }
+    '/about/team': {
+      id: '/about/team'
+      path: '/team'
+      fullPath: '/about/team'
+      preLoaderRoute: typeof AboutTeamRouteImport
+      parentRoute: typeof AboutRoute
+    }
+    '/about/life': {
+      id: '/about/life'
+      path: '/life'
+      fullPath: '/about/life'
+      preLoaderRoute: typeof AboutLifeRouteImport
+      parentRoute: typeof AboutRoute
+    }
+    '/about/csr': {
+      id: '/about/csr'
+      path: '/csr'
+      fullPath: '/about/csr'
+      preLoaderRoute: typeof AboutCsrRouteImport
+      parentRoute: typeof AboutRoute
+    }
+    '/about/clientele': {
+      id: '/about/clientele'
+      path: '/clientele'
+      fullPath: '/about/clientele'
+      preLoaderRoute: typeof AboutClienteleRouteImport
+      parentRoute: typeof AboutRoute
+    }
+    '/about/board': {
+      id: '/about/board'
+      path: '/board'
+      fullPath: '/about/board'
+      preLoaderRoute: typeof AboutBoardRouteImport
+      parentRoute: typeof AboutRoute
+    }
   }
 }
 
+interface AboutRouteChildren {
+  AboutBoardRoute: typeof AboutBoardRoute
+  AboutClienteleRoute: typeof AboutClienteleRoute
+  AboutCsrRoute: typeof AboutCsrRoute
+  AboutLifeRoute: typeof AboutLifeRoute
+  AboutTeamRoute: typeof AboutTeamRoute
+  AboutIndexRoute: typeof AboutIndexRoute
+}
+
+const AboutRouteChildren: AboutRouteChildren = {
+  AboutBoardRoute: AboutBoardRoute,
+  AboutClienteleRoute: AboutClienteleRoute,
+  AboutCsrRoute: AboutCsrRoute,
+  AboutLifeRoute: AboutLifeRoute,
+  AboutTeamRoute: AboutTeamRoute,
+  AboutIndexRoute: AboutIndexRoute,
+}
+
+const AboutRouteWithChildren = AboutRoute._addFileChildren(AboutRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}

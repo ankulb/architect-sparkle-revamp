@@ -1,4 +1,5 @@
-import { nav } from "@/data/home";
+import { Link } from "@tanstack/react-router";
+import { nav, aboutNav } from "@/data/home";
 import logoAsset from "@/assets/toa-logo.png.asset.json";
 
 export function Footer() {
@@ -6,7 +7,7 @@ export function Footer() {
     <footer className="border-t border-border bg-background">
       <div className="mx-auto max-w-[1600px] px-6 py-16 md:px-10 md:py-20">
         <div className="grid gap-12 md:grid-cols-12">
-          <div className="md:col-span-5">
+          <div className="md:col-span-4">
             <img src={logoAsset.url} alt="Team One Architects" className="mb-7 h-11 w-auto" />
             <div className="font-display text-3xl font-light tracking-tight">
               We design as one.
@@ -18,17 +19,42 @@ export function Footer() {
             </p>
           </div>
 
-          <div className="md:col-span-3 md:col-start-7">
+          <div className="md:col-span-3 md:col-start-6">
             <h4 className="text-xs font-medium uppercase tracking-[0.2em] text-gold">Explore</h4>
             <ul className="mt-5 space-y-3">
               {nav.map((item) => (
                 <li key={item.label}>
-                  <a
-                    href={item.href}
+                  {item.children ? (
+                    <Link
+                      to={item.href}
+                      className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+                    >
+                      {item.label}
+                    </Link>
+                  ) : (
+                    <a
+                      href={item.href}
+                      className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+                    >
+                      {item.label}
+                    </a>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="md:col-span-2">
+            <h4 className="text-xs font-medium uppercase tracking-[0.2em] text-gold">About</h4>
+            <ul className="mt-5 space-y-3">
+              {aboutNav.map((item) => (
+                <li key={item.to}>
+                  <Link
+                    to={item.to}
                     className="text-sm text-muted-foreground transition-colors hover:text-foreground"
                   >
                     {item.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
