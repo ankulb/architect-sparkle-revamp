@@ -4,6 +4,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { PageHero } from "@/components/about/PageHero";
 import { Reveal } from "@/components/Reveal";
+import { GridBackdrop } from "@/components/graphics/GridBackdrop";
 import { clientele } from "@/data/about";
 
 const title = "Clientele — Team One Architects";
@@ -35,7 +36,9 @@ function ClientelePage() {
       <main>
         <PageHero {...clientele.hero} />
 
-        <section className="mx-auto max-w-[1600px] px-6 py-24 md:px-10 md:py-28">
+        <section className="relative overflow-hidden px-6 py-24 md:px-10 md:py-28">
+          <GridBackdrop radius={240} baseOpacity={0.4} />
+          <div className="relative z-10 mx-auto max-w-[1600px]">
           {clientele.groups.map((group, gi) => (
             <div key={group.sector} className={gi > 0 ? "mt-20" : ""}>
               <Reveal as="h2" className="font-display text-2xl font-light tracking-tight text-foreground sm:text-3xl">
@@ -62,6 +65,7 @@ function ClientelePage() {
               </div>
             </div>
           ))}
+          </div>
         </section>
       </main>
       <Footer />

@@ -1,10 +1,12 @@
 import { responsibilities } from "@/data/home";
 import { Reveal } from "@/components/Reveal";
+import { GridBackdrop } from "@/components/graphics/GridBackdrop";
 
 export function Responsibilities() {
   return (
-    <section className="border-t border-border bg-card/40">
-      <div className="mx-auto max-w-[1600px] px-6 py-24 md:px-10 md:py-36">
+    <section className="relative overflow-hidden border-t border-border bg-card/40">
+      <GridBackdrop radius={240} baseOpacity={0.4} />
+      <div className="relative z-10 mx-auto max-w-[1600px] px-6 py-24 md:px-10 md:py-36">
         <Reveal>
           <p className="text-xs font-medium uppercase tracking-[0.3em] text-gold">Our responsibility</p>
         </Reveal>

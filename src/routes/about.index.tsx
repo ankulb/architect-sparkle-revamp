@@ -5,6 +5,7 @@ import { PageHero } from "@/components/about/PageHero";
 import { StorySection } from "@/components/about/StorySection";
 import { Reveal } from "@/components/Reveal";
 import { CountUp } from "@/components/CountUp";
+import { GridBackdrop } from "@/components/graphics/GridBackdrop";
 import { aboutUs } from "@/data/about";
 
 const title = "About Us — Team One Architects";
@@ -61,8 +62,9 @@ function AboutPage() {
         </section>
 
         {/* Impact */}
-        <section className="border-t border-border bg-card/40">
-          <div className="mx-auto max-w-[1600px] px-6 py-24 md:px-10 md:py-28">
+        <section className="relative overflow-hidden border-t border-border bg-card/40">
+          <GridBackdrop corners glow radius={260} baseOpacity={0.4} />
+          <div className="relative z-10 mx-auto max-w-[1600px] px-6 py-24 md:px-10 md:py-28">
             <Reveal as="h2" className="font-display text-3xl font-light tracking-tight sm:text-4xl">
               Measured impact
             </Reveal>

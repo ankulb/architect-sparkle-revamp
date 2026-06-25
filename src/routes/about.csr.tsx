@@ -6,6 +6,7 @@ import { Footer } from "@/components/layout/Footer";
 import { PageHero } from "@/components/about/PageHero";
 import { StorySection } from "@/components/about/StorySection";
 import { Reveal } from "@/components/Reveal";
+import { GridBackdrop } from "@/components/graphics/GridBackdrop";
 import { csr } from "@/data/about";
 
 const title = "CSR — Team One Architects";
@@ -59,8 +60,9 @@ function CsrPage() {
         </section>
 
         {/* Partners */}
-        <section className="border-t border-border bg-card/40">
-          <div className="mx-auto max-w-[1600px] px-6 py-24 md:px-10 md:py-28">
+        <section className="relative overflow-hidden border-t border-border bg-card/40">
+          <GridBackdrop radius={240} baseOpacity={0.4} />
+          <div className="relative z-10 mx-auto max-w-[1600px] px-6 py-24 md:px-10 md:py-28">
             <Reveal as="p" className="text-xs font-medium uppercase tracking-[0.28em] text-gold">
               Our Partners
             </Reveal>
