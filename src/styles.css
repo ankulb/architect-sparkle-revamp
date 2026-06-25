@@ -168,3 +168,32 @@ html.light {
 .toa-scroll-dot {
   animation: toa-scroll-dot 2.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 }
+
+/* Infinite logo marquee — track is duplicated, so -50% loops seamlessly */
+@keyframes toa-marquee-left {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@keyframes toa-marquee-right {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0); }
+}
+.toa-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: toa-marquee-left var(--marquee-duration, 40s) linear infinite;
+}
+.toa-marquee-track[data-dir="right"] {
+  animation-name: toa-marquee-right;
+}
+.toa-marquee:hover .toa-marquee-track {
+  animation-play-state: paused;
+}
+@media (prefers-reduced-motion: reduce) {
+  .toa-marquee-track {
+    animation: none;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+  }
+}

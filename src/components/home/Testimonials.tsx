@@ -35,6 +35,14 @@ export function Testimonials() {
                 “{current.quote}”
               </blockquote>
               <figcaption className="mt-8">
+                {current.logo && (
+                  <img
+                    src={current.logo}
+                    alt={`${current.name} company logo`}
+                    loading="lazy"
+                    className="mx-auto mb-5 h-7 w-auto object-contain opacity-70 grayscale transition duration-500 hover:opacity-100 hover:grayscale-0"
+                  />
+                )}
                 <span className="block text-sm font-semibold tracking-wide text-foreground">
                   {current.name}
                 </span>

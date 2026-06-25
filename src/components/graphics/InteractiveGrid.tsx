@@ -18,9 +18,9 @@ type InteractiveGridProps = {
  * inside a `relative` parent. Theme-aware via semantic tokens.
  */
 export function InteractiveGrid({
-  cellSize = 48,
+  cellSize = 96,
   radius = 220,
-  baseOpacity = 0.5,
+  baseOpacity = 0.32,
   interactive = true,
   className = "",
 }: InteractiveGridProps) {
@@ -102,15 +102,15 @@ export function InteractiveGrid({
           backgroundSize: `${cellSize}px ${cellSize}px`,
           maskImage: mask,
           WebkitMaskImage: mask,
-          opacity: "var(--on)",
+          opacity: "calc(var(--on) * 0.7)",
         }}
       />
       {/* Warm orange–gold core glow */}
       <div
         className="absolute inset-0 transition-opacity duration-500"
         style={{
-          background: `radial-gradient(circle ${radius * 0.85}px at var(--mx, -9999px) var(--my, -9999px), color-mix(in oklab, var(--gold) 55%, #ff7a1a) 0%, color-mix(in oklab, var(--gold) 22%, transparent) 38%, transparent 70%)`,
-          opacity: "calc(var(--on) * 0.5)",
+          background: `radial-gradient(circle ${radius * 0.7}px at var(--mx, -9999px) var(--my, -9999px), color-mix(in oklab, var(--gold) 55%, #ff7a1a) 0%, color-mix(in oklab, var(--gold) 18%, transparent) 32%, transparent 65%)`,
+          opacity: "calc(var(--on) * 0.22)",
         }}
       />
     </div>

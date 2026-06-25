@@ -1,6 +1,14 @@
 // Content sourced from the About section of teamonearchitects.com.
+import dhartiLogo from "@/assets/brands/dharti.svg.asset.json";
+import vijayLogo from "@/assets/brands/vijay-shikshan.png.asset.json";
+import liftLogo from "@/assets/brands/lift-upliftment.png.asset.json";
+import yuvaLogo from "@/assets/brands/yuva-unstoppable.png.asset.json";
+import deepstambhLogo from "@/assets/brands/deepstambh.jpeg.asset.json";
 
 const UP = "https://teamonearchitects.com/wp-content/uploads";
+
+// All team & board members link to the firm's company LinkedIn page.
+export const companyLinkedin = "https://www.linkedin.com/company/teamonearchitects/";
 
 // In-section navigation used by the header dropdown and footer.
 export const aboutNav = [
@@ -130,10 +138,98 @@ export const clientele = {
     {
       sector: "IT & Software",
       logos: [
-        `${UP}/2025/07/1-3.jpg_1.jpeg`,
-        `${UP}/2025/07/4-3.jpg.jpeg`,
-        `${UP}/2025/07/3-3.jpg.jpeg`,
-        `${UP}/2025/07/6-3.jpg.jpeg`,
+        `${UP}/2025/07/2-3.jpg.jpeg`,
+        `${UP}/2025/07/6-1.jpg.jpeg`,
+        `${UP}/2025/07/4-1.jpg.jpeg`,
+        `${UP}/2025/07/3-1.jpg.jpeg`,
+        `${UP}/2025/07/2-1.jpg.jpeg`,
+        `${UP}/2025/07/1-1.jpg.jpeg`,
+        `${UP}/2025/07/5-1.jpg.jpeg`,
+      ],
+    },
+    {
+      sector: "Banking & Finance",
+      logos: [
+        `${UP}/2025/07/4-2.jpg.jpeg`,
+        `${UP}/2025/07/5-2.jpg.jpeg`,
+        `${UP}/2025/07/1-2.jpg.jpeg`,
+        `${UP}/2025/07/3-2.jpg.jpeg`,
+        `${UP}/2025/07/2-2.jpg.jpeg`,
+      ],
+    },
+    {
+      sector: "Media",
+      logos: [
+        `${UP}/2025/07/image-37.png`,
+        `${UP}/2025/07/2-5.jpg.jpeg`,
+        `${UP}/2025/07/1-5.jpg.jpeg`,
+        `${UP}/2025/07/4-5.jpg.jpeg`,
+        `${UP}/2025/07/6-5.jpg.jpeg`,
+        `${UP}/2025/07/5-5.jpg.jpeg`,
+      ],
+    },
+    {
+      sector: "Shipping",
+      logos: [
+        `${UP}/2025/07/4-6.jpg.jpeg`,
+        `${UP}/2025/07/3-6.jpg.jpeg`,
+        `${UP}/2025/07/2-6.jpg.jpeg`,
+      ],
+    },
+    {
+      sector: "Telecom",
+      logos: [
+        `${UP}/2025/07/2-7.jpg.jpeg`,
+        `${UP}/2025/07/4-7.jpg.jpeg`,
+        `${UP}/2025/07/3-7.jpg.jpeg`,
+        `${UP}/2025/07/Airtel_logo-scaled.png`,
+        `${UP}/2025/07/8-7.jpg.jpeg`,
+        `${UP}/2025/07/5-7.jpg.jpeg`,
+      ],
+    },
+    {
+      sector: "Pharma & Health",
+      logos: [
+        `${UP}/2025/07/3-4.jpg.jpeg`,
+        `${UP}/2025/07/2-4.jpg.jpeg`,
+        `${UP}/2025/07/13-1.jpg.jpeg`,
+        `${UP}/2025/07/4-4.jpg.jpeg`,
+        `${UP}/2025/07/1-4.jpg.jpeg`,
+        `${UP}/2025/07/8-4.jpg.jpeg`,
+        `${UP}/2025/07/14-1.jpg.jpeg`,
+        `${UP}/2025/07/15-1.jpg.jpeg`,
+        `${UP}/2025/07/12-1.jpg.jpeg`,
+        `${UP}/2025/07/10-1.jpg.jpeg`,
+        `${UP}/2025/07/6-4.jpg.jpeg`,
+        `${UP}/2025/07/5-4.jpg.jpeg`,
+      ],
+    },
+    {
+      sector: "Educational",
+      logos: [
+        `${UP}/2025/07/13-2.jpg.jpeg`,
+        `${UP}/2025/07/11-2.jpg.jpeg`,
+        `${UP}/2025/07/10-2.jpg.jpeg`,
+      ],
+    },
+    {
+      sector: "Co-Working",
+      logos: [
+        `${UP}/2025/07/5-8.jpg.jpeg`,
+        `${UP}/2025/07/4-8.jpg.jpeg`,
+        `${UP}/2025/07/3-8.jpg.jpeg`,
+        `${UP}/2025/07/1-8.jpg.jpeg`,
+      ],
+    },
+    {
+      sector: "Green Field",
+      logos: [
+        `${UP}/2025/07/7-9.jpg.jpeg`,
+        `${UP}/2025/07/3-9.jpg.jpeg`,
+        `${UP}/2025/07/5-9.jpg.jpeg`,
+        `${UP}/2025/07/2-9.jpg.jpeg`,
+        `${UP}/2025/07/1-9.jpg.jpeg`,
+        `${UP}/2025/07/4-9.jpg.jpeg`,
       ],
     },
   ],
@@ -158,51 +254,61 @@ export const csr = {
       name: "Jivan Jyot Foundation",
       body: "Enabling better living conditions for underserved communities by promoting education, healthcare and livelihood opportunities.",
       href: "https://www.jivanjyout.in/",
+      logo: "",
     },
     {
       name: "The XL Target",
       body: "Supporting the development of sporting talent through access to quality training infrastructure and mentorship in competitive shooting.",
       href: "https://xltsa.com/",
+      logo: "",
     },
     {
       name: "Dharti Foundation",
       body: "Uplifting children from farmer families — with a special emphasis on girls — through education and pathways to employment.",
       href: "https://dhartifoundation.com/",
+      logo: dhartiLogo.url,
     },
     {
       name: "Sant Gadge Maharaj Charitable Trust",
       body: "Extending support to underprivileged cancer patients and their families with shelter, nutrition, medical support and dignified care.",
       href: "",
+      logo: "",
     },
     {
       name: "Give Welfare Organization",
       body: "Supporting innovative, inclusive learning environments that empower children in underserved communities.",
       href: "",
+      logo: "",
     },
     {
       name: "Vijay Shikshan Sanstha",
       body: "Empowering hearing-impaired individuals through education, rehabilitation and skill-building for independent, dignified living.",
       href: "https://vssanstha.org.in/",
+      logo: vijayLogo.url,
     },
     {
       name: "Lift for Upliftment",
       body: "Expanding access to quality medical education for aspiring students from underprivileged and tribal communities.",
       href: "https://www.lfupune.in/",
+      logo: liftLogo.url,
     },
     {
       name: "Yuva Unstoppable",
       body: "Strengthening school infrastructure and enabling modern learning ecosystems for underprivileged children and youth.",
       href: "https://yuvaunstoppable.org/",
+      logo: yuvaLogo.url,
     },
     {
       name: "Manilal Gandhi Charitable Trust",
       body: "Supporting social welfare focused on community development, education and access to essential resources.",
       href: "",
+      logo: "",
     },
     {
       name: "Deepstambh Foundation",
       body: "Inclusive, quality education for underprivileged students, including persons with disabilities and economically weaker sections.",
       href: "https://deepstambh.org/",
+      logo: deepstambhLogo.url,
     },
   ],
 };
