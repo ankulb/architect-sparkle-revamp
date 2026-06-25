@@ -59,6 +59,16 @@ export function Header() {
                       </div>
                     </div>
                   </div>
+                ) : item.to ? (
+                  <Link
+                    key={item.label}
+                    to={item.to}
+                    activeProps={{ className: "text-foreground" }}
+                    className="group relative text-sm font-medium uppercase tracking-[0.14em] text-muted-foreground transition-colors hover:text-foreground"
+                  >
+                    {item.label}
+                    <span className="absolute -bottom-1.5 left-0 h-px w-0 bg-gold transition-all duration-300 group-hover:w-full" />
+                  </Link>
                 ) : (
                   <a
                     key={item.label}
