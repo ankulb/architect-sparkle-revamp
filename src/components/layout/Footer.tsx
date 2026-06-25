@@ -31,6 +31,13 @@ export function Footer() {
                     >
                       {item.label}
                     </Link>
+                  ) : item.to ? (
+                    <Link
+                      to={item.to}
+                      className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+                    >
+                      {item.label}
+                    </Link>
                   ) : (
                     <a
                       href={item.href}
