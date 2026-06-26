@@ -35,8 +35,8 @@ export function ConnectionMoment() {
     vectorEffect: "non-scaling-stroke" as const,
   };
 
-  // when the sketch has finished and the photo takes over
-  const revealAt = reduce ? 0 : 1.9;
+  // when the photo begins developing in under the sketch (overlaps the last strokes)
+  const revealAt = reduce ? 0 : 1.55;
 
   return (
     <section ref={ref} className="relative w-full overflow-hidden bg-background py-24 md:py-32">
