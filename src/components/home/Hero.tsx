@@ -1,9 +1,11 @@
 import { useEffect, useRef, useState } from "react";
 import {
   AnimatePresence,
+  animate,
   motion,
   useScroll,
   useTransform,
+  useMotionValue,
   useMotionTemplate,
   useReducedMotion,
 } from "motion/react";
