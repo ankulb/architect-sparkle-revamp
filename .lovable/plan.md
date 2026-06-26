@@ -1,57 +1,55 @@
-# Portfolio Archive + One Reference Project Page
+## Homepage cinematic opening — logo fill-up, blueprint-to-building hero, and a "blueprint meets building" connection moment
 
-Build the Portfolio archive page plus a single individual project page (Atomberg, used as the reference/template) — matching the existing dark cinematic theme, inspired by Ultra Confidentiel's `/projects` (archive) and `/projects/trilegal-bangalore` (detail), with architecture-firm graphic motifs (blueprint grids + self-drawing structural line art) that build up as the user scrolls.
+Three new beats inspired by the reference, themed to TOA's orange-gold brand and the existing dark cinematic system.
 
-## Routes
+### 1. TOA logo fill-up intro overlay
+
+A full-screen overlay (`#0A0A0B`) that plays on every homepage load, then lifts to reveal the hero.
+
+- New component `src/components/home/IntroOverlay.tsx`, mounted at the top of `src/routes/index.tsx`, fixed `z-[100]`.
+- The TOA logo sits centered. Two stacked copies of the logo:
+  - a dim base copy (~18% opacity) showing the empty silhouette,
+  - a bright orange-gold copy that "fills up" from bottom to top via an animating `clip-path: inset(100% 0 0 0)` → `inset(0 0 0 0)` over ~1.6s, mimicking the liquid welling up in the reference.
+- A soft gold glow pulse and a thin gold meniscus line riding the top of the fill as it rises.
+- Below the logo: a hairline progress bar and the words "TEAM ONE ARCHITECTS" fading in letter-spaced.
+- On completion (~2.2s), the whole overlay slides/fades up and unmounts, revealing the hero. Skippable on click/scroll/Esc.
+- `prefers-reduced-motion`: skip the fill, show the logo briefly, fade out fast.
+
+### 2. Hero: blueprint draws into a completed project (3-screen scroll journey)
+
+Replaces the current crossfading `Hero.tsx` with a tall pinned hero (`300vh` section, sticky inner viewport) driven by `useScroll` scroll progress.
 
 ```text
-/portfolio              -> archive (all projects, category filter)
-/portfolio/$slug        -> individual project page (dynamic; only "atomberg" fully built for now)
+scroll 0% ───────────── 50% ───────────── 100%
+[ blueprint lines draw ] [ photo fades/saturates in ] [ built project, headline settled ]
+   grid + plan + elevation     crossfade + grayscale→color     gold accents + CTA
 ```
 
-- `src/routes/portfolio.tsx` — layout wrapper rendering `<Outlet />`
-- `src/routes/portfolio.index.tsx` — archive page
-- `src/routes/portfolio.$slug.tsx` — project detail page (path param; `notFound()` for any slug without detail data)
+- Stage A (0–45%): structural blueprint SVG (floor-plan + elevation line art, reusing the `BlueprintReveal` pathLength-on-scroll pattern) draws itself in gold on the dark grid, dimensions/annotation ticks appearing.
+- Stage B (40–80%): a real completed TOA project photo (from `heroSlides` in `src/data/home.ts`) crossfades over the blueprint, transitioning grayscale→full color and de-blurring — "the drawing becomes the building."
+- Stage C (75–100%): photo fully resolved with cinematic gradient; headline "Designing spaces that work, inspire and endure", the rotating expertise words, and the "Discover the studio" CTA settle into place. A scroll cue + progress rail on the left tracks the journey.
+- `prefers-reduced-motion`: collapse to a static finished hero (photo + headline), no pinning.
 
-## Data
+### 3. "Blueprint meets building" connection moment
 
-Create `src/data/portfolio.ts`:
-- `projects`: all 27 items from the live archive (title, slug, category, hero image) so the archive grid is complete and every card links to its `/portfolio/$slug`.
-- `projectDetails`: full detail for **Atomberg only** for now (sector, area, status, description, client, location, year, category, gallery images). The detail route renders from this map; slugs not present render a "coming soon" notice or `notFound()`, so the rest of the archive cards are visible but only Atomberg opens a complete page.
+A new full-bleed band placed between the hero and `StatsAbout` (a transition beat, like the reference's reaching-hands moment), signifying design becoming reality through partnership.
 
-## Archive page (`/portfolio`)
+- New component `src/components/home/ConnectionMoment.tsx` on the dark grid backdrop.
+- From the left edge, a draftsman's hand + pencil drawn as blueprint line-art reaches inward; from the right edge, a built structure / rising building reaches back. As the band scrolls into view they extend toward center and meet at a glowing **gold spark** at the exact touch point (radial gold flare + small particle burst).
+- Centered tagline rises with the meeting: "We design as one." with a supporting line ("Where the drawing meets what's built.").
+- Line-art delivered as inline SVG with `pathLength` draw-in tied to in-view/scroll; gold spark uses the brand `--gold` token with a soft bloom (kept low-intensity so text stays legible, consistent with the earlier glow tuning).
+- `prefers-reduced-motion`: show both sides already met with a static spark and the tagline.
 
-- Reuse cinematic `PageHero` (curtain-wipe reveal, Ken-Burns, interactive blueprint grid) — eyebrow "Our Work", headline like "Showcasing the spaces we shape".
-- Category filter row (Show All / the two categories) with animated count badges; filtering animates the grid via Framer Motion layout transitions.
-- Responsive project grid of cards: image with grayscale→color + zoom on hover, location/name/category overlay (Ultra Confidentiel style). Cards link to `/portfolio/$slug`.
-- Scroll-driven blueprint backdrop behind the grid using existing `GridBackdrop` plus the new self-drawing structural line motif.
+### Files
 
-## Project detail page (`/portfolio/atomberg`)
+- New: `src/components/home/IntroOverlay.tsx`, `src/components/home/ConnectionMoment.tsx`
+- Rewrite: `src/components/home/Hero.tsx` (pinned scroll-driven journey)
+- Edit: `src/routes/index.tsx` (mount intro overlay; insert `ConnectionMoment` after `Hero`)
+- Possibly add a small SVG line-art helper (hand/building) inside the connection component; reuse `BlueprintReveal`/`InteractiveGrid`/`GridBackdrop` patterns already in the codebase
+- Reuse existing `--gold` token, Outfit/Figtree fonts, `Reveal`, and `motion/react` — no new dependencies
 
-- Full-bleed cinematic hero with the project's lead image and curtain-wipe reveal; title overlaid.
-- Meta strip: Client, Location, Year, Sector, Area, Status, Category — staggered reveal.
-- Overview copy as editorial sections (reusing `StorySection` styling) from the scraped description.
-- Large gallery images that parallax / reveal on scroll, interleaved with blueprint graphics.
-- "More Projects" section: 3 other projects as cards linking onward.
-- Back-to-portfolio link and per-route `head()` metadata (title, description, og:image = hero image).
+### Technical notes
 
-## Architecture-firm graphic elements
-
-Create `src/components/graphics/BlueprintReveal.tsx`: a scroll-linked SVG of structural/building line art (floor-plan grids, column grids, elevation outlines) that "draws" itself via `pathLength` tied to `useScroll` progress, in the gold token at low opacity. Layer it into section backdrops on both pages alongside `InteractiveGrid`/`GridBackdrop` so the blueprint feel intensifies as the user scrolls forward. Respects `useReducedMotion`.
-
-## Navigation wiring
-
-- Add `Projects` → `/portfolio` to the header nav (`src/data/home.ts`), replacing the current `/#projects` anchor.
-- Update homepage `ProjectsGallery` "View all projects" → `/portfolio`; cards link to internal `/portfolio/$slug` instead of external WordPress URLs.
-- Add a Portfolio link to the footer.
-
-## Technical notes
-
-- Path param per TanStack rules: `createFileRoute("/portfolio/$slug")`, read via `Route.useParams()`, navigate with `<Link to="/portfolio/$slug" params={{ slug }}>`.
-- All visuals use existing semantic tokens (`--gold`, `bg-background`, `text-foreground`, etc.) so light/dark themes both work.
-- Reuse `Reveal`, `PageHero`, `StorySection`, `GridBackdrop`; no new dependencies.
-
-## Files
-
-- New: `src/data/portfolio.ts`, `src/routes/portfolio.tsx`, `src/routes/portfolio.index.tsx`, `src/routes/portfolio.$slug.tsx`, `src/components/portfolio/ProjectCard.tsx`, `src/components/portfolio/ProjectGrid.tsx`, `src/components/graphics/BlueprintReveal.tsx`
-- Edit: `src/data/home.ts` (nav), `src/components/home/ProjectsGallery.tsx` (internal links), `src/components/layout/Footer.tsx` (portfolio link)
+- Scroll-pinning uses a `300vh` outer wrapper with a `sticky top-0 h-screen` inner stage and `useScroll({ target, offset })`; all stage transforms derived from one `scrollYProgress` via `useTransform` for smoothness.
+- Intro overlay renders client-side only (guard against SSR/hydration: render after mount) to avoid a flash; body scroll locked while it's visible.
+- All animations honor `useReducedMotion`; color strictly via semantic tokens (no hardcoded hex in components).
