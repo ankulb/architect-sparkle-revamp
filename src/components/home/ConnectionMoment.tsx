@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import { motion, useInView, useReducedMotion } from "motion/react";
+import { heroSlides } from "@/data/home";
 
 /**
  * "We design as one" — a sketch → built reveal.
@@ -7,8 +8,8 @@ import { motion, useInView, useReducedMotion } from "motion/react";
  * then dissolves into the real built photograph: from drawing to reality.
  */
 
-const BUILT_IMAGE =
-  "https://teamonearchitects.com/wp-content/uploads/2026/03/VIEW-1-650x650.png";
+// Landscape project photo so nothing is cropped inside the frame.
+const BUILT_IMAGE = heroSlides[0].image;
 
 export function ConnectionMoment() {
   const reduce = useReducedMotion();
