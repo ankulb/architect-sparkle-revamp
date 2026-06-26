@@ -205,3 +205,54 @@ html.light {
     justify-content: center;
   }
 }
+
+/* ── Blueprint hero: line-art that draws itself on scroll ───────────────── */
+.bp-path {
+  fill: none;
+  stroke: var(--blueprint);
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.bp-path.thick { stroke-width: 2.2; }
+.bp-path.dim {
+  stroke: var(--blueprint-dim);
+  stroke-width: 1;
+  stroke-dasharray: 6 5;
+}
+
+/* Crossfading text phases in the hero's right column */
+.hero-phase {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(calc(-50% + 28px));
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+.hero-phase.active {
+  opacity: 1;
+  transform: translateY(-50%);
+  pointer-events: auto;
+}
+.hero-phase.past {
+  opacity: 0;
+  transform: translateY(calc(-50% - 28px));
+}
+
+@keyframes toa-grid-pulse {
+  0%, 100% { opacity: 0.04; }
+  50% { opacity: 0.09; }
+}
+@keyframes toa-pip-glow {
+  0%, 100% { box-shadow: 0 0 8px 2px var(--gold-soft); }
+  50% { box-shadow: 0 0 18px 6px var(--gold); }
+}
+.toa-pip-glow { animation: toa-pip-glow 2s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-phase { transition: none; }
+  .toa-pip-glow { animation: none; }
+}
