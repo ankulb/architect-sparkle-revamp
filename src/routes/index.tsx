@@ -40,7 +40,6 @@ function Index() {
       <Header />
       <main>
         <Hero />
-        <ConnectionMoment />
         <StatsAbout />
         <ProjectsGallery />
         <Responsibilities />
