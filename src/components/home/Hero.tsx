@@ -28,9 +28,25 @@ export function Hero() {
     return () => clearInterval(t);
   }, []);
 
-  // Stage A: blueprint draws in (0 -> 0.45)
+  // Mount-time build-up: the blueprint starts drawing from the very first frame,
+  // and the headline fades in — so the screen after the loader is never blank.
+  const mountDraw = useMotionValue(0);
+  const mountText = useMotionValue(0);
+  useEffect(() => {
+    if (reduce) return;
+    const c1 = animate(mountDraw, 1, { duration: 1.6, ease: "easeInOut" });
+    const c2 = animate(mountText, 1, { duration: 1, delay: 0.45, ease: "easeOut" });
+    return () => {
+      c1.stop();
+      c2.stop();
+    };
+  }, [reduce, mountDraw, mountText]);
+
+  // Stage A: blueprint draws in — on mount, then continues with scroll (0 -> 0.45)
   const drawRaw = useTransform(scrollYProgress, [0, 0.45], [0, 1]);
-  const pathLength = reduce ? 1 : drawRaw;
+  const pathLength = useTransform(() =>
+    reduce ? 1 : Math.max(mountDraw.get(), drawRaw.get()),
+  );
   const blueprintOpacity = useTransform(scrollYProgress, [0, 0.4, 0.85], [1, 1, 0]);
 
   // Stage B: completed photo crossfades + saturates + de-blurs (0.4 -> 0.85)
@@ -40,9 +56,14 @@ export function Hero() {
   const photoScale = useTransform(scrollYProgress, [0.35, 1], [1.14, 1]);
   const photoFilter = useMotionTemplate`grayscale(${grayscale}) blur(${blurPx}px)`;
 
-  // Stage C: text settles (0.7 -> 1)
-  const textOpacity = useTransform(scrollYProgress, [0.72, 0.95], [0, 1]);
-  const textY = useTransform(scrollYProgress, [0.72, 0.95], [40, 0]);
+  // Stage C: text settles — visible from mount, then re-anchored by scroll (0.7 -> 1)
+  const textProgress = useTransform(scrollYProgress, [0.72, 0.95], [0, 1]);
+  const textOpacity = useTransform(() =>
+    Math.max(mountText.get(), textProgress.get()),
+  );
+  const textY = useTransform(
+    () => (1 - Math.max(mountText.get(), textProgress.get())) * 40,
+  );
   const overlayOpacity = useTransform(scrollYProgress, [0.6, 1], [0.25, 0.42]);
   const railHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
