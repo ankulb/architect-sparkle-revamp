@@ -3,47 +3,74 @@ import { Link } from "@tanstack/react-router";
 import { useReducedMotion } from "motion/react";
 
 /**
- * "Where Vision Meets Craft" — two mirrored blueprint halves slide in from the
- * edges and join at a glowing gold cornerstone (spark + ring pop), then the
- * supporting copy resolves. Triggered once when scrolled into view.
+ * "Where Vision Meets Craft" — two real project images slide in from the edges
+ * and join at a glowing gold cornerstone (spark + ring pop). The left frame is
+ * treated as the "vision" (cool blueprint tint + drafting grid overlay), the
+ * right frame as the realized "craft" (full color). Triggered once in view.
  */
 
-function BlueprintHalf({ mirror = false }: { mirror?: boolean }) {
+const UP = "https://teamonearchitects.com/wp-content/uploads";
+
+const VISION_IMG = `${UP}/2025/10/WhatsApp-Image-2025-10-28-at-11.20.12-AM-1.jpeg`;
+const CRAFT_IMG = `${UP}/2026/03/DSC07321-HDR-650x650.jpg`;
+
+function ImageFrame({
+  src,
+  alt,
+  vision = false,
+}: {
+  src: string;
+  alt: string;
+  vision?: boolean;
+}) {
   return (
-    <svg
-      viewBox="0 0 330 470"
-      width="310"
-      height="440"
-      className="h-auto w-[220px] sm:w-[260px] lg:w-[310px]"
-      style={mirror ? { transform: "scaleX(-1)" } : undefined}
-    >
-      <path d="M 38 440 L 38 25" fill="none" stroke="var(--blueprint)" strokeWidth="2.4" strokeLinecap="round" />
-      <path d="M 38 25 L 330 25" fill="none" stroke="var(--blueprint)" strokeWidth="2.4" />
-      <path d="M 0 440 L 330 440" fill="none" stroke="var(--blueprint)" strokeWidth="2.4" />
-      <path
-        d="M 38 372 L 330 372 M 38 304 L 330 304 M 38 236 L 330 236 M 38 168 L 330 168 M 38 100 L 330 100"
-        fill="none"
-        stroke="var(--blueprint-dim)"
-        strokeWidth="1"
-        strokeDasharray="8 5"
+    <div className="relative h-full w-full overflow-hidden">
+      <img
+        src={src}
+        alt={alt}
+        loading="lazy"
+        className="h-full w-full object-cover"
+        style={
+          vision
+            ? { filter: "grayscale(0.55) contrast(1.05) brightness(0.85)" }
+            : undefined
+        }
       />
-      {[384, 316, 248, 180, 112].map((y) => (
-        <path
-          key={y}
-          d={`M 52 ${y} L 98 ${y} L 98 ${y + 38} L 52 ${y + 38} Z M 114 ${y} L 160 ${y} L 160 ${y + 38} L 114 ${y + 38} Z M 176 ${y} L 222 ${y} L 222 ${y + 38} L 176 ${y + 38} Z M 238 ${y} L 284 ${y} L 284 ${y + 38} L 238 ${y + 38} Z`}
-          fill="none"
-          stroke="var(--blueprint)"
-          strokeWidth="1.2"
+      {/* Cool blueprint wash on the "vision" frame */}
+      {vision && (
+        <div
+          className="pointer-events-none absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(135deg, color-mix(in oklab, var(--blueprint) 42%, transparent), color-mix(in oklab, var(--blueprint) 12%, transparent))",
+            mixBlendMode: "multiply",
+          }}
         />
-      ))}
-      <path
-        d="M 180 372 L 180 440 M 260 372 L 260 440 M 220 372 L 220 410 L 260 410"
-        fill="none"
-        stroke="var(--blueprint)"
-        strokeWidth="1.3"
+      )}
+      {/* Drafting grid overlay on the "vision" frame */}
+      {vision && (
+        <div
+          className="pointer-events-none absolute inset-0 opacity-40"
+          style={{
+            backgroundImage:
+              "linear-gradient(color-mix(in oklab, var(--blueprint) 55%, transparent) 1px, transparent 1px), linear-gradient(90deg, color-mix(in oklab, var(--blueprint) 55%, transparent) 1px, transparent 1px)",
+            backgroundSize: "34px 34px",
+          }}
+        />
+      )}
+      {/* Inner edge vignette toward the seam */}
+      <div
+        className="pointer-events-none absolute inset-0"
+        style={{
+          background: vision
+            ? "linear-gradient(to right, transparent 70%, rgba(0,0,0,0.35))"
+            : "linear-gradient(to left, transparent 70%, rgba(0,0,0,0.35))",
+        }}
       />
-      <path d="M 30 25 L 30 10 L 330 10" fill="none" stroke="var(--blueprint)" strokeWidth="1.5" />
-    </svg>
+      {/* Corner ticks */}
+      <span className="pointer-events-none absolute left-3 top-3 h-4 w-4 border-l border-t" style={{ borderColor: "color-mix(in oklab, var(--gold) 60%, transparent)" }} />
+      <span className="pointer-events-none absolute bottom-3 right-3 h-4 w-4 border-b border-r" style={{ borderColor: "color-mix(in oklab, var(--gold) 60%, transparent)" }} />
+    </div>
   );
 }
 
