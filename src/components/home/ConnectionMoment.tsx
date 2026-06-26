@@ -130,11 +130,11 @@ export function ConnectionMoment() {
           </h2>
         </div>
 
-        {/* Joining blueprints */}
-        <div className="relative flex items-end justify-center">
-          {/* Left half */}
+        {/* Joining frames */}
+        <div className="relative flex items-stretch justify-center">
+          {/* Left frame — the vision */}
           <div
-            className="flex-shrink-0"
+            className="relative h-[300px] w-[40vw] max-w-[420px] flex-shrink-0 sm:h-[380px] lg:h-[460px]"
             style={{
               opacity: on ? 1 : 0,
               transform: on ? "translateX(0)" : "translateX(-200px)",
@@ -143,10 +143,10 @@ export function ConnectionMoment() {
                 "transform 1.35s cubic-bezier(0.25,0.46,0.45,0.94), opacity 0.9s",
             }}
           >
-            <BlueprintHalf />
+            <ImageFrame src={VISION_IMG} alt="Concept design by Team One Architects" vision />
             <div
-              className="mt-2.5 text-center text-[9px] uppercase tracking-[0.22em]"
-              style={{ color: "var(--blueprint)", fontFamily: "ui-monospace, monospace" }}
+              className="absolute bottom-3 left-3 text-[9px] uppercase tracking-[0.22em]"
+              style={{ color: "var(--foreground)", fontFamily: "ui-monospace, monospace" }}
             >
               Your Vision
             </div>
@@ -154,7 +154,7 @@ export function ConnectionMoment() {
 
           {/* Center cornerstone */}
           <div
-            className="relative h-[300px] w-[3px] flex-shrink-0 self-start sm:h-[360px] lg:h-[440px]"
+            className="relative z-10 h-[300px] w-[3px] flex-shrink-0 sm:h-[380px] lg:h-[460px]"
             style={{
               opacity: on ? 1 : 0,
               transition: T ?? "opacity 0.5s 1.1s",
@@ -164,8 +164,8 @@ export function ConnectionMoment() {
               className="h-full w-full"
               style={{
                 background:
-                  "linear-gradient(to bottom, transparent 0%, var(--gold) 25%, var(--gold) 75%, transparent 100%)",
-                boxShadow: "0 0 28px 6px var(--gold-soft)",
+                  "linear-gradient(to bottom, transparent 0%, var(--gold) 20%, var(--gold) 80%, transparent 100%)",
+                boxShadow: "0 0 28px 8px var(--gold-soft)",
               }}
             />
             {/* Spark */}
@@ -190,9 +190,9 @@ export function ConnectionMoment() {
             )}
           </div>
 
-          {/* Right half */}
+          {/* Right frame — the craft */}
           <div
-            className="flex-shrink-0"
+            className="relative h-[300px] w-[40vw] max-w-[420px] flex-shrink-0 sm:h-[380px] lg:h-[460px]"
             style={{
               opacity: on ? 1 : 0,
               transform: on ? "translateX(0)" : "translateX(200px)",
@@ -201,15 +201,16 @@ export function ConnectionMoment() {
                 "transform 1.35s cubic-bezier(0.25,0.46,0.45,0.94) 0.07s, opacity 0.9s 0.07s",
             }}
           >
-            <BlueprintHalf mirror />
+            <ImageFrame src={CRAFT_IMG} alt="Realized interior by Team One Architects" />
             <div
-              className="mt-2.5 text-center text-[9px] uppercase tracking-[0.22em]"
-              style={{ color: "var(--blueprint)", fontFamily: "ui-monospace, monospace" }}
+              className="absolute bottom-3 right-3 text-[9px] uppercase tracking-[0.22em]"
+              style={{ color: "var(--foreground)", fontFamily: "ui-monospace, monospace" }}
             >
-              Our Expertise
+              Our Craft
             </div>
           </div>
         </div>
+
 
         {/* Copy */}
         <div
