@@ -1,209 +1,210 @@
-import { useRef } from "react";
-import { motion, useInView, useReducedMotion } from "motion/react";
-import { heroSlides } from "@/data/home";
+import { useEffect, useRef, useState } from "react";
+import { Link } from "@tanstack/react-router";
+import { useReducedMotion } from "motion/react";
 
 /**
- * "We design as one" — a sketch → built reveal.
- * A loose, rough, hand-drawn architectural sketch draws itself line by line,
- * then dissolves into the real built photograph: from drawing to reality.
+ * "Where Vision Meets Craft" — two mirrored blueprint halves slide in from the
+ * edges and join at a glowing gold cornerstone (spark + ring pop), then the
+ * supporting copy resolves. Triggered once when scrolled into view.
  */
 
-// Landscape project photo so nothing is cropped inside the frame.
-const BUILT_IMAGE = heroSlides[0].image;
+function BlueprintHalf({ mirror = false }: { mirror?: boolean }) {
+  return (
+    <svg
+      viewBox="0 0 330 470"
+      width="310"
+      height="440"
+      className="h-auto w-[220px] sm:w-[260px] lg:w-[310px]"
+      style={mirror ? { transform: "scaleX(-1)" } : undefined}
+    >
+      <path d="M 38 440 L 38 25" fill="none" stroke="var(--blueprint)" strokeWidth="2.4" strokeLinecap="round" />
+      <path d="M 38 25 L 330 25" fill="none" stroke="var(--blueprint)" strokeWidth="2.4" />
+      <path d="M 0 440 L 330 440" fill="none" stroke="var(--blueprint)" strokeWidth="2.4" />
+      <path
+        d="M 38 372 L 330 372 M 38 304 L 330 304 M 38 236 L 330 236 M 38 168 L 330 168 M 38 100 L 330 100"
+        fill="none"
+        stroke="var(--blueprint-dim)"
+        strokeWidth="1"
+        strokeDasharray="8 5"
+      />
+      {[384, 316, 248, 180, 112].map((y) => (
+        <path
+          key={y}
+          d={`M 52 ${y} L 98 ${y} L 98 ${y + 38} L 52 ${y + 38} Z M 114 ${y} L 160 ${y} L 160 ${y + 38} L 114 ${y + 38} Z M 176 ${y} L 222 ${y} L 222 ${y + 38} L 176 ${y + 38} Z M 238 ${y} L 284 ${y} L 284 ${y + 38} L 238 ${y + 38} Z`}
+          fill="none"
+          stroke="var(--blueprint)"
+          strokeWidth="1.2"
+        />
+      ))}
+      <path
+        d="M 180 372 L 180 440 M 260 372 L 260 440 M 220 372 L 220 410 L 260 410"
+        fill="none"
+        stroke="var(--blueprint)"
+        strokeWidth="1.3"
+      />
+      <path d="M 30 25 L 30 10 L 330 10" fill="none" stroke="var(--blueprint)" strokeWidth="1.5" />
+    </svg>
+  );
+}
 
 export function ConnectionMoment() {
   const reduce = useReducedMotion();
-  const ref = useRef<HTMLDivElement>(null);
-  const inView = useInView(ref, { once: true, amount: 0.4 });
-  const active = reduce || inView;
+  const sectionRef = useRef<HTMLElement>(null);
+  const [on, setOn] = useState(false);
 
-  // self-drawing stroke helper
-  const draw = (delay: number, duration = 1.1, opacity = 1) => ({
-    initial: { pathLength: 0, opacity: 0 },
-    animate: active ? { pathLength: 1, opacity } : {},
-    transition: {
-      pathLength: { duration: reduce ? 0 : duration, delay: reduce ? 0 : delay, ease: "easeInOut" as const },
-      opacity: { duration: reduce ? 0 : 0.25, delay: reduce ? 0 : delay },
-    },
-  });
+  useEffect(() => {
+    if (reduce) {
+      setOn(true);
+      return;
+    }
+    const el = sectionRef.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(
+      ([e]) => {
+        if (e.isIntersecting) {
+          setOn(true);
+          obs.disconnect();
+        }
+      },
+      { threshold: 0.22 },
+    );
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, [reduce]);
 
-  const pencil = {
-    fill: "none",
-    stroke: "var(--gold)",
-    strokeLinecap: "round" as const,
-    strokeLinejoin: "round" as const,
-    vectorEffect: "non-scaling-stroke" as const,
-  };
-
-  // when the photo begins developing in under the sketch (overlaps the last strokes)
-  const revealAt = reduce ? 0 : 1.55;
+  const T = reduce ? "none" : undefined;
 
   return (
-    <section ref={ref} className="relative w-full overflow-hidden bg-background py-24 md:py-32">
-      {/* Big blueprint grid backdrop */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 opacity-[0.14]"
-        style={{
-          backgroundImage:
-            "linear-gradient(var(--gold-soft) 1px, transparent 1px), linear-gradient(90deg, var(--gold-soft) 1px, transparent 1px)",
-          backgroundSize: "96px 96px",
-        }}
-      />
-
-      <div className="relative mx-auto w-full max-w-5xl px-6">
-        {/* Drawing-board frame — capped to the viewport so nothing is cut off */}
-        <div className="relative mx-auto aspect-[16/9] max-h-[78vh] w-full overflow-hidden rounded-sm border border-border/60 bg-card/40">
-          {/* Layer 2 — built photo (develops in under the sketch, fully contained) */}
-          <motion.img
-            src={BUILT_IMAGE}
-            alt="A Team One Architects project, realised"
-            loading="lazy"
-            className="absolute inset-0 h-full w-full object-contain"
-            initial={{ opacity: 0, filter: "grayscale(1) blur(9px)", scale: 1.05 }}
-            animate={
-              active
-                ? { opacity: 1, filter: "grayscale(0) blur(0px)", scale: 1 }
-                : {}
-            }
-            transition={{ duration: reduce ? 0 : 1.7, delay: revealAt, ease: [0.22, 1, 0.36, 1] }}
-          />
-          {/* soft darkening so the sketch & spark read on top of the photo */}
-          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/55 via-transparent to-background/25" />
-
-          {/* Gold wipe line sweeping down as the photo resolves */}
-          <motion.div
-            aria-hidden
-            className="pointer-events-none absolute left-0 h-px w-full bg-gold shadow-[0_0_18px_2px_var(--gold-soft)]"
-            initial={{ top: "0%", opacity: 0 }}
-            animate={active ? { top: ["0%", "100%"], opacity: [0, 1, 1, 0] } : {}}
-            transition={{ duration: reduce ? 0 : 1.4, delay: revealAt, ease: "easeInOut" }}
-          />
-
-          {/* Layer 1 — loose hand-drawn sketch (fades down concurrently, lingers faintly) */}
-          <motion.div
-            className="absolute inset-0"
-            initial={{ opacity: 1 }}
-            animate={active ? { opacity: 0.1 } : {}}
-            transition={{ duration: reduce ? 0 : 1.6, delay: revealAt, ease: "easeInOut" }}
+    <section
+      ref={sectionRef}
+      id="conn-section"
+      className="overflow-hidden bg-background px-6 pb-28 pt-32 lg:pb-32 lg:pt-36"
+    >
+      <div className="mx-auto max-w-[1160px]">
+        {/* Heading */}
+        <div className="mb-16 text-center lg:mb-20">
+          <div
+            className="mb-3.5 text-[9px] uppercase tracking-[0.26em]"
+            style={{ color: "var(--gold)", fontFamily: "ui-monospace, monospace" }}
           >
-            <svg
-              className="h-full w-full"
-              viewBox="0 0 1000 560"
-              preserveAspectRatio="xMidYMid meet"
-              aria-hidden
-            >
-              <defs>
-                <filter id="pencilWobble" x="-5%" y="-5%" width="110%" height="110%">
-                  <feTurbulence type="fractalNoise" baseFrequency="0.013" numOctaves={2} seed={7} result="noise" />
-                  <feDisplacementMap in="SourceGraphic" in2="noise" scale="5" xChannelSelector="R" yChannelSelector="G" />
-                </filter>
-              </defs>
-
-              <g filter="url(#pencilWobble)">
-                {/* construction / guide lines (draw first, faint, dashed) */}
-                <motion.line x1="60" y1="470" x2="940" y2="470" {...pencil} strokeWidth={1} strokeDasharray="6 10" {...draw(0, 0.5, 0.5)} />
-                <motion.line x1="300" y1="60" x2="300" y2="500" {...pencil} strokeWidth={1} strokeDasharray="6 10" {...draw(0.1, 0.5, 0.4)} />
-                <motion.line x1="120" y1="150" x2="900" y2="150" {...pencil} strokeWidth={1} strokeDasharray="6 10" {...draw(0.15, 0.5, 0.35)} />
-
-                {/* ground line — two rough overlapping strokes */}
-                <motion.line x1="70" y1="475" x2="935" y2="473" {...pencil} strokeWidth={2.4} {...draw(0.35, 0.8)} />
-                <motion.line x1="80" y1="480" x2="945" y2="479" {...pencil} strokeWidth={1.6} {...draw(0.45, 0.8, 0.7)} />
-
-                {/* main tower massing — front face (double stroke, with overshoot) */}
-                <motion.path d="M300 110 L300 478 L640 478 L640 150 Z" {...pencil} strokeWidth={2.6} {...draw(0.55, 1.2)} />
-                <motion.path d="M295 116 L305 470 M634 156 L646 472" {...pencil} strokeWidth={1.5} {...draw(0.75, 1.0, 0.65)} />
-
-                {/* side face (perspective) */}
-                <motion.path d="M640 150 L760 200 L760 478 L640 478" {...pencil} strokeWidth={2.4} {...draw(0.7, 1.1)} />
-                {/* roof line back edge */}
-                <motion.line x1="300" y1="110" x2="420" y2="92" {...pencil} strokeWidth={2} {...draw(0.85, 0.7)} />
-                <motion.line x1="420" y1="92" x2="760" y2="200" {...pencil} strokeWidth={1.8} {...draw(0.95, 0.8, 0.7)} />
-
-                {/* floor plates (front) */}
-                {[180, 250, 320, 390].map((y, i) => (
-                  <motion.line key={`f${y}`} x1="300" y1={y} x2="640" y2={y + 4} {...pencil} strokeWidth={1.4} {...draw(1.15 + i * 0.08, 0.6, 0.8)} />
-                ))}
-                {/* mullions (front) */}
-                {[380, 460, 540].map((x, i) => (
-                  <motion.line key={`m${x}`} x1={x} y1="130" x2={x} y2="478" {...pencil} strokeWidth={1.2} {...draw(1.2 + i * 0.08, 0.6, 0.7)} />
-                ))}
-
-                {/* entrance */}
-                <motion.path d="M440 478 L440 410 L500 410 L500 478" {...pencil} strokeWidth={2} {...draw(1.5, 0.6)} />
-
-                {/* cross-hatching on the shadow (side) face */}
-                {[0, 1, 2, 3, 4, 5].map((i) => (
-                  <motion.line
-                    key={`h${i}`}
-                    x1={660 + i * 18}
-                    y1={478}
-                    x2={700 + i * 18}
-                    y2={210 + i * 6}
-                    {...pencil}
-                    strokeWidth={0.9}
-                    {...draw(1.35 + i * 0.05, 0.45, 0.45)}
-                  />
-                ))}
-
-                {/* context: a loose tree */}
-                <motion.path d="M160 478 L160 405" {...pencil} strokeWidth={2} {...draw(1.45, 0.5, 0.8)} />
-                <motion.path d="M160 410 q-42 -10 -30 -52 q34 -34 64 -2 q40 -2 28 40 q-26 30 -62 14" {...pencil} strokeWidth={1.6} {...draw(1.5, 0.8, 0.7)} />
-
-                {/* context: a quick sun with rays */}
-                <motion.circle cx="850" cy="110" r="34" {...pencil} strokeWidth={1.6} {...draw(1.55, 0.7, 0.7)} />
-                {[0, 45, 90, 135, 180, 225, 270, 315].map((deg, i) => {
-                  const a = (deg * Math.PI) / 180;
-                  return (
-                    <motion.line
-                      key={`r${deg}`}
-                      x1={850 + Math.cos(a) * 44}
-                      y1={110 + Math.sin(a) * 44}
-                      x2={850 + Math.cos(a) * 60}
-                      y2={110 + Math.sin(a) * 60}
-                      {...pencil}
-                      strokeWidth={1.4}
-                      {...draw(1.65 + i * 0.03, 0.3, 0.6)}
-                    />
-                  );
-                })}
-              </g>
-            </svg>
-          </motion.div>
-
-          {/* Spark when the sketch completes */}
-          <motion.div
-            aria-hidden
-            className="pointer-events-none absolute"
+            Partnership
+          </div>
+          <h2
+            className="font-display text-[clamp(2.2rem,4.6vw,3.5rem)] font-light leading-[1.08] text-foreground"
             style={{
-              left: "64%",
-              top: "27%",
-              width: 150,
-              height: 150,
-              transform: "translate(-50%, -50%)",
-              background: "radial-gradient(circle, var(--gold-soft) 0%, transparent 62%)",
+              opacity: on ? 1 : 0,
+              transform: on ? "translateY(0)" : "translateY(22px)",
+              transition: T ?? "opacity 0.8s, transform 0.8s",
             }}
-            initial={{ opacity: 0, scale: 0.4 }}
-            animate={active ? { opacity: [0, 0.9, 0], scale: [0.4, 1.1, 1.3] } : {}}
-            transition={{ duration: reduce ? 0 : 1.2, delay: reduce ? 0 : 1.45, ease: "easeOut" }}
-          />
+          >
+            Where Vision
+            <br />
+            <em className="italic text-gold">Meets Craft</em>
+          </h2>
         </div>
 
-        {/* Tagline */}
-        <motion.div
-          className="mt-10 text-center"
-          initial={{ opacity: 0, y: 22 }}
-          animate={active ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: reduce ? 0 : 0.9, delay: reduce ? 0 : 2.6 }}
+        {/* Joining blueprints */}
+        <div className="relative flex items-end justify-center">
+          {/* Left half */}
+          <div
+            className="flex-shrink-0"
+            style={{
+              opacity: on ? 1 : 0,
+              transform: on ? "translateX(0)" : "translateX(-200px)",
+              transition:
+                T ??
+                "transform 1.35s cubic-bezier(0.25,0.46,0.45,0.94), opacity 0.9s",
+            }}
+          >
+            <BlueprintHalf />
+            <div
+              className="mt-2.5 text-center text-[9px] uppercase tracking-[0.22em]"
+              style={{ color: "var(--blueprint)", fontFamily: "ui-monospace, monospace" }}
+            >
+              Your Vision
+            </div>
+          </div>
+
+          {/* Center cornerstone */}
+          <div
+            className="relative h-[300px] w-[3px] flex-shrink-0 self-start sm:h-[360px] lg:h-[440px]"
+            style={{
+              opacity: on ? 1 : 0,
+              transition: T ?? "opacity 0.5s 1.1s",
+            }}
+          >
+            <div
+              className="h-full w-full"
+              style={{
+                background:
+                  "linear-gradient(to bottom, transparent 0%, var(--gold) 25%, var(--gold) 75%, transparent 100%)",
+                boxShadow: "0 0 28px 6px var(--gold-soft)",
+              }}
+            />
+            {/* Spark */}
+            <div
+              className="absolute left-1/2 top-1/2 h-3.5 w-3.5 -translate-x-1/2 -translate-y-1/2 rounded-full"
+              style={{
+                background: "var(--foreground)",
+                boxShadow: "0 0 24px 8px var(--gold)",
+                opacity: on ? 1 : 0,
+                transition: T ?? "opacity 0.3s 1.4s",
+              }}
+            />
+            {/* Ring pop */}
+            {on && !reduce && (
+              <div
+                className="toa-ring-pop absolute left-1/2 top-1/2 h-9 w-9 rounded-full border"
+                style={{
+                  borderColor: "color-mix(in oklab, var(--gold) 50%, transparent)",
+                  animationDelay: "1.45s",
+                }}
+              />
+            )}
+          </div>
+
+          {/* Right half */}
+          <div
+            className="flex-shrink-0"
+            style={{
+              opacity: on ? 1 : 0,
+              transform: on ? "translateX(0)" : "translateX(200px)",
+              transition:
+                T ??
+                "transform 1.35s cubic-bezier(0.25,0.46,0.45,0.94) 0.07s, opacity 0.9s 0.07s",
+            }}
+          >
+            <BlueprintHalf mirror />
+            <div
+              className="mt-2.5 text-center text-[9px] uppercase tracking-[0.22em]"
+              style={{ color: "var(--blueprint)", fontFamily: "ui-monospace, monospace" }}
+            >
+              Our Expertise
+            </div>
+          </div>
+        </div>
+
+        {/* Copy */}
+        <div
+          className="mt-16 text-center lg:mt-20"
+          style={{
+            opacity: on ? 1 : 0,
+            transform: on ? "translateY(0)" : "translateY(18px)",
+            transition: T ?? "opacity 0.7s 1.7s, transform 0.7s 1.7s",
+          }}
         >
-          <p className="text-xs font-medium uppercase tracking-[0.42em] text-gold">Design, realised</p>
-          <h2 className="font-display mt-5 text-4xl font-light tracking-tight text-foreground sm:text-5xl">
-            We design as one
-          </h2>
-          <p className="mx-auto mt-4 max-w-md text-sm text-muted-foreground">
-            Where the drawing becomes the building.
+          <p className="mx-auto mb-9 max-w-xl text-xl font-light italic leading-relaxed text-muted-foreground sm:text-2xl">
+            From the first conversation to the final cornerstone — every great
+            project is built on a foundation of trust.
           </p>
-        </motion.div>
+          <Link
+            to="/portfolio"
+            className="border-b pb-1 text-[10px] uppercase tracking-[0.16em] text-gold transition-opacity hover:opacity-70"
+            style={{ borderColor: "color-mix(in oklab, var(--gold) 30%, transparent)" }}
+          >
+            Start Your Project →
+          </Link>
+        </div>
       </div>
     </section>
   );
