@@ -1,52 +1,41 @@
-## Goal
+# Adopt the uploaded blueprint→building hero into the homepage
 
-Two polish fixes on the homepage cinematic sequence:
-1. The first screen shown right after the intro loader is blank — the blueprint/sketch build-up should already be drawing from the very first frame.
-2. In the "We design as one" section, the sketch jumps abruptly into the photo and the photo gets cropped — make the transition smooth and keep the whole reveal contained in view without cutting the image.
+Port the exact design and animation from your standalone HTML into the React/TanStack homepage, re-skinned to the TOA theme tokens (dark canvas, bronze-gold accent, project fonts, real TOA logo). The current broken `Hero` and `ConnectionMoment` are replaced with faithful ports.
 
----
+## What the design does (from the file)
+1. **Logo overlay** — TOA mark fills from the bottom, glows, tagline appears, overlay lifts, nav fades in.
+2. **Hero (350vh, sticky)** — two columns:
+   - *Left:* pulsing blueprint grid + an SVG building (viewBox 800×580) that draws itself across **8 scroll stages** (ground → outline → floors → entrance+windows → upper floors → roof/penthouse → dimensions/stamp). Lines shift from draft tone to brand color near 100%, with "PROPOSED ELEVATION" stamp, dimension labels (H/W/scale), and a changing caption.
+   - *Right:* 4 crossfading text phases (01 Vision → 02 Blueprint → 03 Craft → 04 Realized) with a vertical progress bar + glowing pip and a scroll cue.
+3. **Connection section** — "Where Vision Meets Craft": two mirrored blueprint halves slide in from the sides, a gold beam + spark + ring pop where they meet, then the copy fades up. Triggered on scroll-into-view.
 
-## 1. Start the sketch build-up from the first frame (`src/components/home/Hero.tsx`)
+## Theme adaptation (re-skin, keep the motion)
+- **Colors:** map the design's `#050d1a` canvas → `var(--background)`; the orange `#E87722` accent → `var(--gold)`. Blueprint lines use a subdued cool draft tone, then shift to `var(--gold)` at completion so the "cold draft → warm realized" payoff is preserved but lands on brand. (Single source tone; easy to make fully gold if you prefer.)
+- **Fonts:** headlines use the project display font (`--font-display`/Outfit), body uses `--font-sans` (Figtree). The small technical labels keep a monospace stack (`ui-monospace`) for the architectural feel — no new web fonts added.
+- **Logo:** the fill-up uses the real `toa-logo.png` (clip-path reveal), not the orange "TOA" square.
+- All colors via semantic tokens — works in both dark and existing light theme.
 
-**Why it's blank now:** The hero is a 300vh scroll-pinned journey where every visual is driven purely by `scrollYProgress`, which is `0` on load:
-- blueprint `pathLength` (`0 → 0.45`) = `0`, so no lines are drawn yet
-- photo opacity (`0.35 → 0.8`) = `0`
-- headline opacity (`0.72 → 0.95`) = `0`
+## Files
 
-So right after the loader lifts, the user sees an empty dark canvas with only the faint grid until they scroll.
+### `src/components/home/Hero.tsx` (rewrite)
+- Section `h-[350vh]` with inner `sticky top-0 h-screen` two-column flex (matches the source).
+- Port the SVG building markup verbatim (all `data-stage` paths) into JSX, restyled with tokens via a `.bp-path` class in `styles.css`.
+- Drive animation with the source's proven approach (avoids the earlier framer-motion functional-transform bug): a `useEffect` measures each path's `getTotalLength()` and seeds `strokeDasharray/Offset`; a rAF-throttled `scroll` listener computes section progress `sp` and updates per-stage `stageProg`, the draft→gold color shift, dimension/stamp opacity, the changing caption, the 4-phase text crossfade, and the progress pip — a 1:1 port of the `updatePaths/updateText/updateIndicator` logic.
+- Right column copy reused from your phases; "View Portfolio" CTA links to `/portfolio`.
+- **Mobile:** stack to single column, reduce section to ~250vh, shrink type; blueprint sits above copy.
+- **Reduced motion:** render the final drawn building + phase-04 copy statically, no pinning.
 
-**Fix — the blueprint draws itself starting on the first frame, then scroll continues the journey:**
-- Add a mount-time animation (a `useMotionValue` driven by `animate()` from `motion/react`, kicked off in `useEffect`) that begins drawing the blueprint line-art the moment the hero appears — the build-up starts from frame one, over ~1.6s, with no scroll required.
-- Drive the blueprint `pathLength` from the **max** of this mount-draw progress and the scroll progress, so the lines draw on load and stay drawn (and continue) as the user scrolls into the photo stage.
-- Fade in the headline + "Inspiring Spaces Since 2001" eyebrow on mount as well, so the first screen already has copy plus the actively-drawing blueprint — never blank.
-- Leave the scroll-driven photo reveal (blueprint → building) intact for the rest of the journey.
-- Keep the reduced-motion branch unchanged (it already shows a static finished hero).
+### `src/components/home/IntroOverlay.tsx` (align)
+- Keep as the logo intro but match the new fill timing/glow and hand off cleanly into the hero (it already uses the real logo + clip-path fill). Nav/Header reveals after dismiss.
 
-Result: the instant the loader lifts, the blueprint is already building itself with the headline visible, and scrolling still plays the full blueprint-to-building journey.
+### `src/components/home/ConnectionMoment.tsx` (rewrite)
+- Port the "Where Vision Meets Craft" section: two mirrored blueprint SVG halves, center gold beam, spark, and ring pop. Use an `IntersectionObserver` (or framer `useInView`) to fire the staggered timeline. Restyle to tokens; "Your Vision" / "Our Expertise" captions kept; CTA → `/portfolio`.
 
----
+### `src/styles.css`
+- Add `.bp-path` base styles (stroke, width, linecaps, `.thick`, `.dim` dashed) and the `gridPulse` / `pipGlow` / `sparkPop` keyframes, all using tokens.
 
-## 2. Smooth, contained, uncropped reveal (`src/components/home/ConnectionMoment.tsx`)
+### `src/routes/index.tsx`
+- No structural change — `Hero` and `ConnectionMoment` keep their slots; downstream sections (StatsAbout, ProjectsGallery, Responsibilities, Testimonials, Insights) and existing Header/Footer remain. The design's own footer-CTA block is not added (project already has a Footer).
 
-**Why it looks abrupt / cropped:**
-- The built photo is a **square** `VIEW-1-650x650.png` placed in a **16:9** frame with `object-cover`, so it's hard-cropped top/bottom (the "cut" the user sees).
-- The photo fades in on a single opacity step at `revealAt` (1.9s) while the sketch only dims to `0.16` — the two layers don't truly crossfade, so it reads as a sudden swap.
-- A tall 16:9 frame inside `max-w-5xl` can also exceed the viewport on smaller screens.
-
-**Fix — developing-photo crossfade, matched aspect, capped to viewport:**
-- Use a landscape source so nothing is cropped (e.g. `heroSlides[0]` from `home.ts`, a wide project image) and/or switch the image to `object-contain` so the full built image is always shown, not cut.
-- Match the frame's aspect ratio to the image and cap it with `max-h-[78vh]` (plus `mx-auto`) so the entire reveal — sketch and photo — stays within the screen on all sizes.
-- Replace the single hard fade with an overlapping crossfade timeline so it "develops" smoothly instead of swapping:
-  - the photo eases in over a longer duration (~1.4–1.6s) from grayscale+blur to full color/sharp,
-  - the sketch fades down **concurrently** (and lingers very faintly as a draft overlay rather than snapping off),
-  - soften/slow the gold wipe line and spark so they read as part of one continuous reveal, not a cut.
-- Keep the loose hand-drawn sketch, the wobble filter, the blueprint grid backdrop, and the tagline timing as-is.
-
-Result: the sketch gently resolves into the full, uncropped building photo, and the whole moment fits on screen.
-
----
-
-## Technical notes
-- Both files already use `motion/react`; the mount draw uses `useMotionValue` + `animate()`, combined with the existing `useTransform` scroll values (via a `useTransform([...], ...)` max, or by reading both into a combined motion value).
-- No data-model or routing changes; this is presentation-only.
-- Verify with a Playwright pass: (a) screenshot the first frames immediately after the loader dismisses to confirm the blueprint is actively drawing (not blank), and (b) capture the ConnectionMoment mid- and end-reveal in both dark and light themes to confirm the photo is uncropped and the crossfade is gradual.
+## Verification
+Drive the live preview with Playwright in both themes: capture the logo fill, hero at scroll 0 / ~30% / ~65% / 100% (building drawn + gold shift + stamp + phase-04 copy), and the connection spark. Confirm no blank first frame and that mobile stacks correctly.
