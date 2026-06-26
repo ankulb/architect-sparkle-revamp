@@ -185,7 +185,7 @@ export function ConnectionMoment() {
             }}
             initial={{ opacity: 0, scale: 0.4 }}
             animate={active ? { opacity: [0, 0.9, 0], scale: [0.4, 1.1, 1.3] } : {}}
-            transition={{ duration: reduce ? 0 : 1, delay: reduce ? 0 : 1.7, ease: "easeOut" }}
+            transition={{ duration: reduce ? 0 : 1.2, delay: reduce ? 0 : 1.45, ease: "easeOut" }}
           />
         </div>
 
