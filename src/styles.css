@@ -78,6 +78,10 @@
   --gold: oklch(0.76 0.092 78);
   --gold-soft: oklch(0.76 0.092 78 / 0.16);
 
+  /* Cool "draft" tone for blueprint line-art (shifts to gold when "realized"). */
+  --blueprint: oklch(0.7 0.06 235);
+  --blueprint-dim: oklch(0.45 0.04 240);
+
   --destructive: oklch(0.62 0.21 25);
   --destructive-foreground: oklch(0.965 0.004 90);
   --border: oklch(1 0 0 / 10%);
@@ -114,6 +118,10 @@ html.light {
 
   --gold: oklch(0.6 0.1 68);
   --gold-soft: oklch(0.6 0.1 68 / 0.14);
+
+  /* On paper, the draft tone reads as a deeper slate-blue. */
+  --blueprint: oklch(0.5 0.07 240);
+  --blueprint-dim: oklch(0.72 0.04 240);
 
   --destructive: oklch(0.58 0.21 25);
   --destructive-foreground: oklch(0.98 0.003 90);
@@ -196,4 +204,64 @@ html.light {
     width: 100%;
     justify-content: center;
   }
+}
+
+/* ── Blueprint hero: line-art that draws itself on scroll ───────────────── */
+.bp-path {
+  fill: none;
+  stroke: var(--blueprint);
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.bp-path.thick { stroke-width: 2.2; }
+.bp-path.dim {
+  stroke: var(--blueprint-dim);
+  stroke-width: 1;
+  stroke-dasharray: 6 5;
+}
+
+/* Crossfading text phases in the hero's right column */
+.hero-phase {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(calc(-50% + 28px));
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+.hero-phase.active {
+  opacity: 1;
+  transform: translateY(-50%);
+  pointer-events: auto;
+}
+.hero-phase.past {
+  opacity: 0;
+  transform: translateY(calc(-50% - 28px));
+}
+
+@keyframes toa-grid-pulse {
+  0%, 100% { opacity: 0.04; }
+  50% { opacity: 0.09; }
+}
+@keyframes toa-pip-glow {
+  0%, 100% { box-shadow: 0 0 8px 2px var(--gold-soft); }
+  50% { box-shadow: 0 0 18px 6px var(--gold); }
+}
+.toa-pip-glow { animation: toa-pip-glow 2s ease-in-out infinite; }
+
+/* Cornerstone ring pop where "vision" meets "craft" */
+@keyframes toa-ring-pop {
+  0% { transform: translate(-50%, -50%) scale(0); opacity: 0; }
+  35% { opacity: 1; }
+  100% { transform: translate(-50%, -50%) scale(2.4); opacity: 0; }
+}
+.toa-ring-pop { animation: toa-ring-pop 0.9s cubic-bezier(0.1, 0.8, 0.3, 1) forwards; }
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-phase { transition: none; }
+  .toa-pip-glow { animation: none; }
+  .toa-ring-pop { animation: none; }
 }
