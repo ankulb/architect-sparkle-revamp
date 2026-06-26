@@ -1,51 +1,52 @@
 ## Goal
-Replace the current hand+pencil "reaching" graphic in the "We design as one" section with a **sketch → built reveal**: a loose, rough, hand-drawn architectural sketch of a building draws itself line-by-line as the section scrolls into view, then dissolves/refines into the actual built photograph — visualising "from drawing to reality."
 
-## File touched
-- `src/components/home/ConnectionMoment.tsx` (full rewrite; no other files change)
-- Reuse an existing building exterior already in `src/data/home.ts` (e.g. the Commercial Office Building / MMRDA exterior `VIEW-1` / `R3A8108`) as the "built" image — no new assets needed.
+Two polish fixes on the homepage cinematic sequence:
+1. The first screen shown right after the intro loader is blank — the blueprint/sketch build-up should already be drawing from the very first frame.
+2. In the "We design as one" section, the sketch jumps abruptly into the photo and the photo gets cropped — make the transition smooth and keep the whole reveal contained in view without cutting the image.
 
-## Visual concept
-A single centered "drawing board" frame (max-w ~5xl, ~58vh tall) containing two stacked layers:
+---
 
-```text
- ┌───────────────────────────────────────┐
- │  (1) loose pencil sketch — draws in    │   phase 1
- │  (2) real built photo — fades up over  │   phase 2
- │      the sketch, grayscale→color       │
- └───────────────────────────────────────┘
-        DESIGN, REALISED
-        We design as one
-   Where the drawing becomes the building.
-```
+## 1. Start the sketch build-up from the first frame (`src/components/home/Hero.tsx`)
 
-### Layer 1 — the loose hand-drawn sketch (SVG)
-- A building **elevation/perspective** built from `motion.path`/`motion.line` using `pathLength` 0→1 (self-drawing), staggered delays so it draws like someone sketching: ground line first, massing box, floor plates, mullions, entrance, a few context strokes (ground hatching, a tree, sun rays).
-- **Loose & rough feel:**
-  - Apply an SVG `feTurbulence` + `feDisplacementMap` filter to the whole sketch group for a subtly wobbly, hand-drawn wobble.
-  - Each main edge drawn as **2 slightly offset overlapping strokes** with small overshoot past corners (construction-line look).
-  - Thin dashed **construction/guide lines** that draw first, plus light **cross-hatching** for shadow faces.
-  - `strokeLinecap/Join: round`, `vectorEffect: non-scaling-stroke`, stroke = `var(--gold)` warm pencil tone, slightly varied opacity per stroke.
-- A small **pencil-tip dot** travels along the leading stroke while drawing (offsetPath/keyframes), then a quick gold spark when the sketch completes.
+**Why it's blank now:** The hero is a 300vh scroll-pinned journey where every visual is driven purely by `scrollYProgress`, which is `0` on load:
+- blueprint `pathLength` (`0 → 0.45`) = `0`, so no lines are drawn yet
+- photo opacity (`0.35 → 0.8`) = `0`
+- headline opacity (`0.72 → 0.95`) = `0`
 
-### Layer 2 — the built reveal
-- The real building photo sits in the same frame, initially `opacity 0`, grayscale + slight blur.
-- Once the sketch finishes (~70% through the sequence) the photo **crossfades up** while transitioning grayscale→color and blur→sharp; the sketch lines simultaneously fade to ~15% so faint draft lines linger over the photo (the "drawing behind the building").
-- A thin gold **wipe line** sweeps top→bottom as the photo resolves, reinforcing the reveal.
+So right after the loader lifts, the user sees an empty dark canvas with only the faint grid until they scroll.
 
-### Copy (kept, lightly updated)
-- Eyebrow: `DESIGN, REALISED`
-- Heading: `We design as one`
-- Sub: `Where the drawing becomes the building.`
+**Fix — the blueprint draws itself starting on the first frame, then scroll continues the journey:**
+- Add a mount-time animation (a `useMotionValue` driven by `animate()` from `motion/react`, kicked off in `useEffect`) that begins drawing the blueprint line-art the moment the hero appears — the build-up starts from frame one, over ~1.6s, with no scroll required.
+- Drive the blueprint `pathLength` from the **max** of this mount-draw progress and the scroll progress, so the lines draw on load and stay drawn (and continue) as the user scrolls into the photo stage.
+- Fade in the headline + "Inspiring Spaces Since 2001" eyebrow on mount as well, so the first screen already has copy plus the actively-drawing blueprint — never blank.
+- Leave the scroll-driven photo reveal (blueprint → building) intact for the rest of the journey.
+- Keep the reduced-motion branch unchanged (it already shows a static finished hero).
 
-## Motion / triggering
-- Trigger with `useInView(once, amount: 0.4)` (same as today) so it plays when scrolled into view.
-- Sequence ~2.6s: guides (0–0.4s) → main sketch strokes (0.3–1.6s) → hatching/details (1.2–1.8s) → spark (1.7s) → photo crossfade + wipe (1.8–2.6s) → tagline rises (2.2s).
-- Full `useReducedMotion` support: skip drawing/wipe, show the resolved photo with faint sketch overlay and the tagline immediately.
+Result: the instant the loader lifts, the blueprint is already building itself with the headline visible, and scrolling still plays the full blueprint-to-building journey.
 
-## Theme / tokens
-- Use existing semantic tokens only (`--gold`, `--gold-soft`, `--foreground`, `--muted-foreground`, `--background`); keep the big 96px blueprint grid backdrop already in the section. Works in both dark and light themes.
+---
 
-## Verification
-- `npx tsgo --noEmit`.
-- Playwright: scroll the section into view at 2–3 timestamps and screenshot to confirm (a) the rough sketch draws, (b) it dissolves into the built photo, (c) tagline reads clearly, in both dark and light themes.
+## 2. Smooth, contained, uncropped reveal (`src/components/home/ConnectionMoment.tsx`)
+
+**Why it looks abrupt / cropped:**
+- The built photo is a **square** `VIEW-1-650x650.png` placed in a **16:9** frame with `object-cover`, so it's hard-cropped top/bottom (the "cut" the user sees).
+- The photo fades in on a single opacity step at `revealAt` (1.9s) while the sketch only dims to `0.16` — the two layers don't truly crossfade, so it reads as a sudden swap.
+- A tall 16:9 frame inside `max-w-5xl` can also exceed the viewport on smaller screens.
+
+**Fix — developing-photo crossfade, matched aspect, capped to viewport:**
+- Use a landscape source so nothing is cropped (e.g. `heroSlides[0]` from `home.ts`, a wide project image) and/or switch the image to `object-contain` so the full built image is always shown, not cut.
+- Match the frame's aspect ratio to the image and cap it with `max-h-[78vh]` (plus `mx-auto`) so the entire reveal — sketch and photo — stays within the screen on all sizes.
+- Replace the single hard fade with an overlapping crossfade timeline so it "develops" smoothly instead of swapping:
+  - the photo eases in over a longer duration (~1.4–1.6s) from grayscale+blur to full color/sharp,
+  - the sketch fades down **concurrently** (and lingers very faintly as a draft overlay rather than snapping off),
+  - soften/slow the gold wipe line and spark so they read as part of one continuous reveal, not a cut.
+- Keep the loose hand-drawn sketch, the wobble filter, the blueprint grid backdrop, and the tagline timing as-is.
+
+Result: the sketch gently resolves into the full, uncropped building photo, and the whole moment fits on screen.
+
+---
+
+## Technical notes
+- Both files already use `motion/react`; the mount draw uses `useMotionValue` + `animate()`, combined with the existing `useTransform` scroll values (via a `useTransform([...], ...)` max, or by reading both into a combined motion value).
+- No data-model or routing changes; this is presentation-only.
+- Verify with a Playwright pass: (a) screenshot the first frames immediately after the loader dismisses to confirm the blueprint is actively drawing (not blank), and (b) capture the ConnectionMoment mid- and end-reveal in both dark and light themes to confirm the photo is uncropped and the crossfade is gradual.
