@@ -2,41 +2,47 @@ import { useRef } from "react";
 import { motion, useInView, useReducedMotion } from "motion/react";
 
 /**
- * "Blueprint meets building" — a connection beat inspired by the reference's
- * reaching-hands moment. A draftsman's hand + pencil (blueprint line-art)
- * reaches in from the left; a rising building reaches back from the right.
- * They meet at a glowing gold spark. Signifies design becoming reality.
+ * "We design as one" — a sketch → built reveal.
+ * A loose, rough, hand-drawn architectural sketch draws itself line by line,
+ * then dissolves into the real built photograph: from drawing to reality.
  */
+
+const BUILT_IMAGE =
+  "https://teamonearchitects.com/wp-content/uploads/2026/03/VIEW-1-650x650.png";
+
 export function ConnectionMoment() {
   const reduce = useReducedMotion();
   const ref = useRef<HTMLDivElement>(null);
-  const inView = useInView(ref, { once: true, amount: 0.5 });
+  const inView = useInView(ref, { once: true, amount: 0.4 });
   const active = reduce || inView;
 
-  const stroke = "var(--gold)";
-  const draw = (delay: number) => ({
+  // self-drawing stroke helper
+  const draw = (delay: number, duration = 1.1, opacity = 1) => ({
     initial: { pathLength: 0, opacity: 0 },
-    animate: active ? { pathLength: 1, opacity: 1 } : {},
-    transition: { duration: reduce ? 0 : 1.4, delay: reduce ? 0 : delay, ease: "easeInOut" as const },
+    animate: active ? { pathLength: 1, opacity } : {},
+    transition: {
+      pathLength: { duration: reduce ? 0 : duration, delay: reduce ? 0 : delay, ease: "easeInOut" as const },
+      opacity: { duration: reduce ? 0 : 0.25, delay: reduce ? 0 : delay },
+    },
   });
-  const lineStyle = {
+
+  const pencil = {
     fill: "none",
-    stroke,
-    strokeWidth: 2,
+    stroke: "var(--gold)",
     strokeLinecap: "round" as const,
     strokeLinejoin: "round" as const,
     vectorEffect: "non-scaling-stroke" as const,
   };
 
+  // when the sketch has finished and the photo takes over
+  const revealAt = reduce ? 0 : 1.9;
+
   return (
-    <section
-      ref={ref}
-      className="relative w-full overflow-hidden bg-background py-28 md:py-40"
-    >
-      {/* Blueprint grid backdrop */}
+    <section ref={ref} className="relative w-full overflow-hidden bg-background py-24 md:py-32">
+      {/* Big blueprint grid backdrop */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 opacity-[0.16]"
+        className="pointer-events-none absolute inset-0 opacity-[0.14]"
         style={{
           backgroundImage:
             "linear-gradient(var(--gold-soft) 1px, transparent 1px), linear-gradient(90deg, var(--gold-soft) 1px, transparent 1px)",
@@ -44,102 +50,160 @@ export function ConnectionMoment() {
         }}
       />
 
-      <div className="relative mx-auto h-[260px] w-full max-w-6xl px-6 md:h-[340px]">
-        <svg
-          className="absolute inset-0 h-full w-full"
-          viewBox="0 0 1000 400"
-          preserveAspectRatio="xMidYMid meet"
-          aria-hidden
-        >
-          {/* LEFT — pencil + hand reaching toward center */}
-          <motion.g
-            initial={{ x: -60, opacity: 0 }}
-            animate={active ? { x: 0, opacity: 1 } : {}}
-            transition={{ duration: reduce ? 0 : 1.1, ease: [0.22, 1, 0.36, 1] }}
-          >
-            {/* pencil body */}
-            <motion.line x1="120" y1="250" x2="430" y2="195" {...lineStyle} {...draw(0.1)} />
-            <motion.line x1="118" y1="262" x2="428" y2="207" {...lineStyle} {...draw(0.15)} />
-            {/* pencil tip */}
-            <motion.path d="M430 195 L470 198 L430 207 Z" {...lineStyle} {...draw(0.5)} />
-            {/* hand outline gripping pencil */}
-            <motion.path
-              d="M90 235 q-40 6 -55 34 q-8 18 6 30 q22 18 64 8 q34 -8 48 -30"
-              {...lineStyle}
-              {...draw(0.25)}
-            />
-            <motion.path d="M104 250 q-14 12 -10 30" {...lineStyle} {...draw(0.35)} />
-            <motion.path d="M126 252 q-12 16 -6 34" {...lineStyle} {...draw(0.4)} />
-          </motion.g>
-
-          {/* RIGHT — rising building reaching toward center */}
-          <motion.g
-            initial={{ x: 60, opacity: 0 }}
-            animate={active ? { x: 0, opacity: 1 } : {}}
-            transition={{ duration: reduce ? 0 : 1.1, ease: [0.22, 1, 0.36, 1] }}
-          >
-            {/* tower envelope */}
-            <motion.path d="M560 205 L660 175 L880 175 L880 360 L560 360 Z" {...lineStyle} {...draw(0.2)} />
-            {/* floor plates */}
-            <motion.line x1="560" y1="245" x2="880" y2="245" {...lineStyle} {...draw(0.45)} />
-            <motion.line x1="560" y1="285" x2="880" y2="285" {...lineStyle} {...draw(0.55)} />
-            <motion.line x1="560" y1="325" x2="880" y2="325" {...lineStyle} {...draw(0.65)} />
-            {/* mullions */}
-            <motion.line x1="640" y1="180" x2="640" y2="360" {...lineStyle} {...draw(0.5)} />
-            <motion.line x1="720" y1="175" x2="720" y2="360" {...lineStyle} {...draw(0.6)} />
-            <motion.line x1="800" y1="175" x2="800" y2="360" {...lineStyle} {...draw(0.7)} />
-            {/* reaching cantilever toward center */}
-            <motion.line x1="560" y1="205" x2="490" y2="200" {...lineStyle} {...draw(0.5)} />
-          </motion.g>
-
-          {/* Spark at the meeting point */}
-          <motion.circle
-            cx="480"
-            cy="199"
-            r="6"
-            fill={stroke}
-            initial={{ scale: 0, opacity: 0 }}
-            animate={active ? { scale: 1, opacity: 1 } : {}}
-            transition={{ duration: 0.5, delay: reduce ? 0 : 1.3, ease: "backOut" }}
-            style={{ transformOrigin: "480px 199px" }}
+      <div className="relative mx-auto w-full max-w-5xl px-6">
+        {/* Drawing-board frame */}
+        <div className="relative mx-auto aspect-[16/9] w-full overflow-hidden rounded-sm border border-border/60 bg-card/40">
+          {/* Layer 2 — built photo (revealed under the sketch) */}
+          <motion.img
+            src={BUILT_IMAGE}
+            alt="A Team One Architects project, realised"
+            loading="lazy"
+            className="absolute inset-0 h-full w-full object-cover"
+            initial={{ opacity: 0, filter: "grayscale(1) blur(7px)", scale: 1.06 }}
+            animate={
+              active
+                ? { opacity: 1, filter: "grayscale(0) blur(0px)", scale: 1 }
+                : {}
+            }
+            transition={{ duration: reduce ? 0 : 1.1, delay: revealAt, ease: [0.22, 1, 0.36, 1] }}
           />
-        </svg>
+          {/* soft darkening so the sketch & spark read on top of the photo */}
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/55 via-transparent to-background/25" />
 
-        {/* Spark bloom (DOM glow) */}
+          {/* Gold wipe line sweeping down as the photo resolves */}
+          <motion.div
+            aria-hidden
+            className="pointer-events-none absolute left-0 h-px w-full bg-gold shadow-[0_0_18px_2px_var(--gold-soft)]"
+            initial={{ top: "0%", opacity: 0 }}
+            animate={active ? { top: ["0%", "100%"], opacity: [0, 1, 1, 0] } : {}}
+            transition={{ duration: reduce ? 0 : 0.9, delay: revealAt, ease: "easeInOut" }}
+          />
+
+          {/* Layer 1 — loose hand-drawn sketch */}
+          <motion.div
+            className="absolute inset-0"
+            initial={{ opacity: 1 }}
+            animate={active ? { opacity: 0.16 } : {}}
+            transition={{ duration: reduce ? 0 : 0.8, delay: revealAt }}
+          >
+            <svg
+              className="h-full w-full"
+              viewBox="0 0 1000 560"
+              preserveAspectRatio="xMidYMid meet"
+              aria-hidden
+            >
+              <defs>
+                <filter id="pencilWobble" x="-5%" y="-5%" width="110%" height="110%">
+                  <feTurbulence type="fractalNoise" baseFrequency="0.013" numOctaves={2} seed={7} result="noise" />
+                  <feDisplacementMap in="SourceGraphic" in2="noise" scale="5" xChannelSelector="R" yChannelSelector="G" />
+                </filter>
+              </defs>
+
+              <g filter="url(#pencilWobble)">
+                {/* construction / guide lines (draw first, faint, dashed) */}
+                <motion.line x1="60" y1="470" x2="940" y2="470" {...pencil} strokeWidth={1} strokeDasharray="6 10" {...draw(0, 0.5, 0.5)} />
+                <motion.line x1="300" y1="60" x2="300" y2="500" {...pencil} strokeWidth={1} strokeDasharray="6 10" {...draw(0.1, 0.5, 0.4)} />
+                <motion.line x1="120" y1="150" x2="900" y2="150" {...pencil} strokeWidth={1} strokeDasharray="6 10" {...draw(0.15, 0.5, 0.35)} />
+
+                {/* ground line — two rough overlapping strokes */}
+                <motion.line x1="70" y1="475" x2="935" y2="473" {...pencil} strokeWidth={2.4} {...draw(0.35, 0.8)} />
+                <motion.line x1="80" y1="480" x2="945" y2="479" {...pencil} strokeWidth={1.6} {...draw(0.45, 0.8, 0.7)} />
+
+                {/* main tower massing — front face (double stroke, with overshoot) */}
+                <motion.path d="M300 110 L300 478 L640 478 L640 150 Z" {...pencil} strokeWidth={2.6} {...draw(0.55, 1.2)} />
+                <motion.path d="M295 116 L305 470 M634 156 L646 472" {...pencil} strokeWidth={1.5} {...draw(0.75, 1.0, 0.65)} />
+
+                {/* side face (perspective) */}
+                <motion.path d="M640 150 L760 200 L760 478 L640 478" {...pencil} strokeWidth={2.4} {...draw(0.7, 1.1)} />
+                {/* roof line back edge */}
+                <motion.line x1="300" y1="110" x2="420" y2="92" {...pencil} strokeWidth={2} {...draw(0.85, 0.7)} />
+                <motion.line x1="420" y1="92" x2="760" y2="200" {...pencil} strokeWidth={1.8} {...draw(0.95, 0.8, 0.7)} />
+
+                {/* floor plates (front) */}
+                {[180, 250, 320, 390].map((y, i) => (
+                  <motion.line key={`f${y}`} x1="300" y1={y} x2="640" y2={y + 4} {...pencil} strokeWidth={1.4} {...draw(1.15 + i * 0.08, 0.6, 0.8)} />
+                ))}
+                {/* mullions (front) */}
+                {[380, 460, 540].map((x, i) => (
+                  <motion.line key={`m${x}`} x1={x} y1="130" x2={x} y2="478" {...pencil} strokeWidth={1.2} {...draw(1.2 + i * 0.08, 0.6, 0.7)} />
+                ))}
+
+                {/* entrance */}
+                <motion.path d="M440 478 L440 410 L500 410 L500 478" {...pencil} strokeWidth={2} {...draw(1.5, 0.6)} />
+
+                {/* cross-hatching on the shadow (side) face */}
+                {[0, 1, 2, 3, 4, 5].map((i) => (
+                  <motion.line
+                    key={`h${i}`}
+                    x1={660 + i * 18}
+                    y1={478}
+                    x2={700 + i * 18}
+                    y2={210 + i * 6}
+                    {...pencil}
+                    strokeWidth={0.9}
+                    {...draw(1.35 + i * 0.05, 0.45, 0.45)}
+                  />
+                ))}
+
+                {/* context: a loose tree */}
+                <motion.path d="M160 478 L160 405" {...pencil} strokeWidth={2} {...draw(1.45, 0.5, 0.8)} />
+                <motion.path d="M160 410 q-42 -10 -30 -52 q34 -34 64 -2 q40 -2 28 40 q-26 30 -62 14" {...pencil} strokeWidth={1.6} {...draw(1.5, 0.8, 0.7)} />
+
+                {/* context: a quick sun with rays */}
+                <motion.circle cx="850" cy="110" r="34" {...pencil} strokeWidth={1.6} {...draw(1.55, 0.7, 0.7)} />
+                {[0, 45, 90, 135, 180, 225, 270, 315].map((deg, i) => {
+                  const a = (deg * Math.PI) / 180;
+                  return (
+                    <motion.line
+                      key={`r${deg}`}
+                      x1={850 + Math.cos(a) * 44}
+                      y1={110 + Math.sin(a) * 44}
+                      x2={850 + Math.cos(a) * 60}
+                      y2={110 + Math.sin(a) * 60}
+                      {...pencil}
+                      strokeWidth={1.4}
+                      {...draw(1.65 + i * 0.03, 0.3, 0.6)}
+                    />
+                  );
+                })}
+              </g>
+            </svg>
+          </motion.div>
+
+          {/* Spark when the sketch completes */}
+          <motion.div
+            aria-hidden
+            className="pointer-events-none absolute"
+            style={{
+              left: "64%",
+              top: "27%",
+              width: 150,
+              height: 150,
+              transform: "translate(-50%, -50%)",
+              background: "radial-gradient(circle, var(--gold-soft) 0%, transparent 62%)",
+            }}
+            initial={{ opacity: 0, scale: 0.4 }}
+            animate={active ? { opacity: [0, 0.9, 0], scale: [0.4, 1.1, 1.3] } : {}}
+            transition={{ duration: reduce ? 0 : 1, delay: reduce ? 0 : 1.7, ease: "easeOut" }}
+          />
+        </div>
+
+        {/* Tagline */}
         <motion.div
-          aria-hidden
-          className="pointer-events-none absolute"
-          style={{
-            left: "48%",
-            top: "49%",
-            width: 180,
-            height: 180,
-            transform: "translate(-50%, -50%)",
-            background: "radial-gradient(circle, var(--gold-soft) 0%, transparent 60%)",
-          }}
-          initial={{ opacity: 0, scale: 0.4 }}
-          animate={active ? { opacity: [0, 1, 0.55], scale: 1 } : {}}
-          transition={{ duration: 1.2, delay: reduce ? 0 : 1.3, ease: "easeOut" }}
-        />
+          className="mt-10 text-center"
+          initial={{ opacity: 0, y: 22 }}
+          animate={active ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: reduce ? 0 : 0.9, delay: reduce ? 0 : 2.2 }}
+        >
+          <p className="text-xs font-medium uppercase tracking-[0.42em] text-gold">Design, realised</p>
+          <h2 className="font-display mt-5 text-4xl font-light tracking-tight text-foreground sm:text-5xl">
+            We design as one
+          </h2>
+          <p className="mx-auto mt-4 max-w-md text-sm text-muted-foreground">
+            Where the drawing becomes the building.
+          </p>
+        </motion.div>
       </div>
-
-      {/* Tagline */}
-      <motion.div
-        className="relative mt-10 px-6 text-center"
-        initial={{ opacity: 0, y: 24 }}
-        animate={active ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: reduce ? 0 : 0.9, delay: reduce ? 0 : 1.5 }}
-      >
-        <p className="text-xs font-medium uppercase tracking-[0.42em] text-gold">
-          Design, realised
-        </p>
-        <h2 className="font-display mt-5 text-4xl font-light tracking-tight text-foreground sm:text-5xl">
-          We design as one
-        </h2>
-        <p className="mx-auto mt-4 max-w-md text-sm text-muted-foreground">
-          Where the drawing meets what's built.
-        </p>
-      </motion.div>
     </section>
   );
 }

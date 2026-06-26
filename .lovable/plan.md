@@ -1,55 +1,51 @@
-## Homepage cinematic opening — logo fill-up, blueprint-to-building hero, and a "blueprint meets building" connection moment
+## Goal
+Replace the current hand+pencil "reaching" graphic in the "We design as one" section with a **sketch → built reveal**: a loose, rough, hand-drawn architectural sketch of a building draws itself line-by-line as the section scrolls into view, then dissolves/refines into the actual built photograph — visualising "from drawing to reality."
 
-Three new beats inspired by the reference, themed to TOA's orange-gold brand and the existing dark cinematic system.
+## File touched
+- `src/components/home/ConnectionMoment.tsx` (full rewrite; no other files change)
+- Reuse an existing building exterior already in `src/data/home.ts` (e.g. the Commercial Office Building / MMRDA exterior `VIEW-1` / `R3A8108`) as the "built" image — no new assets needed.
 
-### 1. TOA logo fill-up intro overlay
-
-A full-screen overlay (`#0A0A0B`) that plays on every homepage load, then lifts to reveal the hero.
-
-- New component `src/components/home/IntroOverlay.tsx`, mounted at the top of `src/routes/index.tsx`, fixed `z-[100]`.
-- The TOA logo sits centered. Two stacked copies of the logo:
-  - a dim base copy (~18% opacity) showing the empty silhouette,
-  - a bright orange-gold copy that "fills up" from bottom to top via an animating `clip-path: inset(100% 0 0 0)` → `inset(0 0 0 0)` over ~1.6s, mimicking the liquid welling up in the reference.
-- A soft gold glow pulse and a thin gold meniscus line riding the top of the fill as it rises.
-- Below the logo: a hairline progress bar and the words "TEAM ONE ARCHITECTS" fading in letter-spaced.
-- On completion (~2.2s), the whole overlay slides/fades up and unmounts, revealing the hero. Skippable on click/scroll/Esc.
-- `prefers-reduced-motion`: skip the fill, show the logo briefly, fade out fast.
-
-### 2. Hero: blueprint draws into a completed project (3-screen scroll journey)
-
-Replaces the current crossfading `Hero.tsx` with a tall pinned hero (`300vh` section, sticky inner viewport) driven by `useScroll` scroll progress.
+## Visual concept
+A single centered "drawing board" frame (max-w ~5xl, ~58vh tall) containing two stacked layers:
 
 ```text
-scroll 0% ───────────── 50% ───────────── 100%
-[ blueprint lines draw ] [ photo fades/saturates in ] [ built project, headline settled ]
-   grid + plan + elevation     crossfade + grayscale→color     gold accents + CTA
+ ┌───────────────────────────────────────┐
+ │  (1) loose pencil sketch — draws in    │   phase 1
+ │  (2) real built photo — fades up over  │   phase 2
+ │      the sketch, grayscale→color       │
+ └───────────────────────────────────────┘
+        DESIGN, REALISED
+        We design as one
+   Where the drawing becomes the building.
 ```
 
-- Stage A (0–45%): structural blueprint SVG (floor-plan + elevation line art, reusing the `BlueprintReveal` pathLength-on-scroll pattern) draws itself in gold on the dark grid, dimensions/annotation ticks appearing.
-- Stage B (40–80%): a real completed TOA project photo (from `heroSlides` in `src/data/home.ts`) crossfades over the blueprint, transitioning grayscale→full color and de-blurring — "the drawing becomes the building."
-- Stage C (75–100%): photo fully resolved with cinematic gradient; headline "Designing spaces that work, inspire and endure", the rotating expertise words, and the "Discover the studio" CTA settle into place. A scroll cue + progress rail on the left tracks the journey.
-- `prefers-reduced-motion`: collapse to a static finished hero (photo + headline), no pinning.
+### Layer 1 — the loose hand-drawn sketch (SVG)
+- A building **elevation/perspective** built from `motion.path`/`motion.line` using `pathLength` 0→1 (self-drawing), staggered delays so it draws like someone sketching: ground line first, massing box, floor plates, mullions, entrance, a few context strokes (ground hatching, a tree, sun rays).
+- **Loose & rough feel:**
+  - Apply an SVG `feTurbulence` + `feDisplacementMap` filter to the whole sketch group for a subtly wobbly, hand-drawn wobble.
+  - Each main edge drawn as **2 slightly offset overlapping strokes** with small overshoot past corners (construction-line look).
+  - Thin dashed **construction/guide lines** that draw first, plus light **cross-hatching** for shadow faces.
+  - `strokeLinecap/Join: round`, `vectorEffect: non-scaling-stroke`, stroke = `var(--gold)` warm pencil tone, slightly varied opacity per stroke.
+- A small **pencil-tip dot** travels along the leading stroke while drawing (offsetPath/keyframes), then a quick gold spark when the sketch completes.
 
-### 3. "Blueprint meets building" connection moment
+### Layer 2 — the built reveal
+- The real building photo sits in the same frame, initially `opacity 0`, grayscale + slight blur.
+- Once the sketch finishes (~70% through the sequence) the photo **crossfades up** while transitioning grayscale→color and blur→sharp; the sketch lines simultaneously fade to ~15% so faint draft lines linger over the photo (the "drawing behind the building").
+- A thin gold **wipe line** sweeps top→bottom as the photo resolves, reinforcing the reveal.
 
-A new full-bleed band placed between the hero and `StatsAbout` (a transition beat, like the reference's reaching-hands moment), signifying design becoming reality through partnership.
+### Copy (kept, lightly updated)
+- Eyebrow: `DESIGN, REALISED`
+- Heading: `We design as one`
+- Sub: `Where the drawing becomes the building.`
 
-- New component `src/components/home/ConnectionMoment.tsx` on the dark grid backdrop.
-- From the left edge, a draftsman's hand + pencil drawn as blueprint line-art reaches inward; from the right edge, a built structure / rising building reaches back. As the band scrolls into view they extend toward center and meet at a glowing **gold spark** at the exact touch point (radial gold flare + small particle burst).
-- Centered tagline rises with the meeting: "We design as one." with a supporting line ("Where the drawing meets what's built.").
-- Line-art delivered as inline SVG with `pathLength` draw-in tied to in-view/scroll; gold spark uses the brand `--gold` token with a soft bloom (kept low-intensity so text stays legible, consistent with the earlier glow tuning).
-- `prefers-reduced-motion`: show both sides already met with a static spark and the tagline.
+## Motion / triggering
+- Trigger with `useInView(once, amount: 0.4)` (same as today) so it plays when scrolled into view.
+- Sequence ~2.6s: guides (0–0.4s) → main sketch strokes (0.3–1.6s) → hatching/details (1.2–1.8s) → spark (1.7s) → photo crossfade + wipe (1.8–2.6s) → tagline rises (2.2s).
+- Full `useReducedMotion` support: skip drawing/wipe, show the resolved photo with faint sketch overlay and the tagline immediately.
 
-### Files
+## Theme / tokens
+- Use existing semantic tokens only (`--gold`, `--gold-soft`, `--foreground`, `--muted-foreground`, `--background`); keep the big 96px blueprint grid backdrop already in the section. Works in both dark and light themes.
 
-- New: `src/components/home/IntroOverlay.tsx`, `src/components/home/ConnectionMoment.tsx`
-- Rewrite: `src/components/home/Hero.tsx` (pinned scroll-driven journey)
-- Edit: `src/routes/index.tsx` (mount intro overlay; insert `ConnectionMoment` after `Hero`)
-- Possibly add a small SVG line-art helper (hand/building) inside the connection component; reuse `BlueprintReveal`/`InteractiveGrid`/`GridBackdrop` patterns already in the codebase
-- Reuse existing `--gold` token, Outfit/Figtree fonts, `Reveal`, and `motion/react` — no new dependencies
-
-### Technical notes
-
-- Scroll-pinning uses a `300vh` outer wrapper with a `sticky top-0 h-screen` inner stage and `useScroll({ target, offset })`; all stage transforms derived from one `scrollYProgress` via `useTransform` for smoothness.
-- Intro overlay renders client-side only (guard against SSR/hydration: render after mount) to avoid a flash; body scroll locked while it's visible.
-- All animations honor `useReducedMotion`; color strictly via semantic tokens (no hardcoded hex in components).
+## Verification
+- `npx tsgo --noEmit`.
+- Playwright: scroll the section into view at 2–3 timestamps and screenshot to confirm (a) the rough sketch draws, (b) it dissolves into the built photo, (c) tagline reads clearly, in both dark and light themes.
