@@ -194,7 +194,7 @@ export function ConnectionMoment() {
           className="mt-10 text-center"
           initial={{ opacity: 0, y: 22 }}
           animate={active ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: reduce ? 0 : 0.9, delay: reduce ? 0 : 2.2 }}
+          transition={{ duration: reduce ? 0 : 0.9, delay: reduce ? 0 : 2.6 }}
         >
           <p className="text-xs font-medium uppercase tracking-[0.42em] text-gold">Design, realised</p>
           <h2 className="font-display mt-5 text-4xl font-light tracking-tight text-foreground sm:text-5xl">
