@@ -78,6 +78,10 @@
   --gold: oklch(0.76 0.092 78);
   --gold-soft: oklch(0.76 0.092 78 / 0.16);
 
+  /* Cool "draft" tone for blueprint line-art (shifts to gold when "realized"). */
+  --blueprint: oklch(0.7 0.06 235);
+  --blueprint-dim: oklch(0.45 0.04 240);
+
   --destructive: oklch(0.62 0.21 25);
   --destructive-foreground: oklch(0.965 0.004 90);
   --border: oklch(1 0 0 / 10%);
