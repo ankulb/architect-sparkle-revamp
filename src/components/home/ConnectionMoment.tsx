@@ -52,21 +52,21 @@ export function ConnectionMoment() {
       />
 
       <div className="relative mx-auto w-full max-w-5xl px-6">
-        {/* Drawing-board frame */}
-        <div className="relative mx-auto aspect-[16/9] w-full overflow-hidden rounded-sm border border-border/60 bg-card/40">
-          {/* Layer 2 — built photo (revealed under the sketch) */}
+        {/* Drawing-board frame — capped to the viewport so nothing is cut off */}
+        <div className="relative mx-auto aspect-[16/9] max-h-[78vh] w-full overflow-hidden rounded-sm border border-border/60 bg-card/40">
+          {/* Layer 2 — built photo (develops in under the sketch, fully contained) */}
           <motion.img
             src={BUILT_IMAGE}
             alt="A Team One Architects project, realised"
             loading="lazy"
-            className="absolute inset-0 h-full w-full object-cover"
-            initial={{ opacity: 0, filter: "grayscale(1) blur(7px)", scale: 1.06 }}
+            className="absolute inset-0 h-full w-full object-contain"
+            initial={{ opacity: 0, filter: "grayscale(1) blur(9px)", scale: 1.05 }}
             animate={
               active
                 ? { opacity: 1, filter: "grayscale(0) blur(0px)", scale: 1 }
                 : {}
             }
-            transition={{ duration: reduce ? 0 : 1.1, delay: revealAt, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: reduce ? 0 : 1.7, delay: revealAt, ease: [0.22, 1, 0.36, 1] }}
           />
           {/* soft darkening so the sketch & spark read on top of the photo */}
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/55 via-transparent to-background/25" />
@@ -77,15 +77,15 @@ export function ConnectionMoment() {
             className="pointer-events-none absolute left-0 h-px w-full bg-gold shadow-[0_0_18px_2px_var(--gold-soft)]"
             initial={{ top: "0%", opacity: 0 }}
             animate={active ? { top: ["0%", "100%"], opacity: [0, 1, 1, 0] } : {}}
-            transition={{ duration: reduce ? 0 : 0.9, delay: revealAt, ease: "easeInOut" }}
+            transition={{ duration: reduce ? 0 : 1.4, delay: revealAt, ease: "easeInOut" }}
           />
 
-          {/* Layer 1 — loose hand-drawn sketch */}
+          {/* Layer 1 — loose hand-drawn sketch (fades down concurrently, lingers faintly) */}
           <motion.div
             className="absolute inset-0"
             initial={{ opacity: 1 }}
-            animate={active ? { opacity: 0.16 } : {}}
-            transition={{ duration: reduce ? 0 : 0.8, delay: revealAt }}
+            animate={active ? { opacity: 0.1 } : {}}
+            transition={{ duration: reduce ? 0 : 1.6, delay: revealAt, ease: "easeInOut" }}
           >
             <svg
               className="h-full w-full"
