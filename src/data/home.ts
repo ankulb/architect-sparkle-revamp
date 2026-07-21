@@ -52,6 +52,87 @@ export const expertise = [
   "Corporate Interiors",
 ];
 
+export const expertiseDivisions = [
+  {
+    number: "01",
+    title: "Architecture & Urban Design",
+    lede:
+      "From master plans to landmark buildings, we shape environments that balance civic ambition with human scale.",
+    services: [
+      "Master Planning",
+      "Commercial & Institutional",
+      "Mixed-Use Developments",
+      "Data Centres",
+      "Luxury Housing",
+    ],
+    image: `${UP}/2021/11/WhatsApp-Image-2025-10-30-at-2.48.45-PM-3.jpeg`,
+  },
+  {
+    number: "02",
+    title: "Interior Architecture",
+    lede:
+      "Workplaces, hospitality and retail spaces engineered for wellbeing, brand story and enduring performance.",
+    services: [
+      "Corporate Interiors",
+      "Workplace Strategy",
+      "Hospitality",
+      "Retail",
+      "Experience Design",
+    ],
+    image: `${UP}/2026/03/DSC07321-HDR-650x650.jpg`,
+  },
+] as const;
+
+export const dynamicSections = [
+  {
+    number: "01",
+    title: "Design with purpose",
+    body: "Every brief begins with intent. We design for people, communities and the planet — not just for aesthetics.",
+    image: `${UP}/2026/03/R3A8108-newy-650x650.jpg`,
+  },
+  {
+    number: "02",
+    title: "Sustainability at the core",
+    body: "IGBC, WELL and net-zero thinking are embedded from concept through commissioning. Wellbeing is measurable.",
+    image: `${UP}/2026/03/VIEW-1-650x650.png`,
+  },
+  {
+    number: "03",
+    title: "Technology-forward practice",
+    body: "BIM, parametric studies and AI-assisted workflows let us test more, faster — and hand over projects that behave as promised.",
+    image: `${UP}/2026/03/01.-Reception-Atomberg-AI-650x650.png`,
+  },
+  {
+    number: "04",
+    title: "Global delivery, local craft",
+    body: "A Mumbai studio with a global footprint. We combine international standards with a deep respect for site and culture.",
+    image: `${UP}/2026/03/786928477867589-copy-650x650.jpg`,
+  },
+  {
+    number: "05",
+    title: "A 25-year legacy",
+    body: "490+ projects, 115+ specialists, and a 20% year-on-year growth built on repeat clients and long partnerships.",
+    image: `${UP}/2025/07/TOA-Team-e1758107663494-1024x535.jpg`,
+  },
+] as const;
+
+export const careers = {
+  overline: "Careers at TOA",
+  title: "Build the next 25 years with us.",
+  body: "We're a multidisciplinary studio of architects, interior designers and engineers building calmly, courageously, and together. Our Trainee Program brings emerging talent into live projects from day one.",
+  cta: { label: "Explore the Trainee Program", href: "https://teamonearchitects.com/careers/" },
+  video:
+    "https://videos.pexels.com/video-files/3networking-professionals/pexels-fauxels-3252571.mp4",
+  poster: `${UP}/2025/07/TOA-Team-e1758107663494-1024x535.jpg`,
+  team: [
+    `${UP}/2025/07/TOA-Team-e1758107663494-1024x535.jpg`,
+    `${UP}/2026/03/DSC07321-HDR-650x650.jpg`,
+    `${UP}/2026/03/R3A8108-newy-650x650.jpg`,
+    `${UP}/2026/03/VIEW-1-650x650.png`,
+  ],
+};
+
+
 export const stats = [
   { value: 25, suffix: "", label: "Years of Legacy", note: "25 years of delivering purposeful, high-impact design." },
   { value: 490, suffix: "+", label: "Projects", note: "Extensive experience across smart, green and urban infrastructure." },
