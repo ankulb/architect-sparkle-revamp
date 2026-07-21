@@ -3,15 +3,14 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Hero } from "@/components/home/Hero";
 import { IntroOverlay } from "@/components/home/IntroOverlay";
-import { StatsAbout } from "@/components/home/StatsAbout";
+import { ExpertiseDivisions } from "@/components/home/ExpertiseDivisions";
+import { DynamicSections } from "@/components/home/DynamicSections";
 import { ProjectsGallery } from "@/components/home/ProjectsGallery";
-import { Responsibilities } from "@/components/home/Responsibilities";
-import { Testimonials } from "@/components/home/Testimonials";
-import { Insights } from "@/components/home/Insights";
+import { Careers } from "@/components/home/Careers";
 
-const title = "Team One Architects | Architecture, Urban Design & Interiors";
+const title = "Team One Architects | Architecture, Interiors & Engineering";
 const description =
-  "Team One Architects (TOA) designs spaces that work, inspire and endure. Sustainable architecture, urban design and corporate interiors — Mumbai, worldwide since 2001.";
+  "TOA designs the future through Architecture, Interiors and Engineering — luxury housing, commercial, data centres and corporate interiors. Mumbai, worldwide since 2001.";
 const ogImage =
   "https://teamonearchitects.com/wp-content/uploads/2026/03/DSC07321-HDR-650x650.jpg";
 
@@ -40,14 +39,12 @@ function Index() {
       <Header />
       <main>
         <Hero />
-        <StatsAbout />
+        <ExpertiseDivisions />
+        <DynamicSections />
         <ProjectsGallery />
-        <Responsibilities />
-        <Testimonials />
-        <Insights />
+        <Careers />
       </main>
       <Footer />
     </div>
   );
 }
-
