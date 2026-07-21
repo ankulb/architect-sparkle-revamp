@@ -85,34 +85,46 @@ export const expertiseDivisions = [
 
 export const dynamicSections = [
   {
-    number: "01",
-    title: "Design with purpose",
-    body: "Every brief begins with intent. We design for people, communities and the planet — not just for aesthetics.",
+    caption: "Awards & Recognition",
+    title: "Recognized among India's leading practices",
     image: `${UP}/2026/03/R3A8108-newy-650x650.jpg`,
+    href: undefined as string | undefined,
   },
   {
-    number: "02",
-    title: "Sustainability at the core",
-    body: "IGBC, WELL and net-zero thinking are embedded from concept through commissioning. Wellbeing is measurable.",
-    image: `${UP}/2026/03/VIEW-1-650x650.png`,
+    caption: "In the News",
+    title: "TOA in the press",
+    image: `${UP}/2026/03/Blog-Cover-1.png`,
+    href: undefined as string | undefined,
   },
   {
-    number: "03",
-    title: "Technology-forward practice",
-    body: "BIM, parametric studies and AI-assisted workflows let us test more, faster — and hand over projects that behave as promised.",
-    image: `${UP}/2026/03/01.-Reception-Atomberg-AI-650x650.png`,
-  },
-  {
-    number: "04",
-    title: "Global delivery, local craft",
-    body: "A Mumbai studio with a global footprint. We combine international standards with a deep respect for site and culture.",
-    image: `${UP}/2026/03/786928477867589-copy-650x650.jpg`,
-  },
-  {
-    number: "05",
-    title: "A 25-year legacy",
-    body: "490+ projects, 115+ specialists, and a 20% year-on-year growth built on repeat clients and long partnerships.",
+    caption: "CSR",
+    title: "Design in service of community",
     image: `${UP}/2025/07/TOA-Team-e1758107663494-1024x535.jpg`,
+    href: "/about/csr",
+  },
+  {
+    caption: "Clients",
+    title: "Trusted by 200+ brands worldwide",
+    image: `${UP}/2026/03/DSC07321-HDR-650x650.jpg`,
+    href: "/about/clientele",
+  },
+  {
+    caption: "Upcoming Projects",
+    title: "What we're building next",
+    image: `${UP}/2026/03/VIEW-1-650x650.png`,
+    href: undefined as string | undefined,
+  },
+  {
+    caption: "University Collaboration",
+    title: "Mentoring the next generation",
+    image: `${UP}/2026/03/786928477867589-copy-650x650.jpg`,
+    href: undefined as string | undefined,
+  },
+  {
+    caption: "AI in Architecture",
+    title: "Designing with intelligent tools",
+    image: `${UP}/2026/03/01.-Reception-Atomberg-AI-650x650.png`,
+    href: undefined as string | undefined,
   },
 ] as const;
 
