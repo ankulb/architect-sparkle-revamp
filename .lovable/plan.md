@@ -1,41 +1,57 @@
-# Adopt the uploaded blueprint→building hero into the homepage
+## Homepage revamp — aligned to client wireframe
 
-Port the exact design and animation from your standalone HTML into the React/TanStack homepage, re-skinned to the TOA theme tokens (dark canvas, bronze-gold accent, project fonts, real TOA logo). The current broken `Hero` and `ConnectionMoment` are replaced with faithful ports.
+### New section order (top → bottom)
+1. Header (unchanged)
+2. Hero — cinematic visual + headline "Designing the future through Architecture, Interiors and Engineering" with subline covering Luxury Housing / Commercial / Data Centres / Interiors
+3. Expertise — two divisions with detail
+4. Dynamic numbered sections (01, 02, 03…) — scroll-driven storytelling blocks
+5. Featured Projects — 3 cards only
+6. Careers block — video + Trainee program CTA + team pictures
+7. Footer (unchanged)
 
-## What the design does (from the file)
-1. **Logo overlay** — TOA mark fills from the bottom, glows, tagline appears, overlay lifts, nav fades in.
-2. **Hero (350vh, sticky)** — two columns:
-   - *Left:* pulsing blueprint grid + an SVG building (viewBox 800×580) that draws itself across **8 scroll stages** (ground → outline → floors → entrance+windows → upper floors → roof/penthouse → dimensions/stamp). Lines shift from draft tone to brand color near 100%, with "PROPOSED ELEVATION" stamp, dimension labels (H/W/scale), and a changing caption.
-   - *Right:* 4 crossfading text phases (01 Vision → 02 Blueprint → 03 Craft → 04 Realized) with a vertical progress bar + glowing pip and a scroll cue.
-3. **Connection section** — "Where Vision Meets Craft": two mirrored blueprint halves slide in from the sides, a gold beam + spark + ring pop where they meet, then the copy fades up. Triggered on scroll-into-view.
+### Removed from current homepage
+- Stats + About "trust strip"
+- Testimonials / clients section
+- Insights (Journal) section
+- ConnectionMoment (already removed)
 
-## Theme adaptation (re-skin, keep the motion)
-- **Colors:** map the design's `#050d1a` canvas → `var(--background)`; the orange `#E87722` accent → `var(--gold)`. Blueprint lines use a subdued cool draft tone, then shift to `var(--gold)` at completion so the "cold draft → warm realized" payoff is preserved but lands on brand. (Single source tone; easy to make fully gold if you prefer.)
-- **Fonts:** headlines use the project display font (`--font-display`/Outfit), body uses `--font-sans` (Figtree). The small technical labels keep a monospace stack (`ui-monospace`) for the architectural feel — no new web fonts added.
-- **Logo:** the fill-up uses the real `toa-logo.png` (clip-path reveal), not the orange "TOA" square.
-- All colors via semantic tokens — works in both dark and existing light theme.
+### Expertise — two divisions
+Replace the single rotating expertise line with a two-column section:
 
-## Files
+- **01 · Architecture & Urban Design** — sub-items: Master Planning, Commercial & Institutional, Mixed-Use, Data Centres, Luxury Housing
+- **02 · Interior Architecture** — sub-items: Corporate Interiors, Workplace Strategy, Hospitality, Retail, Experience Design
 
-### `src/components/home/Hero.tsx` (rewrite)
-- Section `h-[350vh]` with inner `sticky top-0 h-screen` two-column flex (matches the source).
-- Port the SVG building markup verbatim (all `data-stage` paths) into JSX, restyled with tokens via a `.bp-path` class in `styles.css`.
-- Drive animation with the source's proven approach (avoids the earlier framer-motion functional-transform bug): a `useEffect` measures each path's `getTotalLength()` and seeds `strokeDasharray/Offset`; a rAF-throttled `scroll` listener computes section progress `sp` and updates per-stage `stageProg`, the draft→gold color shift, dimension/stamp opacity, the changing caption, the 4-phase text crossfade, and the progress pip — a 1:1 port of the `updatePaths/updateText/updateIndicator` logic.
-- Right column copy reused from your phases; "View Portfolio" CTA links to `/portfolio`.
-- **Mobile:** stack to single column, reduce section to ~250vh, shrink type; blueprint sits above copy.
-- **Reduced motion:** render the final drawn building + phase-04 copy statically, no pinning.
+Each division: number, title, 2-line description, list of sub-disciplines, small hover-reveal thumbnail. Dark cinematic style, gold accents, GridBackdrop.
 
-### `src/components/home/IntroOverlay.tsx` (align)
-- Keep as the logo intro but match the new fill timing/glow and hand off cleanly into the hero (it already uses the real logo + clip-path fill). Nav/Header reveals after dismiss.
+### Dynamic numbered sections (01–0N)
+A vertical sequence of pinned/scroll-revealed blocks, each with a large numeral, short title, paragraph, and a supporting visual. Content pillars pulled from current TOA site:
+- 01 Purpose-driven design
+- 02 Sustainability & wellness (IGBC, WELL)
+- 03 Technology-forward practice
+- 04 Global delivery, local craft
+- 05 25-year legacy
 
-### `src/components/home/ConnectionMoment.tsx` (rewrite)
-- Port the "Where Vision Meets Craft" section: two mirrored blueprint SVG halves, center gold beam, spark, and ring pop. Use an `IntersectionObserver` (or framer `useInView`) to fire the staggered timeline. Restyle to tokens; "Your Vision" / "Our Expertise" captions kept; CTA → `/portfolio`.
+Sticky numeral on the left, content on the right, gold sweep line between blocks. Extendable to more entries via a data array.
 
-### `src/styles.css`
-- Add `.bp-path` base styles (stroke, width, linecaps, `.thick`, `.dim` dashed) and the `gridPulse` / `pipGlow` / `sparkPop` keyframes, all using tokens.
+### Featured Projects (3 cards)
+Trim `ProjectsGallery` to 3 hero projects in a single row (keep hover reveal, drop 3-column parallax masonry). "View all projects" link retained.
 
-### `src/routes/index.tsx`
-- No structural change — `Hero` and `ConnectionMoment` keep their slots; downstream sections (StatsAbout, ProjectsGallery, Responsibilities, Testimonials, Insights) and existing Header/Footer remain. The design's own footer-CTA block is not added (project already has a Footer).
+### Careers block
+New `Careers.tsx`:
+- Full-bleed muted background video (silent, autoplay, loop) — placeholder MP4 URL to swap later
+- Overline "Careers at TOA"
+- Headline + short pitch
+- CTA button: "Trainee Program"
+- Row of 3–4 team photos below with subtle hover lift
 
-## Verification
-Drive the live preview with Playwright in both themes: capture the logo fill, hero at scroll 0 / ~30% / ~65% / 100% (building drawn + gold shift + stamp + phase-04 copy), and the connection spark. Confirm no blank first frame and that mobile stacks correctly.
+### Files
+- Edit `src/routes/index.tsx` — new section order, drop Stats/Testimonials/Insights imports
+- Edit `src/data/home.ts` — add `expertiseDivisions`, `dynamicSections`, `careers` data; slice projects to 3
+- New `src/components/home/ExpertiseDivisions.tsx`
+- New `src/components/home/DynamicSections.tsx`
+- New `src/components/home/Careers.tsx`
+- Edit `src/components/home/ProjectsGallery.tsx` — 3-card layout
+- Keep `StatsAbout.tsx`, `Testimonials.tsx`, `Insights.tsx` files on disk (unused) for possible reuse
+
+### Out of scope this pass
+Header/Footer changes, About/Portfolio pages, real careers video asset (placeholder used).
