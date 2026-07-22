@@ -167,7 +167,53 @@ export function Header() {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.1 + i * 0.06 }}
                 >
-                  {item.children ? (
+                  {item.groups ? (
+                    <div>
+                      <button
+                        onClick={() =>
+                          setOpenMap((m) => ({ ...m, [item.label]: !m[item.label] }))
+                        }
+                        className="flex items-center gap-2 font-display text-3xl font-light tracking-tight text-foreground"
+                      >
+                        {item.label}
+                        <ChevronDown
+                          className={`h-5 w-5 transition-transform duration-300 ${openMap[item.label] ? "rotate-180" : ""}`}
+                        />
+                      </button>
+                      <AnimatePresence>
+                        {openMap[item.label] && (
+                          <motion.div
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: "auto", opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            className="overflow-hidden"
+                          >
+                            <div className="mt-5 flex flex-col gap-7 border-l border-border pl-5">
+                              {item.groups.map((g) => (
+                                <div key={g.title}>
+                                  <p className="mb-3 text-[10px] font-medium uppercase tracking-[0.24em] text-gold">
+                                    {g.title}
+                                  </p>
+                                  <div className="flex flex-col gap-3">
+                                    {g.items.map((child) => (
+                                      <a
+                                        key={child.label}
+                                        href={child.href}
+                                        onClick={() => setOpen(false)}
+                                        className="text-base text-muted-foreground transition-colors hover:text-foreground"
+                                      >
+                                        {child.label}
+                                      </a>
+                                    ))}
+                                  </div>
+                                </div>
+                              ))}
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
+                  ) : item.children ? (
                     <div>
                       <button
                         onClick={() =>
@@ -215,6 +261,7 @@ export function Header() {
                         )}
                       </AnimatePresence>
                     </div>
+
                   ) : item.to ? (
                     <Link
                       to={item.to}
