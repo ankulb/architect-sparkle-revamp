@@ -20,10 +20,10 @@ export type NavItem = {
 };
 
 export const nav: NavItem[] = [
-  { label: "Expertise", href: "https://teamonearchitects.com/portfolio-category/expertise/" },
-  { label: "Projects", to: "/portfolio" },
-  { label: "About", href: "/about", children: aboutNav },
+  { label: "Expertise", href: "/#expertise" },
   { label: "Insights", href: "/#insights" },
+  { label: "Studio", href: "/about", children: aboutNav },
+  { label: "Careers", href: "/#careers" },
   { label: "Contact", href: "https://teamonearchitects.com/contact/" },
 ];
 
