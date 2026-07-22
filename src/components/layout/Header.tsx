@@ -2,14 +2,14 @@ import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { Link } from "@tanstack/react-router";
 import { ChevronDown, Menu, X } from "lucide-react";
-import { nav, aboutNav } from "@/data/home";
+import { nav } from "@/data/home";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import logoAsset from "@/assets/toa-logo.png.asset.json";
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-  const [aboutOpen, setAboutOpen] = useState(false);
+  const [openMap, setOpenMap] = useState<Record<string, boolean>>({});
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -37,25 +37,35 @@ export function Header() {
               {nav.map((item) =>
                 item.children ? (
                   <div key={item.label} className="group relative">
-                    <Link
-                      to={item.href ?? "/about"}
+                    <a
+                      href={item.href ?? "#"}
                       className="flex items-center gap-1.5 text-sm font-medium uppercase tracking-[0.14em] text-muted-foreground transition-colors hover:text-foreground"
                     >
                       {item.label}
                       <ChevronDown className="h-3.5 w-3.5 transition-transform duration-300 group-hover:rotate-180" />
-                    </Link>
-                    <div className="invisible absolute left-1/2 top-full z-50 w-60 -translate-x-1/2 pt-4 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100">
+                    </a>
+                    <div className="invisible absolute left-1/2 top-full z-50 w-64 -translate-x-1/2 pt-4 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100">
                       <div className="border border-border bg-background/95 p-2 backdrop-blur-md">
-                        {item.children.map((child) => (
-                          <Link
-                            key={child.to}
-                            to={child.to}
-                            activeProps={{ className: "text-gold" }}
-                            className="block px-4 py-2.5 text-sm text-muted-foreground transition-colors hover:bg-card hover:text-foreground"
-                          >
-                            {child.label}
-                          </Link>
-                        ))}
+                        {item.children.map((child) =>
+                          child.to ? (
+                            <Link
+                              key={child.label}
+                              to={child.to}
+                              activeProps={{ className: "text-gold" }}
+                              className="block px-4 py-2.5 text-sm text-muted-foreground transition-colors hover:bg-card hover:text-foreground"
+                            >
+                              {child.label}
+                            </Link>
+                          ) : (
+                            <a
+                              key={child.label}
+                              href={child.href}
+                              className="block px-4 py-2.5 text-sm text-muted-foreground transition-colors hover:bg-card hover:text-foreground"
+                            >
+                              {child.label}
+                            </a>
+                          ),
+                        )}
                       </div>
                     </div>
                   </div>
@@ -123,16 +133,18 @@ export function Header() {
                   {item.children ? (
                     <div>
                       <button
-                        onClick={() => setAboutOpen((v) => !v)}
+                        onClick={() =>
+                          setOpenMap((m) => ({ ...m, [item.label]: !m[item.label] }))
+                        }
                         className="flex items-center gap-2 font-display text-3xl font-light tracking-tight text-foreground"
                       >
                         {item.label}
                         <ChevronDown
-                          className={`h-5 w-5 transition-transform duration-300 ${aboutOpen ? "rotate-180" : ""}`}
+                          className={`h-5 w-5 transition-transform duration-300 ${openMap[item.label] ? "rotate-180" : ""}`}
                         />
                       </button>
                       <AnimatePresence>
-                        {aboutOpen && (
+                        {openMap[item.label] && (
                           <motion.div
                             initial={{ height: 0, opacity: 0 }}
                             animate={{ height: "auto", opacity: 1 }}
@@ -140,16 +152,27 @@ export function Header() {
                             className="overflow-hidden"
                           >
                             <div className="mt-4 flex flex-col gap-4 border-l border-border pl-5">
-                              {aboutNav.map((child) => (
-                                <Link
-                                  key={child.to}
-                                  to={child.to}
-                                  onClick={() => setOpen(false)}
-                                  className="text-lg text-muted-foreground transition-colors hover:text-foreground"
-                                >
-                                  {child.label}
-                                </Link>
-                              ))}
+                              {item.children.map((child) =>
+                                child.to ? (
+                                  <Link
+                                    key={child.label}
+                                    to={child.to}
+                                    onClick={() => setOpen(false)}
+                                    className="text-lg text-muted-foreground transition-colors hover:text-foreground"
+                                  >
+                                    {child.label}
+                                  </Link>
+                                ) : (
+                                  <a
+                                    key={child.label}
+                                    href={child.href}
+                                    onClick={() => setOpen(false)}
+                                    className="text-lg text-muted-foreground transition-colors hover:text-foreground"
+                                  >
+                                    {child.label}
+                                  </a>
+                                ),
+                              )}
                             </div>
                           </motion.div>
                         )}

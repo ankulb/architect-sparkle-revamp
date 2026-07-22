@@ -1,36 +1,48 @@
-## Practice in Action — Spatial Portfolio experience
+## 1. Spatial cards — click always opens the overlay
 
-Upgrade the 7 horizontal cards in `src/components/home/DynamicSections.tsx` so each card behaves like a spatial portfolio tile: cinematic on hover, immersive 3D-feeling on entry.
+In `src/components/home/DynamicSections.tsx` and `src/data/home.ts`:
 
-### 1. Hover — spatial card
-- On pointer enter, the card lifts on a subtle 3D tilt driven by cursor position (`rotateX/rotateY` ~6°, perspective 1200px). Image inside has a parallax offset (~8px) opposite to the tilt, giving a parallax "window into a room" feel.
-- The image scales to full-bleed inside the card, siblings dim to 0.5 opacity + slight desaturation, gold corner marks appear at the card corners.
-- Category label + title rise from the bottom with gold underline draw-in; 1-line excerpt fades in beneath.
-- Custom gold "Enter →" cursor chip follows the pointer (desktop only).
-- `prefers-reduced-motion`: no tilt/scale, only underline + excerpt fade.
+- Remove the "route items navigate directly" branch in `handleOpen`. Every card click opens the immersive overlay, regardless of whether it has an `href`.
+- In `ImmersiveOverlay`, when `item.href` is set, render a "Know more" pill button below the body copy. Internal hrefs (`/about/csr`, `/about/clientele`) use TanStack `<Link>`; external hrefs use `<a target="_blank" rel="noreferrer">`. Styled as a gold-bordered chip with an arrow, matching the site's existing gold accent.
+- Keep close via ✕, Esc, and backdrop; keep the shared-element `layoutId` expansion.
 
-### 2. Click — immersive spatial entry
-- Clicking triggers a shared-element expansion using Framer Motion `layoutId`: the card's image grows from its grid slot to fill the viewport in ~800ms with an ease-out curve, while a soft depth-of-field blur radiates from the edges inward, mimicking stepping into the space.
-- During expansion:
-  - Sibling cards fade out and scroll locks.
-  - A slow Ken-Burns push-in (scale 1 → 1.08 over 8s) begins on the hero image so the frame feels alive.
-  - Title re-lays out into a large font-display headline bottom-left; category + excerpt animate up beneath it with staggered word masks.
-  - Gold hairline frames draw in along the viewport edges (top, bottom sweep) as architectural spatial cues.
-  - A vertical gold scroll rail with the item number (01–07) appears bottom-right.
-- Two destination modes:
-  - **Route items** (CSR, Clientele): after the expansion completes, navigate to their page; the hero image acts as the shared element into `PageHero`.
-  - **Overlay items** (Awards, In the News, Upcoming Projects, University Collaboration, AI in Architecture): stay in a full-viewport immersive overlay with the image, longer description, and metadata. Close via ✕ button, Esc key, or backdrop drag-down; the image collapses back into its grid slot with the reverse transition.
+## 2. Nav alignment to the flowchart
 
-### 3. Data + routing
-- Add optional `excerpt` (short sentence) and, where useful, `body` (2–3 sentences for the overlay) to each item in `src/data/home.ts`.
-- Items with a `href` navigate; the rest use the overlay. No new routes in this pass.
+The flowchart top nav is: **Home · Expertise · Projects · Insights · Studio · Careers · Contact**. Per your instruction, Projects is ignored. Current site has Expertise, Insights, Studio, Careers, Contact — order matches, but the sub-nav under Studio and Insights doesn't match the flowchart yet.
 
-### 4. Files touched
-- `src/components/home/DynamicSections.tsx` — spatial hover, tilt/parallax, `layoutId` shared element, click handler, immersive overlay (co-located).
-- `src/data/home.ts` — add `excerpt` and `body` fields to the 7 items.
-- `src/styles.css` — small utilities for the gold cursor chip and depth-blur helper (if needed).
+Rework `nav` in `src/data/home.ts` so each item that has children in the flowchart carries them, and update `Header.tsx` to render a dropdown for any item with `children` (not just Studio):
 
-### Out of scope
-- No WebGL/Three.js — the "spatial" feel is achieved with CSS 3D transforms, parallax, Ken-Burns, and shared-element motion to keep the page fast.
-- No new dedicated routes for Awards / News / Upcoming / University / AI.
-- No changes to hero, expertise, projects, careers, nav, or theme tokens.
+- **Expertise** → dropdown listing the two divisions as anchors on the homepage:
+  - Architecture & Urban Design → `/#expertise`
+  - Interior Architecture → `/#expertise`
+  (Kept simple since the homepage `ExpertiseDivisions` block already details sub-categories. No new routes.)
+- **Insights** → dropdown with flowchart children, all anchoring to `/#insights` for now (no routes exist):
+  - News & Media, Awards & Recognition, Events & Engagements, Videos / Podcasts / Interviews, Articles, Research Reports
+- **Studio** → replace current `aboutNav` with the flowchart's Studio list, mapped to existing routes where possible:
+  - Our Story → `/about`
+  - Leadership → `/about/board`
+  - CSR → `/about/csr`
+  - Climate Action → `/about/csr` (no dedicated page; anchors to CSR for now)
+  - Life at TOA → `/about/life`
+  - Clientele → `/about/clientele`
+  (Drops "Our Team" from top nav since flowchart doesn't include it; the `/about/team` route stays reachable via existing pages.)
+- **Careers** → dropdown with flowchart children, all anchoring to `/#careers`:
+  - Life at TOA, Trainee Program, Open Positions, Employee Stories
+- **Contact** → keep as single external link (flowchart children are contact reasons, not separate destinations).
+
+`Header.tsx` changes:
+- Generalise the dropdown renderer so any nav item with `children` gets the hover dropdown (desktop) and expandable section (mobile), not just the one hardcoded to About.
+- Mobile: replace the single `aboutOpen` state with a per-item open map so multiple dropdowns can expand independently.
+- Child links: internal `to` uses `<Link>`; anchor `href` (like `/#insights`) uses `<a>`.
+
+## Out of scope
+
+- No new routes for Insights sub-items, Climate Action, or Careers sub-items — they anchor to their respective homepage sections until dedicated pages are requested.
+- Projects nav item intentionally omitted per your instruction.
+- No changes to hero, expertise section content, careers section, or footer.
+
+## Files touched
+
+- `src/components/home/DynamicSections.tsx` — always open overlay; add "Know more" button.
+- `src/data/home.ts` — restructure `nav` with children for Expertise, Insights, Studio, Careers.
+- `src/components/layout/Header.tsx` — generic dropdown rendering for any item with `children`; per-item mobile expand state.

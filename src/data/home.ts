@@ -3,27 +3,55 @@ import johnsonControlsLogo from "@/assets/brands/johnson-controls.png.asset.json
 
 const UP = "https://teamonearchitects.com/wp-content/uploads";
 
-export const aboutNav = [
-  { label: "About Us", to: "/about" },
-  { label: "Board of Directors", to: "/about/board" },
-  { label: "Our Team", to: "/about/team" },
-  { label: "Clientele", to: "/about/clientele" },
-  { label: "CSR", to: "/about/csr" },
-  { label: "Life at TOA", to: "/about/life" },
-] as const;
-
+export type NavChild = { label: string; to?: string; href?: string };
 export type NavItem = {
   label: string;
   href?: string;
   to?: string;
-  children?: typeof aboutNav;
+  children?: NavChild[];
 };
 
+export const aboutNav: NavChild[] = [
+  { label: "Our Story", to: "/about" },
+  { label: "Leadership", to: "/about/board" },
+  { label: "CSR", to: "/about/csr" },
+  { label: "Climate Action", to: "/about/csr" },
+  { label: "Life at TOA", to: "/about/life" },
+  { label: "Clientele", to: "/about/clientele" },
+];
+
 export const nav: NavItem[] = [
-  { label: "Expertise", href: "/#expertise" },
-  { label: "Insights", href: "/#insights" },
+  {
+    label: "Expertise",
+    href: "/#expertise",
+    children: [
+      { label: "Architecture & Urban Design", href: "/#expertise" },
+      { label: "Interior Architecture", href: "/#expertise" },
+    ],
+  },
+  {
+    label: "Insights",
+    href: "/#insights",
+    children: [
+      { label: "News & Media", href: "/#insights" },
+      { label: "Awards & Recognition", href: "/#insights" },
+      { label: "Events & Engagements", href: "/#insights" },
+      { label: "Videos / Podcasts / Interviews", href: "/#insights" },
+      { label: "Articles", href: "/#insights" },
+      { label: "Research Reports", href: "/#insights" },
+    ],
+  },
   { label: "Studio", href: "/about", children: aboutNav },
-  { label: "Careers", href: "/#careers" },
+  {
+    label: "Careers",
+    href: "/#careers",
+    children: [
+      { label: "Life at TOA", href: "/#careers" },
+      { label: "Trainee Program", href: "/#careers" },
+      { label: "Open Positions", href: "/#careers" },
+      { label: "Employee Stories", href: "/#careers" },
+    ],
+  },
   { label: "Contact", href: "https://teamonearchitects.com/contact/" },
 ];
 

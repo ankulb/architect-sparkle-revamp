@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { useNavigate } from "@tanstack/react-router";
+
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { dynamicSections } from "@/data/home";
 import { Reveal } from "@/components/Reveal";
@@ -247,6 +247,23 @@ function ImmersiveOverlay({
             {item.body || item.excerpt}
           </motion.p>
         )}
+        {item.href && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.95, duration: 0.6 }}
+            className="mt-8"
+          >
+            <a
+              href={item.href}
+              {...(item.href.startsWith("/") ? {} : { target: "_blank", rel: "noreferrer" })}
+              className="group inline-flex items-center gap-3 border border-gold px-6 py-3 text-xs font-semibold uppercase tracking-[0.24em] text-gold transition hover:bg-gold hover:text-black"
+            >
+              Know more
+              <span className="transition-transform group-hover:translate-x-1">→</span>
+            </a>
+          </motion.div>
+        )}
       </div>
     </motion.div>
   );
@@ -254,24 +271,9 @@ function ImmersiveOverlay({
 
 export function DynamicSections() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
-  const navigate = useNavigate();
 
   function handleOpen(i: number) {
-    const item = dynamicSections[i];
-    if (item.href) {
-      // Brief spatial expansion, then navigate
-      setOpenIndex(i);
-      window.setTimeout(() => {
-        setOpenIndex(null);
-        if (item.href!.startsWith("/")) {
-          navigate({ to: item.href! });
-        } else {
-          window.location.href = item.href!;
-        }
-      }, 750);
-    } else {
-      setOpenIndex(i);
-    }
+    setOpenIndex(i);
   }
 
   const openItem = openIndex !== null ? dynamicSections[openIndex] : null;
