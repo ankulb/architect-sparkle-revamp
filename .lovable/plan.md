@@ -1,34 +1,19 @@
-## Current footer vs. wireframe
+## Changes
 
-The wireframe footer calls for these blocks (in a single strip): **Contact · News · Vendor Registration CTA · Policy · Feedback · Expertise · Social Media Links (LinkedIn, Instagram, Facebook, YouTube)**.
+### 1. Expertise → Navigation mega-menu (SOM-style)
+- Remove `<ExpertiseDivisions />` from the homepage (`src/routes/index.tsx`); the section no longer lives on the page.
+- Rebuild the "Expertise" nav item in `src/components/layout/Header.tsx` as a full-width mega panel that opens on hover (desktop). Two large columns titled **Architecture & Urban Design** and **Interior Architecture**, each listing disciplines as big, airy links (light weight, generous line-height, gold hover, underline on hover), matching the SOM reference. Bottom-left "Explore our expertise" link scrolls/links back to the homepage anchor.
+- Populate the two columns from the handwritten list:
+  - **Architecture & Urban Design**: Adaptive Reuse, Airports, Civic + Government, Commercial, Facade Design, Luxury Housing, Residential, Sustainable Architecture Engineering, Mixed Use, Data Centres
+  - **Interior Architecture**: Corporate + Workplace, Healthcare, Hospitality, Workplace, IT & Software, Banking & Finance, Media, Shipping, Telecom, Educational, Co-working
+- Update `src/data/home.ts`: replace the current 2-child Expertise `children` with a new `groups` structure (two titled columns of items). Header renders `groups` as the mega panel; other nav items keep the existing small dropdown.
+- Mega panel: dark background matching header, subtle border-top hairline, closes on Escape / outside click / route change. Mobile: Expertise expands inline with both columns stacked.
 
-The current footer has an unrelated 4‑column layout (brand blurb, Explore nav mirror, About sub‑nav, Studio address). No vendor CTA, no policy/feedback, no social icons, no news link, and Expertise is buried inside the Explore list.
+### 2. Dynamic Sections — shorter blocks
+- In `src/components/home/DynamicSections.tsx`, shrink `SpatialCard` from `h-[68vh] max-h-[640px] min-h-[440px]` to roughly `h-[42vh] max-h-[400px] min-h-[300px]` so cards read as blocks, not tall tiles. Tighten inner padding and title size to match the smaller footprint. Overlay behaviour unchanged.
 
-## Rebuild plan (frontend only, `src/components/layout/Footer.tsx`)
+### 3. Careers section (`src/components/home/Careers.tsx`)
+- Remove the 4-image team grid below the hero (the "image under the Trainee Program").
+- Restructure into a two-column layout matching the reference: **left column** holds the media (video/poster, contained to that column with a fixed aspect, not full-bleed); **right column** holds the overline, headline, body, and CTA on the pure background — no dark scrim. A short gold hairline sits above the overline as in the reference. Stacks vertically on mobile (media on top, text below).
 
-Replace the 4‑column grid with a wireframe‑accurate layout:
-
-1. **Top row — brand + Vendor Registration CTA**
-   - Left: TOA logo + one‑line signature ("We design as one. We deliver as one.").
-   - Right: prominent gold‑outline CTA button **"Vendor Registration →"** (links to `/vendor-registration` placeholder / mailto until a route exists — will use `mailto:info@teamonearchitects.com?subject=Vendor%20Registration` for now).
-
-2. **Middle row — 4 link columns** (matches wireframe tokens)
-   - **Expertise**: Architecture & Urban Design, Interior Architecture (anchors to `/#expertise`).
-   - **Studio**: Our Story, Leadership, CSR, Life at TOA, Clientele (reuses `aboutNav`).
-   - **Connect**: Contact, News (`/#insights`), Feedback (`mailto:` with subject), Careers (`/#careers`).
-   - **Legal**: Privacy Policy, Terms of Use, Cookie Policy (placeholder anchors `#` for now — no new routes created).
-
-3. **Bottom bar**
-   - Left: `© {year} Team One Architects. All rights reserved.`
-   - Center: address line (Mumbai, India · info@teamonearchitects.com).
-   - Right: **Social icons** — LinkedIn, Instagram, Facebook, YouTube (lucide-react icons, gold hover, 20px, square hit target, `aria-label` each). Links to the brand's public profiles (placeholder `#` if unknown, but LinkedIn → `https://www.linkedin.com/company/team-one-architects/`).
-
-## Styling
-- Keep existing tokens: `bg-background`, `border-border`, `text-muted-foreground`, `text-gold`, font-display for signature.
-- Vendor CTA: `border border-gold text-gold hover:bg-gold hover:text-background` pill with arrow.
-- Column headings: existing `text-xs uppercase tracking-[0.2em] text-gold`.
-- Social icons: `hover:text-gold` transition, `border border-border rounded-full p-2` chips for a subtle architectural stamp feel.
-
-## Out of scope
-- No new routes (Policy, Vendor Registration, Feedback resolve to `#` or `mailto:` for now — flag to user in reply so they can confirm real URLs).
-- No changes to header nav, home sections, or data files beyond footer.
+No other content, data, or route changes.
