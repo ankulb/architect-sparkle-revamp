@@ -254,26 +254,14 @@ function ImmersiveOverlay({
             transition={{ delay: 0.95, duration: 0.6 }}
             className="mt-8"
           >
-            {item.href.startsWith("/") ? (
-              <Link
-                to={item.href}
-                onClick={onClose}
-                className="group inline-flex items-center gap-3 border border-gold px-6 py-3 text-xs font-semibold uppercase tracking-[0.24em] text-gold transition hover:bg-gold hover:text-black"
-              >
-                Know more
-                <span className="transition-transform group-hover:translate-x-1">→</span>
-              </Link>
-            ) : (
-              <a
-                href={item.href}
-                target="_blank"
-                rel="noreferrer"
-                className="group inline-flex items-center gap-3 border border-gold px-6 py-3 text-xs font-semibold uppercase tracking-[0.24em] text-gold transition hover:bg-gold hover:text-black"
-              >
-                Know more
-                <span className="transition-transform group-hover:translate-x-1">→</span>
-              </a>
-            )}
+            <a
+              href={item.href}
+              {...(item.href.startsWith("/") ? {} : { target: "_blank", rel: "noreferrer" })}
+              className="group inline-flex items-center gap-3 border border-gold px-6 py-3 text-xs font-semibold uppercase tracking-[0.24em] text-gold transition hover:bg-gold hover:text-black"
+            >
+              Know more
+              <span className="transition-transform group-hover:translate-x-1">→</span>
+            </a>
           </motion.div>
         )}
       </div>
