@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Link } from "@tanstack/react-router";
+
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { dynamicSections } from "@/data/home";
 import { Reveal } from "@/components/Reveal";
