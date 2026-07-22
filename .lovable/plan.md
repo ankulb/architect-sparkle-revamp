@@ -1,38 +1,36 @@
-## Dynamic Section — "See how we're shaping the future"
+## Practice in Action — Spatial Portfolio experience
 
-Replace the current numbered `DynamicSections` (5 vertical alternating blocks) with a horizontal row of 7 tall portrait cards, modeled on the Colliers "See how we accelerate success" reference the user attached.
+Upgrade the 7 horizontal cards in `src/components/home/DynamicSections.tsx` so each card behaves like a spatial portfolio tile: cinematic on hover, immersive 3D-feeling on entry.
 
-### Layout (desktop)
-- Full-width band with border-top, dark canvas consistent with rest of homepage.
-- Eyebrow: `OUR PRACTICE IN ACTION` (gold, tracked caps).
-- Headline: **"See how we're shaping the future"** (display, light weight).
-- Row of 7 tall cards, aspect ~2:5, edge-to-edge with 1px gaps (matches Colliers density).
-  - Desktop (≥1280px): all 7 visible, horizontal scroll if viewport narrower.
-  - Tablet (768–1279px): horizontal scroll-snap carousel, 3–4 cards visible.
-  - Mobile (<768px): scroll-snap carousel, ~1.3 cards visible with peek.
-- Each card:
-  - Full-bleed image, dark gradient scrim from bottom.
-  - Category caption bottom-left in tracked caps (e.g. `AWARDS & RECOGNITION`).
-  - Short title below caption (2 lines max).
-  - Hover: image scales 1.05, gold underline draws under title, subtle brightness lift.
+### 1. Hover — spatial card
+- On pointer enter, the card lifts on a subtle 3D tilt driven by cursor position (`rotateX/rotateY` ~6°, perspective 1200px). Image inside has a parallax offset (~8px) opposite to the tilt, giving a parallax "window into a room" feel.
+- The image scales to full-bleed inside the card, siblings dim to 0.5 opacity + slight desaturation, gold corner marks appear at the card corners.
+- Category label + title rise from the bottom with gold underline draw-in; 1-line excerpt fades in beneath.
+- Custom gold "Enter →" cursor chip follows the pointer (desktop only).
+- `prefers-reduced-motion`: no tilt/scale, only underline + excerpt fade.
 
-### The 7 cards (order per user)
-1. Awards & Recognition — "Recognized among India's leading practices"
-2. In the News — "TOA in the press"
-3. CSR — "Design in service of community"
-4. Clients — "Trusted by 200+ brands worldwide"
-5. Upcoming Projects — "What we're building next"
-6. University Collaboration — "Mentoring the next generation"
-7. AI in Architecture — "Designing with intelligent tools"
+### 2. Click — immersive spatial entry
+- Clicking triggers a shared-element expansion using Framer Motion `layoutId`: the card's image grows from its grid slot to fill the viewport in ~800ms with an ease-out curve, while a soft depth-of-field blur radiates from the edges inward, mimicking stepping into the space.
+- During expansion:
+  - Sibling cards fade out and scroll locks.
+  - A slow Ken-Burns push-in (scale 1 → 1.08 over 8s) begins on the hero image so the frame feels alive.
+  - Title re-lays out into a large font-display headline bottom-left; category + excerpt animate up beneath it with staggered word masks.
+  - Gold hairline frames draw in along the viewport edges (top, bottom sweep) as architectural spatial cues.
+  - A vertical gold scroll rail with the item number (01–07) appears bottom-right.
+- Two destination modes:
+  - **Route items** (CSR, Clientele): after the expansion completes, navigate to their page; the hero image acts as the shared element into `PageHero`.
+  - **Overlay items** (Awards, In the News, Upcoming Projects, University Collaboration, AI in Architecture): stay in a full-viewport immersive overlay with the image, longer description, and metadata. Close via ✕ button, Esc key, or backdrop drag-down; the image collapses back into its grid slot with the reverse transition.
 
-Images pulled from existing `UP` (WordPress uploads) set already used across `src/data/home.ts` and `src/data/about.ts` (CSR, team, project renders) — no new uploads required in this pass.
+### 3. Data + routing
+- Add optional `excerpt` (short sentence) and, where useful, `body` (2–3 sentences for the overlay) to each item in `src/data/home.ts`.
+- Items with a `href` navigate; the rest use the overlay. No new routes in this pass.
 
-### Files
-- `src/data/home.ts` — replace `dynamicSections` array with the 7-item shape `{ caption, title, image, href? }`. `href` optional; omit for now (all inert) or link to matching About/Portfolio routes where they exist (`/about/csr`, `/about/clientele`).
-- `src/components/home/DynamicSections.tsx` — rewrite as horizontal card row with scroll-snap + Reveal on the header block only (cards fade in on their own via CSS on scroll into view to avoid staggering jank in a horizontal scroller).
-- No changes to `src/routes/index.tsx` (section already mounted).
+### 4. Files touched
+- `src/components/home/DynamicSections.tsx` — spatial hover, tilt/parallax, `layoutId` shared element, click handler, immersive overlay (co-located).
+- `src/data/home.ts` — add `excerpt` and `body` fields to the 7 items.
+- `src/styles.css` — small utilities for the gold cursor chip and depth-blur helper (if needed).
 
 ### Out of scope
-- Individual landing pages for News / Upcoming / University / AI (cards render but don't route yet unless a matching page already exists).
-- Any change to Hero, Expertise, Projects, Careers, Footer.
-- New image uploads — reuse existing CDN images.
+- No WebGL/Three.js — the "spatial" feel is achieved with CSS 3D transforms, parallax, Ken-Burns, and shared-element motion to keep the page fast.
+- No new dedicated routes for Awards / News / Upcoming / University / AI.
+- No changes to hero, expertise, projects, careers, nav, or theme tokens.
