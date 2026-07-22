@@ -3,7 +3,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Hero } from "@/components/home/Hero";
 import { IntroOverlay } from "@/components/home/IntroOverlay";
-import { ExpertiseDivisions } from "@/components/home/ExpertiseDivisions";
+
 import { DynamicSections } from "@/components/home/DynamicSections";
 import { ProjectsGallery } from "@/components/home/ProjectsGallery";
 import { Careers } from "@/components/home/Careers";
@@ -39,7 +39,7 @@ function Index() {
       <Header />
       <main>
         <Hero />
-        <ExpertiseDivisions />
+        
         <DynamicSections />
         <ProjectsGallery />
         <Careers />

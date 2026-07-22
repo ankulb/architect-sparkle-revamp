@@ -45,7 +45,7 @@ function SpatialCard({
       onPointerMove={handleMove}
       onPointerLeave={reset}
       onClick={() => onOpen(index)}
-      className="group relative block h-[68vh] max-h-[640px] min-h-[440px] w-[74vw] shrink-0 snap-start overflow-hidden bg-background text-left outline-none focus-visible:ring-2 focus-visible:ring-gold sm:w-[42vw] md:w-[28vw] lg:w-[calc((100%-6px)/7)]"
+      className="group relative block h-[42vh] max-h-[400px] min-h-[300px] w-[74vw] shrink-0 snap-start overflow-hidden bg-background text-left outline-none focus-visible:ring-2 focus-visible:ring-gold sm:w-[42vw] md:w-[28vw] lg:w-[calc((100%-6px)/7)]"
       style={{
         perspective: "1200px",
         opacity: dimmed ? 0.45 : 1,
@@ -93,7 +93,7 @@ function SpatialCard({
           <span className="absolute bottom-0 right-0 h-4 w-4 border-b border-r border-gold" />
         </div>
 
-        <div className="relative z-10 flex h-full flex-col justify-between p-6 md:p-7">
+        <div className="relative z-10 flex h-full flex-col justify-between p-5">
           <div className="flex items-start justify-between">
             <span className="font-mono text-[10px] tracking-[0.3em] text-white/60">{num}</span>
             <motion.span
@@ -108,25 +108,18 @@ function SpatialCard({
             <p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-gold">
               {item.caption}
             </p>
-            <h3 className="font-display mt-3 text-xl font-normal leading-tight tracking-tight text-white sm:text-2xl">
+            <h3 className="font-display mt-2 text-base font-normal leading-tight tracking-tight text-white sm:text-lg">
               {item.title}
             </h3>
-            <motion.p
-              className="mt-3 max-w-[28ch] text-sm leading-relaxed text-white/70"
-              initial={false}
-              animate={{ opacity: hover ? 1 : 0, y: hover ? 0 : 6 }}
-              transition={{ duration: 0.45 }}
-            >
-              {item.excerpt}
-            </motion.p>
             <motion.span
-              className="mt-4 block h-px bg-gold"
+              className="mt-3 block h-px bg-gold"
               initial={false}
-              animate={{ width: hover ? 64 : 0 }}
+              animate={{ width: hover ? 48 : 0 }}
               transition={{ duration: 0.5 }}
             />
           </div>
         </div>
+
       </motion.div>
     </button>
   );

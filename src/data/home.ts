@@ -4,11 +4,13 @@ import johnsonControlsLogo from "@/assets/brands/johnson-controls.png.asset.json
 const UP = "https://teamonearchitects.com/wp-content/uploads";
 
 export type NavChild = { label: string; to?: string; href?: string };
+export type NavGroup = { title: string; items: NavChild[] };
 export type NavItem = {
   label: string;
   href?: string;
   to?: string;
   children?: NavChild[];
+  groups?: NavGroup[];
 };
 
 export const aboutNav: NavChild[] = [
@@ -20,14 +22,45 @@ export const aboutNav: NavChild[] = [
   { label: "Clientele", to: "/about/clientele" },
 ];
 
+export const expertiseGroups: NavGroup[] = [
+  {
+    title: "Architecture & Urban Design",
+    items: [
+      { label: "Adaptive Reuse", href: "/#expertise" },
+      { label: "Airports", href: "/#expertise" },
+      { label: "Civic + Government", href: "/#expertise" },
+      { label: "Commercial", href: "/#expertise" },
+      { label: "Facade Design", href: "/#expertise" },
+      { label: "Luxury Housing", href: "/#expertise" },
+      { label: "Residential", href: "/#expertise" },
+      { label: "Sustainable Architecture Engineering", href: "/#expertise" },
+      { label: "Mixed Use", href: "/#expertise" },
+      { label: "Data Centres", href: "/#expertise" },
+    ],
+  },
+  {
+    title: "Interior Architecture",
+    items: [
+      { label: "Corporate + Workplace", href: "/#expertise" },
+      { label: "Healthcare", href: "/#expertise" },
+      { label: "Hospitality", href: "/#expertise" },
+      { label: "Workplace", href: "/#expertise" },
+      { label: "IT & Software", href: "/#expertise" },
+      { label: "Banking & Finance", href: "/#expertise" },
+      { label: "Media", href: "/#expertise" },
+      { label: "Shipping", href: "/#expertise" },
+      { label: "Telecom", href: "/#expertise" },
+      { label: "Educational", href: "/#expertise" },
+      { label: "Co-working", href: "/#expertise" },
+    ],
+  },
+];
+
 export const nav: NavItem[] = [
   {
     label: "Expertise",
     href: "/#expertise",
-    children: [
-      { label: "Architecture & Urban Design", href: "/#expertise" },
-      { label: "Interior Architecture", href: "/#expertise" },
-    ],
+    groups: expertiseGroups,
   },
   {
     label: "Insights",
@@ -54,6 +87,7 @@ export const nav: NavItem[] = [
   },
   { label: "Contact", href: "https://teamonearchitects.com/contact/" },
 ];
+
 
 export const heroSlides = [
   {

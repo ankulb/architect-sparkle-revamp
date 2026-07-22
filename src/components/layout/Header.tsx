@@ -35,7 +35,43 @@ export function Header() {
           <div className="hidden items-center gap-8 md:flex">
             <nav className="flex items-center gap-10">
               {nav.map((item) =>
-                item.children ? (
+                item.groups ? (
+                  <div key={item.label} className="group static">
+                    <a
+                      href={item.href ?? "#"}
+                      className="flex items-center gap-1.5 text-sm font-medium uppercase tracking-[0.14em] text-muted-foreground transition-colors hover:text-foreground"
+                    >
+                      {item.label}
+                      <ChevronDown className="h-3.5 w-3.5 transition-transform duration-300 group-hover:rotate-180" />
+                    </a>
+                    <div className="invisible fixed inset-x-0 top-20 z-40 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100">
+                      <div className="border-t border-border bg-background/95 backdrop-blur-md">
+                        <div className="mx-auto grid max-w-[1600px] grid-cols-1 gap-14 px-6 py-14 md:grid-cols-2 md:px-10 md:py-16">
+                          {item.groups.map((g) => (
+                            <div key={g.title}>
+                              <p className="mb-6 text-xs font-medium uppercase tracking-[0.24em] text-gold">
+                                {g.title}
+                              </p>
+                              <ul className="space-y-3">
+                                {g.items.map((child) => (
+                                  <li key={child.label}>
+                                    <a
+                                      href={child.href ?? "#"}
+                                      className="group/link relative inline-block font-display text-xl font-light text-foreground/85 transition-colors hover:text-gold sm:text-2xl"
+                                    >
+                                      {child.label}
+                                      <span className="absolute -bottom-0.5 left-0 h-px w-0 bg-gold transition-all duration-300 group-hover/link:w-full" />
+                                    </a>
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ) : item.children ? (
                   <div key={item.label} className="group relative">
                     <a
                       href={item.href ?? "#"}
@@ -94,6 +130,7 @@ export function Header() {
             <ThemeToggle />
           </div>
 
+
           <div className="flex items-center gap-3 md:hidden">
             <ThemeToggle />
             <button
@@ -130,7 +167,53 @@ export function Header() {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.1 + i * 0.06 }}
                 >
-                  {item.children ? (
+                  {item.groups ? (
+                    <div>
+                      <button
+                        onClick={() =>
+                          setOpenMap((m) => ({ ...m, [item.label]: !m[item.label] }))
+                        }
+                        className="flex items-center gap-2 font-display text-3xl font-light tracking-tight text-foreground"
+                      >
+                        {item.label}
+                        <ChevronDown
+                          className={`h-5 w-5 transition-transform duration-300 ${openMap[item.label] ? "rotate-180" : ""}`}
+                        />
+                      </button>
+                      <AnimatePresence>
+                        {openMap[item.label] && (
+                          <motion.div
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: "auto", opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            className="overflow-hidden"
+                          >
+                            <div className="mt-5 flex flex-col gap-7 border-l border-border pl-5">
+                              {item.groups.map((g) => (
+                                <div key={g.title}>
+                                  <p className="mb-3 text-[10px] font-medium uppercase tracking-[0.24em] text-gold">
+                                    {g.title}
+                                  </p>
+                                  <div className="flex flex-col gap-3">
+                                    {g.items.map((child) => (
+                                      <a
+                                        key={child.label}
+                                        href={child.href}
+                                        onClick={() => setOpen(false)}
+                                        className="text-base text-muted-foreground transition-colors hover:text-foreground"
+                                      >
+                                        {child.label}
+                                      </a>
+                                    ))}
+                                  </div>
+                                </div>
+                              ))}
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
+                  ) : item.children ? (
                     <div>
                       <button
                         onClick={() =>
@@ -178,6 +261,7 @@ export function Header() {
                         )}
                       </AnimatePresence>
                     </div>
+
                   ) : item.to ? (
                     <Link
                       to={item.to}
