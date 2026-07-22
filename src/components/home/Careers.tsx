@@ -4,10 +4,10 @@ import { Reveal } from "@/components/Reveal";
 export function Careers() {
   return (
     <section id="careers" className="relative overflow-hidden border-t border-border bg-background">
-      <div className="mx-auto grid max-w-[1600px] grid-cols-1 gap-10 px-6 py-24 md:grid-cols-2 md:gap-16 md:px-10 md:py-36">
+      <div className="mx-auto grid max-w-[1600px] grid-cols-1 gap-10 px-6 py-24 md:grid-cols-[30%_1fr] md:gap-16 md:px-10 md:py-36">
         {/* Left: media */}
         <Reveal>
-          <div className="relative aspect-[4/5] w-full overflow-hidden md:aspect-[4/5]">
+          <div className="relative aspect-[4/5] w-full overflow-hidden md:aspect-[3/4]">
             <video
               className="absolute inset-0 h-full w-full object-cover"
               autoPlay
@@ -24,6 +24,7 @@ export function Careers() {
             <span className="pointer-events-none absolute bottom-0 right-0 h-6 w-6 border-b border-r border-gold" />
           </div>
         </Reveal>
+
 
         {/* Right: text */}
         <div className="flex flex-col justify-center">
