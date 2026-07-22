@@ -229,8 +229,8 @@ export function DynamicSections() {
         </div>
       </div>
 
-      <div className="mt-14 pb-24 md:mt-20 md:pb-36">
-        <div className="flex snap-x snap-mandatory gap-px overflow-x-auto scroll-px-6 px-6 [scrollbar-width:none] md:scroll-px-10 md:px-10 [&::-webkit-scrollbar]:hidden">
+      <div className="mx-auto max-w-[1600px] px-6 pb-24 pt-14 md:px-10 md:pb-36 md:pt-20">
+        <div className="grid grid-cols-2 gap-x-4 gap-y-10 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 lg:gap-x-3">
           {dynamicSections.map((item, i) => (
             <SpatialCard
               key={item.caption}
@@ -242,6 +242,7 @@ export function DynamicSections() {
           ))}
         </div>
       </div>
+
 
       <AnimatePresence>
         {openItem && openIndex !== null && (
