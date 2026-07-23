@@ -260,8 +260,26 @@ html.light {
 }
 .toa-ring-pop { animation: toa-ring-pop 0.9s cubic-bezier(0.1, 0.8, 0.3, 1) forwards; }
 
+/* Hero cinematic Ken-Burns motion (still images that feel like video) */
+@keyframes toa-kb-in     { from { transform: scale(1)     translate3d(0,0,0); } to { transform: scale(1.09) translate3d(-1.5%,-1%,0); } }
+@keyframes toa-kb-right  { from { transform: scale(1.03)  translate3d(-2%,0,0); } to { transform: scale(1.09) translate3d(2%,0,0); } }
+@keyframes toa-kb-left   { from { transform: scale(1.03)  translate3d(2%,0,0); }  to { transform: scale(1.09) translate3d(-2%,0,0); } }
+@keyframes toa-kb-up     { from { transform: scale(1.03)  translate3d(0,1.5%,0); } to { transform: scale(1.09) translate3d(0,-1.5%,0); } }
+@keyframes toa-kb-down   { from { transform: scale(1.03)  translate3d(0,-1.5%,0); } to { transform: scale(1.09) translate3d(0,1.5%,0); } }
+.toa-kb-in    { animation: toa-kb-in    9s ease-out both; }
+.toa-kb-right { animation: toa-kb-right 9s ease-out both; }
+.toa-kb-left  { animation: toa-kb-left  9s ease-out both; }
+.toa-kb-up    { animation: toa-kb-up    9s ease-out both; }
+.toa-kb-down  { animation: toa-kb-down  9s ease-out both; }
+
+@keyframes toa-shimmer { 0% { transform: translateX(-30%); } 100% { transform: translateX(30%); } }
+.toa-shimmer { animation: toa-shimmer 14s linear infinite; }
+
 @media (prefers-reduced-motion: reduce) {
   .hero-phase { transition: none; }
   .toa-pip-glow { animation: none; }
   .toa-ring-pop { animation: none; }
+  .toa-kb-in, .toa-kb-right, .toa-kb-left, .toa-kb-up, .toa-kb-down { animation: none; }
+  .toa-shimmer { animation: none; }
 }
+
