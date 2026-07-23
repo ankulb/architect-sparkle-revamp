@@ -19,7 +19,7 @@ const SLIDES: Slide[] = [
   {
     image: luxury.url,
     kicker: "Luxury Housing",
-    headline: "Homes shaped around the way people actually live",
+    headline: "Designing the future through Architecture, Interiors and Engineering",
     kb: "in",
   },
   {
