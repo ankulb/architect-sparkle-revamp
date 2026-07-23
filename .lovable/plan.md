@@ -1,20 +1,47 @@
-## Changes
 
-### 1. "Our practice in action" — match the Colliers reference
-Rework `src/components/home/DynamicSections.tsx` so the strip reads like the attached reference:
+## Homepage Hero — Cinematic Rotating Banner
 
-- Replace the horizontal snap-scroll row with a flush grid of portrait tiles that all sit visible on desktop (no scroll). On desktop show all 7 cards in one row (`grid-cols-7`), tablet `grid-cols-3`, mobile `grid-cols-2` (still scroll-free — just wraps).
-- Card shape becomes tall portrait (`aspect-[3/5]`) with the image filling the full tile and no dark gradient by default — image reads clean and bright like the reference.
-- Move caption + title OUT of the image and place them BELOW the tile: small blue/gold uppercase overline ("caption") and a short title line underneath, left-aligned, matching the reference's `OUR PEOPLE & EXPERTISE IN ACTION` / title treatment.
-- Keep the click-to-open immersive overlay behaviour and the `layoutId` expansion — only the resting presentation changes. Remove the 3D tilt + gold corner marks + "ENTER →" affordance on rest; keep a subtle image zoom on hover and a thin gold underline that grows under the title on hover.
-- Section heading stays ("Our practice in action" / "See how we're shaping the future"), aligned left as today.
+Replace the current single-video hero with a SOM-style rotating carousel of the 5 uploaded category images. Each slide feels like video through slow Ken Burns motion (subtle zoom + pan) plus a soft grain/light-shimmer overlay, so a still image reads as a live shot.
 
-### 2. Careers — 30 / 70 media-to-text ratio (SOM style)
-Update `src/components/home/Careers.tsx`:
+### Slides (5)
+Each slide = full-bleed image + kicker + large light headline. Content sourced from the current TOA site categories.
 
-- Change the two-column grid from `md:grid-cols-2` to `md:grid-cols-[30%_1fr]` (with the existing `gap-16`) so the video occupies ~30% and the text column ~70%, matching the SOM reference proportions.
-- Keep the current media (video in a contained aspect frame with gold corner marks) and the right-column composition (gold hairline, overline, headline, body, CTA) — only the column ratio changes.
-- Tighten the media aspect to `aspect-[3/4]` so the smaller 30% column still reads as a substantial portrait frame rather than a thin sliver.
-- Mobile stays single-column (media on top, text below) — unchanged.
+1. **Luxury Housing** — `Luxury_Housing.jpg` — Kicker "Expertise" · "Homes shaped around the way people actually live"
+2. **Commercial** — `Commercial.png` — Kicker "Expertise" · "Landmark workplaces that anchor a skyline"
+3. **Data Centres** — `Data_Centre.png` — Kicker "Expertise" · "Mission-critical infrastructure, engineered end to end"
+4. **Hospitality** — `Hospitality.png` — Kicker "Expertise" · "Places that hold a guest from arrival to memory"
+5. **Interiors** — `Interior_1.png` — Kicker "Expertise" · "Interiors where material, light and craft meet"
 
-No other files, data, or routes change.
+(Copy will be refined in build; captions kept short like SOM.)
+
+### Motion & feel (video-like from stills)
+- **Ken Burns per slide**: 8s slow zoom (1.0 → 1.08) with a gentle pan direction that alternates per slide (left, right, up, down, center-in).
+- **Crossfade**: 1.2s opacity + slight scale crossfade between slides.
+- **Grain overlay**: very low-opacity animated noise SVG for cinematic texture.
+- **Light shimmer**: subtle diagonal gradient drifting slowly across (mimics window/sun highlights of a real video).
+- **Auto-advance** every ~7s; pauses on hover of the pause button.
+- Respects `prefers-reduced-motion` (freezes zoom, keeps crossfade minimal).
+
+### UI chrome (matches SOM references)
+- Bottom-left: small uppercase kicker + large thin serif/display headline (existing font-display, `font-light`, ~4-6xl) with soft text-shadow for legibility.
+- Bottom-left under headline: **pagination dots** (5), click to jump.
+- Bottom-right: **circular pause/play button** with thin border, gold hover.
+- Top: existing Header stays overlaid (already transparent-on-hero).
+- Bottom scrim gradient for text legibility (dark → transparent, ~40% height).
+
+### Files
+- `src/components/home/Hero.tsx` — rewrite to carousel driven by an array of `{ image, kicker, headline }`.
+- Add 5 image asset pointers via `lovable-assets` from `/mnt/user-uploads/` → `src/assets/hero/<name>.{png,jpg}.asset.json`.
+- Keep `hero-video.mp4.asset.json` in repo but unused (safe to leave; no delete unless asked).
+- `src/styles.css` — add `@keyframes toa-kenburns-*` (5 variants), `toa-grain`, `toa-shimmer` utilities.
+
+### Out of scope
+- No changes to sections below the hero.
+- No changes to nav, footer, or theme tokens.
+- Route metadata unchanged.
+
+### Technical notes
+- Carousel state via `useState` + `setInterval`; cleared on unmount and when paused.
+- Preload next image with `<link rel="preload" as="image">` injected once per slide index change.
+- Each slide is absolutely positioned; only active has `opacity-100`, others `opacity-0` with `transition-opacity duration-[1200ms]`.
+- Ken-Burns animation is CSS `animation` restarted per active slide via `key={activeIndex}` on the image wrapper so motion always starts fresh from scale 1.
