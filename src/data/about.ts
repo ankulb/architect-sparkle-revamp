@@ -83,9 +83,20 @@ export const board = {
     lead: "The future isn't imagined alone. It's built together — brick by brick, mind by mind.",
     image: `${UP}/2021/11/WhatsApp-Image-2025-10-30-at-2.48.45-PM-3.jpeg`,
   },
-  people: [
+  directors: [
     { name: "Ar. Parish S. Kapse", role: "Director", image: `${UP}/2025/08/Parish-Kapse.jpeg` },
     { name: "Ar. Aditya B. Yamsanwar", role: "Director", image: `${UP}/2025/08/Aditya-Yamsanwar.jpeg` },
+  ],
+};
+
+export const anchors = {
+  hero: {
+    eyebrow: "Leadership",
+    title: "Anchors of TOA",
+    lead: "The stewards holding the practice together — guiding culture, craft and continuity across every studio.",
+    image: `${UP}/2025/07/TOA-Team-e1758107663494-1024x535.jpg`,
+  },
+  people: [
     { name: "Ar. Bharat Yamsanwar", role: "Director", image: `${UP}/2025/08/Bharat-Yamsanwar.jpeg` },
     { name: "Jyoti Yamsanwar", role: "Director", image: `${UP}/2025/08/Jyoti-Yamsanwar.jpeg` },
     { name: "Rupali Kapse", role: "Director", image: `${UP}/2025/08/Jyoti-Kapse.jpeg` },
