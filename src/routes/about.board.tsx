@@ -45,7 +45,7 @@ function BoardPage() {
               Directors of the practice
             </Reveal>
             <div className="mt-14">
-              <PeopleGrid people={board.people} />
+              <PeopleGrid people={board.directors} />
             </div>
           </div>
         </section>
