@@ -39,7 +39,7 @@ export function Header() {
                   <div key={item.label} className="group static">
                     <a
                       href={item.href ?? "#"}
-                      className="flex items-center gap-1.5 text-sm font-medium uppercase tracking-[0.14em] text-muted-foreground transition-colors hover:text-foreground"
+                      className="flex items-center gap-1.5 text-sm font-semibold uppercase tracking-[0.14em] text-foreground/95 [text-shadow:0_1px_12px_rgba(0,0,0,0.65)] transition-colors hover:text-gold"
                     >
                       {item.label}
                       <ChevronDown className="h-3.5 w-3.5 transition-transform duration-300 group-hover:rotate-180" />
@@ -75,7 +75,7 @@ export function Header() {
                   <div key={item.label} className="group relative">
                     <a
                       href={item.href ?? "#"}
-                      className="flex items-center gap-1.5 text-sm font-medium uppercase tracking-[0.14em] text-muted-foreground transition-colors hover:text-foreground"
+                      className="flex items-center gap-1.5 text-sm font-semibold uppercase tracking-[0.14em] text-foreground/95 [text-shadow:0_1px_12px_rgba(0,0,0,0.65)] transition-colors hover:text-gold"
                     >
                       {item.label}
                       <ChevronDown className="h-3.5 w-3.5 transition-transform duration-300 group-hover:rotate-180" />
@@ -110,7 +110,7 @@ export function Header() {
                     key={item.label}
                     to={item.to}
                     activeProps={{ className: "text-foreground" }}
-                    className="group relative text-sm font-medium uppercase tracking-[0.14em] text-muted-foreground transition-colors hover:text-foreground"
+                    className="group relative text-sm font-semibold uppercase tracking-[0.14em] text-foreground/95 [text-shadow:0_1px_12px_rgba(0,0,0,0.65)] transition-colors hover:text-gold"
                   >
                     {item.label}
                     <span className="absolute -bottom-1.5 left-0 h-px w-0 bg-gold transition-all duration-300 group-hover:w-full" />
@@ -119,7 +119,7 @@ export function Header() {
                   <a
                     key={item.label}
                     href={item.href}
-                    className="group relative text-sm font-medium uppercase tracking-[0.14em] text-muted-foreground transition-colors hover:text-foreground"
+                    className="group relative text-sm font-semibold uppercase tracking-[0.14em] text-foreground/95 [text-shadow:0_1px_12px_rgba(0,0,0,0.65)] transition-colors hover:text-gold"
                   >
                     {item.label}
                     <span className="absolute -bottom-1.5 left-0 h-px w-0 bg-gold transition-all duration-300 group-hover:w-full" />
