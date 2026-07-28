@@ -253,7 +253,7 @@ export function DynamicSections() {
                 </div>
               </Reveal>
 
-              <div className="grid grid-cols-2 gap-x-4 gap-y-10 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 lg:gap-x-6">
+              <div className="grid grid-cols-2 gap-x-4 gap-y-10 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 lg:gap-x-5">
                 {items.map(({ item, i }) => (
                   <SpatialCard
                     key={item.caption}
