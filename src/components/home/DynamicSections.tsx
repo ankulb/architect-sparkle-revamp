@@ -273,14 +273,14 @@ export function DynamicSections() {
       </div>
 
       <div className="mx-auto max-w-[1600px] space-y-16 px-6 pb-24 pt-14 md:space-y-24 md:px-10 md:pb-36 md:pt-20">
-        {rows.map((row) => {
+        {rows.map((row, rowIdx) => {
           const items = dynamicSections
             .map((item, i) => ({ item, i }))
             .filter(({ item }) => item.discipline === row.discipline);
 
           return (
-            <div key={row.key}>
-              <Reveal>
+            <ScrollRow key={row.key} direction={rowIdx === 0 ? "left" : "right"}>
+              <div>
                 <div className="mb-8 flex items-center gap-4 md:mb-10">
                   <span className="h-px w-8 bg-gold/60" />
                   <p className="text-[11px] font-semibold uppercase tracking-[0.3em] text-gold">
@@ -288,20 +288,20 @@ export function DynamicSections() {
                   </p>
                   <span className="h-px flex-1 bg-border/60" />
                 </div>
-              </Reveal>
 
-              <div className="grid grid-cols-2 gap-x-4 gap-y-10 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 lg:gap-x-5">
-                {items.map(({ item, i }) => (
-                  <SpatialCard
-                    key={item.caption}
-                    item={item}
-                    index={i}
-                    onOpen={handleOpen}
-                    dimmed={openIndex !== null && openIndex !== i}
-                  />
-                ))}
+                <div className="grid grid-cols-2 gap-x-4 gap-y-10 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 lg:gap-x-5">
+                  {items.map(({ item, i }) => (
+                    <SpatialCard
+                      key={item.caption}
+                      item={item}
+                      index={i}
+                      onOpen={handleOpen}
+                      dimmed={openIndex !== null && openIndex !== i}
+                    />
+                  ))}
+                </div>
               </div>
-            </div>
+            </ScrollRow>
           );
         })}
       </div>
