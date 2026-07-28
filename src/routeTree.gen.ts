@@ -20,6 +20,7 @@ import { Route as AboutLifeRouteImport } from './routes/about.life'
 import { Route as AboutCsrRouteImport } from './routes/about.csr'
 import { Route as AboutClienteleRouteImport } from './routes/about.clientele'
 import { Route as AboutBoardRouteImport } from './routes/about.board'
+import { Route as AboutAnchorsRouteImport } from './routes/about.anchors'
 
 const PortfolioRoute = PortfolioRouteImport.update({
   id: '/portfolio',
@@ -76,11 +77,17 @@ const AboutBoardRoute = AboutBoardRouteImport.update({
   path: '/board',
   getParentRoute: () => AboutRoute,
 } as any)
+const AboutAnchorsRoute = AboutAnchorsRouteImport.update({
+  id: '/anchors',
+  path: '/anchors',
+  getParentRoute: () => AboutRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRouteWithChildren
   '/portfolio': typeof PortfolioRouteWithChildren
+  '/about/anchors': typeof AboutAnchorsRoute
   '/about/board': typeof AboutBoardRoute
   '/about/clientele': typeof AboutClienteleRoute
   '/about/csr': typeof AboutCsrRoute
@@ -92,6 +99,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about/anchors': typeof AboutAnchorsRoute
   '/about/board': typeof AboutBoardRoute
   '/about/clientele': typeof AboutClienteleRoute
   '/about/csr': typeof AboutCsrRoute
@@ -106,6 +114,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRouteWithChildren
   '/portfolio': typeof PortfolioRouteWithChildren
+  '/about/anchors': typeof AboutAnchorsRoute
   '/about/board': typeof AboutBoardRoute
   '/about/clientele': typeof AboutClienteleRoute
   '/about/csr': typeof AboutCsrRoute
@@ -121,6 +130,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/portfolio'
+    | '/about/anchors'
     | '/about/board'
     | '/about/clientele'
     | '/about/csr'
@@ -132,6 +142,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/about/anchors'
     | '/about/board'
     | '/about/clientele'
     | '/about/csr'
@@ -145,6 +156,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/portfolio'
+    | '/about/anchors'
     | '/about/board'
     | '/about/clientele'
     | '/about/csr'
@@ -240,10 +252,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutBoardRouteImport
       parentRoute: typeof AboutRoute
     }
+    '/about/anchors': {
+      id: '/about/anchors'
+      path: '/anchors'
+      fullPath: '/about/anchors'
+      preLoaderRoute: typeof AboutAnchorsRouteImport
+      parentRoute: typeof AboutRoute
+    }
   }
 }
 
 interface AboutRouteChildren {
+  AboutAnchorsRoute: typeof AboutAnchorsRoute
   AboutBoardRoute: typeof AboutBoardRoute
   AboutClienteleRoute: typeof AboutClienteleRoute
   AboutCsrRoute: typeof AboutCsrRoute
@@ -253,6 +273,7 @@ interface AboutRouteChildren {
 }
 
 const AboutRouteChildren: AboutRouteChildren = {
+  AboutAnchorsRoute: AboutAnchorsRoute,
   AboutBoardRoute: AboutBoardRoute,
   AboutClienteleRoute: AboutClienteleRoute,
   AboutCsrRoute: AboutCsrRoute,
