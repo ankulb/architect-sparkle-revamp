@@ -1,36 +1,23 @@
-## Update Expertise mega-menu order & items
+## Goal
+Give the "Our practice in action" section a dynamic scroll-choreographed feel: the two 7-block rows (Architecture, Interiors) enter from opposite sides as the user scrolls in, and drift back out in opposite directions as the user scrolls past.
 
-Replace the two lists under `expertiseGroups` in `src/data/home.ts` with the exact sequences the client sent. All items keep `href: "/#expertise"` (same as today) since no dedicated landing pages exist yet.
+## Behavior
+- Architecture row: enters from the **left**, settles centered, exits to the **left** (mirrored horizontal drift tied to scroll progress).
+- Interiors row: enters from the **right**, settles centered, exits to the **right**.
+- Both rows also fade in/out at the extremes so the swap feels cinematic rather than a hard slide.
+- Slight vertical stagger between rows so they don't move in lockstep.
+- Respect `prefers-reduced-motion`: skip transforms, keep static layout.
+- Cards keep current hover + `layoutId` immersive open behavior; no changes to overlay, data, or grid counts.
 
-### Interior Architecture (new order)
-1. Banking & Finance
-2. IT & Software
-3. Engineering
-4. Health & Pharma
-5. Media
-6. Shipping
-7. Telecom
-8. Co-working
-9. Education
-10. Green Field
+## Implementation (in `src/components/home/DynamicSections.tsx`)
+- Wrap each of the two `rows.map(...)` blocks in a Motion component driven by `useScroll({ target: rowRef, offset: ["start end", "end start"] })`.
+- Derive `x` and `opacity` from `useTransform(scrollYProgress, ...)`:
+  - Architecture: `x` maps `[0, 0.4, 0.7, 1] → [-220, 0, 0, -220]` px, `opacity [0,0.25,0.75,1] → [0,1,1,0]`.
+  - Interiors: same curve but positive `x` (mirrored).
+- Keep the section header ("See how we're shaping the future") static — only the two row groups animate.
+- Guard with `useReducedMotion()` → return identity transforms when true.
+- No changes to `SpatialCard`, `ImmersiveOverlay`, styles, or data.
 
-### Architecture & Urban Design (new order)
-1. Civic and Institutional
-2. Commercial
-3. Data Centres
-4. Transit Infra
-5. Mixed Use
-6. Luxury Housing and Residential
-7. Hospitality
-8. Healthcare
-9. Sustainable Practices
-10. Adaptive Reuse
-
-### Notes
-- Removed from previous list: Airports, Facade Design, Corporate + Workplace, Workplace, Educational (superseded / renamed).
-- Added: Engineering, Health & Pharma, Green Field (Interior Architecture); Transit Infra, Healthcare, Sustainable Practices (Architecture & Urban Design).
-- Header mega-menu (`src/components/layout/Header.tsx`) reads from `expertiseGroups` — no component changes needed. Footer's Expertise column also updates automatically if it reads the same source; otherwise I'll mirror the new lists there.
-
-### Files touched
-- `src/data/home.ts` — replace both `items` arrays in `expertiseGroups`.
-- `src/components/layout/Footer.tsx` — only if it has a hardcoded expertise list (I'll verify and update to match).
+## Out of scope
+- No layout, copy, image, or grid-count changes.
+- No other homepage sections touched.

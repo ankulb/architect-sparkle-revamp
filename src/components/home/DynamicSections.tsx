@@ -1,11 +1,48 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
-import { AnimatePresence, motion } from "motion/react";
+import {
+  AnimatePresence,
+  motion,
+  useReducedMotion,
+  useScroll,
+  useTransform,
+} from "motion/react";
 
 import { dynamicSections } from "@/data/home";
 import { Reveal } from "@/components/Reveal";
 
 type Item = (typeof dynamicSections)[number];
+
+function ScrollRow({
+  direction,
+  children,
+}: {
+  direction: "left" | "right";
+  children: React.ReactNode;
+}) {
+  const ref = useRef<HTMLDivElement>(null);
+  const reduce = useReducedMotion();
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"],
+  });
+  const sign = direction === "left" ? -1 : 1;
+  const x = useTransform(
+    scrollYProgress,
+    [0, 0.35, 0.7, 1],
+    [260 * sign, 0, 0, 260 * sign],
+  );
+  const opacity = useTransform(scrollYProgress, [0, 0.25, 0.75, 1], [0, 1, 1, 0]);
+
+  return (
+    <motion.div
+      ref={ref}
+      style={reduce ? undefined : { x, opacity }}
+    >
+      {children}
+    </motion.div>
+  );
+}
 
 function SpatialCard({
   item,
@@ -236,14 +273,14 @@ export function DynamicSections() {
       </div>
 
       <div className="mx-auto max-w-[1600px] space-y-16 px-6 pb-24 pt-14 md:space-y-24 md:px-10 md:pb-36 md:pt-20">
-        {rows.map((row) => {
+        {rows.map((row, rowIdx) => {
           const items = dynamicSections
             .map((item, i) => ({ item, i }))
             .filter(({ item }) => item.discipline === row.discipline);
 
           return (
-            <div key={row.key}>
-              <Reveal>
+            <ScrollRow key={row.key} direction={rowIdx === 0 ? "left" : "right"}>
+              <div>
                 <div className="mb-8 flex items-center gap-4 md:mb-10">
                   <span className="h-px w-8 bg-gold/60" />
                   <p className="text-[11px] font-semibold uppercase tracking-[0.3em] text-gold">
@@ -251,20 +288,20 @@ export function DynamicSections() {
                   </p>
                   <span className="h-px flex-1 bg-border/60" />
                 </div>
-              </Reveal>
 
-              <div className="grid grid-cols-2 gap-x-4 gap-y-10 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 lg:gap-x-5">
-                {items.map(({ item, i }) => (
-                  <SpatialCard
-                    key={item.caption}
-                    item={item}
-                    index={i}
-                    onOpen={handleOpen}
-                    dimmed={openIndex !== null && openIndex !== i}
-                  />
-                ))}
+                <div className="grid grid-cols-2 gap-x-4 gap-y-10 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 lg:gap-x-5">
+                  {items.map(({ item, i }) => (
+                    <SpatialCard
+                      key={item.caption}
+                      item={item}
+                      index={i}
+                      onOpen={handleOpen}
+                      dimmed={openIndex !== null && openIndex !== i}
+                    />
+                  ))}
+                </div>
               </div>
-            </div>
+            </ScrollRow>
           );
         })}
       </div>
