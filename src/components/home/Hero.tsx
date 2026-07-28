@@ -114,8 +114,16 @@ export function Hero() {
       </div>
 
       {/* Scrims for legibility */}
-      <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/25 to-background/10" />
-      <div className="absolute inset-0 bg-gradient-to-r from-background/55 via-transparent to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-background/10" />
+      <div className="absolute inset-0 bg-gradient-to-r from-background/75 via-background/20 to-transparent" />
+      {/* Focused radial behind headline to guarantee contrast */}
+      <div
+        className="pointer-events-none absolute inset-x-0 bottom-0 h-[65%]"
+        style={{
+          background:
+            "radial-gradient(ellipse at 20% 90%, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.35) 40%, transparent 75%)",
+        }}
+      />
 
       {/* Blueprint grid overlay */}
       <InteractiveGrid radius={280} baseOpacity={0.18} />
@@ -130,10 +138,10 @@ export function Hero() {
             exit={{ opacity: 0, y: -12 }}
             transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
           >
-            <p className="text-[11px] font-medium uppercase tracking-[0.4em] text-gold [text-shadow:0_1px_12px_rgba(0,0,0,0.6)]">
+            <p className="text-[12px] font-semibold uppercase tracking-[0.42em] text-gold [text-shadow:0_2px_16px_rgba(0,0,0,0.85)]">
               {slide.kicker}
             </p>
-            <h1 className="font-display mt-5 max-w-4xl text-balance text-3xl font-light leading-[1.05] tracking-tight text-foreground [text-shadow:0_2px_28px_rgba(0,0,0,0.6)] sm:text-5xl lg:text-6xl xl:text-[4.5rem]">
+            <h1 className="font-display mt-5 max-w-5xl text-balance text-4xl font-medium leading-[1.02] tracking-tight text-foreground [text-shadow:0_2px_32px_rgba(0,0,0,0.85),0_1px_3px_rgba(0,0,0,0.6)] sm:text-6xl lg:text-7xl xl:text-[5.25rem]">
               {slide.headline}
             </h1>
           </motion.div>

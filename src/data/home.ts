@@ -15,7 +15,9 @@ export type NavItem = {
 
 export const aboutNav: NavChild[] = [
   { label: "Our Story", to: "/about" },
-  { label: "Leadership", to: "/about/board" },
+  { label: "Board of Directors", to: "/about/board" },
+  { label: "Anchors of TOA", to: "/about/anchors" },
+  { label: "Our Team", to: "/about/team" },
   { label: "CSR", to: "/about/csr" },
   { label: "Climate Action", to: "/about/csr" },
   { label: "Life at TOA", to: "/about/life" },
