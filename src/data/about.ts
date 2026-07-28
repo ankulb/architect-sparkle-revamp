@@ -14,6 +14,7 @@ export const companyLinkedin = "https://www.linkedin.com/company/teamonearchitec
 export const aboutNav = [
   { label: "About Us", to: "/about" },
   { label: "Board of Directors", to: "/about/board" },
+  { label: "Anchors of TOA", to: "/about/anchors" },
   { label: "Our Team", to: "/about/team" },
   { label: "Clientele", to: "/about/clientele" },
   { label: "CSR", to: "/about/csr" },
