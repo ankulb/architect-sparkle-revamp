@@ -155,6 +155,7 @@ export const dynamicSections = [
     excerpt: "Honoured across national and international platforms for design excellence.",
     body: "From IIID and NDTV Design & Architecture accolades to global mentions, our work is consistently recognised for how it balances craft, context and community. Every citation is a reminder that considered architecture endures.",
     href: undefined as string | undefined,
+    discipline: "architecture" as const,
   },
   {
     caption: "In the News",
@@ -163,6 +164,7 @@ export const dynamicSections = [
     excerpt: "Featured in leading design, business and lifestyle publications.",
     body: "Our projects and points of view have been covered by ArchDaily, Architectural Digest, Economic Times and more — spanning workplace futures, sustainable urbanism and India's evolving design language.",
     href: undefined as string | undefined,
+    discipline: "architecture" as const,
   },
   {
     caption: "CSR",
@@ -171,14 +173,7 @@ export const dynamicSections = [
     excerpt: "Pro-bono civic work, education and climate-positive initiatives.",
     body: "",
     href: "/about/csr",
-  },
-  {
-    caption: "Clients",
-    title: "Trusted by 200+ brands worldwide",
-    image: `${UP}/2026/03/DSC07321-HDR-650x650.jpg`,
-    excerpt: "Long-term partners across enterprise, government and hospitality.",
-    body: "",
-    href: "/about/clientele",
+    discipline: "architecture" as const,
   },
   {
     caption: "Upcoming Projects",
@@ -187,6 +182,16 @@ export const dynamicSections = [
     excerpt: "A pipeline of landmark workplaces, campuses and mixed-use developments.",
     body: "From next-generation data centres to civic-scale mixed-use quarters, our forthcoming portfolio pushes further into sustainable materials, adaptive reuse and technology-forward workplaces.",
     href: undefined as string | undefined,
+    discipline: "architecture" as const,
+  },
+  {
+    caption: "Clients",
+    title: "Trusted by 200+ brands worldwide",
+    image: `${UP}/2026/03/DSC07321-HDR-650x650.jpg`,
+    excerpt: "Long-term partners across enterprise, government and hospitality.",
+    body: "",
+    href: "/about/clientele",
+    discipline: "interiors" as const,
   },
   {
     caption: "University Collaboration",
@@ -195,14 +200,16 @@ export const dynamicSections = [
     excerpt: "Studios, juries and research partnerships with leading schools of design.",
     body: "We invest in emerging voices through visiting critiques, live-project studios and thesis mentorship with institutions across India — bringing academia and practice into a continuous conversation.",
     href: undefined as string | undefined,
+    discipline: "interiors" as const,
   },
   {
-    caption: "AI in Architecture",
+    caption: "AI in Interiors",
     title: "Designing with intelligent tools",
     image: `${UP}/2026/03/01.-Reception-Atomberg-AI-650x650.png`,
-    excerpt: "Generative workflows augmenting — not replacing — the architect's craft.",
+    excerpt: "Generative workflows augmenting — not replacing — the designer's craft.",
     body: "From massing exploration to daylight simulation and material search, we're integrating AI into our studio pipeline to accelerate iteration while keeping human judgement, context and craft at the centre.",
     href: undefined as string | undefined,
+    discipline: "interiors" as const,
   },
 ] as const;
 
