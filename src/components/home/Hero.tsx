@@ -147,7 +147,13 @@ export function Hero() {
             <p className="text-[12px] font-semibold uppercase tracking-[0.42em] text-gold [text-shadow:0_2px_16px_rgba(0,0,0,0.85)]">
               {slide.kicker}
             </p>
-            <h1 className="font-display mt-5 max-w-5xl text-balance text-4xl font-medium leading-[1.02] tracking-tight text-foreground [text-shadow:0_2px_32px_rgba(0,0,0,0.85),0_1px_3px_rgba(0,0,0,0.6)] sm:text-6xl lg:text-7xl xl:text-[5.25rem]">
+            <h1
+              className={`font-display mt-5 max-w-5xl text-balance font-medium leading-[1.06] tracking-tight text-foreground [text-shadow:0_2px_32px_rgba(0,0,0,0.85),0_1px_3px_rgba(0,0,0,0.6)] ${
+                slide.headline.length > 110
+                  ? "text-2xl sm:text-4xl lg:text-5xl xl:text-[3.5rem]"
+                  : "text-3xl sm:text-5xl lg:text-6xl xl:text-[4.25rem]"
+              }`}
+            >
               {slide.headline}
             </h1>
           </motion.div>
