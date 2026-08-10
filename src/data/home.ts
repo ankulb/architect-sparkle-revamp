@@ -1,5 +1,6 @@
 // Content sourced from teamonearchitects.com (current homepage).
 import johnsonControlsLogo from "@/assets/brands/johnson-controls.png.asset.json";
+import careersImage from "@/assets/careers-toa.jpg.asset.json";
 
 const UP = "https://teamonearchitects.com/wp-content/uploads";
 
@@ -146,34 +147,17 @@ export const expertiseDivisions = [
   },
 ] as const;
 
+// Sequence per client note: Sustainability, Upcoming Projects, Research,
+// Global Collaboration, Awards, In News, CSR.
 export const dynamicSections = [
-  // ——————————————————————————— Architecture (7)
   {
-    caption: "Awards & Recognition",
-    title: "Recognized among India's leading practices",
-    image: `${UP}/2026/03/R3A8108-newy-650x650.jpg`,
-    excerpt: "Honoured across national and international platforms for design excellence.",
-    body: "From IIID and NDTV Design & Architecture accolades to global mentions, our work is consistently recognised for how it balances craft, context and community. Every citation is a reminder that considered architecture endures.",
+    caption: "Sustainability",
+    title: "Building for a climate-positive future",
+    image:
+      "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&w=800&q=80",
+    excerpt: "IGBC, LEED and WELL-aligned practices woven into every project.",
+    body: "Energy modelling, passive design and low-carbon materials are non-negotiables in our studio — helping clients meet ambitious ESG targets while creating healthier places to live and work.",
     href: undefined as string | undefined,
-    discipline: "architecture" as const,
-  },
-  {
-    caption: "In the News",
-    title: "TOA in the press",
-    image: `${UP}/2026/03/Blog-Cover-1.png`,
-    excerpt: "Featured in leading design, business and lifestyle publications.",
-    body: "Our projects and points of view have been covered by ArchDaily, Architectural Digest, Economic Times and more — spanning workplace futures, sustainable urbanism and India's evolving design language.",
-    href: undefined as string | undefined,
-    discipline: "architecture" as const,
-  },
-  {
-    caption: "CSR",
-    title: "Design in service of community",
-    image: `${UP}/2025/07/TOA-Team-e1758107663494-1024x535.jpg`,
-    excerpt: "Pro-bono civic work, education and climate-positive initiatives.",
-    body: "",
-    href: "/about/csr",
-    discipline: "architecture" as const,
   },
   {
     caption: "Upcoming Projects",
@@ -182,101 +166,51 @@ export const dynamicSections = [
     excerpt: "A pipeline of landmark workplaces, campuses and mixed-use developments.",
     body: "From next-generation data centres to civic-scale mixed-use quarters, our forthcoming portfolio pushes further into sustainable materials, adaptive reuse and technology-forward workplaces.",
     href: undefined as string | undefined,
-    discipline: "architecture" as const,
   },
   {
-    caption: "Sustainability",
-    title: "Building for a climate-positive future",
-    image: `${UP}/2026/03/VIEW-1-2-650x650.png`,
-    excerpt: "IGBC, LEED and WELL-aligned practices woven into every project.",
-    body: "Energy modelling, passive design and low-carbon materials are non-negotiables in our studio — helping clients meet ambitious ESG targets while creating healthier places to live and work.",
-    href: undefined as string | undefined,
-    discipline: "architecture" as const,
-  },
-  {
-    caption: "Research & Thought Leadership",
+    caption: "Research",
     title: "Ideas that shape tomorrow's cities",
     image: `${UP}/2026/02/Featured-image-1.png`,
     excerpt: "White papers, keynotes and studios exploring the future of the built environment.",
     body: "Our research spans mission-critical infrastructure, mixed-use urbanism and AI-ready campuses — feeding directly back into project work and industry conversation.",
     href: undefined as string | undefined,
-    discipline: "architecture" as const,
   },
   {
-    caption: "Global Collaborations",
+    caption: "Global Collaboration",
     title: "Partnering across borders",
-    image: `${UP}/2026/03/786928477867589-copy-650x650.jpg`,
-    excerpt: "Joint ventures with international consultants and specialist studios.",
-    body: "We collaborate with engineering, landscape and specialist design partners across Asia, Europe and North America to bring world-class expertise to Indian and global projects.",
+    image:
+      "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800&q=80",
+    excerpt: "Coordinating with clients and consultants across 50+ international cities.",
+    body: "With studios in Mumbai, Pune, Hyderabad, Bengaluru and Singapore, we collaborate with engineering, landscape and specialist design partners worldwide — 75% of our client base is multinational.",
     href: undefined as string | undefined,
-    discipline: "architecture" as const,
-  },
-
-  // ——————————————————————————— Interiors (7)
-  {
-    caption: "Clients",
-    title: "Trusted by 200+ brands worldwide",
-    image: `${UP}/2026/03/DSC07321-HDR-650x650.jpg`,
-    excerpt: "Long-term partners across enterprise, government and hospitality.",
-    body: "",
-    href: "/about/clientele",
-    discipline: "interiors" as const,
   },
   {
-    caption: "University Collaboration",
-    title: "Mentoring the next generation",
-    image: `${UP}/2026/03/786928477867589-copy-650x650.jpg`,
-    excerpt: "Studios, juries and research partnerships with leading schools of design.",
-    body: "We invest in emerging voices through visiting critiques, live-project studios and thesis mentorship with institutions across India — bringing academia and practice into a continuous conversation.",
-    href: undefined as string | undefined,
-    discipline: "interiors" as const,
-  },
-  {
-    caption: "AI in Interiors",
-    title: "Designing with intelligent tools",
-    image: `${UP}/2026/03/01.-Reception-Atomberg-AI-650x650.png`,
-    excerpt: "Generative workflows augmenting — not replacing — the designer's craft.",
-    body: "From massing exploration to daylight simulation and material search, we're integrating AI into our studio pipeline to accelerate iteration while keeping human judgement, context and craft at the centre.",
-    href: undefined as string | undefined,
-    discipline: "interiors" as const,
-  },
-  {
-    caption: "Workplace Futures",
-    title: "Reimagining how we work",
-    image: `${UP}/2026/03/Infinix_Backlight_0_5_Strict-650x650.jpg`,
-    excerpt: "Hybrid-ready workplaces engineered for focus, collaboration and wellbeing.",
-    body: "Our workplace practice blends occupancy analytics, acoustic design and brand storytelling to shape offices that support how teams actually work today — and how they'll want to work tomorrow.",
-    href: undefined as string | undefined,
-    discipline: "interiors" as const,
-  },
-  {
-    caption: "Hospitality",
-    title: "Interiors with a sense of place",
-    image: `${UP}/2025/08/040-650x650.jpg`,
-    excerpt: "Restaurants, lounges and hospitality environments rooted in narrative.",
-    body: "We design hospitality interiors that translate brand and context into atmosphere — considered materiality, lighting and detail that make each space unmistakably its own.",
-    href: undefined as string | undefined,
-    discipline: "interiors" as const,
-  },
-  {
-    caption: "Wellness & Certifications",
-    title: "Human-first, certified interiors",
-    image: `${UP}/2026/05/DSC_8289-650x650.jpg`,
-    excerpt: "WELL, IGBC and Fitwel principles built into every workplace we deliver.",
-    body: "Air, light, movement and material health are core briefs — not add-ons — helping our clients hit certification targets while creating environments people genuinely want to be in.",
-    href: undefined as string | undefined,
-    discipline: "interiors" as const,
-  },
-  {
-    caption: "Craft & Materiality",
-    title: "A studio obsessed with detail",
+    caption: "Awards",
+    title: "Recognised for design and workplace excellence",
     image: `${UP}/2026/03/R3A8108-newy-650x650.jpg`,
-    excerpt: "Bespoke joinery, considered finishes and a deep bench of maker partnerships.",
-    body: "From custom lighting to hand-finished stone and joinery, our interiors are built on long-standing relationships with India's finest fabricators — where every detail is drawn, prototyped and refined.",
+    excerpt: "IGBC-certified projects and a Great Place To Work certification.",
+    body: "Our portfolio includes a growing roster of IGBC-certified green buildings, alongside a Great Place To Work certification for the studio itself — recognition of both what we build and how we build it.",
     href: undefined as string | undefined,
-    discipline: "interiors" as const,
+  },
+  {
+    caption: "In News",
+    title: "TOA in the press",
+    image: `${UP}/2026/03/Blog-Cover-1.png`,
+    excerpt: "Featured in leading design, business and lifestyle publications.",
+    body: "Our projects and points of view have been covered across design, business and lifestyle media — spanning workplace futures, sustainable urbanism and India's evolving design language.",
+    href: undefined as string | undefined,
+  },
+  {
+    caption: "CSR",
+    title: "Design in service of community",
+    image:
+      "https://images.unsplash.com/photo-1593113630400-ea4288922497?auto=format&fit=crop&w=800&q=80",
+    excerpt: "Pro-bono civic work, education and climate-positive initiatives.",
+    body: "",
+    href: "/about/csr",
   },
 ] as const;
+
 
 
 export const careers = {
@@ -284,9 +218,8 @@ export const careers = {
   title: "Build the next 25 years with us.",
   body: "We're a multidisciplinary studio of architects, interior designers and engineers building calmly, courageously, and together. Our Trainee Program brings emerging talent into live projects from day one.",
   cta: { label: "Explore the Trainee Program", href: "https://teamonearchitects.com/careers/" },
-  video:
-    "https://videos.pexels.com/video-files/3networking-professionals/pexels-fauxels-3252571.mp4",
-  poster: `${UP}/2025/07/TOA-Team-e1758107663494-1024x535.jpg`,
+  image: careersImage.url,
+  imageAlt: "The leadership team of Team One Architects at the Mumbai studio",
   team: [
     `${UP}/2025/07/TOA-Team-e1758107663494-1024x535.jpg`,
     `${UP}/2026/03/DSC07321-HDR-650x650.jpg`,
@@ -294,6 +227,7 @@ export const careers = {
     `${UP}/2026/03/VIEW-1-650x650.png`,
   ],
 };
+
 
 
 export const stats = [
@@ -328,16 +262,14 @@ export const responsibilities = {
 };
 
 export const projects = [
-  { title: "APICORE", category: "Corporate Interiors", image: `${UP}/2026/03/DSC07321-HDR-650x650.jpg`, href: "https://teamonearchitects.com/portfolio-item/apicore/" },
-  { title: "MMRDA Headquarters", category: "Commercial & Institutional", image: `${UP}/2026/03/R3A8108-newy-650x650.jpg`, href: "https://teamonearchitects.com/portfolio-item/mmrda-headquarters/" },
-  { title: "JIO School", category: "Commercial & Institutional", image: `${UP}/2026/03/786928477867589-copy-650x650.jpg`, href: "https://teamonearchitects.com/portfolio-item/jio-school-jain-international-organization/" },
-  { title: "Volkswagen", category: "Corporate Interiors", image: `${UP}/2025/08/040-650x650.jpg`, href: "https://teamonearchitects.com/portfolio-item/volkswagen/" },
-  { title: "ATOMBERG", category: "Corporate Interiors", image: `${UP}/2026/03/01.-Reception-Atomberg-AI-650x650.png`, href: "https://teamonearchitects.com/portfolio-item/atomberg/" },
+  { title: "Ergo Technologies", category: "Corporate Interiors", image: `${UP}/2025/08/X3A9650-HDR-Edit.jpg`, href: "https://teamonearchitects.com/portfolio-item/ergo-technologies/" },
+  { title: "JIO School", category: "Commercial & Institutional", image: `${UP}/2026/03/786928477867589-copy-650x650.jpg`, href: "https://teamonearchitects.com/portfolio-item/jio-school/" },
+  { title: "JCI — Johnson Controls", category: "Corporate Interiors", image: `${UP}/2025/08/ad2c6b9e-662a-4bb2-b913-063d1304a2a0.jpg`, href: "https://teamonearchitects.com/portfolio-item/johnson-controls-gcc-offices/" },
+  { title: "BASF", category: "Corporate Interiors", image: `${UP}/2025/08/YKP_1806-NEW.jpg`, href: "https://teamonearchitects.com/portfolio-item/basf/" },
   { title: "Commercial Office Building", category: "Commercial & Institutional", image: `${UP}/2026/03/VIEW-1-650x650.png`, href: "https://teamonearchitects.com/portfolio-item/commercial-office-building/" },
-  { title: "INFINX Office, Mumbai", category: "Corporate Interiors", image: `${UP}/2026/03/Infinix_Backlight_0_5_Strict-650x650.jpg`, href: "https://teamonearchitects.com/portfolio-item/infinx-mumbai-office/" },
-  { title: "Recreation & Convention Complex", category: "Commercial & Institutional", image: `${UP}/2026/03/VIEW-1-2-650x650.png`, href: "https://teamonearchitects.com/portfolio-item/recreation-retail-convention-complex/" },
-  { title: "Indira IVF", category: "Corporate Interiors", image: `${UP}/2026/05/DSC_8289-650x650.jpg`, href: "https://teamonearchitects.com/portfolio-item/indira-ivf/" },
+  { title: "XPO", category: "Corporate Interiors", image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1000&q=80", href: "https://teamonearchitects.com/portfolio-item/xpo/" },
 ];
+
 
 export const testimonials = [
   {

@@ -250,11 +250,6 @@ export function DynamicSections() {
 
   const openItem = openIndex !== null ? dynamicSections[openIndex] : null;
 
-  const rows: { key: string; label: string; discipline: "architecture" | "interiors" }[] = [
-    { key: "arch", label: "Architecture", discipline: "architecture" },
-    { key: "int", label: "Interiors", discipline: "interiors" },
-  ];
-
   return (
     <section className="relative border-t border-border bg-card/30">
       <div className="mx-auto max-w-[1600px] px-6 pt-24 md:px-10 md:pt-36">
@@ -272,38 +267,20 @@ export function DynamicSections() {
         </div>
       </div>
 
-      <div className="mx-auto max-w-[1600px] space-y-16 px-6 pb-24 pt-14 md:space-y-24 md:px-10 md:pb-36 md:pt-20">
-        {rows.map((row, rowIdx) => {
-          const items = dynamicSections
-            .map((item, i) => ({ item, i }))
-            .filter(({ item }) => item.discipline === row.discipline);
-
-          return (
-            <ScrollRow key={row.key} direction={rowIdx === 0 ? "left" : "right"}>
-              <div>
-                <div className="mb-8 flex items-center gap-4 md:mb-10">
-                  <span className="h-px w-8 bg-gold/60" />
-                  <p className="text-[11px] font-semibold uppercase tracking-[0.3em] text-gold">
-                    {row.label}
-                  </p>
-                  <span className="h-px flex-1 bg-border/60" />
-                </div>
-
-                <div className="grid grid-cols-2 gap-x-4 gap-y-10 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 lg:gap-x-5">
-                  {items.map(({ item, i }) => (
-                    <SpatialCard
-                      key={item.caption}
-                      item={item}
-                      index={i}
-                      onOpen={handleOpen}
-                      dimmed={openIndex !== null && openIndex !== i}
-                    />
-                  ))}
-                </div>
-              </div>
-            </ScrollRow>
-          );
-        })}
+      <div className="mx-auto max-w-[1600px] px-6 pb-24 pt-14 md:px-10 md:pb-36 md:pt-20">
+        <ScrollRow direction="left">
+          <div className="grid grid-cols-2 gap-x-4 gap-y-10 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 lg:gap-x-5">
+            {dynamicSections.map((item, i) => (
+              <SpatialCard
+                key={item.caption}
+                item={item}
+                index={i}
+                onOpen={handleOpen}
+                dimmed={openIndex !== null && openIndex !== i}
+              />
+            ))}
+          </div>
+        </ScrollRow>
       </div>
 
       <AnimatePresence>
@@ -319,3 +296,4 @@ export function DynamicSections() {
     </section>
   );
 }
+
