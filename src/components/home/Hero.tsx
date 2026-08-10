@@ -18,35 +18,41 @@ type Slide = {
 const SLIDES: Slide[] = [
   {
     image: luxury.url,
-    kicker: "Luxury Housing",
-    headline: "Designing the future through Architecture, Interiors and Engineering",
+    kicker: "Luxury Development",
+    headline:
+      "Designing the future through experiential architecture & development, master planning, and detailed planning with sustainability at its core.",
     kb: "in",
   },
   {
     image: commercial.url,
     kicker: "Commercial",
-    headline: "Landmark workplaces that anchor a skyline",
+    headline:
+      "Iconic developments crafted to maximize space utilization while anchoring the skyline",
     kb: "left",
   },
   {
     image: dataCentre.url,
     kicker: "Data Centres",
-    headline: "Mission-critical infrastructure, engineered end to end",
+    headline:
+      "Mission-critical digital infrastructure developed with future-ready resilience and end-to-end engineering",
     kb: "right",
   },
   {
     image: hospitality.url,
     kicker: "Hospitality",
-    headline: "Places that hold a guest from arrival to memory",
+    headline:
+      "Evolving spaces that elevate guest happiness and satisfaction from arrival to memory",
     kb: "up",
   },
   {
     image: interior.url,
     kicker: "Interior Architecture",
-    headline: "Interiors where material, light and craft meet",
+    headline:
+      "Interiors where material, light, and craft shape intuitive and immersive user experiences",
     kb: "down",
   },
 ];
+
 
 const INTERVAL_MS = 7000;
 
