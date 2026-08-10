@@ -47,6 +47,9 @@ export const projects: Project[] = [
   { slug: "recreational-block", title: "Recreational Block", category: COMMERCIAL, image: `${UP}/2026/03/view-1-1-1024x683.jpg` },
   { slug: "mmrda-headquarters", title: "MMRDA Headquarters", category: COMMERCIAL, image: `${UP}/2026/03/R3A8108-newy-1024x683.jpg` },
   { slug: "mixed-use-villas-high-rise-at-khalapur", title: "Mixed-Use Villas & High-Rise at Khalapur", category: COMMERCIAL, location: "Khalapur", image: `${UP}/2026/03/VIEW-1-1-1024x683.png` },
+  { slug: "jio-school", title: "JIO School", category: COMMERCIAL, image: `${UP}/2026/03/786928477867589-copy-650x650.jpg` },
+  { slug: "commercial-office-building", title: "Commercial Office Building", category: COMMERCIAL, image: `${UP}/2026/03/VIEW-1-650x650.png` },
+  { slug: "xpo", title: "XPO", category: INTERIORS, image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1000&q=80" },
 ];
 
 // Full case-study detail. Only the reference project (Atomberg) is built out
