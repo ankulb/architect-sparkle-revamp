@@ -217,9 +217,8 @@ export const careers = {
   title: "Build the next 25 years with us.",
   body: "We're a multidisciplinary studio of architects, interior designers and engineers building calmly, courageously, and together. Our Trainee Program brings emerging talent into live projects from day one.",
   cta: { label: "Explore the Trainee Program", href: "https://teamonearchitects.com/careers/" },
-  video:
-    "https://videos.pexels.com/video-files/3networking-professionals/pexels-fauxels-3252571.mp4",
-  poster: `${UP}/2025/07/TOA-Team-e1758107663494-1024x535.jpg`,
+  image: careersImage.url,
+  imageAlt: "The leadership team of Team One Architects at the Mumbai studio",
   team: [
     `${UP}/2025/07/TOA-Team-e1758107663494-1024x535.jpg`,
     `${UP}/2026/03/DSC07321-HDR-650x650.jpg`,
@@ -227,6 +226,7 @@ export const careers = {
     `${UP}/2026/03/VIEW-1-650x650.png`,
   ],
 };
+
 
 
 export const stats = [
