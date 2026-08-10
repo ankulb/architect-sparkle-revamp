@@ -1,5 +1,6 @@
 // Content sourced from teamonearchitects.com (current homepage).
 import johnsonControlsLogo from "@/assets/brands/johnson-controls.png.asset.json";
+import careersImage from "@/assets/careers-toa.jpg.asset.json";
 
 const UP = "https://teamonearchitects.com/wp-content/uploads";
 
