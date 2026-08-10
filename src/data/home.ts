@@ -261,16 +261,14 @@ export const responsibilities = {
 };
 
 export const projects = [
-  { title: "APICORE", category: "Corporate Interiors", image: `${UP}/2026/03/DSC07321-HDR-650x650.jpg`, href: "https://teamonearchitects.com/portfolio-item/apicore/" },
-  { title: "MMRDA Headquarters", category: "Commercial & Institutional", image: `${UP}/2026/03/R3A8108-newy-650x650.jpg`, href: "https://teamonearchitects.com/portfolio-item/mmrda-headquarters/" },
-  { title: "JIO School", category: "Commercial & Institutional", image: `${UP}/2026/03/786928477867589-copy-650x650.jpg`, href: "https://teamonearchitects.com/portfolio-item/jio-school-jain-international-organization/" },
-  { title: "Volkswagen", category: "Corporate Interiors", image: `${UP}/2025/08/040-650x650.jpg`, href: "https://teamonearchitects.com/portfolio-item/volkswagen/" },
-  { title: "ATOMBERG", category: "Corporate Interiors", image: `${UP}/2026/03/01.-Reception-Atomberg-AI-650x650.png`, href: "https://teamonearchitects.com/portfolio-item/atomberg/" },
+  { title: "Ergo Technologies", category: "Corporate Interiors", image: `${UP}/2025/08/X3A9650-HDR-Edit.jpg`, href: "https://teamonearchitects.com/portfolio-item/ergo-technologies/" },
+  { title: "JIO School", category: "Commercial & Institutional", image: `${UP}/2026/03/786928477867589-copy-650x650.jpg`, href: "https://teamonearchitects.com/portfolio-item/jio-school/" },
+  { title: "JCI — Johnson Controls", category: "Corporate Interiors", image: `${UP}/2025/08/ad2c6b9e-662a-4bb2-b913-063d1304a2a0.jpg`, href: "https://teamonearchitects.com/portfolio-item/johnson-controls-gcc-offices/" },
+  { title: "BASF", category: "Corporate Interiors", image: `${UP}/2025/08/YKP_1806-NEW.jpg`, href: "https://teamonearchitects.com/portfolio-item/basf/" },
   { title: "Commercial Office Building", category: "Commercial & Institutional", image: `${UP}/2026/03/VIEW-1-650x650.png`, href: "https://teamonearchitects.com/portfolio-item/commercial-office-building/" },
-  { title: "INFINX Office, Mumbai", category: "Corporate Interiors", image: `${UP}/2026/03/Infinix_Backlight_0_5_Strict-650x650.jpg`, href: "https://teamonearchitects.com/portfolio-item/infinx-mumbai-office/" },
-  { title: "Recreation & Convention Complex", category: "Commercial & Institutional", image: `${UP}/2026/03/VIEW-1-2-650x650.png`, href: "https://teamonearchitects.com/portfolio-item/recreation-retail-convention-complex/" },
-  { title: "Indira IVF", category: "Corporate Interiors", image: `${UP}/2026/05/DSC_8289-650x650.jpg`, href: "https://teamonearchitects.com/portfolio-item/indira-ivf/" },
+  { title: "XPO", category: "Corporate Interiors", image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1000&q=80", href: "https://teamonearchitects.com/portfolio-item/xpo/" },
 ];
+
 
 export const testimonials = [
   {
