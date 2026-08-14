@@ -53,17 +53,29 @@ export function Header() {
                                 {g.title}
                               </p>
                               <ul className="space-y-3">
-                                {g.items.map((child) => (
-                                  <li key={child.label}>
-                                    <a
-                                      href={child.href ?? "#"}
-                                      className="group/link relative inline-block font-display text-xl font-light text-foreground/85 transition-colors hover:text-gold sm:text-2xl"
-                                    >
-                                      {child.label}
-                                      <span className="absolute -bottom-0.5 left-0 h-px w-0 bg-gold transition-all duration-300 group-hover/link:w-full" />
-                                    </a>
-                                  </li>
-                                ))}
+                                 {g.items.map((child) => {
+                                   const cls =
+                                     "group/link relative inline-block font-display text-xl font-light text-foreground/85 transition-colors hover:text-gold sm:text-2xl";
+                                   const inner = (
+                                     <>
+                                       {child.label}
+                                       <span className="absolute -bottom-0.5 left-0 h-px w-0 bg-gold transition-all duration-300 group-hover/link:w-full" />
+                                     </>
+                                   );
+                                   return (
+                                     <li key={child.label}>
+                                       {child.to ? (
+                                         <Link to={child.to} className={cls}>
+                                           {inner}
+                                         </Link>
+                                       ) : (
+                                         <a href={child.href ?? "#"} className={cls}>
+                                           {inner}
+                                         </a>
+                                       )}
+                                     </li>
+                                   );
+                                 })}
                               </ul>
                             </div>
                           ))}
@@ -195,16 +207,27 @@ export function Header() {
                                     {g.title}
                                   </p>
                                   <div className="flex flex-col gap-3">
-                                    {g.items.map((child) => (
-                                      <a
-                                        key={child.label}
-                                        href={child.href}
-                                        onClick={() => setOpen(false)}
-                                        className="text-base text-muted-foreground transition-colors hover:text-foreground"
-                                      >
-                                        {child.label}
-                                      </a>
-                                    ))}
+                                    {g.items.map((child) =>
+                                      child.to ? (
+                                        <Link
+                                          key={child.label}
+                                          to={child.to}
+                                          onClick={() => setOpen(false)}
+                                          className="text-base text-muted-foreground transition-colors hover:text-foreground"
+                                        >
+                                          {child.label}
+                                        </Link>
+                                      ) : (
+                                        <a
+                                          key={child.label}
+                                          href={child.href}
+                                          onClick={() => setOpen(false)}
+                                          className="text-base text-muted-foreground transition-colors hover:text-foreground"
+                                        >
+                                          {child.label}
+                                        </a>
+                                      ),
+                                    )}
                                   </div>
                                 </div>
                               ))}
