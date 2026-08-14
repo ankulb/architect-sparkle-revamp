@@ -15,6 +15,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as PortfolioIndexRouteImport } from './routes/portfolio.index'
 import { Route as AboutIndexRouteImport } from './routes/about.index'
 import { Route as PortfolioSlugRouteImport } from './routes/portfolio.$slug'
+import { Route as InsightsNewsRouteImport } from './routes/insights.news'
 import { Route as AboutTeamRouteImport } from './routes/about.team'
 import { Route as AboutLifeRouteImport } from './routes/about.life'
 import { Route as AboutCsrRouteImport } from './routes/about.csr'
@@ -51,6 +52,11 @@ const PortfolioSlugRoute = PortfolioSlugRouteImport.update({
   id: '/$slug',
   path: '/$slug',
   getParentRoute: () => PortfolioRoute,
+} as any)
+const InsightsNewsRoute = InsightsNewsRouteImport.update({
+  id: '/insights/news',
+  path: '/insights/news',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const AboutTeamRoute = AboutTeamRouteImport.update({
   id: '/team',
@@ -93,6 +99,7 @@ export interface FileRoutesByFullPath {
   '/about/csr': typeof AboutCsrRoute
   '/about/life': typeof AboutLifeRoute
   '/about/team': typeof AboutTeamRoute
+  '/insights/news': typeof InsightsNewsRoute
   '/portfolio/$slug': typeof PortfolioSlugRoute
   '/about/': typeof AboutIndexRoute
   '/portfolio/': typeof PortfolioIndexRoute
@@ -105,6 +112,7 @@ export interface FileRoutesByTo {
   '/about/csr': typeof AboutCsrRoute
   '/about/life': typeof AboutLifeRoute
   '/about/team': typeof AboutTeamRoute
+  '/insights/news': typeof InsightsNewsRoute
   '/portfolio/$slug': typeof PortfolioSlugRoute
   '/about': typeof AboutIndexRoute
   '/portfolio': typeof PortfolioIndexRoute
@@ -120,6 +128,7 @@ export interface FileRoutesById {
   '/about/csr': typeof AboutCsrRoute
   '/about/life': typeof AboutLifeRoute
   '/about/team': typeof AboutTeamRoute
+  '/insights/news': typeof InsightsNewsRoute
   '/portfolio/$slug': typeof PortfolioSlugRoute
   '/about/': typeof AboutIndexRoute
   '/portfolio/': typeof PortfolioIndexRoute
@@ -136,6 +145,7 @@ export interface FileRouteTypes {
     | '/about/csr'
     | '/about/life'
     | '/about/team'
+    | '/insights/news'
     | '/portfolio/$slug'
     | '/about/'
     | '/portfolio/'
@@ -148,6 +158,7 @@ export interface FileRouteTypes {
     | '/about/csr'
     | '/about/life'
     | '/about/team'
+    | '/insights/news'
     | '/portfolio/$slug'
     | '/about'
     | '/portfolio'
@@ -162,6 +173,7 @@ export interface FileRouteTypes {
     | '/about/csr'
     | '/about/life'
     | '/about/team'
+    | '/insights/news'
     | '/portfolio/$slug'
     | '/about/'
     | '/portfolio/'
@@ -171,6 +183,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRouteWithChildren
   PortfolioRoute: typeof PortfolioRouteWithChildren
+  InsightsNewsRoute: typeof InsightsNewsRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -216,6 +229,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/portfolio/$slug'
       preLoaderRoute: typeof PortfolioSlugRouteImport
       parentRoute: typeof PortfolioRoute
+    }
+    '/insights/news': {
+      id: '/insights/news'
+      path: '/insights/news'
+      fullPath: '/insights/news'
+      preLoaderRoute: typeof InsightsNewsRouteImport
+      parentRoute: typeof rootRouteImport
     }
     '/about/team': {
       id: '/about/team'
@@ -302,6 +322,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRouteWithChildren,
   PortfolioRoute: PortfolioRouteWithChildren,
+  InsightsNewsRoute: InsightsNewsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

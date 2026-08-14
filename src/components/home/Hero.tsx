@@ -7,6 +7,8 @@ import commercial from "@/assets/hero/commercial.png.asset.json";
 import dataCentre from "@/assets/hero/data-centre.png.asset.json";
 import hospitality from "@/assets/hero/hospitality.png.asset.json";
 import interior from "@/assets/hero/interior.png.asset.json";
+import urbanDesign from "@/assets/hero/architecture-urban-design.jpg.asset.json";
+
 
 type Slide = {
   image: string;
@@ -51,7 +53,15 @@ const SLIDES: Slide[] = [
       "Interiors where material, light, and craft shape intuitive and immersive user experiences",
     kb: "down",
   },
+  {
+    image: urbanDesign.url,
+    kicker: "Architecture & Urban Design",
+    headline:
+      "Master planning and landmark architecture that give cities structure, scale, and a sense of place",
+    kb: "in",
+  },
 ];
+
 
 
 const INTERVAL_MS = 7000;

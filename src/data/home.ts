@@ -1,6 +1,13 @@
 // Content sourced from teamonearchitects.com (current homepage).
 import johnsonControlsLogo from "@/assets/brands/johnson-controls.png.asset.json";
 import careersImage from "@/assets/careers-toa.jpg.asset.json";
+import sustainabilityImage from "@/assets/dynamic/sustainability.jpg.asset.json";
+import collaborationImage from "@/assets/dynamic/global-collaboration.jpg.asset.json";
+import csrImage from "@/assets/dynamic/csr.jpg.asset.json";
+import pressImage from "@/assets/dynamic/press.jpg.asset.json";
+import researchImage from "@/assets/dynamic/research.jpg.asset.json";
+
+
 
 const UP = "https://teamonearchitects.com/wp-content/uploads";
 
@@ -68,7 +75,7 @@ export const nav: NavItem[] = [
     label: "Insights",
     href: "/#insights",
     children: [
-      { label: "News & Media", href: "/#insights" },
+      { label: "News & Media", to: "/insights/news" },
       { label: "Awards & Recognition", href: "/#insights" },
       { label: "Events & Engagements", href: "/#insights" },
       { label: "Videos / Podcasts / Interviews", href: "/#insights" },
@@ -153,8 +160,7 @@ export const dynamicSections = [
   {
     caption: "Sustainability",
     title: "Building for a climate-positive future",
-    image:
-      "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&w=800&q=80",
+    image: sustainabilityImage.url,
     excerpt: "IGBC, LEED and WELL-aligned practices woven into every project.",
     body: "Energy modelling, passive design and low-carbon materials are non-negotiables in our studio — helping clients meet ambitious ESG targets while creating healthier places to live and work.",
     href: undefined as string | undefined,
@@ -170,7 +176,8 @@ export const dynamicSections = [
   {
     caption: "Research",
     title: "Ideas that shape tomorrow's cities",
-    image: `${UP}/2026/02/Featured-image-1.png`,
+    image: researchImage.url,
+
     excerpt: "White papers, keynotes and studios exploring the future of the built environment.",
     body: "Our research spans mission-critical infrastructure, mixed-use urbanism and AI-ready campuses — feeding directly back into project work and industry conversation.",
     href: undefined as string | undefined,
@@ -178,8 +185,7 @@ export const dynamicSections = [
   {
     caption: "Global Collaboration",
     title: "Partnering across borders",
-    image:
-      "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800&q=80",
+    image: collaborationImage.url,
     excerpt: "Coordinating with clients and consultants across 50+ international cities.",
     body: "With studios in Mumbai, Pune, Hyderabad, Bengaluru and Singapore, we collaborate with engineering, landscape and specialist design partners worldwide — 75% of our client base is multinational.",
     href: undefined as string | undefined,
@@ -195,21 +201,21 @@ export const dynamicSections = [
   {
     caption: "In News",
     title: "TOA in the press",
-    image: `${UP}/2026/03/Blog-Cover-1.png`,
+    image: pressImage.url,
     excerpt: "Featured in leading design, business and lifestyle publications.",
     body: "Our projects and points of view have been covered across design, business and lifestyle media — spanning workplace futures, sustainable urbanism and India's evolving design language.",
-    href: undefined as string | undefined,
+    href: "/insights/news" as string | undefined,
   },
   {
     caption: "CSR",
     title: "Design in service of community",
-    image:
-      "https://images.unsplash.com/photo-1593113630400-ea4288922497?auto=format&fit=crop&w=800&q=80",
+    image: csrImage.url,
     excerpt: "Pro-bono civic work, education and climate-positive initiatives.",
     body: "",
     href: "/about/csr",
   },
 ] as const;
+
 
 
 
