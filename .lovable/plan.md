@@ -1,4 +1,4 @@
-# Interior Architecture project pages — ERGO Technologies & Axis Securities
+# Interior Architecture project pages — ERGO, Axis Securities, Federal Bank
 
 You're sending portfolio folders sector by sector. This sets up the pattern so each new folder is a quick add.
 
@@ -20,21 +20,27 @@ Gallery of 14 photographs: the marble reception with the multilingual Welcome vi
 
 ## 2. Axis Securities (Banking & Finance) — new project
 
-Added to the archive under Interiors, slug `axis-securities`, with the same page structure. 4 photos: reception with the lit green wall and Axis signage, the maroon/navy geometric meeting room, the executive cabin with stone-clad wall and leather chairs, and the mural breakout zone.
+Added to the archive under Interiors, slug `axis-securities`. 4 photos: reception with the lit green wall and Axis signage, the maroon/navy geometric meeting room, the executive cabin with stone-clad wall and leather chairs, and the mural breakout zone.
 
-Copy drafted from the images in TOA's voice; facts shown only once you send them (location, area, year, status) — send an Axis write-up like the ERGO one and I'll use it verbatim.
+## 3. Federal Bank (Banking & Finance) — new project
 
-## 3. Sector tagging
+Added under Interiors, slug `federal-bank`. 8 photos: the marble-floored reception with the yellow-inset desk and fluted wood wall, the whiteboard huddle room, the timber-fin lounge island against the blue/gold triangle-frosted glass fronts, the open workstation bay with the motivational quote wall and Federal Bank pillar graphics, the second workstation bay, the yellow-and-grey acoustic-panel cabin, the corner cabin with roller blinds, and the boardroom with the triangular light cove.
 
-Both projects gain a `sector` field matching the Expertise mega-menu naming ("Technology / IT", "Banking & Finance"), so sector landing pages can slot these in later with no rework.
+The brand's blue-and-gold triangular graphic language runs through all eight frames — the page narrative leads on that identity-driven interior approach.
+
+Copy for both bank projects is drafted from the images in TOA's voice; facts (location, area, year, status) appear only once you send them — send write-ups like the ERGO one and I'll use them verbatim.
+
+## 4. Sector tagging
+
+All three projects gain a `sector` field matching the Expertise mega-menu naming ("Technology / IT", "Banking & Finance"), so sector landing pages can slot these in later with no rework.
 
 ## Technical notes
 
-- Photos go through the CDN asset pipeline (`src/assets/projects/ergo/*`, `.../axis-securities/*`), not committed as binaries.
-- `src/data/portfolio.ts`: add the `axis-securities` entry, add `sector` to the project type, add detail records (facts, overview, gallery) for both, update the Ergo cover.
+- Photos go through the CDN asset pipeline (`src/assets/projects/<slug>/*`), not committed as binaries.
+- `src/data/portfolio.ts`: add `axis-securities` and `federal-bank` entries, add `sector` to the project type, add detail records (facts, overview, gallery) for all three, update the Ergo cover.
 - No component changes needed — `portfolio.$slug.tsx` already renders facts, overview and gallery.
 
 ## Open items
 
-- Axis Securities write-up and project facts.
+- Axis Securities and Federal Bank write-ups and project facts.
 - Whether Expertise sector landing pages (e.g. `/expertise/banking-finance`) should be built once more folders arrive.
