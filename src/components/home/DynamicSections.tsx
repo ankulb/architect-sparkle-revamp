@@ -72,25 +72,22 @@ function SpatialCard({
     >
       <motion.div
         layoutId={`spatial-image-${index}`}
-        className="relative aspect-[3/5] w-full overflow-hidden bg-card"
+        className="relative aspect-[4/5] w-full overflow-hidden bg-card"
         transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
       >
         <motion.img
           src={item.image}
           alt={item.title}
           loading="lazy"
-          className="h-full w-full object-cover"
+          className="h-full w-full object-cover object-center"
           animate={{ scale: hover ? 1.06 : 1 }}
           transition={{ type: "spring", stiffness: 120, damping: 20 }}
         />
       </motion.div>
 
       <div className="mt-4">
-        <p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-gold">
+        <h3 className="text-[11px] font-bold uppercase tracking-[0.2em] text-gold sm:text-xs">
           {item.caption}
-        </p>
-        <h3 className="font-display mt-2 text-sm font-normal leading-snug tracking-tight text-foreground sm:text-base">
-          {item.title}
         </h3>
         <motion.span
           className="mt-2 block h-px bg-gold"
@@ -99,6 +96,7 @@ function SpatialCard({
           transition={{ duration: 0.4 }}
         />
       </div>
+
     </button>
   );
 }

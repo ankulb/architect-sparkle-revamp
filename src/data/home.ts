@@ -73,7 +73,7 @@ export const nav: NavItem[] = [
     label: "Insights",
     href: "/#insights",
     children: [
-      { label: "News & Media", href: "/#insights" },
+      { label: "News & Media", to: "/insights/news" },
       { label: "Awards & Recognition", href: "/#insights" },
       { label: "Events & Engagements", href: "/#insights" },
       { label: "Videos / Podcasts / Interviews", href: "/#insights" },
