@@ -53,7 +53,15 @@ const SLIDES: Slide[] = [
       "Interiors where material, light, and craft shape intuitive and immersive user experiences",
     kb: "down",
   },
+  {
+    image: urbanDesign.url,
+    kicker: "Architecture & Urban Design",
+    headline:
+      "Master planning and landmark architecture that give cities structure, scale, and a sense of place",
+    kb: "in",
+  },
 ];
+
 
 
 const INTERVAL_MS = 7000;
