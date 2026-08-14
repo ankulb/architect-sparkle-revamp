@@ -1,6 +1,7 @@
-# Interior Architecture project pages — ERGO, Axis Securities, Federal Bank
+# Interior Architecture project pages — ERGO, Axis Securities, Federal Bank, ICICI Securities
 
-You're sending portfolio folders sector by sector. This sets up the pattern so each new folder is a quick add.
+You're sending portfolio folders sector by sector. This sets up the pattern so each new folder is a quick add. With ICICI Securities in, Banking & Finance under Interior Architecture is complete: Axis Securities, Federal Bank, ICICI Securities.
+
 
 ## 1. ERGO Technologies — full case study
 
