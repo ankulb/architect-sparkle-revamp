@@ -51,7 +51,7 @@ export const expertiseGroups: NavGroup[] = [
   {
     title: "Interior Architecture",
     items: [
-      { label: "Banking & Finance", href: "/#expertise" },
+      { label: "Banking & Finance", to: "/expertise/banking-finance" },
       { label: "IT & Software", href: "/#expertise" },
       { label: "Engineering", href: "/#expertise" },
       { label: "Health & Pharma", href: "/#expertise" },
