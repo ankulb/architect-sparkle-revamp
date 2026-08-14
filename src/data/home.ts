@@ -5,6 +5,8 @@ import sustainabilityImage from "@/assets/dynamic/sustainability.jpg.asset.json"
 import collaborationImage from "@/assets/dynamic/global-collaboration.jpg.asset.json";
 import csrImage from "@/assets/dynamic/csr.jpg.asset.json";
 import pressImage from "@/assets/dynamic/press.jpg.asset.json";
+import researchImage from "@/assets/dynamic/research.jpg.asset.json";
+
 
 
 const UP = "https://teamonearchitects.com/wp-content/uploads";
@@ -174,7 +176,8 @@ export const dynamicSections = [
   {
     caption: "Research",
     title: "Ideas that shape tomorrow's cities",
-    image: `${UP}/2026/02/Featured-image-1.png`,
+    image: researchImage.url,
+
     excerpt: "White papers, keynotes and studios exploring the future of the built environment.",
     body: "Our research spans mission-critical infrastructure, mixed-use urbanism and AI-ready campuses — feeding directly back into project work and industry conversation.",
     href: undefined as string | undefined,
