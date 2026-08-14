@@ -1,6 +1,11 @@
 // Content sourced from teamonearchitects.com (current homepage).
 import johnsonControlsLogo from "@/assets/brands/johnson-controls.png.asset.json";
 import careersImage from "@/assets/careers-toa.jpg.asset.json";
+import sustainabilityImage from "@/assets/dynamic/sustainability.jpg.asset.json";
+import collaborationImage from "@/assets/dynamic/global-collaboration.jpg.asset.json";
+import csrImage from "@/assets/dynamic/csr.jpg.asset.json";
+import pressImage from "@/assets/dynamic/press.jpg.asset.json";
+
 
 const UP = "https://teamonearchitects.com/wp-content/uploads";
 
