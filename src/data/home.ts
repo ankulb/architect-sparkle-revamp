@@ -158,8 +158,7 @@ export const dynamicSections = [
   {
     caption: "Sustainability",
     title: "Building for a climate-positive future",
-    image:
-      "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&w=800&q=80",
+    image: sustainabilityImage.url,
     excerpt: "IGBC, LEED and WELL-aligned practices woven into every project.",
     body: "Energy modelling, passive design and low-carbon materials are non-negotiables in our studio — helping clients meet ambitious ESG targets while creating healthier places to live and work.",
     href: undefined as string | undefined,
@@ -183,8 +182,7 @@ export const dynamicSections = [
   {
     caption: "Global Collaboration",
     title: "Partnering across borders",
-    image:
-      "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800&q=80",
+    image: collaborationImage.url,
     excerpt: "Coordinating with clients and consultants across 50+ international cities.",
     body: "With studios in Mumbai, Pune, Hyderabad, Bengaluru and Singapore, we collaborate with engineering, landscape and specialist design partners worldwide — 75% of our client base is multinational.",
     href: undefined as string | undefined,
@@ -200,21 +198,21 @@ export const dynamicSections = [
   {
     caption: "In News",
     title: "TOA in the press",
-    image: `${UP}/2026/03/Blog-Cover-1.png`,
+    image: pressImage.url,
     excerpt: "Featured in leading design, business and lifestyle publications.",
     body: "Our projects and points of view have been covered across design, business and lifestyle media — spanning workplace futures, sustainable urbanism and India's evolving design language.",
-    href: undefined as string | undefined,
+    href: "/insights/news" as string | undefined,
   },
   {
     caption: "CSR",
     title: "Design in service of community",
-    image:
-      "https://images.unsplash.com/photo-1593113630400-ea4288922497?auto=format&fit=crop&w=800&q=80",
+    image: csrImage.url,
     excerpt: "Pro-bono civic work, education and climate-positive initiatives.",
     body: "",
     href: "/about/csr",
   },
 ] as const;
+
 
 
 
