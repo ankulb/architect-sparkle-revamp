@@ -15,7 +15,11 @@ type Sector = {
   lead: string;
   phrases: string[];
   image: string;
+  /** Portfolio slugs known to belong to this sector (matched by client). */
+  projectSlugs: string[];
 };
+
+const UP = "https://teamonearchitects.com/wp-content/uploads";
 
 const sectors: Record<string, Sector> = {
   "banking-finance": {
@@ -24,16 +28,80 @@ const sectors: Record<string, Sector> = {
     discipline: "Interior Architecture",
     lead: "Workplaces for banks, brokerages and financial institutions — environments where trust, security and precision meet the warmth of a modern, people-first office.",
     phrases: ["Trading Floors", "Client Experience", "Brand Identity"],
-    image:
-      "https://teamonearchitects.com/wp-content/uploads/2026/03/DSC07321-HDR-1024x683.jpg",
+    image: `${UP}/2026/03/DSC07321-HDR-1024x683.jpg`,
+    projectSlugs: [],
+  },
+  "it-software": {
+    slug: "it-software",
+    name: "IT & Software",
+    discipline: "Interior Architecture",
+    lead: "Agile workplaces for technology companies — campuses and offices engineered for focus, collaboration and the speed of innovation.",
+    phrases: ["Agile Workplaces", "Innovation Hubs", "Campus Design"],
+    image: `${UP}/2026/03/DSC03610-HDR-1024x683.jpg`,
+    projectSlugs: ["ideaforge", "ideaforge-headquarters-mumbai", "intangles", "volkswagen", "ergo-technologies"],
+  },
+  engineering: {
+    slug: "engineering",
+    name: "Engineering",
+    discipline: "Interior Architecture",
+    lead: "Precision environments for engineering leaders — offices and experience centres that mirror the rigour of the work happening inside them.",
+    phrases: ["Experience Centres", "Precision Planning", "Technical Workplaces"],
+    image: `${UP}/2025/08/ad2c6b9e-662a-4bb2-b913-063d1304a2a0.jpg`,
+    projectSlugs: ["johnson-controls-gcc-offices"],
+  },
+  "health-pharma": {
+    slug: "health-pharma",
+    name: "Health & Pharma",
+    discipline: "Interior Architecture",
+    lead: "Healthcare and pharmaceutical environments where compliance, care and calm come together — spaces designed around the people they serve.",
+    phrases: ["Healing Environments", "Compliance by Design", "Care-centred Spaces"],
+    image: `${UP}/2026/05/DSC_8289-1024x681.jpg`,
+    projectSlugs: ["apicore", "basf", "indira-ivf"],
+  },
+  media: {
+    slug: "media",
+    name: "Media",
+    discipline: "Interior Architecture",
+    lead: "Studios and creative workplaces for media houses — spaces that keep pace with production, storytelling and the always-on news cycle.",
+    phrases: ["Creative Studios", "Production Spaces", "Storytelling Hubs"],
+    image: `${UP}/2026/03/titan-1-1024x690.jpg`,
+    projectSlugs: [],
+  },
+  shipping: {
+    slug: "shipping",
+    name: "Shipping",
+    discipline: "Interior Architecture",
+    lead: "Workplaces for logistics and shipping leaders — efficient, connected offices built for teams that keep the world moving.",
+    phrases: ["Logistics Hubs", "Connected Workplaces", "Operational Clarity"],
+    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1600&q=80",
+    projectSlugs: ["xpo"],
+  },
+  telecom: {
+    slug: "telecom",
+    name: "Telecom",
+    discipline: "Interior Architecture",
+    lead: "High-performance workplaces for telecom and network infrastructure companies — designed for scale, uptime and the teams behind connectivity.",
+    phrases: ["Network Operations", "Scalable Workplaces", "Future-ready Design"],
+    image: `${UP}/2026/03/Infinix_Backlight_0_5_Strict-1024x683.jpg`,
+    projectSlugs: ["infinx-mumbai-office"],
+  },
+  "green-field": {
+    slug: "green-field",
+    name: "Green Field",
+    discipline: "Architecture & Urban Design",
+    lead: "Ground-up developments imagined from a blank site — hospitality, mixed-use and institutional projects shaped from first principles.",
+    phrases: ["Ground-up Developments", "Hospitality", "Placemaking"],
+    image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1600&q=80",
+    projectSlugs: [],
   },
 };
 
-function sectorProjects(name: string) {
-  const slugs = Object.values(projectDetails)
-    .filter((d) => d.sector === name)
+function sectorProjects(sector: Sector) {
+  const detailSlugs = Object.values(projectDetails)
+    .filter((d) => d.sector === sector.name)
     .map((d) => d.slug);
-  return projects.filter((p) => slugs.includes(p.slug));
+  const slugs = new Set([...detailSlugs, ...sector.projectSlugs]);
+  return projects.filter((p) => slugs.has(p.slug));
 }
 
 export const Route = createFileRoute("/expertise/$sector")({
@@ -87,7 +155,7 @@ function SectorNotFound() {
 
 function SectorPage() {
   const { sector } = Route.useLoaderData();
-  const list = sectorProjects(sector.name);
+  const list = sectorProjects(sector);
 
   return (
     <div className="min-h-screen bg-background text-foreground">
