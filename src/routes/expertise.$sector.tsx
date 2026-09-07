@@ -64,7 +64,7 @@ const sectors: Record<string, Sector> = {
       { name: "Emerson" },
       { name: "JCI", projectSlug: "johnson-controls-gcc-offices" },
       { name: "Sedmac" },
-      { name: "Vanderlane" },
+      { name: "Vanderlane", projectSlug: "vanderlane" },
     ],
   },
   "health-pharma": {
@@ -77,7 +77,7 @@ const sectors: Record<string, Sector> = {
     clients: [
       { name: "Apicore", projectSlug: "apicore" },
       { name: "BASF", projectSlug: "basf" },
-      { name: "Bharat Serum" },
+      { name: "Bharat Serum", projectSlug: "bharat-serum" },
       { name: "Indira IVF", projectSlug: "indira-ivf" },
     ],
   },
@@ -88,7 +88,7 @@ const sectors: Record<string, Sector> = {
     lead: "Studios and creative workplaces for media houses — spaces that keep pace with production, storytelling and the always-on news cycle.",
     phrases: ["Creative Studios", "Production Spaces", "Storytelling Hubs"],
     image: `${UP}/2026/03/titan-1-1024x690.jpg`,
-    clients: [{ name: "Digital Domain" }, { name: "MSL Group" }, { name: "Prasad Studios" }],
+    clients: [{ name: "Digital Domain", projectSlug: "digital-domain" }, { name: "MSL Group" }, { name: "Prasad Studios" }],
   },
   shipping: {
     slug: "shipping",
@@ -97,7 +97,7 @@ const sectors: Record<string, Sector> = {
     lead: "Workplaces for logistics and shipping leaders — efficient, connected offices built for teams that keep the world moving.",
     phrases: ["Logistics Hubs", "Connected Workplaces", "Operational Clarity"],
     image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1600&q=80",
-    clients: [{ name: "Toll" }, { name: "XPO", projectSlug: "xpo" }],
+    clients: [{ name: "Toll", projectSlug: "toll" }, { name: "XPO", projectSlug: "xpo" }],
   },
   telecom: {
     slug: "telecom",
@@ -115,7 +115,7 @@ const sectors: Record<string, Sector> = {
     lead: "Ground-up developments imagined from a blank site — hospitality, mixed-use and institutional projects shaped from first principles.",
     phrases: ["Ground-up Developments", "Hospitality", "Placemaking"],
     image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1600&q=80",
-    clients: [{ name: "Hyatt" }],
+    clients: [{ name: "Hyatt", projectSlug: "hyatt" }],
   },
 };
 
