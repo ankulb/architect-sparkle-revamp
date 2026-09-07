@@ -2,6 +2,7 @@ import {
   axisSecuritiesGallery,
   bharatSerumGallery,
   digitalDomainGallery,
+  emersonGallery,
   ergoTechnologiesGallery,
   federalBankGallery,
   hyattGallery,
