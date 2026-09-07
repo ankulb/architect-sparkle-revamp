@@ -14,6 +14,7 @@ import {
   threeIGallery,
   tollGallery,
   vanderlaneGallery,
+  vwItsGallery,
 } from "@/data/projectAssets";
 
 // Portfolio content sourced from teamonearchitects.com/portfolio.
