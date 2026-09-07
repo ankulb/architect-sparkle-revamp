@@ -12,6 +12,7 @@ import {
   infinixGallery,
   intanglesGallery,
   jciGallery,
+  sedmacGallery,
   threeIGallery,
   tollGallery,
   vanderlaneGallery,
@@ -80,6 +81,7 @@ export const projects: Project[] = [
   { slug: "hyatt", title: "Hyatt", category: COMMERCIAL, image: hyattGallery[0] },
   { slug: "vw-its", title: "VW ITS", category: INTERIORS, location: "Pune", image: vwItsGallery[0] },
   { slug: "emerson", title: "Emerson", category: INTERIORS, location: "Nashik", image: emersonGallery[0] },
+  { slug: "sedmac", title: "Sedmac", category: INTERIORS, location: "Baner, Pune", image: sedmacGallery[0] },
 ];
 
 export const projectDetails: Record<string, ProjectDetail> = {
