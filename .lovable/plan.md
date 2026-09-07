@@ -1,6 +1,6 @@
 # Add real photos and case studies across sector pages
 
-You shared photo sets for nine clients. Plan is to give each a full, photo-rich case study, like ERGO, Axis Securities, Federal Bank and ICICI Securities.
+You shared photo sets for ten clients. Plan is to give each a full, photo-rich case study, like ERGO, Axis Securities, Federal Bank and ICICI Securities.
 
 ## IT & Software sector
 
@@ -46,12 +46,18 @@ You shared photo sets for nine clients. Plan is to give each a full, photo-rich 
 
 ### 9. Toll — new project
 - 5 images (one JPG/PNG duplicate — keep one); parse "TOLL Write up.docx" for the official narrative and facts.
-- New entry "Toll", Interior Architecture, page at `/portfolio/toll`.
-- Sector page: "Toll" becomes a real project card alongside XPO.
+- New entry "Toll", Interior Architecture, page at `/portfolio/toll`; becomes a real project card alongside XPO.
+
+## Telecom sector
+
+### 10. Infinix — existing project, new photos + write-up
+- 10 photos uploaded; parse "Write Up For Infinx.docx" for the official narrative and facts; update the entry.
+- Rebuild its gallery with the new photos (hero becomes "01 Infinix7610_HDR.jpg").
+- Large source files (12–22 MB each) will be downscaled/compressed to web-friendly sizes before upload.
 
 ## Technical details
-- Upload images with `lovable-assets create` → pointer files under `src/assets/{3i,ideaforge,intangles,jci,vanderlane,bharat-serum,indira-ivf,digital-domain,toll}/`. Convert the TIFF before upload.
+- Upload images with `lovable-assets create` → pointer files under `src/assets/{3i,ideaforge,intangles,jci,vanderlane,bharat-serum,indira-ivf,digital-domain,toll,infinix}/`. Convert the TIFF and compress oversized JPGs (target under ~3 MB each, max dimension ~2400 px) before upload so pages load fast.
 - Register all in `src/data/projectAssets.ts`.
-- `src/data/portfolio.ts`: add `3i`, `vanderlane`, `bharat-serum`, `digital-domain`, `toll` to `projectDetails`; update `ideaforge-headquarters-mumbai`, `intangles`, the JCI entry and `indira-ivf`.
+- `src/data/portfolio.ts`: add `3i`, `vanderlane`, `bharat-serum`, `digital-domain`, `toll` to `projectDetails`; update `ideaforge-headquarters-mumbai`, `intangles`, the JCI entry, `indira-ivf` and the Infinix entry.
 - `src/routes/expertise.$sector.tsx`: add `"3i"` (IT & Software), `"vanderlane"` (Engineering), `"bharat-serum"` (Health & Pharma), `"digital-domain"` (Media), `"toll"` (Shipping) to `projectSlugs`; remove them from the name-only tile lists.
 - No navigation, header, or other sector changes.
