@@ -1,4 +1,5 @@
 import {
+  apicoreGallery,
   axisSecuritiesGallery,
   bharatSerumGallery,
   digitalDomainGallery,
@@ -50,7 +51,7 @@ export type ProjectDetail = Project & {
 export const projects: Project[] = [
   { slug: "atomberg", title: "ATOMBERG", category: INTERIORS, location: "Pune", image: `${UP}/2026/03/01.-Reception-Atomberg-AI-1024x683.png` },
   { slug: "ccrh", title: "CCRH", category: COMMERCIAL, image: `${UP}/2026/03/02-2-1024x687.png` },
-  { slug: "apicore", title: "APICORE", category: INTERIORS, image: `${UP}/2026/03/DSC07321-HDR-1024x683.jpg` },
+  { slug: "apicore", title: "APICORE", category: INTERIORS, location: "Mumbai", image: apicoreGallery[0] },
   { slug: "hindustan-platinum-mumbai", title: "HPL, Mumbai", category: INTERIORS, location: "Mumbai", image: `${UP}/2025/08/DSC08801-copy.jpg` },
   { slug: "ideaforge", title: "IDEAFORGE", category: INTERIORS, image: `${UP}/2026/03/DSC03610-HDR-1024x683.jpg` },
   { slug: "axis-securities", title: "Axis Securities", category: INTERIORS, image: axisSecuritiesGallery[0] },
