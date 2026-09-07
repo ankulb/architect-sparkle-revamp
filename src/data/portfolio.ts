@@ -1,4 +1,5 @@
 import {
+  apicoreGallery,
   axisSecuritiesGallery,
   bharatSerumGallery,
   digitalDomainGallery,
@@ -50,7 +51,7 @@ export type ProjectDetail = Project & {
 export const projects: Project[] = [
   { slug: "atomberg", title: "ATOMBERG", category: INTERIORS, location: "Pune", image: `${UP}/2026/03/01.-Reception-Atomberg-AI-1024x683.png` },
   { slug: "ccrh", title: "CCRH", category: COMMERCIAL, image: `${UP}/2026/03/02-2-1024x687.png` },
-  { slug: "apicore", title: "APICORE", category: INTERIORS, image: `${UP}/2026/03/DSC07321-HDR-1024x683.jpg` },
+  { slug: "apicore", title: "APICORE", category: INTERIORS, location: "Mumbai", image: apicoreGallery[0] },
   { slug: "hindustan-platinum-mumbai", title: "HPL, Mumbai", category: INTERIORS, location: "Mumbai", image: `${UP}/2025/08/DSC08801-copy.jpg` },
   { slug: "ideaforge", title: "IDEAFORGE", category: INTERIORS, image: `${UP}/2026/03/DSC03610-HDR-1024x683.jpg` },
   { slug: "axis-securities", title: "Axis Securities", category: INTERIORS, image: axisSecuritiesGallery[0] },
@@ -85,6 +86,24 @@ export const projects: Project[] = [
 ];
 
 export const projectDetails: Record<string, ProjectDetail> = {
+  apicore: {
+    slug: "apicore",
+    title: "Apicore",
+    category: INTERIORS,
+    sector: "Health & Pharma",
+    client: "Apicore",
+    location: "Mumbai",
+    area: "10,000 sq. ft.",
+    status: "Completed · 2022",
+    service: "Corporate Interiors",
+    image: apicoreGallery[0],
+    description: [
+      "Apicore's 10,000 sq. ft. boutique workspace was designed as a wellness-driven, human-centric environment that prioritises comfort, culture and engagement — a deliberate move beyond the conventional office.",
+      "Natural materials, warm wood finishes and layered lighting foster creativity and wellbeing, while biophilic elements strengthen the connection to nature, supporting both productivity and calm. Informal lounges, collaborative nooks and relaxed meeting areas give teams the flexibility to focus or connect spontaneously.",
+      "The result reflects Apicore's people-first ethos — proof that thoughtful design at a boutique scale can strengthen identity, collaboration and a genuine sense of belonging.",
+    ],
+    gallery: apicoreGallery,
+  },
   emerson: {
     slug: "emerson",
     title: "Emerson",

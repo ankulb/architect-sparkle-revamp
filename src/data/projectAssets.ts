@@ -361,3 +361,20 @@ export const sedmacGallery = [
   sedmac5.url,
   sedmac7.url,
 ];
+
+import apicore1 from "@/assets/projects/apicore/01.jpg.asset.json";
+import apicore2 from "@/assets/projects/apicore/02.jpg.asset.json";
+import apicore3 from "@/assets/projects/apicore/03.jpg.asset.json";
+import apicore4 from "@/assets/projects/apicore/04.jpg.asset.json";
+import apicore5 from "@/assets/projects/apicore/05.jpg.asset.json";
+import apicore6 from "@/assets/projects/apicore/06.jpg.asset.json";
+import apicore7 from "@/assets/projects/apicore/07.jpg.asset.json";
+export const apicoreGallery = [
+  apicore1.url,
+  apicore2.url,
+  apicore3.url,
+  apicore4.url,
+  apicore5.url,
+  apicore6.url,
+  apicore7.url,
+];
