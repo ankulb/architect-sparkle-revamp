@@ -21,8 +21,8 @@ const inquirySchema = z.object({
 });
 
 const offices = [
-  { city: "Mumbai", detail: "Level 2/3 B, Laxmi Tower, G-Block, Plot # C-25, Bandra Kurla Complex, Mumbai – 400 051, India." },
-  { city: "Pune", detail: "Office No. 201, 2nd Floor, “Cello Platina”, Fergusson College Road, Near Police Ground, Shivajinagar, Pune – 411 016, India." },
+  { city: "Mumbai", label: undefined, detail: "Level 2/3 B, Laxmi Tower, G-Block, Plot # C-25, Bandra Kurla Complex, Mumbai – 400 051, India." },
+  { city: "Pune", label: undefined, detail: "Office No. 201, 2nd Floor, “Cello Platina”, Fergusson College Road, Near Police Ground, Shivajinagar, Pune – 411 016, India." },
   { city: "Dubai", label: "Team One Alliance Design – FZCO", detail: "Building A1, Dubai Digital Park, Dubai Silicon Oasis, Dubai, United Arab Emirates." },
 ] as const;
 
