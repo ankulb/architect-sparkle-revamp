@@ -7,6 +7,7 @@ import { GridBackdrop } from "@/components/graphics/GridBackdrop";
 import { BlueprintReveal } from "@/components/graphics/BlueprintReveal";
 import { ProjectGrid } from "@/components/portfolio/ProjectGrid";
 import { projects, projectDetails } from "@/data/portfolio";
+import { LogoMarquee } from "@/components/about/LogoMarquee";
 
 type Sector = {
   slug: string;
@@ -17,6 +18,8 @@ type Sector = {
   image: string;
   /** Portfolio slugs known to belong to this sector (matched by client). */
   projectSlugs: string[];
+  /** Named clients in this sector (logos dropped in later). */
+  clients: string[];
 };
 
 const UP = "https://teamonearchitects.com/wp-content/uploads";
