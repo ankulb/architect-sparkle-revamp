@@ -9,7 +9,7 @@ const expertiseLinks = [
 ];
 
 const connectLinks = [
-  { label: "Contact", href: "https://teamonearchitects.com/contact-us/", external: true },
+  { label: "Contact", to: "/contact" },
   { label: "News", href: "/#insights" },
   { label: "Careers", href: "/#careers" },
   {
@@ -68,7 +68,7 @@ export function Footer() {
 
           <FooterColumn title="Studio">
             {aboutNav.map((item) => (
-              <li key={item.to}>
+              <li key={item.label}>
                 <Link
                   to={item.to}
                   className="text-sm text-muted-foreground transition-colors hover:text-foreground"
@@ -81,9 +81,17 @@ export function Footer() {
 
           <FooterColumn title="Connect">
             {connectLinks.map((item) => (
-              <FooterLink key={item.label} href={item.href} external={item.external}>
-                {item.label}
-              </FooterLink>
+              item.to ? (
+                <li key={item.label}>
+                  <Link to={item.to} className="text-sm text-muted-foreground transition-colors hover:text-foreground">
+                    {item.label}
+                  </Link>
+                </li>
+              ) : (
+                <FooterLink key={item.label} href={item.href ?? "#"} external={item.external}>
+                  {item.label}
+                </FooterLink>
+              )
             ))}
           </FooterColumn>
 

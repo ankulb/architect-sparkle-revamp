@@ -14,7 +14,6 @@ export const companyLinkedin = "https://www.linkedin.com/company/teamonearchitec
 export const aboutNav = [
   { label: "About Us", to: "/about" },
   { label: "Board of Directors", to: "/about/board" },
-  { label: "Anchors of TOA", to: "/about/anchors" },
   { label: "Our Team", to: "/about/team" },
   { label: "Clientele", to: "/about/clientele" },
   { label: "CSR", to: "/about/csr" },
@@ -86,17 +85,6 @@ export const board = {
   directors: [
     { name: "Ar. Parish S. Kapse", role: "Director", image: `${UP}/2025/08/Parish-Kapse.jpeg` },
     { name: "Ar. Aditya B. Yamsanwar", role: "Director", image: `${UP}/2025/08/Aditya-Yamsanwar.jpeg` },
-  ],
-};
-
-export const anchors = {
-  hero: {
-    eyebrow: "Leadership",
-    title: "Anchors of TOA",
-    lead: "The stewards holding the practice together — guiding culture, craft and continuity across every studio.",
-    image: `${UP}/2025/07/TOA-Team-e1758107663494-1024x535.jpg`,
-  },
-  people: [
     { name: "Ar. Bharat Yamsanwar", role: "Director", image: `${UP}/2025/08/Bharat-Yamsanwar.jpeg` },
     { name: "Jyoti Yamsanwar", role: "Director", image: `${UP}/2025/08/Jyoti-Yamsanwar.jpeg` },
     { name: "Rupali Kapse", role: "Director", image: `${UP}/2025/08/Jyoti-Kapse.jpeg` },
