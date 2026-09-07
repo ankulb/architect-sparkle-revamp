@@ -7,6 +7,7 @@ import { GridBackdrop } from "@/components/graphics/GridBackdrop";
 import { BlueprintReveal } from "@/components/graphics/BlueprintReveal";
 import { ProjectGrid } from "@/components/portfolio/ProjectGrid";
 import { projects, projectDetails } from "@/data/portfolio";
+import { LogoMarquee } from "@/components/about/LogoMarquee";
 
 type Sector = {
   slug: string;
@@ -17,6 +18,8 @@ type Sector = {
   image: string;
   /** Portfolio slugs known to belong to this sector (matched by client). */
   projectSlugs: string[];
+  /** Named clients in this sector (logos dropped in later). */
+  clients: string[];
 };
 
 const UP = "https://teamonearchitects.com/wp-content/uploads";
@@ -30,6 +33,7 @@ const sectors: Record<string, Sector> = {
     phrases: ["Trading Floors", "Client Experience", "Brand Identity"],
     image: `${UP}/2026/03/DSC07321-HDR-1024x683.jpg`,
     projectSlugs: [],
+    clients: [],
   },
   "it-software": {
     slug: "it-software",
@@ -39,6 +43,7 @@ const sectors: Record<string, Sector> = {
     phrases: ["Agile Workplaces", "Innovation Hubs", "Campus Design"],
     image: `${UP}/2026/03/DSC03610-HDR-1024x683.jpg`,
     projectSlugs: ["ideaforge", "ideaforge-headquarters-mumbai", "intangles", "volkswagen", "ergo-technologies"],
+    clients: ["3i", "Idea Forge", "Intangles", "VW ITS"],
   },
   engineering: {
     slug: "engineering",
@@ -48,6 +53,7 @@ const sectors: Record<string, Sector> = {
     phrases: ["Experience Centres", "Precision Planning", "Technical Workplaces"],
     image: `${UP}/2025/08/ad2c6b9e-662a-4bb2-b913-063d1304a2a0.jpg`,
     projectSlugs: ["johnson-controls-gcc-offices"],
+    clients: ["Emerson", "JCI", "Sedmac", "Vandelane"],
   },
   "health-pharma": {
     slug: "health-pharma",
@@ -57,6 +63,7 @@ const sectors: Record<string, Sector> = {
     phrases: ["Healing Environments", "Compliance by Design", "Care-centred Spaces"],
     image: `${UP}/2026/05/DSC_8289-1024x681.jpg`,
     projectSlugs: ["apicore", "basf", "indira-ivf"],
+    clients: ["Apicore", "BASF", "Bharat Serum", "Indira IVF"],
   },
   media: {
     slug: "media",
@@ -66,6 +73,7 @@ const sectors: Record<string, Sector> = {
     phrases: ["Creative Studios", "Production Spaces", "Storytelling Hubs"],
     image: `${UP}/2026/03/titan-1-1024x690.jpg`,
     projectSlugs: [],
+    clients: ["Digital Domain", "MSL Group", "Prasad Studios"],
   },
   shipping: {
     slug: "shipping",
@@ -75,6 +83,7 @@ const sectors: Record<string, Sector> = {
     phrases: ["Logistics Hubs", "Connected Workplaces", "Operational Clarity"],
     image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1600&q=80",
     projectSlugs: ["xpo"],
+    clients: ["Toll", "XPO"],
   },
   telecom: {
     slug: "telecom",
@@ -84,6 +93,7 @@ const sectors: Record<string, Sector> = {
     phrases: ["Network Operations", "Scalable Workplaces", "Future-ready Design"],
     image: `${UP}/2026/03/Infinix_Backlight_0_5_Strict-1024x683.jpg`,
     projectSlugs: ["infinx-mumbai-office"],
+    clients: ["Infinix", "Nxtra"],
   },
   "green-field": {
     slug: "green-field",
@@ -93,6 +103,7 @@ const sectors: Record<string, Sector> = {
     phrases: ["Ground-up Developments", "Hospitality", "Placemaking"],
     image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1600&q=80",
     projectSlugs: [],
+    clients: ["Hyatt"],
   },
 };
 
@@ -168,6 +179,29 @@ function SectorPage() {
           image={sector.image}
           phrases={sector.phrases}
         />
+
+        {sector.clients.length > 0 ? (
+          <section className="relative overflow-hidden border-t border-border">
+            <GridBackdrop radius={260} baseOpacity={0.2} />
+            <div className="relative z-10 mx-auto max-w-[1600px] px-6 py-16 md:px-10 md:py-24">
+              <Reveal>
+                <p className="text-xs font-medium uppercase tracking-[0.3em] text-gold">
+                  Clients
+                </p>
+                <h2 className="font-display mt-4 text-2xl font-light tracking-tight sm:text-3xl">
+                  Partnerships in {sector.name}
+                </h2>
+              </Reveal>
+              <div className="mt-10">
+                <LogoMarquee
+                  clients={sector.clients.map((name) => ({ name }))}
+                  label={sector.name}
+                  duration={32}
+                />
+              </div>
+            </div>
+          </section>
+        ) : null}
 
         <section className="relative overflow-hidden border-t border-border">
           <GridBackdrop radius={260} baseOpacity={0.26} />
