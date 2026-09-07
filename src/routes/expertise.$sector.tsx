@@ -42,7 +42,7 @@ const sectors: Record<string, Sector> = {
     lead: "Agile workplaces for technology companies — campuses and offices engineered for focus, collaboration and the speed of innovation.",
     phrases: ["Agile Workplaces", "Innovation Hubs", "Campus Design"],
     image: `${UP}/2026/03/DSC03610-HDR-1024x683.jpg`,
-    projectSlugs: ["ideaforge", "ideaforge-headquarters-mumbai", "intangles", "volkswagen", "ergo-technologies"],
+    projectSlugs: ["ideaforge-headquarters-mumbai", "intangles", "ergo-technologies"],
     clients: ["3i", "Idea Forge", "Intangles", "VW ITS"],
   },
   engineering: {
