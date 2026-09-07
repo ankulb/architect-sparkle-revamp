@@ -24,7 +24,6 @@ export type NavItem = {
 export const aboutNav: NavChild[] = [
   { label: "Our Story", to: "/about" },
   { label: "Board of Directors", to: "/about/board" },
-  { label: "Anchors of TOA", to: "/about/anchors" },
   { label: "Our Team", to: "/about/team" },
   { label: "CSR", to: "/about/csr" },
   { label: "Climate Action", to: "/about/csr" },
@@ -94,7 +93,7 @@ export const nav: NavItem[] = [
       { label: "Employee Stories", href: "/#careers" },
     ],
   },
-  { label: "Contact", href: "https://teamonearchitects.com/contact/" },
+  { label: "Contact", to: "/contact" },
 ];
 
 
@@ -221,7 +220,7 @@ export const dynamicSections = [
 
 export const careers = {
   overline: "Careers at TOA",
-  title: "Build the next 25 years with us.",
+  title: "We don’t just build ideas, we build each other",
   body: "We're a multidisciplinary studio of architects, interior designers and engineers building calmly, courageously, and together. Our Trainee Program brings emerging talent into live projects from day one.",
   cta: { label: "Explore the Trainee Program", href: "https://teamonearchitects.com/careers/" },
   image: careersImage.url,

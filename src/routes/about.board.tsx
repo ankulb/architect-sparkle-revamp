@@ -9,7 +9,7 @@ import { board } from "@/data/about";
 
 const title = "Board of Directors — Team One Architects";
 const description =
-  "Meet the directors of Team One Architects — the leadership building the future together, brick by brick, mind by mind.";
+  "Meet the five directors guiding Team One Architects across design, culture, craft and long-term growth.";
 const url = "https://architect-sparkle-revamp.lovable.app/about/board";
 
 export const Route = createFileRoute("/about/board")({
@@ -42,7 +42,7 @@ function BoardPage() {
               The Board
             </Reveal>
             <Reveal as="h2" delay={1} className="font-display mt-4 text-3xl font-light tracking-tight sm:text-4xl">
-              Directors of the practice
+              The leadership of the practice
             </Reveal>
             <div className="mt-14">
               <PeopleGrid people={board.directors} />
