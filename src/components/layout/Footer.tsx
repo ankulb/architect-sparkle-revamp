@@ -68,7 +68,7 @@ export function Footer() {
 
           <FooterColumn title="Studio">
             {aboutNav.map((item) => (
-              <li key={item.to}>
+              <li key={item.label}>
                 <Link
                   to={item.to}
                   className="text-sm text-muted-foreground transition-colors hover:text-foreground"
