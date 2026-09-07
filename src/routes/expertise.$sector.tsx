@@ -7,7 +7,7 @@ import { GridBackdrop } from "@/components/graphics/GridBackdrop";
 import { BlueprintReveal } from "@/components/graphics/BlueprintReveal";
 import { ProjectGrid } from "@/components/portfolio/ProjectGrid";
 import { projects, projectDetails } from "@/data/portfolio";
-import { LogoMarquee } from "@/components/about/LogoMarquee";
+
 
 type Sector = {
   slug: string;
@@ -192,12 +192,16 @@ function SectorPage() {
                   Partnerships in {sector.name}
                 </h2>
               </Reveal>
-              <div className="mt-10">
-                <LogoMarquee
-                  clients={sector.clients.map((name) => ({ name }))}
-                  label={sector.name}
-                  duration={32}
-                />
+              <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
+                {sector.clients.map((name) => (
+                  <Reveal key={name}>
+                    <div className="group relative flex aspect-[4/5] items-center justify-center overflow-hidden rounded-xl border border-border bg-card/40 px-4 text-center transition-colors hover:border-gold/40">
+                      <span className="font-display text-lg font-light tracking-tight text-foreground/80 transition-colors group-hover:text-foreground">
+                        {name}
+                      </span>
+                    </div>
+                  </Reveal>
+                ))}
               </div>
             </div>
           </section>
