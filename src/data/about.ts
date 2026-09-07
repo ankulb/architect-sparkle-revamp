@@ -130,7 +130,7 @@ export const clientele = {
       sector: "IT & Software",
       clients: [
         { name: "3i" },
-        { name: "Idea Forge" },
+        { name: "Idea forge" },
         { name: "Intangles" },
         { name: "VW ITS" },
       ],
@@ -141,7 +141,7 @@ export const clientele = {
         { name: "Emerson" },
         { name: "JCI" },
         { name: "Sedmac" },
-        { name: "Vandelane" },
+        { name: "Vanderlane" },
       ],
     },
     {
