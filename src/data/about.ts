@@ -102,7 +102,7 @@ export const team = {
   },
   core: [
     { name: "Laxmikant Sawant", role: "COO", image: `${UP}/2021/10/laxmikant-sawant-1.png` },
-    { name: "Suraj Lazar", role: "Associate Director", image: `${UP}/2021/10/Suraj-Lazar-1.png` },
+    
     { name: "Varsha Changedia", role: "Associate Director", image: `${UP}/2021/10/Varsha-Changedia-1.png` },
   ],
   emerging: [
