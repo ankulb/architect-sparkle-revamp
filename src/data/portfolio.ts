@@ -79,9 +79,25 @@ export const projects: Project[] = [
   { slug: "toll", title: "Toll", category: INTERIORS, location: "Pune", image: tollGallery[0] },
   { slug: "hyatt", title: "Hyatt", category: COMMERCIAL, image: hyattGallery[0] },
   { slug: "vw-its", title: "VW ITS", category: INTERIORS, location: "Pune", image: vwItsGallery[0] },
+  { slug: "emerson", title: "Emerson", category: INTERIORS, location: "Nashik", image: emersonGallery[0] },
 ];
 
 export const projectDetails: Record<string, ProjectDetail> = {
+  emerson: {
+    slug: "emerson",
+    title: "Emerson",
+    category: INTERIORS,
+    sector: "Engineering",
+    client: "Emerson",
+    location: "Nashik",
+    service: "Corporate Interiors",
+    image: emersonGallery[0],
+    description: [
+      "A corporate workplace for Emerson, delivered as an interior architecture commission for the engineering major's Nashik facility.",
+      "The photographed spaces move from the arrival frontage through open workstation floors, meeting and collaboration rooms and shared break-out areas, held together by a restrained palette of light finishes, linear ceiling systems and clear circulation.",
+    ],
+    gallery: emersonGallery,
+  },
   "vw-its": {
     slug: "vw-its",
     title: "VW ITS",
