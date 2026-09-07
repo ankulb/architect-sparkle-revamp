@@ -1,6 +1,6 @@
 # Add real photos and case studies across sector pages
 
-You shared photo sets for eight clients. Plan is to give each a full, photo-rich case study, like ERGO, Axis Securities, Federal Bank and ICICI Securities.
+You shared photo sets for nine clients. Plan is to give each a full, photo-rich case study, like ERGO, Axis Securities, Federal Bank and ICICI Securities.
 
 ## IT & Software sector
 
@@ -28,7 +28,7 @@ You shared photo sets for eight clients. Plan is to give each a full, photo-rich
 ## Health & Pharma sector
 
 ### 6. Bharat Serum — new project
-- 7 photos uploaded; new entry "Bharat Serum", Interior Architecture, page at `/portfolio/bharat-serum`, short draft narrative (replace when you send the write-up).
+- 7 photos uploaded; new entry "Bharat Serum", Interior Architecture, page at `/portfolio/bharat-serum`, short draft narrative.
 - Sector page: becomes a real project card.
 
 ### 7. Indira IVF — existing project, new photos + write-up
@@ -39,12 +39,19 @@ You shared photo sets for eight clients. Plan is to give each a full, photo-rich
 
 ### 8. Digital Domain — new project (first Media case study)
 - 8 files: 7 JPGs plus one very large TIFF (124 MB) — the TIFF will be converted to a web-friendly JPG before upload.
-- New entry "Digital Domain", Interior Architecture, page at `/portfolio/digital-domain`, short draft narrative (replace when you send the write-up).
-- Media sector page: "Digital Domain" becomes a real project card with photo and link.
+- New entry "Digital Domain", Interior Architecture, page at `/portfolio/digital-domain`, short draft narrative.
+- Sector page: becomes a real project card.
+
+## Shipping sector
+
+### 9. Toll — new project
+- 5 images (one JPG/PNG duplicate — keep one); parse "TOLL Write up.docx" for the official narrative and facts.
+- New entry "Toll", Interior Architecture, page at `/portfolio/toll`.
+- Sector page: "Toll" becomes a real project card alongside XPO.
 
 ## Technical details
-- Upload images with `lovable-assets create` → pointer files under `src/assets/{3i,ideaforge,intangles,jci,vanderlane,bharat-serum,indira-ivf,digital-domain}/`. Convert the TIFF with ImageMagick/ffmpeg first.
+- Upload images with `lovable-assets create` → pointer files under `src/assets/{3i,ideaforge,intangles,jci,vanderlane,bharat-serum,indira-ivf,digital-domain,toll}/`. Convert the TIFF before upload.
 - Register all in `src/data/projectAssets.ts`.
-- `src/data/portfolio.ts`: add `3i`, `vanderlane`, `bharat-serum`, `digital-domain` to `projectDetails`; update `ideaforge-headquarters-mumbai`, `intangles`, the JCI entry and `indira-ivf`.
-- `src/routes/expertise.$sector.tsx`: add `"3i"` (IT & Software), `"vanderlane"` (Engineering), `"bharat-serum"` (Health & Pharma), `"digital-domain"` (Media) to `projectSlugs`; remove them from the name-only tile lists.
+- `src/data/portfolio.ts`: add `3i`, `vanderlane`, `bharat-serum`, `digital-domain`, `toll` to `projectDetails`; update `ideaforge-headquarters-mumbai`, `intangles`, the JCI entry and `indira-ivf`.
+- `src/routes/expertise.$sector.tsx`: add `"3i"` (IT & Software), `"vanderlane"` (Engineering), `"bharat-serum"` (Health & Pharma), `"digital-domain"` (Media), `"toll"` (Shipping) to `projectSlugs`; remove them from the name-only tile lists.
 - No navigation, header, or other sector changes.
