@@ -7,7 +7,7 @@ import { GridBackdrop } from "@/components/graphics/GridBackdrop";
 import { BlueprintReveal } from "@/components/graphics/BlueprintReveal";
 import { ProjectGrid } from "@/components/portfolio/ProjectGrid";
 import { projects, projectDetails } from "@/data/portfolio";
-import { LogoMarquee } from "@/components/about/LogoMarquee";
+
 
 type Sector = {
   slug: string;
