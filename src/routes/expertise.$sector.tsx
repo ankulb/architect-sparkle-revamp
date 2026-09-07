@@ -180,32 +180,6 @@ function SectorPage() {
           phrases={sector.phrases}
         />
 
-        {sector.clients.length > 0 ? (
-          <section className="relative overflow-hidden border-t border-border">
-            <GridBackdrop radius={260} baseOpacity={0.2} />
-            <div className="relative z-10 mx-auto max-w-[1600px] px-6 py-16 md:px-10 md:py-24">
-              <Reveal>
-                <p className="text-xs font-medium uppercase tracking-[0.3em] text-gold">
-                  Clients
-                </p>
-                <h2 className="font-display mt-4 text-2xl font-light tracking-tight sm:text-3xl">
-                  Partnerships in {sector.name}
-                </h2>
-              </Reveal>
-              <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
-                {sector.clients.map((name) => (
-                  <Reveal key={name}>
-                    <div className="group relative flex aspect-[4/5] items-center justify-center overflow-hidden rounded-xl border border-border bg-card/40 px-4 text-center transition-colors hover:border-gold/40">
-                      <span className="font-display text-lg font-light tracking-tight text-foreground/80 transition-colors group-hover:text-foreground">
-                        {name}
-                      </span>
-                    </div>
-                  </Reveal>
-                ))}
-              </div>
-            </div>
-          </section>
-        ) : null}
 
         <section className="relative overflow-hidden border-t border-border">
           <GridBackdrop radius={260} baseOpacity={0.26} />
