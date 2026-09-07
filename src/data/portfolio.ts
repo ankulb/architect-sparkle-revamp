@@ -1,8 +1,19 @@
 import {
   axisSecuritiesGallery,
+  bharatSerumGallery,
+  digitalDomainGallery,
   ergoTechnologiesGallery,
   federalBankGallery,
+  hyattGallery,
   iciciSecuritiesGallery,
+  ideaForgeGallery,
+  indiraIvfGallery,
+  infinixGallery,
+  intanglesGallery,
+  jciGallery,
+  threeIGallery,
+  tollGallery,
+  vanderlaneGallery,
 } from "@/data/projectAssets";
 
 // Portfolio content sourced from teamonearchitects.com/portfolio.
@@ -59,6 +70,12 @@ export const projects: Project[] = [
   { slug: "jio-school", title: "JIO School", category: COMMERCIAL, image: `${UP}/2026/03/786928477867589-copy-650x650.jpg` },
   { slug: "commercial-office-building", title: "Commercial Office Building", category: COMMERCIAL, image: `${UP}/2026/03/VIEW-1-650x650.png` },
   { slug: "xpo", title: "XPO", category: INTERIORS, image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1000&q=80" },
+  { slug: "3i", title: "3i", category: INTERIORS, image: threeIGallery[0] },
+  { slug: "vanderlane", title: "Vanderlane", category: INTERIORS, location: "WTC Kharadi, Pune", image: vanderlaneGallery[0] },
+  { slug: "bharat-serum", title: "Bharat Serum", category: INTERIORS, image: bharatSerumGallery[0] },
+  { slug: "digital-domain", title: "Digital Domain", category: INTERIORS, image: digitalDomainGallery[0] },
+  { slug: "toll", title: "Toll", category: INTERIORS, location: "Pune", image: tollGallery[0] },
+  { slug: "hyatt", title: "Hyatt", category: COMMERCIAL, image: hyattGallery[0] },
 ];
 
 export const projectDetails: Record<string, ProjectDetail> = {
