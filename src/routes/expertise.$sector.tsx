@@ -189,9 +189,32 @@ function SectorNotFound() {
   );
 }
 
+function ClientTile({ name }: { name: string }) {
+  return (
+    <div className="group relative flex aspect-[4/3] items-center justify-center overflow-hidden border border-border bg-card/40 transition-colors duration-500 hover:border-gold/50">
+      <div
+        className="pointer-events-none absolute inset-0 opacity-[0.18]"
+        style={{
+          backgroundImage:
+            "linear-gradient(to right, currentColor 1px, transparent 1px), linear-gradient(to bottom, currentColor 1px, transparent 1px)",
+          backgroundSize: "44px 44px",
+        }}
+      />
+      <div className="relative z-10 text-center">
+        <h3 className="font-display text-xl font-normal tracking-tight text-foreground transition-colors duration-500 group-hover:text-gold sm:text-2xl">
+          {name}
+        </h3>
+        <span className="mt-3 block text-[0.7rem] font-medium uppercase tracking-[0.2em] text-muted-foreground">
+          Client
+        </span>
+      </div>
+    </div>
+  );
+}
+
 function SectorPage() {
   const { sector } = Route.useLoaderData();
-  const list = sectorProjects(sector);
+  const list = sectorEntries(sector);
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -222,11 +245,22 @@ function SectorPage() {
 
             <div className="mt-12">
               {list.length ? (
-                <ProjectGrid projects={list} />
+                <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+                  {list.map((entry) =>
+                    entry.project ? (
+                      <ProjectCard key={entry.name} project={entry.project} />
+                    ) : (
+                      <ClientTile key={entry.name} name={entry.name} />
+                    ),
+                  )}
+                </div>
               ) : (
                 <p className="text-muted-foreground">Projects in this sector are being added.</p>
               )}
             </div>
+          </div>
+        </section>
+
           </div>
         </section>
       </main>
