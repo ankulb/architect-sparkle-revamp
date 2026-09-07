@@ -86,6 +86,24 @@ export const projects: Project[] = [
 ];
 
 export const projectDetails: Record<string, ProjectDetail> = {
+  apicore: {
+    slug: "apicore",
+    title: "Apicore",
+    category: INTERIORS,
+    sector: "Health & Pharma",
+    client: "Apicore",
+    location: "Mumbai",
+    area: "10,000 sq. ft.",
+    status: "Completed · 2022",
+    service: "Corporate Interiors",
+    image: apicoreGallery[0],
+    description: [
+      "Apicore's 10,000 sq. ft. boutique workspace was designed as a wellness-driven, human-centric environment that prioritises comfort, culture and engagement — a deliberate move beyond the conventional office.",
+      "Natural materials, warm wood finishes and layered lighting foster creativity and wellbeing, while biophilic elements strengthen the connection to nature, supporting both productivity and calm. Informal lounges, collaborative nooks and relaxed meeting areas give teams the flexibility to focus or connect spontaneously.",
+      "The result reflects Apicore's people-first ethos — proof that thoughtful design at a boutique scale can strengthen identity, collaboration and a genuine sense of belonging.",
+    ],
+    gallery: apicoreGallery,
+  },
   emerson: {
     slug: "emerson",
     title: "Emerson",
