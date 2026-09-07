@@ -155,7 +155,7 @@ function SectorNotFound() {
 
 function SectorPage() {
   const { sector } = Route.useLoaderData();
-  const list = sectorProjects(sector.name);
+  const list = sectorProjects(sector);
 
   return (
     <div className="min-h-screen bg-background text-foreground">
