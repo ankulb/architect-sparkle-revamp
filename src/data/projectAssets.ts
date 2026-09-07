@@ -302,3 +302,22 @@ export const hyattGallery = [
   hyatt8.url,
   hyatt9.url,
 ];
+
+import vwIts1 from "@/assets/projects/vw-its/001.jpg.asset.json";
+import vwIts2 from "@/assets/projects/vw-its/005.jpg.asset.json";
+import vwIts3 from "@/assets/projects/vw-its/016.jpg.asset.json";
+import vwIts4 from "@/assets/projects/vw-its/021.jpg.asset.json";
+import vwIts5 from "@/assets/projects/vw-its/037.jpg.asset.json";
+import vwIts6 from "@/assets/projects/vw-its/040.jpg.asset.json";
+import vwIts7 from "@/assets/projects/vw-its/042.jpg.asset.json";
+import vwIts8 from "@/assets/projects/vw-its/046.jpg.asset.json";
+export const vwItsGallery = [
+  vwIts1.url,
+  vwIts2.url,
+  vwIts3.url,
+  vwIts4.url,
+  vwIts5.url,
+  vwIts6.url,
+  vwIts7.url,
+  vwIts8.url,
+];
