@@ -63,7 +63,7 @@ const sectors: Record<string, Sector> = {
     clients: [
       { name: "Emerson", projectSlug: "emerson" },
       { name: "JCI", projectSlug: "johnson-controls-gcc-offices" },
-      { name: "Sedmac" },
+      { name: "Sedmac", projectSlug: "sedmac" },
       { name: "Vanderlane", projectSlug: "vanderlane" },
     ],
   },

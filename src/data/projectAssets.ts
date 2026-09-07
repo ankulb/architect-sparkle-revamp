@@ -348,3 +348,16 @@ export const emersonGallery = [
   emerson11.url,
   emerson12.url,
 ];
+
+import sedmac1 from "@/assets/projects/sedmac/01.jpg.asset.json";
+import sedmac3 from "@/assets/projects/sedmac/03.jpg.asset.json";
+import sedmac4 from "@/assets/projects/sedmac/04.jpg.asset.json";
+import sedmac5 from "@/assets/projects/sedmac/05.jpg.asset.json";
+import sedmac7 from "@/assets/projects/sedmac/07.jpg.asset.json";
+export const sedmacGallery = [
+  sedmac1.url,
+  sedmac3.url,
+  sedmac4.url,
+  sedmac5.url,
+  sedmac7.url,
+];

@@ -12,6 +12,7 @@ import {
   infinixGallery,
   intanglesGallery,
   jciGallery,
+  sedmacGallery,
   threeIGallery,
   tollGallery,
   vanderlaneGallery,
@@ -80,6 +81,7 @@ export const projects: Project[] = [
   { slug: "hyatt", title: "Hyatt", category: COMMERCIAL, image: hyattGallery[0] },
   { slug: "vw-its", title: "VW ITS", category: INTERIORS, location: "Pune", image: vwItsGallery[0] },
   { slug: "emerson", title: "Emerson", category: INTERIORS, location: "Nashik", image: emersonGallery[0] },
+  { slug: "sedmac", title: "Sedmac", category: INTERIORS, location: "Baner, Pune", image: sedmacGallery[0] },
 ];
 
 export const projectDetails: Record<string, ProjectDetail> = {
@@ -97,6 +99,24 @@ export const projectDetails: Record<string, ProjectDetail> = {
       "The photographed spaces move from the arrival frontage through open workstation floors, meeting and collaboration rooms and shared break-out areas, held together by a restrained palette of light finishes, linear ceiling systems and clear circulation.",
     ],
     gallery: emersonGallery,
+  },
+  sedmac: {
+    slug: "sedmac",
+    title: "Sedmac",
+    category: INTERIORS,
+    sector: "Engineering",
+    client: "SEDEMAC Mechatronics Ltd.",
+    location: "Pallod Farms 2, Baner, Pune",
+    area: "40,000 sq. ft.",
+    status: "Completed",
+    service: "Corporate Interiors",
+    image: sedmacGallery[0],
+    description: [
+      "SEDEMAC Mechatronics — an engineering-led organisation specialising in automation, robotics and integrated control technologies — asked for a workplace at Pallod Farms 2, Baner that mirrors its innovation-driven culture: a contemporary environment balancing precision, collaboration and technological advancement.",
+      "The concept is a clean, modern, high-performance workspace that communicates engineering excellence. An open-plan layout encourages cross-team collaboration, abundant natural light from large windows and skylights lifts wellbeing while cutting reliance on artificial lighting, and curved circulation pathways in carpet introduce movement and visual dynamism that reinforce the brand's forward-looking identity.",
+      "Collaboration zones are distributed across floors — each designed in its own way with writable surfaces, greenery and flexible seating — while the corporate floor holds a refined boardroom with premium materials, acoustic panels and integrated AV and lighting automation. Sustainable choices run throughout: LVT flooring, IGBC-certified finishes, VRV air-conditioning, LED lighting and daylight harvesting, with extensive writable surfaces across workstations and meeting rooms encouraging creativity and technical problem-solving.",
+    ],
+    gallery: sedmacGallery,
   },
   "vw-its": {
     slug: "vw-its",
