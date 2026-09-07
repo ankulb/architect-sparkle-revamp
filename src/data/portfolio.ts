@@ -77,9 +77,28 @@ export const projects: Project[] = [
   { slug: "digital-domain", title: "Digital Domain", category: INTERIORS, image: digitalDomainGallery[0] },
   { slug: "toll", title: "Toll", category: INTERIORS, location: "Pune", image: tollGallery[0] },
   { slug: "hyatt", title: "Hyatt", category: COMMERCIAL, image: hyattGallery[0] },
+  { slug: "vw-its", title: "VW ITS", category: INTERIORS, location: "Pune", image: vwItsGallery[0] },
 ];
 
 export const projectDetails: Record<string, ProjectDetail> = {
+  "vw-its": {
+    slug: "vw-its",
+    title: "VW ITS",
+    category: INTERIORS,
+    sector: "IT Services & Solution Provider",
+    area: "1,23,900 sq. ft.",
+    status: "Completed",
+    client: "Volkswagen Group Technology Solutions India Pvt Ltd",
+    location: "Pune",
+    service: "Corporate Interiors",
+    image: vwItsGallery[0],
+    description: [
+      "Volkswagen Group Technology Solutions India brought a clear brief to Pune: a high-impact facility that would bring every brand and IT service of the group under one roof, while giving a large headcount a genuinely great place to work — wellbeing and recreation included.",
+      "The design concept, 'Driven by Innovation', is inspired by automotive precision and forward movement. Bold blue brand accents are balanced against clean greys, with acoustic panels, sleek lighting and streamlined furniture shaping a focused yet collaborative environment. The feature brand wall reinforces Volkswagen's legacy while signalling progress, speed and digital transformation.",
+      "The material palette carries the same engineering intent — charcoal-based ribbed panels, CNC metal panels with acrylic backing, acoustic spray paint, automotive sensor-based fixtures, marble tables, subway tiles, leather wall panelling with inlays and a lightweight metal baffle ceiling in a custom design.",
+    ],
+    gallery: vwItsGallery,
+  },
   atomberg: {
     slug: "atomberg",
     title: "ATOMBERG",
