@@ -321,3 +321,30 @@ export const vwItsGallery = [
   vwIts7.url,
   vwIts8.url,
 ];
+
+import emerson1 from "@/assets/projects/emerson/emerson-01.jpg.asset.json";
+import emerson2 from "@/assets/projects/emerson/emerson-02.jpg.asset.json";
+import emerson3 from "@/assets/projects/emerson/emerson-03.jpg.asset.json";
+import emerson4 from "@/assets/projects/emerson/emerson-04.jpg.asset.json";
+import emerson5 from "@/assets/projects/emerson/emerson-05.jpg.asset.json";
+import emerson6 from "@/assets/projects/emerson/emerson-06.jpg.asset.json";
+import emerson7 from "@/assets/projects/emerson/emerson-07.jpg.asset.json";
+import emerson8 from "@/assets/projects/emerson/emerson-08.jpg.asset.json";
+import emerson9 from "@/assets/projects/emerson/emerson-09.jpg.asset.json";
+import emerson10 from "@/assets/projects/emerson/emerson-10.jpg.asset.json";
+import emerson11 from "@/assets/projects/emerson/emerson-11.jpg.asset.json";
+import emerson12 from "@/assets/projects/emerson/emerson-12.jpg.asset.json";
+export const emersonGallery = [
+  emerson1.url,
+  emerson2.url,
+  emerson3.url,
+  emerson4.url,
+  emerson5.url,
+  emerson6.url,
+  emerson7.url,
+  emerson8.url,
+  emerson9.url,
+  emerson10.url,
+  emerson11.url,
+  emerson12.url,
+];

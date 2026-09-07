@@ -61,7 +61,7 @@ const sectors: Record<string, Sector> = {
     phrases: ["Experience Centres", "Precision Planning", "Technical Workplaces"],
     image: `${UP}/2025/08/ad2c6b9e-662a-4bb2-b913-063d1304a2a0.jpg`,
     clients: [
-      { name: "Emerson" },
+      { name: "Emerson", projectSlug: "emerson" },
       { name: "JCI", projectSlug: "johnson-controls-gcc-offices" },
       { name: "Sedmac" },
       { name: "Vanderlane", projectSlug: "vanderlane" },
