@@ -261,8 +261,6 @@ function SectorPage() {
           </div>
         </section>
 
-          </div>
-        </section>
       </main>
       <Footer />
     </div>
