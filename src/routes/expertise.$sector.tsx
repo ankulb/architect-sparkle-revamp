@@ -5,9 +5,16 @@ import { PageHero } from "@/components/about/PageHero";
 import { Reveal } from "@/components/Reveal";
 import { GridBackdrop } from "@/components/graphics/GridBackdrop";
 import { BlueprintReveal } from "@/components/graphics/BlueprintReveal";
-import { ProjectGrid } from "@/components/portfolio/ProjectGrid";
-import { projects, projectDetails } from "@/data/portfolio";
+import { ProjectCard } from "@/components/portfolio/ProjectCard";
+import { projects, projectDetails, type Project } from "@/data/portfolio";
 
+
+
+type SectorClient = {
+  name: string;
+  /** Portfolio slug for this client, when a project exists. */
+  projectSlug?: string;
+};
 
 type Sector = {
   slug: string;
@@ -16,10 +23,8 @@ type Sector = {
   lead: string;
   phrases: string[];
   image: string;
-  /** Portfolio slugs known to belong to this sector (matched by client). */
-  projectSlugs: string[];
-  /** Named clients in this sector (logos dropped in later). */
-  clients: string[];
+  /** Named clients in this sector, in display order. */
+  clients: SectorClient[];
 };
 
 const UP = "https://teamonearchitects.com/wp-content/uploads";
@@ -32,7 +37,6 @@ const sectors: Record<string, Sector> = {
     lead: "Workplaces for banks, brokerages and financial institutions — environments where trust, security and precision meet the warmth of a modern, people-first office.",
     phrases: ["Trading Floors", "Client Experience", "Brand Identity"],
     image: `${UP}/2026/03/DSC07321-HDR-1024x683.jpg`,
-    projectSlugs: [],
     clients: [],
   },
   "it-software": {
@@ -42,8 +46,12 @@ const sectors: Record<string, Sector> = {
     lead: "Agile workplaces for technology companies — campuses and offices engineered for focus, collaboration and the speed of innovation.",
     phrases: ["Agile Workplaces", "Innovation Hubs", "Campus Design"],
     image: `${UP}/2026/03/DSC03610-HDR-1024x683.jpg`,
-    projectSlugs: ["ideaforge-headquarters-mumbai", "intangles", "ergo-technologies"],
-    clients: ["3i", "Idea Forge", "Intangles", "VW ITS"],
+    clients: [
+      { name: "3i" },
+      { name: "Idea forge", projectSlug: "ideaforge-headquarters-mumbai" },
+      { name: "Intangles", projectSlug: "intangles" },
+      { name: "VW ITS" },
+    ],
   },
   engineering: {
     slug: "engineering",
@@ -52,8 +60,12 @@ const sectors: Record<string, Sector> = {
     lead: "Precision environments for engineering leaders — offices and experience centres that mirror the rigour of the work happening inside them.",
     phrases: ["Experience Centres", "Precision Planning", "Technical Workplaces"],
     image: `${UP}/2025/08/ad2c6b9e-662a-4bb2-b913-063d1304a2a0.jpg`,
-    projectSlugs: ["johnson-controls-gcc-offices"],
-    clients: ["Emerson", "JCI", "Sedmac", "Vandelane"],
+    clients: [
+      { name: "Emerson" },
+      { name: "JCI", projectSlug: "johnson-controls-gcc-offices" },
+      { name: "Sedmac" },
+      { name: "Vanderlane" },
+    ],
   },
   "health-pharma": {
     slug: "health-pharma",
@@ -62,8 +74,12 @@ const sectors: Record<string, Sector> = {
     lead: "Healthcare and pharmaceutical environments where compliance, care and calm come together — spaces designed around the people they serve.",
     phrases: ["Healing Environments", "Compliance by Design", "Care-centred Spaces"],
     image: `${UP}/2026/05/DSC_8289-1024x681.jpg`,
-    projectSlugs: ["apicore", "basf", "indira-ivf"],
-    clients: ["Apicore", "BASF", "Bharat Serum", "Indira IVF"],
+    clients: [
+      { name: "Apicore", projectSlug: "apicore" },
+      { name: "BASF", projectSlug: "basf" },
+      { name: "Bharat Serum" },
+      { name: "Indira IVF", projectSlug: "indira-ivf" },
+    ],
   },
   media: {
     slug: "media",
@@ -72,8 +88,7 @@ const sectors: Record<string, Sector> = {
     lead: "Studios and creative workplaces for media houses — spaces that keep pace with production, storytelling and the always-on news cycle.",
     phrases: ["Creative Studios", "Production Spaces", "Storytelling Hubs"],
     image: `${UP}/2026/03/titan-1-1024x690.jpg`,
-    projectSlugs: [],
-    clients: ["Digital Domain", "MSL Group", "Prasad Studios"],
+    clients: [{ name: "Digital Domain" }, { name: "MSL Group" }, { name: "Prasad Studios" }],
   },
   shipping: {
     slug: "shipping",
@@ -82,8 +97,7 @@ const sectors: Record<string, Sector> = {
     lead: "Workplaces for logistics and shipping leaders — efficient, connected offices built for teams that keep the world moving.",
     phrases: ["Logistics Hubs", "Connected Workplaces", "Operational Clarity"],
     image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1600&q=80",
-    projectSlugs: ["xpo"],
-    clients: ["Toll", "XPO"],
+    clients: [{ name: "Toll" }, { name: "XPO", projectSlug: "xpo" }],
   },
   telecom: {
     slug: "telecom",
@@ -92,8 +106,7 @@ const sectors: Record<string, Sector> = {
     lead: "High-performance workplaces for telecom and network infrastructure companies — designed for scale, uptime and the teams behind connectivity.",
     phrases: ["Network Operations", "Scalable Workplaces", "Future-ready Design"],
     image: `${UP}/2026/03/Infinix_Backlight_0_5_Strict-1024x683.jpg`,
-    projectSlugs: ["infinx-mumbai-office"],
-    clients: ["Infinix", "Nxtra"],
+    clients: [{ name: "Infinix", projectSlug: "infinx-mumbai-office" }, { name: "Nxtra" }],
   },
   "green-field": {
     slug: "green-field",
@@ -102,18 +115,30 @@ const sectors: Record<string, Sector> = {
     lead: "Ground-up developments imagined from a blank site — hospitality, mixed-use and institutional projects shaped from first principles.",
     phrases: ["Ground-up Developments", "Hospitality", "Placemaking"],
     image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1600&q=80",
-    projectSlugs: [],
-    clients: ["Hyatt"],
+    clients: [{ name: "Hyatt" }],
   },
 };
 
-function sectorProjects(sector: Sector) {
-  const detailSlugs = Object.values(projectDetails)
-    .filter((d) => d.sector === sector.name)
-    .map((d) => d.slug);
-  const slugs = new Set([...detailSlugs, ...sector.projectSlugs]);
-  return projects.filter((p) => slugs.has(p.slug));
+type SectorEntry = { name: string; project?: Project };
+
+function sectorEntries(sector: Sector): SectorEntry[] {
+  const bySlug = new Map(projects.map((p) => [p.slug, p]));
+
+  if (sector.clients.length === 0) {
+    // Sectors without a named client list fall back to project-detail matching.
+    return Object.values(projectDetails)
+      .filter((d) => d.sector === sector.name)
+      .map((d) => bySlug.get(d.slug))
+      .filter((p): p is Project => Boolean(p))
+      .map((p) => ({ name: p.title, project: p }));
+  }
+
+  return sector.clients.map((c) => ({
+    name: c.name,
+    project: c.projectSlug ? bySlug.get(c.projectSlug) : undefined,
+  }));
 }
+
 
 export const Route = createFileRoute("/expertise/$sector")({
   loader: ({ params }) => {
