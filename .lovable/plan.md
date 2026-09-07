@@ -1,6 +1,6 @@
 # Add real photos and case studies across sector pages
 
-You shared photo sets for six clients. Plan is to give each a full, photo-rich case study, like ERGO, Axis Securities, Federal Bank and ICICI Securities.
+You shared photo sets for seven clients. Plan is to give each a full, photo-rich case study, like ERGO, Axis Securities, Federal Bank and ICICI Securities.
 
 ## IT & Software sector
 
@@ -36,9 +36,13 @@ You shared photo sets for six clients. Plan is to give each a full, photo-rich c
 - Short draft narrative — replace with the official write-up when you send it.
 - Sector page: "Bharat Serum" moves from a name-only tile to a real project card.
 
+### 7. Indira IVF — existing project, new photos + write-up
+- Parse "Final Indira IVF WRITEUP.docx" for the official narrative and facts; update the entry.
+- Upload the 15 new photos and rebuild its gallery.
+
 ## Technical details
-- Upload images with `lovable-assets create` → pointer files under `src/assets/{3i,ideaforge,intangles,jci,vanderlane,bharat-serum}/`.
+- Upload images with `lovable-assets create` → pointer files under `src/assets/{3i,ideaforge,intangles,jci,vanderlane,bharat-serum,indira-ivf}/`.
 - Register all in `src/data/projectAssets.ts`.
-- `src/data/portfolio.ts`: add `3i`, `vanderlane`, `bharat-serum` to `projectDetails`; update `ideaforge-headquarters-mumbai`, `intangles` and the JCI entry.
+- `src/data/portfolio.ts`: add `3i`, `vanderlane`, `bharat-serum` to `projectDetails`; update `ideaforge-headquarters-mumbai`, `intangles`, the JCI entry and `indira-ivf`.
 - `src/routes/expertise.$sector.tsx`: add `"3i"` (IT & Software), `"vanderlane"` (Engineering), `"bharat-serum"` (Health & Pharma) to `projectSlugs`; remove them from the name-only tile lists.
 - No navigation, header, or other sector changes.
