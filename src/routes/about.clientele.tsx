@@ -45,10 +45,10 @@ function ClientelePage() {
                 {group.sector}
               </Reveal>
               <LogoMarquee
-                logos={group.logos}
+                clients={group.clients}
                 label={group.sector}
                 direction={gi % 2 === 0 ? "left" : "right"}
-                duration={Math.max(24, group.logos.length * 6)}
+                duration={Math.max(24, group.clients.length * 6)}
               />
             </div>
           ))}

@@ -1,5 +1,10 @@
+export type MarqueeClient = {
+  name?: string;
+  logo?: string;
+};
+
 type LogoMarqueeProps = {
-  logos: readonly string[];
+  clients: readonly MarqueeClient[];
   /** Scroll direction. */
   direction?: "left" | "right";
   /** Seconds for one full loop; lower = faster. */
@@ -8,13 +13,14 @@ type LogoMarqueeProps = {
 };
 
 /**
- * Seamless infinite logo marquee. Logos render grayscale + dimmed and turn to
- * full colour on hover of the individual logo. The whole row pauses on hover.
- * Falls back to a centered static wrap when reduced motion is preferred.
+ * Seamless infinite client marquee. Logos render grayscale + dimmed and turn to
+ * full colour on hover of the individual tile. The whole row pauses on hover.
+ * Each tile shows the client name as a caption; clients without a logo yet
+ * render as an elegant name-only tile. Falls back gracefully for reduced motion.
  */
-export function LogoMarquee({ logos, direction = "left", duration = 40, label }: LogoMarqueeProps) {
+export function LogoMarquee({ clients, direction = "left", duration = 40, label }: LogoMarqueeProps) {
   // Duplicate the set so the -50% translate loops without a visible seam.
-  const track = [...logos, ...logos];
+  const track = [...clients, ...clients];
 
   return (
     <div
@@ -31,15 +37,31 @@ export function LogoMarquee({ logos, direction = "left", duration = 40, label }:
         data-dir={direction}
         style={{ ["--marquee-duration" as string]: `${duration}s` }}
       >
-        {track.map((logo, i) => (
-          <li key={`${logo}-${i}`} className="shrink-0">
-            <div className="flex h-24 w-44 items-center justify-center rounded-sm border border-border/60 bg-card p-6 transition-colors duration-300 hover:border-gold/40">
-              <img
-                src={logo}
-                alt={label ? `${label} client of Team One Architects` : "Client of Team One Architects"}
-                loading="lazy"
-                className="max-h-full max-w-full object-contain opacity-60 grayscale transition duration-500 hover:opacity-100 hover:grayscale-0"
-              />
+        {track.map((client, i) => (
+          <li key={`${client.name ?? client.logo}-${i}`} className="shrink-0">
+            <div className="flex h-28 w-44 flex-col items-center justify-center gap-2 rounded-sm border border-border/60 bg-card p-5 transition-colors duration-300 hover:border-gold/40">
+              {client.logo ? (
+                <img
+                  src={client.logo}
+                  alt={
+                    client.name ??
+                    (label
+                      ? `${label} client of Team One Architects`
+                      : "Client of Team One Architects")
+                  }
+                  loading="lazy"
+                  className="max-h-12 max-w-full object-contain opacity-60 grayscale transition duration-500 hover:opacity-100 hover:grayscale-0"
+                />
+              ) : null}
+              {client.name ? (
+                <span
+                  className={`text-center uppercase tracking-[0.14em] text-foreground/70 ${
+                    client.logo ? "text-[10px]" : "font-display text-sm font-medium tracking-[0.18em]"
+                  }`}
+                >
+                  {client.name}
+                </span>
+              ) : null}
             </div>
           </li>
         ))}

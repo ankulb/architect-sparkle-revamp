@@ -127,109 +127,77 @@ export const clientele = {
   },
   groups: [
     {
-      sector: "Engineering",
-      logos: [
-        `${UP}/2025/07/1-3.jpg_1.jpeg`,
-        `${UP}/2025/07/4-3.jpg.jpeg`,
-        `${UP}/2025/07/3-3.jpg.jpeg`,
-        `${UP}/2025/07/6-3.jpg.jpeg`,
-      ],
-    },
-    {
       sector: "IT & Software",
-      logos: [
-        `${UP}/2025/07/2-3.jpg.jpeg`,
-        `${UP}/2025/07/6-1.jpg.jpeg`,
-        `${UP}/2025/07/4-1.jpg.jpeg`,
-        `${UP}/2025/07/3-1.jpg.jpeg`,
-        `${UP}/2025/07/2-1.jpg.jpeg`,
-        `${UP}/2025/07/1-1.jpg.jpeg`,
-        `${UP}/2025/07/5-1.jpg.jpeg`,
+      clients: [
+        { name: "3i" },
+        { name: "Idea Forge" },
+        { name: "Intangles" },
+        { name: "VW ITS" },
       ],
     },
     {
-      sector: "Banking & Finance",
-      logos: [
-        `${UP}/2025/07/4-2.jpg.jpeg`,
-        `${UP}/2025/07/5-2.jpg.jpeg`,
-        `${UP}/2025/07/1-2.jpg.jpeg`,
-        `${UP}/2025/07/3-2.jpg.jpeg`,
-        `${UP}/2025/07/2-2.jpg.jpeg`,
+      sector: "Engineering",
+      clients: [
+        { name: "Emerson" },
+        { name: "JCI" },
+        { name: "Sedmac" },
+        { name: "Vandelane" },
+      ],
+    },
+    {
+      sector: "Health & Pharma",
+      clients: [
+        { name: "Apicore" },
+        { name: "BASF" },
+        { name: "Bharat Serum" },
+        { name: "Indira IVF" },
       ],
     },
     {
       sector: "Media",
-      logos: [
-        `${UP}/2025/07/image-37.png`,
-        `${UP}/2025/07/2-5.jpg.jpeg`,
-        `${UP}/2025/07/1-5.jpg.jpeg`,
-        `${UP}/2025/07/4-5.jpg.jpeg`,
-        `${UP}/2025/07/6-5.jpg.jpeg`,
-        `${UP}/2025/07/5-5.jpg.jpeg`,
+      clients: [
+        { name: "Digital Domain" },
+        { name: "MSL Group" },
+        { name: "Prasad Studios" },
       ],
     },
     {
       sector: "Shipping",
-      logos: [
-        `${UP}/2025/07/4-6.jpg.jpeg`,
-        `${UP}/2025/07/3-6.jpg.jpeg`,
-        `${UP}/2025/07/2-6.jpg.jpeg`,
-      ],
+      clients: [{ name: "Toll" }, { name: "XPO" }],
     },
     {
       sector: "Telecom",
-      logos: [
-        `${UP}/2025/07/2-7.jpg.jpeg`,
-        `${UP}/2025/07/4-7.jpg.jpeg`,
-        `${UP}/2025/07/3-7.jpg.jpeg`,
-        `${UP}/2025/07/Airtel_logo-scaled.png`,
-        `${UP}/2025/07/8-7.jpg.jpeg`,
-        `${UP}/2025/07/5-7.jpg.jpeg`,
-      ],
+      clients: [{ name: "Infinix" }, { name: "Nxtra" }],
     },
     {
-      sector: "Pharma & Health",
-      logos: [
-        `${UP}/2025/07/3-4.jpg.jpeg`,
-        `${UP}/2025/07/2-4.jpg.jpeg`,
-        `${UP}/2025/07/13-1.jpg.jpeg`,
-        `${UP}/2025/07/4-4.jpg.jpeg`,
-        `${UP}/2025/07/1-4.jpg.jpeg`,
-        `${UP}/2025/07/8-4.jpg.jpeg`,
-        `${UP}/2025/07/14-1.jpg.jpeg`,
-        `${UP}/2025/07/15-1.jpg.jpeg`,
-        `${UP}/2025/07/12-1.jpg.jpeg`,
-        `${UP}/2025/07/10-1.jpg.jpeg`,
-        `${UP}/2025/07/6-4.jpg.jpeg`,
-        `${UP}/2025/07/5-4.jpg.jpeg`,
+      sector: "Green Field",
+      clients: [{ name: "Hyatt" }],
+    },
+    {
+      sector: "Banking & Finance",
+      clients: [
+        { logo: `${UP}/2025/07/4-2.jpg.jpeg` },
+        { logo: `${UP}/2025/07/5-2.jpg.jpeg` },
+        { logo: `${UP}/2025/07/1-2.jpg.jpeg` },
+        { logo: `${UP}/2025/07/3-2.jpg.jpeg` },
+        { logo: `${UP}/2025/07/2-2.jpg.jpeg` },
       ],
     },
     {
       sector: "Educational",
-      logos: [
-        `${UP}/2025/07/13-2.jpg.jpeg`,
-        `${UP}/2025/07/11-2.jpg.jpeg`,
-        `${UP}/2025/07/10-2.jpg.jpeg`,
+      clients: [
+        { logo: `${UP}/2025/07/13-2.jpg.jpeg` },
+        { logo: `${UP}/2025/07/11-2.jpg.jpeg` },
+        { logo: `${UP}/2025/07/10-2.jpg.jpeg` },
       ],
     },
     {
       sector: "Co-Working",
-      logos: [
-        `${UP}/2025/07/5-8.jpg.jpeg`,
-        `${UP}/2025/07/4-8.jpg.jpeg`,
-        `${UP}/2025/07/3-8.jpg.jpeg`,
-        `${UP}/2025/07/1-8.jpg.jpeg`,
-      ],
-    },
-    {
-      sector: "Green Field",
-      logos: [
-        `${UP}/2025/07/7-9.jpg.jpeg`,
-        `${UP}/2025/07/3-9.jpg.jpeg`,
-        `${UP}/2025/07/5-9.jpg.jpeg`,
-        `${UP}/2025/07/2-9.jpg.jpeg`,
-        `${UP}/2025/07/1-9.jpg.jpeg`,
-        `${UP}/2025/07/4-9.jpg.jpeg`,
+      clients: [
+        { logo: `${UP}/2025/07/5-8.jpg.jpeg` },
+        { logo: `${UP}/2025/07/4-8.jpg.jpeg` },
+        { logo: `${UP}/2025/07/3-8.jpg.jpeg` },
+        { logo: `${UP}/2025/07/1-8.jpg.jpeg` },
       ],
     },
   ],
