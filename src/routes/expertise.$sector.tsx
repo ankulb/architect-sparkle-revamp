@@ -50,7 +50,7 @@ const sectors: Record<string, Sector> = {
       { name: "3i", projectSlug: "3i" },
       { name: "Idea forge", projectSlug: "ideaforge-headquarters-mumbai" },
       { name: "Intangles", projectSlug: "intangles" },
-      { name: "VW ITS" },
+      { name: "VW ITS", projectSlug: "vw-its" },
     ],
   },
   engineering: {
