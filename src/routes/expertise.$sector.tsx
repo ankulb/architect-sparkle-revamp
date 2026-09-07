@@ -47,7 +47,7 @@ const sectors: Record<string, Sector> = {
     phrases: ["Agile Workplaces", "Innovation Hubs", "Campus Design"],
     image: `${UP}/2026/03/DSC03610-HDR-1024x683.jpg`,
     clients: [
-      { name: "3i" },
+      { name: "3i", projectSlug: "3i" },
       { name: "Idea forge", projectSlug: "ideaforge-headquarters-mumbai" },
       { name: "Intangles", projectSlug: "intangles" },
       { name: "VW ITS" },
