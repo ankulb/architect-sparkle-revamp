@@ -27,7 +27,6 @@ export const aboutNav: NavChild[] = [
   { label: "Our Team", to: "/about/team" },
   { label: "CSR", to: "/about/csr" },
   { label: "Climate Action", to: "/about/csr" },
-  { label: "Life at TOA", to: "/about/life" },
   { label: "Clientele", to: "/about/clientele" },
 ];
 
