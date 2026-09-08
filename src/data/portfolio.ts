@@ -1,6 +1,7 @@
 import {
   apicoreGallery,
   axisSecuritiesGallery,
+  basfGallery,
   bharatSerumGallery,
   digitalDomainGallery,
   emersonGallery,
