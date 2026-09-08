@@ -9,6 +9,8 @@ import {
   federalBankGallery,
   hyattGallery,
   iciciSecuritiesGallery,
+  mslGroupGallery,
+
   ideaForgeGallery,
   indiraIvfGallery,
   infinixGallery,
