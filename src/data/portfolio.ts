@@ -10,6 +10,8 @@ import {
   hyattGallery,
   iciciSecuritiesGallery,
   mslGroupGallery,
+  prasadStudiosGallery,
+
 
   ideaForgeGallery,
   indiraIvfGallery,
@@ -66,6 +68,7 @@ export const projects: Project[] = [
   { slug: "ergo-technologies", title: "ERGO Technologies", category: INTERIORS, location: "Powai, Mumbai", image: ergoTechnologiesGallery[0] },
   { slug: "basf", title: "BASF", category: INTERIORS, location: "Mumbai", image: basfGallery[0] },
   { slug: "msl-group", title: "MSL Group", category: INTERIORS, location: "Mumbai", image: mslGroupGallery[0] },
+  { slug: "prasad-studios", title: "Prasad Studios", category: INTERIORS, location: "Mumbai", image: prasadStudiosGallery[0] },
 
   { slug: "johnson-controls-gcc-offices", title: "Johnson Controls — GCC Offices", category: INTERIORS, image: `${UP}/2025/08/ad2c6b9e-662a-4bb2-b913-063d1304a2a0.jpg` },
   { slug: "ideaforge-headquarters-mumbai", title: "IdeaForge Headquarters, Mumbai", category: INTERIORS, location: "Mumbai", image: `${UP}/2025/08/DSC03610-HDR.jpg` },
@@ -144,6 +147,24 @@ export const projectDetails: Record<string, ProjectDetail> = {
     ],
     gallery: mslGroupGallery,
   },
+
+  "prasad-studios": {
+    slug: "prasad-studios",
+    title: "Prasad Studios",
+    category: INTERIORS,
+    sector: "Media",
+    client: "Prasad Studios",
+    location: "Mumbai",
+    service: "Corporate Interiors",
+    image: prasadStudiosGallery[0],
+    description: [
+      "A home for one of Indian cinema's most storied production houses — a workplace where craft, technology and film heritage share the same frame.",
+      "The interiors balance the intensity of post-production with the openness of a creative studio: focused edit suites and technical zones sit alongside collaborative lounges and screening-ready spaces, so teams can move between precision work and shared review without friction.",
+      "Warm, cinematic materiality and layered lighting carry the brand's legacy into a contemporary workspace built for the next chapter of storytelling.",
+    ],
+    gallery: prasadStudiosGallery,
+  },
+
 
 
   emerson: {

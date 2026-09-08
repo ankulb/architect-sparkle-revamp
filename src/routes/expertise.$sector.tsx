@@ -88,7 +88,7 @@ const sectors: Record<string, Sector> = {
     lead: "Studios and creative workplaces for media houses — spaces that keep pace with production, storytelling and the always-on news cycle.",
     phrases: ["Creative Studios", "Production Spaces", "Storytelling Hubs"],
     image: `${UP}/2026/03/titan-1-1024x690.jpg`,
-    clients: [{ name: "Digital Domain", projectSlug: "digital-domain" }, { name: "MSL Group", projectSlug: "msl-group" }, { name: "Prasad Studios" }],
+    clients: [{ name: "Digital Domain", projectSlug: "digital-domain" }, { name: "MSL Group", projectSlug: "msl-group" }, { name: "Prasad Studios", projectSlug: "prasad-studios" }],
   },
   shipping: {
     slug: "shipping",
