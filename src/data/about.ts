@@ -1,4 +1,5 @@
 // Content sourced from the About section of teamonearchitects.com.
+import toaTeamPhoto from "@/assets/toa-team.jpg.asset.json";
 import dhartiLogo from "@/assets/brands/dharti.svg.asset.json";
 import vijayLogo from "@/assets/brands/vijay-shikshan.png.asset.json";
 import liftLogo from "@/assets/brands/lift-upliftment.png.asset.json";
@@ -29,7 +30,7 @@ export const aboutUs = {
     eyebrow: "Decades of Design. Driven by Vision",
     title: "Creating spaces that matter",
     lead: "A Mumbai-born practice with a 25-year legacy — shaping impactful spaces through innovation, excellence and purpose.",
-    image: `${UP}/2025/07/TOA-Team-e1758107663494-1024x535.jpg`,
+    image: toaTeamPhoto.url,
     phrases: [
       "Twenty-five years of design.",
       "Fortune 500 partnerships.",
@@ -100,7 +101,7 @@ export const team = {
     eyebrow: "Our People",
     title: "The people behind the practice",
     lead: "The future isn't imagined alone. It's built together — brick by brick, mind by mind.",
-    image: `${UP}/2025/07/TOA-Team-e1758107663494-1024x535.jpg`,
+    image: toaTeamPhoto.url,
   },
   core: [
     { name: "Laxmikant Sawant", role: "COO", image: `${UP}/2021/10/laxmikant-sawant-1.png` },
