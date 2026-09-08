@@ -148,6 +148,24 @@ export const projectDetails: Record<string, ProjectDetail> = {
     gallery: mslGroupGallery,
   },
 
+  "prasad-studios": {
+    slug: "prasad-studios",
+    title: "Prasad Studios",
+    category: INTERIORS,
+    sector: "Media",
+    client: "Prasad Studios",
+    location: "Mumbai",
+    service: "Corporate Interiors",
+    image: prasadStudiosGallery[0],
+    description: [
+      "A home for one of Indian cinema's most storied production houses — a workplace where craft, technology and film heritage share the same frame.",
+      "The interiors balance the intensity of post-production with the openness of a creative studio: focused edit suites and technical zones sit alongside collaborative lounges and screening-ready spaces, so teams can move between precision work and shared review without friction.",
+      "Warm, cinematic materiality and layered lighting carry the brand's legacy into a contemporary workspace built for the next chapter of storytelling.",
+    ],
+    gallery: prasadStudiosGallery,
+  },
+
+
 
   emerson: {
     slug: "emerson",
