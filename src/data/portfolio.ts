@@ -105,6 +105,25 @@ export const projectDetails: Record<string, ProjectDetail> = {
     ],
     gallery: apicoreGallery,
   },
+  basf: {
+    slug: "basf",
+    title: "BASF",
+    category: INTERIORS,
+    sector: "Health & Pharma",
+    client: "BASF Headquarters",
+    location: "Mumbai",
+    area: "40,000 sq. ft.",
+    status: "Completed · August 2025",
+    service: "Corporate Interiors",
+    image: basfGallery[0],
+    description: [
+      "Brand-embedded acoustic architecture meets modular well-being — where BASF's own innovation becomes the spatial identity.",
+      "One of the world's leading chemical companies relocated its India headquarters to a new 40,000 sq. ft. space in Mumbai, designed to reflect the \"Future of Work\" philosophy and a strong commitment to sustainability. Set within a LEED Gold-certified building, the office embraces a hybrid working model and delivers a dynamic, flexible environment tailored to collaboration, innovation and employee well-being — a modular, tech-enabled ecosystem supporting over 250 employees.",
+      "Rather than simply using product innovations, TOA made BASF's signature material, Basotect, an expressive design feature, seamlessly integrating acoustic performance with visual identity. Daylight, biophilic cues and user-centric zoning ensure the workplace is not only productive but emotionally resonant — less a layout, and more a living system for collaboration and growth.",
+    ],
+    gallery: basfGallery,
+  },
+
   emerson: {
     slug: "emerson",
     title: "Emerson",
