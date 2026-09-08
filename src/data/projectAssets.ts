@@ -426,3 +426,18 @@ export const prasadStudiosGallery = [
   prasad9.url,
   prasad10.url,
 ];
+
+import xpo1 from "@/assets/projects/xpo/dsc00777.jpg.asset.json";
+import xpo2 from "@/assets/projects/xpo/dsc00976.jpg.asset.json";
+import xpo3 from "@/assets/projects/xpo/dsc01032.jpg.asset.json";
+import xpo4 from "@/assets/projects/xpo/dsc01157.jpg.asset.json";
+import xpo5 from "@/assets/projects/xpo/dsc01221.jpg.asset.json";
+import xpo6 from "@/assets/projects/xpo/dsc01562.jpg.asset.json";
+export const xpoGallery = [
+  xpo1.url,
+  xpo2.url,
+  xpo3.url,
+  xpo4.url,
+  xpo5.url,
+  xpo6.url,
+];
