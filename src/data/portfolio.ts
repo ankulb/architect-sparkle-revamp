@@ -9,6 +9,8 @@ import {
   federalBankGallery,
   hyattGallery,
   iciciSecuritiesGallery,
+  mslGroupGallery,
+
   ideaForgeGallery,
   indiraIvfGallery,
   infinixGallery,
@@ -63,6 +65,8 @@ export const projects: Project[] = [
   { slug: "titan", title: "TITAN", category: INTERIORS, image: `${UP}/2026/03/titan-1-1024x690.jpg` },
   { slug: "ergo-technologies", title: "ERGO Technologies", category: INTERIORS, location: "Powai, Mumbai", image: ergoTechnologiesGallery[0] },
   { slug: "basf", title: "BASF", category: INTERIORS, location: "Mumbai", image: basfGallery[0] },
+  { slug: "msl-group", title: "MSL Group", category: INTERIORS, location: "Mumbai", image: mslGroupGallery[0] },
+
   { slug: "johnson-controls-gcc-offices", title: "Johnson Controls — GCC Offices", category: INTERIORS, image: `${UP}/2025/08/ad2c6b9e-662a-4bb2-b913-063d1304a2a0.jpg` },
   { slug: "ideaforge-headquarters-mumbai", title: "IdeaForge Headquarters, Mumbai", category: INTERIORS, location: "Mumbai", image: `${UP}/2025/08/DSC03610-HDR.jpg` },
   { slug: "intangles", title: "INTANGLES", category: INTERIORS, image: `${UP}/2026/03/4-1-1024x682.jpg` },
@@ -123,6 +127,24 @@ export const projectDetails: Record<string, ProjectDetail> = {
     ],
     gallery: basfGallery,
   },
+
+  "msl-group": {
+    slug: "msl-group",
+    title: "MSL Group",
+    category: INTERIORS,
+    sector: "Media",
+    client: "MSL Group",
+    location: "Mumbai",
+    service: "Corporate Interiors",
+    image: mslGroupGallery[0],
+    description: [
+      "A communications agency's workplace, shaped as a stage for conversation — open, expressive and easy to reconfigure.",
+      "The studio is planned around collaboration: informal huddles, writable surfaces and quiet corners sit alongside open desking, so teams can shift between focused craft and fast-moving campaign work without leaving the floor.",
+      "Material choices stay warm and restrained — natural tones, layered lighting and graphic accents that carry the brand without shouting over it.",
+    ],
+    gallery: mslGroupGallery,
+  },
+
 
   emerson: {
     slug: "emerson",

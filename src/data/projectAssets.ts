@@ -397,3 +397,9 @@ export const basfGallery = [
   basf7.url,
   basf8.url,
 ];
+
+import msl1 from "@/assets/projects/msl-group/img_0108.jpg.asset.json";
+import msl2 from "@/assets/projects/msl-group/img_0138.jpg.asset.json";
+import msl3 from "@/assets/projects/msl-group/img_0161.jpg.asset.json";
+import msl4 from "@/assets/projects/msl-group/img_0186.jpg.asset.json";
+export const mslGroupGallery = [msl1.url, msl2.url, msl3.url, msl4.url];
