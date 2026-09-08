@@ -89,7 +89,7 @@ export const nav: NavItem[] = [
       { label: "Life at TOA", href: "/#careers" },
       { label: "Trainee Program", href: "/#careers" },
       { label: "Open Positions", href: "/#careers" },
-      { label: "Employee Stories", href: "/#careers" },
+      
     ],
   },
   { label: "Contact", to: "/contact" },
