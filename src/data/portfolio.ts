@@ -23,6 +23,7 @@ import {
   tollGallery,
   vanderlaneGallery,
   vwItsGallery,
+  xpoGallery,
 } from "@/data/projectAssets";
 
 // Portfolio content sourced from teamonearchitects.com/portfolio.
@@ -81,7 +82,7 @@ export const projects: Project[] = [
   { slug: "mixed-use-villas-high-rise-at-khalapur", title: "Mixed-Use Villas & High-Rise at Khalapur", category: COMMERCIAL, location: "Khalapur", image: `${UP}/2026/03/VIEW-1-1-1024x683.png` },
   { slug: "jio-school", title: "JIO School", category: COMMERCIAL, image: `${UP}/2026/03/786928477867589-copy-650x650.jpg` },
   { slug: "commercial-office-building", title: "Commercial Office Building", category: COMMERCIAL, image: `${UP}/2026/03/VIEW-1-650x650.png` },
-  { slug: "xpo", title: "XPO", category: INTERIORS, image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1000&q=80" },
+  { slug: "xpo", title: "XPO", category: INTERIORS, location: "India", image: xpoGallery[0] },
   { slug: "3i", title: "3i", category: INTERIORS, image: threeIGallery[0] },
   { slug: "vanderlane", title: "Vanderlane", category: INTERIORS, location: "WTC Kharadi, Pune", image: vanderlaneGallery[0] },
   { slug: "bharat-serum", title: "Bharat Serum", category: INTERIORS, image: bharatSerumGallery[0] },
@@ -163,6 +164,23 @@ export const projectDetails: Record<string, ProjectDetail> = {
       "Warm, cinematic materiality and layered lighting carry the brand's legacy into a contemporary workspace built for the next chapter of storytelling.",
     ],
     gallery: prasadStudiosGallery,
+  },
+
+  xpo: {
+    slug: "xpo",
+    title: "XPO",
+    category: INTERIORS,
+    sector: "Shipping",
+    client: "XPO",
+    location: "India",
+    service: "Corporate Interiors",
+    image: xpoGallery[0],
+    description: [
+      "A workplace for a global logistics leader — planned for the pace of operations that never stand still.",
+      "The interiors balance focused work zones with open collaboration: efficient desking, meeting and briefing rooms, and breakout spaces that keep teams connected across shifts and time zones.",
+      "A clean, durable material palette and clear wayfinding reflect the precision and reliability at the heart of the XPO brand.",
+    ],
+    gallery: xpoGallery,
   },
 
 
