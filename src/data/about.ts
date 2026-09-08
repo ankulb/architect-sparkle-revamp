@@ -1,4 +1,5 @@
 // Content sourced from the About section of teamonearchitects.com.
+import toaTeamPhoto from "@/assets/toa-team.jpg.asset.json";
 import dhartiLogo from "@/assets/brands/dharti.svg.asset.json";
 import vijayLogo from "@/assets/brands/vijay-shikshan.png.asset.json";
 import liftLogo from "@/assets/brands/lift-upliftment.png.asset.json";
