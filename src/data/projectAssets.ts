@@ -378,3 +378,22 @@ export const apicoreGallery = [
   apicore6.url,
   apicore7.url,
 ];
+
+import basf1 from "@/assets/projects/basf/dsc_4519.jpg.asset.json";
+import basf2 from "@/assets/projects/basf/dsc_4604.jpg.asset.json";
+import basf3 from "@/assets/projects/basf/dsc_4615.jpg.asset.json";
+import basf4 from "@/assets/projects/basf/dsc_4681.jpg.asset.json";
+import basf5 from "@/assets/projects/basf/dsc_4740.jpg.asset.json";
+import basf6 from "@/assets/projects/basf/dsc_4763.jpg.asset.json";
+import basf7 from "@/assets/projects/basf/ykp_1810.jpg.asset.json";
+import basf8 from "@/assets/projects/basf/ykp_1848.jpg.asset.json";
+export const basfGallery = [
+  basf1.url,
+  basf2.url,
+  basf3.url,
+  basf4.url,
+  basf5.url,
+  basf6.url,
+  basf7.url,
+  basf8.url,
+];
