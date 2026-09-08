@@ -1,6 +1,7 @@
 import {
   apicoreGallery,
   axisSecuritiesGallery,
+  basfGallery,
   bharatSerumGallery,
   digitalDomainGallery,
   emersonGallery,
@@ -61,7 +62,7 @@ export const projects: Project[] = [
   { slug: "volkswagen", title: "Volkswagen", category: INTERIORS, image: `${UP}/2025/08/040-1024x683.jpg` },
   { slug: "titan", title: "TITAN", category: INTERIORS, image: `${UP}/2026/03/titan-1-1024x690.jpg` },
   { slug: "ergo-technologies", title: "ERGO Technologies", category: INTERIORS, location: "Powai, Mumbai", image: ergoTechnologiesGallery[0] },
-  { slug: "basf", title: "BASF", category: INTERIORS, image: `${UP}/2025/08/YKP_1806-NEW.jpg` },
+  { slug: "basf", title: "BASF", category: INTERIORS, location: "Mumbai", image: basfGallery[0] },
   { slug: "johnson-controls-gcc-offices", title: "Johnson Controls — GCC Offices", category: INTERIORS, image: `${UP}/2025/08/ad2c6b9e-662a-4bb2-b913-063d1304a2a0.jpg` },
   { slug: "ideaforge-headquarters-mumbai", title: "IdeaForge Headquarters, Mumbai", category: INTERIORS, location: "Mumbai", image: `${UP}/2025/08/DSC03610-HDR.jpg` },
   { slug: "intangles", title: "INTANGLES", category: INTERIORS, image: `${UP}/2026/03/4-1-1024x682.jpg` },
@@ -104,6 +105,25 @@ export const projectDetails: Record<string, ProjectDetail> = {
     ],
     gallery: apicoreGallery,
   },
+  basf: {
+    slug: "basf",
+    title: "BASF",
+    category: INTERIORS,
+    sector: "Health & Pharma",
+    client: "BASF Headquarters",
+    location: "Mumbai",
+    area: "40,000 sq. ft.",
+    status: "Completed · August 2025",
+    service: "Corporate Interiors",
+    image: basfGallery[0],
+    description: [
+      "Brand-embedded acoustic architecture meets modular well-being — where BASF's own innovation becomes the spatial identity.",
+      "One of the world's leading chemical companies relocated its India headquarters to a new 40,000 sq. ft. space in Mumbai, designed to reflect the \"Future of Work\" philosophy and a strong commitment to sustainability. Set within a LEED Gold-certified building, the office embraces a hybrid working model and delivers a dynamic, flexible environment tailored to collaboration, innovation and employee well-being — a modular, tech-enabled ecosystem supporting over 250 employees.",
+      "Rather than simply using product innovations, TOA made BASF's signature material, Basotect, an expressive design feature, seamlessly integrating acoustic performance with visual identity. Daylight, biophilic cues and user-centric zoning ensure the workplace is not only productive but emotionally resonant — less a layout, and more a living system for collaboration and growth.",
+    ],
+    gallery: basfGallery,
+  },
+
   emerson: {
     slug: "emerson",
     title: "Emerson",
