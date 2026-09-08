@@ -39,20 +39,23 @@ export function LogoMarquee({ clients, direction = "left", duration = 40, label 
       >
         {track.map((client, i) => (
           <li key={`${client.name ?? client.logo}-${i}`} className="shrink-0">
-            <div className="flex h-28 w-44 flex-col items-center justify-center gap-2 rounded-sm border border-border/60 bg-card p-5 transition-colors duration-300 hover:border-gold/40">
+            <div className="group flex h-28 w-44 flex-col items-center justify-center gap-2 rounded-sm border border-border/60 bg-card p-5 transition-colors duration-300 hover:border-gold/40">
               {client.logo ? (
-                <img
-                  src={client.logo}
-                  alt={
-                    client.name ??
-                    (label
-                      ? `${label} client of Team One Architects`
-                      : "Client of Team One Architects")
-                  }
-                  loading="lazy"
-                  className="max-h-12 max-w-full object-contain opacity-60 grayscale transition duration-500 hover:opacity-100 hover:grayscale-0"
-                />
+                <span className="flex h-12 w-full items-center justify-center overflow-hidden rounded-[2px] bg-white/90 px-2 py-1">
+                  <img
+                    src={client.logo}
+                    alt={
+                      client.name ??
+                      (label
+                        ? `${label} client of Team One Architects`
+                        : "Client of Team One Architects")
+                    }
+                    loading="lazy"
+                    className="max-h-10 max-w-full object-contain opacity-70 grayscale transition duration-500 group-hover:opacity-100 group-hover:grayscale-0"
+                  />
+                </span>
               ) : null}
+
               {client.name ? (
                 <span
                   className={`text-center uppercase tracking-[0.14em] text-foreground/70 ${

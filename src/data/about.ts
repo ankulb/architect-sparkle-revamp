@@ -4,6 +4,8 @@ import vijayLogo from "@/assets/brands/vijay-shikshan.png.asset.json";
 import liftLogo from "@/assets/brands/lift-upliftment.png.asset.json";
 import yuvaLogo from "@/assets/brands/yuva-unstoppable.png.asset.json";
 import deepstambhLogo from "@/assets/brands/deepstambh.jpeg.asset.json";
+import { clientLogos } from "@/data/clientLogos";
+
 
 const UP = "https://teamonearchitects.com/wp-content/uploads";
 
@@ -138,8 +140,8 @@ export const clientele = {
     {
       sector: "Engineering",
       clients: [
-        { name: "Emerson" },
-        { name: "JCI" },
+        { name: "Emerson", logo: clientLogos["Emerson"] },
+        { name: "JCI", logo: clientLogos["Johnson Controls"] },
         { name: "Sedmac" },
         { name: "Vanderlane" },
       ],
@@ -148,9 +150,17 @@ export const clientele = {
       sector: "Health & Pharma",
       clients: [
         { name: "Apicore" },
-        { name: "BASF" },
-        { name: "Bharat Serum" },
+        { name: "BASF", logo: clientLogos["BASF"] },
+        { name: "Bharat Serum", logo: clientLogos["Bharat Serums and Vaccines"] },
         { name: "Indira IVF" },
+        { name: "Novartis", logo: clientLogos["Novartis"] },
+        { name: "Cipla", logo: clientLogos["Cipla"] },
+        { name: "Covestro", logo: clientLogos["Covestro"] },
+        { name: "Givaudan", logo: clientLogos["Givaudan"] },
+        { name: "PharmaACE", logo: clientLogos["PharmaACE"] },
+        { name: "inVentiv Health", logo: clientLogos["inVentiv Health"] },
+        { name: "WebMD", logo: clientLogos["WebMD"] },
+        { name: "Titan Laboratories", logo: clientLogos["Titan Laboratories"] },
       ],
     },
     {
@@ -159,15 +169,32 @@ export const clientele = {
         { name: "Digital Domain" },
         { name: "MSL Group" },
         { name: "Prasad Studios" },
+        { name: "Eros International", logo: clientLogos["Eros International"] },
+        { name: "Havas Media Group", logo: clientLogos["Havas Media Group"] },
+        { name: "Isobar", logo: clientLogos["Isobar"] },
+        { name: "The Economic Times", logo: clientLogos["The Economic Times"] },
       ],
     },
     {
       sector: "Shipping",
-      clients: [{ name: "Toll" }, { name: "XPO" }],
+      clients: [
+        { name: "Toll", logo: clientLogos["Toll Group"] },
+        { name: "XPO", logo: clientLogos["XPO Logistics"] },
+        { name: "Damco", logo: clientLogos["Damco"] },
+      ],
     },
     {
       sector: "Telecom",
-      clients: [{ name: "Infinix" }, { name: "Nxtra" }],
+      clients: [
+        { name: "Infinix", logo: clientLogos["Infinx"] },
+        { name: "Nxtra" },
+        { name: "Airtel", logo: clientLogos["Airtel"] },
+        { name: "Vodafone", logo: clientLogos["Vodafone"] },
+        { name: "MTS", logo: clientLogos["MTS"] },
+        { name: "STL", logo: clientLogos["STL"] },
+        { name: "GTL", logo: clientLogos["GTL"] },
+        { name: "UTStarcom", logo: clientLogos["UTStarcom"] },
+      ],
     },
     {
       sector: "Green Field",
@@ -176,32 +203,54 @@ export const clientele = {
     {
       sector: "Banking & Finance",
       clients: [
-        { logo: `${UP}/2025/07/4-2.jpg.jpeg` },
-        { logo: `${UP}/2025/07/5-2.jpg.jpeg` },
-        { logo: `${UP}/2025/07/1-2.jpg.jpeg` },
-        { logo: `${UP}/2025/07/3-2.jpg.jpeg` },
-        { logo: `${UP}/2025/07/2-2.jpg.jpeg` },
+        { name: "State Bank of India", logo: clientLogos["State Bank of India"] },
+        { name: "IDBI Bank", logo: clientLogos["IDBI Bank"] },
+        { name: "BNY Mellon", logo: clientLogos["BNY Mellon"] },
+        { name: "Vakrangee", logo: clientLogos["Vakrangee"] },
+        { name: "IndiaFirst Life Insurance", logo: clientLogos["IndiaFirst Life Insurance"] },
+        { name: "Bajaj", logo: clientLogos["Bajaj"] },
       ],
     },
     {
       sector: "Educational",
       clients: [
-        { logo: `${UP}/2025/07/13-2.jpg.jpeg` },
-        { logo: `${UP}/2025/07/11-2.jpg.jpeg` },
-        { logo: `${UP}/2025/07/10-2.jpg.jpeg` },
+        { name: "Pearl Academy", logo: clientLogos["Pearl Academy"] },
+        { name: "Amity University", logo: clientLogos["Amity University"] },
+        { name: "Global Indian International School", logo: clientLogos["Global Indian International School"] },
       ],
     },
     {
       sector: "Co-Working",
       clients: [
-        { logo: `${UP}/2025/07/5-8.jpg.jpeg` },
-        { logo: `${UP}/2025/07/4-8.jpg.jpeg` },
-        { logo: `${UP}/2025/07/3-8.jpg.jpeg` },
-        { logo: `${UP}/2025/07/1-8.jpg.jpeg` },
+        { name: "Raiaskaran", logo: clientLogos["Raiaskaran"] },
+        { name: "DevX", logo: clientLogos["DevX"] },
+        { name: "GroWork", logo: clientLogos["GroWork"] },
+        { name: "Smartworks", logo: clientLogos["Smartworks"] },
+      ],
+    },
+    {
+      sector: "Partners across sectors",
+      clients: [
+        { name: "Cognizant", logo: clientLogos["Cognizant"] },
+        { name: "Tata Consultancy Services", logo: clientLogos["Tata Consultancy Services"] },
+        { name: "IBM", logo: clientLogos["IBM"] },
+        { name: "Fujitsu", logo: clientLogos["Fujitsu"] },
+        { name: "T-Systems", logo: clientLogos["T-Systems"] },
+        { name: "Xoriant", logo: clientLogos["Xoriant"] },
+        { name: "Symphony Teleca", logo: clientLogos["Symphony Teleca"] },
+        { name: "e-Zest", logo: clientLogos["e-Zest"] },
+        { name: "PubMatic", logo: clientLogos["PubMatic"] },
+        { name: "Cummins", logo: clientLogos["Cummins"] },
+        { name: "Gegadyne Energy", logo: clientLogos["Gegadyne Energy"] },
+        { name: "Everest", logo: clientLogos["Everest"] },
+        { name: "CIDCO", logo: clientLogos["CIDCO"] },
+        { name: "MMRDA", logo: clientLogos["MMRDA"] },
+        { name: "Hinjawadi Industries Association", logo: clientLogos["Hinjawadi Industries Association"] },
       ],
     },
   ],
 };
+
 
 /* -------------------------------- CSR -------------------------------- */
 
