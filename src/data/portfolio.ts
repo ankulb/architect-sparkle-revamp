@@ -128,6 +128,24 @@ export const projectDetails: Record<string, ProjectDetail> = {
     gallery: basfGallery,
   },
 
+  "msl-group": {
+    slug: "msl-group",
+    title: "MSL Group",
+    category: INTERIORS,
+    sector: "Media",
+    client: "MSL Group",
+    location: "Mumbai",
+    service: "Corporate Interiors",
+    image: mslGroupGallery[0],
+    description: [
+      "A communications agency's workplace, shaped as a stage for conversation — open, expressive and easy to reconfigure.",
+      "The studio is planned around collaboration: informal huddles, writable surfaces and quiet corners sit alongside open desking, so teams can shift between focused craft and fast-moving campaign work without leaving the floor.",
+      "Material choices stay warm and restrained — natural tones, layered lighting and graphic accents that carry the brand without shouting over it.",
+    ],
+    gallery: mslGroupGallery,
+  },
+
+
   emerson: {
     slug: "emerson",
     title: "Emerson",
