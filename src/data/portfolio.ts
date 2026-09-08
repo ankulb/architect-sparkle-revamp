@@ -62,7 +62,7 @@ export const projects: Project[] = [
   { slug: "volkswagen", title: "Volkswagen", category: INTERIORS, image: `${UP}/2025/08/040-1024x683.jpg` },
   { slug: "titan", title: "TITAN", category: INTERIORS, image: `${UP}/2026/03/titan-1-1024x690.jpg` },
   { slug: "ergo-technologies", title: "ERGO Technologies", category: INTERIORS, location: "Powai, Mumbai", image: ergoTechnologiesGallery[0] },
-  { slug: "basf", title: "BASF", category: INTERIORS, image: `${UP}/2025/08/YKP_1806-NEW.jpg` },
+  { slug: "basf", title: "BASF", category: INTERIORS, location: "Mumbai", image: basfGallery[0] },
   { slug: "johnson-controls-gcc-offices", title: "Johnson Controls — GCC Offices", category: INTERIORS, image: `${UP}/2025/08/ad2c6b9e-662a-4bb2-b913-063d1304a2a0.jpg` },
   { slug: "ideaforge-headquarters-mumbai", title: "IdeaForge Headquarters, Mumbai", category: INTERIORS, location: "Mumbai", image: `${UP}/2025/08/DSC03610-HDR.jpg` },
   { slug: "intangles", title: "INTANGLES", category: INTERIORS, image: `${UP}/2026/03/4-1-1024x682.jpg` },
