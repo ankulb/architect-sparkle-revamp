@@ -10,6 +10,8 @@ import {
   hyattGallery,
   iciciSecuritiesGallery,
   mslGroupGallery,
+  prasadStudiosGallery,
+
 
   ideaForgeGallery,
   indiraIvfGallery,
@@ -66,6 +68,7 @@ export const projects: Project[] = [
   { slug: "ergo-technologies", title: "ERGO Technologies", category: INTERIORS, location: "Powai, Mumbai", image: ergoTechnologiesGallery[0] },
   { slug: "basf", title: "BASF", category: INTERIORS, location: "Mumbai", image: basfGallery[0] },
   { slug: "msl-group", title: "MSL Group", category: INTERIORS, location: "Mumbai", image: mslGroupGallery[0] },
+  { slug: "prasad-studios", title: "Prasad Studios", category: INTERIORS, location: "Mumbai", image: prasadStudiosGallery[0] },
 
   { slug: "johnson-controls-gcc-offices", title: "Johnson Controls — GCC Offices", category: INTERIORS, image: `${UP}/2025/08/ad2c6b9e-662a-4bb2-b913-063d1304a2a0.jpg` },
   { slug: "ideaforge-headquarters-mumbai", title: "IdeaForge Headquarters, Mumbai", category: INTERIORS, location: "Mumbai", image: `${UP}/2025/08/DSC03610-HDR.jpg` },
