@@ -26,7 +26,7 @@ export const aboutNav: NavChild[] = [
   { label: "Board of Directors", to: "/about/board" },
   { label: "Our Team", to: "/about/team" },
   { label: "CSR", to: "/about/csr" },
-  { label: "Climate Action", to: "/about/csr" },
+  
   { label: "Clientele", to: "/about/clientele" },
 ];
 
