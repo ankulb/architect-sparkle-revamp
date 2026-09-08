@@ -4,6 +4,8 @@ import vijayLogo from "@/assets/brands/vijay-shikshan.png.asset.json";
 import liftLogo from "@/assets/brands/lift-upliftment.png.asset.json";
 import yuvaLogo from "@/assets/brands/yuva-unstoppable.png.asset.json";
 import deepstambhLogo from "@/assets/brands/deepstambh.jpeg.asset.json";
+import { clientLogos } from "@/data/clientLogos";
+
 
 const UP = "https://teamonearchitects.com/wp-content/uploads";
 
