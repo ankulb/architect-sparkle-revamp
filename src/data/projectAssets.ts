@@ -403,3 +403,26 @@ import msl2 from "@/assets/projects/msl-group/img_0138.jpg.asset.json";
 import msl3 from "@/assets/projects/msl-group/img_0161.jpg.asset.json";
 import msl4 from "@/assets/projects/msl-group/img_0186.jpg.asset.json";
 export const mslGroupGallery = [msl1.url, msl2.url, msl3.url, msl4.url];
+
+import prasad1 from "@/assets/projects/prasad-studios/prasad-1.jpg.asset.json";
+import prasad2 from "@/assets/projects/prasad-studios/prasad-2.jpg.asset.json";
+import prasad3 from "@/assets/projects/prasad-studios/prasad-3.jpg.asset.json";
+import prasad4 from "@/assets/projects/prasad-studios/prasad-4.jpg.asset.json";
+import prasad5 from "@/assets/projects/prasad-studios/prasad-5.jpg.asset.json";
+import prasad6 from "@/assets/projects/prasad-studios/prasad-6.jpg.asset.json";
+import prasad7 from "@/assets/projects/prasad-studios/prasad-7.jpg.asset.json";
+import prasad8 from "@/assets/projects/prasad-studios/prasad-8.jpg.asset.json";
+import prasad9 from "@/assets/projects/prasad-studios/prasad-9.jpg.asset.json";
+import prasad10 from "@/assets/projects/prasad-studios/prasad-10.jpg.asset.json";
+export const prasadStudiosGallery = [
+  prasad1.url,
+  prasad2.url,
+  prasad3.url,
+  prasad4.url,
+  prasad5.url,
+  prasad6.url,
+  prasad7.url,
+  prasad8.url,
+  prasad9.url,
+  prasad10.url,
+];
