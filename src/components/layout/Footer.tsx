@@ -48,7 +48,9 @@ export function Footer() {
           </div>
 
           <a
-            href="mailto:info@teamonearchitects.com?subject=Vendor%20Registration"
+            href="https://team-one-drab.vercel.app/vendor/login"
+            target="_blank"
+            rel="noreferrer"
             className="group inline-flex items-center gap-3 self-start rounded-full border border-gold px-6 py-3 text-sm uppercase tracking-[0.18em] text-gold transition-colors hover:bg-gold hover:text-background md:self-auto"
           >
             Vendor Registration
