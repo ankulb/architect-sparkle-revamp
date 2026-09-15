@@ -2,7 +2,7 @@ import { motion } from "motion/react";
 import { Linkedin } from "lucide-react";
 import { companyLinkedin } from "@/data/about";
 
-type Person = { name: string; role: string; image: string };
+type Person = { name: string; role: string; image: string; linkedin?: string };
 
 export function PeopleGrid({ people }: { people: readonly Person[] }) {
   return (
@@ -25,7 +25,7 @@ export function PeopleGrid({ people }: { people: readonly Person[] }) {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
             <a
-              href={companyLinkedin}
+               href={p.linkedin ?? companyLinkedin}
               target="_blank"
               rel="noopener noreferrer"
               aria-label={`View ${p.name} on LinkedIn`}

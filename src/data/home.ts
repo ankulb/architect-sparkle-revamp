@@ -75,7 +75,6 @@ export const nav: NavItem[] = [
     children: [
       { label: "News & Media", to: "/insights/news" },
       { label: "Awards & Recognition", href: "/#insights" },
-      { label: "Events & Engagements", href: "/#insights" },
       { label: "Videos / Podcasts / Interviews", href: "/#insights" },
       { label: "Articles", href: "/#insights" },
       { label: "Research Reports", href: "/#insights" },
@@ -87,7 +86,6 @@ export const nav: NavItem[] = [
     href: "/#careers",
     children: [
       { label: "Life at TOA", href: "/#careers" },
-      { label: "Trainee Program", href: "/#careers" },
       { label: "Open Positions", href: "/#careers" },
       
     ],
@@ -220,8 +218,8 @@ export const dynamicSections = [
 export const careers = {
   overline: "Careers at TOA",
   title: "We don’t just build ideas, we build each other",
-  body: "We're a multidisciplinary studio of architects, interior designers and engineers building calmly, courageously, and together. Our Trainee Program brings emerging talent into live projects from day one.",
-  cta: { label: "Explore the Trainee Program", href: "https://teamonearchitects.com/careers/" },
+  body: "We're a multidisciplinary studio of architects, interior designers and engineers building calmly, courageously, and together. Join a culture shaped by ownership, learning and shared ambition.",
+  cta: { label: "Explore Careers", href: "https://teamonearchitects.com/career/" },
   image: careersImage.url,
   imageAlt: "The leadership team of Team One Architects at the Mumbai studio",
   team: [
@@ -266,12 +264,12 @@ export const responsibilities = {
 };
 
 export const projects = [
-  { title: "Ergo Technologies", category: "Corporate Interiors", image: `${UP}/2025/08/X3A9650-HDR-Edit.jpg`, href: "https://teamonearchitects.com/portfolio-item/ergo-technologies/" },
+  { title: "Ergo", category: "Corporate Interiors", image: `${UP}/2025/08/X3A9650-HDR-Edit.jpg`, href: "https://teamonearchitects.com/portfolio-item/ergo-technologies/" },
+  { title: "Columbia", category: "Corporate Interiors", image: `${UP}/2025/08/H2A6507.jpg`, href: "https://teamonearchitects.com/portfolio/" },
   { title: "JIO School", category: "Commercial & Institutional", image: `${UP}/2026/03/786928477867589-copy-650x650.jpg`, href: "https://teamonearchitects.com/portfolio-item/jio-school/" },
-  { title: "JCI — Johnson Controls", category: "Corporate Interiors", image: `${UP}/2025/08/ad2c6b9e-662a-4bb2-b913-063d1304a2a0.jpg`, href: "https://teamonearchitects.com/portfolio-item/johnson-controls-gcc-offices/" },
-  { title: "BASF", category: "Corporate Interiors", image: `${UP}/2025/08/YKP_1806-NEW.jpg`, href: "https://teamonearchitects.com/portfolio-item/basf/" },
-  { title: "Commercial Office Building", category: "Commercial & Institutional", image: `${UP}/2026/03/VIEW-1-650x650.png`, href: "https://teamonearchitects.com/portfolio-item/commercial-office-building/" },
-  { title: "XPO", category: "Corporate Interiors", image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1000&q=80", href: "https://teamonearchitects.com/portfolio-item/xpo/" },
+  { title: "Commercial Office Buildings", category: "Commercial & Institutional", image: `${UP}/2026/03/VIEW-1-650x650.png`, href: "https://teamonearchitects.com/portfolio-item/commercial-office-building/" },
+  { title: "Volkswagen", category: "Corporate Interiors", image: `${UP}/2025/08/040-1024x683.jpg`, href: "https://teamonearchitects.com/portfolio-item/volkswagen/" },
+  { title: "Intangles", category: "Corporate Interiors", image: `${UP}/2026/03/4-1-1024x682.jpg`, href: "https://teamonearchitects.com/portfolio-item/intangles/" },
 ];
 
 
