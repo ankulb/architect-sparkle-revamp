@@ -106,11 +106,19 @@ export function Hero() {
           exit={{ opacity: 0 }}
           transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
         >
-          <div className={`absolute inset-0 h-full w-full toa-kb-${slide.kb}`}>
+          <div className={`absolute inset-0 h-full w-full toa-kb-${slide.kb}`} aria-hidden="true">
+            <img
+              src={slide.image}
+              alt=""
+              className="h-full w-full scale-110 object-cover opacity-55 blur-xl"
+              draggable={false}
+            />
+          </div>
+          <div className="absolute inset-0 flex items-center justify-center">
             <img
               src={slide.image}
               alt={slide.kicker}
-              className="h-full w-full object-cover"
+              className="h-full w-full object-contain"
               draggable={false}
             />
           </div>

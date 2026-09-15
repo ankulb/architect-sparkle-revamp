@@ -38,13 +38,23 @@ export function PageHero({
         transition={{ duration: revealDur, ease: [0.77, 0, 0.18, 1] }}
         className="absolute inset-0"
       >
-        <motion.div
-          initial={{ scale: 1.22 }}
-          animate={{ scale: 1 }}
+        <motion.img
+          src={image}
+          alt=""
+          initial={{ scale: 1.08 }}
+          animate={{ scale: 1.14 }}
           transition={{ duration: 9, ease: "easeOut" }}
-          className="absolute inset-0"
+          className="absolute inset-0 h-full w-full object-cover opacity-45 blur-xl"
+          aria-hidden="true"
+        />
+        <div className="absolute inset-0 bg-background/25" />
+        <motion.div
+          initial={{ opacity: 0.72, scale: 0.985 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 2.2, ease: [0.22, 1, 0.36, 1] }}
+          className="absolute inset-0 flex items-center justify-center"
         >
-          <img src={image} alt="" className="h-full w-full object-cover" />
+          <img src={image} alt="" className="h-full w-full object-contain" />
         </motion.div>
       </motion.div>
 
