@@ -8,3 +8,6 @@
 - [x] Update six homepage featured projects
 - [x] Remove Trainee Program and Events & Engagements references
 - [x] Verify responsive presentation and build health
+- [ ] Build Awards & Recognition page from the 2026 company profile
+- [ ] Link homepage and navigation awards entries to the new page
+- [ ] Verify awards page presentation and build health
