@@ -82,7 +82,7 @@ function AwardsPage() {
           </div>
         </section>
 
-        <section aria-labelledby="awards-timeline-title" className="relative overflow-hidden">
+        <section aria-label="Awards timeline" className="relative overflow-hidden">
           <div className="mx-auto max-w-[1600px] px-6 py-24 md:px-10 md:py-36">
             <div className="grid gap-12 lg:grid-cols-[minmax(220px,0.5fr)_minmax(0,1.5fr)] lg:gap-20">
               <div className="lg:sticky lg:top-28 lg:self-start">
@@ -91,7 +91,6 @@ function AwardsPage() {
                 </Reveal>
                 <Reveal
                   as="h2"
-                  id="awards-timeline-title"
                   delay={1}
                   className="font-display mt-5 text-4xl font-light leading-tight sm:text-5xl"
                 >
