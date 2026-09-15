@@ -87,6 +87,8 @@ export function ProjectsGallery() {
             <Reveal key={project.title} delay={i}>
               {project.title === "Columbia" ? <a
                 href={project.href}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group relative block overflow-hidden bg-card"
               >
                 <img src={project.image} alt={project.title} loading="lazy" className="aspect-[4/5] w-full object-cover opacity-70 brightness-75 transition-all duration-700 ease-out group-hover:scale-105 group-hover:opacity-100 group-hover:brightness-100" />
