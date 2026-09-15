@@ -36,76 +36,106 @@ function LifePage() {
       <main>
         <PageHero {...life.hero} />
 
-        {/* Intro */}
-        <section className="mx-auto max-w-[1100px] px-6 py-24 md:px-10 md:py-32">
-          <Reveal as="p" className="text-xs font-medium uppercase tracking-[0.28em] text-gold">
-            Where spaces are built. And so are people.
-          </Reveal>
-          <Reveal
-            delay={1}
-            className="font-display mt-6 text-2xl font-light leading-snug tracking-tight text-foreground sm:text-3xl"
-          >
-            {life.intro}
-          </Reveal>
-        </section>
-
-        <section className="border-y border-border bg-card/30">
-          <div className="mx-auto grid max-w-[1600px] grid-cols-2 px-6 py-10 md:grid-cols-4 md:px-10">
-            {life.mindset.items.map((item, i) => (
-              <Reveal key={item} delay={i} className="border-l border-border px-4 py-4 first:border-l-0 md:px-8">
-                <span className="font-mono text-[10px] text-gold">{String(i + 1).padStart(2, "0")}</span>
-                <p className="mt-3 text-sm leading-snug text-foreground">{item}</p>
-              </Reveal>
-            ))}
+        <section className="relative overflow-hidden border-b border-border">
+          <GridBackdrop cellSize={128} radius={300} baseOpacity={0.16} interactive={false} />
+          <div className="relative z-10 mx-auto grid max-w-[1600px] gap-10 px-6 py-24 md:grid-cols-[minmax(0,0.72fr)_minmax(0,1.28fr)] md:px-10 md:py-36">
+            <Reveal as="p" className="text-xs font-medium uppercase tracking-[0.28em] text-gold">
+              The culture behind the work
+            </Reveal>
+            <Reveal
+              delay={1}
+              className="font-display max-w-4xl text-3xl font-light leading-[1.18] text-foreground sm:text-4xl lg:text-5xl"
+            >
+              {life.intro}
+            </Reveal>
           </div>
         </section>
 
-        {/* Alternating narrative blocks */}
-        {life.blocks.map((block, i) => (
-          <section key={block.title} className={`border-t border-border ${i % 2 === 1 ? "bg-card/40" : ""}`}>
-            <div
-               className={`mx-auto grid max-w-[1600px] items-start gap-12 px-6 py-20 md:px-10 md:py-24 ${
-                block.image ? "md:grid-cols-2" : "md:grid-cols-1"
-              }`}
+        {life.blocks[0]?.image && (
+          <section className="border-b border-border px-3 py-3 md:px-6 md:py-6">
+            <motion.figure
+              initial={{ opacity: 0, clipPath: "inset(8% 0 8% 0)" }}
+              whileInView={{ opacity: 1, clipPath: "inset(0% 0 0% 0)" }}
+              viewport={{ once: true, amount: 0.18 }}
+              transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
+              className="relative mx-auto max-w-[1800px] overflow-hidden"
             >
-              <div className={block.image && i % 2 === 1 ? "md:order-2" : ""}>
-                 <span className="font-mono text-[10px] text-gold">{String(i + 1).padStart(2, "0")}</span>
-                 <Reveal as="h2" className="font-display mt-4 text-2xl font-light tracking-tight text-foreground sm:text-3xl">
-                  {block.title}
-                </Reveal>
-                <Reveal delay={1} className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground">
-                  {block.body}
-                </Reveal>
-                {block.bullets && (
-                  <ul className="mt-7 space-y-3">
-                    {block.bullets.map((b, bi) => (
-                      <Reveal as="li" key={b} delay={bi} className="flex items-start gap-3 text-foreground">
-                        <span className="mt-2.5 h-px w-6 shrink-0 bg-gold" />
-                        <span className="text-sm leading-relaxed">{b}</span>
-                      </Reveal>
-                    ))}
-                  </ul>
-                )}
-              </div>
-
-              {block.image && (
-                <motion.div
-                  initial={{ opacity: 0, scale: 1.06 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true, amount: 0.3 }}
-                  transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-                  className="overflow-hidden rounded-sm"
-                >
-                  <img src={block.image} alt={block.title} loading="lazy" className="h-full w-full object-cover" />
-                </motion.div>
-              )}
-            </div>
+              <img
+                src={life.blocks[0].image}
+                alt="The Team One Architects team together at Family Day"
+                loading="lazy"
+                className="aspect-[4/3] w-full object-cover object-center sm:aspect-[16/8]"
+              />
+              <figcaption className="absolute bottom-0 left-0 border-r border-t border-border bg-background/90 px-5 py-3 text-[10px] font-medium uppercase tracking-[0.24em] text-muted-foreground backdrop-blur-sm">
+                Together, by design
+              </figcaption>
+            </motion.figure>
           </section>
-        ))}
+        )}
+
+        <section aria-label="Life at TOA stories">
+          {life.blocks.map((block, i) => (
+            <article key={block.title} className="relative border-b border-border">
+              <div className="mx-auto grid max-w-[1600px] gap-8 px-6 py-20 md:grid-cols-[minmax(220px,0.7fr)_minmax(0,1.3fr)] md:gap-16 md:px-10 md:py-28 lg:gap-28">
+                <div>
+                  <div className="flex items-center gap-4">
+                    <span className="font-mono text-[10px] text-gold">{String(i + 1).padStart(2, "0")}</span>
+                    <span className="h-px flex-1 bg-border" />
+                  </div>
+                  <Reveal
+                    as="h2"
+                    className="font-display mt-7 max-w-md text-3xl font-medium leading-tight text-foreground sm:text-4xl"
+                  >
+                    {block.title}
+                  </Reveal>
+                </div>
+
+                <div className="md:border-l md:border-border md:pl-10 lg:pl-16">
+                  <Reveal delay={1} className="max-w-3xl text-lg leading-relaxed text-muted-foreground sm:text-xl">
+                    {block.body}
+                  </Reveal>
+                  {block.bullets && (
+                    <ol className="mt-10 grid gap-px border border-border bg-border sm:grid-cols-3">
+                      {block.bullets.map((bullet, bulletIndex) => (
+                        <Reveal
+                          as="li"
+                          key={bullet}
+                          delay={bulletIndex}
+                          className="min-h-32 bg-background p-5 sm:min-h-40 sm:p-6"
+                        >
+                          <span className="font-mono text-[10px] text-gold">
+                            {String(bulletIndex + 1).padStart(2, "0")}
+                          </span>
+                          <p className="mt-6 text-sm leading-relaxed text-foreground">{bullet}</p>
+                        </Reveal>
+                      ))}
+                    </ol>
+                  )}
+                </div>
+              </div>
+            </article>
+          ))}
+        </section>
+
+        <section className="border-b border-border bg-card/40">
+          <div className="mx-auto max-w-[1600px] px-6 py-20 md:px-10 md:py-28">
+            <Reveal as="p" className="text-xs font-medium uppercase tracking-[0.28em] text-gold">
+              {life.mindset.title}
+            </Reveal>
+            <div className="mt-10 grid gap-px border border-border bg-border md:grid-cols-2 lg:grid-cols-4">
+              {life.mindset.items.map((item, i) => (
+                <Reveal key={item} delay={i} className="min-h-44 bg-card p-6 md:p-8">
+                  <span className="font-mono text-[10px] text-gold">{String(i + 1).padStart(2, "0")}</span>
+                  <p className="font-display mt-12 text-2xl font-medium leading-tight text-foreground">{item}</p>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </section>
 
         {/* Why TOA */}
         <section className="relative overflow-hidden border-t border-border bg-card/40">
-          <GridBackdrop glow radius={260} baseOpacity={0.4} />
+          <GridBackdrop cellSize={112} radius={260} baseOpacity={0.22} interactive={false} />
           <div className="relative z-10 mx-auto max-w-[1000px] px-6 py-28 text-center md:px-10 md:py-36">
             <Reveal as="p" className="text-xs font-medium uppercase tracking-[0.28em] text-gold">
               {life.why.title}
