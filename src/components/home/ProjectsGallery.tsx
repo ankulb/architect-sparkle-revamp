@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { projects } from "@/data/home";
 import { Reveal } from "@/components/Reveal";
+import { Button } from "@/components/ui/button";
 
 function slugFromHref(href: string) {
   return href.replace(/\/$/, "").split("/").pop() ?? "";
@@ -62,10 +63,11 @@ export function ProjectsGallery() {
               {FILTERS.map((f) => {
                 const active = filter === f.id;
                 return (
-                  <button
+                  <Button
                     key={f.id}
                     type="button"
                     onClick={() => setFilter(f.id)}
+                    variant="ghost"
                     className={`rounded-full border px-4 py-2 text-xs font-medium uppercase tracking-[0.18em] transition-colors ${
                       active
                         ? "border-gold bg-gold/10 text-gold"
@@ -73,7 +75,7 @@ export function ProjectsGallery() {
                     }`}
                   >
                     {f.label}
-                  </button>
+                  </Button>
                 );
               })}
             </div>
@@ -83,7 +85,14 @@ export function ProjectsGallery() {
         <div className="grid grid-cols-1 gap-4 pt-12 pb-4 sm:grid-cols-2 md:grid-cols-3 md:gap-6 md:pt-16">
           {filtered.map((project, i) => (
             <Reveal key={project.title} delay={i}>
-              <Link
+              {project.title === "Columbia" ? <a
+                href={project.href}
+                className="group relative block overflow-hidden bg-card"
+              >
+                <img src={project.image} alt={project.title} loading="lazy" className="aspect-[4/5] w-full object-cover opacity-70 brightness-75 transition-all duration-700 ease-out group-hover:scale-105 group-hover:opacity-100 group-hover:brightness-100" />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/10 to-transparent" />
+                <div className="absolute inset-x-0 bottom-0 p-6"><span className="text-[0.7rem] font-medium uppercase tracking-[0.18em] text-gold">{project.category}</span><h3 className="font-display mt-2 text-xl font-normal tracking-tight text-foreground">{project.title}</h3></div>
+              </a> : <Link
                 to="/portfolio/$slug"
                 params={{ slug: slugFromHref(project.href) }}
                 className="group relative block overflow-hidden bg-card"
@@ -103,7 +112,7 @@ export function ProjectsGallery() {
                     {project.title}
                   </h3>
                 </div>
-              </Link>
+              </Link>}
             </Reveal>
           ))}
         </div>

@@ -5,12 +5,14 @@ import vijayLogo from "@/assets/brands/vijay-shikshan.png.asset.json";
 import liftLogo from "@/assets/brands/lift-upliftment.png.asset.json";
 import yuvaLogo from "@/assets/brands/yuva-unstoppable.png.asset.json";
 import deepstambhLogo from "@/assets/brands/deepstambh.jpeg.asset.json";
+import csrImage from "@/assets/dynamic/csr.jpg.asset.json";
+import rahulManePhoto from "@/assets/team/rahul-mane.png.asset.json";
+import bharatKukrejaPhoto from "@/assets/team/bharat-kukreja.png.asset.json";
 import { clientLogos } from "@/data/clientLogos";
 
 
 const UP = "https://teamonearchitects.com/wp-content/uploads";
 
-// All team & board members link to the firm's company LinkedIn page.
 export const companyLinkedin = "https://www.linkedin.com/company/teamonearchitects/";
 
 // In-section navigation used by the header dropdown and footer.
@@ -103,19 +105,18 @@ export const team = {
     lead: "The future isn't imagined alone. It's built together — brick by brick, mind by mind.",
     image: toaTeamPhoto.url,
   },
-  core: [
-    { name: "Laxmikant Sawant", role: "COO", image: `${UP}/2021/10/laxmikant-sawant-1.png` },
-    
-    { name: "Varsha Changedia", role: "Associate Director", image: `${UP}/2021/10/Varsha-Changedia-1.png` },
-  ],
-  emerging: [
-    { name: "Tasheen Issani", role: "Chief Business Development Officer", image: `${UP}/2020/06/Tasheen-Issani.png` },
-    { name: "Mahesh Dhanawade", role: "General Manager", image: `${UP}/2020/10/Mahesh-Dhanawade.png` },
-    { name: "Abhijit Sutar", role: "Operations Head", image: `${UP}/2024/07/Abhijit-Sutar.png` },
-    { name: "Archiit Chatterjee", role: "Associate Architect", image: `${UP}/2025/07/Archiit-Chatterjee.png` },
-    { name: "Hiral Parekh", role: "Design Lead", image: `${UP}/2025/10/WhatsApp-Image-2025-10-30-at-2.48.45-PM-2.jpeg` },
-    { name: "Hiral Chouhan", role: "Design Lead", image: `${UP}/2025/10/WhatsApp-Image-2025-10-30-at-2.48.45-PM-1.jpeg` },
-    { name: "Alpesh Parab", role: "Sr. Associate Designer", image: `${UP}/2025/10/WhatsApp-Image-2025-10-30-at-2.48.46-PM.jpeg` },
+  leadership: [
+    { name: "Laxmikant Sawant", role: "COO", image: `${UP}/2021/10/laxmikant-sawant-1.png`, linkedin: "https://www.linkedin.com/in/laxmikant-sawant-764020ba" },
+    { name: "Varsha Changedia", role: "Associate Director", image: `${UP}/2021/10/Varsha-Changedia-1.png`, linkedin: "https://www.linkedin.com/in/varsha-changedia-15ba261b" },
+    { name: "Tasheen Issani", role: "Chief Business Development Officer", image: `${UP}/2020/06/Tasheen-Issani.png`, linkedin: "https://www.linkedin.com/in/tasheen-essani" },
+    { name: "Mahesh Dhanawade", role: "General Manager", image: `${UP}/2020/10/Mahesh-Dhanawade.png`, linkedin: "https://www.linkedin.com/in/mahesh-dhanavade-383471313" },
+    { name: "Abhijit Sutar", role: "Operations Head", image: `${UP}/2024/07/Abhijit-Sutar.png`, linkedin: "https://www.linkedin.com/in/abhijit-sutar-aa0a1267" },
+    { name: "Archiit Chatterjee", role: "Associate Architect", image: `${UP}/2025/07/Archiit-Chatterjee.png`, linkedin: companyLinkedin },
+    { name: "Hiral Parekh", role: "Design Lead", image: `${UP}/2025/10/WhatsApp-Image-2025-10-30-at-2.48.45-PM-2.jpeg`, linkedin: "https://www.linkedin.com/in/hiral-parekh-100204211" },
+    { name: "Hiral Chouhan", role: "Design Lead", image: `${UP}/2025/10/WhatsApp-Image-2025-10-30-at-2.48.45-PM-1.jpeg`, linkedin: companyLinkedin },
+    { name: "Alpesh Parab", role: "Sr. Associate Designer", image: `${UP}/2025/10/WhatsApp-Image-2025-10-30-at-2.48.46-PM.jpeg`, linkedin: "https://www.linkedin.com/in/alpesh-parab-2b298214b" },
+    { name: "Rahul Mane", role: "Leadership Team", image: rahulManePhoto.url, linkedin: "https://www.linkedin.com/in/rahul-mane-4494aa155/" },
+    { name: "Bharat Kukreja", role: "Leadership Team", image: bharatKukrejaPhoto.url, linkedin: "https://www.linkedin.com/in/bharat-kukreja-72145927/" },
   ],
 };
 
@@ -126,7 +127,7 @@ export const clientele = {
     eyebrow: "Partnerships",
     title: "Trusted by the best. Chosen for vision.",
     lead: "From engineering giants to global software leaders — the organisations who build the future build it with us.",
-    image: `${UP}/2026/03/DSC07321-HDR-650x650.jpg`,
+    image: toaTeamPhoto.url,
   },
   groups: [
     {
@@ -260,14 +261,44 @@ export const csr = {
     eyebrow: "Corporate Social Responsibility",
     title: "Our commitment to social impact",
     lead: "We believe design can create meaningful social change — in education, community development and infrastructure.",
-    image: `${UP}/2026/03/csr.png`,
+    image: csrImage.url,
   },
   objective: {
     kicker: "Our CSR Objective",
     body: "Team One Architects (TOA) is committed to contributing to society through meaningful Corporate Social Responsibility initiatives that support education, inclusive development, and community infrastructure. Our objective is to empower institutions that create opportunities for underserved communities by improving learning environments and enabling long-term social impact. Through sustained partnerships, TOA aims to help build stronger and more equitable foundations for future generations.",
   },
-  images: [`${UP}/2026/03/csr.png`, `${UP}/2026/03/csr-1-650x540.png`],
+  images: [csrImage.url, `${UP}/2026/03/csr-1-650x540.png`],
   partners: [
+    {
+      name: "Lift for Upliftment",
+      body: "Expanding access to quality medical education for aspiring students from underprivileged and tribal communities.",
+      href: "https://www.lfupune.in/",
+      logo: liftLogo.url,
+    },
+    {
+      name: "Vijay Shikshan Sanstha",
+      body: "Empowering hearing-impaired individuals through education, rehabilitation and skill-building for independent, dignified living.",
+      href: "https://vssanstha.org.in/",
+      logo: vijayLogo.url,
+    },
+    {
+      name: "Dharti Foundation",
+      body: "Uplifting children from farmer families — with a special emphasis on girls — through education and pathways to employment.",
+      href: "https://dhartifoundation.com/",
+      logo: dhartiLogo.url,
+    },
+    {
+      name: "Deepstambh Foundation",
+      body: "Inclusive, quality education for underprivileged students, including persons with disabilities and economically weaker sections.",
+      href: "https://deepstambh.org/",
+      logo: deepstambhLogo.url,
+    },
+    {
+      name: "Yuva Unstoppable",
+      body: "Strengthening school infrastructure and enabling modern learning ecosystems for underprivileged children and youth.",
+      href: "https://yuvaunstoppable.org/",
+      logo: yuvaLogo.url,
+    },
     {
       name: "Jivan Jyot Foundation",
       body: "Enabling better living conditions for underserved communities by promoting education, healthcare and livelihood opportunities.",
@@ -279,12 +310,6 @@ export const csr = {
       body: "Supporting the development of sporting talent through access to quality training infrastructure and mentorship in competitive shooting.",
       href: "https://xltsa.com/",
       logo: "",
-    },
-    {
-      name: "Dharti Foundation",
-      body: "Uplifting children from farmer families — with a special emphasis on girls — through education and pathways to employment.",
-      href: "https://dhartifoundation.com/",
-      logo: dhartiLogo.url,
     },
     {
       name: "Sant Gadge Maharaj Charitable Trust",
@@ -299,34 +324,10 @@ export const csr = {
       logo: "",
     },
     {
-      name: "Vijay Shikshan Sanstha",
-      body: "Empowering hearing-impaired individuals through education, rehabilitation and skill-building for independent, dignified living.",
-      href: "https://vssanstha.org.in/",
-      logo: vijayLogo.url,
-    },
-    {
-      name: "Lift for Upliftment",
-      body: "Expanding access to quality medical education for aspiring students from underprivileged and tribal communities.",
-      href: "https://www.lfupune.in/",
-      logo: liftLogo.url,
-    },
-    {
-      name: "Yuva Unstoppable",
-      body: "Strengthening school infrastructure and enabling modern learning ecosystems for underprivileged children and youth.",
-      href: "https://yuvaunstoppable.org/",
-      logo: yuvaLogo.url,
-    },
-    {
       name: "Manilal Gandhi Charitable Trust",
       body: "Supporting social welfare focused on community development, education and access to essential resources.",
       href: "",
       logo: "",
-    },
-    {
-      name: "Deepstambh Foundation",
-      body: "Inclusive, quality education for underprivileged students, including persons with disabilities and economically weaker sections.",
-      href: "https://deepstambh.org/",
-      logo: deepstambhLogo.url,
     },
   ],
 };
