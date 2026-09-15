@@ -97,7 +97,7 @@ export function PageHero({
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: textStart + 0.1 + words.length * 0.08 + 0.2 }}
-          className="mt-7 max-w-xl text-base leading-relaxed text-on-image/85 [text-shadow:0_1px_14px_rgba(0,0,0,0.65)] sm:text-lg"
+          className="mt-7 max-w-xl text-base leading-relaxed text-on-image [text-shadow:0_1px_14px_rgba(0,0,0,0.75)] sm:text-lg"
         >
           {lead}
         </motion.p>
