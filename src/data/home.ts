@@ -74,7 +74,7 @@ export const nav: NavItem[] = [
     href: "/#insights",
     children: [
       { label: "News & Media", to: "/insights/news" },
-      { label: "Awards & Recognition", href: "/#insights" },
+      { label: "Awards & Recognition", to: "/insights/awards" },
       { label: "Videos / Podcasts / Interviews", href: "/#insights" },
       { label: "Articles", href: "/#insights" },
       { label: "Research Reports", href: "/#insights" },
@@ -192,7 +192,7 @@ export const dynamicSections = [
     image: `${UP}/2026/03/R3A8108-newy-650x650.jpg`,
     excerpt: "IGBC-certified projects and a Great Place To Work certification.",
     body: "Our portfolio includes a growing roster of IGBC-certified green buildings, alongside a Great Place To Work certification for the studio itself — recognition of both what we build and how we build it.",
-    href: undefined as string | undefined,
+    href: "/insights/awards" as string | undefined,
   },
   {
     caption: "In News",

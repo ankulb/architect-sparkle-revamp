@@ -17,6 +17,7 @@ import { Route as PortfolioIndexRouteImport } from './routes/portfolio.index'
 import { Route as AboutIndexRouteImport } from './routes/about.index'
 import { Route as PortfolioSlugRouteImport } from './routes/portfolio.$slug'
 import { Route as InsightsNewsRouteImport } from './routes/insights.news'
+import { Route as InsightsAwardsRouteImport } from './routes/insights.awards'
 import { Route as ExpertiseSectorRouteImport } from './routes/expertise.$sector'
 import { Route as AboutTeamRouteImport } from './routes/about.team'
 import { Route as AboutLifeRouteImport } from './routes/about.life'
@@ -63,6 +64,11 @@ const PortfolioSlugRoute = PortfolioSlugRouteImport.update({
 const InsightsNewsRoute = InsightsNewsRouteImport.update({
   id: '/insights/news',
   path: '/insights/news',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InsightsAwardsRoute = InsightsAwardsRouteImport.update({
+  id: '/insights/awards',
+  path: '/insights/awards',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ExpertiseSectorRoute = ExpertiseSectorRouteImport.update({
@@ -113,6 +119,7 @@ export interface FileRoutesByFullPath {
   '/about/life': typeof AboutLifeRoute
   '/about/team': typeof AboutTeamRoute
   '/expertise/$sector': typeof ExpertiseSectorRoute
+  '/insights/awards': typeof InsightsAwardsRoute
   '/insights/news': typeof InsightsNewsRoute
   '/portfolio/$slug': typeof PortfolioSlugRoute
   '/about/': typeof AboutIndexRoute
@@ -128,6 +135,7 @@ export interface FileRoutesByTo {
   '/about/life': typeof AboutLifeRoute
   '/about/team': typeof AboutTeamRoute
   '/expertise/$sector': typeof ExpertiseSectorRoute
+  '/insights/awards': typeof InsightsAwardsRoute
   '/insights/news': typeof InsightsNewsRoute
   '/portfolio/$slug': typeof PortfolioSlugRoute
   '/about': typeof AboutIndexRoute
@@ -146,6 +154,7 @@ export interface FileRoutesById {
   '/about/life': typeof AboutLifeRoute
   '/about/team': typeof AboutTeamRoute
   '/expertise/$sector': typeof ExpertiseSectorRoute
+  '/insights/awards': typeof InsightsAwardsRoute
   '/insights/news': typeof InsightsNewsRoute
   '/portfolio/$slug': typeof PortfolioSlugRoute
   '/about/': typeof AboutIndexRoute
@@ -165,6 +174,7 @@ export interface FileRouteTypes {
     | '/about/life'
     | '/about/team'
     | '/expertise/$sector'
+    | '/insights/awards'
     | '/insights/news'
     | '/portfolio/$slug'
     | '/about/'
@@ -180,6 +190,7 @@ export interface FileRouteTypes {
     | '/about/life'
     | '/about/team'
     | '/expertise/$sector'
+    | '/insights/awards'
     | '/insights/news'
     | '/portfolio/$slug'
     | '/about'
@@ -197,6 +208,7 @@ export interface FileRouteTypes {
     | '/about/life'
     | '/about/team'
     | '/expertise/$sector'
+    | '/insights/awards'
     | '/insights/news'
     | '/portfolio/$slug'
     | '/about/'
@@ -209,6 +221,7 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   PortfolioRoute: typeof PortfolioRouteWithChildren
   ExpertiseSectorRoute: typeof ExpertiseSectorRoute
+  InsightsAwardsRoute: typeof InsightsAwardsRoute
   InsightsNewsRoute: typeof InsightsNewsRoute
 }
 
@@ -268,6 +281,13 @@ declare module '@tanstack/react-router' {
       path: '/insights/news'
       fullPath: '/insights/news'
       preLoaderRoute: typeof InsightsNewsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/insights/awards': {
+      id: '/insights/awards'
+      path: '/insights/awards'
+      fullPath: '/insights/awards'
+      preLoaderRoute: typeof InsightsAwardsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/expertise/$sector': {
@@ -364,6 +384,7 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   PortfolioRoute: PortfolioRouteWithChildren,
   ExpertiseSectorRoute: ExpertiseSectorRoute,
+  InsightsAwardsRoute: InsightsAwardsRoute,
   InsightsNewsRoute: InsightsNewsRoute,
 }
 export const routeTree = rootRouteImport
