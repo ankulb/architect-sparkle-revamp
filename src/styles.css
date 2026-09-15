@@ -40,6 +40,7 @@
   --color-accent-foreground: var(--accent-foreground);
   --color-gold: var(--gold);
   --color-gold-soft: var(--gold-soft);
+  --color-on-image: var(--on-image);
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
   --color-border: var(--border);
@@ -77,6 +78,7 @@
 
   --gold: oklch(0.76 0.092 78);
   --gold-soft: oklch(0.76 0.092 78 / 0.16);
+  --on-image: oklch(0.965 0.004 90);
 
   /* Cool "draft" tone for blueprint line-art (shifts to gold when "realized"). */
   --blueprint: oklch(0.7 0.06 235);
@@ -118,6 +120,7 @@ html.light {
 
   --gold: oklch(0.6 0.1 68);
   --gold-soft: oklch(0.6 0.1 68 / 0.14);
+  --on-image: oklch(0.965 0.004 90);
 
   /* On paper, the draft tone reads as a deeper slate-blue. */
   --blueprint: oklch(0.5 0.07 240);

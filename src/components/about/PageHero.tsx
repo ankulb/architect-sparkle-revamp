@@ -78,7 +78,7 @@ export function PageHero({
         </motion.p>
 
         {/* Headline reveals word-by-word with a rising mask */}
-        <h1 className="font-display mt-6 max-w-4xl text-balance text-4xl font-light leading-[1.05] tracking-tight text-foreground [text-shadow:0_2px_24px_rgba(0,0,0,0.45)] sm:text-6xl lg:text-7xl">
+        <h1 className="font-display mt-6 max-w-4xl text-balance text-4xl font-light leading-[1.05] tracking-tight text-on-image [text-shadow:0_2px_24px_rgba(0,0,0,0.65)] sm:text-6xl lg:text-7xl">
           {words.map((w, i) => (
             <span key={i} className="inline-block overflow-hidden align-bottom">
               <motion.span
@@ -97,7 +97,7 @@ export function PageHero({
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: textStart + 0.1 + words.length * 0.08 + 0.2 }}
-          className="mt-7 max-w-xl text-base leading-relaxed text-foreground/85 [text-shadow:0_1px_14px_rgba(0,0,0,0.5)] sm:text-lg"
+          className="mt-7 max-w-xl text-base leading-relaxed text-on-image/85 [text-shadow:0_1px_14px_rgba(0,0,0,0.65)] sm:text-lg"
         >
           {lead}
         </motion.p>
@@ -111,7 +111,7 @@ export function PageHero({
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -14 }}
                 transition={{ duration: 0.5 }}
-                className="text-sm uppercase tracking-[0.22em] text-foreground/70"
+                className="text-sm uppercase tracking-[0.22em] text-on-image/70"
               >
                 {phrases[phrase]}
               </motion.span>
