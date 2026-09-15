@@ -58,3 +58,44 @@ The lead story will receive the strongest visual treatment, with the other four 
 
 - Store both supplied portraits through the project asset system and crop them consistently with the existing team portraits.
 - Confirm the unified team grid works cleanly on mobile and desktop, all verified LinkedIn links open in a new tab, and the final build remains clean.
+
+# CSR page correction
+
+- Replace the current CSR page imagery with relevant photographs from TOA’s original CSR material; do not reuse an unrelated project image.
+- Reorder the partner presentation exactly as: **Lift for Upliftment, Vijay Shikshan Sanstha, Dharti Foundation, Deepstambh Foundation, Yuva Unstoppable**, followed by all other existing partners.
+- Retain every existing partner after those five and research each missing official website and authentic logo.
+- Use only confidently verified official destinations and marks; partners without a verifiable source remain clearly named rather than receiving an invented logo or link.
+- Refine the partner layout so mixed logo proportions remain aligned and visually balanced.
+
+# Clientele page image
+
+- Remove the current Apicore-derived page image.
+- Replace it with a stronger, broad representation of TOA’s client work that does not imply one client represents the full clientele, with balanced framing across mobile and desktop.
+
+# Life at TOA refresh
+
+- Retain the original Team One Architects Life at TOA narrative as the source of truth.
+- Reformat it into a more polished editorial story with stronger visual pacing, team photography, restrained animation, and clear culture themes consistent with the rest of the site.
+- Keep the page accessible by direct URL while respecting its prior removal from the Studio dropdown.
+
+# Homepage and navigation cleanup
+
+## Featured projects
+
+Set the homepage’s six featured projects, in this order:
+
+1. Ergo
+2. Columbia
+3. Jio School
+4. Commercial Office Buildings
+5. Volkswagen
+6. Intangles
+
+- Use the matching project imagery and internal case-study destination where one is already available.
+- Verify Columbia against the existing portfolio source before wiring it; if its case-study content is unavailable, use a non-deceptive portfolio destination rather than fabricating a project page.
+
+## Removed items
+
+- Remove **Trainee Program** from the Careers dropdown and replace the homepage careers action/copy so the removed programme is not promoted elsewhere on the homepage.
+- Remove **Events & Engagements** from the Insights dropdown.
+- Preserve the remaining navigation order and links.
