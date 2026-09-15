@@ -26,7 +26,7 @@ export const aboutNav: NavChild[] = [
   { label: "Board of Directors", to: "/about/board" },
   { label: "Our Team", to: "/about/team" },
   { label: "CSR", to: "/about/csr" },
-  
+  { label: "Life at TOA", to: "/about/life" },
   { label: "Clientele", to: "/about/clientele" },
 ];
 
@@ -85,7 +85,7 @@ export const nav: NavItem[] = [
     label: "Careers",
     href: "/#careers",
     children: [
-      { label: "Life at TOA", href: "/#careers" },
+      { label: "Life at TOA", to: "/about/life" },
       { label: "Open Positions", href: "/#careers" },
       
     ],
