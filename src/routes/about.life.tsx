@@ -49,16 +49,28 @@ function LifePage() {
           </Reveal>
         </section>
 
+        <section className="border-y border-border bg-card/30">
+          <div className="mx-auto grid max-w-[1600px] grid-cols-2 px-6 py-10 md:grid-cols-4 md:px-10">
+            {life.mindset.items.map((item, i) => (
+              <Reveal key={item} delay={i} className="border-l border-border px-4 py-4 first:border-l-0 md:px-8">
+                <span className="font-mono text-[10px] text-gold">{String(i + 1).padStart(2, "0")}</span>
+                <p className="mt-3 text-sm leading-snug text-foreground">{item}</p>
+              </Reveal>
+            ))}
+          </div>
+        </section>
+
         {/* Alternating narrative blocks */}
         {life.blocks.map((block, i) => (
           <section key={block.title} className={`border-t border-border ${i % 2 === 1 ? "bg-card/40" : ""}`}>
             <div
-              className={`mx-auto grid max-w-[1600px] items-center gap-12 px-6 py-20 md:px-10 md:py-24 ${
+               className={`mx-auto grid max-w-[1600px] items-start gap-12 px-6 py-20 md:px-10 md:py-24 ${
                 block.image ? "md:grid-cols-2" : "md:grid-cols-1"
               }`}
             >
               <div className={block.image && i % 2 === 1 ? "md:order-2" : ""}>
-                <Reveal as="h2" className="font-display text-2xl font-light tracking-tight text-foreground sm:text-3xl">
+                 <span className="font-mono text-[10px] text-gold">{String(i + 1).padStart(2, "0")}</span>
+                 <Reveal as="h2" className="font-display mt-4 text-2xl font-light tracking-tight text-foreground sm:text-3xl">
                   {block.title}
                 </Reveal>
                 <Reveal delay={1} className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground">
@@ -90,25 +102,6 @@ function LifePage() {
             </div>
           </section>
         ))}
-
-        {/* Mindset */}
-        <section className="border-t border-border">
-          <div className="mx-auto max-w-[1600px] px-6 py-24 md:px-10 md:py-28">
-            <Reveal as="h2" className="font-display text-3xl font-light tracking-tight sm:text-4xl">
-              {life.mindset.title}
-            </Reveal>
-            <div className="mt-12 grid gap-px overflow-hidden rounded-sm border border-border bg-border sm:grid-cols-2 lg:grid-cols-4">
-              {life.mindset.items.map((item, i) => (
-                <Reveal key={item} delay={i}>
-                  <div className="h-full bg-background p-8">
-                    <div className="font-display text-3xl font-light text-gold">{String(i + 1).padStart(2, "0")}</div>
-                    <p className="mt-5 text-base leading-snug text-foreground">{item}</p>
-                  </div>
-                </Reveal>
-              ))}
-            </div>
-          </div>
-        </section>
 
         {/* Why TOA */}
         <section className="relative overflow-hidden border-t border-border bg-card/40">

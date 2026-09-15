@@ -44,14 +44,14 @@ function CsrPage() {
             <StorySection kicker={csr.objective.kicker} title="Building stronger foundations">
               {csr.objective.body}
             </StorySection>
-            <div className="grid gap-5">
+            <div className="grid gap-5 sm:grid-cols-2">
               {csr.images.map((img, i) => (
                 <Reveal key={img} delay={i}>
                   <img
                     src={img}
                     alt="Team One Architects CSR initiative"
                     loading="lazy"
-                    className="w-full rounded-sm object-cover"
+                    className="aspect-[4/3] w-full rounded-sm object-cover"
                   />
                 </Reveal>
               ))}
@@ -83,12 +83,12 @@ function CsrPage() {
                     className="group flex h-full flex-col border border-border bg-background p-7 transition-colors duration-300 hover:border-gold/50"
                   >
                     {p.logo && (
-                      <div className="mb-5 flex h-12 items-center">
+                      <div className="mb-6 flex h-16 items-center border-b border-border pb-5">
                         <img
                           src={p.logo}
                           alt={`${p.name} logo`}
                           loading="lazy"
-                          className="max-h-12 w-auto max-w-[160px] object-contain opacity-80 grayscale transition duration-500 group-hover:opacity-100 group-hover:grayscale-0"
+                          className="max-h-11 w-auto max-w-[180px] object-contain opacity-80 grayscale transition duration-500 group-hover:opacity-100 group-hover:grayscale-0"
                         />
                       </div>
                     )}
