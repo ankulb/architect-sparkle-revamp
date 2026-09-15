@@ -357,7 +357,7 @@ export const life = {
     },
     {
       title: "Where Learning is Real, Not Theoretical",
-      body: "Growth at TOA doesn't come from static training modules. It comes from real projects, real timelines and real challenges — from large-scale corporate fit-outs to complex site executions.",
+      body: "Growth at TOA doesn't come from static training modules. It comes from real projects, real timelines and real challenges. From handling large-scale corporate fit-outs to navigating complex site executions, our teams learn by being in the middle of the action.",
       bullets: [
         "You don't wait for exposure, you earn it",
         "You don't shadow work, you lead parts of it",
@@ -371,7 +371,7 @@ export const life = {
     },
     {
       title: "Driven by Scale, Built on Precision",
-      body: "Our work spans industries from corporate offices to infrastructure and institutional spaces. This is where speed meets structure, and execution meets detail.",
+      body: "Our work spans industries from corporate offices to infrastructure and institutional spaces. Each project brings scale, complexity and responsibility. This is where speed meets structure, and execution meets detail.",
       bullets: [
         "Scale that challenges you",
         "Complexity that sharpens you",
