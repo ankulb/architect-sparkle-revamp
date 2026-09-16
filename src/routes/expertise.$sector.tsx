@@ -8,6 +8,15 @@ import { BlueprintReveal } from "@/components/graphics/BlueprintReveal";
 import { ProjectCard } from "@/components/portfolio/ProjectCard";
 import { projects, projectDetails, type Project } from "@/data/portfolio";
 import axisSecuritiesImage from "@/assets/projects/axis-securities/untitled-session3870-hdr.jpg.asset.json";
+import mmrdaImage from "@/assets/projects/mmrda-headquarters/01.jpg.asset.json";
+import dcCampusImage from "@/assets/projects/dc-campus-navi-mumbai/01.png.asset.json";
+import bseImage from "@/assets/projects/bse-data-recovery-hyderabad/01.jpg.asset.json";
+import khalapurImage from "@/assets/projects/mixed-use-khalapur/01-master-plan.png.asset.json";
+import dewanisImage from "@/assets/projects/dewanis-residence-nagpur/01.jpg.asset.json";
+import rrccImage from "@/assets/projects/rrcc-nagpur/01.png.asset.json";
+import recDaundImage from "@/assets/projects/recreation-block-daund/01.jpg.asset.json";
+import ccrhImage from "@/assets/projects/cidco-ccrh/01.png.asset.json";
+import gandhiImage from "@/assets/projects/gandhi-museum-jaipur/01.jpeg.asset.json";
 
 
 
