@@ -12,7 +12,6 @@ import {
   mslGroupGallery,
   prasadStudiosGallery,
 
-
   ideaForgeGallery,
   indiraIvfGallery,
   infinixGallery,
@@ -24,15 +23,27 @@ import {
   vanderlaneGallery,
   vwItsGallery,
   xpoGallery,
+
+  mmrdaGallery,
+  lfuUniversityGallery,
+  jioSchoolGallery,
+  dcCampusGallery,
+  bseDataRecoveryGallery,
+  mixedUseKhalapurGallery,
+  dewanisResidenceGallery,
+  rrccNagpurGallery,
+  recreationBlockDaundGallery,
+  cidcoCcrhGallery,
+  gandhiMuseumGallery,
 } from "@/data/projectAssets";
 
 // Portfolio content sourced from teamonearchitects.com/portfolio.
 const UP = "https://teamonearchitects.com/wp-content/uploads";
 
-export const COMMERCIAL = "Commercial & Institutional Architecture";
+export const ARCHITECTURE = "Architecture & Urban Design";
 export const INTERIORS = "Corporate Interiors";
 
-export type ProjectCategory = typeof COMMERCIAL | typeof INTERIORS;
+export type ProjectCategory = typeof ARCHITECTURE | typeof INTERIORS;
 
 export type Project = {
   slug: string;
