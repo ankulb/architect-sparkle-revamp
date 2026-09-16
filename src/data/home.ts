@@ -56,7 +56,6 @@ export const expertiseGroups: NavGroup[] = [
       { label: "Media", to: "/expertise/media" },
       { label: "Shipping", to: "/expertise/shipping" },
       { label: "Telecom", to: "/expertise/telecom" },
-      { label: "Co-working", href: "/#expertise" },
       { label: "Education", href: "/#expertise" },
       { label: "Green Field", to: "/expertise/green-field" },
     ],

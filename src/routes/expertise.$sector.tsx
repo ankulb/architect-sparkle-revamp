@@ -7,6 +7,7 @@ import { GridBackdrop } from "@/components/graphics/GridBackdrop";
 import { BlueprintReveal } from "@/components/graphics/BlueprintReveal";
 import { ProjectCard } from "@/components/portfolio/ProjectCard";
 import { projects, projectDetails, type Project } from "@/data/portfolio";
+import axisSecuritiesImage from "@/assets/projects/axis-securities/untitled-session3870-hdr.jpg.asset.json";
 
 
 
@@ -36,7 +37,7 @@ const sectors: Record<string, Sector> = {
     discipline: "Interior Architecture",
     lead: "Workplaces for banks, brokerages and financial institutions — environments where trust, security and precision meet the warmth of a modern, people-first office.",
     phrases: ["Trading Floors", "Client Experience", "Brand Identity"],
-    image: `${UP}/2026/03/DSC07321-HDR-1024x683.jpg`,
+    image: axisSecuritiesImage.url,
     clients: [],
   },
   "it-software": {
