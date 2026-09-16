@@ -17,6 +17,7 @@ import rrccImage from "@/assets/projects/rrcc-nagpur/01.png.asset.json";
 import recDaundImage from "@/assets/projects/recreation-block-daund/01.jpg.asset.json";
 import ccrhImage from "@/assets/projects/cidco-ccrh/01.png.asset.json";
 import gandhiImage from "@/assets/projects/gandhi-museum-jaipur/01.jpeg.asset.json";
+import congoImage from "@/assets/projects/congo-office/01.jpg.asset.json";
 
 
 
@@ -147,7 +148,7 @@ const sectors: Record<string, Sector> = {
     discipline: "Architecture & Urban Design",
     lead: "From corporate towers to production floors, commercial architecture that balances performance, identity and longevity — buildings designed to serve businesses and their people for decades.",
     phrases: ["Commercial Towers", "Workplace Architecture", "Industrial & Logistics"],
-    image: congoOfficeGallery[0],
+    image: congoImage.url,
     clients: [
       { name: "Commercial Office Building, DR Congo", projectSlug: "commercial-office-building" },
       { name: "Fujitsu", projectSlug: "fujitsu-pune" },
