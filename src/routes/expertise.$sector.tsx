@@ -265,7 +265,7 @@ export const Route = createFileRoute("/expertise/$sector")({
       };
     }
     const { sector } = loaderData;
-    const title = `${sector.name} Interiors — Team One Architects`;
+    const title = `${sector.name} — ${sector.discipline} — Team One Architects`;
     const description = sector.lead;
     return {
       meta: [
