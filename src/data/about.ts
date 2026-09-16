@@ -133,10 +133,10 @@ export const clientele = {
     {
       sector: "IT & Software",
       clients: [
-        { name: "3i" },
-        { name: "Idea forge" },
-        { name: "Intangles" },
-        { name: "VW ITS" },
+        { name: "3i", logo: clientLogos["3i"] },
+        { name: "Idea forge", logo: clientLogos["Idea forge"] },
+        { name: "Intangles", logo: clientLogos["Intangles"] },
+        { name: "VW ITS", logo: clientLogos["VW ITS"] },
       ],
     },
     {
@@ -144,8 +144,8 @@ export const clientele = {
       clients: [
         { name: "Emerson", logo: clientLogos["Emerson"] },
         { name: "JCI", logo: clientLogos["Johnson Controls"] },
-        { name: "Sedmac" },
-        { name: "Vanderlane" },
+        { name: "Sedmac", logo: clientLogos["Sedmac"] },
+        { name: "Vanderlane", logo: clientLogos["Vanderlane"] },
       ],
     },
     {
@@ -154,7 +154,7 @@ export const clientele = {
         { name: "Apicore", logo: clientLogos["Apicore"] },
         { name: "BASF", logo: clientLogos["BASF"] },
         { name: "Bharat Serum", logo: clientLogos["Bharat Serums and Vaccines"] },
-        { name: "Indira IVF" },
+        { name: "Indira IVF", logo: clientLogos["Indira IVF"] },
         { name: "Novartis", logo: clientLogos["Novartis"] },
         { name: "Cipla", logo: clientLogos["Cipla"] },
         { name: "Covestro", logo: clientLogos["Covestro"] },
@@ -168,9 +168,9 @@ export const clientele = {
     {
       sector: "Media",
       clients: [
-        { name: "Digital Domain" },
-        { name: "MSL Group" },
-        { name: "Prasad Studios" },
+        { name: "Digital Domain", logo: clientLogos["Digital Domain"] },
+        { name: "MSL Group", logo: clientLogos["MSL Group"] },
+        { name: "Prasad Studios", logo: clientLogos["Prasad Studios"] },
         { name: "Eros International", logo: clientLogos["Eros International"] },
         { name: "Havas Media Group", logo: clientLogos["Havas Media Group"] },
         { name: "Isobar", logo: clientLogos["Isobar"] },
@@ -189,7 +189,7 @@ export const clientele = {
       sector: "Telecom",
       clients: [
         { name: "Infinix", logo: clientLogos["Infinx"] },
-        { name: "Nxtra" },
+        { name: "Nxtra", logo: clientLogos["Nxtra"] },
         { name: "Airtel", logo: clientLogos["Airtel"] },
         { name: "Vodafone", logo: clientLogos["Vodafone"] },
         { name: "MTS", logo: clientLogos["MTS"] },
@@ -200,7 +200,7 @@ export const clientele = {
     },
     {
       sector: "Green Field",
-      clients: [{ name: "Hyatt" }],
+      clients: [{ name: "Hyatt", logo: clientLogos["Hyatt"] }],
     },
     {
       sector: "Banking & Finance",

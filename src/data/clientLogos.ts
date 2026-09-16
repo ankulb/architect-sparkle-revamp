@@ -54,6 +54,18 @@ import bajaj from "@/assets/clients/bajaj.jpg.asset.json";
 import titanLaboratories from "@/assets/clients/titan-laboratories.jpg.asset.json";
 import infinx from "@/assets/clients/infinx.jpg.asset.json";
 import airtel from "@/assets/clients/airtel.jpg.asset.json";
+import threeI from "@/assets/clients/3i-infotech.png.asset.json";
+import ideaForge from "@/assets/clients/ideaforge.jpg.asset.json";
+import intangles from "@/assets/clients/intangles.png.asset.json";
+import vwIts from "@/assets/clients/vw-its.png.asset.json";
+import sedemac from "@/assets/clients/sedemac.png.asset.json";
+import vanderlande from "@/assets/clients/vanderlande.svg.asset.json";
+import indiraIvf from "@/assets/clients/indira-ivf.svg.asset.json";
+import digitalDomain from "@/assets/clients/digital-domain.png.asset.json";
+import msl from "@/assets/clients/msl.svg.asset.json";
+import prasadStudios from "@/assets/projects/prasad-studios/prasad-studios-logo.png.asset.json";
+import nxtra from "@/assets/clients/nxtra.svg.asset.json";
+import hyatt from "@/assets/clients/hyatt.svg.asset.json";
 
 export const clientLogos: Record<string, string> = {
   "Apicore": apicore.url,
@@ -111,4 +123,16 @@ export const clientLogos: Record<string, string> = {
   "Titan Laboratories": titanLaboratories.url,
   "Infinx": infinx.url,
   "Airtel": airtel.url,
+  "3i": threeI.url,
+  "Idea forge": ideaForge.url,
+  "Intangles": intangles.url,
+  "VW ITS": vwIts.url,
+  "Sedmac": sedemac.url,
+  "Vanderlane": vanderlande.url,
+  "Indira IVF": indiraIvf.url,
+  "Digital Domain": digitalDomain.url,
+  "MSL Group": msl.url,
+  "Prasad Studios": prasadStudios.url,
+  "Nxtra": nxtra.url,
+  "Hyatt": hyatt.url,
 };
