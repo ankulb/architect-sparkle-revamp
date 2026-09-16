@@ -66,3 +66,12 @@ Every case study will use the existing project-page format: full-image banner, s
 - Verify project facts against the Formatted V2 documents, images and diagrams load correctly, and no duplicate projects appear.
 - Review representative category and detail pages on desktop and mobile for image framing, text readability, gallery flow, navigation, and empty states.
 - Confirm the site builds successfully with no broken links or console errors.
+
+## Follow-on: Board of Directors LinkedIn links
+
+Separately, wire the supplied LinkedIn URLs into the four director profiles on the Board of Directors page:
+
+- Parish S. Kapse — https://www.linkedin.com/in/parish-kapse-25481058/
+- Aditya B. Yamsanwar — https://www.linkedin.com/in/aditya-yamsanwar-21683415/
+- Bharat Yamsanwar — https://www.linkedin.com/in/bharat-yamsanwar-6259619a/
+- Rupali Kapse — https://www.linkedin.com/in/rupali-kapse-432b5133b/
