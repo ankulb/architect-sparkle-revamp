@@ -48,10 +48,22 @@ function ClientelePage() {
                 <div className="grid grid-cols-2 border-l border-t border-border sm:grid-cols-3 lg:grid-cols-4">
                   {group.clients.map((client, i) => (
                     <Reveal key={client.name ?? client.logo} delay={i % 4}>
-                      <div className="group flex aspect-[4/3] h-full flex-col items-center justify-center gap-3 border-b border-r border-border bg-background p-5 transition-colors hover:bg-card">
-                        {client.logo ? <img src={client.logo} alt={client.name ? `${client.name} logo` : "Client logo"} loading="lazy" className="max-h-12 max-w-[145px] object-contain opacity-65 grayscale transition duration-300 group-hover:opacity-100 group-hover:grayscale-0" /> : null}
-                        {client.name ? <span className="text-center text-[10px] font-medium uppercase tracking-[0.13em] text-muted-foreground transition-colors group-hover:text-foreground">{client.name}</span> : null}
-                      </div>
+                      {client.logo ? (
+                        <div className="group flex aspect-[4/3] h-full flex-col overflow-hidden border-b border-r border-border bg-background transition-colors hover:bg-card">
+                          <div className="relative flex-1 overflow-hidden">
+                            <img src={client.logo} alt={client.name ? `${client.name} logo` : "Client logo"} loading="lazy" className="h-full w-full object-cover opacity-65 grayscale transition duration-300 group-hover:opacity-100 group-hover:grayscale-0" />
+                          </div>
+                          {client.name ? (
+                            <div className="border-t border-border bg-background px-3 py-2 text-center text-[10px] font-medium uppercase tracking-[0.13em] text-muted-foreground transition-colors group-hover:text-foreground">
+                              {client.name}
+                            </div>
+                          ) : null}
+                        </div>
+                      ) : (
+                        <div className="group flex aspect-[4/3] h-full flex-col items-center justify-center border-b border-r border-border bg-background p-5 transition-colors hover:bg-card">
+                          {client.name ? <span className="text-center text-[10px] font-medium uppercase tracking-[0.13em] text-muted-foreground transition-colors group-hover:text-foreground">{client.name}</span> : null}
+                        </div>
+                      )}
                     </Reveal>
                   ))}
                 </div>
