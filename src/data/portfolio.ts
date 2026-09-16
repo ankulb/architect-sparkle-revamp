@@ -35,6 +35,9 @@ import {
   recreationBlockDaundGallery,
   cidcoCcrhGallery,
   gandhiMuseumGallery,
+  fujitsuPuneGallery,
+  brosePuneGallery,
+  congoOfficeGallery,
 } from "@/data/projectAssets";
 
 // Portfolio content sourced from teamonearchitects.com/portfolio.
