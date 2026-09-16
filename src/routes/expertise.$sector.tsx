@@ -145,10 +145,14 @@ const sectors: Record<string, Sector> = {
     slug: "commercial",
     name: "Commercial",
     discipline: "Architecture & Urban Design",
-    lead: "Commercial architecture that balances performance, identity and longevity — buildings designed to serve businesses and their people for decades.",
-    phrases: ["Commercial Towers", "Workplace Architecture", "Urban Scale"],
-    image: `${UP}/2026/03/VIEW-1-650x650.png`,
-    clients: [{ name: "Commercial Office Building", projectSlug: "commercial-office-building" }],
+    lead: "From corporate towers to production floors, commercial architecture that balances performance, identity and longevity — buildings designed to serve businesses and their people for decades.",
+    phrases: ["Commercial Towers", "Workplace Architecture", "Industrial & Logistics"],
+    image: congoOfficeGallery[0],
+    clients: [
+      { name: "Commercial Office Building, DR Congo", projectSlug: "commercial-office-building" },
+      { name: "Fujitsu", projectSlug: "fujitsu-pune" },
+      { name: "Brose", projectSlug: "brose-pune" },
+    ],
   },
   "data-centres": {
     slug: "data-centres",
