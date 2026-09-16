@@ -60,7 +60,7 @@ function ClientelePage() {
                           ) : null}
                         </div>
                       ) : (
-                        <div className="group flex aspect-[4/3] h-full flex-col items-center justify-center border-b border-r border-border bg-background p-5 transition-colors hover:bg-card">
+                        <div className="group flex aspect-[16/10] h-full flex-col items-center justify-center border-b border-r border-border bg-background p-5 transition-colors hover:bg-card">
                           {client.name ? <span className="text-center text-[10px] font-medium uppercase tracking-[0.13em] text-muted-foreground transition-colors group-hover:text-foreground">{client.name}</span> : null}
                         </div>
                       )}
