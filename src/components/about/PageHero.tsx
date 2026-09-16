@@ -8,12 +8,15 @@ export function PageHero({
   lead,
   image,
   phrases,
+  align = "center",
 }: {
   eyebrow: string;
   title: string;
   lead: string;
   image: string;
   phrases?: readonly string[];
+  /** "right" pins the contained image to the right on desktop, keeping the headline area clear. */
+  align?: "center" | "right";
 }) {
   const [phrase, setPhrase] = useState(0);
   const reduce = useReducedMotion();
@@ -52,9 +55,21 @@ export function PageHero({
           initial={{ opacity: 0.72, scale: 0.985 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 2.2, ease: [0.22, 1, 0.36, 1] }}
-          className="absolute inset-0 flex items-center justify-center"
+          className={
+            align === "right"
+              ? "absolute inset-0 flex items-center justify-center md:justify-end"
+              : "absolute inset-0 flex items-center justify-center"
+          }
         >
-          <img src={image} alt="" className="h-full w-full object-contain" />
+          <img
+            src={image}
+            alt=""
+            className={
+              align === "right"
+                ? "h-full w-full object-contain md:w-[58%] md:object-right lg:w-[55%]"
+                : "h-full w-full object-contain"
+            }
+          />
         </motion.div>
       </motion.div>
 
