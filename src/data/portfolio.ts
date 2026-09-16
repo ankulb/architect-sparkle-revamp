@@ -102,7 +102,9 @@ export const projects: Project[] = [
   { slug: "recreation-retail-convention-complex", title: "Recreation, Retail & Convention Complex, Nagpur", category: ARCHITECTURE, location: "Nagpur", image: rrccNagpurGallery[0] },
   { slug: "recreational-block", title: "Recreation Block, Daund", category: ARCHITECTURE, location: "Daund, Maharashtra", image: recreationBlockDaundGallery[0] },
   { slug: "gandhi-museum-jaipur", title: "Gandhi Museum, Jaipur", category: ARCHITECTURE, location: "Jaipur", image: gandhiMuseumGallery[0] },
-  { slug: "commercial-office-building", title: "Commercial Office Building", category: ARCHITECTURE, image: `${UP}/2026/03/VIEW-1-650x650.png` },
+  { slug: "commercial-office-building", title: "Commercial Office Building, DR Congo", category: ARCHITECTURE, location: "Kinshasa, DR Congo", image: congoOfficeGallery[0] },
+  { slug: "fujitsu-pune", title: "Fujitsu", category: ARCHITECTURE, location: "Pune", image: fujitsuPuneGallery[0] },
+  { slug: "brose-pune", title: "Brose", category: ARCHITECTURE, location: "Pune", image: brosePuneGallery[0] },
   { slug: "hyatt", title: "Hyatt", category: ARCHITECTURE, image: hyattGallery[0] },
 
   { slug: "xpo", title: "XPO", category: INTERIORS, location: "India", image: xpoGallery[0] },
