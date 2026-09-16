@@ -88,11 +88,11 @@ export const board = {
     image: toaTeamPhoto.url,
   },
   directors: [
-    { name: "Ar. Parish S. Kapse", role: "Director", image: `${UP}/2025/08/Parish-Kapse.jpeg` },
-    { name: "Ar. Aditya B. Yamsanwar", role: "Director", image: `${UP}/2025/08/Aditya-Yamsanwar.jpeg` },
-    { name: "Ar. Bharat Yamsanwar", role: "Director", image: `${UP}/2025/08/Bharat-Yamsanwar.jpeg` },
+    { name: "Ar. Parish S. Kapse", role: "Director", image: `${UP}/2025/08/Parish-Kapse.jpeg`, linkedin: "https://www.linkedin.com/in/parish-kapse-25481058/" },
+    { name: "Ar. Aditya B. Yamsanwar", role: "Director", image: `${UP}/2025/08/Aditya-Yamsanwar.jpeg`, linkedin: "https://www.linkedin.com/in/aditya-yamsanwar-21683415/" },
+    { name: "Ar. Bharat Yamsanwar", role: "Director", image: `${UP}/2025/08/Bharat-Yamsanwar.jpeg`, linkedin: "https://www.linkedin.com/in/bharat-yamsanwar-6259619a/" },
     { name: "Jyoti Yamsanwar", role: "Director", image: `${UP}/2025/08/Jyoti-Yamsanwar.jpeg` },
-    { name: "Rupali Kapse", role: "Director", image: `${UP}/2025/08/Jyoti-Kapse.jpeg` },
+    { name: "Rupali Kapse", role: "Director", image: `${UP}/2025/08/Jyoti-Kapse.jpeg`, linkedin: "https://www.linkedin.com/in/rupali-kapse-432b5133b/" },
   ],
 };
 
