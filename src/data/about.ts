@@ -151,7 +151,7 @@ export const clientele = {
     {
       sector: "Health & Pharma",
       clients: [
-        { name: "Apicore" },
+        { name: "Apicore", logo: clientLogos["Apicore"] },
         { name: "BASF", logo: clientLogos["BASF"] },
         { name: "Bharat Serum", logo: clientLogos["Bharat Serums and Vaccines"] },
         { name: "Indira IVF" },

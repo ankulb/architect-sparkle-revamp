@@ -1,4 +1,5 @@
 // Client logos hosted on the project CDN.
+import apicore from "@/assets/clients/apicore.jpg.asset.json";
 import cognizant from "@/assets/clients/cognizant.jpg.asset.json";
 import bnyMellon from "@/assets/clients/bny-mellon.jpg.asset.json";
 import johnsonControls from "@/assets/clients/johnson-controls.jpg.asset.json";
@@ -55,6 +56,7 @@ import infinx from "@/assets/clients/infinx.jpg.asset.json";
 import airtel from "@/assets/clients/airtel.jpg.asset.json";
 
 export const clientLogos: Record<string, string> = {
+  "Apicore": apicore.url,
   "Cognizant": cognizant.url,
   "BNY Mellon": bnyMellon.url,
   "Johnson Controls": johnsonControls.url,
