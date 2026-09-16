@@ -50,8 +50,9 @@ function ClientelePage() {
                     <Reveal key={client.name ?? client.logo} delay={i % 4}>
                       {client.logo ? (
                         <div className="group flex aspect-[4/3] h-full flex-col overflow-hidden border-b border-r border-border bg-background transition-colors hover:bg-card">
-                          <div className="relative flex min-h-0 flex-1 items-center justify-center overflow-hidden p-5">
-                            <img src={client.logo} alt={client.name ? `${client.name} logo` : "Client logo"} loading="lazy" className="h-full w-full object-contain p-4 opacity-65 grayscale transition duration-300 group-hover:opacity-100 group-hover:grayscale-0" />
+                          <div className="relative min-h-0 flex-1 overflow-hidden">
+                            <img src={client.logo} alt={client.name ? `${client.name} logo` : "Client logo"} loading="lazy" className="absolute inset-0 h-full w-full object-contain p-4 opacity-65 grayscale transition duration-300 group-hover:opacity-100 group-hover:grayscale-0" />
+                          </div>
                           </div>
                           {client.name ? (
                             <div className="border-t border-border bg-background px-3 py-2 text-center text-[10px] font-medium uppercase tracking-[0.13em] text-muted-foreground transition-colors group-hover:text-foreground">
