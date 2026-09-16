@@ -752,6 +752,63 @@ export const projectDetails: Record<string, ProjectDetail> = {
     ],
     gallery: gandhiMuseumGallery,
   },
+
+  "commercial-office-building": {
+    slug: "commercial-office-building",
+    title: "Commercial Office Building, DR Congo",
+    category: ARCHITECTURE,
+    sector: "Commercial",
+    client: "Confidential",
+    location: "Kinshasa, Democratic Republic of Congo",
+    area: "1,60,000 sq. ft.",
+    status: "Ongoing · 2028",
+    service: "Commercial & Retail Architecture",
+    image: congoOfficeGallery[0],
+    description: [
+      "This 20-floor landmark in the Republic of the Congo integrates global corporate standards with local environmental sensitivity. The architecture features flexible, column-free floor plates and an efficient core to support diverse organizational needs.",
+      "Addressing the tropical climate, the articulated façade employs shading devices and recessed glazing to balance daylight and heat gain. The tower functions as a vertical ecosystem, blending private workspaces with collaborative amenities and an active public ground plane.",
+      "Ultimately, the project establishes a new benchmark for regional office typology, reflecting the Congo's economic aspirations through a sustainable, identity-driven corporate landmark.",
+    ],
+    gallery: congoOfficeGallery,
+  },
+
+  "fujitsu-pune": {
+    slug: "fujitsu-pune",
+    title: "Fujitsu",
+    category: ARCHITECTURE,
+    sector: "Greenfield",
+    client: "Fujitsu",
+    location: "Pune",
+    area: "1,25,000 sq. ft.",
+    status: "Completed · 2011",
+    service: "Commercial & Institutional Architecture",
+    image: fujitsuPuneGallery[0],
+    description: [
+      "The corporate logo depicts Fujitsu's infinite possibilities. Further, it expresses expansion into the universe by symbolizing 'Earth and Sun.' Fujitsu Red, the main colour, expresses enthusiasm for the future brightness and approachability.",
+      "The above corporate identity and the corporate vision — \"Understanding you better – serving you best\" — needed to be expressed in the design that Team One created.",
+      "The five floors project revolves around the Panchabhuta's theme, i.e. Prithvi, Jal, Vayu, Agni and Aakash (Earth, Water, Wind, Fire and Sky).",
+    ],
+    gallery: fujitsuPuneGallery,
+  },
+
+  "brose-pune": {
+    slug: "brose-pune",
+    title: "Brose",
+    category: ARCHITECTURE,
+    sector: "Automobile / Manufacturing",
+    client: "Brose",
+    location: "Pune",
+    area: "1,25,000 sq. ft.",
+    status: "Completed",
+    service: "Industrial & Logistics Architecture",
+    image: brosePuneGallery[0],
+    description: [
+      "The Brose Industrial and Logistics Facility in Pune reinterprets the traditional industrial typology through a highly specialized, process-driven design. Engineered for automotive leader Brose, the facility features a linear layout that mirrors production workflows to minimize operational friction.",
+      "Large-span, column-free shop floors provide the structural flexibility necessary for future technological upgrades and assembly reconfigurations.",
+      "Transcending the concept of a static shed, the architecture acts as a dynamic extension of the production line — a built reflection of precision and movement where design, engineering, and logistics operate in complete synchrony.",
+    ],
+    gallery: brosePuneGallery,
+  },
 };
 
 export const categories: ProjectCategory[] = [ARCHITECTURE, INTERIORS];
