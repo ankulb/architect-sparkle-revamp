@@ -11,3 +11,8 @@
 - [x] Build Awards & Recognition page from the 2026 company profile
 - [x] Link homepage and navigation awards entries to the new page
 - [x] Verify awards page presentation and build health
+- [ ] Replace Banking & Finance banner with Axis Securities imagery
+- [ ] Rename the secondary news section to More Coverages and verify its links
+- [ ] Replace the Board of Directors banner with the TOA team photograph
+- [ ] Remove Co-working from Interior Architecture navigation
+- [ ] Verify the four corrections on desktop and mobile

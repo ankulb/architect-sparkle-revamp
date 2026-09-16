@@ -85,7 +85,7 @@ export const board = {
     eyebrow: "Leadership",
     title: "Board of Directors",
     lead: "The future isn't imagined alone. It's built together — brick by brick, mind by mind.",
-    image: `${UP}/2021/11/WhatsApp-Image-2025-10-30-at-2.48.45-PM-3.jpeg`,
+    image: toaTeamPhoto.url,
   },
   directors: [
     { name: "Ar. Parish S. Kapse", role: "Director", image: `${UP}/2025/08/Parish-Kapse.jpeg` },

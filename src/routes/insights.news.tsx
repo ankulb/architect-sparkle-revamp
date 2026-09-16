@@ -65,7 +65,7 @@ function NewsPage() {
 
         <section className="border-t border-border bg-card/30">
           <div className="mx-auto max-w-[1600px] px-6 py-20 md:px-10 md:py-28">
-            <Reveal as="p" className="text-xs font-semibold uppercase tracking-[0.3em] text-gold">More coverage</Reveal>
+            <Reveal as="p" className="text-xs font-semibold uppercase tracking-[0.3em] text-gold">More Coverages</Reveal>
             <div className="mt-12 grid border-l border-t border-border sm:grid-cols-2 lg:grid-cols-3">
               {pressCoverage.map((item, i) => (
                 <Reveal key={item.url} delay={i % 3}>
