@@ -36,7 +36,7 @@ function CsrPage() {
     <div className="min-h-screen bg-background text-foreground">
       <Header />
       <main>
-        <PageHero {...csr.hero} />
+        <PageHero {...csr.hero} align="right" />
 
         {/* Objective + images */}
         <section className="mx-auto max-w-[1600px] px-6 py-24 md:px-10 md:py-28">
