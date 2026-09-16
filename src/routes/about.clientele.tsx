@@ -49,7 +49,7 @@ function ClientelePage() {
                   {group.clients.map((client, i) => (
                     <Reveal key={client.name ?? client.logo} delay={i % 4}>
                       {client.logo ? (
-                        <div className="group flex aspect-[4/3] h-full flex-col overflow-hidden border-b border-r border-border bg-background transition-colors hover:bg-card">
+                        <div className="group flex aspect-[16/10] h-full flex-col overflow-hidden border-b border-r border-border bg-background transition-colors hover:bg-card">
                           <div className="relative min-h-0 flex-1 overflow-hidden">
                             <img src={client.logo} alt={client.name ? `${client.name} logo` : "Client logo"} loading="lazy" className="absolute inset-0 h-full w-full object-contain p-4 opacity-65 grayscale transition duration-300 group-hover:opacity-100 group-hover:grayscale-0" />
                           </div>
@@ -60,7 +60,7 @@ function ClientelePage() {
                           ) : null}
                         </div>
                       ) : (
-                        <div className="group flex aspect-[4/3] h-full flex-col items-center justify-center border-b border-r border-border bg-background p-5 transition-colors hover:bg-card">
+                        <div className="group flex aspect-[16/10] h-full flex-col items-center justify-center border-b border-r border-border bg-background p-5 transition-colors hover:bg-card">
                           {client.name ? <span className="text-center text-[10px] font-medium uppercase tracking-[0.13em] text-muted-foreground transition-colors group-hover:text-foreground">{client.name}</span> : null}
                         </div>
                       )}
