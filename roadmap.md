@@ -18,3 +18,4 @@
 - [x] Replace the Board of Directors banner with the TOA team photograph
 - [x] Remove Co-working from Interior Architecture navigation
 - [x] Verify the four corrections on desktop and mobile
+- [x] Add Commercial portfolio: Fujitsu, Brose, Commercial Office Building (DR Congo)

@@ -533,3 +533,38 @@ import gandhi7 from "@/assets/projects/gandhi-museum-jaipur/07.jpeg.asset.json";
 import gandhi8 from "@/assets/projects/gandhi-museum-jaipur/08.jpeg.asset.json";
 import gandhi9 from "@/assets/projects/gandhi-museum-jaipur/09.jpeg.asset.json";
 export const gandhiMuseumGallery = [gandhi1.url, gandhi2.url, gandhi3.url, gandhi4.url, gandhi5.url, gandhi6.url, gandhi7.url, gandhi8.url, gandhi9.url];
+
+// ===== Commercial galleries =====
+
+import fujitsu1 from "@/assets/projects/fujitsu-pune/01.jpg.asset.json";
+import fujitsu2 from "@/assets/projects/fujitsu-pune/02.jpg.asset.json";
+import fujitsu3 from "@/assets/projects/fujitsu-pune/03.jpg.asset.json";
+import fujitsu4 from "@/assets/projects/fujitsu-pune/04.jpg.asset.json";
+import fujitsu5 from "@/assets/projects/fujitsu-pune/05.jpg.asset.json";
+import fujitsu6 from "@/assets/projects/fujitsu-pune/06.jpg.asset.json";
+import fujitsu7 from "@/assets/projects/fujitsu-pune/07.jpg.asset.json";
+import fujitsu8 from "@/assets/projects/fujitsu-pune/08.jpg.asset.json";
+import fujitsu9 from "@/assets/projects/fujitsu-pune/09.jpg.asset.json";
+export const fujitsuPuneGallery = [
+  fujitsu1.url, fujitsu2.url, fujitsu3.url, fujitsu4.url, fujitsu5.url,
+  fujitsu6.url, fujitsu7.url, fujitsu8.url, fujitsu9.url,
+];
+
+import brose1 from "@/assets/projects/brose-pune/01.jpg.asset.json";
+import brose2 from "@/assets/projects/brose-pune/02.jpg.asset.json";
+import brose3 from "@/assets/projects/brose-pune/03.jpg.asset.json";
+import brose4 from "@/assets/projects/brose-pune/04.jpg.asset.json";
+import brose5 from "@/assets/projects/brose-pune/05.jpg.asset.json";
+import brose6 from "@/assets/projects/brose-pune/06.jpg.asset.json";
+import brose7 from "@/assets/projects/brose-pune/07.jpg.asset.json";
+import brose8 from "@/assets/projects/brose-pune/08.jpg.asset.json";
+import brose9 from "@/assets/projects/brose-pune/09.jpg.asset.json";
+export const brosePuneGallery = [
+  brose1.url, brose2.url, brose3.url, brose4.url, brose5.url,
+  brose6.url, brose7.url, brose8.url, brose9.url,
+];
+
+import congo1 from "@/assets/projects/congo-office/01.jpg.asset.json";
+import congo2 from "@/assets/projects/congo-office/02.jpg.asset.json";
+import congo3 from "@/assets/projects/congo-office/03.jpg.asset.json";
+export const congoOfficeGallery = [congo1.url, congo2.url, congo3.url];

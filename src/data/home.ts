@@ -5,6 +5,7 @@ import sustainabilityImage from "@/assets/dynamic/sustainability.jpg.asset.json"
 import collaborationImage from "@/assets/dynamic/global-collaboration.jpg.asset.json";
 import csrImage from "@/assets/dynamic/csr.jpg.asset.json";
 import pressImage from "@/assets/dynamic/press.jpg.asset.json";
+import congoHomeImage from "@/assets/projects/congo-office/01.jpg.asset.json";
 import researchImage from "@/assets/dynamic/research.jpg.asset.json";
 
 
@@ -266,7 +267,7 @@ export const projects = [
   { title: "Ergo", category: "Corporate Interiors", image: `${UP}/2025/08/X3A9650-HDR-Edit.jpg`, href: "https://teamonearchitects.com/portfolio-item/ergo-technologies/" },
   { title: "Columbia", category: "Corporate Interiors", image: `${UP}/2025/08/H2A6507.jpg`, href: "https://teamonearchitects.com/portfolio/" },
   { title: "JIO School", category: "Commercial & Institutional", image: `${UP}/2026/03/786928477867589-copy-650x650.jpg`, href: "https://teamonearchitects.com/portfolio-item/jio-school/" },
-  { title: "Commercial Office Buildings", category: "Commercial & Institutional", image: `${UP}/2026/03/VIEW-1-650x650.png`, href: "https://teamonearchitects.com/portfolio-item/commercial-office-building/" },
+  { title: "Commercial Office Buildings", category: "Commercial & Institutional", image: congoHomeImage.url, href: "https://teamonearchitects.com/portfolio-item/commercial-office-building/" },
   { title: "Volkswagen", category: "Corporate Interiors", image: `${UP}/2025/08/040-1024x683.jpg`, href: "https://teamonearchitects.com/portfolio-item/volkswagen/" },
   { title: "Intangles", category: "Corporate Interiors", image: `${UP}/2026/03/4-1-1024x682.jpg`, href: "https://teamonearchitects.com/portfolio-item/intangles/" },
 ];

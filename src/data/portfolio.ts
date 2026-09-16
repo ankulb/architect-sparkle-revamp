@@ -35,6 +35,9 @@ import {
   recreationBlockDaundGallery,
   cidcoCcrhGallery,
   gandhiMuseumGallery,
+  fujitsuPuneGallery,
+  brosePuneGallery,
+  congoOfficeGallery,
 } from "@/data/projectAssets";
 
 // Portfolio content sourced from teamonearchitects.com/portfolio.
@@ -99,7 +102,9 @@ export const projects: Project[] = [
   { slug: "recreation-retail-convention-complex", title: "Recreation, Retail & Convention Complex, Nagpur", category: ARCHITECTURE, location: "Nagpur", image: rrccNagpurGallery[0] },
   { slug: "recreational-block", title: "Recreation Block, Daund", category: ARCHITECTURE, location: "Daund, Maharashtra", image: recreationBlockDaundGallery[0] },
   { slug: "gandhi-museum-jaipur", title: "Gandhi Museum, Jaipur", category: ARCHITECTURE, location: "Jaipur", image: gandhiMuseumGallery[0] },
-  { slug: "commercial-office-building", title: "Commercial Office Building", category: ARCHITECTURE, image: `${UP}/2026/03/VIEW-1-650x650.png` },
+  { slug: "commercial-office-building", title: "Commercial Office Building, DR Congo", category: ARCHITECTURE, location: "Kinshasa, DR Congo", image: congoOfficeGallery[0] },
+  { slug: "fujitsu-pune", title: "Fujitsu", category: ARCHITECTURE, location: "Pune", image: fujitsuPuneGallery[0] },
+  { slug: "brose-pune", title: "Brose", category: ARCHITECTURE, location: "Pune", image: brosePuneGallery[0] },
   { slug: "hyatt", title: "Hyatt", category: ARCHITECTURE, image: hyattGallery[0] },
 
   { slug: "xpo", title: "XPO", category: INTERIORS, location: "India", image: xpoGallery[0] },
@@ -746,6 +751,63 @@ export const projectDetails: Record<string, ProjectDetail> = {
       "Rather than a mere repository, the museum is an architecture of meaning over spectacle, transforming space into a contemplative medium for learning and collective consciousness within its historic Jaipur context.",
     ],
     gallery: gandhiMuseumGallery,
+  },
+
+  "commercial-office-building": {
+    slug: "commercial-office-building",
+    title: "Commercial Office Building, DR Congo",
+    category: ARCHITECTURE,
+    sector: "Commercial",
+    client: "Confidential",
+    location: "Kinshasa, Democratic Republic of Congo",
+    area: "1,60,000 sq. ft.",
+    status: "Ongoing · 2028",
+    service: "Commercial & Retail Architecture",
+    image: congoOfficeGallery[0],
+    description: [
+      "This 20-floor landmark in the Republic of the Congo integrates global corporate standards with local environmental sensitivity. The architecture features flexible, column-free floor plates and an efficient core to support diverse organizational needs.",
+      "Addressing the tropical climate, the articulated façade employs shading devices and recessed glazing to balance daylight and heat gain. The tower functions as a vertical ecosystem, blending private workspaces with collaborative amenities and an active public ground plane.",
+      "Ultimately, the project establishes a new benchmark for regional office typology, reflecting the Congo's economic aspirations through a sustainable, identity-driven corporate landmark.",
+    ],
+    gallery: congoOfficeGallery,
+  },
+
+  "fujitsu-pune": {
+    slug: "fujitsu-pune",
+    title: "Fujitsu",
+    category: ARCHITECTURE,
+    sector: "Greenfield",
+    client: "Fujitsu",
+    location: "Pune",
+    area: "1,25,000 sq. ft.",
+    status: "Completed · 2011",
+    service: "Commercial & Institutional Architecture",
+    image: fujitsuPuneGallery[0],
+    description: [
+      "The corporate logo depicts Fujitsu's infinite possibilities. Further, it expresses expansion into the universe by symbolizing 'Earth and Sun.' Fujitsu Red, the main colour, expresses enthusiasm for the future brightness and approachability.",
+      "The above corporate identity and the corporate vision — \"Understanding you better – serving you best\" — needed to be expressed in the design that Team One created.",
+      "The five floors project revolves around the Panchabhuta's theme, i.e. Prithvi, Jal, Vayu, Agni and Aakash (Earth, Water, Wind, Fire and Sky).",
+    ],
+    gallery: fujitsuPuneGallery,
+  },
+
+  "brose-pune": {
+    slug: "brose-pune",
+    title: "Brose",
+    category: ARCHITECTURE,
+    sector: "Automobile / Manufacturing",
+    client: "Brose",
+    location: "Pune",
+    area: "1,25,000 sq. ft.",
+    status: "Completed",
+    service: "Industrial & Logistics Architecture",
+    image: brosePuneGallery[0],
+    description: [
+      "The Brose Industrial and Logistics Facility in Pune reinterprets the traditional industrial typology through a highly specialized, process-driven design. Engineered for automotive leader Brose, the facility features a linear layout that mirrors production workflows to minimize operational friction.",
+      "Large-span, column-free shop floors provide the structural flexibility necessary for future technological upgrades and assembly reconfigurations.",
+      "Transcending the concept of a static shed, the architecture acts as a dynamic extension of the production line — a built reflection of precision and movement where design, engineering, and logistics operate in complete synchrony.",
+    ],
+    gallery: brosePuneGallery,
   },
 };
 
