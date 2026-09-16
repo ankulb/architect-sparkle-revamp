@@ -541,4 +541,4 @@ export const projectDetails: Record<string, ProjectDetail> = {
   },
 };
 
-export const categories: ProjectCategory[] = [COMMERCIAL, INTERIORS];
+export const categories: ProjectCategory[] = [ARCHITECTURE, INTERIORS];
