@@ -441,3 +441,95 @@ export const xpoGallery = [
   xpo5.url,
   xpo6.url,
 ];
+
+// ===== Architecture & Urban Design galleries =====
+
+import mmrda1 from "@/assets/projects/mmrda-headquarters/01.jpg.asset.json";
+import mmrda2 from "@/assets/projects/mmrda-headquarters/02.jpg.asset.json";
+import mmrda3 from "@/assets/projects/mmrda-headquarters/03.jpg.asset.json";
+import mmrda4 from "@/assets/projects/mmrda-headquarters/04.jpg.asset.json";
+import mmrda5 from "@/assets/projects/mmrda-headquarters/05.jpg.asset.json";
+import mmrda6 from "@/assets/projects/mmrda-headquarters/06.jpg.asset.json";
+import mmrda7 from "@/assets/projects/mmrda-headquarters/07.jpg.asset.json";
+import mmrda8 from "@/assets/projects/mmrda-headquarters/08.jpg.asset.json";
+import mmrda9 from "@/assets/projects/mmrda-headquarters/09.jpg.asset.json";
+import mmrda10 from "@/assets/projects/mmrda-headquarters/10.jpg.asset.json";
+import mmrda11 from "@/assets/projects/mmrda-headquarters/11.jpg.asset.json";
+export const mmrdaGallery = [
+  mmrda1.url, mmrda2.url, mmrda3.url, mmrda4.url, mmrda5.url,
+  mmrda6.url, mmrda7.url, mmrda8.url, mmrda9.url, mmrda10.url, mmrda11.url,
+];
+
+import lfu1 from "@/assets/projects/lfu-university-dharashiv/01-master-plan.png.asset.json";
+import lfu2 from "@/assets/projects/lfu-university-dharashiv/02.png.asset.json";
+import lfu3 from "@/assets/projects/lfu-university-dharashiv/03.png.asset.json";
+import lfu4 from "@/assets/projects/lfu-university-dharashiv/04.png.asset.json";
+export const lfuUniversityGallery = [lfu1.url, lfu2.url, lfu3.url, lfu4.url];
+
+import jioSchool1 from "@/assets/projects/jio-school/01.jpg.asset.json";
+import jioSchool2 from "@/assets/projects/jio-school/02.jpg.asset.json";
+import jioSchool3 from "@/assets/projects/jio-school/03.jpg.asset.json";
+import jioSchool4 from "@/assets/projects/jio-school/04.jpg.asset.json";
+import jioSchool5 from "@/assets/projects/jio-school/05.jpg.asset.json";
+import jioSchool6 from "@/assets/projects/jio-school/06.jpg.asset.json";
+import jioSchool7 from "@/assets/projects/jio-school/07.jpg.asset.json";
+import jioSchool8 from "@/assets/projects/jio-school/08.png.asset.json";
+import jioSchool9 from "@/assets/projects/jio-school/09.jpg.asset.json";
+export const jioSchoolGallery = [
+  jioSchool1.url, jioSchool2.url, jioSchool3.url, jioSchool4.url,
+  jioSchool5.url, jioSchool6.url, jioSchool7.url, jioSchool8.url, jioSchool9.url,
+];
+
+import dcCampus1 from "@/assets/projects/dc-campus-navi-mumbai/01.png.asset.json";
+import dcCampus2 from "@/assets/projects/dc-campus-navi-mumbai/02.png.asset.json";
+import dcCampus3 from "@/assets/projects/dc-campus-navi-mumbai/03-sunpath.png.asset.json";
+import dcCampus4 from "@/assets/projects/dc-campus-navi-mumbai/04-windpath.png.asset.json";
+export const dcCampusGallery = [dcCampus1.url, dcCampus2.url, dcCampus3.url, dcCampus4.url];
+
+import bse1 from "@/assets/projects/bse-data-recovery-hyderabad/01.jpg.asset.json";
+import bse2 from "@/assets/projects/bse-data-recovery-hyderabad/02.jpg.asset.json";
+import bse3 from "@/assets/projects/bse-data-recovery-hyderabad/03.jpg.asset.json";
+import bse4 from "@/assets/projects/bse-data-recovery-hyderabad/04.jpg.asset.json";
+import bse5 from "@/assets/projects/bse-data-recovery-hyderabad/05.jpg.asset.json";
+import bse6 from "@/assets/projects/bse-data-recovery-hyderabad/06.jpg.asset.json";
+import bse7 from "@/assets/projects/bse-data-recovery-hyderabad/07.jpg.asset.json";
+import bse8 from "@/assets/projects/bse-data-recovery-hyderabad/08.jpg.asset.json";
+export const bseDataRecoveryGallery = [bse1.url, bse2.url, bse3.url, bse4.url, bse5.url, bse6.url, bse7.url, bse8.url];
+
+import khalapur1 from "@/assets/projects/mixed-use-khalapur/01-master-plan.png.asset.json";
+import khalapur2 from "@/assets/projects/mixed-use-khalapur/02.png.asset.json";
+import khalapur3 from "@/assets/projects/mixed-use-khalapur/03.png.asset.json";
+export const mixedUseKhalapurGallery = [khalapur1.url, khalapur2.url, khalapur3.url];
+
+import dewanis1 from "@/assets/projects/dewanis-residence-nagpur/01.jpg.asset.json";
+import dewanis2 from "@/assets/projects/dewanis-residence-nagpur/02.png.asset.json";
+export const dewanisResidenceGallery = [dewanis1.url, dewanis2.url];
+
+import rrcc1 from "@/assets/projects/rrcc-nagpur/01.png.asset.json";
+import rrcc2 from "@/assets/projects/rrcc-nagpur/02.png.asset.json";
+import rrcc3 from "@/assets/projects/rrcc-nagpur/03.png.asset.json";
+import rrcc4 from "@/assets/projects/rrcc-nagpur/04.png.asset.json";
+import rrcc5 from "@/assets/projects/rrcc-nagpur/05.png.asset.json";
+import rrcc6 from "@/assets/projects/rrcc-nagpur/06.png.asset.json";
+export const rrccNagpurGallery = [rrcc1.url, rrcc2.url, rrcc3.url, rrcc4.url, rrcc5.url, rrcc6.url];
+
+import recDaund1 from "@/assets/projects/recreation-block-daund/01.jpg.asset.json";
+import recDaund2 from "@/assets/projects/recreation-block-daund/02.png.asset.json";
+import recDaund3 from "@/assets/projects/recreation-block-daund/03.png.asset.json";
+import recDaund4 from "@/assets/projects/recreation-block-daund/04.png.asset.json";
+export const recreationBlockDaundGallery = [recDaund1.url, recDaund2.url, recDaund3.url, recDaund4.url];
+
+import ccrh1 from "@/assets/projects/cidco-ccrh/01.png.asset.json";
+import ccrh2 from "@/assets/projects/cidco-ccrh/02.png.asset.json";
+export const cidcoCcrhGallery = [ccrh1.url, ccrh2.url];
+
+import gandhi1 from "@/assets/projects/gandhi-museum-jaipur/01.jpeg.asset.json";
+import gandhi2 from "@/assets/projects/gandhi-museum-jaipur/02.jpeg.asset.json";
+import gandhi3 from "@/assets/projects/gandhi-museum-jaipur/03.jpeg.asset.json";
+import gandhi4 from "@/assets/projects/gandhi-museum-jaipur/04.jpeg.asset.json";
+import gandhi5 from "@/assets/projects/gandhi-museum-jaipur/05.jpeg.asset.json";
+import gandhi6 from "@/assets/projects/gandhi-museum-jaipur/06.jpeg.asset.json";
+import gandhi7 from "@/assets/projects/gandhi-museum-jaipur/07.jpeg.asset.json";
+import gandhi8 from "@/assets/projects/gandhi-museum-jaipur/08.jpeg.asset.json";
+import gandhi9 from "@/assets/projects/gandhi-museum-jaipur/09.jpeg.asset.json";
+export const gandhiMuseumGallery = [gandhi1.url, gandhi2.url, gandhi3.url, gandhi4.url, gandhi5.url, gandhi6.url, gandhi7.url, gandhi8.url, gandhi9.url];
