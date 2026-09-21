@@ -30,9 +30,9 @@ export const featuredPress: PressItem[] = [
     logo: hindustanTimesLogo.url,
   },
   {
-    publication: "Realty+",
-    headline: "How AI is Reshaping Architecture: From Concept to Construction",
-    url: "https://www.rprealtyplus.com/news-views/how-ai-is-reshaping-architecture-from-concept-to-construction-126189.html",
+    publication: "Construction Times",
+    headline: "Team One Architects Delivers Columbia Group’s First Global Capability Centre in India",
+    url: "https://constructiontimes.co.in/Team-One-Architects-delivers-Columbia-Group%E2%80%99s-first-Global-Capability-Centre-in-India",
   },
   {
     publication: "ET Edge Insights",
@@ -44,43 +44,48 @@ export const featuredPress: PressItem[] = [
 
 export const pressCoverage: PressItem[] = [
   {
-    publication: "Design Sense",
-    headline: "The human side of digital design",
-    url: "https://www.acedesignsense.com/the-human-side-of-digital-design/",
-  },
-  {
-    publication: "Interiors & Decor",
-    headline: "Reimagining Commercial Interiors: Designing Offices for Experience, Not Just Efficiency",
-    url: "https://interiorsndecor.com/reimagining-commercial-interiors-designing-offices-for-experience-not-just-efficiency%EF%BF%BC/",
-  },
-  {
     publication: "Manufacturing Today",
     headline: "Why data centres are India’s defining infrastructure bet",
     url: "https://www.manufacturingtodayindia.com/why-data-centres-are-indias",
   },
   {
-    publication: "Responsible Us",
-    headline: "Climate Risk Is Not a Future Scenario, It Is the Present Situation",
-    url: "https://responsibleus.com/climate-risk-is-not-a-future-scenario-it-is-the-present-situation",
+    publication: "Construction Week",
+    headline: "TOA unveils medical campus master plan in Maharashtra",
+    url: "https://www.constructionweekonline.in/news/toa-unveils-medical-campus-master-plan-in-maharashtra",
+  },
+  {
+    publication: "Commercial Design",
+    headline: "Gen Z office design is changing what workspaces need to be",
+    url: "https://www.commercialdesignindia.com/insights/gen-z-office-design-is-changing-what-workspaces-need-to-be",
   },
   {
     publication: "Realty+",
     headline: "Architecture Today is as Much Business as it is Design",
-    url: "https://teamonearchitects.com/2026/03/18/realtyplus-features-toa-associate-director-varsha-changedia/",
+    url: "https://www.rprealtyplus.com/news-views/architecture-today-is-as-much-business-as-it-is-design-124496.html",
   },
   {
-    publication: "CNBC-TV18",
-    headline: "Urban Infrastructure: Building Future-Ready Cities",
-    url: "https://teamonearchitects.com/2026/03/19/cnbc-tv18-features-toa-director-mr-aditya-b-yamsanwar/",
+    publication: "Realty+",
+    headline: "How Offices are Changing to Meet the Demands of Hybrid Work",
+    url: "https://www.rprealtyplus.com/news-views/how-offices-are-changing-to-meet-the-demands-of-hybrid-work-124549.html",
   },
   {
     publication: "Forbes India",
     headline: "Reinforcing Infrastructure-led Urban Growth",
-    url: "https://teamonearchitects.com/2026/03/19/forbes-india-featurestoa-director-mr-parish-s-kapse/",
+    url: "https://www.forbesindia.com/article/budget-2026/budget-2026-reactions-live-updates-money-markets-and-the-industry-mood-liveblog/2990917/1",
   },
   {
-    publication: "Construction Times",
-    headline: "Our focus is on merging design creativity with technological innovation",
-    url: "https://teamonearchitects.com/2026/03/19/construction-times-features-toa-director-mr-parish-s-kapse/",
+    publication: "CNBC-TV18",
+    headline: "Urban Infrastructure: Building Future-Ready Cities",
+    url: "https://www.cnbctv18.com/budget/union-budget-2026-industry-flags-infra-push-ai-sustainability-and-startup-support-as-key-priorities-ws-el-19822745.htm/amp",
+  },
+  {
+    publication: "The Economic Times",
+    headline: "Budget 2026: The GCC capital of the world needs more brains to bank its $100-billion dream",
+    url: "https://economictimes.indiatimes.com/news/economy/policy/budget-2026-gcc-expectations-sitharaman-india-global-capacity-centers-announcement-tech-job-skill/articleshow/127533183.cms",
+  },
+  {
+    publication: "NDTV Profit",
+    headline: "Budget 2026 Expectations: Focus on Manufacturing, MSME Push and More",
+    url: "https://www.ndtvprofit.com/economy/union-budget-2026-expectations-live-updates-income-tax-changes-news-fm-nirmala-sitharaman-january-30-10911231",
   },
 ];
