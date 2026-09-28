@@ -36,8 +36,8 @@ export function PageHero({
     <section className="relative flex h-[88vh] min-h-[600px] w-full items-end overflow-hidden bg-background">
       {/* Center-opening clip-path curtain wraps the Ken-Burns image */}
       <motion.div
-        initial={reduce ? { opacity: 0 } : { clipPath: "inset(0 50% 0 50%)" }}
-        animate={reduce ? { opacity: 1 } : { clipPath: "inset(0 0% 0 0%)" }}
+        initial={{ clipPath: "inset(0 50% 0 50%)" }}
+        animate={{ clipPath: "inset(0 0% 0 0%)" }}
         transition={{ duration: revealDur, ease: [0.77, 0, 0.18, 1] }}
         className="absolute inset-0"
       >
@@ -73,16 +73,16 @@ export function PageHero({
         </motion.div>
       </motion.div>
 
-      {/* Thin gold sweep line that travels with the reveal edge, then fades */}
-      {!reduce && (
-        <motion.div
-          initial={{ left: "50%", opacity: 0 }}
-          animate={{ left: ["50%", "100%"], opacity: [0, 1, 1, 0] }}
-          transition={{ duration: revealDur, ease: [0.77, 0, 0.18, 1], times: [0, 0.1, 0.85, 1] }}
-          className="absolute top-0 z-20 h-full w-px bg-gold"
-          style={{ boxShadow: "0 0 24px 2px var(--gold)" }}
-        />
-      )}
+      {/* Thin gold sweep line that travels with the reveal edge, then fades.
+          Always rendered so SSR and client markup match; duration 0 when
+          reduced motion jumps it straight to its invisible end state. */}
+      <motion.div
+        initial={{ left: "50%", opacity: 0 }}
+        animate={{ left: ["50%", "100%"], opacity: [0, 1, 1, 0] }}
+        transition={{ duration: revealDur, ease: [0.77, 0, 0.18, 1], times: [0, 0.1, 0.85, 1] }}
+        className="absolute top-0 z-20 h-full w-px bg-gold"
+        style={{ boxShadow: "0 0 24px 2px var(--gold)" }}
+      />
 
       {/* Localized scrim behind the headline only (bottom-left) */}
       <div className="absolute inset-0 bg-gradient-to-t from-background/85 via-background/10 to-transparent" />
