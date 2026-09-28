@@ -210,8 +210,7 @@ export const coverageIndex: CoverageMonth[] = [
       {
         "publication": "Interior & Decor Magaine",
         "headline": "The Evolution of Space: Architecture & Interiors in a New Era",
-        "edition": "Print",
-        "url": null
+        "edition": "Print"
       },
       {
         "publication": "The Times of India",
@@ -1595,8 +1594,7 @@ export const coverageIndex: CoverageMonth[] = [
       {
         "publication": "Times Property",
         "headline": "Abodes That work",
-        "edition": "Print",
-        "url": null
+        "edition": "Print"
       },
       {
         "publication": "Realty+",
@@ -1653,8 +1651,7 @@ export const coverageIndex: CoverageMonth[] = [
       {
         "publication": "Ace Update",
         "headline": "Rethinking the tower through the lens of climate intelligence",
-        "edition": "Print",
-        "url": null
+        "edition": "Print"
       },
       {
         "publication": "Education Matters",
@@ -1760,8 +1757,7 @@ export const coverageIndex: CoverageMonth[] = [
       {
         "publication": "MGS Architecture",
         "headline": "How Architecture design shapes culture performance and user experience",
-        "edition": "Print",
-        "url": null
+        "edition": "Print"
       },
       {
         "publication": "MSG Architecture",
@@ -1824,14 +1820,12 @@ export const coverageIndex: CoverageMonth[] = [
       {
         "publication": "Ace Update",
         "headline": "Impact – resistant fenestration, a leap towards high performance buildings",
-        "edition": "Print",
-        "url": null
+        "edition": "Print"
       },
       {
         "publication": "Construction World",
         "headline": "Deploying 3D Printing",
-        "edition": "Print",
-        "url": null
+        "edition": "Print"
       },
       {
         "publication": "BW Businessworld",
@@ -3171,8 +3165,7 @@ export const coverageIndex: CoverageMonth[] = [
       {
         "publication": "Construction Times",
         "headline": "Our focus is on merging design creativity with technological innovation and customer focus",
-        "edition": "Print",
-        "url": null
+        "edition": "Print"
       }
     ]
   }
