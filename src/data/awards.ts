@@ -97,4 +97,8 @@ export const awardsTimeline = [
       "Most Innovative Construction Award 2019",
     ],
   },
+  {
+    year: "2026",
+    entries: ["GCC Leadership Conclave — Future of Workspaces Partner 2026"],
+  },
 ] as const;
