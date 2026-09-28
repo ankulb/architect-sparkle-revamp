@@ -121,7 +121,13 @@ function ProjectPage() {
         <PageHero
           eyebrow={meta.category}
           title={meta.title}
-          lead={detail?.description[0] ?? "A Team One Architects project."}
+          lead={
+            detail
+              ? [detail.client, detail.location, detail.year]
+                  .filter((v) => Boolean(v))
+                  .join(" · ")
+              : "A Team One Architects project."
+          }
           image={meta.image}
         />
 
