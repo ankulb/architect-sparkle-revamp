@@ -10,12 +10,11 @@ function ScrollRow({ children }: { children: React.ReactNode }) {
   const ref = useRef<HTMLDivElement>(null);
   const reduce = useReducedMotion();
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
-  const x = useTransform(scrollYProgress, [0, 0.35, 0.7, 1], [-40, 0, 0, -40]);
   const opacity = useTransform(scrollYProgress, [0, 0.25, 0.75, 1], [1, 1, 1, 0]);
 
   return (
     <div ref={ref}>
-      <motion.div style={reduce ? undefined : { x, opacity }}>{children}</motion.div>
+      <motion.div style={reduce ? undefined : { opacity }}>{children}</motion.div>
     </div>
   );
 }
