@@ -29,3 +29,5 @@
 - [x] Place Bharat first on the Board of Directors page
 - [x] Use an actual award photo and open Awards, News, and CSR directly from homepage tiles
 - [x] Correct homepage Lincoln International, BKC Mumbai tile and destination
+- [x] Add Columbia Ship Management project using people-free supplied photographs
+- [x] Replace the homepage Lincoln tile with Columbia and verify its link on desktop and mobile

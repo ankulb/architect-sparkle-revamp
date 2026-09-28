@@ -28,9 +28,10 @@ export const Route = createFileRoute("/portfolio/$slug")({
         { property: "og:title", content: title },
         { property: "og:description", content: description },
         { property: "og:url", content: url },
-        ...(image ? [{ property: "og:image", content: image }] : []),
+        { property: "og:type", content: "article" },
+        ...(image.startsWith("https://") ? [{ property: "og:image", content: image }] : []),
         { name: "twitter:card", content: "summary_large_image" },
-        ...(image ? [{ name: "twitter:image", content: image }] : []),
+        ...(image.startsWith("https://") ? [{ name: "twitter:image", content: image }] : []),
       ],
       links: [{ rel: "canonical", href: url }],
     };

@@ -38,6 +38,7 @@ import {
   fujitsuPuneGallery,
   brosePuneGallery,
   congoOfficeGallery,
+  columbiaShipManagementGallery,
 } from "@/data/projectAssets";
 
 // Portfolio content sourced from teamonearchitects.com/portfolio.
@@ -78,6 +79,7 @@ export const projects: Project[] = [
   { slug: "federal-bank", title: "Federal Bank", category: INTERIORS, image: federalBankGallery[0] },
   { slug: "icici", title: "ICICI Securities", category: INTERIORS, location: "Mumbai", image: iciciSecuritiesGallery[0] },
   { slug: "lincoln-international-bkc-mumbai", title: "Lincoln International, BKC Mumbai", category: INTERIORS, location: "Mumbai", image: `${UP}/2025/08/H2A6507.jpg` },
+  { slug: "columbia-ship-management", title: "Columbia Ship Management", category: INTERIORS, location: "Navi Mumbai", image: columbiaShipManagementGallery[0] },
   { slug: "volkswagen", title: "Volkswagen", category: INTERIORS, image: `${UP}/2025/08/040-1024x683.jpg` },
   { slug: "titan", title: "TITAN", category: INTERIORS, image: `${UP}/2026/03/titan-1-1024x690.jpg` },
   { slug: "ergo-technologies", title: "ERGO Technologies", category: INTERIORS, location: "Powai, Mumbai", image: ergoTechnologiesGallery[0] },
@@ -119,6 +121,23 @@ export const projects: Project[] = [
 ];
 
 export const projectDetails: Record<string, ProjectDetail> = {
+  "columbia-ship-management": {
+    slug: "columbia-ship-management",
+    title: "Columbia Ship Management",
+    category: INTERIORS,
+    sector: "Shipping",
+    client: "Columbia Group",
+    location: "Navi Mumbai",
+    area: "20,000 sq. ft.",
+    service: "Corporate Interiors",
+    image: columbiaShipManagementGallery[0],
+    description: [
+      "Columbia Group’s first Global Capability Centre in India brings its maritime operations to a 20,000 sq. ft. workplace in Navi Mumbai, designed to accommodate 220 people.",
+      "A restrained palette of warm timber, pale stone and crisp architectural lighting gives the reception and meeting spaces a composed character. Glass-fronted rooms maintain visual connection across the floor, while shared tables and lounge settings offer different ways to gather.",
+      "Across the work areas and social spaces, planting, varied ceiling treatments and carefully framed seating create a workplace that feels both focused and welcoming.",
+    ],
+    gallery: columbiaShipManagementGallery,
+  },
   apicore: {
     slug: "apicore",
     title: "Apicore",

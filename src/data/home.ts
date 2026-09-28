@@ -6,6 +6,7 @@ import collaborationImage from "@/assets/dynamic/global-collaboration.jpg.asset.
 import csrImage from "@/assets/dynamic/csr.jpg.asset.json";
 import pressImage from "@/assets/dynamic/press.jpg.asset.json";
 import congoHomeImage from "@/assets/projects/congo-office/01.jpg.asset.json";
+import columbiaHomeImage from "@/assets/projects/columbia-ship-management/dsc_7666.jpg.asset.json";
 import researchImage from "@/assets/dynamic/research.jpg.asset.json";
 import { awardsHero } from "@/data/awards";
 
@@ -258,7 +259,7 @@ export const responsibilities = {
 
 export const projects = [
   { title: "Ergo", category: "Corporate Interiors", image: `${UP}/2025/08/X3A9650-HDR-Edit.jpg`, href: "https://teamonearchitects.com/portfolio-item/ergo-technologies/" },
-  { title: "Lincoln International, BKC Mumbai", category: "Corporate Interiors", image: `${UP}/2025/08/H2A6507.jpg`, href: "https://teamonearchitects.com/portfolio-item/lincoln-international-bkc-mumbai/" },
+  { title: "Columbia Ship Management", category: "Corporate Interiors", image: columbiaHomeImage.url, href: "https://teamonearchitects.com/portfolio-item/columbia-ship-management/" },
   { title: "JIO School", category: "Commercial & Institutional", image: `${UP}/2026/03/786928477867589-copy-650x650.jpg`, href: "https://teamonearchitects.com/portfolio-item/jio-school/" },
   { title: "Kinshasa Business Centre", category: "Commercial & Institutional", image: congoHomeImage.url, href: "https://teamonearchitects.com/portfolio-item/commercial-office-building/" },
   { title: "Volkswagen", category: "Corporate Interiors", image: `${UP}/2025/08/040-1024x683.jpg`, href: "https://teamonearchitects.com/portfolio-item/volkswagen/" },

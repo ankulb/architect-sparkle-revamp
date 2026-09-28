@@ -31,6 +31,27 @@ import iciciSecurities3 from "@/assets/projects/icici-securities/image8.jpg.asse
 import iciciSecurities4 from "@/assets/projects/icici-securities/image9.jpg.asset.json";
 import iciciSecurities5 from "@/assets/projects/icici-securities/x3a0651.jpg.asset.json";
 import iciciSecurities6 from "@/assets/projects/icici-securities/x3a0679.jpg.asset.json";
+import columbia01 from "@/assets/projects/columbia-ship-management/dsc_7666.jpg.asset.json";
+import columbia02 from "@/assets/projects/columbia-ship-management/dsc_7654.jpg.asset.json";
+import columbia03 from "@/assets/projects/columbia-ship-management/dsc_7718.jpg.asset.json";
+import columbia04 from "@/assets/projects/columbia-ship-management/dsc_7722.jpg.asset.json";
+import columbia05 from "@/assets/projects/columbia-ship-management/dsc_7750.jpg.asset.json";
+import columbia06 from "@/assets/projects/columbia-ship-management/dsc_7761.jpg.asset.json";
+import columbia07 from "@/assets/projects/columbia-ship-management/dsc_7813.jpg.asset.json";
+import columbia08 from "@/assets/projects/columbia-ship-management/dsc_7864.jpg.asset.json";
+import columbia09 from "@/assets/projects/columbia-ship-management/dsc_7896.jpg.asset.json";
+import columbia10 from "@/assets/projects/columbia-ship-management/dsc_7922.jpg.asset.json";
+import columbia11 from "@/assets/projects/columbia-ship-management/ykp_6878.jpg.asset.json";
+import columbia12 from "@/assets/projects/columbia-ship-management/ykp_6949.jpg.asset.json";
+import columbia13 from "@/assets/projects/columbia-ship-management/ykp_6991.jpg.asset.json";
+import columbia14 from "@/assets/projects/columbia-ship-management/ykp_6997.jpg.asset.json";
+import columbia15 from "@/assets/projects/columbia-ship-management/ykp_7004.jpg.asset.json";
+
+export const columbiaShipManagementGallery = [
+  columbia01.url, columbia02.url, columbia03.url, columbia04.url, columbia05.url,
+  columbia06.url, columbia07.url, columbia08.url, columbia09.url, columbia10.url,
+  columbia11.url, columbia12.url, columbia13.url, columbia14.url, columbia15.url,
+];
 
 export const ergoTechnologiesGallery = [
   ergoTechnologies1.url,
