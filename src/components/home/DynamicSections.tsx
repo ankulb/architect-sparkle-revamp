@@ -267,7 +267,7 @@ export function DynamicSections() {
 
       <div className="mx-auto max-w-[1600px] px-6 pb-24 pt-14 md:px-10 md:pb-36 md:pt-20">
         <ScrollRow direction="left">
-          <div className="grid grid-cols-2 gap-x-4 gap-y-10 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 lg:gap-x-5">
+          <div className="grid grid-cols-2 gap-x-4 gap-y-10 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-6 lg:gap-x-5">
             {dynamicSections.map((item, i) => (
               <SpatialCard
                 key={item.caption}
