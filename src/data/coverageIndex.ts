@@ -5,6 +5,7 @@ export type CoverageItem = {
   headline: string;
   edition: string;
   url?: string;
+  tier?: "major";
 };
 
 export type CoverageMonth = {
@@ -20,19 +21,22 @@ export const coverageIndex: CoverageMonth[] = [
         "publication": "Realty+",
         "headline": "Columbia Group’s First GCC in India Creates a Future-Ready Workplace for Global Operations",
         "edition": "Online",
-        "url": "https://www.rprealtyplus.com/news-views/columbia-groups-first-gcc-in-india-creates-a-future-ready-workplace-for-global-operations-126485.html"
+        "url": "https://www.rprealtyplus.com/news-views/columbia-groups-first-gcc-in-india-creates-a-future-ready-workplace-for-global-operations-126485.html",
+        "tier": "major"
       },
       {
         "publication": "Construction Week",
         "headline": "Team One Architects delivers Columbia GCC",
         "edition": "Online",
-        "url": "https://www.constructionweekonline.in/business/team-one-architects-delivers-columbia-gcc"
+        "url": "https://www.constructionweekonline.in/business/team-one-architects-delivers-columbia-gcc",
+        "tier": "major"
       },
       {
         "publication": "CXO Today",
         "headline": "Team One Architects Delivers Columbia Group’s First Global Capability Centre in India",
         "edition": "Online",
-        "url": "https://cxotoday.com/media-coverage/team-one-architects-delivers-columbia-groups-first-global-capability-centre-in-india/"
+        "url": "https://cxotoday.com/media-coverage/team-one-architects-delivers-columbia-groups-first-global-capability-centre-in-india/",
+        "tier": "major"
       },
       {
         "publication": "Business News This Week",
@@ -68,13 +72,15 @@ export const coverageIndex: CoverageMonth[] = [
         "publication": "Construction Times",
         "headline": "Team One Architects Delivers Columbia Group’s First Global Capability Centre in India",
         "edition": "Online",
-        "url": "https://constructiontimes.co.in/Team-One-Architects-delivers-Columbia-Group%E2%80%99s-first-Global-Capability-Centre-in-India"
+        "url": "https://constructiontimes.co.in/Team-One-Architects-delivers-Columbia-Group%E2%80%99s-first-Global-Capability-Centre-in-India",
+        "tier": "major"
       },
       {
         "publication": "MGS Architecture",
         "headline": "Team One Architects Delivers Columbia Group’s First Global Capability Centre in India",
         "edition": "Online",
-        "url": "https://www.mgsarchitecture.in/updates/news/team-one-architects-delivers-columbia-groups-first-global-capability-centre-in-india.html"
+        "url": "https://www.mgsarchitecture.in/updates/news/team-one-architects-delivers-columbia-groups-first-global-capability-centre-in-india.html",
+        "tier": "major"
       },
       {
         "publication": "India Shipping News",
@@ -134,19 +140,22 @@ export const coverageIndex: CoverageMonth[] = [
         "publication": "BW People",
         "headline": "Columbia Group Opens First India GCC In Navi Mumbai",
         "edition": "Online",
-        "url": "https://www.bwpeople.in/article/columbia-group-opens-first-india-gcc-in-navi-mumbai-620363"
+        "url": "https://www.bwpeople.in/article/columbia-group-opens-first-india-gcc-in-navi-mumbai-620363",
+        "tier": "major"
       },
       {
         "publication": "Architect and Interiors India",
         "headline": "Experience how design and technology come together to shape Columbia Group’s first GCC in India",
         "edition": "Online",
-        "url": "https://www.architectandinteriorsindia.com/news/experience-how-design-and-technology-come-together-to-shape-columbia-groups-first-gcc-in-india"
+        "url": "https://www.architectandinteriorsindia.com/news/experience-how-design-and-technology-come-together-to-shape-columbia-groups-first-gcc-in-india",
+        "tier": "major"
       },
       {
         "publication": "Commercial Design",
         "headline": "Team One Architects delivers Columbia Group’s first GCC in Navi Mumbai",
         "edition": "Online",
-        "url": "https://www.commercialdesignindia.com/projects/team-one-architects-delivers-columbia-groups-first-gcc-in-navi-mumbai"
+        "url": "https://www.commercialdesignindia.com/projects/team-one-architects-delivers-columbia-groups-first-gcc-in-navi-mumbai",
+        "tier": "major"
       },
       {
         "publication": "Martech Ai",
@@ -158,7 +167,8 @@ export const coverageIndex: CoverageMonth[] = [
         "publication": "Realty+",
         "headline": "Columbia Group’s First GCC in India Creates a Future-Ready Workplace for Global Operation",
         "edition": "Facebook",
-        "url": "https://www.facebook.com/rprealtyplus/posts/realty-spotlight-18th-august-2026-how-climate-culture-and-context-shape-the-way-/1512331660938622/"
+        "url": "https://www.facebook.com/rprealtyplus/posts/realty-spotlight-18th-august-2026-how-climate-culture-and-context-shape-the-way-/1512331660938622/",
+        "tier": "major"
       },
       {
         "publication": "Machine Maker",
@@ -182,19 +192,22 @@ export const coverageIndex: CoverageMonth[] = [
         "publication": "BW People",
         "headline": "Columbia Group Opens First India GCC In Navi Mumbai The 20,000 sq ft centre will accommodate 220 employees and support the maritime group’s global operations from India Click he...",
         "edition": "LinkedIn",
-        "url": "https://www.linkedin.com/posts/bw-people-in_columbia-group-opens-first-india-gcc-in-navi-activity-7497615405591707648-Yrpj?utm_source=share&utm_medium=member_desktop&rcm=ACoAABsvjtABSB9SGqMMKktphzzWvDiW-bgJwCU"
+        "url": "https://www.linkedin.com/posts/bw-people-in_columbia-group-opens-first-india-gcc-in-navi-activity-7497615405591707648-Yrpj?utm_source=share&utm_medium=member_desktop&rcm=ACoAABsvjtABSB9SGqMMKktphzzWvDiW-bgJwCU",
+        "tier": "major"
       },
       {
         "publication": "Analytics India Magazine",
         "headline": "Columbia Shipmanagement Group has opened its first Global Capability Centre in India, a 20,000 sq ft facility at Mindspace Business Park in Navi Mumbai that can accommodate 220 ...",
         "edition": "LinkedIn",
-        "url": "https://www.linkedin.com/posts/gcc-indiagcc-columbiagroup-share-7498609634597814272-mRCQ/"
+        "url": "https://www.linkedin.com/posts/gcc-indiagcc-columbiagroup-share-7498609634597814272-mRCQ/",
+        "tier": "major"
       },
       {
         "publication": "Analytics India Magazine",
         "headline": "Columbia Group has opened its first Global Capability Centre in India, a 20,000 sq ft facility at Mindspace Business Park in Navi Mumbai that can accommodate 220 employees.",
         "edition": "Instagram",
-        "url": "https://www.instagram.com/p/DciBpsXHNw8/"
+        "url": "https://www.instagram.com/p/DciBpsXHNw8/",
+        "tier": "major"
       },
       {
         "publication": "Martech Ai",
@@ -210,13 +223,15 @@ export const coverageIndex: CoverageMonth[] = [
       {
         "publication": "Interior & Decor Magaine",
         "headline": "The Evolution of Space: Architecture & Interiors in a New Era",
-        "edition": "Print"
+        "edition": "Print",
+        "tier": "major"
       },
       {
         "publication": "The Times of India",
         "headline": "How rising tempeature are changing commercial architecture",
         "edition": "Online",
-        "url": "https://timesofindia.indiatimes.com/life-style/home-garden/the-future-of-indian-homes-isnt-glass-and-steel-its-climate-intelligence/articleshow/131986061.cms"
+        "url": "https://timesofindia.indiatimes.com/life-style/home-garden/the-future-of-indian-homes-isnt-glass-and-steel-its-climate-intelligence/articleshow/131986061.cms",
+        "tier": "major"
       },
       {
         "publication": "Design Sence Magazine",
@@ -228,31 +243,36 @@ export const coverageIndex: CoverageMonth[] = [
         "publication": "ET Edge Insight",
         "headline": "The more intelligent AI becomes, the more human workplaces must be",
         "edition": "Online",
-        "url": "https://etedge-insights.com/featured-insights/people-and-organizations/the-more-intelligent-ai-becomes-the-more-human-workplaces-must-be/"
+        "url": "https://etedge-insights.com/featured-insights/people-and-organizations/the-more-intelligent-ai-becomes-the-more-human-workplaces-must-be/",
+        "tier": "major"
       },
       {
         "publication": "The Economic Times",
         "headline": "Scaling an SME? Your workspace may be your next big decision",
         "edition": "Online",
-        "url": "https://economictimes.indiatimes.com/small-biz/sme-sector/scaling-an-sme-your-workspace-may-be-your-next-big-decision/articleshow/132357031.cms?from=mdr"
+        "url": "https://economictimes.indiatimes.com/small-biz/sme-sector/scaling-an-sme-your-workspace-may-be-your-next-big-decision/articleshow/132357031.cms?from=mdr",
+        "tier": "major"
       },
       {
         "publication": "Hindustan Times",
         "headline": "Goodbye, cubicles! 6 Gen Z office design trends transforming workplaces with dopamine decor, warm lighting and open desk",
         "edition": "Online",
-        "url": "https://www.hindustantimes.com/lifestyle/art-culture/goodbye-cubicles6-gen-z-office-design-trends-transforming-workplaces-with-dopamine-decor-warm-lighting-and-open-desk-101784196317327.html"
+        "url": "https://www.hindustantimes.com/lifestyle/art-culture/goodbye-cubicles6-gen-z-office-design-trends-transforming-workplaces-with-dopamine-decor-warm-lighting-and-open-desk-101784196317327.html",
+        "tier": "major"
       },
       {
         "publication": "Realty+",
         "headline": "How AI is Reshaping Architecture: From Concept to Construction",
         "edition": "Online",
-        "url": "https://www.rprealtyplus.com/news-views/how-ai-is-reshaping-architecture-from-concept-to-construction-126189.html"
+        "url": "https://www.rprealtyplus.com/news-views/how-ai-is-reshaping-architecture-from-concept-to-construction-126189.html",
+        "tier": "major"
       },
       {
         "publication": "Interior & Decor",
         "headline": "Reimagining Commercial Interiors: Designing Offices for Experience, Not Just Efficiency",
         "edition": "Online",
-        "url": "https://interiorsndecor.com/reimagining-commercial-interiors-designing-offices-for-experience-not-just-efficiency%EF%BF%BC/"
+        "url": "https://interiorsndecor.com/reimagining-commercial-interiors-designing-offices-for-experience-not-just-efficiency%EF%BF%BC/",
+        "tier": "major"
       }
     ]
   },
@@ -263,7 +283,8 @@ export const coverageIndex: CoverageMonth[] = [
         "publication": "Manufacturing Today",
         "headline": "Why data centres are India’s defining infrastructure bet",
         "edition": "Online",
-        "url": "https://www.manufacturingtodayindia.com/why-data-centres-are-indias"
+        "url": "https://www.manufacturingtodayindia.com/why-data-centres-are-indias",
+        "tier": "major"
       },
       {
         "publication": "Responsible Us",
@@ -347,7 +368,8 @@ export const coverageIndex: CoverageMonth[] = [
         "publication": "India Today Headline",
         "headline": "How Indian Brands Are Embedding Sustainability at the Core",
         "edition": "Online",
-        "url": "https://newsindiaheadline.in/how-indian-brands-are-embedding-sustainability-at-the-core/"
+        "url": "https://newsindiaheadline.in/how-indian-brands-are-embedding-sustainability-at-the-core/",
+        "tier": "major"
       },
       {
         "publication": "daily Street Journal",
@@ -473,7 +495,8 @@ export const coverageIndex: CoverageMonth[] = [
         "publication": "The Hindustan Express",
         "headline": "How Indian Brands Are Embedding Sustainability at the Core",
         "edition": "Online",
-        "url": "https://thehindustanexpress.co.in/how-indian-brands-are-embedding-sustainability-at-the-core/"
+        "url": "https://thehindustanexpress.co.in/how-indian-brands-are-embedding-sustainability-at-the-core/",
+        "tier": "major"
       },
       {
         "publication": "Mizoram News Pulse",
@@ -527,7 +550,8 @@ export const coverageIndex: CoverageMonth[] = [
         "publication": "Times Of India Daily",
         "headline": "How Indian Brands Are Embedding Sustainability at the Core",
         "edition": "Online",
-        "url": "https://timesofindiadaily.in/how-indian-brands-are-embedding-sustainability-at-the-core/"
+        "url": "https://timesofindiadaily.in/how-indian-brands-are-embedding-sustainability-at-the-core/",
+        "tier": "major"
       },
       {
         "publication": "Indian News Daily Update",
@@ -1511,19 +1535,22 @@ export const coverageIndex: CoverageMonth[] = [
         "publication": "Construction World",
         "headline": "Generac Opens First India GCC in Pune",
         "edition": "Online",
-        "url": "https://www.constructionworld.in/latest-construction-news/real-estate-news/generac-opens-first-india-gcc-in-pune/92945"
+        "url": "https://www.constructionworld.in/latest-construction-news/real-estate-news/generac-opens-first-india-gcc-in-pune/92945",
+        "tier": "major"
       },
       {
         "publication": "Construction Week",
         "headline": "Generac opens capability centre in Pune",
         "edition": "Online",
-        "url": "https://www.constructionweekonline.in/news/generac-opens-capability-centre-in-pune"
+        "url": "https://www.constructionweekonline.in/news/generac-opens-capability-centre-in-pune",
+        "tier": "major"
       },
       {
         "publication": "Construction Times",
         "headline": "Generac expands India presence with a purpose-built GCC in Pune",
         "edition": "Online",
-        "url": "https://constructiontimes.co.in/Generac-expands-India-presence-with-a-purpose-built-GCC-in-Pune"
+        "url": "https://constructiontimes.co.in/Generac-expands-India-presence-with-a-purpose-built-GCC-in-Pune",
+        "tier": "major"
       },
       {
         "publication": "Machine Maker",
@@ -1577,30 +1604,35 @@ export const coverageIndex: CoverageMonth[] = [
         "publication": "CXO Digital Pulse",
         "headline": "Generac Expands India Presence with a purpose-Built GCC in Pune",
         "edition": "Online",
-        "url": "https://www.cxodigitalpulse.com/generac-expands-india-presence-with-a-purpose-built-gcc-in-pune/"
+        "url": "https://www.cxodigitalpulse.com/generac-expands-india-presence-with-a-purpose-built-gcc-in-pune/",
+        "tier": "major"
       },
       {
         "publication": "Realty+",
         "headline": "Generac Expands India Presence with Purpose-Built GCC in Pune",
         "edition": "Online",
-        "url": "https://www.rprealtyplus.com/news-views/generac-expands-india-presence-with-purpose-built-gcc-in-pune-125686.html"
+        "url": "https://www.rprealtyplus.com/news-views/generac-expands-india-presence-with-purpose-built-gcc-in-pune-125686.html",
+        "tier": "major"
       },
       {
         "publication": "Commercial Design",
         "headline": "Generac opens its first India GCC in Pune",
         "edition": "Online",
-        "url": "https://www.commercialdesignindia.com/insights/generac-opens-its-first-india-gcc-in-pune"
+        "url": "https://www.commercialdesignindia.com/insights/generac-opens-its-first-india-gcc-in-pune",
+        "tier": "major"
       },
       {
         "publication": "Times Property",
         "headline": "Abodes That work",
-        "edition": "Print"
+        "edition": "Print",
+        "tier": "major"
       },
       {
         "publication": "Realty+",
         "headline": "Regulated Yet Risky: The Homebuyer's Dilemma",
         "edition": "Online",
-        "url": "https://www.rprealtyplus.com/news-views/regulated-yet-risky-the-homebuyers-dilemma-125816.html?__cf_chl_f_tk=BWIE3xixSTj6DIX2O8RqmSClMpLsiexbRZ11bcyR5Dc-1782876833-1.0.1.1-CAqjubuTtG.pzSCDGf8FwAmpPj9TWZDY8qhWY_TK_SQ"
+        "url": "https://www.rprealtyplus.com/news-views/regulated-yet-risky-the-homebuyers-dilemma-125816.html?__cf_chl_f_tk=BWIE3xixSTj6DIX2O8RqmSClMpLsiexbRZ11bcyR5Dc-1782876833-1.0.1.1-CAqjubuTtG.pzSCDGf8FwAmpPj9TWZDY8qhWY_TK_SQ",
+        "tier": "major"
       }
     ]
   },
@@ -1651,7 +1683,8 @@ export const coverageIndex: CoverageMonth[] = [
       {
         "publication": "Ace Update",
         "headline": "Rethinking the tower through the lens of climate intelligence",
-        "edition": "Print"
+        "edition": "Print",
+        "tier": "major"
       },
       {
         "publication": "Education Matters",
@@ -1711,7 +1744,8 @@ export const coverageIndex: CoverageMonth[] = [
         "publication": "Skill Outlook",
         "headline": "TOA Marks 26 Years of Foundation; Unveils Master Plan University Campus Designed to Train Medical (NEET) Aspirant Students",
         "edition": "Online",
-        "url": "https://skilloutlook.com/education/toa-marks-26-years-of-foundation-unveils-master-plan-university-campus-designed-to-train-medical-neet-aspirant-students"
+        "url": "https://skilloutlook.com/education/toa-marks-26-years-of-foundation-unveils-master-plan-university-campus-designed-to-train-medical-neet-aspirant-students",
+        "tier": "major"
       },
       {
         "publication": "Indian Education Dairy",
@@ -1723,7 +1757,8 @@ export const coverageIndex: CoverageMonth[] = [
         "publication": "ACE Update",
         "headline": "TOA launches a dedicated campus on its 26th Foundation Day",
         "edition": "Online",
-        "url": "https://aceupdate.com/toa-launches-a-dedicated-campus-on-its-26th-foundation-day/"
+        "url": "https://aceupdate.com/toa-launches-a-dedicated-campus-on-its-26th-foundation-day/",
+        "tier": "major"
       },
       {
         "publication": "Society Interior Design",
@@ -1741,13 +1776,15 @@ export const coverageIndex: CoverageMonth[] = [
         "publication": "Construction Week",
         "headline": "TOA unveils medical campus master plan in Maharashtra",
         "edition": "Online",
-        "url": "https://www.constructionweekonline.in/news/toa-unveils-medical-campus-master-plan-in-maharashtra"
+        "url": "https://www.constructionweekonline.in/news/toa-unveils-medical-campus-master-plan-in-maharashtra",
+        "tier": "major"
       },
       {
         "publication": "Commercial Design",
         "headline": "Gen Z office design is changing what workspaces need to be",
         "edition": "Online",
-        "url": "https://www.commercialdesignindia.com/insights/gen-z-office-design-is-changing-what-workspaces-need-to-be"
+        "url": "https://www.commercialdesignindia.com/insights/gen-z-office-design-is-changing-what-workspaces-need-to-be",
+        "tier": "major"
       }
     ]
   },
@@ -1757,7 +1794,8 @@ export const coverageIndex: CoverageMonth[] = [
       {
         "publication": "MGS Architecture",
         "headline": "How Architecture design shapes culture performance and user experience",
-        "edition": "Print"
+        "edition": "Print",
+        "tier": "major"
       },
       {
         "publication": "MSG Architecture",
@@ -1769,19 +1807,22 @@ export const coverageIndex: CoverageMonth[] = [
         "publication": "Realty+",
         "headline": "What Raigad’s Land Market Reveals About Mumbai’s Expansion",
         "edition": "Online",
-        "url": "https://www.rprealtyplus.com/news-views/what-raigads-land-market-reveals-about-mumbais-expansion-124475.html"
+        "url": "https://www.rprealtyplus.com/news-views/what-raigads-land-market-reveals-about-mumbais-expansion-124475.html",
+        "tier": "major"
       },
       {
         "publication": "Realty+",
         "headline": "Architecture Today is as Much Business as it is Design",
         "edition": "Online",
-        "url": "https://www.rprealtyplus.com/news-views/architecture-today-is-as-much-business-as-it-is-design-124496.html"
+        "url": "https://www.rprealtyplus.com/news-views/architecture-today-is-as-much-business-as-it-is-design-124496.html",
+        "tier": "major"
       },
       {
         "publication": "Realty+",
         "headline": "How Offices are Changing to Meet the Demands of Hybrid Work",
         "edition": "Online",
-        "url": "https://www.rprealtyplus.com/news-views/how-offices-are-changing-to-meet-the-demands-of-hybrid-work-124549.html"
+        "url": "https://www.rprealtyplus.com/news-views/how-offices-are-changing-to-meet-the-demands-of-hybrid-work-124549.html",
+        "tier": "major"
       }
     ]
   },
@@ -1792,13 +1833,15 @@ export const coverageIndex: CoverageMonth[] = [
         "publication": "Forbes India",
         "headline": "Reinforcing Infrastructure-led Urban growth",
         "edition": "Online",
-        "url": "https://www.forbesindia.com/article/budget-2026/budget-2026-reactions-live-updates-money-markets-and-the-industry-mood-liveblog/2990917/1"
+        "url": "https://www.forbesindia.com/article/budget-2026/budget-2026-reactions-live-updates-money-markets-and-the-industry-mood-liveblog/2990917/1",
+        "tier": "major"
       },
       {
         "publication": "Times Now",
         "headline": "Union Budget 2026 Highlights: India’s Inflation Has Come Down and Remains Stable, Says Finance Minister After Budget",
         "edition": "Online",
-        "url": "https://www.timesnownews.com/business-economy/budget-2026-live-updates-india-union-budget-nirmala-sitharaman-speech-key-announcements-date-and-time-1st-february-2026-latest-news-liveblog-153538738"
+        "url": "https://www.timesnownews.com/business-economy/budget-2026-live-updates-india-union-budget-nirmala-sitharaman-speech-key-announcements-date-and-time-1st-february-2026-latest-news-liveblog-153538738",
+        "tier": "major"
       },
       {
         "publication": "India.com",
@@ -1820,36 +1863,42 @@ export const coverageIndex: CoverageMonth[] = [
       {
         "publication": "Ace Update",
         "headline": "Impact – resistant fenestration, a leap towards high performance buildings",
-        "edition": "Print"
+        "edition": "Print",
+        "tier": "major"
       },
       {
         "publication": "Construction World",
         "headline": "Deploying 3D Printing",
-        "edition": "Print"
+        "edition": "Print",
+        "tier": "major"
       },
       {
         "publication": "BW Businessworld",
         "headline": "Budget FY27: GCCs Seek Concessional Tax Regime, Clarity On Secondments & Talent Sops",
         "edition": "Online",
-        "url": "https://www.businessworld.in/article/budget-fy27-gccs-seek-concessional-tax-regime-clarity-on-secondments-talent-sops-587401"
+        "url": "https://www.businessworld.in/article/budget-fy27-gccs-seek-concessional-tax-regime-clarity-on-secondments-talent-sops-587401",
+        "tier": "major"
       },
       {
         "publication": "CNBCTV18",
         "headline": "Urban Infrastructure: Building Future-Ready Cities",
         "edition": "Online",
-        "url": "https://www.cnbctv18.com/budget/union-budget-2026-industry-flags-infra-push-ai-sustainability-and-startup-support-as-key-priorities-ws-el-19822745.htm/amp"
+        "url": "https://www.cnbctv18.com/budget/union-budget-2026-industry-flags-infra-push-ai-sustainability-and-startup-support-as-key-priorities-ws-el-19822745.htm/amp",
+        "tier": "major"
       },
       {
         "publication": "Mint",
         "headline": "Budget 2026 Expectations Highlights: Policy and govt reforms in high demand ahead of Fin Min Sitharaman's speech",
         "edition": "Online",
-        "url": "https://www.livemint.com/budget/expectations/budget-expectations-live-updates-income-tax-manufacturing-industry-growth-policy-budget-2026-1-february-sitharaman-modi-11768791816174.html"
+        "url": "https://www.livemint.com/budget/expectations/budget-expectations-live-updates-income-tax-manufacturing-industry-growth-policy-budget-2026-1-february-sitharaman-modi-11768791816174.html",
+        "tier": "major"
       },
       {
         "publication": "The Hindu Business Line",
         "headline": "Stock Market Highlights 22 January 2026: Markets break 3-day losing streak as global optimism drives Sensex, Nifty higher",
         "edition": "Online",
-        "url": "https://www.thehindubusinessline.com/markets/share-market-nifty-sensex-live-updates-22-january-2026/article70533229.ece"
+        "url": "https://www.thehindubusinessline.com/markets/share-market-nifty-sensex-live-updates-22-january-2026/article70533229.ece",
+        "tier": "major"
       },
       {
         "publication": "Republic Post",
@@ -1861,19 +1910,22 @@ export const coverageIndex: CoverageMonth[] = [
         "publication": "Times Now",
         "headline": "Union Budget Expectations 2026 Live Updates: India-EU FTA Will Push Manufacturing Sector's Growth, Says President Droupadi Murmu",
         "edition": "Online",
-        "url": "https://www.timesnownews.com/business-economy/union-budget-expectations-2026-live-updates-union-budget-income-tax-changes-sector-wise-january-2026-growth-gdp-nirmala-sitharaman-pm-modi-latest-news-liveblog-153492824"
+        "url": "https://www.timesnownews.com/business-economy/union-budget-expectations-2026-live-updates-union-budget-income-tax-changes-sector-wise-january-2026-growth-gdp-nirmala-sitharaman-pm-modi-latest-news-liveblog-153492824",
+        "tier": "major"
       },
       {
         "publication": "Zee Business",
         "headline": "Union Budget 2026 Expectations Highlights: Startups Seek Simpler Compliance & Better Credit Access",
         "edition": "Online",
-        "url": "https://zeenews.india.com/economy/live-updates/union-budget-2026-expectations-live-updates-promote-transition-from-traditional-construction-to-modern-dry-technologies-3009796.html"
+        "url": "https://zeenews.india.com/economy/live-updates/union-budget-2026-expectations-live-updates-promote-transition-from-traditional-construction-to-modern-dry-technologies-3009796.html",
+        "tier": "major"
       },
       {
         "publication": "The Economic Times",
         "headline": "Budget 2026: The GCC capital of the world needs more brains to bank its $100-billion dream",
         "edition": "Online",
-        "url": "https://economictimes.indiatimes.com/news/economy/policy/budget-2026-gcc-expectations-sitharaman-india-global-capacity-centers-announcement-tech-job-skill/articleshow/127533183.cms?utm_source=contentofinterest&utm_medium=text&utm_campaign=cppst"
+        "url": "https://economictimes.indiatimes.com/news/economy/policy/budget-2026-gcc-expectations-sitharaman-india-global-capacity-centers-announcement-tech-job-skill/articleshow/127533183.cms?utm_source=contentofinterest&utm_medium=text&utm_campaign=cppst",
+        "tier": "major"
       },
       {
         "publication": "Karnataka News Network",
@@ -2083,7 +2135,8 @@ export const coverageIndex: CoverageMonth[] = [
         "publication": "The Hindustan Express",
         "headline": "Budget 2026: Industry leaders call for execution certainty, policy stability, and targeted capital to sustain India’s growth momentum",
         "edition": "Online",
-        "url": "https://thehindustanexpress.co.in/budget-2026-industry-leaders-call-for-execution-certainty-policy-stability-and-targeted-capital-to-sustain-indias-growth-momentum/"
+        "url": "https://thehindustanexpress.co.in/budget-2026-industry-leaders-call-for-execution-certainty-policy-stability-and-targeted-capital-to-sustain-indias-growth-momentum/",
+        "tier": "major"
       },
       {
         "publication": "Mizoram News Voice",
@@ -2113,7 +2166,8 @@ export const coverageIndex: CoverageMonth[] = [
         "publication": "Times Of India Daily",
         "headline": "Budget 2026: Industry leaders call for execution certainty, policy stability, and targeted capital to sustain India’s growth momentum",
         "edition": "Online",
-        "url": "https://timesofindiadaily.in/budget-2026-industry-leaders-call-for-execution-certainty-policy-stability-and-targeted-capital-to-sustain-indias-growth-momentum/"
+        "url": "https://timesofindiadaily.in/budget-2026-industry-leaders-call-for-execution-certainty-policy-stability-and-targeted-capital-to-sustain-indias-growth-momentum/",
+        "tier": "major"
       },
       {
         "publication": "Odisha News Voice",
@@ -2353,7 +2407,8 @@ export const coverageIndex: CoverageMonth[] = [
         "publication": "India Today Headline",
         "headline": "Budget 2026: Industry leaders call for execution certainty, policy stability, and targeted capital to sustain India’s growth momentum",
         "edition": "Online",
-        "url": "https://indiatodayheadlines.co.in/budget-2026-industry-leaders-call-for-execution-certainty-policy-stability-and-targeted-capital-to-sustain-indias-growth-momentum/"
+        "url": "https://indiatodayheadlines.co.in/budget-2026-industry-leaders-call-for-execution-certainty-policy-stability-and-targeted-capital-to-sustain-indias-growth-momentum/",
+        "tier": "major"
       },
       {
         "publication": "Chronicle Today News",
@@ -3091,7 +3146,8 @@ export const coverageIndex: CoverageMonth[] = [
         "publication": "NDTV Profit",
         "headline": "Budget 2026 Expectations Live: Focus On Manufacturing, MSME Push And More",
         "edition": "Online",
-        "url": "https://www.ndtvprofit.com/economy/union-budget-2026-expectations-live-updates-income-tax-changes-news-fm-nirmala-sitharaman-january-30-10911231"
+        "url": "https://www.ndtvprofit.com/economy/union-budget-2026-expectations-live-updates-income-tax-changes-news-fm-nirmala-sitharaman-january-30-10911231",
+        "tier": "major"
       },
       {
         "publication": "India.com",
@@ -3143,19 +3199,22 @@ export const coverageIndex: CoverageMonth[] = [
         "publication": "Magic Bricks",
         "headline": "The Property Show I Teaser I Investing in Real Estate Property Vs",
         "edition": "Electronic",
-        "url": "https://www.youtube.com/watch?v=X5iiR5cFlLY"
+        "url": "https://www.youtube.com/watch?v=X5iiR5cFlLY",
+        "tier": "major"
       },
       {
         "publication": "Magic Bricks",
         "headline": "Investing in Real Estate Property Vs REIT",
         "edition": "Electronic",
-        "url": "https://www.youtube.com/watch?v=79bJ76j9oVU"
+        "url": "https://www.youtube.com/watch?v=79bJ76j9oVU",
+        "tier": "major"
       },
       {
         "publication": "Sugermint",
         "headline": "Designing for Tomorrow: A Conversation with Aditya Yamsanwar of TOA (Team One Architects)",
         "edition": "Online",
-        "url": "https://sugermint.com/aditya-yamsanwar/"
+        "url": "https://sugermint.com/aditya-yamsanwar/",
+        "tier": "major"
       }
     ]
   },
@@ -3165,10 +3224,15 @@ export const coverageIndex: CoverageMonth[] = [
       {
         "publication": "Construction Times",
         "headline": "Our focus is on merging design creativity with technological innovation and customer focus",
-        "edition": "Print"
+        "edition": "Print",
+        "tier": "major"
       }
     ]
   }
 ];
 
 export const coverageCount = coverageIndex.reduce((n, g) => n + g.items.length, 0);
+
+export const majorCoverage: CoverageItem[] = coverageIndex.flatMap((g) =>
+  g.items.filter((i) => i.tier === "major" && i.url),
+);
