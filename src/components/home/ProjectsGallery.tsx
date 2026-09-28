@@ -85,16 +85,7 @@ export function ProjectsGallery() {
         <div className="grid grid-cols-1 gap-4 pt-12 pb-4 sm:grid-cols-2 md:grid-cols-3 md:gap-6 md:pt-16">
           {filtered.map((project, i) => (
             <Reveal key={project.title} delay={i}>
-              {project.title === "Columbia" ? <a
-                href={project.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group relative block overflow-hidden bg-card"
-              >
-                <img src={project.image} alt={project.title} loading="lazy" className="aspect-[4/5] w-full object-cover opacity-70 brightness-75 transition-all duration-700 ease-out group-hover:scale-105 group-hover:opacity-100 group-hover:brightness-100" />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/10 to-transparent" />
-                <div className="absolute inset-x-0 bottom-0 p-6"><span className="text-[0.7rem] font-medium uppercase tracking-[0.18em] text-gold">{project.category}</span><h3 className="font-display mt-2 text-xl font-normal tracking-tight text-foreground">{project.title}</h3></div>
-              </a> : <Link
+              <Link
                 to="/portfolio/$slug"
                 params={{ slug: slugFromHref(project.href) }}
                 className="group relative block overflow-hidden bg-card"
@@ -114,7 +105,7 @@ export function ProjectsGallery() {
                     {project.title}
                   </h3>
                 </div>
-              </Link>}
+              </Link>
             </Reveal>
           ))}
         </div>

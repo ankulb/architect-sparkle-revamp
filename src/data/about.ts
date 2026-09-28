@@ -92,6 +92,20 @@ export const board = {
   },
   directors: [
     {
+      name: "Bharat S. Yamsanwar",
+      role: "Founder & Director",
+      image: `${UP}/2025/08/Bharat-Yamsanwar.jpeg`,
+      linkedin: "https://www.linkedin.com/in/bharat-yamsanwar-6259619a/",
+      summary:
+        "Four decades of practice shaping TOA's design philosophy through timeless design, cultural context and spatial harmony.",
+      bio: [
+        "With over four decades of experience, Ar. Bharat S. Yamsanwar is the Founder and Director of Team One Architects (TOA). His architectural practice has contributed to the firm's design philosophy, shaped by timeless design, cultural context and spatial harmony across large-scale developments.",
+        "His experience spans urban townships, public infrastructure, institutional campuses and master planning, with a focus on creating environments that respond to their context, climate and intended use. His approach brings together functionality, design integrity and a considered understanding of how architecture interacts with its surroundings.",
+        "An alumnus of the Sir J. J. College of Architecture, Bharat has been recognised for his contribution to architecture and urban design, including a Lifetime Achievement Award and recognition as a Distinguished Alumnus. Over the course of his career, he has remained engaged with the evolution of architecture and the role of thoughtful design in shaping enduring environments.",
+      ],
+      facts: ["40+ years of practice", "Sir J. J. College of Architecture alumnus", "Lifetime Achievement Award", "Distinguished Alumnus"],
+    },
+    {
       name: "Parish S. Kapse",
       role: "Co-Founder & Director",
       image: parishPhoto.url,
@@ -118,20 +132,6 @@ export const board = {
         "A postgraduate from the University of Arizona, Aditya is an active member of CoreNet Global and GRI. He has authored 200+ industry articles and regularly contributes to conversations around SEZ policy, workplace strategy, Gen Z and the changing relationship between people, organisations and the spaces they occupy.",
       ],
       facts: ["20+ years of experience", "Postgraduate, University of Arizona", "CoreNet Global & GRI member", "200+ industry articles"],
-    },
-    {
-      name: "Bharat S. Yamsanwar",
-      role: "Founder & Director",
-      image: `${UP}/2025/08/Bharat-Yamsanwar.jpeg`,
-      linkedin: "https://www.linkedin.com/in/bharat-yamsanwar-6259619a/",
-      summary:
-        "Four decades of practice shaping TOA's design philosophy through timeless design, cultural context and spatial harmony.",
-      bio: [
-        "With over four decades of experience, Ar. Bharat S. Yamsanwar is the Founder and Director of Team One Architects (TOA). His architectural practice has contributed to the firm's design philosophy, shaped by timeless design, cultural context and spatial harmony across large-scale developments.",
-        "His experience spans urban townships, public infrastructure, institutional campuses and master planning, with a focus on creating environments that respond to their context, climate and intended use. His approach brings together functionality, design integrity and a considered understanding of how architecture interacts with its surroundings.",
-        "An alumnus of the Sir J. J. College of Architecture, Bharat has been recognised for his contribution to architecture and urban design, including a Lifetime Achievement Award and recognition as a Distinguished Alumnus. Over the course of his career, he has remained engaged with the evolution of architecture and the role of thoughtful design in shaping enduring environments.",
-      ],
-      facts: ["40+ years of practice", "Sir J. J. College of Architecture alumnus", "Lifetime Achievement Award", "Distinguished Alumnus"],
     },
     {
       name: "Jyoti B. Yamsanwar",
