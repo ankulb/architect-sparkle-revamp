@@ -207,14 +207,14 @@ function ImmersiveOverlay({
         >
           {item.title}
         </motion.h2>
-        {(item.body || item.excerpt) && (
+        {item.body && (
           <motion.p
             className="mt-6 max-w-2xl text-base leading-relaxed text-white/80 md:text-lg"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8, duration: 0.7 }}
           >
-            {item.body || item.excerpt}
+            {item.body}
           </motion.p>
         )}
         {item.href && (
