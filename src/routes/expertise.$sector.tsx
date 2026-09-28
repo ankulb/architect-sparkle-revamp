@@ -150,7 +150,7 @@ const sectors: Record<string, Sector> = {
     phrases: ["Commercial Towers", "Workplace Architecture", "Industrial & Logistics"],
     image: congoImage.url,
     clients: [
-      { name: "Commercial Office Building, DR Congo", projectSlug: "commercial-office-building" },
+      { name: "Kinshasa Business Centre", projectSlug: "commercial-office-building" },
       { name: "Fujitsu", projectSlug: "fujitsu-pune" },
       { name: "Brose", projectSlug: "brose-pune" },
     ],

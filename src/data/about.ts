@@ -8,6 +8,9 @@ import deepstambhLogo from "@/assets/brands/deepstambh.jpeg.asset.json";
 import csrImage from "@/assets/dynamic/csr.jpg.asset.json";
 import rahulManePhoto from "@/assets/team/rahul-mane.png.asset.json";
 import bharatKukrejaPhoto from "@/assets/team/bharat-kukreja.png.asset.json";
+import parishPhoto from "@/assets/board/parish.jpg.asset.json";
+import adityaPhoto from "@/assets/board/aditya.jpg.asset.json";
+
 import { clientLogos } from "@/data/clientLogos";
 
 
@@ -88,13 +91,78 @@ export const board = {
     image: toaTeamPhoto.url,
   },
   directors: [
-    { name: "Ar. Parish S. Kapse", role: "Director", image: `${UP}/2025/08/Parish-Kapse.jpeg`, linkedin: "https://www.linkedin.com/in/parish-kapse-25481058/" },
-    { name: "Ar. Aditya B. Yamsanwar", role: "Director", image: `${UP}/2025/08/Aditya-Yamsanwar.jpeg`, linkedin: "https://www.linkedin.com/in/aditya-yamsanwar-21683415/" },
-    { name: "Ar. Bharat Yamsanwar", role: "Director", image: `${UP}/2025/08/Bharat-Yamsanwar.jpeg`, linkedin: "https://www.linkedin.com/in/bharat-yamsanwar-6259619a/" },
-    { name: "Jyoti Yamsanwar", role: "Director", image: `${UP}/2025/08/Jyoti-Yamsanwar.jpeg` },
-    { name: "Rupali Kapse", role: "Director", image: `${UP}/2025/08/Jyoti-Kapse.jpeg`, linkedin: "https://www.linkedin.com/in/rupali-kapse-432b5133b/" },
+    {
+      name: "Parish S. Kapse",
+      role: "Co-Founder & Director",
+      image: parishPhoto.url,
+      linkedin: "https://www.linkedin.com/in/parish-kapse-25481058/",
+      summary:
+        "Three decades of global multidisciplinary experience across architecture, land development, construction and strategic realty advisory.",
+      bio: [
+        "Parish S. Kapse is the Co-Founder and Director of Team One Architects (TOA), bringing over three decades of global multidisciplinary experience across architecture, land development, construction and strategic realty advisory. His career spans 400+ completed projects, reflecting extensive experience in translating complex requirements into strategic opportunities across the built environment. His approach bridges design intent, business viability and real-world execution, shaped in part by early international exposure at DP Architects and Japan's Penta-Ocean Construction.",
+        "His expertise spans the full lifecycle of complex assets, from large-scale master plans and Public-Private Partnerships (PPPs) to mission-critical infrastructure such as Tier III data centres and Global Capability Centres (GCCs). His work includes over 5 million sq. ft. of corporate interiors, combining architectural, engineering and operational considerations to create high-performing environments. Across markets including India, Singapore, Africa, Malaysia, the UAE, the US, the UK and the Nordic region, he advises developers, institutions and public-sector organisations on complex development opportunities.",
+        "Parish's methodology centres on understanding core requirements, building tailored programmes and integrating sustainability into the planning and delivery process. His experience includes approximately 5,000 acres of master planning, where he has worked across diverse site conditions and development frameworks to shape long-term, functional and commercially viable environments. A defining milestone in his career was leading the winning design for the Bharat Pavilion at Expo 2025 Osaka. His work has been recognised through honours including Best Architectural Firm of the Year, the Golden Brick Award and the Eminent Jury Design Award. He continues to share his perspective on workplaces, data infrastructure, urban development and the evolving role of architecture in shaping economies.",
+      ],
+      facts: ["400+ projects delivered", "5M+ sq. ft. of corporate interiors", "~5,000 acres master planned", "Bharat Pavilion, Expo 2025 Osaka"],
+    },
+    {
+      name: "Aditya B. Yamsanwar",
+      role: "Director",
+      image: adityaPhoto.url,
+      linkedin: "https://www.linkedin.com/in/aditya-yamsanwar-21683415/",
+      summary:
+        "Two decades of work at the intersection of design, experience and technology, shaping high-performance workplaces.",
+      bio: [
+        "With over two decades of experience, Aditya B. Yamsanwar is a Director at Team One Architects (TOA), working at the intersection of design, experience and technology. His work focuses on creating high-performance workplaces that respond to evolving business models, workforce expectations and organisational culture.",
+        "At TOA, Aditya combines research, analytics and spatial strategy to develop smart, adaptable environments that support productivity, collaboration and employee experience. He has led large-scale workplace transformations, using the built environment as a strategic tool to address work challenges and prepare businesses for the future of work.",
+        "A postgraduate from the University of Arizona, Aditya is an active member of CoreNet Global and GRI. He has authored 200+ industry articles and regularly contributes to conversations around SEZ policy, workplace strategy, Gen Z and the changing relationship between people, organisations and the spaces they occupy.",
+      ],
+      facts: ["20+ years of experience", "Postgraduate, University of Arizona", "CoreNet Global & GRI member", "200+ industry articles"],
+    },
+    {
+      name: "Bharat S. Yamsanwar",
+      role: "Founder & Director",
+      image: `${UP}/2025/08/Bharat-Yamsanwar.jpeg`,
+      linkedin: "https://www.linkedin.com/in/bharat-yamsanwar-6259619a/",
+      summary:
+        "Four decades of practice shaping TOA's design philosophy through timeless design, cultural context and spatial harmony.",
+      bio: [
+        "With over four decades of experience, Ar. Bharat S. Yamsanwar is the Founder and Director of Team One Architects (TOA). His architectural practice has contributed to the firm's design philosophy, shaped by timeless design, cultural context and spatial harmony across large-scale developments.",
+        "His experience spans urban townships, public infrastructure, institutional campuses and master planning, with a focus on creating environments that respond to their context, climate and intended use. His approach brings together functionality, design integrity and a considered understanding of how architecture interacts with its surroundings.",
+        "An alumnus of the Sir J. J. College of Architecture, Bharat has been recognised for his contribution to architecture and urban design, including a Lifetime Achievement Award and recognition as a Distinguished Alumnus. Over the course of his career, he has remained engaged with the evolution of architecture and the role of thoughtful design in shaping enduring environments.",
+      ],
+      facts: ["40+ years of practice", "Sir J. J. College of Architecture alumnus", "Lifetime Achievement Award", "Distinguished Alumnus"],
+    },
+    {
+      name: "Jyoti B. Yamsanwar",
+      role: "Director",
+      image: `${UP}/2025/08/Jyoti-Yamsanwar.jpeg`,
+      summary:
+        "Stewardship of accounts, finance and administration, with a deep commitment to mentorship and community programmes.",
+      bio: [
+        "With a background in Commerce and an M. Com qualification, Jyoti B. Yamsanwar brings a strong perspective on the organisational functions that enable a growing practice to operate with structure, accountability and continuity. Her role spans accounts, finance and administration, supporting the systems and processes that form the operational backbone of the workplace.",
+        "Beyond her functional responsibilities, Jyoti places particular emphasis on mentorship and people development. Her approach is centred on creating an environment where younger professionals and emerging team members can learn through guidance, responsibility and experience. She believes effective mentorship extends beyond professional skills — helping individuals build confidence, understand accountability and develop the judgement required to grow within a professional practice.",
+        "Jyoti is also closely associated with CSR initiatives at TOA, contributing to programmes that connect the resources and capabilities of the practice with wider community needs. Her interests lie at the intersection of people, organisational stewardship and social responsibility, reflecting a belief that a company's impact extends beyond its day-to-day business.",
+      ],
+      facts: ["M. Com, Commerce", "Accounts, finance & administration", "Mentorship & people development", "CSR stewardship"],
+    },
+    {
+      name: "Rupali P. Kapse",
+      role: "Director",
+      image: `${UP}/2025/08/Jyoti-Kapse.jpeg`,
+      linkedin: "https://www.linkedin.com/in/rupali-kapse-432b5133b/",
+      summary:
+        "Interior architecture brought together with resource efficiency, workplace wellbeing and corporate ESG principles.",
+      bio: [
+        "Rupali P. Kapse is a Director at Team One Architects (TOA), with a decade of experience. She holds a Professional Diploma in Interior Architecture, with further academic exposure in environmental studies, sustainability, CSR, climate action and corporate ESG.",
+        "Her multidisciplinary background brings together interior architecture with resource efficiency, workplace wellbeing and ESG principles, offering a broader perspective on how spaces can support both people and organisations.",
+        "Over the course of her career, Rupali has been associated with multiple projects across the real estate industry, contributing to the planning and execution of corporate and commercial spaces with a focus on workplace environments, climate action, resource efficiency and ESG practices, helping create spaces that are efficient, adaptable and aligned with evolving business needs.",
+      ],
+      facts: ["Professional Diploma, Interior Architecture", "A decade of experience", "Climate action & resource efficiency", "Corporate ESG practice"],
+    },
   ],
 };
+
 
 /* ------------------------------ Our Team ------------------------------ */
 

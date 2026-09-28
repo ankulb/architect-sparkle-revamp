@@ -207,14 +207,14 @@ function ImmersiveOverlay({
         >
           {item.title}
         </motion.h2>
-        {(item.body || item.excerpt) && (
+        {item.body && (
           <motion.p
             className="mt-6 max-w-2xl text-base leading-relaxed text-white/80 md:text-lg"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8, duration: 0.7 }}
           >
-            {item.body || item.excerpt}
+            {item.body}
           </motion.p>
         )}
         {item.href && (
@@ -267,7 +267,7 @@ export function DynamicSections() {
 
       <div className="mx-auto max-w-[1600px] px-6 pb-24 pt-14 md:px-10 md:pb-36 md:pt-20">
         <ScrollRow direction="left">
-          <div className="grid grid-cols-2 gap-x-4 gap-y-10 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 lg:gap-x-5">
+          <div className="grid grid-cols-2 gap-x-4 gap-y-10 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-6 lg:gap-x-5">
             {dynamicSections.map((item, i) => (
               <SpatialCard
                 key={item.caption}

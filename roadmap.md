@@ -21,3 +21,8 @@
 - [x] Add Commercial portfolio: Fujitsu, Brose, Commercial Office Building (DR Congo)
 - [x] Create Videos / Podcasts / Interviews page from highlighted coverage
 - [x] Align News & Media with highlighted linked coverage
+- [x] Reorder homepage sections: Awards, News, CSR, Sustainability, Global Collaborations, Research
+- [x] Rename Commercial Office Building to Kinshasa Business Centre
+- [x] Attach all coverage links (518-item coverage index) on News and new Articles page
+- [x] Fill Videos / Interviews page with verified media
+- [x] Board of Directors bios and new portraits

@@ -65,7 +65,11 @@ function MediaCard({ item }: { item: MediaCoverageItem }) {
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.28em] text-gold">{item.publication}</p>
           <h3 className="font-display mt-6 text-3xl font-light leading-tight sm:text-4xl">{item.title}</h3>
+          {item.summary ? (
+            <p className="mt-5 max-w-xl text-[15px] font-light leading-relaxed text-muted-foreground">{item.summary}</p>
+          ) : null}
         </div>
+
         <a href={item.url} target="_blank" rel="noopener noreferrer" className="mt-10 inline-flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.18em] text-foreground transition-colors hover:text-gold">
           Open original
           <ArrowUpRight className="h-4 w-4" />

@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowUpRight } from "lucide-react";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
@@ -6,7 +6,9 @@ import { PageHero } from "@/components/about/PageHero";
 import { Reveal } from "@/components/Reveal";
 import { GridBackdrop } from "@/components/graphics/GridBackdrop";
 import { featuredPress, pressCoverage, type PressItem } from "@/data/press";
+import { majorCoverage, coverageCount } from "@/data/coverageIndex";
 import pressImage from "@/assets/dynamic/press.jpg.asset.json";
+
 
 const title = "News & Media — Team One Architects";
 const description = "Explore selected press coverage featuring Team One Architects, its projects and perspectives on the built environment.";
@@ -78,6 +80,35 @@ function NewsPage() {
             </div>
           </div>
         </section>
+
+        <section className="border-t border-border">
+          <div className="mx-auto max-w-[1600px] px-6 py-20 md:px-10 md:py-28">
+            <Reveal as="p" className="text-xs font-semibold uppercase tracking-[0.3em] text-gold">Across the press</Reveal>
+            <Reveal as="h2" delay={1} className="font-display mt-5 max-w-3xl text-3xl font-light tracking-tight sm:text-5xl">
+              Coverage in leading national mastheads
+            </Reveal>
+            <div className="mt-12 grid border-l border-t border-border sm:grid-cols-2 lg:grid-cols-3">
+              {majorCoverage.map((item, i) => (
+                <Reveal key={`${item.publication}-${item.headline}`} delay={i % 3}>
+                  <a href={item.url} target="_blank" rel="noopener noreferrer" className="group flex h-full min-h-[220px] flex-col justify-between border-b border-r border-border bg-background p-7 transition-colors hover:bg-card">
+                    <div className="flex items-start justify-between gap-4">
+                      <span className="text-xs font-semibold uppercase tracking-[0.22em] text-gold">{item.publication}</span>
+                      <ArrowUpRight className="h-4 w-4 shrink-0 text-muted-foreground transition group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-gold" />
+                    </div>
+                    <h3 className="font-display mt-10 text-lg font-light leading-snug text-foreground">{item.headline}</h3>
+                  </a>
+                </Reveal>
+              ))}
+            </div>
+            <Reveal delay={1}>
+              <Link to="/insights/articles" className="mt-12 inline-flex items-center gap-3 border border-border px-6 py-4 text-xs font-semibold uppercase tracking-[0.18em] transition-colors hover:border-gold hover:text-gold">
+                Browse all {coverageCount} articles
+                <ArrowUpRight className="h-4 w-4" />
+              </Link>
+            </Reveal>
+          </div>
+        </section>
+
       </main>
       <Footer />
     </div>

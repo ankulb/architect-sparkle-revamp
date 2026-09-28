@@ -76,10 +76,10 @@ export const nav: NavItem[] = [
       { label: "News & Media", to: "/insights/news" },
       { label: "Awards & Recognition", to: "/insights/awards" },
       { label: "Videos / Podcasts / Interviews", to: "/insights/media" },
-      { label: "Articles", href: "/#insights" },
-      { label: "Research Reports", href: "/#insights" },
+      { label: "Articles", to: "/insights/articles" },
     ],
   },
+
   { label: "Studio", href: "/about", children: aboutNav },
   {
     label: "Careers",
@@ -150,42 +150,9 @@ export const expertiseDivisions = [
   },
 ] as const;
 
-// Sequence per client note: Sustainability, Upcoming Projects, Research,
-// Global Collaboration, Awards, In News, CSR.
+// Sequence per client note: Awards, News, CSR, Sustainability,
+// Global Collaborations, Research.
 export const dynamicSections = [
-  {
-    caption: "Sustainability",
-    title: "Building for a climate-positive future",
-    image: sustainabilityImage.url,
-    excerpt: "IGBC, LEED and WELL-aligned practices woven into every project.",
-    body: "Energy modelling, passive design and low-carbon materials are non-negotiables in our studio — helping clients meet ambitious ESG targets while creating healthier places to live and work.",
-    href: undefined as string | undefined,
-  },
-  {
-    caption: "Upcoming Projects",
-    title: "What we're building next",
-    image: `${UP}/2026/03/VIEW-1-650x650.png`,
-    excerpt: "A pipeline of landmark workplaces, campuses and mixed-use developments.",
-    body: "From next-generation data centres to civic-scale mixed-use quarters, our forthcoming portfolio pushes further into sustainable materials, adaptive reuse and technology-forward workplaces.",
-    href: undefined as string | undefined,
-  },
-  {
-    caption: "Research",
-    title: "Ideas that shape tomorrow's cities",
-    image: researchImage.url,
-
-    excerpt: "White papers, keynotes and studios exploring the future of the built environment.",
-    body: "Our research spans mission-critical infrastructure, mixed-use urbanism and AI-ready campuses — feeding directly back into project work and industry conversation.",
-    href: undefined as string | undefined,
-  },
-  {
-    caption: "Global Collaboration",
-    title: "Partnering across borders",
-    image: collaborationImage.url,
-    excerpt: "Coordinating with clients and consultants across 50+ international cities.",
-    body: "With studios in Mumbai, Pune, Hyderabad, Bengaluru and Singapore, we collaborate with engineering, landscape and specialist design partners worldwide — 75% of our client base is multinational.",
-    href: undefined as string | undefined,
-  },
   {
     caption: "Awards",
     title: "Recognised for design and workplace excellence",
@@ -195,7 +162,7 @@ export const dynamicSections = [
     href: "/insights/awards" as string | undefined,
   },
   {
-    caption: "In News",
+    caption: "News",
     title: "TOA in the press",
     image: pressImage.url,
     excerpt: "Featured in leading design, business and lifestyle publications.",
@@ -207,10 +174,35 @@ export const dynamicSections = [
     title: "Design in service of community",
     image: csrImage.url,
     excerpt: "Pro-bono civic work, education and climate-positive initiatives.",
-    body: "",
-    href: "/about/csr",
+    body: "We partner with foundations working in education, livelihood and community upliftment — contributing design, planning and mentorship alongside financial support.",
+    href: "/about/csr" as string | undefined,
+  },
+  {
+    caption: "Sustainability",
+    title: "Building for a climate-positive future",
+    image: sustainabilityImage.url,
+    excerpt: "IGBC, LEED and WELL-aligned practices woven into every project.",
+    body: "Energy modelling, passive design and low-carbon materials are non-negotiables in our studio — helping clients meet ambitious ESG targets while creating healthier places to live and work.",
+    href: undefined as string | undefined,
+  },
+  {
+    caption: "Global Collaborations",
+    title: "Partnering across borders",
+    image: collaborationImage.url,
+    excerpt: "Coordinating with clients and consultants across 50+ international cities.",
+    body: "With studios in Mumbai, Pune, Hyderabad, Bengaluru and Singapore, we collaborate with engineering, landscape and specialist design partners worldwide — 75% of our client base is multinational.",
+    href: undefined as string | undefined,
+  },
+  {
+    caption: "Research",
+    title: "Ideas that shape tomorrow's cities",
+    image: researchImage.url,
+    excerpt: "White papers, keynotes and studios exploring the future of the built environment.",
+    body: "Our research spans mission-critical infrastructure, mixed-use urbanism and AI-ready campuses — feeding directly back into project work and industry conversation.",
+    href: undefined as string | undefined,
   },
 ] as const;
+
 
 
 
@@ -267,7 +259,7 @@ export const projects = [
   { title: "Ergo", category: "Corporate Interiors", image: `${UP}/2025/08/X3A9650-HDR-Edit.jpg`, href: "https://teamonearchitects.com/portfolio-item/ergo-technologies/" },
   { title: "Columbia", category: "Corporate Interiors", image: `${UP}/2025/08/H2A6507.jpg`, href: "https://teamonearchitects.com/portfolio/" },
   { title: "JIO School", category: "Commercial & Institutional", image: `${UP}/2026/03/786928477867589-copy-650x650.jpg`, href: "https://teamonearchitects.com/portfolio-item/jio-school/" },
-  { title: "Commercial Office Buildings", category: "Commercial & Institutional", image: congoHomeImage.url, href: "https://teamonearchitects.com/portfolio-item/commercial-office-building/" },
+  { title: "Kinshasa Business Centre", category: "Commercial & Institutional", image: congoHomeImage.url, href: "https://teamonearchitects.com/portfolio-item/commercial-office-building/" },
   { title: "Volkswagen", category: "Corporate Interiors", image: `${UP}/2025/08/040-1024x683.jpg`, href: "https://teamonearchitects.com/portfolio-item/volkswagen/" },
   { title: "Intangles", category: "Corporate Interiors", image: `${UP}/2026/03/4-1-1024x682.jpg`, href: "https://teamonearchitects.com/portfolio-item/intangles/" },
 ];
