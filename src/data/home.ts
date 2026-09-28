@@ -76,10 +76,10 @@ export const nav: NavItem[] = [
       { label: "News & Media", to: "/insights/news" },
       { label: "Awards & Recognition", to: "/insights/awards" },
       { label: "Videos / Podcasts / Interviews", to: "/insights/media" },
-      { label: "Articles", href: "/#insights" },
-      { label: "Research Reports", href: "/#insights" },
+      { label: "Articles", to: "/insights/articles" },
     ],
   },
+
   { label: "Studio", href: "/about", children: aboutNav },
   {
     label: "Careers",
