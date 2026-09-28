@@ -1,261 +1,71 @@
-import { useEffect, useRef, useState } from "react";
-
-import {
-  AnimatePresence,
-  motion,
-  useReducedMotion,
-  useScroll,
-  useTransform,
-} from "motion/react";
-
+import { useRef, useState } from "react";
+import { Link } from "@tanstack/react-router";
+import { AnimatePresence, motion, useReducedMotion, useScroll, useTransform } from "motion/react";
+import { X } from "lucide-react";
 import { dynamicSections } from "@/data/home";
 import { Reveal } from "@/components/Reveal";
+import { Button } from "@/components/ui/button";
 
 type Item = (typeof dynamicSections)[number];
 
-function ScrollRow({
-  direction,
-  children,
-}: {
-  direction: "left" | "right";
-  children: React.ReactNode;
-}) {
+function ScrollRow({ children }: { children: React.ReactNode }) {
   const ref = useRef<HTMLDivElement>(null);
   const reduce = useReducedMotion();
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start end", "end start"],
-  });
-  const sign = direction === "left" ? -1 : 1;
-  const x = useTransform(
-    scrollYProgress,
-    [0, 0.35, 0.7, 1],
-    [260 * sign, 0, 0, 260 * sign],
-  );
-  const opacity = useTransform(scrollYProgress, [0, 0.25, 0.75, 1], [0, 1, 1, 0]);
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
+  const opacity = useTransform(scrollYProgress, [0, 0.25, 0.75, 1], [1, 1, 1, 0]);
 
   return (
-    <motion.div
-      ref={ref}
-      style={reduce ? undefined : { x, opacity }}
-    >
-      {children}
-    </motion.div>
+    <div ref={ref}>
+      <motion.div style={reduce ? undefined : { opacity }}>{children}</motion.div>
+    </div>
   );
 }
 
-function SpatialCard({
-  item,
-  index,
-  onOpen,
-  dimmed,
-}: {
-  item: Item;
-  index: number;
-  onOpen: (i: number) => void;
-  dimmed: boolean;
-}) {
-  const [hover, setHover] = useState(false);
+function SpatialCard({ item, onOpen }: { item: Item; onOpen: () => void }) {
+  const target = item.href;
 
-  return (
-    <button
-      type="button"
-      onPointerEnter={() => setHover(true)}
-      onPointerLeave={() => setHover(false)}
-      onClick={() => onOpen(index)}
-      className="group block w-full text-left outline-none focus-visible:ring-2 focus-visible:ring-gold"
-      style={{
-        opacity: dimmed ? 0.5 : 1,
-        transition: "opacity 400ms ease",
-      }}
-      aria-label={`${item.caption}: ${item.title}`}
-    >
-      <motion.div
-        layoutId={`spatial-image-${index}`}
-        className="relative aspect-[4/5] w-full overflow-hidden bg-card"
-        transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-      >
-        <motion.img
+  const content = (
+    <>
+      <div className="relative aspect-[4/5] w-full overflow-hidden bg-card">
+        <img
           src={item.image}
           alt={item.title}
           loading="lazy"
-          className="h-full w-full object-cover object-center"
-          animate={{ scale: hover ? 1.06 : 1 }}
-          transition={{ type: "spring", stiffness: 120, damping: 20 }}
+          className="h-full w-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
         />
-      </motion.div>
-
+      </div>
       <div className="mt-4">
         <h3 className="text-[11px] font-bold uppercase tracking-[0.2em] text-gold sm:text-xs">
           {item.caption}
         </h3>
-        <motion.span
-          className="mt-2 block h-px bg-gold"
-          initial={false}
-          animate={{ width: hover ? 40 : 0 }}
-          transition={{ duration: 0.4 }}
-        />
+        {target && <span className="mt-2 block h-px w-0 bg-gold transition-all duration-400 group-hover:w-10 group-focus-visible:w-10" />}
       </div>
-
-    </button>
+    </>
   );
-}
 
-
-function ImmersiveOverlay({
-  item,
-  index,
-  onClose,
-}: {
-  item: Item;
-  index: number;
-  onClose: () => void;
-}) {
-  useEffect(() => {
-    const prev = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-    const onKey = (e: KeyboardEvent) => e.key === "Escape" && onClose();
-    window.addEventListener("keydown", onKey);
-    return () => {
-      document.body.style.overflow = prev;
-      window.removeEventListener("keydown", onKey);
-    };
-  }, [onClose]);
-
-  const num = String(index + 1).padStart(2, "0");
-
-  return (
-    <motion.div
-      className="fixed inset-0 z-[80] bg-background"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.4 }}
+  return target ? (
+    <Link
+      to={target}
+      aria-label={`Explore ${item.caption}`}
+      className="group block w-full text-left outline-none focus-visible:ring-2 focus-visible:ring-gold"
     >
-      {/* Ken-Burns image */}
-      <motion.div
-        layoutId={`spatial-image-${index}`}
-        className="absolute inset-0 overflow-hidden"
-        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-      >
-        <motion.img
-          src={item.image}
-          alt={item.title}
-          className="h-full w-full object-cover"
-          initial={{ scale: 1 }}
-          animate={{ scale: 1.08 }}
-          transition={{ duration: 8, ease: "linear" }}
-        />
-      </motion.div>
-
-      {/* Depth scrim */}
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-black/60" />
-      <div
-        className="pointer-events-none absolute inset-0"
-        style={{
-          boxShadow: "inset 0 0 200px 40px rgba(0,0,0,0.55)",
-        }}
-      />
-
-      {/* Gold hairline frame */}
-      <motion.span
-        className="pointer-events-none absolute left-6 right-6 top-6 h-px origin-left bg-gold/70"
-        initial={{ scaleX: 0 }}
-        animate={{ scaleX: 1 }}
-        transition={{ duration: 0.9, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
-      />
-      <motion.span
-        className="pointer-events-none absolute bottom-6 left-6 right-6 h-px origin-right bg-gold/70"
-        initial={{ scaleX: 0 }}
-        animate={{ scaleX: 1 }}
-        transition={{ duration: 0.9, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
-      />
-
-      {/* Close */}
-      <button
-        type="button"
-        onClick={onClose}
-        className="absolute right-8 top-8 z-10 flex h-11 w-11 items-center justify-center rounded-full border border-white/30 bg-black/30 text-white/90 backdrop-blur transition hover:border-gold hover:text-gold"
-        aria-label="Close"
-      >
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-          <path d="M2 2l12 12M14 2L2 14" stroke="currentColor" strokeWidth="1.5" />
-        </svg>
-      </button>
-
-      {/* Rail */}
-      <div className="pointer-events-none absolute bottom-8 right-8 z-10 flex flex-col items-end gap-2">
-        <span className="font-mono text-[10px] tracking-[0.3em] text-gold">{num} / 07</span>
-        <span className="h-16 w-px bg-gradient-to-b from-gold to-transparent" />
-      </div>
-
-      {/* Copy */}
-      <div className="absolute inset-x-0 bottom-0 z-10 px-8 pb-20 md:px-16 md:pb-24">
-        <motion.p
-          className="text-[11px] font-semibold uppercase tracking-[0.3em] text-gold"
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5, duration: 0.6 }}
-        >
-          {item.caption}
-        </motion.p>
-        <motion.h2
-          className="font-display mt-4 max-w-4xl text-4xl font-light leading-[1.05] tracking-tight text-white sm:text-6xl md:text-7xl"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6, duration: 0.7 }}
-        >
-          {item.title}
-        </motion.h2>
-        {item.body && (
-          <motion.p
-            className="mt-6 max-w-2xl text-base leading-relaxed text-white/80 md:text-lg"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.8, duration: 0.7 }}
-          >
-            {item.body}
-          </motion.p>
-        )}
-        {item.href && (
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.95, duration: 0.6 }}
-            className="mt-8"
-          >
-            <a
-              href={item.href}
-              {...(item.href.startsWith("/") ? {} : { target: "_blank", rel: "noreferrer" })}
-              className="group inline-flex items-center gap-3 border border-gold px-6 py-3 text-xs font-semibold uppercase tracking-[0.24em] text-gold transition hover:bg-gold hover:text-black"
-            >
-              Know more
-              <span className="transition-transform group-hover:translate-x-1">→</span>
-            </a>
-          </motion.div>
-        )}
-      </div>
-    </motion.div>
+      {content}
+    </Link>
+  ) : (
+    <Button variant="ghost" onClick={onOpen} aria-label={`Explore ${item.caption}`} className="group block h-auto w-full rounded-none p-0 text-left whitespace-normal hover:bg-transparent">
+      {content}
+    </Button>
   );
 }
 
 export function DynamicSections() {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
-
-  function handleOpen(i: number) {
-    setOpenIndex(i);
-  }
-
-  const openItem = openIndex !== null ? dynamicSections[openIndex] : null;
-
+  const [openItem, setOpenItem] = useState<Item | null>(null);
   return (
     <section className="relative border-t border-border bg-card/30">
       <div className="mx-auto max-w-[1600px] px-6 pt-24 md:px-10 md:pt-36">
         <div className="max-w-3xl">
           <Reveal>
-            <p className="text-xs font-medium uppercase tracking-[0.3em] text-gold">
-              Our practice in action
-            </p>
+            <p className="text-xs font-medium uppercase tracking-[0.3em] text-gold">Our practice in action</p>
           </Reveal>
           <Reveal delay={1}>
             <h2 className="font-display mt-6 text-3xl font-light tracking-tight sm:text-5xl">
@@ -266,32 +76,34 @@ export function DynamicSections() {
       </div>
 
       <div className="mx-auto max-w-[1600px] px-6 pb-24 pt-14 md:px-10 md:pb-36 md:pt-20">
-        <ScrollRow direction="left">
+        <ScrollRow>
           <div className="grid grid-cols-2 gap-x-4 gap-y-10 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-6 lg:gap-x-5">
-            {dynamicSections.map((item, i) => (
-              <SpatialCard
-                key={item.caption}
-                item={item}
-                index={i}
-                onOpen={handleOpen}
-                dimmed={openIndex !== null && openIndex !== i}
-              />
-            ))}
+            {dynamicSections.map((item) => <SpatialCard key={item.caption} item={item} onOpen={() => setOpenItem(item)} />)}
           </div>
         </ScrollRow>
       </div>
-
       <AnimatePresence>
-        {openItem && openIndex !== null && (
-          <ImmersiveOverlay
-            key={openIndex}
-            item={openItem}
-            index={openIndex}
-            onClose={() => setOpenIndex(null)}
-          />
+        {openItem && (
+          <motion.div
+            role="dialog"
+            aria-modal="true"
+            aria-label={openItem.caption}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[90] flex items-end bg-background"
+          >
+            <img src={openItem.image} alt="" className="absolute inset-0 h-full w-full object-cover opacity-50" />
+            <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-transparent" />
+            <Button variant="ghost" size="icon" onClick={() => setOpenItem(null)} aria-label="Close" className="absolute right-6 top-6 z-10 text-foreground"><X /></Button>
+            <div className="relative mx-auto w-full max-w-[1600px] px-6 pb-20 md:px-10 md:pb-28">
+              <p className="text-xs font-bold uppercase tracking-[0.2em] text-gold">{openItem.caption}</p>
+              <h2 className="font-display mt-5 max-w-3xl text-4xl text-foreground sm:text-6xl">{openItem.title}</h2>
+              <p className="mt-6 max-w-2xl text-lg leading-relaxed text-foreground/80">{openItem.body}</p>
+            </div>
+          </motion.div>
         )}
       </AnimatePresence>
     </section>
   );
 }
-
