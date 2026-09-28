@@ -11,7 +11,7 @@ function ScrollRow({ children }: { children: React.ReactNode }) {
   const reduce = useReducedMotion();
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
   const x = useTransform(scrollYProgress, [0, 0.35, 0.7, 1], [-40, 0, 0, -40]);
-  const opacity = useTransform(scrollYProgress, [0, 0.25, 0.75, 1], [0, 1, 1, 0]);
+  const opacity = useTransform(scrollYProgress, [0, 0.25, 0.75, 1], [1, 1, 1, 0]);
 
   return (
     <div ref={ref}>
