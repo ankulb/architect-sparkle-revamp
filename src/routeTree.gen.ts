@@ -19,6 +19,7 @@ import { Route as PortfolioSlugRouteImport } from './routes/portfolio.$slug'
 import { Route as InsightsNewsRouteImport } from './routes/insights.news'
 import { Route as InsightsMediaRouteImport } from './routes/insights.media'
 import { Route as InsightsAwardsRouteImport } from './routes/insights.awards'
+import { Route as InsightsArticlesRouteImport } from './routes/insights.articles'
 import { Route as ExpertiseSectorRouteImport } from './routes/expertise.$sector'
 import { Route as AboutTeamRouteImport } from './routes/about.team'
 import { Route as AboutLifeRouteImport } from './routes/about.life'
@@ -77,6 +78,11 @@ const InsightsAwardsRoute = InsightsAwardsRouteImport.update({
   path: '/insights/awards',
   getParentRoute: () => rootRouteImport,
 } as any)
+const InsightsArticlesRoute = InsightsArticlesRouteImport.update({
+  id: '/insights/articles',
+  path: '/insights/articles',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ExpertiseSectorRoute = ExpertiseSectorRouteImport.update({
   id: '/expertise/$sector',
   path: '/expertise/$sector',
@@ -125,6 +131,7 @@ export interface FileRoutesByFullPath {
   '/about/life': typeof AboutLifeRoute
   '/about/team': typeof AboutTeamRoute
   '/expertise/$sector': typeof ExpertiseSectorRoute
+  '/insights/articles': typeof InsightsArticlesRoute
   '/insights/awards': typeof InsightsAwardsRoute
   '/insights/media': typeof InsightsMediaRoute
   '/insights/news': typeof InsightsNewsRoute
@@ -142,6 +149,7 @@ export interface FileRoutesByTo {
   '/about/life': typeof AboutLifeRoute
   '/about/team': typeof AboutTeamRoute
   '/expertise/$sector': typeof ExpertiseSectorRoute
+  '/insights/articles': typeof InsightsArticlesRoute
   '/insights/awards': typeof InsightsAwardsRoute
   '/insights/media': typeof InsightsMediaRoute
   '/insights/news': typeof InsightsNewsRoute
@@ -162,6 +170,7 @@ export interface FileRoutesById {
   '/about/life': typeof AboutLifeRoute
   '/about/team': typeof AboutTeamRoute
   '/expertise/$sector': typeof ExpertiseSectorRoute
+  '/insights/articles': typeof InsightsArticlesRoute
   '/insights/awards': typeof InsightsAwardsRoute
   '/insights/media': typeof InsightsMediaRoute
   '/insights/news': typeof InsightsNewsRoute
@@ -183,6 +192,7 @@ export interface FileRouteTypes {
     | '/about/life'
     | '/about/team'
     | '/expertise/$sector'
+    | '/insights/articles'
     | '/insights/awards'
     | '/insights/media'
     | '/insights/news'
@@ -200,6 +210,7 @@ export interface FileRouteTypes {
     | '/about/life'
     | '/about/team'
     | '/expertise/$sector'
+    | '/insights/articles'
     | '/insights/awards'
     | '/insights/media'
     | '/insights/news'
@@ -219,6 +230,7 @@ export interface FileRouteTypes {
     | '/about/life'
     | '/about/team'
     | '/expertise/$sector'
+    | '/insights/articles'
     | '/insights/awards'
     | '/insights/media'
     | '/insights/news'
@@ -233,6 +245,7 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   PortfolioRoute: typeof PortfolioRouteWithChildren
   ExpertiseSectorRoute: typeof ExpertiseSectorRoute
+  InsightsArticlesRoute: typeof InsightsArticlesRoute
   InsightsAwardsRoute: typeof InsightsAwardsRoute
   InsightsMediaRoute: typeof InsightsMediaRoute
   InsightsNewsRoute: typeof InsightsNewsRoute
@@ -308,6 +321,13 @@ declare module '@tanstack/react-router' {
       path: '/insights/awards'
       fullPath: '/insights/awards'
       preLoaderRoute: typeof InsightsAwardsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/insights/articles': {
+      id: '/insights/articles'
+      path: '/insights/articles'
+      fullPath: '/insights/articles'
+      preLoaderRoute: typeof InsightsArticlesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/expertise/$sector': {
@@ -404,6 +424,7 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   PortfolioRoute: PortfolioRouteWithChildren,
   ExpertiseSectorRoute: ExpertiseSectorRoute,
+  InsightsArticlesRoute: InsightsArticlesRoute,
   InsightsAwardsRoute: InsightsAwardsRoute,
   InsightsMediaRoute: InsightsMediaRoute,
   InsightsNewsRoute: InsightsNewsRoute,
