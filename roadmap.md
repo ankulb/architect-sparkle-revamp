@@ -26,3 +26,6 @@
 - [x] Attach all coverage links (518-item coverage index) on News and new Articles page
 - [x] Fill Videos / Interviews page with verified media
 - [x] Board of Directors bios and new portraits
+- [x] Place Bharat first on the Board of Directors page
+- [x] Use an actual award photo and open Awards, News, and CSR directly from homepage tiles
+- [x] Correct homepage Lincoln International, BKC Mumbai tile and destination
