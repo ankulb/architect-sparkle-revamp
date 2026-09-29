@@ -42,6 +42,8 @@ export const publicationMarks: Record<string, string> = {
   "The Hindu Business Line": businessLine.url,
   "Sugermint": sugermint.url,
   "Magic Bricks": magicbricks.url,
+  "Magicbricks": magicbricks.url,
+  "Magicbricks — The Property Show": magicbricks.url,
   "Interior & Decor": interiorDecor.url,
   "Interior & Decor Magaine": interiorDecor.url,
 };
