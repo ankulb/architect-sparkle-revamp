@@ -5,7 +5,8 @@ import { Footer } from "@/components/layout/Footer";
 import { PageHero } from "@/components/about/PageHero";
 import { Reveal } from "@/components/Reveal";
 import { GridBackdrop } from "@/components/graphics/GridBackdrop";
-import { featuredPress, pressCoverage, type PressItem } from "@/data/press";
+import { featuredPress, pressCoverage } from "@/data/press";
+import { publicationMarks } from "@/data/publicationMarks";
 import { majorCoverage, coverageCount } from "@/data/coverageIndex";
 import pressImage from "@/assets/dynamic/press.jpg.asset.json";
 
@@ -32,11 +33,12 @@ export const Route = createFileRoute("/insights/news")({
   component: NewsPage,
 });
 
-function PublicationMark({ item }: { item: PressItem }) {
-  if (item.logo) {
-    return <img src={item.logo} alt={`${item.publication} logo`} className="max-h-10 max-w-[190px] object-contain object-left" />;
+function PublicationMark({ publication }: { publication: string }) {
+  const logo = publicationMarks[publication];
+  if (logo) {
+    return <span className="flex h-12 w-[min(190px,75%)] shrink-0 items-center"><img src={logo} alt={`${publication} logo`} loading="lazy" className="max-h-10 max-w-full object-contain object-left" /></span>;
   }
-  return <span className="font-display text-xl font-semibold text-foreground">{item.publication}</span>;
+  return <span className="font-display text-xl font-semibold text-foreground">{publication}</span>;
 }
 
 function NewsPage() {
@@ -56,7 +58,7 @@ function NewsPage() {
               {featuredPress.map((item, i) => (
                 <Reveal key={item.url} className={i === 0 ? "lg:row-span-2" : ""}>
                   <a href={item.url} target="_blank" rel="noopener noreferrer" className={`group flex h-full flex-col justify-between bg-background p-7 transition-colors hover:bg-card ${i === 0 ? "min-h-[420px] md:p-12" : "min-h-[240px]"}`}>
-                    <div className="flex items-start justify-between gap-5"><PublicationMark item={item} /><ArrowUpRight className="h-5 w-5 shrink-0 text-muted-foreground transition group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-gold" /></div>
+                     <div className="flex items-start justify-between gap-5"><PublicationMark publication={item.publication} /><ArrowUpRight className="h-5 w-5 shrink-0 text-muted-foreground transition group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-gold" /></div>
                     <div><span className="text-[10px] font-semibold uppercase tracking-[0.25em] text-gold">Featured</span><h3 className={`font-display mt-4 font-light leading-tight ${i === 0 ? "text-3xl sm:text-4xl" : "text-xl sm:text-2xl"}`}>{item.headline}</h3></div>
                   </a>
                 </Reveal>
@@ -72,7 +74,7 @@ function NewsPage() {
               {pressCoverage.map((item, i) => (
                 <Reveal key={item.url} delay={i % 3}>
                   <a href={item.url} target="_blank" rel="noopener noreferrer" className="group flex min-h-[260px] flex-col justify-between border-b border-r border-border bg-background p-7 transition-colors hover:bg-card">
-                    <div className="flex items-start justify-between gap-4"><PublicationMark item={item} /><ArrowUpRight className="h-4 w-4 shrink-0 text-muted-foreground transition group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-gold" /></div>
+                     <div className="flex items-start justify-between gap-4"><PublicationMark publication={item.publication} /><ArrowUpRight className="h-4 w-4 shrink-0 text-muted-foreground transition group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-gold" /></div>
                     <h3 className="font-display mt-12 text-xl font-light leading-snug text-foreground">{item.headline}</h3>
                   </a>
                 </Reveal>
@@ -92,7 +94,7 @@ function NewsPage() {
                 <Reveal key={`${item.publication}-${item.headline}`} delay={i % 3}>
                   <a href={item.url} target="_blank" rel="noopener noreferrer" className="group flex h-full min-h-[220px] flex-col justify-between border-b border-r border-border bg-background p-7 transition-colors hover:bg-card">
                     <div className="flex items-start justify-between gap-4">
-                      <span className="text-xs font-semibold uppercase tracking-[0.22em] text-gold">{item.publication}</span>
+                       <PublicationMark publication={item.publication} />
                       <ArrowUpRight className="h-4 w-4 shrink-0 text-muted-foreground transition group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-gold" />
                     </div>
                     <h3 className="font-display mt-10 text-lg font-light leading-snug text-foreground">{item.headline}</h3>
