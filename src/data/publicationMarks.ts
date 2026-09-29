@@ -18,6 +18,16 @@ import sugermint from "@/assets/press/sugermint.png.asset.json";
 import magicbricks from "@/assets/press/magicbricks.svg.asset.json";
 import interiorDecor from "@/assets/press/interior-decor.png.asset.json";
 import realtyPlus from "@/assets/press/realty-plus.png.asset.json";
+import constructionWeek from "@/assets/press/construction-week.png.asset.json";
+import commercialDesign from "@/assets/press/commercial-design.png.asset.json";
+import manufacturingToday from "@/assets/press/manufacturing-today.png.asset.json";
+import architectInteriors from "@/assets/press/architect-interiors-india.png.asset.json";
+import ndtvProfit from "@/assets/press/ndtv-profit.png.asset.json";
+import timesNow from "@/assets/press/times-now.png.asset.json";
+import timesProperty from "@/assets/press/times-property.png.asset.json";
+import zeeBusiness from "@/assets/press/zee-business.svg.asset.json";
+import bwBusinessworld from "@/assets/press/bw-businessworld.png.asset.json";
+import bwPeople from "@/assets/press/bw-people.png.asset.json";
 
 export const publicationMarks: Record<string, string> = {
   "The Economic Times": economicTimes.url,
