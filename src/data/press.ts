@@ -1,13 +1,7 @@
-import economicTimesLogo from "@/assets/clients/economic-times.jpg.asset.json";
-import timesOfIndiaLogo from "@/assets/press/times-of-india.jpg.asset.json";
-import hindustanTimesLogo from "@/assets/press/hindustan-times.png.asset.json";
-import etEdgeLogo from "@/assets/press/et-edge.png.asset.json";
-
 export type PressItem = {
   publication: string;
   headline: string;
   url: string;
-  logo?: string;
 };
 
 export const featuredPress: PressItem[] = [
@@ -15,19 +9,16 @@ export const featuredPress: PressItem[] = [
     publication: "The Economic Times",
     headline: "Scaling an SME? Your workspace may be your next big decision",
     url: "https://economictimes.indiatimes.com/small-biz/sme-sector/scaling-an-sme-your-workspace-may-be-your-next-big-decision/articleshow/132357031.cms?from=mdr",
-    logo: economicTimesLogo.url,
   },
   {
     publication: "The Times of India",
     headline: "The future of Indian homes isn't glass and steel; it's climate intelligence",
     url: "https://timesofindia.indiatimes.com/life-style/home-garden/the-future-of-indian-homes-isnt-glass-and-steel-its-climate-intelligence/articleshow/131986061.cms",
-    logo: timesOfIndiaLogo.url,
   },
   {
     publication: "Hindustan Times",
     headline: "Goodbye, cubicles! 6 Gen Z office design trends transforming workplaces",
     url: "https://www.hindustantimes.com/lifestyle/art-culture/goodbye-cubicles6-gen-z-office-design-trends-transforming-workplaces-with-dopamine-decor-warm-lighting-and-open-desk-101784196317327.html",
-    logo: hindustanTimesLogo.url,
   },
   {
     publication: "Construction Times",
@@ -38,7 +29,6 @@ export const featuredPress: PressItem[] = [
     publication: "ET Edge Insights",
     headline: "The more intelligent AI becomes, the more human workplaces must be",
     url: "https://etedge-insights.com/featured-insights/people-and-organizations/the-more-intelligent-ai-becomes-the-more-human-workplaces-must-be/",
-    logo: etEdgeLogo.url,
   },
 ];
 

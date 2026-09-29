@@ -31,3 +31,4 @@
 - [x] Correct homepage Lincoln International, BKC Mumbai tile and destination
 - [x] Add Columbia Ship Management project using people-free supplied photographs
 - [x] Replace the homepage Lincoln tile with Columbia and verify its link on desktop and mobile
+- [x] Add verified publisher marks across Featured Coverage, More Coverages, and Across the Press, with text fallback where unverified
