@@ -1,10 +1,11 @@
 import entrepreneurshipImage from "@/assets/awards/entrepreneurship.jpg.asset.json";
 import designWallImage from "@/assets/awards/design-wall.jpg.asset.json";
 import goldenBrickImage from "@/assets/awards/golden-brick.jpg.asset.json";
+import genericAwardImage from "@/assets/awards/generic-award.jpg";
 
 export const awardsHero = {
-  image: goldenBrickImage.url,
-  imageAlt: "Team One Architects receiving recognition at the Golden Brick Awards in Dubai",
+  image: genericAwardImage,
+  imageAlt: "Crystal and brass architectural award under warm lighting",
 };
 
 export const awardImages = [
