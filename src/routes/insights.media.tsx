@@ -3,6 +3,7 @@ import { ArrowUpRight, Mic2, Play, Video } from "lucide-react";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { PageHero } from "@/components/about/PageHero";
+import { PublicationMark } from "@/components/PublicationMark";
 import { Reveal } from "@/components/Reveal";
 import { GridBackdrop } from "@/components/graphics/GridBackdrop";
 import { mediaCoverage, type MediaCoverageItem, type MediaCoverageType } from "@/data/mediaCoverage";
@@ -63,7 +64,7 @@ function MediaCard({ item }: { item: MediaCoverageItem }) {
       )}
       <div className="flex min-h-[280px] flex-col justify-between p-7 md:p-10">
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.28em] text-gold">{item.publication}</p>
+          <PublicationMark publication={item.publication} size="sm" />
           <h3 className="font-display mt-6 text-3xl font-light leading-tight sm:text-4xl">{item.title}</h3>
           {item.summary ? (
             <p className="mt-5 max-w-xl text-[15px] font-light leading-relaxed text-muted-foreground">{item.summary}</p>
