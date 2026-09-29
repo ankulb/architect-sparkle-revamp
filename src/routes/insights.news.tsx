@@ -6,8 +6,8 @@ import { PageHero } from "@/components/about/PageHero";
 import { Reveal } from "@/components/Reveal";
 import { GridBackdrop } from "@/components/graphics/GridBackdrop";
 import { featuredPress, pressCoverage } from "@/data/press";
-import { publicationMarks } from "@/data/publicationMarks";
-import { majorCoverage, coverageCount } from "@/data/coverageIndex";
+import { PublicationMark } from "@/components/PublicationMark";
+import { majorCoverage } from "@/data/coverageIndex";
 import pressImage from "@/assets/dynamic/press.jpg.asset.json";
 
 
@@ -32,18 +32,6 @@ export const Route = createFileRoute("/insights/news")({
   }),
   component: NewsPage,
 });
-
-function PublicationMark({ publication }: { publication: string }) {
-  const logo = publicationMarks[publication];
-  if (logo) {
-    return (
-      <span className="flex h-12 w-[min(190px,75%)] shrink-0 items-center bg-white px-3 py-2 ring-1 ring-border">
-        <img src={logo} alt={`${publication} logo`} loading="lazy" className="max-h-full max-w-full object-contain object-left" />
-      </span>
-    );
-  }
-  return <span className="font-display text-xl font-semibold text-foreground">{publication}</span>;
-}
 
 function NewsPage() {
   return (
@@ -108,7 +96,7 @@ function NewsPage() {
             </div>
             <Reveal delay={1}>
               <Link to="/insights/articles" className="mt-12 inline-flex items-center gap-3 border border-border px-6 py-4 text-xs font-semibold uppercase tracking-[0.18em] transition-colors hover:border-gold hover:text-gold">
-                Browse all {coverageCount} articles
+                Browse all articles
                 <ArrowUpRight className="h-4 w-4" />
               </Link>
             </Reveal>

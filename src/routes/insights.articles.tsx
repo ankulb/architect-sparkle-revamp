@@ -6,9 +6,11 @@ import { Footer } from "@/components/layout/Footer";
 import { PageHero } from "@/components/about/PageHero";
 import { Reveal } from "@/components/Reveal";
 import { GridBackdrop } from "@/components/graphics/GridBackdrop";
-import { coverageIndex, coverageCount } from "@/data/coverageIndex";
+import { PublicationMark } from "@/components/PublicationMark";
+import { coverageIndex } from "@/data/coverageIndex";
 import pressImage from "@/assets/dynamic/press.jpg.asset.json";
 
+const PAGE = 40;
 const title = "Articles & Coverage Index — Team One Architects";
 const description =
   "The complete index of articles, columns and features carrying Team One Architects' perspective, month by month, with links to every original story.";
@@ -34,6 +36,7 @@ export const Route = createFileRoute("/insights/articles")({
 
 function ArticlesPage() {
   const [query, setQuery] = useState("");
+  const [limit, setLimit] = useState(PAGE);
 
   const groups = useMemo(() => {
     const q = query.trim().toLowerCase();
@@ -49,7 +52,13 @@ function ArticlesPage() {
       .filter((group) => group.items.length > 0);
   }, [query]);
 
-  const visible = groups.reduce((n, g) => n + g.items.length, 0);
+  const total = groups.reduce((n, g) => n + g.items.length, 0);
+  const shown = useMemo(() => {
+    let left = limit;
+    return groups
+      .map((g) => { const items = g.items.slice(0, Math.max(left, 0)); left -= items.length; return { ...g, items }; })
+      .filter((g) => g.items.length > 0);
+  }, [groups, limit]);
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -70,14 +79,14 @@ function ArticlesPage() {
               <div>
                 <p className="text-xs font-semibold uppercase tracking-[0.3em] text-gold">Coverage index</p>
                 <p className="font-display mt-4 text-3xl font-light sm:text-4xl">
-                  {visible} of {coverageCount} articles
+                  Month by month, in print and online
                 </p>
               </div>
               <label className="flex w-full max-w-sm items-center gap-3 border border-border bg-background px-4 py-3">
                 <Search className="h-4 w-4 shrink-0 text-muted-foreground" />
                 <input
                   value={query}
-                  onChange={(event) => setQuery(event.target.value)}
+                  onChange={(event) => { setQuery(event.target.value); setLimit(PAGE); }}
                   placeholder="Search by publication or headline"
                   className="w-full bg-transparent text-sm font-light outline-none placeholder:text-muted-foreground"
                 />
@@ -88,7 +97,7 @@ function ArticlesPage() {
               <p className="mt-16 text-sm font-light text-muted-foreground">No articles match that search.</p>
             ) : (
               <div className="mt-14 space-y-16">
-                {groups.map((group) => (
+                {shown.map((group) => (
                   <div key={group.month}>
                     <h2 className="font-display text-2xl font-light tracking-tight text-gold sm:text-3xl">
                       {group.month}
@@ -97,8 +106,8 @@ function ArticlesPage() {
                       {group.items.map((item) => {
                         const inner = (
                           <>
-                            <span className="text-xs font-semibold uppercase tracking-[0.22em] text-gold md:w-56 md:shrink-0">
-                              {item.publication}
+                            <span className="md:w-56 md:shrink-0">
+                              <PublicationMark publication={item.publication} size="sm" />
                             </span>
                             <span className="flex-1 text-[15px] font-light leading-snug text-foreground">
                               {item.headline}
@@ -133,6 +142,15 @@ function ArticlesPage() {
                     </ul>
                   </div>
                 ))}
+                {total > limit ? (
+                  <button
+                    type="button"
+                    onClick={() => setLimit((n) => n + PAGE)}
+                    className="inline-flex items-center gap-3 border border-border px-6 py-4 text-xs font-semibold uppercase tracking-[0.18em] transition-colors hover:border-gold hover:text-gold"
+                  >
+                    Load more articles
+                  </button>
+                ) : null}
               </div>
             )}
           </div>

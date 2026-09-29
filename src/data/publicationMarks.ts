@@ -45,3 +45,10 @@ export const publicationMarks: Record<string, string> = {
   "Interior & Decor": interiorDecor.url,
   "Interior & Decor Magaine": interiorDecor.url,
 };
+// Mastheads drawn in white/light artwork need a dark card to stay visible.
+const lightArtwork = new Set<string>([etEdge.url, mint.url, realtyPlus.url, magicbricks.url, cnbcTv18.url]);
+
+export function getPublicationMark(publication: string) {
+  const url = publicationMarks[publication];
+  return url ? { url, tone: lightArtwork.has(url) ? ("dark" as const) : ("light" as const) } : null;
+}
