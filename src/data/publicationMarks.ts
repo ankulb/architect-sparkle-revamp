@@ -17,6 +17,7 @@ import businessLine from "@/assets/press/business-line.svg.asset.json";
 import sugermint from "@/assets/press/sugermint.png.asset.json";
 import magicbricks from "@/assets/press/magicbricks.svg.asset.json";
 import interiorDecor from "@/assets/press/interior-decor.png.asset.json";
+import realtyPlus from "@/assets/press/realty-plus.png.asset.json";
 
 export const publicationMarks: Record<string, string> = {
   "The Economic Times": economicTimes.url,
@@ -26,6 +27,7 @@ export const publicationMarks: Record<string, string> = {
   "ET Edge Insights": etEdge.url,
   "ET Edge Insight": etEdge.url,
   "Construction Times": constructionTimes.url,
+  "Realty+": realtyPlus.url,
   "CXO Today": cxoToday.url,
   "MGS Architecture": mgsArchitecture.url,
   "Construction World": constructionWorld.url,
