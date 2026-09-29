@@ -9,6 +9,28 @@ import { featuredPress, pressCoverage } from "@/data/press";
 import { PublicationMark } from "@/components/PublicationMark";
 import { majorCoverage } from "@/data/coverageIndex";
 import pressImage from "@/assets/dynamic/press.jpg.asset.json";
+// Leading outlets only, one story each; the full index lives on the Articles page.
+const leadingPublications: [string, string[]][] = [
+  ["The Economic Times", ["The Economic Times"]],
+  ["The Times of India", ["The Times of India", "Times Of India Daily"]],
+  ["Hindustan Times", ["Hindustan Times"]],
+  ["Mint", ["Mint"]],
+  ["The Hindu Business Line", ["The Hindu Business Line"]],
+  ["Forbes India", ["Forbes India"]],
+  ["CNBC-TV18", ["CNBC-TV18", "CNBCTV18"]],
+  ["NDTV Profit", ["NDTV Profit"]],
+  ["Zee Business", ["Zee Business"]],
+  ["Times Now", ["Times Now"]],
+  ["BW Businessworld", ["BW Businessworld", "BW Businessworld "]],
+  ["Construction Week", ["Construction Week"]],
+  ["Commercial Design", ["Commercial Design"]],
+  ["Realty+", ["Realty+"]],
+  ["Construction World", ["Construction World"]],
+];
+const leadingCoverage = leadingPublications.flatMap(([, names]) => {
+  const item = majorCoverage.find((c) => names.includes(c.publication));
+  return item ? [item] : [];
+});
 
 
 const title = "News & Media — Team One Architects";
@@ -82,7 +104,7 @@ function NewsPage() {
               Coverage in leading national mastheads
             </Reveal>
             <div className="mt-12 grid border-l border-t border-border sm:grid-cols-2 lg:grid-cols-3">
-              {majorCoverage.map((item, i) => (
+              {leadingCoverage.map((item, i) => (
                 <Reveal key={`${item.publication}-${item.headline}`} delay={i % 3}>
                   <a href={item.url} target="_blank" rel="noopener noreferrer" className="group flex h-full min-h-[220px] flex-col justify-between border-b border-r border-border bg-background p-7 transition-colors hover:bg-card">
                     <div className="flex items-start justify-between gap-4">
