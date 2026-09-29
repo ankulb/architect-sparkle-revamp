@@ -56,9 +56,29 @@ export const publicationMarks: Record<string, string> = {
   "Magicbricks — The Property Show": magicbricks.url,
   "Interior & Decor": interiorDecor.url,
   "Interior & Decor Magaine": interiorDecor.url,
+  "Construction Week": constructionWeek.url,
+  "Commercial Design": commercialDesign.url,
+  "Manufacturing Today": manufacturingToday.url,
+  "Architect and Interiors India": architectInteriors.url,
+  "Architect & Interiors India": architectInteriors.url,
+  "NDTV Profit": ndtvProfit.url,
+  "Times Now": timesNow.url,
+  "Times Property": timesProperty.url,
+  "Zee Business": zeeBusiness.url,
+  "BW Businessworld": bwBusinessworld.url,
+  "BW Businessworld ": bwBusinessworld.url,
+  "BW People": bwPeople.url,
 };
 // Mastheads drawn in white/light artwork need a dark card to stay visible.
-const lightArtwork = new Set<string>([etEdge.url, mint.url, realtyPlus.url, magicbricks.url, cnbcTv18.url]);
+const lightArtwork = new Set<string>([
+  etEdge.url,
+  mint.url,
+  realtyPlus.url,
+  magicbricks.url,
+  cnbcTv18.url,
+  manufacturingToday.url,
+  zeeBusiness.url,
+]);
 
 export function getPublicationMark(publication: string) {
   const url = publicationMarks[publication];
