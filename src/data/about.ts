@@ -212,7 +212,7 @@ export const clientele = {
       clients: [
         { name: "Emerson", logo: clientLogos["Emerson"] },
         { name: "JCI", logo: clientLogos["Johnson Controls"] },
-        { name: "Sedmac", logo: clientLogos["Sedmac"] },
+        { name: "Sedemac", logo: clientLogos["Sedemac"] },
         { name: "Vanderlane", logo: clientLogos["Vanderlane"] },
       ],
     },
