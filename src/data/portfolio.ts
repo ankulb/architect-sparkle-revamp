@@ -59,10 +59,12 @@ export type Project = {
 
 export type ProjectDetail = Project & {
   sector?: string;
+  sectorLabel?: string;
   area?: string;
   status?: string;
   client?: string;
   year?: string;
+  date?: string;
   service?: string;
   description: string[];
   gallery: string[];
@@ -342,17 +344,18 @@ export const projectDetails: Record<string, ProjectDetail> = {
     title: "ICICI Securities",
     category: INTERIORS,
     sector: "Banking & Finance",
-    area: "1,37,632 sq. ft.",
+    sectorLabel: "Financial Services | Capital Markets",
+    area: "1,60,000 sq. ft.",
     status: "Completed",
     client: "ICICI Securities",
     location: "Mumbai",
-    year: "2023",
-    service: "Design & Project Management Execution",
+    date: "July 1, 2024",
     image: iciciSecuritiesGallery[0],
     description: [
-      "ICICI Securities' 1,37,632 sq. ft. Mumbai workplace was conceived as a high-performance office with a strong sense of identity. The planning brings together large open work neighbourhoods, transparent meeting suites and social settings within a coherent spatial framework.",
-      "Warm timber, planting and vivid colour temper the workplace's industrial detailing. A gold bull sculpture creates a memorable threshold, while collaborative lounges and tiered seating turn circulation into places for exchange, learning and informal gathering.",
-      "Delivered through an integrated design and project-management mandate, the completed office balances operational scale with human comfort — giving a financial workplace energy, clarity and a contemporary civic character.",
+      "TOA delivered a 160,000 sq. ft. future-ready workspace for ICICI Securities, envisioned as a dynamic ecosystem supporting trading, research, technology, and corporate functions under one integrated environment.",
+      "Drawing cues from the fast-moving world of capital markets, the design balances focus and collaboration from acoustically optimized work zones and data-centric collaboration hubs to informal strategy lounges that encourage rapid exchange of ideas. A central social spine anchors the workspace, featuring biophilic elements, curved planning, and layered ceiling treatments that soften scale while enhancing acoustic comfort.",
+      "Materiality and color are used strategically energizing tones paired with warm finishes reflect momentum and stability, while flexible layouts allow teams to scale and reconfigure with evolving business needs. Technology-enabled meeting zones, breakout areas, and seamless circulation ensure the workspace supports both deep analytical work and high-frequency collaboration.",
+      "Beyond aesthetics and execution, the project represents TOA’s ability to translate the culture of financial intelligence, trust, and agility into a built environment empowering ICICI Securities’ teams to perform, adapt, and lead in a highly competitive market.",
     ],
     gallery: iciciSecuritiesGallery,
   },

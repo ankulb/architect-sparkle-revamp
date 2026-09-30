@@ -105,8 +105,8 @@ function ProjectPage() {
     ? [
         ["Client", detail.client],
         ["Location", detail.location],
-        ["Year", detail.year],
-        ["Sector", detail.sector],
+        [detail.date ? "Date" : "Year", detail.date ?? detail.year],
+        ["Sector", detail.sectorLabel ?? detail.sector],
         ["Area", detail.area],
         ["Status", detail.status],
         ["Service", detail.service],
@@ -123,7 +123,7 @@ function ProjectPage() {
           title={meta.title}
           lead={
             detail
-              ? [detail.client, detail.location, detail.year]
+              ? [detail.client, detail.location, detail.date ?? detail.year]
                   .filter((v) => Boolean(v))
                   .join(" · ")
               : "A Team One Architects project."
