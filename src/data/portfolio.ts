@@ -117,7 +117,7 @@ export const projects: Project[] = [
   { slug: "toll", title: "Toll", category: INTERIORS, location: "Pune", image: tollGallery[0] },
   { slug: "vw-its", title: "VW ITS", category: INTERIORS, location: "Pune", image: vwItsGallery[0] },
   { slug: "emerson", title: "Emerson", category: INTERIORS, location: "Nashik", image: emersonGallery[0] },
-  { slug: "sedmac", title: "Sedmac", category: INTERIORS, location: "Baner, Pune", image: sedmacGallery[0] },
+  { slug: "sedemac", title: "Sedemac", category: INTERIORS, location: "Baner, Pune", image: sedmacGallery[0] },
 ];
 
 export const projectDetails: Record<string, ProjectDetail> = {
@@ -243,9 +243,9 @@ export const projectDetails: Record<string, ProjectDetail> = {
     ],
     gallery: emersonGallery,
   },
-  sedmac: {
-    slug: "sedmac",
-    title: "Sedmac",
+  sedemac: {
+    slug: "sedemac",
+    title: "Sedemac",
     category: INTERIORS,
     sector: "Engineering",
     client: "SEDEMAC Mechatronics Ltd.",

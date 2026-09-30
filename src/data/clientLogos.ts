@@ -127,7 +127,7 @@ export const clientLogos: Record<string, string> = {
   "Idea forge": ideaForge.url,
   "Intangles": intangles.url,
   "VW ITS": vwIts.url,
-  "Sedmac": sedemac.url,
+  "Sedemac": sedemac.url,
   "Vanderlane": vanderlande.url,
   "Indira IVF": indiraIvf.url,
   "Digital Domain": digitalDomain.url,
