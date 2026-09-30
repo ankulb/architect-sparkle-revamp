@@ -1,15 +1,17 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { Link } from "@tanstack/react-router";
-import { ChevronDown, Menu, X } from "lucide-react";
+import { ChevronDown, Menu, Search, X } from "lucide-react";
 import { nav } from "@/data/home";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import { SearchOverlay } from "@/components/SearchOverlay";
 import logoAsset from "@/assets/toa-logo.png.asset.json";
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const [openMap, setOpenMap] = useState<Record<string, boolean>>({});
+  const [searchOpen, setSearchOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -139,11 +141,25 @@ export function Header() {
                 ),
               )}
             </nav>
+            <button
+              onClick={() => setSearchOpen(true)}
+              aria-label="Search"
+              className="text-foreground/95 transition-colors hover:text-gold"
+            >
+              <Search className="h-5 w-5" />
+            </button>
             <ThemeToggle />
           </div>
 
 
           <div className="flex items-center gap-3 md:hidden">
+            <button
+              onClick={() => setSearchOpen(true)}
+              aria-label="Search"
+              className="text-foreground transition-colors hover:text-gold"
+            >
+              <Search className="h-5 w-5" />
+            </button>
             <ThemeToggle />
             <button
               onClick={() => setOpen(true)}
@@ -308,6 +324,8 @@ export function Header() {
           </motion.div>
         )}
       </AnimatePresence>
+
+      <SearchOverlay open={searchOpen} onClose={() => setSearchOpen(false)} />
     </>
   );
 }
