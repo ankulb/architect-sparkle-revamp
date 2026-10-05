@@ -9,33 +9,28 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as IndexRouteImport } from './routes/index'
-import { Route as AboutRouteImport } from './routes/about'
-import { Route as ContactRouteImport } from './routes/contact'
 import { Route as PortfolioRouteImport } from './routes/portfolio'
-import { Route as AboutIndexRouteImport } from './routes/about.index'
-import { Route as AboutAnchorsRouteImport } from './routes/about.anchors'
-import { Route as AboutBoardRouteImport } from './routes/about.board'
-import { Route as AboutClienteleRouteImport } from './routes/about.clientele'
-import { Route as AboutCsrRouteImport } from './routes/about.csr'
-import { Route as AboutLifeRouteImport } from './routes/about.life'
-import { Route as AboutTeamRouteImport } from './routes/about.team'
-import { Route as ExpertiseSectorRouteImport } from './routes/expertise.$sector'
-import { Route as InsightsArticlesRouteImport } from './routes/insights.articles'
-import { Route as InsightsAwardsRouteImport } from './routes/insights.awards'
-import { Route as InsightsMediaRouteImport } from './routes/insights.media'
-import { Route as InsightsNewsRouteImport } from './routes/insights.news'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as IndexRouteImport } from './routes/index'
 import { Route as PortfolioIndexRouteImport } from './routes/portfolio.index'
+import { Route as AboutIndexRouteImport } from './routes/about.index'
 import { Route as PortfolioSlugRouteImport } from './routes/portfolio.$slug'
+import { Route as InsightsNewsRouteImport } from './routes/insights.news'
+import { Route as InsightsMediaRouteImport } from './routes/insights.media'
+import { Route as InsightsAwardsRouteImport } from './routes/insights.awards'
+import { Route as InsightsArticlesRouteImport } from './routes/insights.articles'
+import { Route as ExpertiseSectorRouteImport } from './routes/expertise.$sector'
+import { Route as AboutTeamRouteImport } from './routes/about.team'
+import { Route as AboutLifeRouteImport } from './routes/about.life'
+import { Route as AboutCsrRouteImport } from './routes/about.csr'
+import { Route as AboutClienteleRouteImport } from './routes/about.clientele'
+import { Route as AboutBoardRouteImport } from './routes/about.board'
+import { Route as AboutAnchorsRouteImport } from './routes/about.anchors'
 
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AboutRoute = AboutRouteImport.update({
-  id: '/about',
-  path: '/about',
+const PortfolioRoute = PortfolioRouteImport.update({
+  id: '/portfolio',
+  path: '/portfolio',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
@@ -43,69 +38,14 @@ const ContactRoute = ContactRouteImport.update({
   path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
-const PortfolioRoute = PortfolioRouteImport.update({
-  id: '/portfolio',
-  path: '/portfolio',
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
-const AboutIndexRoute = AboutIndexRouteImport.update({
+const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
-  getParentRoute: () => AboutRoute,
-} as any)
-const AboutAnchorsRoute = AboutAnchorsRouteImport.update({
-  id: '/anchors',
-  path: '/anchors',
-  getParentRoute: () => AboutRoute,
-} as any)
-const AboutBoardRoute = AboutBoardRouteImport.update({
-  id: '/board',
-  path: '/board',
-  getParentRoute: () => AboutRoute,
-} as any)
-const AboutClienteleRoute = AboutClienteleRouteImport.update({
-  id: '/clientele',
-  path: '/clientele',
-  getParentRoute: () => AboutRoute,
-} as any)
-const AboutCsrRoute = AboutCsrRouteImport.update({
-  id: '/csr',
-  path: '/csr',
-  getParentRoute: () => AboutRoute,
-} as any)
-const AboutLifeRoute = AboutLifeRouteImport.update({
-  id: '/life',
-  path: '/life',
-  getParentRoute: () => AboutRoute,
-} as any)
-const AboutTeamRoute = AboutTeamRouteImport.update({
-  id: '/team',
-  path: '/team',
-  getParentRoute: () => AboutRoute,
-} as any)
-const ExpertiseSectorRoute = ExpertiseSectorRouteImport.update({
-  id: '/expertise/$sector',
-  path: '/expertise/$sector',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const InsightsArticlesRoute = InsightsArticlesRouteImport.update({
-  id: '/insights/articles',
-  path: '/insights/articles',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const InsightsAwardsRoute = InsightsAwardsRouteImport.update({
-  id: '/insights/awards',
-  path: '/insights/awards',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const InsightsMediaRoute = InsightsMediaRouteImport.update({
-  id: '/insights/media',
-  path: '/insights/media',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const InsightsNewsRoute = InsightsNewsRouteImport.update({
-  id: '/insights/news',
-  path: '/insights/news',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PortfolioIndexRoute = PortfolioIndexRouteImport.update({
@@ -113,10 +53,70 @@ const PortfolioIndexRoute = PortfolioIndexRouteImport.update({
   path: '/',
   getParentRoute: () => PortfolioRoute,
 } as any)
+const AboutIndexRoute = AboutIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => AboutRoute,
+} as any)
 const PortfolioSlugRoute = PortfolioSlugRouteImport.update({
   id: '/$slug',
   path: '/$slug',
   getParentRoute: () => PortfolioRoute,
+} as any)
+const InsightsNewsRoute = InsightsNewsRouteImport.update({
+  id: '/insights/news',
+  path: '/insights/news',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InsightsMediaRoute = InsightsMediaRouteImport.update({
+  id: '/insights/media',
+  path: '/insights/media',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InsightsAwardsRoute = InsightsAwardsRouteImport.update({
+  id: '/insights/awards',
+  path: '/insights/awards',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InsightsArticlesRoute = InsightsArticlesRouteImport.update({
+  id: '/insights/articles',
+  path: '/insights/articles',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ExpertiseSectorRoute = ExpertiseSectorRouteImport.update({
+  id: '/expertise/$sector',
+  path: '/expertise/$sector',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutTeamRoute = AboutTeamRouteImport.update({
+  id: '/team',
+  path: '/team',
+  getParentRoute: () => AboutRoute,
+} as any)
+const AboutLifeRoute = AboutLifeRouteImport.update({
+  id: '/life',
+  path: '/life',
+  getParentRoute: () => AboutRoute,
+} as any)
+const AboutCsrRoute = AboutCsrRouteImport.update({
+  id: '/csr',
+  path: '/csr',
+  getParentRoute: () => AboutRoute,
+} as any)
+const AboutClienteleRoute = AboutClienteleRouteImport.update({
+  id: '/clientele',
+  path: '/clientele',
+  getParentRoute: () => AboutRoute,
+} as any)
+const AboutBoardRoute = AboutBoardRouteImport.update({
+  id: '/board',
+  path: '/board',
+  getParentRoute: () => AboutRoute,
+} as any)
+const AboutAnchorsRoute = AboutAnchorsRouteImport.update({
+  id: '/anchors',
+  path: '/anchors',
+  getParentRoute: () => AboutRoute,
 } as any)
 
 export interface FileRoutesByFullPath {
@@ -253,18 +253,11 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/about': {
-      id: '/about'
-      path: '/about'
-      fullPath: '/about'
-      preLoaderRoute: typeof AboutRouteImport
+    '/portfolio': {
+      id: '/portfolio'
+      path: '/portfolio'
+      fullPath: '/portfolio'
+      preLoaderRoute: typeof PortfolioRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -274,95 +267,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/portfolio': {
-      id: '/portfolio'
-      path: '/portfolio'
-      fullPath: '/portfolio'
-      preLoaderRoute: typeof PortfolioRouteImport
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/about/': {
-      id: '/about/'
+    '/': {
+      id: '/'
       path: '/'
-      fullPath: '/about/'
-      preLoaderRoute: typeof AboutIndexRouteImport
-      parentRoute: typeof AboutRoute
-    }
-    '/about/anchors': {
-      id: '/about/anchors'
-      path: '/anchors'
-      fullPath: '/about/anchors'
-      preLoaderRoute: typeof AboutAnchorsRouteImport
-      parentRoute: typeof AboutRoute
-    }
-    '/about/board': {
-      id: '/about/board'
-      path: '/board'
-      fullPath: '/about/board'
-      preLoaderRoute: typeof AboutBoardRouteImport
-      parentRoute: typeof AboutRoute
-    }
-    '/about/clientele': {
-      id: '/about/clientele'
-      path: '/clientele'
-      fullPath: '/about/clientele'
-      preLoaderRoute: typeof AboutClienteleRouteImport
-      parentRoute: typeof AboutRoute
-    }
-    '/about/csr': {
-      id: '/about/csr'
-      path: '/csr'
-      fullPath: '/about/csr'
-      preLoaderRoute: typeof AboutCsrRouteImport
-      parentRoute: typeof AboutRoute
-    }
-    '/about/life': {
-      id: '/about/life'
-      path: '/life'
-      fullPath: '/about/life'
-      preLoaderRoute: typeof AboutLifeRouteImport
-      parentRoute: typeof AboutRoute
-    }
-    '/about/team': {
-      id: '/about/team'
-      path: '/team'
-      fullPath: '/about/team'
-      preLoaderRoute: typeof AboutTeamRouteImport
-      parentRoute: typeof AboutRoute
-    }
-    '/expertise/$sector': {
-      id: '/expertise/$sector'
-      path: '/expertise/$sector'
-      fullPath: '/expertise/$sector'
-      preLoaderRoute: typeof ExpertiseSectorRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/insights/articles': {
-      id: '/insights/articles'
-      path: '/insights/articles'
-      fullPath: '/insights/articles'
-      preLoaderRoute: typeof InsightsArticlesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/insights/awards': {
-      id: '/insights/awards'
-      path: '/insights/awards'
-      fullPath: '/insights/awards'
-      preLoaderRoute: typeof InsightsAwardsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/insights/media': {
-      id: '/insights/media'
-      path: '/insights/media'
-      fullPath: '/insights/media'
-      preLoaderRoute: typeof InsightsMediaRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/insights/news': {
-      id: '/insights/news'
-      path: '/insights/news'
-      fullPath: '/insights/news'
-      preLoaderRoute: typeof InsightsNewsRouteImport
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/portfolio/': {
@@ -372,12 +288,96 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PortfolioIndexRouteImport
       parentRoute: typeof PortfolioRoute
     }
+    '/about/': {
+      id: '/about/'
+      path: '/'
+      fullPath: '/about/'
+      preLoaderRoute: typeof AboutIndexRouteImport
+      parentRoute: typeof AboutRoute
+    }
     '/portfolio/$slug': {
       id: '/portfolio/$slug'
       path: '/$slug'
       fullPath: '/portfolio/$slug'
       preLoaderRoute: typeof PortfolioSlugRouteImport
       parentRoute: typeof PortfolioRoute
+    }
+    '/insights/news': {
+      id: '/insights/news'
+      path: '/insights/news'
+      fullPath: '/insights/news'
+      preLoaderRoute: typeof InsightsNewsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/insights/media': {
+      id: '/insights/media'
+      path: '/insights/media'
+      fullPath: '/insights/media'
+      preLoaderRoute: typeof InsightsMediaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/insights/awards': {
+      id: '/insights/awards'
+      path: '/insights/awards'
+      fullPath: '/insights/awards'
+      preLoaderRoute: typeof InsightsAwardsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/insights/articles': {
+      id: '/insights/articles'
+      path: '/insights/articles'
+      fullPath: '/insights/articles'
+      preLoaderRoute: typeof InsightsArticlesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/expertise/$sector': {
+      id: '/expertise/$sector'
+      path: '/expertise/$sector'
+      fullPath: '/expertise/$sector'
+      preLoaderRoute: typeof ExpertiseSectorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about/team': {
+      id: '/about/team'
+      path: '/team'
+      fullPath: '/about/team'
+      preLoaderRoute: typeof AboutTeamRouteImport
+      parentRoute: typeof AboutRoute
+    }
+    '/about/life': {
+      id: '/about/life'
+      path: '/life'
+      fullPath: '/about/life'
+      preLoaderRoute: typeof AboutLifeRouteImport
+      parentRoute: typeof AboutRoute
+    }
+    '/about/csr': {
+      id: '/about/csr'
+      path: '/csr'
+      fullPath: '/about/csr'
+      preLoaderRoute: typeof AboutCsrRouteImport
+      parentRoute: typeof AboutRoute
+    }
+    '/about/clientele': {
+      id: '/about/clientele'
+      path: '/clientele'
+      fullPath: '/about/clientele'
+      preLoaderRoute: typeof AboutClienteleRouteImport
+      parentRoute: typeof AboutRoute
+    }
+    '/about/board': {
+      id: '/about/board'
+      path: '/board'
+      fullPath: '/about/board'
+      preLoaderRoute: typeof AboutBoardRouteImport
+      parentRoute: typeof AboutRoute
+    }
+    '/about/anchors': {
+      id: '/about/anchors'
+      path: '/anchors'
+      fullPath: '/about/anchors'
+      preLoaderRoute: typeof AboutAnchorsRouteImport
+      parentRoute: typeof AboutRoute
     }
   }
 }
