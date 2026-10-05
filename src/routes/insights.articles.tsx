@@ -7,13 +7,14 @@ import { PageHero } from "@/components/about/PageHero";
 import { Reveal } from "@/components/Reveal";
 import { GridBackdrop } from "@/components/graphics/GridBackdrop";
 import { PublicationMark } from "@/components/PublicationMark";
-import { coverageIndex } from "@/data/coverageIndex";
+import { curatedCoverage } from "@/data/curatedCoverage";
+import { Button } from "@/components/ui/button";
 import pressImage from "@/assets/dynamic/press.jpg.asset.json";
 
 const PAGE = 40;
 const title = "Articles & Coverage Index — Team One Architects";
 const description =
-  "The complete index of articles, columns and features carrying Team One Architects' perspective, month by month, with links to every original story.";
+  "A selected index of articles, columns and features carrying Team One Architects' perspective, month by month, with links to original stories.";
 const url = "https://architect-sparkle-revamp.lovable.app/insights/articles";
 
 export const Route = createFileRoute("/insights/articles")({
@@ -40,8 +41,8 @@ function ArticlesPage() {
 
   const groups = useMemo(() => {
     const q = query.trim().toLowerCase();
-    if (!q) return coverageIndex;
-    return coverageIndex
+    if (!q) return curatedCoverage;
+    return curatedCoverage
       .map((group) => ({
         ...group,
         items: group.items.filter(
@@ -66,7 +67,7 @@ function ArticlesPage() {
       <main>
         <PageHero
           eyebrow="Insights / Articles"
-          title="Every article, in one index"
+          title="Selected articles, in one index"
           lead="Columns, features and commentary carrying TOA's perspective on workplaces, cities, data infrastructure and climate-intelligent design."
           image={pressImage.url}
           phrases={["Workplace futures", "Climate intelligence", "Urban growth"]}
@@ -143,13 +144,14 @@ function ArticlesPage() {
                   </div>
                 ))}
                 {total > limit ? (
-                  <button
+                  <Button
                     type="button"
                     onClick={() => setLimit((n) => n + PAGE)}
-                    className="inline-flex items-center gap-3 border border-border px-6 py-4 text-xs font-semibold uppercase tracking-[0.18em] transition-colors hover:border-gold hover:text-gold"
+                    variant="outline"
+                    className="h-auto rounded-none border-border px-6 py-4 text-xs font-semibold uppercase tracking-[0.18em] hover:border-gold hover:text-gold"
                   >
                     Load more articles
-                  </button>
+                  </Button>
                 ) : null}
               </div>
             )}
