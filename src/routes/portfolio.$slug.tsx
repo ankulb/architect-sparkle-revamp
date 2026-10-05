@@ -104,7 +104,7 @@ function ProjectPage() {
   const metaItems = detail
     ? [
         ["Client", detail.client],
-        ["Location", detail.location],
+        ["City", detail.location],
         [detail.date ? "Date" : "Year", detail.date ?? detail.year],
         ["Sector", detail.sectorLabel ?? detail.sector],
         ["Area", detail.area],
@@ -123,7 +123,7 @@ function ProjectPage() {
           title={meta.title}
           lead={
             detail
-              ? [detail.client, detail.location, detail.date ?? detail.year]
+              ? [detail.client === "Confidential" ? undefined : detail.client, detail.location, detail.area]
                   .filter((v) => Boolean(v))
                   .join(" · ")
               : "A Team One Architects project."
