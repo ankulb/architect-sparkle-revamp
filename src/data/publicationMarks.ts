@@ -9,7 +9,6 @@ import mgsArchitecture from "@/assets/press/mgs-architecture.png.asset.json";
 import constructionWorld from "@/assets/press/construction-world.webp.asset.json";
 import cxoDigitalPulse from "@/assets/press/cxo-digital-pulse.png.asset.json";
 import skillOutlook from "@/assets/press/skill-outlook.png.asset.json";
-import aceUpdate from "@/assets/press/ace-update.png.asset.json";
 import forbesIndia from "@/assets/press/forbes-india.png.asset.json";
 import cnbcTv18 from "@/assets/press/cnbc-tv18.svg.asset.json";
 import mint from "@/assets/press/mint.png.asset.json";
