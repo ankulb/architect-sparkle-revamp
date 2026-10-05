@@ -69,8 +69,6 @@ export const publicationMarks: Record<string, string> = {
   "Construction World": constructionWorld.url,
   "CXO Digital Pulse": cxoDigitalPulse.url,
   "Skill Outlook": skillOutlook.url,
-  "ACE Update": aceUpdate.url,
-  "Ace Update": aceUpdate.url,
   "Forbes India": forbesIndia.url,
   "CNBC-TV18": cnbcTv18.url,
   "CNBCTV18": cnbcTv18.url,
