@@ -9,7 +9,6 @@ import mgsArchitecture from "@/assets/press/mgs-architecture.png.asset.json";
 import constructionWorld from "@/assets/press/construction-world.webp.asset.json";
 import cxoDigitalPulse from "@/assets/press/cxo-digital-pulse.png.asset.json";
 import skillOutlook from "@/assets/press/skill-outlook.png.asset.json";
-import aceUpdate from "@/assets/press/ace-update.png.asset.json";
 import forbesIndia from "@/assets/press/forbes-india.png.asset.json";
 import cnbcTv18 from "@/assets/press/cnbc-tv18.svg.asset.json";
 import mint from "@/assets/press/mint.png.asset.json";
@@ -50,6 +49,10 @@ import passionateInMarketing from "@/assets/press/passionate-in-marketing.png.as
 import pni from "@/assets/press/pni.png.asset.json";
 import smeStreet from "@/assets/press/sme-street.png.asset.json";
 import theMainstream from "@/assets/press/the-mainstream.png.asset.json";
+import helloKotpad from "@/assets/press/hello-kotpad.png.asset.json";
+import konsulteer from "@/assets/press/konsulteer.png.asset.json";
+import designAceUpdate from "@/assets/press/design-ace-update.webp.asset.json";
+import responsibleUs from "@/assets/press/responsible-us.webp.asset.json";
 
 export const publicationMarks: Record<string, string> = {
   "The Economic Times": economicTimes.url,
@@ -65,8 +68,6 @@ export const publicationMarks: Record<string, string> = {
   "Construction World": constructionWorld.url,
   "CXO Digital Pulse": cxoDigitalPulse.url,
   "Skill Outlook": skillOutlook.url,
-  "ACE Update": aceUpdate.url,
-  "Ace Update": aceUpdate.url,
   "Forbes India": forbesIndia.url,
   "CNBC-TV18": cnbcTv18.url,
   "CNBCTV18": cnbcTv18.url,
@@ -116,6 +117,11 @@ export const publicationMarks: Record<string, string> = {
   "SME Street": smeStreet.url,
   "The Mainstream": theMainstream.url,
   "MSG Architecture": mgsArchitecture.url,
+  "Hello Kotpad": helloKotpad.url,
+  "Konsulteer": konsulteer.url,
+  "Responsible Us": responsibleUs.url,
+  "ACE Update": designAceUpdate.url,
+  "Ace Update": designAceUpdate.url,
 };
 // Mastheads drawn in white/light artwork need a dark card to stay visible.
 const lightArtwork = new Set<string>([

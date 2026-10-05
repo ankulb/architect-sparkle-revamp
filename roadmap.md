@@ -32,3 +32,4 @@
 - [x] Add Columbia Ship Management project using people-free supplied photographs
 - [x] Replace the homepage Lincoln tile with Columbia and verify its link on desktop and mobile
 - [x] Add verified publisher marks across Featured Coverage, More Coverages, and Across the Press, with text fallback where unverified
+- [x] Add four supplied publisher marks and show deduplicated logo-backed coverage on Articles and News without deleting archive records
