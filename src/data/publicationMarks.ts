@@ -50,6 +50,10 @@ import passionateInMarketing from "@/assets/press/passionate-in-marketing.png.as
 import pni from "@/assets/press/pni.png.asset.json";
 import smeStreet from "@/assets/press/sme-street.png.asset.json";
 import theMainstream from "@/assets/press/the-mainstream.png.asset.json";
+import helloKotpad from "@/assets/press/hello-kotpad.png.asset.json";
+import konsulteer from "@/assets/press/konsulteer.png.asset.json";
+import designAceUpdate from "@/assets/press/design-ace-update.webp.asset.json";
+import responsibleUs from "@/assets/press/responsible-us.webp.asset.json";
 
 export const publicationMarks: Record<string, string> = {
   "The Economic Times": economicTimes.url,
@@ -116,6 +120,11 @@ export const publicationMarks: Record<string, string> = {
   "SME Street": smeStreet.url,
   "The Mainstream": theMainstream.url,
   "MSG Architecture": mgsArchitecture.url,
+  "Hello Kotpad": helloKotpad.url,
+  "Konsulteer": konsulteer.url,
+  "Responsible Us": responsibleUs.url,
+  "ACE Update": designAceUpdate.url,
+  "Ace Update": designAceUpdate.url,
 };
 // Mastheads drawn in white/light artwork need a dark card to stay visible.
 const lightArtwork = new Set<string>([
