@@ -6,6 +6,7 @@ import {
   useRouter,
   HeadContent,
   Scripts,
+  type ErrorComponentProps,
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
 
@@ -34,11 +35,11 @@ function NotFoundComponent() {
   );
 }
 
-function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
+function ErrorComponent({ error, reset }: ErrorComponentProps) {
   console.error(error);
   const router = useRouter();
   useEffect(() => {
-    reportLovableError(error, { boundary: "tanstack_root_error_component" });
+    reportLovableError(error instanceof Error ? error : new Error(String(error)), { boundary: "tanstack_root_error_component" });
   }, [error]);
 
   return (
@@ -86,8 +87,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:title", content: "Team One Architects" },
       { property: "og:description", content: "Architecture, urban design and interiors that bring out the best in people." },
       { name: "twitter:description", content: "Architecture, urban design and interiors that bring out the best in people." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/f0af4faf-eb31-42bf-bab6-81a27a462ed7/id-preview-e59cc2f7--5697c4e8-d112-40a9-b798-0aeeac1455c8.lovable.app-1782197751586.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/f0af4faf-eb31-42bf-bab6-81a27a462ed7/id-preview-e59cc2f7--5697c4e8-d112-40a9-b798-0aeeac1455c8.lovable.app-1782197751586.png" },
     ],
     links: [
       {
