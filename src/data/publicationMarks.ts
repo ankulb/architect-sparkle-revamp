@@ -126,7 +126,6 @@ const lightArtwork = new Set<string>([
   cnbcTv18.url,
   manufacturingToday.url,
   zeeBusiness.url,
-  analyticsIndiaMagazine.url,
   theMainstream.url,
   indianEducationDiary.url,
 ]);
