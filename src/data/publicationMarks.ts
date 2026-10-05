@@ -28,6 +28,28 @@ import timesProperty from "@/assets/press/times-property.png.asset.json";
 import zeeBusiness from "@/assets/press/zee-business.svg.asset.json";
 import bwBusinessworld from "@/assets/press/bw-businessworld.png.asset.json";
 import bwPeople from "@/assets/press/bw-people.png.asset.json";
+import analyticsIndiaMagazine from "@/assets/press/analytics-india-magazine.png.asset.json";
+import businessNewsThisWeek from "@/assets/press/business-news-this-week.png.asset.json";
+import businessNewsForProfit from "@/assets/press/business-news-for-profit.png.asset.json";
+import businessNewsMatters from "@/assets/press/business-news-matters.png.asset.json";
+import buzzCenter from "@/assets/press/buzz-center.png.asset.json";
+import dailyGossipOnline from "@/assets/press/daily-gossip-online.png.asset.json";
+import dailyStreetJournal from "@/assets/press/daily-street-journal.png.asset.json";
+import discoverWeekly from "@/assets/press/discover-weekly.png.asset.json";
+import educationMatters from "@/assets/press/education-matters.png.asset.json";
+import eduNews from "@/assets/press/edu-news.png.asset.json";
+import indiaShippingNews from "@/assets/press/india-shipping-news.png.asset.json";
+import indiaShorts from "@/assets/press/india-shorts.png.asset.json";
+import indianEducationDiary from "@/assets/press/indian-education-dairy.png.asset.json";
+import konexioNetwork from "@/assets/press/konexio-network.png.asset.json";
+import machineMaker from "@/assets/press/machine-maker.png.asset.json";
+import marketingNewsOnline from "@/assets/press/marketing-news-online.png.asset.json";
+import martechAi from "@/assets/press/martech-ai.png.asset.json";
+import odishaBusinessNews from "@/assets/press/odisha-business-news.png.asset.json";
+import passionateInMarketing from "@/assets/press/passionate-in-marketing.png.asset.json";
+import pni from "@/assets/press/pni.png.asset.json";
+import smeStreet from "@/assets/press/sme-street.png.asset.json";
+import theMainstream from "@/assets/press/the-mainstream.png.asset.json";
 
 export const publicationMarks: Record<string, string> = {
   "The Economic Times": economicTimes.url,
@@ -68,6 +90,32 @@ export const publicationMarks: Record<string, string> = {
   "BW Businessworld": bwBusinessworld.url,
   "BW Businessworld ": bwBusinessworld.url,
   "BW People": bwPeople.url,
+  "Analytics India Magazine": analyticsIndiaMagazine.url,
+  "Business News This Week": businessNewsThisWeek.url,
+  "Business News this Week": businessNewsThisWeek.url,
+  "Business News for Profit": businessNewsForProfit.url,
+  "Business News Matters": businessNewsMatters.url,
+  "Buzz Center": buzzCenter.url,
+  "Daily gossip online": dailyGossipOnline.url,
+  "daily Street Journal": dailyStreetJournal.url,
+  "Daily Street Journal": dailyStreetJournal.url,
+  "Discover Weekly": discoverWeekly.url,
+  "Education Matters": educationMatters.url,
+  "EDU News": eduNews.url,
+  "India Shipping News": indiaShippingNews.url,
+  "India Shorts": indiaShorts.url,
+  "Indian Education Dairy": indianEducationDiary.url,
+  "Konexio Network": konexioNetwork.url,
+  "Machine Maker": machineMaker.url,
+  "Marketing News Online": marketingNewsOnline.url,
+  "Martech Ai": martechAi.url,
+  "Odisha Business News": odishaBusinessNews.url,
+  "Passionate in Marketing": passionateInMarketing.url,
+  "PNI": pni.url,
+  "Press Network of India": pni.url,
+  "SME Street": smeStreet.url,
+  "The Mainstream": theMainstream.url,
+  "MSG Architecture": mgsArchitecture.url,
 };
 // Mastheads drawn in white/light artwork need a dark card to stay visible.
 const lightArtwork = new Set<string>([
@@ -78,6 +126,9 @@ const lightArtwork = new Set<string>([
   cnbcTv18.url,
   manufacturingToday.url,
   zeeBusiness.url,
+  analyticsIndiaMagazine.url,
+  theMainstream.url,
+  indianEducationDiary.url,
 ]);
 
 export function getPublicationMark(publication: string) {
