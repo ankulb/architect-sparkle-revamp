@@ -8,6 +8,7 @@ import { GridBackdrop } from "@/components/graphics/GridBackdrop";
 import { featuredPress, pressCoverage } from "@/data/press";
 import { PublicationMark } from "@/components/PublicationMark";
 import { majorCoverage } from "@/data/coverageIndex";
+import { isLogoCoverage, storyKey } from "@/data/curatedCoverage";
 import pressImage from "@/assets/dynamic/press.jpg.asset.json";
 // Leading outlets only, one story each; the full index lives on the Articles page.
 const leadingPublications: [string, string[]][] = [
@@ -27,9 +28,22 @@ const leadingPublications: [string, string[]][] = [
   ["Realty+", ["Realty+"]],
   ["Construction World", ["Construction World"]],
 ];
+const seenStories = new Set<string>();
+const uniqueWithLogo = <T extends { publication: string; headline: string; url?: string }>(items: T[]): T[] =>
+  items.filter((item) => {
+    const key = storyKey(item);
+    if (!isLogoCoverage(item) || seenStories.has(key)) return false;
+    seenStories.add(key);
+    return true;
+  });
+
+const featuredCoverage = uniqueWithLogo(featuredPress);
+const moreCoverage = uniqueWithLogo(pressCoverage);
 const leadingCoverage = leadingPublications.flatMap(([, names]) => {
-  const item = majorCoverage.find((c) => names.includes(c.publication));
-  return item ? [item] : [];
+  const item = majorCoverage.find((candidate) =>
+    names.includes(candidate.publication) && isLogoCoverage(candidate) && !seenStories.has(storyKey(candidate)),
+  );
+  return item ? uniqueWithLogo([item]) : [];
 });
 
 
@@ -69,7 +83,7 @@ function NewsPage() {
             <Reveal as="h2" delay={1} className="font-display mt-5 max-w-3xl text-3xl font-light tracking-tight sm:text-5xl">Perspectives carried by leading publications</Reveal>
 
             <div className="mt-14 grid gap-px overflow-hidden border border-border bg-border lg:grid-cols-2">
-              {featuredPress.map((item, i) => (
+              {featuredCoverage.map((item, i) => (
                 <Reveal key={item.url} className={i === 0 ? "lg:row-span-2" : ""}>
                   <a href={item.url} target="_blank" rel="noopener noreferrer" className={`group flex h-full flex-col justify-between bg-background p-7 transition-colors hover:bg-card ${i === 0 ? "min-h-[420px] md:p-12" : "min-h-[240px]"}`}>
                      <div className="flex items-start justify-between gap-5"><PublicationMark publication={item.publication} /><ArrowUpRight className="h-5 w-5 shrink-0 text-muted-foreground transition group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-gold" /></div>
@@ -85,7 +99,7 @@ function NewsPage() {
           <div className="mx-auto max-w-[1600px] px-6 py-20 md:px-10 md:py-28">
             <Reveal as="p" className="text-xs font-semibold uppercase tracking-[0.3em] text-gold">More Coverages</Reveal>
             <div className="mt-12 grid border-l border-t border-border sm:grid-cols-2 lg:grid-cols-3">
-              {pressCoverage.map((item, i) => (
+              {moreCoverage.map((item, i) => (
                 <Reveal key={item.url} delay={i % 3}>
                   <a href={item.url} target="_blank" rel="noopener noreferrer" className="group flex min-h-[260px] flex-col justify-between border-b border-r border-border bg-background p-7 transition-colors hover:bg-card">
                      <div className="flex items-start justify-between gap-4"><PublicationMark publication={item.publication} /><ArrowUpRight className="h-4 w-4 shrink-0 text-muted-foreground transition group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-gold" /></div>
