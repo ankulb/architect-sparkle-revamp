@@ -47,7 +47,8 @@ function ArticlesPage() {
         ...group,
         items: group.items.filter(
           (item) =>
-            item.publication.toLowerCase().includes(q) || item.headline.toLowerCase().includes(q),
+             item.publication.toLowerCase().includes(q) || item.headline.toLowerCase().includes(q) ||
+             (relatedCoverage.get(storyKey(item)) ?? []).some((source) => source.publication.toLowerCase().includes(q)),
         ),
       }))
       .filter((group) => group.items.length > 0);
@@ -139,14 +140,16 @@ function ArticlesPage() {
                               </div>
                             )}
                             {also.length > 0 && (
-                              <div className="flex flex-wrap items-center gap-x-3 gap-y-2 pb-4 text-xs text-muted-foreground md:pl-[14.5rem]">
-                                <span>Also covered by</span>
-                                {also.map((source) => (
-                                  <a key={`${source.publication}-${source.url}`} href={source.url} target="_blank" rel="noopener noreferrer" className="underline underline-offset-4 transition-colors hover:text-gold">
-                                    {source.publication}
-                                  </a>
-                                ))}
-                              </div>
+                              <details key={query} open={Boolean(query.trim())} className="pb-4 text-xs text-muted-foreground md:pl-[14.5rem]">
+                                <summary className="cursor-pointer font-semibold uppercase tracking-[0.12em] hover:text-gold">Also covered by {also.length} {also.length === 1 ? "publication" : "publications"}</summary>
+                                <div className="mt-4 flex flex-wrap gap-3">
+                                  {also.map((source) => (
+                                    <a key={`${source.publication}-${source.url}`} href={source.url} target="_blank" rel="noopener noreferrer" title={`Read on ${source.publication}`} className="transition-opacity hover:opacity-70">
+                                      <PublicationMark publication={source.publication} size="sm" className="h-9 w-28 px-2 py-1" />
+                                    </a>
+                                  ))}
+                                </div>
+                              </details>
                             )}
                           </li>
                         );
