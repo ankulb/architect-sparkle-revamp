@@ -43,3 +43,22 @@ export const curatedCoverage: CoverageMonth[] = (() => {
     items: group.items.filter((item) => shown.has(item)),
   })).filter((group) => group.items.length > 0);
 })();
+
+/** Other verified outlets that carried the selected story, shown without a duplicate headline. */
+export const relatedCoverage = (() => {
+  const selected = new Map(curatedCoverage.flatMap((group) => group.items.map((item) => [storyKey(item), item] as const)));
+  const related = new Map<string, CoverageItem[]>();
+  for (const group of coverageIndex) {
+    for (const item of group.items) {
+      const key = storyKey(item);
+      const primary = selected.get(key);
+      if (!primary || item === primary || !item.url || !isLogoCoverage(item) || !isOnline(item.edition)) continue;
+      const list = related.get(key) ?? [];
+      if (item.publication !== primary.publication && !list.some((other) => other.publication === item.publication)) {
+        list.push(item);
+        related.set(key, list);
+      }
+    }
+  }
+  return related;
+})();
