@@ -7,7 +7,7 @@ import { PageHero } from "@/components/about/PageHero";
 import { Reveal } from "@/components/Reveal";
 import { GridBackdrop } from "@/components/graphics/GridBackdrop";
 import { PublicationMark } from "@/components/PublicationMark";
-import { curatedCoverage } from "@/data/curatedCoverage";
+import { curatedCoverage, relatedCoverage, storyKey } from "@/data/curatedCoverage";
 import { Button } from "@/components/ui/button";
 import pressImage from "@/assets/dynamic/press.jpg.asset.json";
 
@@ -105,6 +105,7 @@ function ArticlesPage() {
                     </h2>
                     <ul className="mt-6 border-t border-border">
                       {group.items.map((item) => {
+                        const also = relatedCoverage.get(storyKey(item)) ?? [];
                         const inner = (
                           <>
                             <span className="md:w-56 md:shrink-0">
@@ -135,6 +136,16 @@ function ArticlesPage() {
                             ) : (
                               <div className="flex flex-col gap-2 py-5 md:flex-row md:items-center md:gap-8 md:px-2">
                                 {inner}
+                              </div>
+                            )}
+                            {also.length > 0 && (
+                              <div className="flex flex-wrap items-center gap-x-3 gap-y-2 pb-4 text-xs text-muted-foreground md:pl-[14.5rem]">
+                                <span>Also covered by</span>
+                                {also.map((source) => (
+                                  <a key={`${source.publication}-${source.url}`} href={source.url} target="_blank" rel="noopener noreferrer" className="underline underline-offset-4 transition-colors hover:text-gold">
+                                    {source.publication}
+                                  </a>
+                                ))}
                               </div>
                             )}
                           </li>
