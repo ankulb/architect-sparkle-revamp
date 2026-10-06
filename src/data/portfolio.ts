@@ -126,8 +126,8 @@ export const projects: Project[] = [
   { slug: "sedemac", title: "Sedemac", category: INTERIORS, location: "Baner, Pune", image: sedmacGallery[0] },
   { slug: "grihum-housing-finance", title: "Grihum Housing Finance", category: INTERIORS, location: "Mumbai", image: grihumHousingFinanceGallery[0] },
   { slug: "strux-one", title: "Strux One (Veeam)", category: INTERIORS, location: "Pune", image: struxOneGallery[0] },
-  { slug: "sava-global-healthcare", title: "Sava Global Healthcare", category: INTERIORS, location: "Pune", image: struxOneGallery[3] },
-  { slug: "everlance", title: "Everlance", category: INTERIORS, image: everlanceGallery[0] },
+  { slug: "sava-global-healthcare", title: "Sava Global Healthcare", category: INTERIORS, location: "Pune", image: savaGallery[0] },
+  { slug: "everllence", title: "Everllence", category: INTERIORS, image: everlanceGallery[0] },
   { slug: "generac-pune", title: "Generac, Pune", category: INTERIORS, location: "Pune", image: generacTile.url },
 ];
 
