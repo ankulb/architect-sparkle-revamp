@@ -43,6 +43,8 @@ import {
   struxOneGallery,
   savaGallery,
   everlanceGallery,
+  hyattChandigarhGallery,
+  generacPuneGallery,
 } from "@/data/projectAssets";
 import generacTile from "@/assets/hero/interior.png.asset.json";
 
@@ -114,7 +116,7 @@ export const projects: Project[] = [
   { slug: "commercial-office-building", title: "Kinshasa Business Centre", category: ARCHITECTURE, location: "Kinshasa, DR Congo", image: congoOfficeGallery[0] },
   { slug: "fujitsu-pune", title: "Fujitsu", category: ARCHITECTURE, location: "Pune", image: fujitsuPuneGallery[0] },
   { slug: "brose-pune", title: "Brose", category: ARCHITECTURE, location: "Pune", image: brosePuneGallery[0] },
-  { slug: "hyatt", title: "Hyatt", category: ARCHITECTURE, image: hyattGallery[0] },
+  { slug: "hyatt", title: "Hyatt", category: ARCHITECTURE, location: "Chandigarh", image: hyattGallery[0] },
 
   { slug: "xpo", title: "XPO", category: INTERIORS, location: "India", image: xpoGallery[0] },
   { slug: "3i", title: "3i", category: INTERIORS, image: threeIGallery[0] },
@@ -129,7 +131,8 @@ export const projects: Project[] = [
   { slug: "strux-one", title: "Strux One (Veeam)", category: INTERIORS, location: "Pune", image: struxOneGallery[0] },
   { slug: "sava-global-healthcare", title: "Sava Global Healthcare", category: INTERIORS, location: "Pune", image: savaGallery[0] },
   { slug: "everllence", title: "Everllence", category: INTERIORS, image: everlanceGallery[0] },
-  { slug: "generac-pune", title: "Generac, Pune", category: INTERIORS, location: "Pune", image: generacTile.url },
+  { slug: "generac-pune", title: "Generac, Pune", category: INTERIORS, location: "Pune", image: generacPuneGallery[15] },
+  { slug: "atlas-copco", title: "Atlas Copco, Pune", category: INTERIORS, location: "Pune", image: generacTile.url },
 ];
 
 export const projectDetails: Record<string, ProjectDetail> = {
@@ -198,12 +201,17 @@ export const projectDetails: Record<string, ProjectDetail> = {
     slug: "everllence",
     title: "Everllence",
     category: INTERIORS,
-    sector: "IT & Software",
-    client: "Everllence",
+    sector: "Engineering",
+    sectorLabel: "Engineering Office & Cafeteria",
+    client: "Everllence India",
+    location: "Ch. Sambhaji Nagar (Waluj MIDC)",
+    date: "January 2026",
+    status: "Completed",
     service: "Corporate Interiors",
     image: everlanceGallery[0],
     description: [
-      "A bright, sociable café and breakout floor for Everllence, combining generous dining areas with high-table lounges, timber-ribbed ceiling features and soft greens that give the workplace an easy, welcoming rhythm.",
+      "The cafeteria features a modern and contemporary theme with a warm, subtle colour palette that creates a welcoming and comfortable ambience. An open ceiling concept adds spaciousness and a modern character to the space.",
+      "The central display area is highlighted using fluted panels and open baffles, adding texture, depth and visual interest while defining the focal zone. The overall theme embodies efficiency, innovation and the seamless integration of technology and design.",
     ],
     gallery: everlanceGallery,
   },
@@ -218,11 +226,30 @@ export const projectDetails: Record<string, ProjectDetail> = {
     date: "May 2026",
     status: "Completed",
     service: "GCC Corporate Interiors",
-    image: generacTile.url,
+    image: generacPuneGallery[15],
     description: [
       "The interior is designed with a modern theme complemented by the brand colours, creating a strong and cohesive identity. A warm and subtle colour palette adds comfort and balance to the space.",
       "An open ceiling concept enhances the sense of openness while giving the interior a contemporary character. The central display area features PVD panels as a premium accent, adding richness and visual appeal.",
       "The design strongly emphasises brand values and identity, with dedicated award and display shelves that showcase achievements, milestones and brand elements, making them an integral part of the overall interior experience.",
+    ],
+    gallery: generacPuneGallery,
+  },
+  "atlas-copco": {
+    slug: "atlas-copco",
+    title: "Atlas Copco, Pune",
+    category: INTERIORS,
+    sector: "Engineering",
+    sectorLabel: "Manufacturing",
+    client: "Atlas Copco",
+    location: "Kohinoor Tower, PCMC, Pimpri Pune",
+    date: "10 September 2026",
+    status: "Completed",
+    service: "Corporate Interiors",
+    image: generacTile.url,
+    description: [
+      "The interior focuses on creating a clean, sophisticated and highly functional workspace. In the reception area, teal corporate branding is balanced with warm wood textures and soft neutral surfaces.",
+      "The café is designed on a soft palette of blush pink, warm beige and natural wood, creating a welcoming, relaxed café environment. Decorative lighting introduces a playful drama, and backlit niches on the feature wall create a strong focal point.",
+      "The space features distinct vibes across the smaller and larger collaborative areas. The smaller collaboration space adopts a warm and cozy palette, complemented by terrazzo finishes and traditional jali detailing. In contrast, the larger collaboration zone is designed in cooler tones, with white workstations creating a clean, minimal backdrop while the blue collaboration area becomes a striking focal point.",
     ],
     gallery: [],
   },
@@ -660,6 +687,9 @@ export const projectDetails: Record<string, ProjectDetail> = {
     sector: "Hospitality",
     status: "Completed",
     client: "Hyatt",
+    location: "Chandigarh",
+    area: "10,000 sq. ft.",
+    year: "2018",
     service: "Architecture & Urban Design",
     image: hyattGallery[0],
     description: [
@@ -667,7 +697,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
       "Arrival sequences, public realms and guest-room wings are arranged to frame views, daylight and movement, giving the property a strong sense of place while meeting the operational discipline of a global hospitality brand.",
       "The result is a destination that feels both effortless and precise — hospitality architecture designed around the guest from the ground up.",
     ],
-    gallery: hyattGallery,
+    gallery: [...hyattGallery, ...hyattChandigarhGallery],
   },
 
   "mmrda-headquarters": {

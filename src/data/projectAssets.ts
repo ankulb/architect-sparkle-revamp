@@ -635,3 +635,44 @@ import sava06 from "@/assets/projects/sava-06.jpg.asset.json";
 import sava07 from "@/assets/projects/sava-07.jpg.asset.json";
 import sava08 from "@/assets/projects/sava-08.jpg.asset.json";
 export const savaGallery = [sava01.url, sava02.url, sava03.url, sava04.url, sava05.url, sava06.url, sava07.url, sava08.url];
+
+import hyatt01 from "@/assets/projects/hyatt-chandigarh/hyatt-chandigarh-01.jpg.asset.json";
+import hyatt02 from "@/assets/projects/hyatt-chandigarh/hyatt-chandigarh-02.jpg.asset.json";
+import hyatt03 from "@/assets/projects/hyatt-chandigarh/hyatt-chandigarh-03.jpg.asset.json";
+import hyatt04 from "@/assets/projects/hyatt-chandigarh/hyatt-chandigarh-04.jpg.asset.json";
+import hyatt05 from "@/assets/projects/hyatt-chandigarh/hyatt-chandigarh-05.jpg.asset.json";
+import hyatt06 from "@/assets/projects/hyatt-chandigarh/hyatt-chandigarh-06.jpg.asset.json";
+import hyatt07 from "@/assets/projects/hyatt-chandigarh/hyatt-chandigarh-07.jpg.asset.json";
+import hyatt08 from "@/assets/projects/hyatt-chandigarh/hyatt-chandigarh-08.jpg.asset.json";
+import hyatt09 from "@/assets/projects/hyatt-chandigarh/hyatt-chandigarh-09.jpg.asset.json";
+export const hyattChandigarhGallery = [
+  hyatt01.url, hyatt02.url, hyatt03.url, hyatt04.url, hyatt05.url,
+  hyatt06.url, hyatt07.url, hyatt08.url, hyatt09.url,
+];
+
+import generac01 from "@/assets/projects/generac-pune/generac-pune-01.jpg.asset.json";
+import generac02 from "@/assets/projects/generac-pune/generac-pune-02.jpg.asset.json";
+import generac03 from "@/assets/projects/generac-pune/generac-pune-03.jpg.asset.json";
+import generac04 from "@/assets/projects/generac-pune/generac-pune-04.jpg.asset.json";
+import generac05 from "@/assets/projects/generac-pune/generac-pune-05.jpg.asset.json";
+import generac06 from "@/assets/projects/generac-pune/generac-pune-06.jpg.asset.json";
+import generac07 from "@/assets/projects/generac-pune/generac-pune-07.jpg.asset.json";
+import generac08 from "@/assets/projects/generac-pune/generac-pune-08.jpg.asset.json";
+import generac09 from "@/assets/projects/generac-pune/generac-pune-09.jpg.asset.json";
+import generac10 from "@/assets/projects/generac-pune/generac-pune-10.jpg.asset.json";
+import generac11 from "@/assets/projects/generac-pune/generac-pune-11.jpg.asset.json";
+import generac12 from "@/assets/projects/generac-pune/generac-pune-12.jpg.asset.json";
+import generac13 from "@/assets/projects/generac-pune/generac-pune-13.jpg.asset.json";
+import generac14 from "@/assets/projects/generac-pune/generac-pune-14.jpg.asset.json";
+import generac15 from "@/assets/projects/generac-pune/generac-pune-15.jpg.asset.json";
+import generac16 from "@/assets/projects/generac-pune/generac-pune-16.jpg.asset.json";
+import generac17 from "@/assets/projects/generac-pune/generac-pune-17.jpg.asset.json";
+import generac18 from "@/assets/projects/generac-pune/generac-pune-18.jpg.asset.json";
+import generac19 from "@/assets/projects/generac-pune/generac-pune-19.jpg.asset.json";
+import generac20 from "@/assets/projects/generac-pune/generac-pune-20.jpg.asset.json";
+export const generacPuneGallery = [
+  generac01.url, generac02.url, generac03.url, generac04.url, generac05.url,
+  generac06.url, generac07.url, generac08.url, generac09.url, generac10.url,
+  generac11.url, generac12.url, generac13.url, generac14.url, generac15.url,
+  generac16.url, generac17.url, generac18.url, generac19.url, generac20.url,
+];
