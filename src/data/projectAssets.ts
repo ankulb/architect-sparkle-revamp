@@ -1,3 +1,33 @@
+import everlance01 from "@/assets/projects/everlance/01.jpg.asset.json";
+import everlance02 from "@/assets/projects/everlance/02.jpg.asset.json";
+import everlance03 from "@/assets/projects/everlance/03.jpg.asset.json";
+import everlance04 from "@/assets/projects/everlance/04.jpg.asset.json";
+import everlance05 from "@/assets/projects/everlance/05.jpg.asset.json";
+import struxOne01 from "@/assets/projects/strux-one/01.jpg.asset.json";
+import struxOne02 from "@/assets/projects/strux-one/02.jpg.asset.json";
+import struxOne03 from "@/assets/projects/strux-one/03.jpg.asset.json";
+import struxOne04 from "@/assets/projects/strux-one/04.jpg.asset.json";
+import struxOne05 from "@/assets/projects/strux-one/05.jpg.asset.json";
+import struxOne06 from "@/assets/projects/strux-one/06.jpg.asset.json";
+import struxOne07 from "@/assets/projects/strux-one/07.jpg.asset.json";
+import struxOne08 from "@/assets/projects/strux-one/08.jpg.asset.json";
+import struxOne09 from "@/assets/projects/strux-one/09.jpg.asset.json";
+import struxOne10 from "@/assets/projects/strux-one/10.jpg.asset.json";
+import grihumHousingFinance01 from "@/assets/projects/grihum-housing-finance/01.jpg.asset.json";
+import grihumHousingFinance02 from "@/assets/projects/grihum-housing-finance/02.jpg.asset.json";
+import grihumHousingFinance03 from "@/assets/projects/grihum-housing-finance/03.jpg.asset.json";
+import grihumHousingFinance04 from "@/assets/projects/grihum-housing-finance/04.jpg.asset.json";
+import grihumHousingFinance05 from "@/assets/projects/grihum-housing-finance/05.jpg.asset.json";
+import grihumHousingFinance06 from "@/assets/projects/grihum-housing-finance/06.jpg.asset.json";
+import grihumHousingFinance07 from "@/assets/projects/grihum-housing-finance/07.jpg.asset.json";
+import grihumHousingFinance08 from "@/assets/projects/grihum-housing-finance/08.jpg.asset.json";
+import grihumHousingFinance09 from "@/assets/projects/grihum-housing-finance/09.jpg.asset.json";
+import grihumHousingFinance10 from "@/assets/projects/grihum-housing-finance/10.jpg.asset.json";
+import grihumHousingFinance11 from "@/assets/projects/grihum-housing-finance/11.jpg.asset.json";
+import grihumHousingFinance12 from "@/assets/projects/grihum-housing-finance/12.jpg.asset.json";
+import grihumHousingFinance13 from "@/assets/projects/grihum-housing-finance/13.jpg.asset.json";
+import grihumHousingFinance14 from "@/assets/projects/grihum-housing-finance/14.jpg.asset.json";
+import grihumHousingFinance15 from "@/assets/projects/grihum-housing-finance/15.jpg.asset.json";
 import ergoTechnologies1 from "@/assets/projects/ergo-technologies/dsc06880-hdr.jpg.asset.json";
 import ergoTechnologies2 from "@/assets/projects/ergo-technologies/dsc06896-hdr.jpg.asset.json";
 import ergoTechnologies3 from "@/assets/projects/ergo-technologies/dsc06902-hdr-2.jpg.asset.json";
@@ -589,3 +619,9 @@ import congo1 from "@/assets/projects/congo-office/01.jpg.asset.json";
 import congo2 from "@/assets/projects/congo-office/02.jpg.asset.json";
 import congo3 from "@/assets/projects/congo-office/03.jpg.asset.json";
 export const congoOfficeGallery = [congo1.url, congo2.url, congo3.url];
+
+export const grihumHousingFinanceGallery = [grihumHousingFinance02.url, grihumHousingFinance03.url, grihumHousingFinance01.url, grihumHousingFinance04.url, grihumHousingFinance05.url, grihumHousingFinance06.url, grihumHousingFinance07.url, grihumHousingFinance08.url, grihumHousingFinance09.url, grihumHousingFinance10.url, grihumHousingFinance11.url, grihumHousingFinance12.url, grihumHousingFinance13.url, grihumHousingFinance14.url, grihumHousingFinance15.url];
+
+export const struxOneGallery = [struxOne01.url, struxOne02.url, struxOne03.url, struxOne04.url, struxOne05.url, struxOne06.url, struxOne07.url, struxOne08.url, struxOne09.url, struxOne10.url];
+
+export const everlanceGallery = [everlance01.url, everlance02.url, everlance03.url, everlance04.url, everlance05.url];

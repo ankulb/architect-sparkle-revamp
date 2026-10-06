@@ -62,6 +62,8 @@ const sectors: Record<string, Sector> = {
       { name: "Idea forge", projectSlug: "ideaforge-headquarters-mumbai" },
       { name: "Intangles", projectSlug: "intangles" },
       { name: "VW ITS", projectSlug: "vw-its" },
+      { name: "Strux One (Veeam)", projectSlug: "strux-one" },
+      { name: "Everlance", projectSlug: "everlance" },
     ],
   },
   engineering: {
@@ -76,6 +78,7 @@ const sectors: Record<string, Sector> = {
       { name: "JCI", projectSlug: "johnson-controls-gcc-offices" },
       { name: "Sedemac", projectSlug: "sedemac" },
       { name: "Vanderlane", projectSlug: "vanderlane" },
+      { name: "Generac", projectSlug: "generac-pune" },
     ],
   },
   "health-pharma": {
@@ -90,6 +93,7 @@ const sectors: Record<string, Sector> = {
       { name: "BASF", projectSlug: "basf" },
       { name: "Bharat Serum", projectSlug: "bharat-serum" },
       { name: "Indira IVF", projectSlug: "indira-ivf" },
+      { name: "Sava Global Healthcare", projectSlug: "sava-global-healthcare" },
     ],
   },
   media: {
