@@ -120,7 +120,7 @@ export const projects: Project[] = [
 
   { slug: "xpo", title: "XPO", category: INTERIORS, location: "Pune & Mumbai", image: xpoGallery[0] },
   { slug: "3i", title: "3i", category: INTERIORS, image: threeIGallery[0] },
-  { slug: "vanderlane", title: "Vanderlane", category: INTERIORS, location: "WTC Kharadi, Pune", image: vanderlaneGallery[0] },
+  { slug: "vanderlande", title: "Vanderlande", category: INTERIORS, location: "WTC Kharadi, Pune", image: vanderlaneGallery[0] },
   { slug: "bharat-serum", title: "Bharat Serum", category: INTERIORS, image: bharatSerumGallery[0] },
   { slug: "digital-domain", title: "Digital Domain", category: INTERIORS, image: digitalDomainGallery[0] },
   { slug: "toll", title: "Toll", category: INTERIORS, location: "Pune", image: tollGallery[0] },
@@ -582,19 +582,19 @@ export const projectDetails: Record<string, ProjectDetail> = {
     ],
     gallery: jciGallery,
   },
-  vanderlane: {
-    slug: "vanderlane",
-    title: "Vanderlane",
+  vanderlande: {
+    slug: "vanderlande",
+    title: "Vanderlande",
     category: INTERIORS,
     sector: "Engineering",
     area: "50,000 sq. ft.",
     status: "Completed",
-    client: "Vanderlane",
+    client: "Vanderlande",
     location: "WTC Kharadi, Pune",
     service: "Design & Build",
     image: vanderlaneGallery[0],
     description: [
-      "Located in the iconic World Trade Center Kharadi, the 50,000 sq. ft. workplace designed and built for Vanderlane is a spatial translation of movement, precision and engineered efficiency, drawing on the brand's ethos of innovation in material handling and conveyor automation.",
+      "Located in the iconic World Trade Center Kharadi, the 50,000 sq. ft. workplace designed and built for Vanderlande is a spatial translation of movement, precision and engineered efficiency, drawing on the brand's ethos of innovation in material handling and conveyor automation.",
       "The concept revolves around flow — of ideas, people and technology. A grand reception with a video wall establishes scale, while made-to-order height-adjustable workstations support ergonomic well-being. Open ceilings interplay with grid systems, subtly mirroring the mechanical logic of conveyor lines.",
       "At the heart of the office, a central breakout zone reimagines the conveyor belt: sofa seating in flowing, linear forms acts as a collaborative spine, with café spaces woven into the open plan to keep work and pause in uninterrupted motion.",
     ],

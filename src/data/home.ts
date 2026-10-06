@@ -85,10 +85,10 @@ export const nav: NavItem[] = [
   { label: "Studio", href: "/about", children: aboutNav },
   {
     label: "Careers",
-    href: "/#careers",
+    href: "/careers",
     children: [
       { label: "Life at TOA", to: "/about/life" },
-      { label: "Open Positions", href: "/#careers" },
+      { label: "Open Positions", href: "/careers" },
       
     ],
   },
@@ -213,7 +213,7 @@ export const careers = {
   overline: "Careers at TOA",
   title: "We don’t just build ideas, we build each other",
   body: "We're a multidisciplinary studio of architects, interior designers and engineers building calmly, courageously, and together. Join a culture shaped by ownership, learning and shared ambition.",
-  cta: { label: "Explore Careers", href: "https://teamonearchitects.com/career/" },
+  cta: { label: "Explore Careers", href: "/careers" },
   image: careersImage.url,
   imageAlt: "The leadership team of Team One Architects at the Mumbai studio",
   team: [

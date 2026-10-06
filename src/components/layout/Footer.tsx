@@ -11,7 +11,7 @@ const expertiseLinks = [
 const connectLinks = [
   { label: "Contact", to: "/contact" },
   { label: "News", href: "/#insights" },
-  { label: "Careers", href: "/#careers" },
+  { label: "Careers", href: "/careers" },
   {
     label: "Feedback",
     href: "mailto:info@teamonearchitects.com?subject=Website%20Feedback",
@@ -20,9 +20,9 @@ const connectLinks = [
 ];
 
 const legalLinks = [
-  { label: "Privacy Policy", href: "#" },
-  { label: "Terms of Use", href: "#" },
-  { label: "Cookie Policy", href: "#" },
+  { label: "Privacy Policy", href: "/privacy" },
+  { label: "Terms of Use", href: "/terms" },
+  { label: "Cookie Policy", href: "/cookies" },
 ];
 
 const socials = [
