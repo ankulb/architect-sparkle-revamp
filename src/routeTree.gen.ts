@@ -11,8 +11,12 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
+import { Route as CareersRouteImport } from './routes/careers'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as CookiesRouteImport } from './routes/cookies'
 import { Route as PortfolioRouteImport } from './routes/portfolio'
+import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as TermsRouteImport } from './routes/terms'
 import { Route as AboutIndexRouteImport } from './routes/about.index'
 import { Route as AboutAnchorsRouteImport } from './routes/about.anchors'
 import { Route as AboutBoardRouteImport } from './routes/about.board'
@@ -27,6 +31,7 @@ import { Route as InsightsMediaRouteImport } from './routes/insights.media'
 import { Route as InsightsNewsRouteImport } from './routes/insights.news'
 import { Route as PortfolioIndexRouteImport } from './routes/portfolio.index'
 import { Route as PortfolioSlugRouteImport } from './routes/portfolio.$slug'
+import { Route as PortfolioVanderlaneRouteImport } from './routes/portfolio.vanderlane'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -38,14 +43,34 @@ const AboutRoute = AboutRouteImport.update({
   path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CareersRoute = CareersRouteImport.update({
+  id: '/careers',
+  path: '/careers',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CookiesRoute = CookiesRouteImport.update({
+  id: '/cookies',
+  path: '/cookies',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PortfolioRoute = PortfolioRouteImport.update({
   id: '/portfolio',
   path: '/portfolio',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TermsRoute = TermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AboutIndexRoute = AboutIndexRouteImport.update({
@@ -118,12 +143,21 @@ const PortfolioSlugRoute = PortfolioSlugRouteImport.update({
   path: '/$slug',
   getParentRoute: () => PortfolioRoute,
 } as any)
+const PortfolioVanderlaneRoute = PortfolioVanderlaneRouteImport.update({
+  id: '/vanderlane',
+  path: '/vanderlane',
+  getParentRoute: () => PortfolioRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRouteWithChildren
+  '/careers': typeof CareersRoute
   '/contact': typeof ContactRoute
+  '/cookies': typeof CookiesRoute
   '/portfolio': typeof PortfolioRouteWithChildren
+  '/privacy': typeof PrivacyRoute
+  '/terms': typeof TermsRoute
   '/about/anchors': typeof AboutAnchorsRoute
   '/about/board': typeof AboutBoardRoute
   '/about/clientele': typeof AboutClienteleRoute
@@ -136,12 +170,17 @@ export interface FileRoutesByFullPath {
   '/insights/media': typeof InsightsMediaRoute
   '/insights/news': typeof InsightsNewsRoute
   '/portfolio/$slug': typeof PortfolioSlugRoute
+  '/portfolio/vanderlane': typeof PortfolioVanderlaneRoute
   '/about/': typeof AboutIndexRoute
   '/portfolio/': typeof PortfolioIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/careers': typeof CareersRoute
   '/contact': typeof ContactRoute
+  '/cookies': typeof CookiesRoute
+  '/privacy': typeof PrivacyRoute
+  '/terms': typeof TermsRoute
   '/about/anchors': typeof AboutAnchorsRoute
   '/about/board': typeof AboutBoardRoute
   '/about/clientele': typeof AboutClienteleRoute
@@ -154,6 +193,7 @@ export interface FileRoutesByTo {
   '/insights/media': typeof InsightsMediaRoute
   '/insights/news': typeof InsightsNewsRoute
   '/portfolio/$slug': typeof PortfolioSlugRoute
+  '/portfolio/vanderlane': typeof PortfolioVanderlaneRoute
   '/about': typeof AboutIndexRoute
   '/portfolio': typeof PortfolioIndexRoute
 }
@@ -161,8 +201,12 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRouteWithChildren
+  '/careers': typeof CareersRoute
   '/contact': typeof ContactRoute
+  '/cookies': typeof CookiesRoute
   '/portfolio': typeof PortfolioRouteWithChildren
+  '/privacy': typeof PrivacyRoute
+  '/terms': typeof TermsRoute
   '/about/anchors': typeof AboutAnchorsRoute
   '/about/board': typeof AboutBoardRoute
   '/about/clientele': typeof AboutClienteleRoute
@@ -175,6 +219,7 @@ export interface FileRoutesById {
   '/insights/media': typeof InsightsMediaRoute
   '/insights/news': typeof InsightsNewsRoute
   '/portfolio/$slug': typeof PortfolioSlugRoute
+  '/portfolio/vanderlane': typeof PortfolioVanderlaneRoute
   '/about/': typeof AboutIndexRoute
   '/portfolio/': typeof PortfolioIndexRoute
 }
@@ -183,8 +228,12 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/about'
+    | '/careers'
     | '/contact'
+    | '/cookies'
     | '/portfolio'
+    | '/privacy'
+    | '/terms'
     | '/about/anchors'
     | '/about/board'
     | '/about/clientele'
@@ -197,12 +246,17 @@ export interface FileRouteTypes {
     | '/insights/media'
     | '/insights/news'
     | '/portfolio/$slug'
+    | '/portfolio/vanderlane'
     | '/about/'
     | '/portfolio/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/careers'
     | '/contact'
+    | '/cookies'
+    | '/privacy'
+    | '/terms'
     | '/about/anchors'
     | '/about/board'
     | '/about/clientele'
@@ -215,14 +269,19 @@ export interface FileRouteTypes {
     | '/insights/media'
     | '/insights/news'
     | '/portfolio/$slug'
+    | '/portfolio/vanderlane'
     | '/about'
     | '/portfolio'
   id:
     | '__root__'
     | '/'
     | '/about'
+    | '/careers'
     | '/contact'
+    | '/cookies'
     | '/portfolio'
+    | '/privacy'
+    | '/terms'
     | '/about/anchors'
     | '/about/board'
     | '/about/clientele'
@@ -235,6 +294,7 @@ export interface FileRouteTypes {
     | '/insights/media'
     | '/insights/news'
     | '/portfolio/$slug'
+    | '/portfolio/vanderlane'
     | '/about/'
     | '/portfolio/'
   fileRoutesById: FileRoutesById
@@ -242,8 +302,12 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRouteWithChildren
+  CareersRoute: typeof CareersRoute
   ContactRoute: typeof ContactRoute
+  CookiesRoute: typeof CookiesRoute
   PortfolioRoute: typeof PortfolioRouteWithChildren
+  PrivacyRoute: typeof PrivacyRoute
+  TermsRoute: typeof TermsRoute
   ExpertiseSectorRoute: typeof ExpertiseSectorRoute
   InsightsArticlesRoute: typeof InsightsArticlesRoute
   InsightsAwardsRoute: typeof InsightsAwardsRoute
@@ -267,6 +331,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/careers': {
+      id: '/careers'
+      path: '/careers'
+      fullPath: '/careers'
+      preLoaderRoute: typeof CareersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/contact': {
       id: '/contact'
       path: '/contact'
@@ -274,11 +345,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/cookies': {
+      id: '/cookies'
+      path: '/cookies'
+      fullPath: '/cookies'
+      preLoaderRoute: typeof CookiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/portfolio': {
       id: '/portfolio'
       path: '/portfolio'
       fullPath: '/portfolio'
       preLoaderRoute: typeof PortfolioRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/terms': {
+      id: '/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof TermsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/about/': {
@@ -379,6 +471,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PortfolioSlugRouteImport
       parentRoute: typeof PortfolioRoute
     }
+    '/portfolio/vanderlane': {
+      id: '/portfolio/vanderlane'
+      path: '/vanderlane'
+      fullPath: '/portfolio/vanderlane'
+      preLoaderRoute: typeof PortfolioVanderlaneRouteImport
+      parentRoute: typeof PortfolioRoute
+    }
   }
 }
 
@@ -406,11 +505,13 @@ const AboutRouteWithChildren = AboutRoute._addFileChildren(AboutRouteChildren)
 
 interface PortfolioRouteChildren {
   PortfolioSlugRoute: typeof PortfolioSlugRoute
+  PortfolioVanderlaneRoute: typeof PortfolioVanderlaneRoute
   PortfolioIndexRoute: typeof PortfolioIndexRoute
 }
 
 const PortfolioRouteChildren: PortfolioRouteChildren = {
   PortfolioSlugRoute: PortfolioSlugRoute,
+  PortfolioVanderlaneRoute: PortfolioVanderlaneRoute,
   PortfolioIndexRoute: PortfolioIndexRoute,
 }
 
@@ -421,8 +522,12 @@ const PortfolioRouteWithChildren = PortfolioRoute._addFileChildren(
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRouteWithChildren,
+  CareersRoute: CareersRoute,
   ContactRoute: ContactRoute,
+  CookiesRoute: CookiesRoute,
   PortfolioRoute: PortfolioRouteWithChildren,
+  PrivacyRoute: PrivacyRoute,
+  TermsRoute: TermsRoute,
   ExpertiseSectorRoute: ExpertiseSectorRoute,
   InsightsArticlesRoute: InsightsArticlesRoute,
   InsightsAwardsRoute: InsightsAwardsRoute,
