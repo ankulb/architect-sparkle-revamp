@@ -41,6 +41,7 @@ import {
   columbiaShipManagementGallery,
   grihumHousingFinanceGallery,
   struxOneGallery,
+  savaGallery,
   everlanceGallery,
 } from "@/data/projectAssets";
 import generacTile from "@/assets/hero/interior.png.asset.json";
@@ -126,8 +127,8 @@ export const projects: Project[] = [
   { slug: "sedemac", title: "Sedemac", category: INTERIORS, location: "Baner, Pune", image: sedmacGallery[0] },
   { slug: "grihum-housing-finance", title: "Grihum Housing Finance", category: INTERIORS, location: "Mumbai", image: grihumHousingFinanceGallery[0] },
   { slug: "strux-one", title: "Strux One (Veeam)", category: INTERIORS, location: "Pune", image: struxOneGallery[0] },
-  { slug: "sava-global-healthcare", title: "Sava Global Healthcare", category: INTERIORS, location: "Pune", image: struxOneGallery[3] },
-  { slug: "everlance", title: "Everlance", category: INTERIORS, image: everlanceGallery[0] },
+  { slug: "sava-global-healthcare", title: "Sava Global Healthcare", category: INTERIORS, location: "Pune", image: savaGallery[0] },
+  { slug: "everllence", title: "Everllence", category: INTERIORS, image: everlanceGallery[0] },
   { slug: "generac-pune", title: "Generac, Pune", category: INTERIORS, location: "Pune", image: generacTile.url },
 ];
 
@@ -172,7 +173,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
     ],
     gallery: struxOneGallery,
   },
-  "sava-global-healthcare": {
+"sava-global-healthcare": {
     slug: "sava-global-healthcare",
     title: "Sava Global Healthcare",
     category: INTERIORS,
@@ -184,25 +185,25 @@ export const projectDetails: Record<string, ProjectDetail> = {
     area: "12,300 sq. ft. (carpet)",
     status: "Completed",
     service: "Corporate Interiors",
-    image: struxOneGallery[3],
+    image: savaGallery[0],
     description: [
       "The design follows a simple, clean and welcoming aesthetic, creating a space that feels comfortable, personal and effortlessly stylish. Soft, muted colours form the base palette, keeping the overall environment calm and soothing without introducing any loud or overpowering elements.",
       "A subtle Boho Café theme adds warmth and character through natural textures, relaxed furniture, earthy accents and thoughtfully curated décor. The space is designed to feel informal and inviting, encouraging people to pause, connect and enjoy the environment.",
       "To bring in a sense of familiarity and cultural character, Indian-inspired wallpapers and patterns are introduced selectively as feature elements. These add personality and a personal touch while complementing the soft, contemporary backdrop.",
       "Overall, the design aims to create a calm, warm and contemporary café-like environment — simple in its expression, rich in character and comfortable enough to feel like a space one naturally wants to spend time in.",
     ],
-    gallery: [...struxOneGallery.slice(3), ...struxOneGallery.slice(0, 3)],
+    gallery: savaGallery,
   },
-  everlance: {
-    slug: "everlance",
-    title: "Everlance",
+  everllence: {
+    slug: "everllence",
+    title: "Everllence",
     category: INTERIORS,
     sector: "IT & Software",
-    client: "Everlance",
+    client: "Everllence",
     service: "Corporate Interiors",
     image: everlanceGallery[0],
     description: [
-      "A bright, sociable café and breakout floor for Everlance, combining generous dining areas with high-table lounges, timber-ribbed ceiling features and soft greens that give the workplace an easy, welcoming rhythm.",
+      "A bright, sociable café and breakout floor for Everllence, combining generous dining areas with high-table lounges, timber-ribbed ceiling features and soft greens that give the workplace an easy, welcoming rhythm.",
     ],
     gallery: everlanceGallery,
   },
