@@ -8,8 +8,8 @@ import { Button } from "@/components/ui/button";
 import logoAsset from "@/assets/toa-logo.png.asset.json";
 import architectureImage from "@/assets/hero/architecture-urban-design.jpg.asset.json";
 
-const title = "Contact Team One Architects | Mumbai, Pune & Dubai";
-const description = "Contact Team One Architects in Mumbai, Pune or Dubai to discuss architecture, urban design and interior architecture projects.";
+const title = "Get In Touch | Team One Architects";
+const description = "Let's build the next landmark together. Tell us about your vision and Team One Architects will help you shape it into space — Mumbai and Pune offices.";
 const pageUrl = "https://architect-sparkle-revamp.lovable.app/contact";
 
 const inquirySchema = z.object({
@@ -20,11 +20,11 @@ const inquirySchema = z.object({
   message: z.string().trim().min(10, "Please add a little more detail.").max(1200),
 });
 
-const offices = [
-  { city: "Mumbai", label: undefined, detail: "Level 2/3 B, Laxmi Tower, G-Block, Plot # C-25, Bandra Kurla Complex, Mumbai – 400 051, India." },
-  { city: "Pune", label: undefined, detail: "Office No. 201, 2nd Floor, “Cello Platina”, Fergusson College Road, Near Police Ground, Shivajinagar, Pune – 411 016, India." },
-  { city: "Dubai", label: "Team One Alliance Design – FZCO", detail: "Building A1, Dubai Digital Park, Dubai Silicon Oasis, Dubai, United Arab Emirates." },
-] as const;
+const offices: { city: string; label?: string; detail: string; phone?: string }[] = [
+  { city: "Mumbai Office", detail: "Laxmi Towers, B Wing, 3B Second Floor, G Block, Bandra Kurla Complex, Mumbai-400051, Maharashtra, India", phone: "022 66223344" },
+  { city: "Pune Office", detail: "Cello Platina, Office No. 201, 2nd Floor, Fergusson College Road, Near Police Ground, Shivajinagar, Pune-411016, Maharashtra, India", phone: "+91 808 704 8484" },
+  { city: "Dubai Office", label: "Team One Alliance Design – FZCO", detail: "Building A1, Dubai Digital Park, Dubai Silicon Oasis, Dubai, United Arab Emirates." },
+];
 
 const presence = ["Mumbai", "Pune", "Hyderabad", "Bengaluru", "Nagpur", "Singapore", "Dubai", "Congo Africa"];
 const fieldClass = "mt-2 w-full border-b border-input bg-transparent px-0 py-3 text-base text-foreground outline-none transition-colors placeholder:text-muted-foreground focus:border-gold";
@@ -88,8 +88,11 @@ function ContactPage() {
           <div className="flex flex-col justify-between px-6 py-14 md:px-12 lg:px-16 lg:py-16">
             <div>
               <span className="block h-px w-12 bg-gold" />
-              <h1 className="font-display mt-8 text-6xl font-semibold leading-none sm:text-7xl lg:text-8xl">Thank <span className="text-gold">you!</span></h1>
-              <img src={logoAsset.url} alt="Team One Architects" className="mt-14 h-16 w-auto" />
+              <h1 className="font-display mt-8 text-6xl font-semibold leading-none sm:text-7xl lg:text-8xl">Get In <span className="text-gold">Touch</span></h1>
+              <p className="font-display mt-8 max-w-xl text-2xl font-light leading-snug sm:text-3xl">Let’s Build the Next Landmark Together.</p>
+              <p className="mt-6 text-xs font-semibold uppercase tracking-[0.2em] text-gold">Tell us about your vision and we’ll help you shape it into space</p>
+              <p className="mt-4 max-w-xl leading-7 text-muted-foreground">We work closely with our clients, listening deeply to their goals and communities to co-create spaces that celebrate identity and inspire well-being.</p>
+              <img src={logoAsset.url} alt="Team One Architects" className="mt-12 h-16 w-auto" />
             </div>
             <div className="mt-16 flex flex-wrap items-center gap-5">
               <Button onClick={scrollToForm} className="h-12 rounded-none bg-gold px-8 uppercase tracking-[0.18em] text-background hover:bg-gold/85">
@@ -109,6 +112,7 @@ function ContactPage() {
                   <h2 className="font-display text-xl font-semibold">{office.city}</h2>
                   {office.label && <p className="mt-3 text-xs font-semibold uppercase tracking-[0.12em] text-gold">{office.label}</p>}
                   <p className="mt-4 max-w-sm text-sm leading-6 text-muted-foreground">{office.detail}</p>
+                  {office.phone && <a href={`tel:${office.phone.replace(/\s/g, "")}`} className="mt-4 inline-block text-sm font-semibold text-foreground transition-colors hover:text-gold">{office.phone}</a>}
                 </article>
               ))}
             </div>
@@ -122,9 +126,8 @@ function ContactPage() {
         <section id="contact-form" className="scroll-mt-20 px-6 py-24 md:px-10 md:py-32">
           <div className="mx-auto grid max-w-[1600px] gap-14 lg:grid-cols-[.8fr_1.2fr] lg:gap-24">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.24em] text-gold">Start a conversation</p>
-              <h2 className="font-display mt-5 max-w-lg text-4xl font-light leading-tight sm:text-6xl">Let’s build the next landmark together.</h2>
-              <p className="mt-6 max-w-md leading-7 text-muted-foreground">Tell us what you’re planning and the right team will get back to you.</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.24em] text-gold">Get in touch</p>
+              <h2 className="font-display mt-5 max-w-lg text-4xl font-light leading-tight sm:text-6xl">Schedule a Discovery Call</h2>
               <div className="mt-10 flex gap-3">
                 {[{ Icon: Linkedin, href: "https://www.linkedin.com/company/teamonearchitects/", label: "LinkedIn" }, { Icon: Instagram, href: "https://www.instagram.com/teamonearchitects/", label: "Instagram" }, { Icon: Facebook, href: "https://www.facebook.com/teamonearchitects/", label: "Facebook" }, { Icon: Youtube, href: "https://www.youtube.com/@teamonearchitects", label: "YouTube" }].map(({ Icon, href, label }) => (
                   <a key={label} href={href} target="_blank" rel="noreferrer" aria-label={label} className="flex h-10 w-10 items-center justify-center border border-border text-muted-foreground transition-colors hover:border-gold hover:text-gold"><Icon className="h-4 w-4" /></a>
@@ -145,7 +148,7 @@ function ContactPage() {
                 {errors.message && <span className="mt-2 block normal-case tracking-normal text-destructive">{errors.message}</span>}
               </label>
               <div className="flex flex-wrap items-center gap-5 sm:col-span-2">
-                <Button type="submit" className="h-12 rounded-none bg-gold px-8 uppercase tracking-[0.18em] text-background hover:bg-gold/85">Send inquiry <ArrowUpRight /></Button>
+                <Button type="submit" className="h-12 rounded-none bg-gold px-8 uppercase tracking-[0.18em] text-background hover:bg-gold/85">Send <ArrowUpRight /></Button>
                 {sent && <p role="status" className="text-sm text-gold">Your email draft is ready to send.</p>}
               </div>
             </form>
