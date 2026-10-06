@@ -43,6 +43,8 @@ import {
   struxOneGallery,
   savaGallery,
   everlanceGallery,
+  hyattChandigarhGallery,
+  generacPuneGallery,
 } from "@/data/projectAssets";
 import generacTile from "@/assets/hero/interior.png.asset.json";
 
@@ -114,7 +116,7 @@ export const projects: Project[] = [
   { slug: "commercial-office-building", title: "Kinshasa Business Centre", category: ARCHITECTURE, location: "Kinshasa, DR Congo", image: congoOfficeGallery[0] },
   { slug: "fujitsu-pune", title: "Fujitsu", category: ARCHITECTURE, location: "Pune", image: fujitsuPuneGallery[0] },
   { slug: "brose-pune", title: "Brose", category: ARCHITECTURE, location: "Pune", image: brosePuneGallery[0] },
-  { slug: "hyatt", title: "Hyatt", category: ARCHITECTURE, image: hyattGallery[0] },
+  { slug: "hyatt", title: "Hyatt", category: ARCHITECTURE, location: "Chandigarh", image: hyattGallery[0] },
 
   { slug: "xpo", title: "XPO", category: INTERIORS, location: "India", image: xpoGallery[0] },
   { slug: "3i", title: "3i", category: INTERIORS, image: threeIGallery[0] },
@@ -129,7 +131,8 @@ export const projects: Project[] = [
   { slug: "strux-one", title: "Strux One (Veeam)", category: INTERIORS, location: "Pune", image: struxOneGallery[0] },
   { slug: "sava-global-healthcare", title: "Sava Global Healthcare", category: INTERIORS, location: "Pune", image: savaGallery[0] },
   { slug: "everllence", title: "Everllence", category: INTERIORS, image: everlanceGallery[0] },
-  { slug: "generac-pune", title: "Generac, Pune", category: INTERIORS, location: "Pune", image: generacTile.url },
+  { slug: "generac-pune", title: "Generac, Pune", category: INTERIORS, location: "Pune", image: generacPuneGallery[15] },
+  { slug: "atlas-copco", title: "Atlas Copco, Pune", category: INTERIORS, location: "Pune", image: generacTile.url },
 ];
 
 export const projectDetails: Record<string, ProjectDetail> = {
