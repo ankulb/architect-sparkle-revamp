@@ -28,6 +28,10 @@ const pages: Result[] = [
   { group: "Pages", label: "Videos / Podcasts / Interviews", to: "/insights/media" },
   { group: "Pages", label: "Articles & Coverage Index", to: "/insights/articles" },
   { group: "Pages", label: "Contact", to: "/contact" },
+  { group: "Pages", label: "Careers", to: "/careers" },
+  { group: "Pages", label: "Privacy Policy", to: "/privacy" },
+  { group: "Pages", label: "Terms of Use", to: "/terms" },
+  { group: "Pages", label: "Cookie Policy", to: "/cookies" },
 ];
 
 const sectors: Result[] = expertiseGroups.flatMap((g) =>

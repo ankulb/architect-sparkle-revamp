@@ -120,7 +120,7 @@ export const projects: Project[] = [
 
   { slug: "xpo", title: "XPO", category: INTERIORS, location: "Pune & Mumbai", image: xpoGallery[0] },
   { slug: "3i", title: "3i", category: INTERIORS, image: threeIGallery[0] },
-  { slug: "vanderlane", title: "Vanderlane", category: INTERIORS, location: "WTC Kharadi, Pune", image: vanderlaneGallery[0] },
+  { slug: "vanderlande", title: "Vanderlande", category: INTERIORS, location: "WTC Kharadi, Pune", image: vanderlaneGallery[0] },
   { slug: "bharat-serum", title: "Bharat Serum", category: INTERIORS, image: bharatSerumGallery[0] },
   { slug: "digital-domain", title: "Digital Domain", category: INTERIORS, image: digitalDomainGallery[0] },
   { slug: "toll", title: "Toll", category: INTERIORS, location: "Pune", image: tollGallery[0] },
@@ -582,14 +582,14 @@ export const projectDetails: Record<string, ProjectDetail> = {
     ],
     gallery: jciGallery,
   },
-  vanderlane: {
-    slug: "vanderlane",
-    title: "Vanderlane",
+  vanderlande: {
+    slug: "vanderlande",
+    title: "Vanderlande",
     category: INTERIORS,
     sector: "Engineering",
     area: "50,000 sq. ft.",
     status: "Completed",
-    client: "Vanderlane",
+    client: "Vanderlande",
     location: "WTC Kharadi, Pune",
     service: "Design & Build",
     image: vanderlaneGallery[0],
