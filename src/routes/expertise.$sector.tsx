@@ -63,7 +63,7 @@ const sectors: Record<string, Sector> = {
       { name: "Intangles", projectSlug: "intangles" },
       { name: "VW ITS", projectSlug: "vw-its" },
       { name: "Strux One (Veeam)", projectSlug: "strux-one" },
-      { name: "Everlance", projectSlug: "everlance" },
+      { name: "Everllence", projectSlug: "everllence" },
     ],
   },
   engineering: {
