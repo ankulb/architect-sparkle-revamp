@@ -625,3 +625,13 @@ export const grihumHousingFinanceGallery = [grihumHousingFinance02.url, grihumHo
 export const struxOneGallery = [struxOne01.url, struxOne02.url, struxOne03.url, struxOne04.url, struxOne05.url, struxOne06.url, struxOne07.url, struxOne08.url, struxOne09.url, struxOne10.url];
 
 export const everlanceGallery = [everlance01.url, everlance02.url, everlance03.url, everlance04.url, everlance05.url];
+
+import sava01 from "@/assets/projects/sava-01.jpg.asset.json";
+import sava02 from "@/assets/projects/sava-02.jpg.asset.json";
+import sava03 from "@/assets/projects/sava-03.jpg.asset.json";
+import sava04 from "@/assets/projects/sava-04.jpg.asset.json";
+import sava05 from "@/assets/projects/sava-05.jpg.asset.json";
+import sava06 from "@/assets/projects/sava-06.jpg.asset.json";
+import sava07 from "@/assets/projects/sava-07.jpg.asset.json";
+import sava08 from "@/assets/projects/sava-08.jpg.asset.json";
+export const savaGallery = [sava01.url, sava02.url, sava03.url, sava04.url, sava05.url, sava06.url, sava07.url, sava08.url];
