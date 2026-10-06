@@ -594,7 +594,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
     service: "Design & Build",
     image: vanderlaneGallery[0],
     description: [
-      "Located in the iconic World Trade Center Kharadi, the 50,000 sq. ft. workplace designed and built for Vanderlane is a spatial translation of movement, precision and engineered efficiency, drawing on the brand's ethos of innovation in material handling and conveyor automation.",
+      "Located in the iconic World Trade Center Kharadi, the 50,000 sq. ft. workplace designed and built for Vanderlande is a spatial translation of movement, precision and engineered efficiency, drawing on the brand's ethos of innovation in material handling and conveyor automation.",
       "The concept revolves around flow — of ideas, people and technology. A grand reception with a video wall establishes scale, while made-to-order height-adjustable workstations support ergonomic well-being. Open ceilings interplay with grid systems, subtly mirroring the mechanical logic of conveyor lines.",
       "At the heart of the office, a central breakout zone reimagines the conveyor belt: sofa seating in flowing, linear forms acts as a collaborative spine, with café spaces woven into the open plan to keep work and pause in uninterrupted motion.",
     ],
