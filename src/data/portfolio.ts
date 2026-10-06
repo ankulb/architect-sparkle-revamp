@@ -697,7 +697,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
       "Arrival sequences, public realms and guest-room wings are arranged to frame views, daylight and movement, giving the property a strong sense of place while meeting the operational discipline of a global hospitality brand.",
       "The result is a destination that feels both effortless and precise — hospitality architecture designed around the guest from the ground up.",
     ],
-    gallery: hyattGallery,
+    gallery: [...hyattGallery, ...hyattChandigarhGallery],
   },
 
   "mmrda-headquarters": {
