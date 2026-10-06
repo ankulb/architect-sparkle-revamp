@@ -187,6 +187,7 @@ function ProjectPage() {
             </section>
 
             {/* Gallery */}
+            {detail.gallery.length > 0 && (
             <section className="border-t border-border">
               <div className="mx-auto max-w-[1600px] px-6 py-16 md:px-10 md:py-24">
                 <div className="grid auto-rows-[260px] grid-cols-1 gap-5 sm:auto-rows-[340px] md:grid-cols-2 lg:auto-rows-[420px]">
@@ -196,6 +197,7 @@ function ProjectPage() {
                 </div>
               </div>
             </section>
+            )}
           </>
         ) : (
           <section className="relative overflow-hidden border-t border-border">
