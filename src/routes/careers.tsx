@@ -80,10 +80,14 @@ function CareersPage() {
                     rel="noreferrer"
                     className="group flex flex-wrap items-center justify-between gap-4 py-6"
                   >
-                    <span className="font-display text-xl font-light tracking-tight transition-colors group-hover:text-gold sm:text-2xl">
-                      {j.title}
+                    <span className="max-w-xl">
+                      <span className="font-display block text-xl font-light tracking-tight transition-colors group-hover:text-gold sm:text-2xl">
+                        {j.title}
+                      </span>
+                      <span className="mt-1 block text-sm text-muted-foreground">{j.focus}</span>
                     </span>
                     <span className="flex items-center gap-6 text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground">
+                      <span>{j.band}</span>
                       <span>{j.category}</span>
                       <span>{j.location}</span>
                       <span className="inline-flex items-center gap-1 text-gold">

@@ -1,6 +1,13 @@
 const JOBS = "https://teamonearchitects.com/jobs";
 
-export type Job = { title: string; category: string; location: string; slug: string };
+export type Job = {
+  title: string;
+  category: string;
+  location: string;
+  band: string;
+  focus: string;
+  slug: string;
+};
 
 export const careersPage = {
   eyebrow: "Careers",
@@ -26,23 +33,86 @@ export const careersPage = {
 };
 
 export const jobs: Job[] = [
-  { title: "Project Head", category: "Projects", location: "Mumbai", slug: "project-head" },
-  { title: "Procurement Head", category: "Purchase", location: "Mumbai", slug: "procurement-head" },
-  { title: "Site Engineer", category: "Projects", location: "Mumbai", slug: "site-engineer" },
-  { title: "Quantity Surveyor", category: "Projects", location: "Multiple", slug: "quantity-surveyor" },
-  { title: "3D Visualiser / Graphic Designer", category: "Design", location: "Mumbai", slug: "3d-visualiser-graphic" },
-  { title: "Design Head", category: "Design", location: "Multiple", slug: "design-head" },
-  { title: "Senior Project Manager", category: "Projects", location: "Pune", slug: "sr-project-manager" },
-  { title: "Senior Business Development", category: "Sales", location: "Mumbai", slug: "sr-business-development" },
-  { title: "Junior Business Development", category: "Sales", location: "Mumbai", slug: "junior-business-development" },
-  { title: "PR / Brand Communications", category: "Sales", location: "Mumbai", slug: "pr-brand-communications" },
-  { title: "Purchase Head", category: "Purchase", location: "Mumbai", slug: "purchase-head" },
-  { title: "Project Manager", category: "Projects", location: "Mumbai", slug: "project-manager" },
-  { title: "Interior Designer (Mid-level)", category: "Design", location: "Mumbai", slug: "interior-designer-mid-level" },
-  { title: "Site Supervisor", category: "Projects", location: "Multiple", slug: "site-supervisor" },
-  { title: "Junior Quantity Surveyor", category: "Projects", location: "Mumbai", slug: "junior-quantity-surveyor" },
-  { title: "Graphic Designer", category: "Design", location: "Mumbai", slug: "graphic-designer" },
-  { title: "HR Manager", category: "HR", location: "Mumbai", slug: "hr-manager" },
+  {
+    title: "Project Head",
+    category: "Projects",
+    location: "Mumbai",
+    band: "Leadership (12–18 yrs)",
+    focus: "Multi-project delivery, governance, vendor engagement",
+    slug: "project-head",
+  },
+  {
+    title: "Procurement Head",
+    category: "Purchase",
+    location: "Mumbai",
+    band: "Leadership (10–15 yrs)",
+    focus: "Procurement strategy, vendor ecosystem, cost control",
+    slug: "procurement-head",
+  },
+  {
+    title: "Site Engineer",
+    category: "Projects",
+    location: "Mumbai",
+    band: "Entry–Mid (1–4 yrs)",
+    focus: "Daily site supervision, measurement, QC",
+    slug: "site-engineer",
+  },
+  {
+    title: "Quantity Surveyor",
+    category: "Projects",
+    location: "Multiple",
+    band: "Mid–Senior (3–8 yrs)",
+    focus: "BOQ, tendering, billing, VE, MIS",
+    slug: "quantity-surveyor",
+  },
+  {
+    title: "3D Visualiser / Graphic",
+    category: "Design",
+    location: "Mumbai",
+    band: "Mid (2–5 yrs)",
+    focus: "3D renders, walkthroughs, pitch visuals",
+    slug: "3d-visualiser-graphic",
+  },
+  {
+    title: "Design Head",
+    category: "Design",
+    location: "Multiple",
+    band: "Leadership (10–15 yrs)",
+    focus: "Creative direction, pitch support, VE, mentoring",
+    slug: "design-head",
+  },
+  {
+    title: "Sr. Project Manager",
+    category: "Projects",
+    location: "Pune",
+    band: "Leadership (8–12 yrs)",
+    focus: "Multi-site delivery, PM cluster management, reporting",
+    slug: "sr-project-manager",
+  },
+  {
+    title: "Sr. Business Development",
+    category: "Sales",
+    location: "Mumbai",
+    band: "Senior (6–10 yrs)",
+    focus: "BD strategy, pipeline, RFPs, closures",
+    slug: "sr-business-development",
+  },
+  {
+    title: "Junior Business Development",
+    category: "Sales",
+    location: "Mumbai",
+    band: "Mid (1–4 yrs)",
+    focus: "Market mapping, pre-sales, MIS",
+    slug: "junior-business-development",
+  },
+  {
+    title: "PR / Brand Communications",
+    category: "Sales",
+    location: "Mumbai",
+    band: "Mid–Senior (3–7 yrs)",
+    focus: "PR, social, narratives, reporting",
+    slug: "pr-brand-communications",
+  },
 ];
 
 export const jobUrl = (slug: string) => `${JOBS}/${slug}/`;
