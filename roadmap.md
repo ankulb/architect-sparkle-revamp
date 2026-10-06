@@ -35,3 +35,7 @@
 - [x] Add four supplied publisher marks and show deduplicated logo-backed coverage on Articles and News without deleting archive records
 - [x] Contact page copy from the live Get in Touch page
 - [x] List all cities on multi-city projects (XPO, VW ITS, Johnson Controls, Infinx)
+- [x] Rename Vanderlane to Vanderlande
+- [x] Site-wide spelling and grammar check
+- [x] Careers page with open roles from the live site
+- [x] Privacy, Terms and Cookie pages linked from the footer
