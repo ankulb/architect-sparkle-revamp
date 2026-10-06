@@ -41,6 +41,7 @@ import {
   columbiaShipManagementGallery,
   grihumHousingFinanceGallery,
   struxOneGallery,
+  savaGallery,
   everlanceGallery,
 } from "@/data/projectAssets";
 import generacTile from "@/assets/hero/interior.png.asset.json";
