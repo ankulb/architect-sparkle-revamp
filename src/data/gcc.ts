@@ -19,5 +19,6 @@ export const gcc = {
     { name: "Columbia Ship Management", to: "/portfolio/columbia-ship-management" },
     { name: "Voya", to: undefined as string | undefined },
     { name: "Volkswagen", to: "/portfolio/volkswagen" },
+    { name: "Generac", to: "/portfolio/generac-pune" },
   ],
 };

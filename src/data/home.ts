@@ -138,7 +138,7 @@ export const expertiseDivisions = [
   },
   {
     number: "02",
-    title: "Interior Architecture",
+    title: "Workspace Interiors",
     lede:
       "Workplaces, hospitality and retail spaces engineered for wellbeing, brand story and enduring performance.",
     services: [
