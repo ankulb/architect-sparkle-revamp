@@ -41,5 +41,5 @@
 - [x] Privacy, Terms and Cookie pages linked from the footer
 - [x] Dedicated stock image for the GCC homepage tile (no project photo)
 - [x] Add Generac to the GCC experience list
-- [ ] Workspace Interiors restructure: nav order, sector renames, client lists
-- [ ] Verify GCC tile, /gcc, mega-menu, sector pages and portfolio in both themes
+- [x] Workspace Interiors restructure: nav order, sector renames, client lists
+- [x] Verify GCC tile, /gcc, mega-menu, sector pages and portfolio in both themes
