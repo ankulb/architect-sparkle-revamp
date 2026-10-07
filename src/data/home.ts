@@ -8,7 +8,7 @@ import pressImage from "@/assets/dynamic/press.jpg.asset.json";
 import congoHomeImage from "@/assets/projects/congo-office/01.jpg.asset.json";
 import columbiaHomeImage from "@/assets/projects/columbia-ship-management/dsc_7666.jpg.asset.json";
 import researchImage from "@/assets/dynamic/research.jpg.asset.json";
-import gccTile from "@/assets/projects/columbia-ship-management/dsc_7864.jpg.asset.json";
+import gccTile from "@/assets/dynamic/gcc.jpg.asset.json";
 import { awardsHero } from "@/data/awards";
 
 
@@ -36,6 +36,19 @@ export const aboutNav: NavChild[] = [
 
 export const expertiseGroups: NavGroup[] = [
   {
+    title: "Workspace Interiors",
+    items: [
+      { label: "Banking & Finance", to: "/expertise/banking-finance" },
+      { label: "Technology & Software", to: "/expertise/it-software" },
+      { label: "Engineering & Industrial", to: "/expertise/engineering" },
+      { label: "Healthcare & Pharma", to: "/expertise/health-pharma" },
+      { label: "Media & Communications", to: "/expertise/media" },
+      { label: "Logistics & Shipping", to: "/expertise/shipping" },
+      { label: "Education", href: "/#expertise" },
+      { label: "Green Field", to: "/expertise/green-field" },
+    ],
+  },
+  {
     title: "Architecture & Urban Design",
     items: [
       { label: "Civic and Institutional", to: "/expertise/civic-institutional" },
@@ -48,20 +61,6 @@ export const expertiseGroups: NavGroup[] = [
       { label: "Healthcare", to: "/expertise/healthcare" },
       { label: "Sustainable Practices", to: "/expertise/sustainable-practices" },
       { label: "Adaptive Reuse", to: "/expertise/adaptive-reuse" },
-    ],
-  },
-  {
-    title: "Interior Architecture",
-    items: [
-      { label: "Banking & Finance", to: "/expertise/banking-finance" },
-      { label: "IT & Software", to: "/expertise/it-software" },
-      { label: "Engineering", to: "/expertise/engineering" },
-      { label: "Health & Pharma", to: "/expertise/health-pharma" },
-      { label: "Media", to: "/expertise/media" },
-      { label: "Shipping", to: "/expertise/shipping" },
-      { label: "Telecom", to: "/expertise/telecom" },
-      { label: "Education", href: "/#expertise" },
-      { label: "Green Field", to: "/expertise/green-field" },
     ],
   },
 ];
@@ -139,7 +138,7 @@ export const expertiseDivisions = [
   },
   {
     number: "02",
-    title: "Interior Architecture",
+    title: "Workspace Interiors",
     lede:
       "Workplaces, hospitality and retail spaces engineered for wellbeing, brand story and enduring performance.",
     services: [

@@ -199,25 +199,36 @@ export const clientele = {
   },
   groups: [
     {
-      sector: "IT & Software",
+      sector: "Banking & Finance",
+      clients: [
+        { name: "State Bank of India", logo: clientLogos["State Bank of India"] },
+        { name: "IDBI Bank", logo: clientLogos["IDBI Bank"] },
+        { name: "BNY Mellon", logo: clientLogos["BNY Mellon"] },
+        { name: "Vakrangee", logo: clientLogos["Vakrangee"] },
+        { name: "IndiaFirst Life Insurance", logo: clientLogos["IndiaFirst Life Insurance"] },
+        { name: "Bajaj", logo: clientLogos["Bajaj"] },
+      ],
+    },
+    {
+      sector: "Technology & Software",
       clients: [
         { name: "3i", logo: clientLogos["3i"] },
-        { name: "Idea forge", logo: clientLogos["Idea forge"] },
+        { name: "IdeaForge", logo: clientLogos["Idea forge"] },
         { name: "Intangles", logo: clientLogos["Intangles"] },
         { name: "VW ITS", logo: clientLogos["VW ITS"] },
       ],
     },
     {
-      sector: "Engineering",
+      sector: "Engineering & Industrial",
       clients: [
         { name: "Emerson", logo: clientLogos["Emerson"] },
-        { name: "JCI", logo: clientLogos["Johnson Controls"] },
+        { name: "Johnson Controls", logo: clientLogos["Johnson Controls"] },
         { name: "Sedemac", logo: clientLogos["Sedemac"] },
         { name: "Vanderlande", logo: clientLogos["Vanderlande"] },
       ],
     },
     {
-      sector: "Health & Pharma",
+      sector: "Healthcare & Pharma",
       clients: [
         { name: "Apicore", logo: clientLogos["Apicore"] },
         { name: "BASF", logo: clientLogos["BASF"] },
@@ -234,7 +245,7 @@ export const clientele = {
       ],
     },
     {
-      sector: "Media",
+      sector: "Media & Communications",
       clients: [
         { name: "Digital Domain", logo: clientLogos["Digital Domain"] },
         { name: "MSL Group", logo: clientLogos["MSL Group"] },
@@ -246,7 +257,7 @@ export const clientele = {
       ],
     },
     {
-      sector: "Shipping",
+      sector: "Logistics & Shipping",
       clients: [
         { name: "Toll", logo: clientLogos["Toll Group"] },
         { name: "XPO", logo: clientLogos["XPO Logistics"] },
@@ -269,17 +280,6 @@ export const clientele = {
     {
       sector: "Green Field",
       clients: [{ name: "Hyatt", logo: clientLogos["Hyatt"] }],
-    },
-    {
-      sector: "Banking & Finance",
-      clients: [
-        { name: "State Bank of India", logo: clientLogos["State Bank of India"] },
-        { name: "IDBI Bank", logo: clientLogos["IDBI Bank"] },
-        { name: "BNY Mellon", logo: clientLogos["BNY Mellon"] },
-        { name: "Vakrangee", logo: clientLogos["Vakrangee"] },
-        { name: "IndiaFirst Life Insurance", logo: clientLogos["IndiaFirst Life Insurance"] },
-        { name: "Bajaj", logo: clientLogos["Bajaj"] },
-      ],
     },
     {
       sector: "Educational",

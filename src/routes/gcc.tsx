@@ -10,7 +10,7 @@ import { gcc } from "@/data/gcc";
 
 const title = "GCC — Global Capability Centres | Team One Architects";
 const description =
-  "Building workplaces for global capabilities. TOA designs and delivers Global Capability Centre environments in India — workplace strategy, design and end-to-end delivery for WebMD, ERGO, Columbia Ship Management, Voya and Volkswagen.";
+  "Building workplaces for global capabilities. TOA designs and delivers Global Capability Centre environments in India — workplace strategy, design and end-to-end delivery for WebMD, ERGO, Columbia Ship Management, Voya, Volkswagen and Generac.";
 const url = "https://architect-sparkle-revamp.lovable.app/gcc";
 
 export const Route = createFileRoute("/gcc")({

@@ -5,7 +5,7 @@ import logoAsset from "@/assets/toa-logo.png.asset.json";
 
 const expertiseLinks = [
   { label: "Architecture & Urban Design", href: "/#expertise" },
-  { label: "Interior Architecture", href: "/#expertise" },
+  { label: "Workspace Interiors", href: "/#expertise" },
 ];
 
 const connectLinks = [
