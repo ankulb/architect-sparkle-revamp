@@ -293,7 +293,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
     slug: "basf",
     title: "BASF",
     category: INTERIORS,
-    sector: "Healthcare & Pharma",
+    sector: "Engineering & Industrial",
     client: "BASF Headquarters",
     location: "Mumbai",
     area: "40,000 sq. ft.",
