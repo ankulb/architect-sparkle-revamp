@@ -203,6 +203,14 @@ export const dynamicSections = [
     body: "Our research spans mission-critical infrastructure, mixed-use urbanism and AI-ready campuses — feeding directly back into project work and industry conversation.",
     href: undefined as string | undefined,
   },
+  {
+    caption: "GCC",
+    title: "Workplaces for global capability centres",
+    image: gccTile.url,
+    excerpt: "Strategy, design and delivery for Global Capability Centre environments in India.",
+    body: "As organisations establish and scale Global Capability Centres in India, we translate global standards into workplaces designed for the Indian context — spaces that support how global teams work, connect and grow.",
+    href: "/gcc" as string | undefined,
+  },
 ] as const;
 
 
