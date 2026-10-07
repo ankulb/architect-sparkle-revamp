@@ -14,6 +14,7 @@ import { Route as AboutRouteImport } from './routes/about'
 import { Route as CareersRouteImport } from './routes/careers'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CookiesRouteImport } from './routes/cookies'
+import { Route as GccRouteImport } from './routes/gcc'
 import { Route as PortfolioRouteImport } from './routes/portfolio'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as TermsRouteImport } from './routes/terms'
@@ -56,6 +57,11 @@ const ContactRoute = ContactRouteImport.update({
 const CookiesRoute = CookiesRouteImport.update({
   id: '/cookies',
   path: '/cookies',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GccRoute = GccRouteImport.update({
+  id: '/gcc',
+  path: '/gcc',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PortfolioRoute = PortfolioRouteImport.update({
@@ -155,6 +161,7 @@ export interface FileRoutesByFullPath {
   '/careers': typeof CareersRoute
   '/contact': typeof ContactRoute
   '/cookies': typeof CookiesRoute
+  '/gcc': typeof GccRoute
   '/portfolio': typeof PortfolioRouteWithChildren
   '/privacy': typeof PrivacyRoute
   '/terms': typeof TermsRoute
@@ -179,6 +186,7 @@ export interface FileRoutesByTo {
   '/careers': typeof CareersRoute
   '/contact': typeof ContactRoute
   '/cookies': typeof CookiesRoute
+  '/gcc': typeof GccRoute
   '/privacy': typeof PrivacyRoute
   '/terms': typeof TermsRoute
   '/about/anchors': typeof AboutAnchorsRoute
@@ -204,6 +212,7 @@ export interface FileRoutesById {
   '/careers': typeof CareersRoute
   '/contact': typeof ContactRoute
   '/cookies': typeof CookiesRoute
+  '/gcc': typeof GccRoute
   '/portfolio': typeof PortfolioRouteWithChildren
   '/privacy': typeof PrivacyRoute
   '/terms': typeof TermsRoute
@@ -231,6 +240,7 @@ export interface FileRouteTypes {
     | '/careers'
     | '/contact'
     | '/cookies'
+    | '/gcc'
     | '/portfolio'
     | '/privacy'
     | '/terms'
@@ -255,6 +265,7 @@ export interface FileRouteTypes {
     | '/careers'
     | '/contact'
     | '/cookies'
+    | '/gcc'
     | '/privacy'
     | '/terms'
     | '/about/anchors'
@@ -279,6 +290,7 @@ export interface FileRouteTypes {
     | '/careers'
     | '/contact'
     | '/cookies'
+    | '/gcc'
     | '/portfolio'
     | '/privacy'
     | '/terms'
@@ -305,6 +317,7 @@ export interface RootRouteChildren {
   CareersRoute: typeof CareersRoute
   ContactRoute: typeof ContactRoute
   CookiesRoute: typeof CookiesRoute
+  GccRoute: typeof GccRoute
   PortfolioRoute: typeof PortfolioRouteWithChildren
   PrivacyRoute: typeof PrivacyRoute
   TermsRoute: typeof TermsRoute
@@ -350,6 +363,13 @@ declare module '@tanstack/react-router' {
       path: '/cookies'
       fullPath: '/cookies'
       preLoaderRoute: typeof CookiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gcc': {
+      id: '/gcc'
+      path: '/gcc'
+      fullPath: '/gcc'
+      preLoaderRoute: typeof GccRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/portfolio': {
@@ -525,6 +545,7 @@ const rootRouteChildren: RootRouteChildren = {
   CareersRoute: CareersRoute,
   ContactRoute: ContactRoute,
   CookiesRoute: CookiesRoute,
+  GccRoute: GccRoute,
   PortfolioRoute: PortfolioRouteWithChildren,
   PrivacyRoute: PrivacyRoute,
   TermsRoute: TermsRoute,

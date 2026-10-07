@@ -8,6 +8,7 @@ import pressImage from "@/assets/dynamic/press.jpg.asset.json";
 import congoHomeImage from "@/assets/projects/congo-office/01.jpg.asset.json";
 import columbiaHomeImage from "@/assets/projects/columbia-ship-management/dsc_7666.jpg.asset.json";
 import researchImage from "@/assets/dynamic/research.jpg.asset.json";
+import gccTile from "@/assets/projects/columbia-ship-management/dsc_7864.jpg.asset.json";
 import { awardsHero } from "@/data/awards";
 
 
@@ -202,6 +203,14 @@ export const dynamicSections = [
     excerpt: "White papers, keynotes and studios exploring the future of the built environment.",
     body: "Our research spans mission-critical infrastructure, mixed-use urbanism and AI-ready campuses — feeding directly back into project work and industry conversation.",
     href: undefined as string | undefined,
+  },
+  {
+    caption: "GCC",
+    title: "Workplaces for global capability centres",
+    image: gccTile.url,
+    excerpt: "Strategy, design and delivery for Global Capability Centre environments in India.",
+    body: "As organisations establish and scale Global Capability Centres in India, we translate global standards into workplaces designed for the Indian context — spaces that support how global teams work, connect and grow.",
+    href: "/gcc" as string | undefined,
   },
 ] as const;
 

@@ -27,6 +27,7 @@ const pages: Result[] = [
   { group: "Pages", label: "Awards & Recognition", to: "/insights/awards" },
   { group: "Pages", label: "Videos / Podcasts / Interviews", to: "/insights/media" },
   { group: "Pages", label: "Articles & Coverage Index", to: "/insights/articles" },
+  { group: "Pages", label: "GCC", to: "/gcc" },
   { group: "Pages", label: "Contact", to: "/contact" },
   { group: "Pages", label: "Careers", to: "/careers" },
   { group: "Pages", label: "Privacy Policy", to: "/privacy" },
