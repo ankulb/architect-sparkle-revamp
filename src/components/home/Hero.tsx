@@ -48,7 +48,7 @@ const SLIDES: Slide[] = [
   },
   {
     image: interior.url,
-    kicker: "Interior Architecture",
+    kicker: "Workspace Interiors",
     headline:
       "Interiors where material, light, and craft shape intuitive and immersive user experiences",
     kb: "down",
