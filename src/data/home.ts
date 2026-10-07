@@ -8,7 +8,7 @@ import pressImage from "@/assets/dynamic/press.jpg.asset.json";
 import congoHomeImage from "@/assets/projects/congo-office/01.jpg.asset.json";
 import columbiaHomeImage from "@/assets/projects/columbia-ship-management/dsc_7666.jpg.asset.json";
 import researchImage from "@/assets/dynamic/research.jpg.asset.json";
-import gccTile from "@/assets/projects/columbia-ship-management/dsc_7864.jpg.asset.json";
+import gccTile from "@/assets/dynamic/gcc.jpg.asset.json";
 import { awardsHero } from "@/data/awards";
 
 
