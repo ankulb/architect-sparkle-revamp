@@ -53,25 +53,22 @@ export function PageHero({
           className="absolute inset-0 h-full w-full object-cover opacity-45 blur-xl"
           aria-hidden="true"
         />
-        <div className="absolute inset-0 bg-background/25" />
+        <div className="absolute inset-0 bg-background/20" />
         <motion.div
           initial={{ opacity: 0.72, scale: 0.985 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 2.2, ease: [0.22, 1, 0.36, 1] }}
-          className={faceSafe
-            ? "relative flex h-full min-h-0 items-center justify-center"
-            : align === "right"
-              ? "absolute inset-0 flex items-center justify-center md:justify-end"
-              : "absolute inset-0 flex items-center justify-center"
-          }
+          className="absolute inset-0 flex items-center justify-center"
         >
           <img
             src={image}
             alt=""
             className={
-              !faceSafe && align === "right"
-                ? "h-full w-full object-contain md:w-[58%] md:object-right lg:w-[55%]"
-                : "h-full w-full object-contain"
+              faceSafe
+                ? "h-full w-full object-cover object-center md:object-right"
+                : align === "right"
+                  ? "h-full w-full object-contain md:w-[58%] md:object-right lg:w-[55%]"
+                  : "h-full w-full object-contain"
             }
           />
         </motion.div>
@@ -96,9 +93,7 @@ export function PageHero({
       <InteractiveGrid radius={260} baseOpacity={0.32} />
 
       {/* Content */}
-      <div className={faceSafe
-        ? "relative z-10 mx-auto w-full max-w-[1600px] px-6 pb-10 pt-6 md:px-10 md:pb-12"
-        : "relative z-10 mx-auto w-full max-w-[1600px] px-6 pb-20 md:px-10 md:pb-28"}>
+      <div className="relative z-10 mx-auto w-full max-w-[1600px] px-6 pb-20 md:px-10 md:pb-28">
         <motion.p
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
