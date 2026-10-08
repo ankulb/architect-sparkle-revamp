@@ -249,7 +249,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
     description: [
       "The interior focuses on creating a clean, sophisticated and highly functional workspace. In the reception area, teal corporate branding is balanced with warm wood textures and soft neutral surfaces.",
       "The café is designed on a soft palette of blush pink, warm beige and natural wood, creating a welcoming, relaxed café environment. Decorative lighting introduces a playful drama, and backlit niches on the feature wall create a strong focal point.",
-      "The space features distinct vibes across the smaller and larger collaborative areas. The smaller collaboration space adopts a warm and cozy palette, complemented by terrazzo finishes and traditional jali detailing. In contrast, the larger collaboration zone is designed in cooler tones, with white workstations creating a clean, minimal backdrop while the blue collaboration area becomes a striking focal point.",
+      "The space features distinct vibes across the smaller and larger collaborative areas. The smaller collaboration space adopts a warm and cosy palette, complemented by terrazzo finishes and traditional jali detailing. In contrast, the larger collaboration zone is designed in cooler tones, with white workstations creating a clean, minimal backdrop while the blue collaboration area becomes a striking focal point.",
     ],
     gallery: [],
   },
@@ -284,7 +284,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
     image: apicoreGallery[0],
     description: [
       "Apicore's 10,000 sq. ft. boutique workspace was designed as a wellness-driven, human-centric environment that prioritises comfort, culture and engagement — a deliberate move beyond the conventional office.",
-      "Natural materials, warm wood finishes and layered lighting foster creativity and wellbeing, while biophilic elements strengthen the connection to nature, supporting both productivity and calm. Informal lounges, collaborative nooks and relaxed meeting areas give teams the flexibility to focus or connect spontaneously.",
+      "Natural materials, warm wood finishes and layered lighting foster creativity and well-being, while biophilic elements strengthen the connection to nature, supporting both productivity and calm. Informal lounges, collaborative nooks and relaxed meeting areas give teams the flexibility to focus or connect spontaneously.",
       "The result reflects Apicore's people-first ethos — proof that thoughtful design at a boutique scale can strengthen identity, collaboration and a genuine sense of belonging.",
     ],
     gallery: apicoreGallery,
@@ -392,7 +392,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
     image: sedmacGallery[0],
     description: [
       "SEDEMAC Mechatronics — an engineering-led organisation specialising in automation, robotics and integrated control technologies — asked for a workplace at Pallod Farms 2, Baner that mirrors its innovation-driven culture: a contemporary environment balancing precision, collaboration and technological advancement.",
-      "The concept is a clean, modern, high-performance workspace that communicates engineering excellence. An open-plan layout encourages cross-team collaboration, abundant natural light from large windows and skylights lifts wellbeing while cutting reliance on artificial lighting, and curved circulation pathways in carpet introduce movement and visual dynamism that reinforce the brand's forward-looking identity.",
+      "The concept is a clean, modern, high-performance workspace that communicates engineering excellence. An open-plan layout encourages cross-team collaboration, abundant natural light from large windows and skylights lifts well-being while cutting reliance on artificial lighting, and curved circulation pathways in carpet introduce movement and visual dynamism that reinforce the brand's forward-looking identity.",
       "Collaboration zones are distributed across floors — each designed in its own way with writable surfaces, greenery and flexible seating — while the corporate floor holds a refined boardroom with premium materials, acoustic panels and integrated AV and lighting automation. Sustainable choices run throughout: LVT flooring, IGBC-certified finishes, VRV air-conditioning, LED lighting and daylight harvesting, with extensive writable surfaces across workstations and meeting rooms encouraging creativity and technical problem-solving.",
     ],
     gallery: sedmacGallery,
@@ -401,7 +401,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
     slug: "vw-its",
     title: "VW ITS",
     category: INTERIORS,
-    sector: "IT Services & Solution Provider",
+    sector: "IT Services & Solutions Provider",
     area: "Pune 1,23,900 sq. ft. / Bengaluru 45,000 sq. ft.",
     status: "Completed",
     year: "2024",
@@ -410,7 +410,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
     service: "Corporate Interiors",
     image: vwItsGallery[0],
     description: [
-      "Volkswagen Group Technology Solutions India brought a clear brief to Pune: a high-impact facility that would bring every brand and IT service of the group under one roof, while giving a large headcount a genuinely great place to work — wellbeing and recreation included.",
+      "Volkswagen Group Technology Solutions India brought a clear brief to Pune: a high-impact facility that would bring every brand and IT service of the group under one roof, while giving a large headcount a genuinely great place to work — well-being and recreation included.",
       "The design concept, 'Driven by Innovation', is inspired by automotive precision and forward movement. Bold blue brand accents are balanced against clean greys, with acoustic panels, sleek lighting and streamlined furniture shaping a focused yet collaborative environment. The feature brand wall reinforces Volkswagen's legacy while signalling progress, speed and digital transformation.",
       "The material palette carries the same engineering intent — charcoal-based ribbed panels, CNC metal panels with acrylic backing, acoustic spray paint, automotive sensor-based fixtures, marble tables, subway tiles, leather wall panelling with inlays and a lightweight metal baffle ceiling in a custom design.",
     ],
@@ -488,9 +488,9 @@ export const projectDetails: Record<string, ProjectDetail> = {
     image: iciciSecuritiesGallery[0],
     description: [
       "TOA delivered a 160,000 sq. ft. future-ready workspace for ICICI Securities, envisioned as a dynamic ecosystem supporting trading, research, technology, and corporate functions under one integrated environment.",
-      "Drawing cues from the fast-moving world of capital markets, the design balances focus and collaboration from acoustically optimized work zones and data-centric collaboration hubs to informal strategy lounges that encourage rapid exchange of ideas. A central social spine anchors the workspace, featuring biophilic elements, curved planning, and layered ceiling treatments that soften scale while enhancing acoustic comfort.",
-      "Materiality and color are used strategically energizing tones paired with warm finishes reflect momentum and stability, while flexible layouts allow teams to scale and reconfigure with evolving business needs. Technology-enabled meeting zones, breakout areas, and seamless circulation ensure the workspace supports both deep analytical work and high-frequency collaboration.",
-      "Beyond aesthetics and execution, the project represents TOA’s ability to translate the culture of financial intelligence, trust, and agility into a built environment empowering ICICI Securities’ teams to perform, adapt, and lead in a highly competitive market.",
+      "Drawing cues from the fast-moving world of capital markets, the design balances focus and collaboration — from acoustically optimised work zones and data-centric collaboration hubs to informal strategy lounges that encourage rapid exchange of ideas. A central social spine anchors the workspace, featuring biophilic elements, curved planning, and layered ceiling treatments that soften scale while enhancing acoustic comfort.",
+      "Materiality and colour are used strategically — energising tones paired with warm finishes reflect momentum and stability, while flexible layouts allow teams to scale and reconfigure with evolving business needs. Technology-enabled meeting zones, breakout areas, and seamless circulation ensure the workspace supports both deep analytical work and high-frequency collaboration.",
+      "Beyond aesthetics and execution, the project represents TOA’s ability to translate the culture of financial intelligence, trust, and agility into a built environment, empowering ICICI Securities’ teams to perform, adapt, and lead in a highly competitive market.",
     ],
     gallery: iciciSecuritiesGallery,
   },
@@ -509,7 +509,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
     description: [
       "ERGO Technologies' 1 lakh sq. ft. Powai workplace is a LEED-certified environment shaped around a young, agile workforce. The design moves beyond a conventional office model, using varied settings to support focus, collaboration, restoration and play throughout the day.",
       "Open work neighbourhoods are punctuated by meeting rooms, café settings, breakout lounges, a library and energetic recreation zones. Exposed services, acoustic ceilings, planting and bold graphics create a visual language that is candid, colourful and closely connected to ERGO's culture.",
-      "Flexible zoning allows teams to shift naturally between individual and collective modes of work. Completed in August 2025, the workplace combines sustainability, wellbeing and brand expression in an environment designed to evolve with its people.",
+      "Flexible zoning allows teams to shift naturally between individual and collective modes of work. Completed in August 2025, the workplace combines sustainability, well-being and brand expression in an environment designed to evolve with its people.",
     ],
     gallery: ergoTechnologiesGallery,
   },
@@ -559,7 +559,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
     image: intanglesGallery[0],
     description: [
       "Intangles' 42,500 sq. ft. Pune office reflects the digital technology company's innovation-led approach through a design language of precision, adaptability and seamless spatial flow.",
-      "Based on the concept of 'Syncmotion', the design fuses synchronization and movement as core spatial drivers. Clean lines, kinetic forms and rhythmic planning create a dynamic yet highly functional workplace.",
+      "Based on the concept of 'Syncmotion', the design fuses synchronisation and movement as core spatial drivers. Clean lines, kinetic forms and rhythmic planning create a dynamic yet highly functional workplace.",
       "Modular spatial planning and layered transparency across zones enhance collaboration while maintaining clarity and operational efficiency — a contemporary, high-performance workspace for a company focused on smart technology and digital transformation.",
     ],
     gallery: intanglesGallery,
@@ -631,7 +631,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
     description: [
       "The new Mumbai headquarters of Indira IVF — India's largest fertility-clinic chain — pairs the sleek functionality of a global business centre with genuine soul. The centrepiece is a custom reception desk inspired by the graceful silhouette of an expectant mother: a symbol of new life and a tribute to the women the organisation serves.",
       "Open-plan layouts and dedicated brainstorming zones enhance teamwork across clinical and marketing departments, while every corner reinforces the company's P.R.I.D.E. values — Patient First, Respect, Integrity, Drive for Excellence and Engagement.",
-      "A 52-seat cafeteria, a dedicated recreation area and private telephone booths complete a mission-driven workplace where wellbeing and purpose shape every detail.",
+      "A 52-seat cafeteria, a dedicated recreation area and private telephone booths complete a mission-driven workplace where well-being and purpose shape every detail.",
     ],
     gallery: indiraIvfGallery,
   },
@@ -721,7 +721,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
     service: "Commercial, Institutional & Residential Architecture",
     image: mmrdaGallery[0],
     description: [
-      "The MMRDA headquarters is a greenfield-developed ecosystem balancing operational efficiency with environmental responsibility. Rejecting dense urban defaults, the interlocking architecture carves out volumes made in complete structural steel and column free to invite light and air deep into the building.",
+      "The MMRDA headquarters is a greenfield-developed ecosystem balancing operational efficiency with environmental responsibility. Rejecting dense urban defaults, the interlocking architecture carves out volumes made entirely of structural steel and kept column-free to invite light and air deep into the building.",
       "The design employs a restrained material palette, balancing glass transparency with shaded structural solidity, to establish a modern institutional identity. As a sustainable civic landmark, the project redefines the high-functioning government workplace as a responsive, people-centric environment.",
       "Ultimately, the headquarters stands as a living green ecosystem, reflecting the aspirations of a modern Mumbai through its integration of landscape, progress, and architectural clarity.",
     ],
@@ -742,8 +742,8 @@ export const projectDetails: Record<string, ProjectDetail> = {
     image: jioSchoolGallery[0],
     description: [
       "This IB School in South Mumbai redefines educational architecture through a student-centric, inquiry-based framework. Moving away from rigid classroom hierarchies, the design centres on a learning common that fosters interdisciplinary collaboration.",
-      "Widened, naturally lit corridors serve as interactive learning zones, blurring the line between instruction and transition. Abundant daylight and indoor courtyards prioritize student well-being while creating a vibrant, stimulating atmosphere.",
-      "By emphasizing fluid, adaptable spaces over conventional structures, the campus becomes a continuous vertical learning ecosystem that perfectly mirrors the collaborative and global spirit of the IB philosophy.",
+      "Widened, naturally lit corridors serve as interactive learning zones, blurring the line between instruction and transition. Abundant daylight and indoor courtyards prioritise student well-being while creating a vibrant, stimulating atmosphere.",
+      "By emphasising fluid, adaptable spaces over conventional structures, the campus becomes a continuous vertical learning ecosystem that perfectly mirrors the collaborative and global spirit of the IB philosophy.",
     ],
     gallery: jioSchoolGallery,
   },
@@ -780,7 +780,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
     service: "Data Centre",
     image: dcCampusGallery[0],
     description: [
-      "This data center campus master planning design prioritizes infrastructure logic and operational redundancy over conventional form-making. The architectural framework utilizes modular, column-free server halls to ensure flexible rack configurations and long-term adaptability.",
+      "This data centre campus master planning design prioritises infrastructure logic and operational redundancy over conventional form-making. The architectural framework utilises modular, column-free server halls to ensure flexible rack configurations and long-term adaptability.",
       "A sophisticated energy-management strategy combines passive envelope performance with advanced cooling systems to mitigate the high heat loads inherent to the typology. By integrating landscape buffers and stormwater systems, the campus balances its intense technical requirements with environmental responsiveness.",
       "It transcends the concept of invisible infrastructure, emerging as a resilient, high-performance ecosystem where rigorous engineering and architectural clarity operate in complete synchrony.",
     ],
@@ -800,9 +800,9 @@ export const projectDetails: Record<string, ProjectDetail> = {
     service: "Commercial & IT",
     image: bseDataRecoveryGallery[0],
     description: [
-      "The Bombay Stock Exchange data recovery centre is a mission-critical ecosystem where architecture prioritizes precision, resilience, and security. Its design transcends conventional office planning, functioning as a high-performance hub with redundant power and data systems to ensure uninterrupted operations.",
-      "A multi-layered zoning strategy clearly delineates public and restricted areas, reinforcing security through controlled circulation and surveillance. By integrating these technical requirements into its spatial organization, the building becomes a robust framework for high-stakes financial operations.",
-      "Ultimately, the architecture serves as a secure, physical manifestation of the institution's technological trust and operational rigor.",
+      "The Bombay Stock Exchange data recovery centre is a mission-critical ecosystem where architecture prioritises precision, resilience, and security. Its design transcends conventional office planning, functioning as a high-performance hub with redundant power and data systems to ensure uninterrupted operations.",
+      "A multi-layered zoning strategy clearly delineates public and restricted areas, reinforcing security through controlled circulation and surveillance. By integrating these technical requirements into its spatial organisation, the building becomes a robust framework for high-stakes financial operations.",
+      "Ultimately, the architecture serves as a secure, physical manifestation of the institution's technological trust and operational rigour.",
     ],
     gallery: bseDataRecoveryGallery,
   },
@@ -820,7 +820,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
     service: "Residential",
     image: mixedUseKhalapurGallery[0],
     description: [
-      "This gated community housing near the Khopoli-Khalapur region envisions Mumbai 3.0, transitioning from dense urban compression to a self-sustained, integrated lifestyle ecosystem. The proposed masterplan strategically balances low-rise villa plots with high-rise towers, harmonizing privacy and density within a unified ru-urban fabric.",
+      "This gated community housing near the Khopoli-Khalapur region envisions Mumbai 3.0, transitioning from dense urban compression to a self-sustained, integrated lifestyle ecosystem. The proposed masterplan strategically balances low-rise villa plots with high-rise towers, harmonising privacy and density within a unified ru-urban fabric.",
       "Defined by precise zoning and green transitional buffers, the development ensures a seamless flow between residential and mixed-use precincts. By incorporating shared amenities like sky gardens and clubhouses, wellness centres and assisted living, the project transforms traditional housing into self-sufficient living environments.",
       "Ultimately, this forward-looking model offers a sophisticated response to the region's evolving trajectory, blending horizontality and verticality into a cohesive, sustainable and landscape-driven community.",
     ],
@@ -841,7 +841,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
     image: dewanisResidenceGallery[0],
     description: [
       "The façade design and development for a renowned Advocate's residence is an exercise in precision and discretion, reflecting the client's professional identity through a boutique architectural lens.",
-      "Utilizing a palette of natural stone, textured concrete, and high-performance glazing, the design emphasizes permanence and tactile quality. Beyond aesthetics, the façade actively manages thermal comfort via layered skins and recessed windows. Balconies are treated as carved volumes rather than projections, maintaining a coherent vertical composition.",
+      "Utilising a palette of natural stone, textured concrete, and high-performance glazing, the design emphasises permanence and tactile quality. Beyond aesthetics, the façade actively manages thermal comfort via layered skins and recessed windows. Balconies are treated as carved volumes rather than projections, maintaining a coherent vertical composition.",
       "This architecture of restraint avoids excess, resulting in a composed, enduring presence defined by clarity, deliberate proportions, and a seamless fusion of performance and identity.",
     ],
     gallery: dewanisResidenceGallery,
@@ -861,7 +861,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
     image: rrccNagpurGallery[0],
     description: [
       "This Nagpur complex functions as a contemporary urban condenser, integrating retail, cinema, and convention facilities into a singular, movement-driven framework. The architecture guides visitors through an intuitive spatial journey of atriums and porous plazas, balancing vibrant, modular retail environments with immersive multiplex zones.",
-      "For large-scale events, the convention center utilizes column-free structures and movable partitions to ensure maximum adaptability. By seamlessly orchestrating formal and informal spaces, the project transforms a complex mixed-use brief into a cohesive narrative.",
+      "For large-scale events, the convention centre utilises column-free structures and movable partitions to ensure maximum adaptability. By seamlessly orchestrating formal and informal spaces, the project transforms a complex mixed-use brief into a cohesive narrative.",
       "The result is a socially engaging destination that reflects the dynamic aspirations of modern urban India.",
     ],
     gallery: rrccNagpurGallery,
@@ -880,7 +880,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
     service: "Canteen Building",
     image: recreationBlockDaundGallery[0],
     description: [
-      "Designed for a 1,000-person pharmaceutical workforce, this Recreation and Canteen Building provides a human-centric counterpoint to the campus's rigorous industrial precision. Transcending its utilitarian roots, the project functions as a restorative social hub that prioritizes employee well-being.",
+      "Designed for a 1,000-person pharmaceutical workforce, this Recreation and Canteen Building provides a human-centric counterpoint to the campus's rigorous industrial precision. Transcending its utilitarian roots, the project functions as a restorative social hub that prioritises employee well-being.",
       "The architecture balances open, breathable social spaces with the strict hygiene and logistics standards required in sterile manufacturing contexts. By fostering community and offering relief from disciplined production zones, the building becomes a vital component of the workplace ecosystem.",
       "The design demonstrates that architectural pause and social infrastructure are fundamental to sustained industrial productivity and collective health.",
     ],
@@ -901,7 +901,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
     image: cidcoCcrhGallery[0],
     description: [
       "The CCRH campus in Kharghar is a spatial manifestation of homeopathic principles — harmony, subtlety, and holistic well-being. Designed for the Ministry of AYUSH, the facility integrates therapeutic landscapes and water elements as core components of the research and healing environment.",
-      "The architecture emphasizes restraint and material honesty, avoiding excess to foster a sense of calm. Climatically responsive design strategies, such as deep overhangs and screened facades, address Navi Mumbai's coastal conditions while optimizing natural ventilation.",
+      "The architecture emphasises restraint and material honesty, avoiding excess to foster a sense of calm. Climatically responsive design strategies, such as deep overhangs and screened facades, address Navi Mumbai's coastal conditions while optimising natural ventilation.",
       "Ultimately, the campus serves as a balanced institutional ecosystem where functional research requirements and environmental sensitivity coexist in perfect synchrony.",
     ],
     gallery: cidcoCcrhGallery,
@@ -940,7 +940,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
     service: "Commercial & Retail Architecture",
     image: congoOfficeGallery[0],
     description: [
-      "This 20-floor landmark in the Republic of the Congo integrates global corporate standards with local environmental sensitivity. The architecture features flexible, column-free floor plates and an efficient core to support diverse organizational needs.",
+      "This 20-floor landmark in the Republic of the Congo integrates global corporate standards with local environmental sensitivity. The architecture features flexible, column-free floor plates and an efficient core to support diverse organisational needs.",
       "Addressing the tropical climate, the articulated façade employs shading devices and recessed glazing to balance daylight and heat gain. The tower functions as a vertical ecosystem, blending private workspaces with collaborative amenities and an active public ground plane.",
       "Ultimately, the project establishes a new benchmark for regional office typology, reflecting the Congo's economic aspirations through a sustainable, identity-driven corporate landmark.",
     ],
@@ -960,9 +960,9 @@ export const projectDetails: Record<string, ProjectDetail> = {
     service: "Commercial & Institutional Architecture",
     image: fujitsuPuneGallery[0],
     description: [
-      "The corporate logo depicts Fujitsu's infinite possibilities. Further, it expresses expansion into the universe by symbolizing 'Earth and Sun.' Fujitsu Red, the main colour, expresses enthusiasm for the future brightness and approachability.",
+      "The corporate logo depicts Fujitsu's infinite possibilities. Further, it expresses expansion into the universe by symbolising 'Earth and Sun.' Fujitsu Red, the main colour, expresses enthusiasm for the future, brightness and approachability.",
       "The above corporate identity and the corporate vision — \"Understanding you better – serving you best\" — needed to be expressed in the design that Team One created.",
-      "The five floors project revolves around the Panchabhuta's theme, i.e. Prithvi, Jal, Vayu, Agni and Aakash (Earth, Water, Wind, Fire and Sky).",
+      "The five-floor project revolves around the Panchabhuta theme, i.e. Prithvi, Jal, Vayu, Agni and Aakash (Earth, Water, Wind, Fire and Sky).",
     ],
     gallery: fujitsuPuneGallery,
   },
@@ -980,7 +980,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
     service: "Industrial & Logistics Architecture",
     image: brosePuneGallery[0],
     description: [
-      "The Brose Industrial and Logistics Facility in Pune reinterprets the traditional industrial typology through a highly specialized, process-driven design. Engineered for automotive leader Brose, the facility features a linear layout that mirrors production workflows to minimize operational friction.",
+      "The Brose Industrial and Logistics Facility in Pune reinterprets the traditional industrial typology through a highly specialised, process-driven design. Engineered for automotive leader Brose, the facility features a linear layout that mirrors production workflows to minimise operational friction.",
       "Large-span, column-free shop floors provide the structural flexibility necessary for future technological upgrades and assembly reconfigurations.",
       "Transcending the concept of a static shed, the architecture acts as a dynamic extension of the production line — a built reflection of precision and movement where design, engineering, and logistics operate in complete synchrony.",
     ],

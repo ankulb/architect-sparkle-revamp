@@ -1,5 +1,8 @@
 # Roadmap
 
+- [x] Review grammar and spelling across all authored site copy
+- [x] Align hero banners to keep faces unobscured and verify across screen sizes and themes
+
 - [x] Refresh News & Media with verified logos, links, no dates/months/counts
 - [x] Consolidate Our Team and add Rahul Mane and Bharat Kukreja
 - [x] Correct CSR imagery, partner order, logos, and links

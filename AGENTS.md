@@ -10,5 +10,6 @@
 <!-- LOVABLE:END -->
 
 - Keep publisher marks in one shared publication-name map so every News & Media section displays the same verified publisher artwork and unknown names remain readable.
+- Use the shared PageHero faceSafe option for banners containing people; separate photograph and text rows prevent overlap at every viewport height.
 - Keep project sector grouping separate from source-specific sector labels, and show a supplied project date instead of a year, so archive filtering and original case-study facts both stay accurate.
 - Derive logo-backed, deduplicated press display from the full immutable coverage archive in one shared module, so News and Articles remain consistent without losing source records.

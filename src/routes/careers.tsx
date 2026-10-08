@@ -41,7 +41,7 @@ function CareersPage() {
     <div className="min-h-screen bg-background text-foreground">
       <Header />
       <main>
-        <PageHero eyebrow={careersPage.eyebrow} title={careersPage.title} lead={careersPage.quote} image={careers.image} />
+        <PageHero eyebrow={careersPage.eyebrow} title={careersPage.title} lead={careersPage.quote} image={careers.image} faceSafe />
 
         <section className="mx-auto max-w-[1600px] px-6 py-20 md:px-10 md:py-28">
           <div className="grid gap-px bg-border md:grid-cols-3">
