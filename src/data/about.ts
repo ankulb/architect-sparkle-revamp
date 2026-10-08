@@ -45,7 +45,7 @@ export const aboutUs = {
     ],
   },
   intro:
-    "Team One Architects (TOA) is a leading architecture and design firm based in Mumbai with a legacy of over 25 years, shaping impactful spaces through innovation, excellence, and purpose. Founded by Bharat Yamsanawar and Parish Kapse, and later joined by Aditya Yamsanawar, TOA has evolved into a multidisciplinary practice partnering with Fortune 500 companies and leading institutions. With a growing international presence, including landmark projects in the GCC, our work reflects a strong commitment to sustainability and wellness — with numerous IGBC and globally certified developments to our name. We work closely with our clients, listening deeply to their goals and communities to co-create spaces that celebrate identity and inspire well-being.",
+    "Team One Architects (TOA) is a leading architecture and design firm based in Mumbai with a legacy of over 25 years, shaping impactful spaces through innovation, excellence, and purpose. Founded by Bharat Yamsanwar and Parish Kapse, and later joined by Aditya Yamsanwar, TOA has evolved into a multidisciplinary practice partnering with Fortune 500 companies and leading institutions. With a growing international presence, including landmark projects in the GCC, our work reflects a strong commitment to sustainability and wellness — with numerous IGBC and globally certified developments to our name. We work closely with our clients, listening deeply to their goals and communities to co-create spaces that celebrate identity and inspire well-being.",
   visionMission: [
     {
       kicker: "Our Vision",
@@ -154,10 +154,10 @@ export const board = {
       image: `${UP}/2025/08/Jyoti-Kapse.jpeg`,
       linkedin: "https://www.linkedin.com/in/rupali-kapse-432b5133b/",
       summary:
-        "Interior architecture brought together with resource efficiency, workplace wellbeing and corporate ESG principles.",
+        "Interior architecture brought together with resource efficiency, workplace well-being and corporate ESG principles.",
       bio: [
         "Rupali P. Kapse is a Director at Team One Architects (TOA), with a decade of experience. She holds a Professional Diploma in Interior Architecture, with further academic exposure in environmental studies, sustainability, CSR, climate action and corporate ESG.",
-        "Her multidisciplinary background brings together interior architecture with resource efficiency, workplace wellbeing and ESG principles, offering a broader perspective on how spaces can support both people and organisations.",
+        "Her multidisciplinary background brings together interior architecture with resource efficiency, workplace well-being and ESG principles, offering a broader perspective on how spaces can support both people and organisations.",
         "Over the course of her career, Rupali has been associated with multiple projects across the real estate industry, contributing to the planning and execution of corporate and commercial spaces with a focus on workplace environments, climate action, resource efficiency and ESG practices, helping create spaces that are efficient, adaptable and aligned with evolving business needs.",
       ],
       facts: ["Professional Diploma, Interior Architecture", "A decade of experience", "Climate action & resource efficiency", "Corporate ESG practice"],
@@ -197,7 +197,7 @@ export const clientele = {
   hero: {
     eyebrow: "Partnerships",
     title: "Trusted by the best. Chosen for vision.",
-    lead: "From engineering giants to global software leaders — the organisations who build the future build it with us.",
+    lead: "From engineering giants to global software leaders — the organisations that build the future build it with us.",
     image: toaTeamPhoto.url,
     faceSafe: true,
   },
@@ -427,15 +427,15 @@ export const life = {
     {
       title: "A Culture of Builders",
       image: `${UP}/2026/04/TOA-Family-Day-2025-copy-1.jpg`,
-      body: "TOA is not a conventional workplace. It is a high-energy, execution-driven ecosystem where ideas move quickly and outcomes matter. Every individual here is a builder — whether designing a concept, executing a site, closing a deal or enabling operations. There is a shared understanding across teams: we don't just contribute, we take ownership.",
+      body: "TOA is not a conventional workplace. It is a high-energy, execution-driven ecosystem where ideas move quickly and outcomes matter. Every individual here is a builder — whether designing a concept, executing a site, closing a deal or enabling operations. There is a shared understanding across teams: we don't just contribute — we take ownership.",
     },
     {
       title: "Where Learning is Real, Not Theoretical",
       body: "Growth at TOA doesn't come from static training modules. It comes from real projects, real timelines and real challenges. From handling large-scale corporate fit-outs to navigating complex site executions, our teams learn by being in the middle of the action.",
       bullets: [
-        "You don't wait for exposure, you earn it",
-        "You don't shadow work, you lead parts of it",
-        "You don't follow processes blindly, you improve them",
+        "You don't wait for exposure — you earn it",
+        "You don't shadow work — you lead parts of it",
+        "You don't follow processes blindly — you improve them",
       ],
     },
     {

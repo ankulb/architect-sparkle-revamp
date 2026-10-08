@@ -140,7 +140,7 @@ export const expertiseDivisions = [
     number: "02",
     title: "Workspace Interiors",
     lede:
-      "Workplaces, hospitality and retail spaces engineered for wellbeing, brand story and enduring performance.",
+      "Workplaces, hospitality and retail spaces engineered for well-being, brand story and enduring performance.",
     services: [
       "Corporate Interiors",
       "Workplace Strategy",
