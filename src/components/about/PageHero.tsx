@@ -9,6 +9,7 @@ export function PageHero({
   image,
   phrases,
   align = "center",
+  faceSafe = false,
 }: {
   eyebrow: string;
   title: string;
@@ -17,6 +18,8 @@ export function PageHero({
   phrases?: readonly string[];
   /** "right" pins the contained image to the right on desktop, keeping the headline area clear. */
   align?: "center" | "right";
+  /** Reserve separate image and text rows for photographs containing people. */
+  faceSafe?: boolean;
 }) {
   const [phrase, setPhrase] = useState(0);
   const reduce = useReducedMotion();
@@ -33,13 +36,15 @@ export function PageHero({
   const textStart = reduce ? 0.1 : 0.85;
 
   return (
-    <section className="relative flex h-[88vh] min-h-[600px] w-full items-end overflow-hidden bg-background">
+    <section className={faceSafe
+      ? "relative flex min-h-[600px] w-full flex-col overflow-hidden bg-background"
+      : "relative flex h-[88vh] min-h-[600px] w-full items-end overflow-hidden bg-background"}>
       {/* Center-opening clip-path curtain wraps the Ken-Burns image */}
       <motion.div
         initial={{ clipPath: "inset(0 50% 0 50%)" }}
         animate={{ clipPath: "inset(0 0% 0 0%)" }}
         transition={{ duration: revealDur, ease: [0.77, 0, 0.18, 1] }}
-        className="absolute inset-0"
+        className={faceSafe ? "relative h-[52svh] min-h-[320px] max-h-[720px] shrink-0 overflow-hidden pt-24" : "absolute inset-0"}
       >
         <motion.img
           src={image}
@@ -55,8 +60,9 @@ export function PageHero({
           initial={{ opacity: 0.72, scale: 0.985 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 2.2, ease: [0.22, 1, 0.36, 1] }}
-          className={
-            align === "right"
+          className={faceSafe
+            ? "relative flex h-full min-h-0 items-center justify-center"
+            : align === "right"
               ? "absolute inset-0 flex items-center justify-center md:justify-end"
               : "absolute inset-0 flex items-center justify-center"
           }
@@ -65,7 +71,7 @@ export function PageHero({
             src={image}
             alt=""
             className={
-              align === "right"
+              !faceSafe && align === "right"
                 ? "h-full w-full object-contain md:w-[58%] md:object-right lg:w-[55%]"
                 : "h-full w-full object-contain"
             }
@@ -92,7 +98,9 @@ export function PageHero({
       <InteractiveGrid radius={260} baseOpacity={0.32} />
 
       {/* Content */}
-      <div className="relative z-10 mx-auto w-full max-w-[1600px] px-6 pb-20 md:px-10 md:pb-28">
+      <div className={faceSafe
+        ? "relative z-10 mx-auto w-full max-w-[1600px] px-6 pb-10 pt-6 md:px-10 md:pb-12"
+        : "relative z-10 mx-auto w-full max-w-[1600px] px-6 pb-20 md:px-10 md:pb-28"}>
         <motion.p
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
@@ -103,14 +111,14 @@ export function PageHero({
         </motion.p>
 
         {/* Headline reveals word-by-word with a rising mask */}
-        <h1 className="font-display mt-6 max-w-4xl text-balance text-4xl font-light leading-[1.05] tracking-tight text-on-image [text-shadow:0_2px_24px_rgba(0,0,0,0.65)] sm:text-6xl lg:text-7xl">
+        <h1 className={`font-display mt-6 max-w-4xl text-balance text-4xl font-light leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl ${faceSafe ? "text-foreground" : "text-on-image [text-shadow:0_2px_24px_rgba(0,0,0,0.65)]"}`}>
           {words.map((w, i) => (
             <span key={i} className="inline-block overflow-hidden align-bottom">
               <motion.span
                 initial={{ y: "110%" }}
                 animate={{ y: 0 }}
                 transition={{ duration: 0.9, delay: textStart + 0.1 + i * 0.08, ease: [0.22, 1, 0.36, 1] }}
-                className="inline-block pr-[0.25em]"
+                className="inline-block max-w-full break-words pr-[0.25em]"
               >
                 {w}
               </motion.span>
@@ -122,13 +130,13 @@ export function PageHero({
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: textStart + 0.1 + words.length * 0.08 + 0.2 }}
-          className="mt-7 max-w-xl text-base leading-relaxed text-on-image [text-shadow:0_1px_14px_rgba(0,0,0,0.75)] sm:text-lg"
+          className={`mt-7 max-w-xl text-base leading-relaxed sm:text-lg ${faceSafe ? "text-muted-foreground" : "text-on-image [text-shadow:0_1px_14px_rgba(0,0,0,0.75)]"}`}
         >
           {lead}
         </motion.p>
 
         {phrases && phrases.length > 1 && (
-          <div className="mt-8 flex h-6 items-center overflow-hidden">
+          <div className="mt-8 flex min-h-6 items-center">
             <AnimatePresence mode="wait">
               <motion.span
                 key={phrase}
@@ -136,7 +144,7 @@ export function PageHero({
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -14 }}
                 transition={{ duration: 0.5 }}
-                className="text-sm uppercase tracking-[0.22em] text-on-image/70"
+                className={`text-sm uppercase tracking-[0.22em] ${faceSafe ? "text-muted-foreground" : "text-on-image/70"}`}
               >
                 {phrases[phrase]}
               </motion.span>

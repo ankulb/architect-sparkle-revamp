@@ -32,10 +32,11 @@ export const aboutNav = [
 
 export const aboutUs = {
   hero: {
-    eyebrow: "Decades of Design. Driven by Vision",
+    eyebrow: "Decades of Design. Driven by Vision.",
     title: "Creating spaces that matter",
     lead: "A Mumbai-born practice with a 25-year legacy — shaping impactful spaces through innovation, excellence and purpose.",
     image: toaTeamPhoto.url,
+    faceSafe: true,
     phrases: [
       "Twenty-five years of design.",
       "Fortune 500 partnerships.",
@@ -89,6 +90,7 @@ export const board = {
     title: "Board of Directors",
     lead: "The future isn't imagined alone. It's built together — brick by brick, mind by mind.",
     image: toaTeamPhoto.url,
+    faceSafe: true,
   },
   directors: [
     {
@@ -172,6 +174,7 @@ export const team = {
     title: "The people behind the practice",
     lead: "The future isn't imagined alone. It's built together — brick by brick, mind by mind.",
     image: toaTeamPhoto.url,
+    faceSafe: true,
   },
   leadership: [
     { name: "Laxmikant Sawant", role: "COO", image: `${UP}/2021/10/laxmikant-sawant-1.png`, linkedin: "https://www.linkedin.com/in/laxmikant-sawant-764020ba" },
@@ -196,6 +199,7 @@ export const clientele = {
     title: "Trusted by the best. Chosen for vision.",
     lead: "From engineering giants to global software leaders — the organisations who build the future build it with us.",
     image: toaTeamPhoto.url,
+    faceSafe: true,
   },
   groups: [
     {
@@ -330,6 +334,7 @@ export const csr = {
     title: "Our commitment to social impact",
     lead: "We believe design can create meaningful social change — in education, community development and infrastructure.",
     image: csrImage.url,
+    faceSafe: true,
   },
   objective: {
     kicker: "Our CSR Objective",
@@ -408,6 +413,7 @@ export const life = {
     title: "Where spaces are built. And so are people.",
     lead: "We don't just create workplaces — we build a team that owns, builds and evolves with every project.",
     image: `${UP}/2026/04/TOA-Family-Day-2025-copy-1.jpg`,
+    faceSafe: true,
     phrases: [
       "Where spaces are built. And so are people.",
       "A team that owns, builds, and evolves.",
