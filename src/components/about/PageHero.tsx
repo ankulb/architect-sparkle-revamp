@@ -86,8 +86,8 @@ export function PageHero({
       />
 
       {/* Localized scrim behind the headline only (bottom-left) */}
-      <div className="absolute inset-0 bg-gradient-to-t from-background/85 via-background/10 to-transparent" />
-      <div className="absolute inset-0 bg-gradient-to-r from-background/55 via-transparent to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-hero-scrim/85 via-hero-scrim/10 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-r from-hero-scrim/55 via-transparent to-transparent" />
 
       {/* Blueprint grid that reacts to the cursor */}
       <InteractiveGrid radius={260} baseOpacity={0.32} />
