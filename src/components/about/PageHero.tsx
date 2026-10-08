@@ -65,7 +65,9 @@ export function PageHero({
             alt=""
             className={
               faceSafe
-                ? "h-full w-full object-cover object-center md:object-right"
+                ? // Anchor the crop toward the upper third so faces stay in
+                  // frame when portrait photos cover the tall container.
+                  "h-full w-full object-cover object-[50%_30%] md:object-[right_30%]"
                 : align === "right"
                   ? "h-full w-full object-contain md:w-[58%] md:object-right lg:w-[55%]"
                   : "h-full w-full object-contain"
