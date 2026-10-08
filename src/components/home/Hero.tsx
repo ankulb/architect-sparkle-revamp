@@ -129,9 +129,9 @@ export function Hero() {
         />
       </div>
 
-      {/* Scrims for legibility */}
-      <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-background/10" />
-      <div className="absolute inset-0 bg-gradient-to-r from-background/75 via-background/20 to-transparent" />
+      {/* Scrims for legibility — dark in both themes so on-image type stays readable */}
+      <div className="absolute inset-0 bg-gradient-to-t from-hero-scrim via-hero-scrim/60 to-hero-scrim/10" />
+      <div className="absolute inset-0 bg-gradient-to-r from-hero-scrim/75 via-hero-scrim/20 to-transparent" />
       {/* Focused radial behind headline to guarantee contrast */}
       <div
         className="pointer-events-none absolute inset-x-0 bottom-0 h-[65%]"
