@@ -18,7 +18,7 @@ export function PageHero({
   phrases?: readonly string[];
   /** "right" pins the contained image to the right on desktop, keeping the headline area clear. */
   align?: "center" | "right";
-  /** Reserve separate image and text rows for photographs containing people. */
+  /** Full-bleed photograph with a left-to-right gradient; text overlays the darkened left side, keeping faces clear. */
   faceSafe?: boolean;
 }) {
   const [phrase, setPhrase] = useState(0);
@@ -36,15 +36,13 @@ export function PageHero({
   const textStart = reduce ? 0.1 : 0.85;
 
   return (
-    <section className={faceSafe
-      ? "relative flex min-h-[600px] w-full flex-col overflow-hidden bg-background"
-      : "relative flex h-[88vh] min-h-[600px] w-full items-end overflow-hidden bg-background"}>
+    <section className="relative flex h-[88vh] min-h-[600px] w-full items-end overflow-hidden bg-background">
       {/* Center-opening clip-path curtain wraps the Ken-Burns image */}
       <motion.div
         initial={{ clipPath: "inset(0 50% 0 50%)" }}
         animate={{ clipPath: "inset(0 0% 0 0%)" }}
         transition={{ duration: revealDur, ease: [0.77, 0, 0.18, 1] }}
-        className={faceSafe ? "relative h-[52svh] min-h-[320px] max-h-[720px] shrink-0 overflow-hidden pt-24" : "absolute inset-0"}
+        className="absolute inset-0"
       >
         <motion.img
           src={image}
