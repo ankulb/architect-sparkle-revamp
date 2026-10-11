@@ -10,6 +10,6 @@
 <!-- LOVABLE:END -->
 
 - Keep publisher marks in one shared publication-name map so every News & Media section displays the same verified publisher artwork and unknown names remain readable.
-- Use the shared PageHero faceSafe option for banners containing people: full-bleed photo with an object-position crop anchored toward the upper third (so faces stay in frame) and text over a dark scrim on the left; the scrim token stays dark in both themes so on-image type remains legible.
+- Use the shared PageHero for inner-page banners: keep the photograph contained on the right and text in a dark left field that blends into the image; on mobile stack the image above the text, and use faceSafe to preserve complete faces.
 - Keep project sector grouping separate from source-specific sector labels, and show a supplied project date instead of a year, so archive filtering and original case-study facts both stay accurate.
 - Derive logo-backed, deduplicated press display from the full immutable coverage archive in one shared module, so News and Articles remain consistent without losing source records.
