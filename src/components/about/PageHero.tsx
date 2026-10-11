@@ -16,9 +16,9 @@ export function PageHero({
   lead: string;
   image: string;
   phrases?: readonly string[];
-  /** "right" pins the contained image to the right on desktop, keeping the headline area clear. */
+  /** "right" pins the photograph to the outer edge of its contained image area. */
   align?: "center" | "right";
-  /** Full-bleed photograph with a left-to-right gradient; text overlays the darkened left side, keeping faces clear. */
+  /** Keeps people photographs fully framed within the right-hand image area. */
   faceSafe?: boolean;
 }) {
   const [phrase, setPhrase] = useState(0);
@@ -36,45 +36,36 @@ export function PageHero({
   const textStart = reduce ? 0.1 : 0.85;
 
   return (
-    <section className="relative flex h-[88vh] min-h-[600px] w-full items-end overflow-hidden bg-background">
-      {/* Center-opening clip-path curtain wraps the Ken-Burns image */}
+    <section className="relative flex min-h-[760px] w-full items-end overflow-hidden bg-hero-scrim md:h-[88vh] md:min-h-[640px]">
+      {/* The image has its own stage: upper frame on mobile, right-hand frame on desktop. */}
       <motion.div
         initial={{ clipPath: "inset(0 50% 0 50%)" }}
         animate={{ clipPath: "inset(0 0% 0 0%)" }}
         transition={{ duration: revealDur, ease: [0.77, 0, 0.18, 1] }}
-        className="absolute inset-0"
+        className="absolute inset-x-0 top-0 h-[46%] overflow-hidden md:inset-y-0 md:left-auto md:h-full md:w-[60%]"
       >
-        <motion.img
-          src={image}
-          alt=""
-          initial={{ scale: 1.08 }}
-          animate={{ scale: 1.14 }}
-          transition={{ duration: 9, ease: "easeOut" }}
-          className="absolute inset-0 h-full w-full object-cover opacity-45 blur-xl"
-          aria-hidden="true"
-        />
-        <div className="absolute inset-0 bg-background/20" />
         <motion.div
-          initial={{ opacity: 0.72, scale: 0.985 }}
+          initial={{ opacity: 0.72, scale: 1.025 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 2.2, ease: [0.22, 1, 0.36, 1] }}
-          className="absolute inset-0 flex items-center justify-center"
+          className="absolute inset-0 flex items-center justify-end"
         >
           <img
             src={image}
             alt=""
             className={
               faceSafe
-                ? // Anchor the crop toward the upper third so faces stay in
-                  // frame when portrait photos cover the tall container.
-                  "h-full w-full object-cover object-[50%_30%] md:object-[right_30%]"
+                ? "h-full w-full object-contain object-top md:object-right"
                 : align === "right"
-                  ? "h-full w-full object-contain md:w-[58%] md:object-right lg:w-[55%]"
-                  : "h-full w-full object-contain"
+                  ? "h-full w-full object-contain object-right"
+                  : "h-full w-full object-contain object-center md:object-right"
             }
           />
         </motion.div>
       </motion.div>
+
+      {/* Solid text field blending into only the left edge of the photograph. */}
+      <div className="absolute inset-x-0 top-[30%] h-[22%] bg-gradient-to-b from-transparent via-hero-scrim/90 to-hero-scrim md:inset-0 md:h-auto md:bg-gradient-to-r md:from-hero-scrim md:from-35% md:via-hero-scrim/95 md:via-48% md:to-transparent md:to-78%" />
 
       {/* Thin gold sweep line that travels with the reveal edge, then fades.
           Always rendered so SSR and client markup match; duration 0 when
@@ -87,15 +78,11 @@ export function PageHero({
         style={{ boxShadow: "0 0 24px 2px var(--gold)" }}
       />
 
-      {/* Localized scrim behind the headline only (bottom-left) */}
-      <div className="absolute inset-0 bg-gradient-to-t from-hero-scrim/85 via-hero-scrim/10 to-transparent" />
-      <div className="absolute inset-0 bg-gradient-to-r from-hero-scrim/55 via-transparent to-transparent" />
-
       {/* Blueprint grid that reacts to the cursor */}
       <InteractiveGrid radius={260} baseOpacity={0.32} />
 
       {/* Content */}
-      <div className="relative z-10 mx-auto w-full max-w-[1600px] px-6 pb-20 md:px-10 md:pb-28">
+      <div className="relative z-10 mx-auto w-full max-w-[1600px] px-6 pb-14 pt-[48vh] md:px-10 md:pb-20 md:pt-0 lg:pb-24">
         <motion.p
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
@@ -106,14 +93,14 @@ export function PageHero({
         </motion.p>
 
         {/* Headline reveals word-by-word with a rising mask */}
-        <h1 className={`font-display mt-6 max-w-4xl text-balance text-4xl font-light leading-[1.05] tracking-tight text-on-image [text-shadow:0_2px_24px_rgba(0,0,0,0.65)] sm:text-6xl lg:text-7xl`}>
+        <h1 className="font-display mt-6 flex max-w-4xl flex-wrap gap-x-[0.25em] gap-y-1 text-4xl font-light leading-[1.05] tracking-tight text-on-image [text-shadow:0_2px_24px_rgba(0,0,0,0.65)] sm:text-6xl md:max-w-[42%] lg:text-7xl">
           {words.map((w, i) => (
             <span key={i} className="inline-block overflow-hidden align-bottom">
               <motion.span
                 initial={{ y: "110%" }}
                 animate={{ y: 0 }}
                 transition={{ duration: 0.9, delay: textStart + 0.1 + i * 0.08, ease: [0.22, 1, 0.36, 1] }}
-                className="inline-block max-w-full break-words pr-[0.25em]"
+                className="inline-block max-w-full break-words"
               >
                 {w}
               </motion.span>
@@ -125,7 +112,7 @@ export function PageHero({
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: textStart + 0.1 + words.length * 0.08 + 0.2 }}
-          className={`mt-7 max-w-xl text-base leading-relaxed text-on-image [text-shadow:0_1px_14px_rgba(0,0,0,0.75)] sm:text-lg`}
+          className="mt-7 max-w-xl text-base leading-relaxed text-on-image [text-shadow:0_1px_14px_rgba(0,0,0,0.75)] sm:text-lg md:max-w-[38%]"
         >
           {lead}
         </motion.p>
