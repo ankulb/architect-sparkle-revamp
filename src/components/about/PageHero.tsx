@@ -93,14 +93,14 @@ export function PageHero({
         </motion.p>
 
         {/* Headline reveals word-by-word with a rising mask */}
-        <h1 className="font-display mt-6 max-w-4xl text-balance text-4xl font-light leading-[1.05] tracking-tight text-on-image [text-shadow:0_2px_24px_rgba(0,0,0,0.65)] sm:text-6xl md:max-w-[42%] lg:text-7xl">
+        <h1 className="font-display mt-6 flex max-w-4xl flex-wrap gap-x-[0.25em] gap-y-1 text-4xl font-light leading-[1.05] tracking-tight text-on-image [text-shadow:0_2px_24px_rgba(0,0,0,0.65)] sm:text-6xl md:max-w-[42%] lg:text-7xl">
           {words.map((w, i) => (
             <span key={i} className="inline-block overflow-hidden align-bottom">
               <motion.span
                 initial={{ y: "110%" }}
                 animate={{ y: 0 }}
                 transition={{ duration: 0.9, delay: textStart + 0.1 + i * 0.08, ease: [0.22, 1, 0.36, 1] }}
-                className="inline-block max-w-full break-words pr-[0.25em]"
+                className="inline-block max-w-full break-words"
               >
                 {w}
               </motion.span>
