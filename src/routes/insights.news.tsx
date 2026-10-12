@@ -9,7 +9,7 @@ import { featuredPress, pressCoverage } from "@/data/press";
 import { PublicationMark } from "@/components/PublicationMark";
 import { majorCoverage } from "@/data/coverageIndex";
 import { isLogoCoverage, storyKey } from "@/data/curatedCoverage";
-import pressImage from "@/assets/dynamic/press.jpg.asset.json";
+import pressImage from "@/assets/dynamic/press-landscape.jpg";
 // Leading outlets only, one story each; the full index lives on the Articles page.
 const leadingPublications: [string, string[]][] = [
   ["The Economic Times", ["The Economic Times"]],
@@ -74,7 +74,7 @@ function NewsPage() {
     <div className="min-h-screen bg-background text-foreground">
       <Header />
       <main>
-        <PageHero eyebrow="Insights / News & Media" title="TOA in the press" lead="Selected conversations on architecture, workplaces, cities and the ideas shaping the built environment." image={pressImage.url} phrases={["Workplace futures", "Sustainable urbanism", "Human-centred design"]} />
+        <PageHero eyebrow="Insights / News & Media" title="TOA in the press" lead="Selected conversations on architecture, workplaces, cities and the ideas shaping the built environment." image={pressImage} phrases={["Workplace futures", "Sustainable urbanism", "Human-centred design"]} />
 
         <section className="relative border-t border-border">
           <GridBackdrop />

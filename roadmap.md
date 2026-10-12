@@ -1,5 +1,7 @@
 # Roadmap
 
+- [x] Recompose the News, Media and Articles banner photograph horizontally
+
 - [x] Review grammar and spelling across all authored site copy
 - [x] Align hero banners to keep faces unobscured and verify across screen sizes and themes
 

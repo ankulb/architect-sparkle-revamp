@@ -9,7 +9,7 @@ import { GridBackdrop } from "@/components/graphics/GridBackdrop";
 import { PublicationMark } from "@/components/PublicationMark";
 import { curatedCoverage, relatedCoverage, storyKey } from "@/data/curatedCoverage";
 import { Button } from "@/components/ui/button";
-import pressImage from "@/assets/dynamic/press.jpg.asset.json";
+import pressImage from "@/assets/dynamic/press-landscape.jpg";
 
 const PAGE = 40;
 const title = "Articles & Coverage Index — Team One Architects";
@@ -70,7 +70,7 @@ function ArticlesPage() {
           eyebrow="Insights / Articles"
           title="Selected articles, in one index"
           lead="Columns, features and commentary carrying TOA's perspective on workplaces, cities, data infrastructure and climate-intelligent design."
-          image={pressImage.url}
+          image={pressImage}
           phrases={["Workplace futures", "Climate intelligence", "Urban growth"]}
         />
 
