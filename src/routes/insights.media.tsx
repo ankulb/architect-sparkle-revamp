@@ -7,7 +7,7 @@ import { PublicationMark } from "@/components/PublicationMark";
 import { Reveal } from "@/components/Reveal";
 import { GridBackdrop } from "@/components/graphics/GridBackdrop";
 import { mediaCoverage, type MediaCoverageItem, type MediaCoverageType } from "@/data/mediaCoverage";
-import pressImage from "@/assets/dynamic/press.jpg.asset.json";
+import pressImage from "@/assets/dynamic/press-landscape.jpg";
 
 const title = "Videos, Podcasts & Interviews — Team One Architects";
 const description = "Watch and listen to selected conversations, interviews and media appearances featuring Team One Architects.";
@@ -89,7 +89,7 @@ function MediaPage() {
     <div className="min-h-screen bg-background text-foreground">
       <Header />
       <main>
-        <PageHero eyebrow="Insights / Media" title="Conversations beyond the page" lead="Selected films, podcasts and interviews exploring architecture, cities, workplaces and the ideas shaping them." image={pressImage.url} phrases={["Watch", "Listen", "Discover"]} />
+        <PageHero eyebrow="Insights / Media" title="Conversations beyond the page" lead="Selected films, podcasts and interviews exploring architecture, cities, workplaces and the ideas shaping them." image={pressImage} phrases={["Watch", "Listen", "Discover"]} />
         {sections.map(({ type, items }) => {
           const Icon = sectionIcons[type];
           return (
