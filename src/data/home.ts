@@ -1,3 +1,4 @@
+import { projectDetails } from "@/data/portfolio";
 // Content sourced from teamonearchitects.com (current homepage).
 import johnsonControlsLogo from "@/assets/brands/johnson-controls.png.asset.json";
 import careersImage from "@/assets/careers-toa.jpg.asset.json";
@@ -189,6 +190,7 @@ export const dynamicSections = [
   },
   {
     caption: "Global Collaborations",
+    collaborations: [projectDetails.webmd, projectDetails.ttec],
     title: "Partnering across borders",
     image: collaborationImage.url,
     excerpt: "Coordinating with clients and consultants across 50+ international cities.",

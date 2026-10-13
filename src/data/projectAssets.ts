@@ -1,3 +1,16 @@
+import webmd1 from "@/assets/projects/webmd/1.jpg.asset.json";
+import webmd2 from "@/assets/projects/webmd/2.jpg.asset.json";
+import webmd3 from "@/assets/projects/webmd/3.jpg.asset.json";
+import webmd4 from "@/assets/projects/webmd/4.jpg.asset.json";
+export const webmdGallery = [webmd1.url, webmd2.url, webmd3.url, webmd4.url];
+import ttec1 from "@/assets/projects/ttec/1.jpg.asset.json";
+import ttec2 from "@/assets/projects/ttec/2.jpg.asset.json";
+import ttec3 from "@/assets/projects/ttec/3.jpg.asset.json";
+import ttec4 from "@/assets/projects/ttec/4.jpg.asset.json";
+import ttec5 from "@/assets/projects/ttec/5.jpg.asset.json";
+import ttec6 from "@/assets/projects/ttec/6.jpg.asset.json";
+import ttec7 from "@/assets/projects/ttec/7.jpg.asset.json";
+export const ttecGallery = [ttec1.url, ttec2.url, ttec3.url, ttec4.url, ttec5.url, ttec6.url, ttec7.url];
 import everlance01 from "@/assets/projects/everlance/01.jpg.asset.json";
 import everlance02 from "@/assets/projects/everlance/02.jpg.asset.json";
 import everlance03 from "@/assets/projects/everlance/03.jpg.asset.json";

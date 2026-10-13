@@ -220,6 +220,7 @@ export const clientele = {
         { name: "IdeaForge", logo: clientLogos["Idea forge"] },
         { name: "Intangles", logo: clientLogos["Intangles"] },
         { name: "VW ITS", logo: clientLogos["VW ITS"] },
+        { name: "TTEC", logo: undefined },
       ],
     },
     {

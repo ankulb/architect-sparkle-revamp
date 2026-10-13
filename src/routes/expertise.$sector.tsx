@@ -6,6 +6,7 @@ import { Reveal } from "@/components/Reveal";
 import { GridBackdrop } from "@/components/graphics/GridBackdrop";
 import { BlueprintReveal } from "@/components/graphics/BlueprintReveal";
 import { ProjectCard } from "@/components/portfolio/ProjectCard";
+import { interiorPlacements } from "@/data/interiorPlacements";
 import { projects, projectDetails, type Project } from "@/data/portfolio";
 import axisSecuritiesImage from "@/assets/projects/axis-securities/untitled-session3870-hdr.jpg.asset.json";
 import mmrdaImage from "@/assets/projects/mmrda-headquarters/01.jpg.asset.json";
@@ -57,7 +58,7 @@ const sectors: Record<string, Sector> = {
   },
   "it-software": {
     slug: "it-software",
-    name: "Technology & Software",
+    name: interiorPlacements.ttec,
     discipline: "Workspace Interiors",
     lead: "Agile workplaces for technology companies — campuses and offices engineered for focus, collaboration and the speed of innovation.",
     phrases: ["Agile Workplaces", "Innovation Hubs", "Campus Design"],
@@ -68,6 +69,7 @@ const sectors: Record<string, Sector> = {
       { name: "Intangles", projectSlug: "intangles" },
       { name: "VW ITS", projectSlug: "vw-its" },
       { name: "Strux One / Veeam", projectSlug: "strux-one" },
+      { name: "TTEC", projectSlug: "ttec" },
     ],
   },
   engineering: {
@@ -90,7 +92,7 @@ const sectors: Record<string, Sector> = {
   },
   "health-pharma": {
     slug: "health-pharma",
-    name: "Healthcare & Pharma",
+    name: interiorPlacements.webmd,
     discipline: "Workspace Interiors",
     lead: "Healthcare and pharmaceutical environments where compliance, care and calm come together — spaces designed around the people they serve.",
     phrases: ["Healing Environments", "Compliance by Design", "Care-centred Spaces"],
@@ -101,6 +103,7 @@ const sectors: Record<string, Sector> = {
       { name: "Indira IVF", projectSlug: "indira-ivf" },
       { name: "Sava Global Healthcare", projectSlug: "sava-global-healthcare" },
       { name: "INFINX", projectSlug: "infinx-mumbai-office" },
+      { name: "WebMD", projectSlug: "webmd" },
     ],
   },
   media: {
