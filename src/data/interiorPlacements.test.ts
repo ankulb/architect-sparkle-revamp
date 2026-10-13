@@ -1,10 +1,11 @@
-import { expect, test } from "bun:test";
+import { test } from "node:test";
+import { strictEqual } from "node:assert";
 import { projectDetails } from "./portfolio";
 
 test("WebMD belongs to Healthcare & Pharma", () => {
-  expect(projectDetails.webmd.sector).toBe("Healthcare & Pharma");
+  strictEqual(projectDetails.webmd.sector, "Healthcare & Pharma");
 });
 
 test("TTEC belongs to Technology & Software", () => {
-  expect(projectDetails.ttec.sector).toBe("Technology & Software");
+  strictEqual(projectDetails.ttec.sector, "Technology & Software");
 });
