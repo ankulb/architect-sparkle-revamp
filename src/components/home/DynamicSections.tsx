@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { AnimatePresence, motion, useReducedMotion, useScroll, useTransform } from "motion/react";
-import { X } from "lucide-react";
+import { ArrowUpRight, X } from "lucide-react";
 import { dynamicSections } from "@/data/home";
 import { Reveal } from "@/components/Reveal";
 import { Button } from "@/components/ui/button";
@@ -91,15 +91,27 @@ export function DynamicSections() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[90] flex items-end bg-background"
+            className="fixed inset-0 z-[90] flex items-end overflow-y-auto bg-background"
           >
             <img src={openItem.image} alt="" className="absolute inset-0 h-full w-full object-cover opacity-50" />
             <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-transparent" />
             <Button variant="ghost" size="icon" onClick={() => setOpenItem(null)} aria-label="Close" className="absolute right-6 top-6 z-10 text-foreground"><X /></Button>
-            <div className="relative mx-auto w-full max-w-[1600px] px-6 pb-20 md:px-10 md:pb-28">
+            <div className="relative mx-auto my-auto w-full max-w-[1600px] px-6 pb-14 pt-24 md:px-10 md:pb-20">
               <p className="text-xs font-bold uppercase tracking-[0.2em] text-gold">{openItem.caption}</p>
               <h2 className="font-display mt-5 max-w-3xl text-4xl text-foreground sm:text-6xl">{openItem.title}</h2>
               <p className="mt-6 max-w-2xl text-lg leading-relaxed text-foreground/80">{openItem.body}</p>
+              {"collaborations" in openItem && (
+                <div className="mt-10 grid max-w-4xl gap-6 sm:grid-cols-2">
+                  {openItem.collaborations.map((project) => (
+                    <Link key={project.slug} to="/portfolio/$slug" params={{ slug: project.slug }} className="group block border-t border-border pt-4">
+                      <div className="aspect-[16/9] overflow-hidden bg-card">
+                        <img src={project.image} alt={`${project.title} workplace`} loading="lazy" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                      </div>
+                      <div className="mt-4 flex items-center justify-between gap-4"><h3 className="font-display text-2xl">{project.title}</h3><ArrowUpRight className="h-5 w-5 text-gold" /></div>
+                    </Link>
+                  ))}
+                </div>
+              )}
             </div>
           </motion.div>
         )}
