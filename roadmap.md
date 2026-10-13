@@ -1,9 +1,9 @@
 # Roadmap
 
-- [ ] Add WebMD and TTEC galleries, portfolio pages and sector placements
-- [ ] Add WebMD and TTEC to Global Collaborations
-- [ ] Rework GCC banner, global visuals and tagged case-study links
-- [ ] Verify project flows, sector rules and desktop/mobile presentation
+- [x] Add WebMD and TTEC galleries, portfolio pages and sector placements
+- [x] Add WebMD and TTEC to Global Collaborations
+- [x] Rework GCC banner, global visuals and tagged case-study links
+- [x] Verify project flows, sector rules and desktop/mobile presentation
 - [ ] Add supplied WebMD/TTEC city, area, dates and TTEC write-up — awaiting user details
 
 - [x] Recompose the News, Media and Articles banner photograph horizontally
