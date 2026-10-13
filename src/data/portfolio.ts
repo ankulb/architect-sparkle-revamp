@@ -1,4 +1,7 @@
+import { interiorPlacements } from "./interiorPlacements";
 import {
+  webmdGallery,
+  ttecGallery,
   apicoreGallery,
   axisSecuritiesGallery,
   basfGallery,
@@ -79,6 +82,8 @@ export type ProjectDetail = Project & {
 
 // Full archive (projects loaded from the live portfolio grid).
 export const projects: Project[] = [
+  { slug: "webmd", title: "WebMD", category: INTERIORS, image: webmdGallery[2] },
+  { slug: "ttec", title: "TTEC", category: INTERIORS, image: ttecGallery[0] },
   { slug: "atomberg", title: "ATOMBERG", category: INTERIORS, location: "Pune", image: `${UP}/2026/03/01.-Reception-Atomberg-AI-1024x683.png` },
   { slug: "ccrh", title: "CIDCO-CCRH", category: ARCHITECTURE, location: "Navi Mumbai", image: cidcoCcrhGallery[0] },
   { slug: "apicore", title: "APICORE", category: INTERIORS, location: "Mumbai", image: apicoreGallery[0] },
@@ -136,6 +141,23 @@ export const projects: Project[] = [
 ];
 
 export const projectDetails: Record<string, ProjectDetail> = {
+  webmd: {
+    slug: "webmd", title: "WebMD", client: "WebMD", category: INTERIORS,
+    sector: interiorPlacements.webmd, sectorLabel: "Digital Healthcare", service: "Workspace Interiors",
+    image: webmdGallery[2], gallery: webmdGallery,
+    description: [
+      "WebMD is a globally recognised digital healthcare information platform delivering research-based medical content and wellness resources. Its workplace reflects a structured, transparent and technology-driven identity, balancing high-density seating with clear circulation, collaboration and employee comfort.",
+      "The floor is organised around a central core of lift lobbies, stairs and service areas, with two major workstation wings extending from this circulation spine. Linear workstation clusters along the façade maximise access to daylight, while dedicated HR and technical-support zones maintain operational clarity.",
+      "A hierarchy of conference rooms, meeting spaces and calling rooms supports presentations, team discussions and focused work. Glass-partitioned offices provide acoustic separation and privacy while maintaining visual continuity with the open floor. Reception, a café, a mothers’ room and accessible amenities form part of the wider workplace ecosystem.",
+      "Light wood desks, dark patterned carpet and black-framed glazing establish a clean, contemporary palette. Exposed service grids, white ceiling bulkheads and linear suspended lighting reinforce the planning geometry, creating a scalable environment with a clear sense of order.",
+    ],
+  },
+  ttec: {
+    slug: "ttec", title: "TTEC", client: "TTEC", category: INTERIORS,
+    sector: interiorPlacements.ttec, service: "Workspace Interiors", image: ttecGallery[0], gallery: ttecGallery,
+    description: ["The TTEC workplace brings together open work areas, meeting rooms, shared lounges and a café. The supplied photographs show its contrasting ceiling treatments, colourful furniture and varied settings for work and informal interaction."],
+  },
+
   "grihum-housing-finance": {
     slug: "grihum-housing-finance",
     title: "Grihum Housing Finance",
