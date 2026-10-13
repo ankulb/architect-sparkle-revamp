@@ -17,7 +17,9 @@
 - Replace the banner photograph too, as confirmed: use a new premium horizontal, people-free international-workplace visual with architectural depth and subtle global-connectivity cues. This is editorial imagery, not a claimed TOA project photograph.
 - Retain the shared contained-right banner treatment: dark text field on the left, photograph on the right, stacked on smaller screens. Keep the existing headline **“Building workplaces for global capabilities.”**
 - Recompose the body into a stronger visual story: global standards / Indian context, followed by concise themes drawn from your supplied copy—collaboration, talent experience, scalability and end-to-end delivery.
+- Add a refined global-connectivity diagram with India as the conceptual hub (not a claimed office-location map), architectural linework, and a simple strategy → design → delivery sequence. Pair these with large, real workplace photographs and restrained scroll reveals rather than decorative clutter.
 - Replace the text-only experience grid with image-led project entries wherever verified photographs exist. Keep the current six experience names, link WebMD to its new page, and preserve the existing project links. Voya remains a readable name without an invented project or image.
+- Clearly tag the relevant project entries **GCC** and make the photograph/title open each available case study: WebMD, ERGO Technology & Services, Columbia Ship Management, Volkswagen and Generac. Keep Voya in the experience list without a fabricated case-study link. Use the supplied GCC experience list as the classification source; do not infer additional GCC projects from multinational client names alone.
 - Do not automatically classify TTEC as GCC experience: your instruction places it in Global Collaborations and Technology & Software.
 - Preserve the dedicated GCC homepage tile image and its direct link.
 
@@ -26,11 +28,11 @@
 - Update sector membership in `expertise.$sector.tsx`, relevant Clientele data, Global Collaborations data/presentation, and the GCC data/page.
 - Reuse site typography, semantic colours, reveal animations and reduced-motion behaviour; keep GCC-specific composition changes isolated from other banners.
 - Give both new project pages and the GCC page accurate title, description and social-preview metadata; omit image tags unless their image URL is absolute HTTPS.
-- At implementation start, record these tasks in the roadmap and save the confirmed sector placements and banner preference to project memory.
+- At implementation start, record these tasks—including the additional GCC visuals and project tags—in the roadmap and save the confirmed sector placements and banner preference to project memory.
 
 ## Checks
 - Confirm both galleries load, sector entries and collaboration links open the correct project, and search finds WebMD and TTEC.
-- Check the GCC banner, visual story and experience links on desktop and mobile in both themes, with no text/image collisions or horizontal overflow.
+- Check the GCC banner, connectivity diagram, delivery sequence, GCC project tags and case-study links on desktop and mobile in both themes, with no text/image collisions or horizontal overflow.
 - Add focused checks for WebMD → Healthcare & Pharma and TTEC → Technology & Software, and confirm a clean preview build.
 
 ## Awaiting your details
