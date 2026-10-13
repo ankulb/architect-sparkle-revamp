@@ -1,5 +1,5 @@
 import gccHeroImage from "@/assets/gcc-global-workplace.jpg";
-import { projectDetails } from "@/data/portfolio";
+import { projectDetails, projects } from "@/data/portfolio";
 import gccTileImage from "@/assets/projects/columbia-ship-management/dsc_7864.jpg.asset.json";
 
 export const gcc = {
@@ -19,7 +19,7 @@ export const gcc = {
     { name: "ERGO Technology & Services", to: "/portfolio/ergo-technologies", image: projectDetails["ergo-technologies"].image },
     { name: "Columbia Ship Management", to: "/portfolio/columbia-ship-management", image: projectDetails["columbia-ship-management"].image },
     { name: "Voya", to: undefined as string | undefined, image: undefined as string | undefined },
-    { name: "Volkswagen", to: "/portfolio/volkswagen", image: projectDetails.volkswagen.image },
+    { name: "Volkswagen", to: "/portfolio/volkswagen", image: projects.find(project => project.slug === "volkswagen")?.image },
     { name: "Generac", to: "/portfolio/generac-pune", image: projectDetails["generac-pune"].image },
   ],
 };
