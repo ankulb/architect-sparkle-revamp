@@ -8,6 +8,7 @@ import { BlueprintReveal } from "@/components/graphics/BlueprintReveal";
 import { ProjectCard } from "@/components/portfolio/ProjectCard";
 import { interiorPlacements } from "@/data/interiorPlacements";
 import { projects, projectDetails, type Project } from "@/data/portfolio";
+import { nxtraGallery } from "@/data/projectAssets";
 import axisSecuritiesImage from "@/assets/projects/axis-securities/untitled-session3870-hdr.jpg.asset.json";
 import mmrdaImage from "@/assets/projects/mmrda-headquarters/01.jpg.asset.json";
 import dcCampusImage from "@/assets/projects/dc-campus-navi-mumbai/01.png.asset.json";
