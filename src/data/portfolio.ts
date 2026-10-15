@@ -2,6 +2,7 @@ import { interiorPlacements } from "./interiorPlacements";
 import {
   webmdGallery,
   ttecGallery,
+  nxtraGallery,
   apicoreGallery,
   axisSecuritiesGallery,
   basfGallery,
@@ -83,7 +84,8 @@ export type ProjectDetail = Project & {
 // Full archive (projects loaded from the live portfolio grid).
 export const projects: Project[] = [
   { slug: "webmd", title: "WebMD", category: INTERIORS, image: webmdGallery[2] },
-  { slug: "ttec", title: "TTEC", category: INTERIORS, image: ttecGallery[0] },
+  { slug: "ttec", title: "TTEC", category: INTERIORS, location: "Mumbai", image: ttecGallery[0] },
+  { slug: "nxtra", title: "Nxtra", category: INTERIORS, image: nxtraGallery[0] },
   { slug: "atomberg", title: "ATOMBERG", category: INTERIORS, location: "Pune", image: `${UP}/2026/03/01.-Reception-Atomberg-AI-1024x683.png` },
   { slug: "ccrh", title: "CIDCO-CCRH", category: ARCHITECTURE, location: "Navi Mumbai", image: cidcoCcrhGallery[0] },
   { slug: "apicore", title: "APICORE", category: INTERIORS, location: "Mumbai", image: apicoreGallery[0] },
@@ -154,8 +156,22 @@ export const projectDetails: Record<string, ProjectDetail> = {
   },
   ttec: {
     slug: "ttec", title: "TTEC", client: "TTEC", category: INTERIORS,
-    sector: interiorPlacements.ttec, service: "Workspace Interiors", image: ttecGallery[0], gallery: ttecGallery,
-    description: ["The TTEC workplace brings together open work areas, meeting rooms, shared lounges and a café. The supplied photographs show its contrasting ceiling treatments, colourful furniture and varied settings for work and informal interaction."],
+    sector: interiorPlacements.ttec, sectorLabel: "Customer Experience & Digital Services",
+    location: "Mumbai", area: "25,000 sq. ft.", status: "Completed",
+    service: "Corporate Interiors", image: ttecGallery[0], gallery: ttecGallery,
+    description: [
+      "A global vision brought to life locally — TOA translated TTEC’s international design direction into a vibrant, functional workplace rooted in local expertise and execution.",
+      "TOA collaborated closely with TTEC’s global team to adapt a broad design vision to the realities of the Indian workspace — creating a 25,000 sq. ft. office that reflects both brand alignment and regional authenticity.",
+      "The design balances warmth and agility, with open ceilings, breakout pods in bold accents, and biophilic lounges that invite pause and conversation. Signature elements like the amphitheatre zone and suspended swing seating infuse the space with a sense of play, while layout fluidity supports hybrid working styles across functions like trust & safety.",
+      "Natural materials, layered lighting, and a playful colour palette ground the space in TTEC’s people-first culture — making it more than an office; it’s a living, breathing environment where global standards meet local soul.",
+    ],
+  },
+  nxtra: {
+    slug: "nxtra", title: "Nxtra", client: "Nxtra", category: INTERIORS,
+    sector: "Telecom", service: "Workspace Interiors", image: nxtraGallery[0], gallery: nxtraGallery,
+    description: [
+      "The Nxtra workplace pairs a branded reception in deep red and warm stone with open workstation bays, meeting and conference rooms, focus cabins and a pantry. Black slatted ceilings, wood-clad columns and red-accented carpets carry the brand palette through the floor.",
+    ],
   },
 
   "grihum-housing-finance": {
