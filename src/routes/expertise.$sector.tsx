@@ -128,6 +128,15 @@ const sectors: Record<string, Sector> = {
       { name: "Columbia Ship Management", projectSlug: "columbia-ship-management" },
     ],
   },
+  telecom: {
+    slug: "telecom",
+    name: "Telecom",
+    discipline: "Workspace Interiors",
+    lead: "Workplaces for telecom and digital-infrastructure leaders — connected, resilient offices for teams that keep networks running.",
+    phrases: ["Connected Workplaces", "Digital Infrastructure", "Brand-led Interiors"],
+    image: nxtraGallery[0],
+    clients: [{ name: "Nxtra", projectSlug: "nxtra" }],
+  },
   "green-field": {
     slug: "green-field",
     name: "Green Field",
