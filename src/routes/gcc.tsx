@@ -83,7 +83,7 @@ function GccPage() {
                   </Link>
                 </Reveal>
               ))}
-
+            </div>
           </div>
         </section>
       </main>
