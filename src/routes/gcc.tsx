@@ -83,10 +83,6 @@ function GccPage() {
                   </Link>
                 </Reveal>
               ))}
-              <Reveal className="flex min-h-40 flex-col justify-center border-y border-border py-10">
-                <p className="text-xs uppercase tracking-[0.16em] text-gold">Further GCC experience</p>
-                <h3 className="font-display mt-5 text-3xl font-light">Voya</h3>
-              </Reveal>
             </div>
           </div>
         </section>
