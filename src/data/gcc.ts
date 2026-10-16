@@ -19,7 +19,7 @@ export const gcc = {
     { name: "ERGO Technology & Services", to: "/portfolio/ergo-technologies", image: projectDetails["ergo-technologies"].image },
     { name: "Columbia Ship Management", to: "/portfolio/columbia-ship-management", image: projectDetails["columbia-ship-management"].image },
 
-    { name: "Volkswagen", to: "/portfolio/volkswagen", image: projects.find(project => project.slug === "volkswagen")?.image },
+    { name: "Volkswagen", to: "/portfolio/vw-its", image: projects.find(project => project.slug === "vw-its")?.image },
     { name: "Generac", to: "/portfolio/generac-pune", image: projectDetails["generac-pune"].image },
   ],
 };
