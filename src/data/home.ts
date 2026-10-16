@@ -273,7 +273,7 @@ export const projects = [
   { title: "Columbia Ship Management", category: "Corporate Interiors", image: columbiaHomeImage.url, href: "https://teamonearchitects.com/portfolio-item/columbia-ship-management/" },
   { title: "JIO School", category: "Commercial & Institutional", image: `${UP}/2026/03/786928477867589-copy-650x650.jpg`, href: "https://teamonearchitects.com/portfolio-item/jio-school/" },
   { title: "Kinshasa Business Centre", category: "Commercial & Institutional", image: congoHomeImage.url, href: "https://teamonearchitects.com/portfolio-item/commercial-office-building/" },
-  { title: "Volkswagen", category: "Corporate Interiors", image: `${UP}/2025/08/040-1024x683.jpg`, href: "https://teamonearchitects.com/portfolio-item/volkswagen/" },
+  { title: "Volkswagen", category: "Corporate Interiors", image: `${UP}/2025/08/040-1024x683.jpg`, href: "/portfolio/vw-its" },
   { title: "Intangles", category: "Corporate Interiors", image: `${UP}/2026/03/4-1-1024x682.jpg`, href: "https://teamonearchitects.com/portfolio-item/intangles/" },
 ];
 

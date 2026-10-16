@@ -104,12 +104,10 @@ function ProjectPage() {
   const metaItems = detail
     ? [
         ["Client", detail.client],
-        ["City", detail.location],
-        [detail.date ? "Date" : "Year", detail.date ?? detail.year],
         ["Sector", detail.sectorLabel ?? detail.sector],
-        ["Area", detail.area],
+        ["Location & Area", [detail.location, detail.area].filter((v) => Boolean(v)).join(" · ") || undefined],
         ["Status", detail.status],
-        ["Service", detail.service],
+        ["Year", detail.year ?? detail.date],
         ["Category", detail.category],
       ].filter(([, v]) => Boolean(v))
     : [];
