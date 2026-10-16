@@ -156,11 +156,12 @@ export const board = {
       summary:
         "Interior architecture brought together with resource efficiency, workplace well-being and corporate ESG principles.",
       bio: [
-        "Rupali P. Kapse is a Director at Team One Architects (TOA), with a decade of experience. She holds a Professional Diploma in Interior Architecture, with further academic exposure in environmental studies, sustainability, CSR, climate action and corporate ESG.",
-        "Her multidisciplinary background brings together interior architecture with resource efficiency, workplace well-being and ESG principles, offering a broader perspective on how spaces can support both people and organisations.",
+"Rupali P. Kapse is a Director at Team One Architects (TOA), with a decade of experience. She holds a Professional Diploma in Interior Architecture, with further academic exposure in environmental studies, sustainability, climate change and corporate ESG.",
+        "Her multidisciplinary background brings together interior architecture with resource efficiency, workplace wellbeing and ESG principles, offering a broader perspective on how spaces can support both people and organisations.",
         "Over the course of her career, Rupali has been associated with multiple projects across the real estate industry, contributing to the planning and execution of corporate and commercial spaces with a focus on workplace environments, climate action, resource efficiency and ESG practices, helping create spaces that are efficient, adaptable and aligned with evolving business needs.",
+        "With Environmental Sciences and affiliated Climate Studies as her educational backgrounds, Rupali Kapse has handled the sustainability and ESG aspect of the vertical for Team One. Her active role in real estate developments, with long-term thinking on the adaptability aspect, has helped clients and the community as a whole to regenerate cost efficiency and energies for the various corporate, commercial and industrial businesses. Rupali has played an active role in CSR and community services with the focus on “Education to Each”, and has also helped various public-private places development initiatives to revive and rejuvenate of cost and missing public, private, spaces.",
       ],
-      facts: ["Professional Diploma, Interior Architecture", "A decade of experience", "Climate action & resource efficiency", "Corporate ESG practice"],
+      facts: ["Professional Diploma, Interior Architecture", "Environmental Sciences & Climate Studies", "Sustainability & corporate ESG practice", "CSR — “Education to Each”"],
     },
   ],
 };
