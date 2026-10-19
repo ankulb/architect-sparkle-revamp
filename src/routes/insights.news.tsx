@@ -37,7 +37,14 @@ const uniqueWithLogo = <T extends { publication: string; headline: string; url?:
     return true;
   });
 
-const featuredCoverage = uniqueWithLogo(featuredPress);
+// Broadcast business outlets lead the featured section.
+const topFeatured: string[][] = [["CNBC-TV18", "CNBCTV18"], ["NDTV Profit"], ["Zee Business"]];
+const candidates = [...pressCoverage, ...majorCoverage];
+const topFeaturedItems = topFeatured.flatMap((names) => {
+  const item = candidates.find((c) => names.includes(c.publication) && c.url && isLogoCoverage(c));
+  return item ? [{ publication: item.publication, headline: item.headline, url: item.url as string }] : [];
+});
+const featuredCoverage = uniqueWithLogo([...topFeaturedItems, ...featuredPress]);
 const moreCoverage = uniqueWithLogo(pressCoverage);
 const leadingCoverage = leadingPublications.flatMap(([, names]) => {
   const item = majorCoverage.find((candidate) =>
@@ -45,6 +52,7 @@ const leadingCoverage = leadingPublications.flatMap(([, names]) => {
   );
   return item ? uniqueWithLogo([item]) : [];
 });
+const continuousCoverage = [...moreCoverage, ...leadingCoverage];
 
 
 const title = "News & Media | Team One Architects";
@@ -83,49 +91,48 @@ function NewsPage() {
             <Reveal as="h2" delay={1} className="font-display mt-5 max-w-3xl text-3xl font-light tracking-tight sm:text-5xl">Perspectives carried by leading publications</Reveal>
 
             <div className="mt-14 grid gap-px overflow-hidden border border-border bg-border lg:grid-cols-2">
-              {featuredCoverage.map((item, i) => (
-                <Reveal key={item.url} className={i === 0 ? "lg:row-span-2" : ""}>
-                  <a href={item.url} target="_blank" rel="noopener noreferrer" className={`group flex h-full flex-col justify-between bg-background p-7 transition-colors hover:bg-card ${i === 0 ? "min-h-[420px] md:p-12" : "min-h-[240px]"}`}>
-                     <div className="flex items-start justify-between gap-5"><PublicationMark publication={item.publication} /><ArrowUpRight className="h-5 w-5 shrink-0 text-muted-foreground transition group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-gold" /></div>
-                    <div><span className="text-[10px] font-semibold uppercase tracking-[0.25em] text-gold">Featured</span><h3 className={`font-display mt-4 font-light leading-tight ${i === 0 ? "text-3xl sm:text-4xl" : "text-xl sm:text-2xl"}`}>{item.headline}</h3></div>
-                  </a>
-                </Reveal>
-              ))}
+              {featuredCoverage.map((item, i) =>
+                i === 0 ? (
+                  <Reveal key={item.url} className="lg:row-span-3">
+                    <a href={item.url} target="_blank" rel="noopener noreferrer" className="group relative flex h-full min-h-[360px] flex-col justify-between overflow-hidden bg-background p-7 md:p-12 lg:min-h-[560px]">
+                      <img src={pressImage} alt="" aria-hidden className="absolute inset-0 h-full w-full object-cover opacity-25 transition-transform duration-[1500ms] group-hover:scale-105" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-background/40" />
+                      <div className="relative flex items-start justify-between gap-5">
+                        <div className="origin-left scale-125"><PublicationMark publication={item.publication} /></div>
+                        <ArrowUpRight className="h-6 w-6 shrink-0 text-muted-foreground transition group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-gold" />
+                      </div>
+                      <div className="relative">
+                        <span className="text-[10px] font-semibold uppercase tracking-[0.25em] text-gold">Lead story</span>
+                        <h3 className="font-display mt-5 max-w-xl text-3xl font-light leading-tight sm:text-5xl">{item.headline}</h3>
+                        <span className="mt-8 inline-flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.18em] text-foreground transition-colors group-hover:text-gold">
+                          Read the story
+                          <span className="h-px w-10 bg-gold transition-all duration-300 group-hover:w-16" />
+                        </span>
+                      </div>
+                    </a>
+                  </Reveal>
+                ) : (
+                  <Reveal key={item.url}>
+                    <a href={item.url} target="_blank" rel="noopener noreferrer" className="group flex h-full min-h-[220px] flex-col justify-between bg-background p-7 transition-colors hover:bg-card">
+                      <div className="flex items-start justify-between gap-5"><PublicationMark publication={item.publication} /><ArrowUpRight className="h-5 w-5 shrink-0 text-muted-foreground transition group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-gold" /></div>
+                      <div><span className="text-[10px] font-semibold uppercase tracking-[0.25em] text-gold">Featured</span><h3 className="font-display mt-4 text-xl font-light leading-tight sm:text-2xl">{item.headline}</h3></div>
+                    </a>
+                  </Reveal>
+                ),
+              )}
             </div>
           </div>
         </section>
 
         <section className="border-t border-border bg-card/30">
           <div className="mx-auto max-w-[1600px] px-6 py-20 md:px-10 md:py-28">
-            <Reveal as="p" className="text-xs font-semibold uppercase tracking-[0.3em] text-gold">More Coverages</Reveal>
+            <Reveal as="p" className="text-xs font-semibold uppercase tracking-[0.3em] text-gold">More coverage</Reveal>
             <div className="mt-12 grid border-l border-t border-border sm:grid-cols-2 lg:grid-cols-3">
-              {moreCoverage.map((item, i) => (
-                <Reveal key={item.url} delay={i % 3}>
-                  <a href={item.url} target="_blank" rel="noopener noreferrer" className="group flex min-h-[260px] flex-col justify-between border-b border-r border-border bg-background p-7 transition-colors hover:bg-card">
-                     <div className="flex items-start justify-between gap-4"><PublicationMark publication={item.publication} /><ArrowUpRight className="h-4 w-4 shrink-0 text-muted-foreground transition group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-gold" /></div>
-                    <h3 className="font-display mt-12 text-xl font-light leading-snug text-foreground">{item.headline}</h3>
-                  </a>
-                </Reveal>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="border-t border-border">
-          <div className="mx-auto max-w-[1600px] px-6 py-20 md:px-10 md:py-28">
-            <Reveal as="p" className="text-xs font-semibold uppercase tracking-[0.3em] text-gold">Across the press</Reveal>
-            <Reveal as="h2" delay={1} className="font-display mt-5 max-w-3xl text-3xl font-light tracking-tight sm:text-5xl">
-              Coverage in leading national mastheads
-            </Reveal>
-            <div className="mt-12 grid border-l border-t border-border sm:grid-cols-2 lg:grid-cols-3">
-              {leadingCoverage.map((item, i) => (
+              {continuousCoverage.map((item, i) => (
                 <Reveal key={`${item.publication}-${item.headline}`} delay={i % 3}>
-                  <a href={item.url} target="_blank" rel="noopener noreferrer" className="group flex h-full min-h-[220px] flex-col justify-between border-b border-r border-border bg-background p-7 transition-colors hover:bg-card">
-                    <div className="flex items-start justify-between gap-4">
-                       <PublicationMark publication={item.publication} />
-                      <ArrowUpRight className="h-4 w-4 shrink-0 text-muted-foreground transition group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-gold" />
-                    </div>
-                    <h3 className="font-display mt-10 text-lg font-light leading-snug text-foreground">{item.headline}</h3>
+                  <a href={item.url} target="_blank" rel="noopener noreferrer" className="group flex h-full min-h-[240px] flex-col justify-between border-b border-r border-border bg-background p-7 transition-colors hover:bg-card">
+                    <div className="flex items-start justify-between gap-4"><PublicationMark publication={item.publication} /><ArrowUpRight className="h-4 w-4 shrink-0 text-muted-foreground transition group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-gold" /></div>
+                    <h3 className="font-display mt-10 text-xl font-light leading-snug text-foreground">{item.headline}</h3>
                   </a>
                 </Reveal>
               ))}
