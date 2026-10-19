@@ -7,7 +7,7 @@ import { Reveal } from "@/components/Reveal";
 import { GridBackdrop } from "@/components/graphics/GridBackdrop";
 import { awardImages, awardsHero, awardsTimeline } from "@/data/awards";
 
-const title = "Awards & Recognition — Team One Architects";
+const title = "Awards & Recognition, Team One Architects";
 const description =
   "Explore Team One Architects' awards and recognitions across architecture, interior design, project management and industry leadership.";
 const url = "https://architect-sparkle-revamp.lovable.app/insights/awards";

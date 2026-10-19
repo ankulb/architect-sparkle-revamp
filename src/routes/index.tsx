@@ -10,7 +10,7 @@ import { Careers } from "@/components/home/Careers";
 
 const title = "Team One Architects | Architecture, Interiors & Engineering";
 const description =
-  "TOA designs the future through Architecture, Interiors and Engineering — luxury housing, commercial, data centres and corporate interiors. Mumbai, worldwide since 2001.";
+  "TOA designs the future through Architecture, Interiors and Engineering, luxury housing, commercial, data centres and corporate interiors. Mumbai, worldwide since 2001.";
 const ogImage =
   "https://teamonearchitects.com/wp-content/uploads/2026/03/DSC07321-HDR-650x650.jpg";
 

@@ -12,7 +12,7 @@ export type MediaCoverageItem = {
 export const mediaCoverage: MediaCoverageItem[] = [
   {
     type: "video",
-    publication: "Magicbricks — The Property Show",
+    publication: "Magicbricks: The Property Show",
     title: "Teaser: Investing in Real Estate Property vs REIT",
     url: "https://www.youtube.com/watch?v=X5iiR5cFlLY",
     videoId: "X5iiR5cFlLY",
@@ -21,7 +21,7 @@ export const mediaCoverage: MediaCoverageItem[] = [
   },
   {
     type: "video",
-    publication: "Magicbricks — The Property Show",
+    publication: "Magicbricks: The Property Show",
     title: "Investing in Real Estate Property vs REIT",
     url: "https://www.youtube.com/watch?v=79bJ76j9oVU",
     videoId: "79bJ76j9oVU",

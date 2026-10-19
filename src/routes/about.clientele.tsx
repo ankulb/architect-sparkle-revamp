@@ -6,7 +6,7 @@ import { Reveal } from "@/components/Reveal";
 import { GridBackdrop } from "@/components/graphics/GridBackdrop";
 import { clientele } from "@/data/about";
 
-const title = "Clientele — Team One Architects";
+const title = "Clientele, Team One Architects";
 const description =
   "Trusted by the best, chosen for vision. The engineering, technology and enterprise leaders who build the future with Team One Architects.";
 const url = "https://architect-sparkle-revamp.lovable.app/about/clientele";

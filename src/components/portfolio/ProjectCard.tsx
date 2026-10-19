@@ -24,7 +24,7 @@ export function ProjectCard({ project }: { project: Project }) {
       <div className="absolute inset-x-0 bottom-0 p-6">
         {project.location && (
           <span className="block text-[0.7rem] font-medium uppercase tracking-[0.2em] text-gold opacity-0 transition-all duration-500 group-hover:opacity-100">
-            {project.location} — India
+            {project.location}, India
           </span>
         )}
         <h3 className="font-display mt-1 text-xl font-normal tracking-tight text-foreground sm:text-2xl">

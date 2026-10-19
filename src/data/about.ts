@@ -34,7 +34,7 @@ export const aboutUs = {
   hero: {
     eyebrow: "Decades of Design. Driven by Vision.",
     title: "Creating spaces that matter",
-    lead: "A Mumbai-born practice with a 25-year legacy — shaping impactful spaces through innovation, excellence and purpose.",
+    lead: "A Mumbai-born practice with a 25-year legacy, shaping impactful spaces through innovation, excellence and purpose.",
     image: toaTeamPhoto.url,
     faceSafe: true,
     phrases: [
@@ -45,7 +45,7 @@ export const aboutUs = {
     ],
   },
   intro:
-    "Team One Architects (TOA) is a leading architecture and design firm based in Mumbai with a legacy of over 25 years, shaping impactful spaces through innovation, excellence, and purpose. Founded by Bharat Yamsanwar and Parish Kapse, and later joined by Aditya Yamsanwar, TOA has evolved into a multidisciplinary practice partnering with Fortune 500 companies and leading institutions. With a growing international presence, including landmark projects in the GCC, our work reflects a strong commitment to sustainability and wellness — with numerous IGBC and globally certified developments to our name. We work closely with our clients, listening deeply to their goals and communities to co-create spaces that celebrate identity and inspire well-being.",
+    "Team One Architects (TOA) is a leading architecture and design firm based in Mumbai with a legacy of over 25 years, shaping impactful spaces through innovation, excellence, and purpose. Founded by Bharat Yamsanwar and Parish Kapse, and later joined by Aditya Yamsanwar, TOA has evolved into a multidisciplinary practice partnering with Fortune 500 companies and leading institutions. With a growing international presence, including landmark projects in the GCC, our work reflects a strong commitment to sustainability and wellness, with numerous IGBC and globally certified developments to our name. We work closely with our clients, listening deeply to their goals and communities to co-create spaces that celebrate identity and inspire well-being.",
   visionMission: [
     {
       kicker: "Our Vision",
@@ -88,7 +88,7 @@ export const board = {
   hero: {
     eyebrow: "Leadership",
     title: "Board of Directors",
-    lead: "The future isn't imagined alone. It's built together — brick by brick, mind by mind.",
+    lead: "The future isn't imagined alone. It's built together, brick by brick, mind by mind.",
     image: toaTeamPhoto.url,
     faceSafe: true,
   },
@@ -143,7 +143,7 @@ export const board = {
         "Stewardship of accounts, finance and administration, with a deep commitment to mentorship and community programmes.",
       bio: [
         "With a background in Commerce and an M. Com qualification, Jyoti B. Yamsanwar brings a strong perspective on the organisational functions that enable a growing practice to operate with structure, accountability and continuity. Her role spans accounts, finance and administration, supporting the systems and processes that form the operational backbone of the workplace.",
-        "Beyond her functional responsibilities, Jyoti places particular emphasis on mentorship and people development. Her approach is centred on creating an environment where younger professionals and emerging team members can learn through guidance, responsibility and experience. She believes effective mentorship extends beyond professional skills — helping individuals build confidence, understand accountability and develop the judgement required to grow within a professional practice.",
+        "Beyond her functional responsibilities, Jyoti places particular emphasis on mentorship and people development. Her approach is centred on creating an environment where younger professionals and emerging team members can learn through guidance, responsibility and experience. She believes effective mentorship extends beyond professional skills, helping individuals build confidence, understand accountability and develop the judgement required to grow within a professional practice.",
         "Jyoti is also closely associated with CSR initiatives at TOA, contributing to programmes that connect the resources and capabilities of the practice with wider community needs. Her interests lie at the intersection of people, organisational stewardship and social responsibility, reflecting a belief that a company's impact extends beyond its day-to-day business.",
       ],
       facts: ["M. Com, Commerce", "Accounts, finance & administration", "Mentorship & people development", "CSR stewardship"],
@@ -161,7 +161,7 @@ export const board = {
         "Over the course of her career, Rupali has been associated with multiple projects across the real estate industry, contributing to the planning and execution of corporate and commercial spaces with a focus on workplace environments, climate action, resource efficiency and ESG practices, helping create spaces that are efficient, adaptable and aligned with evolving business needs.",
         "With Environmental Sciences and affiliated Climate Studies as her educational backgrounds, Rupali Kapse has handled the sustainability and ESG aspect of the vertical for Team One. Her active role in real estate developments, with long-term thinking on the adaptability aspect, has helped clients and the community as a whole to regenerate cost efficiency and energies for the various corporate, commercial and industrial businesses. Rupali has played an active role in CSR and community services with the focus on “Education to Each”, and has also helped various public-private places development initiatives to revive and rejuvenate of cost and missing public, private, spaces.",
       ],
-      facts: ["Professional Diploma, Interior Architecture", "Environmental Sciences & Climate Studies", "Sustainability & corporate ESG practice", "CSR — “Education to Each”"],
+      facts: ["Professional Diploma, Interior Architecture", "Environmental Sciences & Climate Studies", "Sustainability & corporate ESG practice", "CSR: “Education to Each”"],
     },
   ],
 };
@@ -173,7 +173,7 @@ export const team = {
   hero: {
     eyebrow: "Our People",
     title: "The people behind the practice",
-    lead: "The future isn't imagined alone. It's built together — brick by brick, mind by mind.",
+    lead: "The future isn't imagined alone. It's built together, brick by brick, mind by mind.",
     image: toaTeamPhoto.url,
     faceSafe: true,
   },
@@ -198,7 +198,7 @@ export const clientele = {
   hero: {
     eyebrow: "Partnerships",
     title: "Trusted by the best. Chosen for vision.",
-    lead: "From engineering giants to global software leaders — the organisations that build the future build it with us.",
+    lead: "From engineering giants to global software leaders: the organisations that build the future build it with us.",
     image: toaTeamPhoto.url,
     faceSafe: true,
   },
@@ -334,7 +334,7 @@ export const csr = {
   hero: {
     eyebrow: "Corporate Social Responsibility",
     title: "Our commitment to social impact",
-    lead: "We believe design can create meaningful social change — in education, community development and infrastructure.",
+    lead: "We believe design can create meaningful social change, in education, community development and infrastructure.",
     image: csrImage.url,
     faceSafe: true,
   },
@@ -358,7 +358,7 @@ export const csr = {
     },
     {
       name: "Dharti Foundation",
-      body: "Uplifting children from farmer families — with a special emphasis on girls — through education and pathways to employment.",
+      body: "Uplifting children from farmer families, with a special emphasis on girls, through education and pathways to employment.",
       href: "https://dhartifoundation.com/",
       logo: dhartiLogo.url,
     },
@@ -413,7 +413,7 @@ export const life = {
   hero: {
     eyebrow: "Life at TOA",
     title: "Where spaces are built. And so are people.",
-    lead: "We don't just create workplaces — we build a team that owns, builds and evolves with every project.",
+    lead: "We don't just create workplaces; we build a team that owns, builds and evolves with every project.",
     image: `${UP}/2026/04/TOA-Family-Day-2025-copy-1.jpg`,
     faceSafe: true,
     phrases: [
@@ -424,25 +424,25 @@ export const life = {
     ],
   },
   intro:
-    "At Team One Architects (TOA), we don't just create workplaces — we build environments that shape how businesses perform, collaborate and grow. But behind every space we deliver is something even more important: a team that owns, builds and evolves with every project.",
+    "At Team One Architects (TOA), we don't just create workplaces; we build environments that shape how businesses perform, collaborate and grow. But behind every space we deliver is something even more important: a team that owns, builds and evolves with every project.",
   blocks: [
     {
       title: "A Culture of Builders",
       image: `${UP}/2026/04/TOA-Family-Day-2025-copy-1.jpg`,
-      body: "TOA is not a conventional workplace. It is a high-energy, execution-driven ecosystem where ideas move quickly and outcomes matter. Every individual here is a builder — whether designing a concept, executing a site, closing a deal or enabling operations. There is a shared understanding across teams: we don't just contribute — we take ownership.",
+      body: "TOA is not a conventional workplace. It is a high-energy, execution-driven ecosystem where ideas move quickly and outcomes matter. Every individual here is a builder, whether designing a concept, executing a site, closing a deal or enabling operations. There is a shared understanding across teams: we don't just contribute; we take ownership.",
     },
     {
       title: "Where Learning is Real, Not Theoretical",
       body: "Growth at TOA doesn't come from static training modules. It comes from real projects, real timelines and real challenges. From handling large-scale corporate fit-outs to navigating complex site executions, our teams learn by being in the middle of the action.",
       bullets: [
-        "You don't wait for exposure — you earn it",
-        "You don't shadow work — you lead parts of it",
-        "You don't follow processes blindly — you improve them",
+        "You don't wait for exposure, you earn it",
+        "You don't shadow work, you lead parts of it",
+        "You don't follow processes blindly, you improve them",
       ],
     },
     {
       title: "Collaboration Without Boundaries",
-      body: "At TOA, silos don't define how we work — collaboration does. Designers, project teams, business development, procurement and support functions operate as one integrated unit focused on delivery.",
+      body: "At TOA, silos don't define how we work; collaboration does. Designers, project teams, business development, procurement and support functions operate as one integrated unit focused on delivery.",
       bullets: ["Conversations are direct", "Decisions are fast", "Teams move together"],
     },
     {
@@ -461,12 +461,12 @@ export const life = {
         "Celebrating milestones like our 25-year journey in Thailand",
         "Coming together for initiatives like International Yoga Day",
         "Continuous training and upskilling sessions across teams",
-        "Recognising wins — both individual and collective",
+        "Recognising wins, both individual and collective",
       ],
     },
     {
       title: "A Place to Grow, Not Just Work",
-      body: "At TOA, growth is not linear — it's accelerated. We believe growth happens when you are trusted before you feel ready.",
+      body: "At TOA, growth is not linear; it's accelerated. We believe growth happens when you are trusted before you feel ready.",
       bullets: [
         "Early ownership of critical responsibilities",
         "Continuous feedback and a performance-driven culture",

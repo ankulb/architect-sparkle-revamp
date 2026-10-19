@@ -8,7 +8,7 @@ import { CountUp } from "@/components/CountUp";
 import { GridBackdrop } from "@/components/graphics/GridBackdrop";
 import { aboutUs } from "@/data/about";
 
-const title = "About Us — Team One Architects";
+const title = "About Us, Team One Architects";
 const description =
   "Decades of design, driven by vision. Team One Architects is a Mumbai-based architecture and design firm with a 25-year legacy of creating spaces that matter.";
 const url = "https://architect-sparkle-revamp.lovable.app/about";

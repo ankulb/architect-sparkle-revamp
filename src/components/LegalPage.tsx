@@ -32,7 +32,7 @@ export function LegalPage({ slug }: { slug: LegalDoc["slug"] }) {
 
 export function legalHead(slug: LegalDoc["slug"]) {
   const doc = legalDocs[slug];
-  const title = `${doc.title} — Team One Architects`;
+  const title = `${doc.title}, Team One Architects`;
   return {
     meta: [
       { title },

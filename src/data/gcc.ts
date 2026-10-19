@@ -10,7 +10,7 @@ export const gcc = {
     image: gccHeroImage,
   },
   paragraphs: [
-    "As organisations establish and scale Global Capability Centres in India, the workplace becomes more than an office — it becomes a platform for collaboration, innovation, talent and global connectivity.",
+    "As organisations establish and scale Global Capability Centres in India, the workplace becomes more than an office; it becomes a platform for collaboration, innovation, talent and global connectivity.",
     "TOA brings together workplace strategy, design and end-to-end delivery to create GCC environments that translate global standards into workplaces designed for the Indian context. From technology-enabled collaboration and agile planning to employee experience, scalability and brand expression, we design spaces that support how global teams work, connect and grow.",
   ],
   tileImage: gccTileImage.url,

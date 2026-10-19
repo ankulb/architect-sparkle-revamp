@@ -30,15 +30,15 @@ export const awardsTimeline = [
   {
     year: "2001",
     entries: [
-      "International Friendship Society of India — Best Citizen of India Award",
+      "International Friendship Society of India, Best Citizen of India Award",
       "B. S. Yamsanwar for Roca Presents Indian Architectural Design Festival",
-      "Vikas Rattan Award — B. S. Yamsanwar, Outstanding Contribution to Indian Society (IADF)",
+      "Vikas Rattan Award, B. S. Yamsanwar, Outstanding Contribution to Indian Society (IADF)",
     ],
   },
   {
     year: "2010",
     entries: [
-      "Snowcem Paints — CSI 2010",
+      "Snowcem Paints, CSI 2010",
       "AplT20 Architects Premier League 2010",
       "Best Architect Firm of the Year",
     ],
@@ -47,31 +47,31 @@ export const awardsTimeline = [
     year: "2011",
     entries: [
       "The Economic Times ACETECH 2011",
-      "Eminent Jury — Design Wall 2011",
+      "Eminent Jury, Design Wall 2011",
     ],
   },
   {
     year: "2012",
     entries: [
-      "Sakal Sanman — Bharat Yamsanwar",
+      "Sakal Sanman, Bharat Yamsanwar",
       "The Economic Times ACETECH 2012",
-      "Eminent Jury — Design Wall 2012",
+      "Eminent Jury, Design Wall 2012",
     ],
   },
   {
     year: "2013",
     entries: [
-      "An ACETECH Initiative — Connect 2013",
+      "An ACETECH Initiative, Connect 2013",
       "The Economic Times ACETECH 2013",
-      "Eminent Jury — Design Wall 2013",
+      "Eminent Jury, Design Wall 2013",
     ],
   },
   {
     year: "2014",
     entries: [
       "The Economic Times ACETECH 2014",
-      "FOAID — Festival of Architecture & Interior Designing 2014",
-      "Eminent Jury — Design Wall 2014, Excellence in Architecture & Design",
+      "FOAID, Festival of Architecture & Interior Designing 2014",
+      "Eminent Jury, Design Wall 2014, Excellence in Architecture & Design",
     ],
   },
   {
@@ -79,14 +79,14 @@ export const awardsTimeline = [
     entries: [
       "The Economic Times ACETECH 2015",
       "DNA Real Estate & Infrastructure Round Table & Awards",
-      "Design Wall 2015 — Best Architectural Firm of the Year",
+      "Design Wall 2015, Best Architectural Firm of the Year",
     ],
   },
   {
     year: "2017",
     entries: [
       "iNFHRA FM Excellence Conference & Awards 2017",
-      "Best Project — Architecture & PMC",
+      "Best Project, Architecture & PMC",
     ],
   },
   {
@@ -100,6 +100,6 @@ export const awardsTimeline = [
   },
   {
     year: "2026",
-    entries: ["GCC Leadership Conclave — Future of Workspaces Partner 2026"],
+    entries: ["GCC Leadership Conclave, Future of Workspaces Partner 2026"],
   },
 ] as const;
