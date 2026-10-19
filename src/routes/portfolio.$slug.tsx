@@ -121,11 +121,18 @@ function ProjectPage() {
 
   const more = projects.filter((p) => p.slug !== slug).slice(0, 3);
 
-  const metaItems = detail
+  const metaItems: [string, ReactNode][] = detail
     ? [
         ["Client", detail.client],
         ["Sector", detail.sectorLabel ?? detail.sector],
-        ["Location & Area", [detail.location, detail.area].filter((v) => Boolean(v)).join(" · ") || undefined],
+        [
+          "Location & Area",
+          detail.sites ? (
+            <SiteList sites={detail.sites} />
+          ) : (
+            [detail.location, detail.area].filter((v) => Boolean(v)).join(" · ") || undefined
+          ),
+        ],
         ["Status", detail.status],
         ["Year", detail.year ?? detail.date],
         ["Category", detail.category],
