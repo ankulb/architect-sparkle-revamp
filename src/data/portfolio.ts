@@ -81,7 +81,6 @@ export type ProjectDetail = Project & {
   year?: string;
   date?: string;
   service?: string;
-  hideHeroLead?: boolean;
   description: string[];
   gallery: string[];
 };
@@ -678,7 +677,6 @@ export const projectDetails: Record<string, ProjectDetail> = {
     location: "Mumbai, Pune & Bengaluru",
     sites: johnsonControlsSites,
     area: sitesArea(johnsonControlsSites),
-    hideHeroLead: true,
     status: "Completed",
     year: "2023",
     service: "Corporate Interiors",
