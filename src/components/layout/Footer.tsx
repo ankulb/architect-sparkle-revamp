@@ -12,10 +12,7 @@ const expertiseLinks = [
 
 const connectLinks: { label: string; to?: string; href?: string; external?: boolean }[] = [
   { label: "Contact", to: "/contact" },
-  { label: "News & Media", href: "/insights/news" },
-  { label: "Awards", href: "/insights/awards" },
-  { label: "Videos & Interviews", href: "/insights/media" },
-  { label: "Articles", href: "/insights/articles" },
+  { label: "News", href: "/insights/news" },
   { label: "Careers", href: "/careers" },
   {
     label: "Feedback",
