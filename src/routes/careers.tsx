@@ -5,7 +5,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { PageHero } from "@/components/about/PageHero";
 import { Reveal } from "@/components/Reveal";
-import { careersPage, jobs, jobUrl } from "@/data/careers";
+import { careersPage, jobs, applyUrl } from "@/data/careers";
 import { careers } from "@/data/home";
 
 const title = "Careers | Team One Architects";
@@ -67,31 +67,28 @@ function CareersPage() {
             <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
               <h2 className="font-display text-3xl font-light tracking-tight sm:text-4xl">Open positions</h2>
               <div className="flex flex-wrap gap-4">
-                <Filter label="Category" value={cat} options={unique("category")} onChange={setCat} />
-                <Filter label="Location" value={loc} options={unique("location")} onChange={setLoc} />
+                <Filter label="Department" value={cat} options={unique("category")} onChange={setCat} />
+                <Filter label="City" value={loc} options={unique("location")} onChange={setLoc} />
               </div>
             </div>
             <ul className="mt-10 border-t border-border">
               {list.map((j) => (
-                <li key={j.slug} className="border-b border-border">
+                <li key={`${j.location}-${j.title}`} className="border-b border-border">
                   <a
-                    href={jobUrl(j.slug)}
-                    target="_blank"
-                    rel="noreferrer"
+                    href={applyUrl(careersPage.email, j)}
                     className="group flex flex-wrap items-center justify-between gap-4 py-6"
                   >
                     <span className="max-w-xl">
                       <span className="font-display block text-xl font-light tracking-tight transition-colors group-hover:text-gold sm:text-2xl">
                         {j.title}
                       </span>
-                      <span className="mt-1 block text-sm text-muted-foreground">{j.focus}</span>
+                      {j.openings && j.openings > 1 ? <span className="mt-1 block text-sm text-muted-foreground">{j.openings} openings</span> : null}
                     </span>
                     <span className="flex items-center gap-6 text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground">
-                      <span>{j.band}</span>
                       <span>{j.category}</span>
                       <span>{j.location}</span>
                       <span className="inline-flex items-center gap-1 text-gold">
-                        Details <ArrowUpRight className="h-4 w-4" />
+                        Apply <ArrowUpRight className="h-4 w-4" />
                       </span>
                     </span>
                   </a>

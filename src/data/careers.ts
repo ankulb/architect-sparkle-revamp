@@ -4,9 +4,7 @@ export type Job = {
   title: string;
   category: string;
   location: string;
-  band: string;
-  focus: string;
-  slug: string;
+  openings?: number;
 };
 
 export const careersPage = {
@@ -32,87 +30,42 @@ export const careersPage = {
   email: "hr1@toa.org.in",
 };
 
+// Open positions as of the first week of October 2026 (client-supplied sheet).
 export const jobs: Job[] = [
-  {
-    title: "Project Head",
-    category: "Projects",
-    location: "Mumbai",
-    band: "Leadership (12–18 yrs)",
-    focus: "Multi-project delivery, governance, vendor engagement",
-    slug: "project-head",
-  },
-  {
-    title: "Procurement Head",
-    category: "Purchase",
-    location: "Mumbai",
-    band: "Leadership (10–15 yrs)",
-    focus: "Procurement strategy, vendor ecosystem, cost control",
-    slug: "procurement-head",
-  },
-  {
-    title: "Site Engineer",
-    category: "Projects",
-    location: "Mumbai",
-    band: "Entry–Mid (1–4 yrs)",
-    focus: "Daily site supervision, measurement, QC",
-    slug: "site-engineer",
-  },
-  {
-    title: "Quantity Surveyor",
-    category: "Projects",
-    location: "Multiple",
-    band: "Mid–Senior (3–8 yrs)",
-    focus: "BOQ, tendering, billing, VE, MIS",
-    slug: "quantity-surveyor",
-  },
-  {
-    title: "3D Visualiser / Graphic",
-    category: "Design",
-    location: "Mumbai",
-    band: "Mid (2–5 yrs)",
-    focus: "3D renders, walkthroughs, pitch visuals",
-    slug: "3d-visualiser-graphic",
-  },
-  {
-    title: "Design Head",
-    category: "Design",
-    location: "Multiple",
-    band: "Leadership (10–15 yrs)",
-    focus: "Creative direction, pitch support, VE, mentoring",
-    slug: "design-head",
-  },
-  {
-    title: "Sr. Project Manager",
-    category: "Projects",
-    location: "Pune",
-    band: "Leadership (8–12 yrs)",
-    focus: "Multi-site delivery, PM cluster management, reporting",
-    slug: "sr-project-manager",
-  },
-  {
-    title: "Sr. Business Development",
-    category: "Sales",
-    location: "Mumbai",
-    band: "Senior (6–10 yrs)",
-    focus: "BD strategy, pipeline, RFPs, closures",
-    slug: "sr-business-development",
-  },
-  {
-    title: "Junior Business Development",
-    category: "Sales",
-    location: "Mumbai",
-    band: "Mid (1–4 yrs)",
-    focus: "Market mapping, pre-sales, MIS",
-    slug: "junior-business-development",
-  },
-  {
-    title: "PR / Brand Communications",
-    category: "Sales",
-    location: "Mumbai",
-    band: "Mid–Senior (3–7 yrs)",
-    focus: "PR, social, narratives, reporting",
-    slug: "pr-brand-communications",
-  },
+  { title: "Design Lead", category: "Design", location: "Mumbai", openings: 1 },
+  { title: "Purchase Head", category: "Purchase", location: "Mumbai", openings: 1 },
+  { title: "Purchase Manager", category: "Purchase", location: "Mumbai", openings: 1 },
+  { title: "B.D. Head", category: "Business Development", location: "Mumbai", openings: 1 },
+  { title: "Jr. Architect", category: "Architecture", location: "Mumbai", openings: 1 },
+  { title: "Sr. Architect", category: "Architecture", location: "Mumbai", openings: 1 },
+  { title: "Liaison Architect", category: "Architecture", location: "Mumbai", openings: 1 },
+  { title: "Project Head", category: "Projects", location: "Mumbai", openings: 1 },
+  { title: "Project Manager", category: "Projects", location: "Mumbai", openings: 2 },
+  { title: "Site Supervisor / Engineer", category: "Projects", location: "Mumbai", openings: 4 },
+  { title: "Quantity Estimator", category: "Projects", location: "Mumbai", openings: 1 },
+  { title: "Civil Engineer", category: "Engineering", location: "Mumbai", openings: 1 },
+  { title: "MEP Engineer", category: "Engineering", location: "Mumbai", openings: 1 },
+  { title: "Interns (Mechanical, Electrical, Plumbing)", category: "Engineering", location: "Mumbai" },
+  { title: "Design Head", category: "Design", location: "Pune", openings: 1 },
+  { title: "Mid-Level Interior Designer", category: "Design", location: "Pune", openings: 1 },
+  { title: "Jr. Interior Designer", category: "Design", location: "Pune", openings: 1 },
+  { title: "Project Manager", category: "Projects", location: "Pune", openings: 2 },
+  { title: "Site Engineer", category: "Projects", location: "Pune", openings: 2 },
+  { title: "Safety Engineer", category: "Projects", location: "Pune", openings: 1 },
+  { title: "Sr. 3D Visualiser", category: "Design", location: "Pune", openings: 1 },
+  { title: "Graphic Designer", category: "Design", location: "Pune", openings: 1 },
+  { title: "Quality Control Engineer", category: "Engineering", location: "Pune", openings: 1 },
+  { title: "Quantity Estimator", category: "Projects", location: "Pune", openings: 1 },
+  { title: "Jr. Business Development", category: "Business Development", location: "Pune", openings: 1 },
+  { title: "Regional Head, Business Development", category: "Business Development", location: "Bengaluru", openings: 1 },
+  { title: "Business Development Manager", category: "Business Development", location: "Bengaluru", openings: 1 },
+  { title: "SPOC / MEP", category: "Engineering", location: "Hyderabad", openings: 1 },
+  { title: "Electrical Supervisor", category: "Engineering", location: "Hyderabad", openings: 1 },
+  { title: "HVAC", category: "Engineering", location: "Hyderabad", openings: 1 },
+  { title: "QA / QC", category: "Engineering", location: "Hyderabad", openings: 1 },
+  { title: "Quantity Surveyor", category: "Projects", location: "Hyderabad", openings: 1 },
+  { title: "Project Coordinator", category: "Projects", location: "Hyderabad", openings: 1 },
 ];
 
-export const jobUrl = (slug: string) => `${JOBS}/${slug}/`;
+export const applyUrl = (email: string, j: Job) =>
+  `mailto:${email}?subject=${encodeURIComponent(`Application: ${j.title} (${j.location})`)}`;
