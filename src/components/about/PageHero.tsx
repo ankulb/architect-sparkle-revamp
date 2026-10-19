@@ -13,7 +13,7 @@ export function PageHero({
 }: {
   eyebrow: string;
   title: string;
-  lead: string;
+  lead?: string;
   image: string;
   phrases?: readonly string[];
   /** "right" pins the photograph to the outer edge of its contained image area. */
@@ -108,14 +108,16 @@ export function PageHero({
           ))}
         </h1>
 
-        <motion.p
-          initial={{ opacity: 0, y: 18 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: textStart + 0.1 + words.length * 0.08 + 0.2 }}
-          className={`mt-7 max-w-xl text-base leading-relaxed text-on-image [text-shadow:0_1px_14px_rgba(0,0,0,0.75)] sm:text-lg ${faceSafe ? "md:max-w-[36%]" : "md:max-w-[38%]"}`}
-        >
-          {lead}
-        </motion.p>
+        {lead && (
+          <motion.p
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: textStart + 0.1 + words.length * 0.08 + 0.2 }}
+            className={`mt-7 max-w-xl text-base leading-relaxed text-on-image [text-shadow:0_1px_14px_rgba(0,0,0,0.75)] sm:text-lg ${faceSafe ? "md:max-w-[36%]" : "md:max-w-[38%]"}`}
+          >
+            {lead}
+          </motion.p>
+        )}
 
         {phrases && phrases.length > 1 && (
           <div className="mt-8 flex min-h-6 items-center">
