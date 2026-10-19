@@ -77,6 +77,7 @@ export type ProjectDetail = Project & {
   year?: string;
   date?: string;
   service?: string;
+  hideHeroLead?: boolean;
   description: string[];
   gallery: string[];
 };
@@ -648,6 +649,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
     sectorLabel: "Engineering",
     location: "Mumbai, Pune & Bengaluru",
     area: "Mumbai 27,000 sq. ft. / Pune 54,000 + 54,000 + 72,000 sq. ft. / Bengaluru 42,000 + 15,000 sq. ft.",
+    hideHeroLead: true,
     status: "Completed",
     year: "2023",
     service: "Corporate Interiors",

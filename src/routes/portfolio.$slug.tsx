@@ -121,9 +121,11 @@ function ProjectPage() {
           title={meta.title}
           lead={
             detail
-              ? [detail.client === "Confidential" ? undefined : detail.client, detail.location, detail.area]
-                  .filter((v) => Boolean(v))
-                  .join(" · ")
+              ? detail.hideHeroLead
+                ? undefined
+                : [detail.client === "Confidential" ? undefined : detail.client, detail.location, detail.area]
+                    .filter((v) => Boolean(v))
+                    .join(" · ")
               : "A Team One Architects project."
           }
           image={meta.image}
