@@ -68,10 +68,14 @@ export type Project = {
   image: string;
 };
 
+export type ProjectSite = { city: string; area?: string };
+
 export type ProjectDetail = Project & {
   sector?: string;
   sectorLabel?: string;
   area?: string;
+  /** Multi-city projects: every city with its own area, as the write-up phrases them. */
+  sites?: ProjectSite[];
   status?: string;
   client?: string;
   year?: string;
