@@ -4,13 +4,18 @@ import { aboutNav } from "@/data/home";
 import logoAsset from "@/assets/toa-logo.png.asset.json";
 
 const expertiseLinks = [
-  { label: "Architecture & Urban Design", href: "/#expertise" },
-  { label: "Workspace Interiors", href: "/#expertise" },
+  { label: "Workspace Interiors", href: "/expertise/banking-finance" },
+  { label: "Architecture & Urban Design", href: "/expertise/civic-institutional" },
+  { label: "GCC", href: "/gcc" },
+  { label: "Portfolio", href: "/portfolio" },
 ];
 
-const connectLinks = [
+const connectLinks: { label: string; to?: string; href?: string; external?: boolean }[] = [
   { label: "Contact", to: "/contact" },
-  { label: "News", href: "/#insights" },
+  { label: "News & Media", href: "/insights/news" },
+  { label: "Awards", href: "/insights/awards" },
+  { label: "Videos & Interviews", href: "/insights/media" },
+  { label: "Articles", href: "/insights/articles" },
   { label: "Careers", href: "/careers" },
   {
     label: "Feedback",
@@ -27,9 +32,9 @@ const legalLinks = [
 
 const socials = [
   { label: "LinkedIn", href: "https://www.linkedin.com/company/team-one-architects/", Icon: Linkedin },
-  { label: "Instagram", href: "#", Icon: Instagram },
-  { label: "Facebook", href: "#", Icon: Facebook },
-  { label: "YouTube", href: "#", Icon: Youtube },
+  { label: "Instagram", href: "https://www.instagram.com/teamonearchitects/", Icon: Instagram },
+  { label: "Facebook", href: "https://www.facebook.com/teamonearchitects/", Icon: Facebook },
+  { label: "YouTube", href: "https://www.youtube.com/@teamonearchitects", Icon: Youtube },
 ];
 
 export function Footer() {
