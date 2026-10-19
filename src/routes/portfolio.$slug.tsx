@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, type ReactNode } from "react";
 import { createFileRoute, Link, notFound, useRouter } from "@tanstack/react-router";
 import { ArrowLeft } from "lucide-react";
 import { motion, useScroll, useTransform } from "motion/react";
@@ -9,7 +9,27 @@ import { Reveal } from "@/components/Reveal";
 import { GridBackdrop } from "@/components/graphics/GridBackdrop";
 import { BlueprintReveal } from "@/components/graphics/BlueprintReveal";
 import { ProjectCard } from "@/components/portfolio/ProjectCard";
-import { projects, projectDetails } from "@/data/portfolio";
+import { projects, projectDetails, type ProjectSite } from "@/data/portfolio";
+
+/** One line per city, each with its own area, so multi-site projects read as a list. */
+function SiteList({ sites }: { sites: ProjectSite[] }) {
+  return (
+    <ul className="mt-1 space-y-3">
+      {sites.map((s) => (
+        <li key={s.city} className="border-l border-gold/45 pl-4">
+          <span className="font-display block text-lg font-light tracking-tight text-foreground">
+            {s.city}
+          </span>
+          {s.area && (
+            <span className="mt-0.5 block text-sm font-normal leading-snug text-muted-foreground">
+              {s.area}
+            </span>
+          )}
+        </li>
+      ))}
+    </ul>
+  );
+}
 
 export const Route = createFileRoute("/portfolio/$slug")({
   head: ({ params }) => {
@@ -101,15 +121,22 @@ function ProjectPage() {
 
   const more = projects.filter((p) => p.slug !== slug).slice(0, 3);
 
-  const metaItems = detail
+  const metaItems: [string, ReactNode][] = detail
     ? [
         ["Client", detail.client],
         ["Sector", detail.sectorLabel ?? detail.sector],
-        ["Location & Area", [detail.location, detail.area].filter((v) => Boolean(v)).join(" · ") || undefined],
+        [
+          "Location & Area",
+          detail.sites ? (
+            <SiteList sites={detail.sites} />
+          ) : (
+            [detail.location, detail.area].filter((v) => Boolean(v)).join(" · ") || undefined
+          ),
+        ],
         ["Status", detail.status],
         ["Year", detail.year ?? detail.date],
         ["Category", detail.category],
-      ].filter(([, v]) => Boolean(v))
+      ].filter(([, v]) => Boolean(v)) as [string, ReactNode][]
     : [];
 
   return (

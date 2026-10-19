@@ -68,10 +68,14 @@ export type Project = {
   image: string;
 };
 
+export type ProjectSite = { city: string; area?: string };
+
 export type ProjectDetail = Project & {
   sector?: string;
   sectorLabel?: string;
   area?: string;
+  /** Multi-city projects: every city with its own area, as the write-up phrases them. */
+  sites?: ProjectSite[];
   status?: string;
   client?: string;
   year?: string;
@@ -139,6 +143,28 @@ export const projects: Project[] = [
   { slug: "everllence", title: "Everllence", category: INTERIORS, image: everlanceGallery[0] },
   { slug: "generac-pune", title: "Generac, Pune", category: INTERIORS, location: "Pune", image: generacPuneGallery[15] },
   { slug: "atlas-copco", title: "Atlas Copco, Pune", category: INTERIORS, location: "Pune", image: generacTile.url },
+];
+
+/** Per-city areas rendered the way the write-ups phrase them: "City 00,000 sq. ft. / City ...". */
+const sitesArea = (sites: ProjectSite[]) =>
+  sites.map((s) => `${s.city} ${s.area ?? ""}`.trim()).join(" / ");
+
+const johnsonControlsSites: ProjectSite[] = [
+  { city: "Mumbai", area: "27,000 sq. ft." },
+  { city: "Pune", area: "54,000 + 54,000 + 72,000 sq. ft." },
+  { city: "Bengaluru", area: "42,000 + 15,000 sq. ft." },
+];
+
+const vwItsSites: ProjectSite[] = [
+  { city: "Pune", area: "1,23,900 sq. ft." },
+  { city: "Bengaluru", area: "45,000 sq. ft." },
+];
+
+const infinxSites: ProjectSite[] = [
+  { city: "Mumbai", area: "50,000 sq. ft." },
+  { city: "Navi Mumbai", area: "20,000 + 19,775 + 34,000 sq. ft." },
+  { city: "Hyderabad", area: "35,000 sq. ft." },
+  { city: "Madurai", area: "20,000 sq. ft." },
 ];
 
 export const projectDetails: Record<string, ProjectDetail> = {
@@ -462,7 +488,8 @@ export const projectDetails: Record<string, ProjectDetail> = {
     client: "Volkswagen Group Technology Solutions India Pvt Ltd",
     sectorLabel: "IT Services & Solutions Provider",
     location: "Pune & Bengaluru",
-    area: "Pune 1,23,900 sq. ft. / Bengaluru 45,000 sq. ft.",
+    sites: vwItsSites,
+    area: sitesArea(vwItsSites),
     status: "Completed",
     year: "2024",
     service: "Corporate Interiors",
@@ -648,7 +675,8 @@ export const projectDetails: Record<string, ProjectDetail> = {
     client: "Johnson Controls",
     sectorLabel: "Engineering",
     location: "Mumbai, Pune & Bengaluru",
-    area: "Mumbai 27,000 sq. ft. / Pune 54,000 + 54,000 + 72,000 sq. ft. / Bengaluru 42,000 + 15,000 sq. ft.",
+    sites: johnsonControlsSites,
+    area: sitesArea(johnsonControlsSites),
     hideHeroLead: true,
     status: "Completed",
     year: "2023",
@@ -768,7 +796,8 @@ export const projectDetails: Record<string, ProjectDetail> = {
     client: "Infinx",
     sectorLabel: "Telecom",
     location: "Mumbai, Navi Mumbai, Hyderabad & Madurai",
-    area: "Mumbai 50,000 sq. ft. / Navi Mumbai 20,000 + 19,775 + 34,000 sq. ft. / Hyderabad 35,000 sq. ft. / Madurai 20,000 sq. ft.",
+    sites: infinxSites,
+    area: sitesArea(infinxSites),
     status: "Completed",
     year: "2026",
     service: "Corporate Interiors",
