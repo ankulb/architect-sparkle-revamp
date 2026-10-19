@@ -22,7 +22,7 @@ const SLIDES: Slide[] = [
     image: luxury.url,
     kicker: "Luxury Development",
     headline:
-      "Designing the future through experiential architecture & development, master planning, and detailed planning with sustainability at its core.",
+      "Designing the future through experiential architecture & development, master planning, and detailed planning with sustainability at its core",
     kb: "in",
   },
   {
