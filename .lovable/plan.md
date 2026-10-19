@@ -2,6 +2,7 @@
 
 ## What will change
 - **Featured coverage:** CNBC-TV18, NDTV Profit and Zee Business go first, followed by the current five (Economic Times, Times of India, Hindustan Times, Construction Times, ET Edge Insights). CNBC-TV18 becomes the large lead card.
+- **Fuller lead card:** the large first card gets the horizontal press photograph as a dimmed backdrop, a bigger publication logo, a short "Lead story" label, a larger headline and a clear "Read the story" link at the bottom. On mobile it becomes a normal-height card.
 - **One continuous grid:** "More Coverages" and "Across the press / Coverage in leading national mastheads" become one grid with no heading or column break between them. The current "More Coverages" stories come first, then the leading-publication stories, with no repeats and no story that already appears in Featured.
 - The "Browse all articles" button stays at the end. The Articles page doesn't change.
 
