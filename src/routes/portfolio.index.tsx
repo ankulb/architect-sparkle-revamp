@@ -9,9 +9,9 @@ import { BlueprintReveal } from "@/components/graphics/BlueprintReveal";
 import { ProjectGrid } from "@/components/portfolio/ProjectGrid";
 import { projects, categories } from "@/data/portfolio";
 
-const title = "Portfolio — Team One Architects";
+const title = "Portfolio | Team One Architects";
 const description =
-  "Selected work from Team One Architects — corporate interiors and commercial & institutional architecture shaping how people live, work and gather.";
+  "Selected work from Team One Architects: corporate interiors and commercial & institutional architecture shaping how people live, work and gather.";
 const url = "https://architect-sparkle-revamp.lovable.app/portfolio";
 const heroImage = "https://teamonearchitects.com/wp-content/uploads/2026/03/DSC07321-HDR-1024x683.jpg";
 
@@ -59,7 +59,7 @@ function PortfolioArchive() {
         <PageHero
           eyebrow="Our Work"
           title="Showcasing the spaces we shape"
-          lead="A portfolio of corporate interiors and commercial architecture — each project a study in structure, light and the people who move through it."
+          lead="A portfolio of corporate interiors and commercial architecture, each project a study in structure, light and the people who move through it."
           image={heroImage}
           phrases={["Corporate Interiors", "Commercial Architecture", "Institutional Spaces"]}
         />

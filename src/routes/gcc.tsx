@@ -8,7 +8,7 @@ import { GridBackdrop } from "@/components/graphics/GridBackdrop";
 import { GlobalConnectivity } from "@/components/graphics/GlobalConnectivity";
 import { gcc } from "@/data/gcc";
 
-const title = "GCC — Global Capability Centres | Team One Architects";
+const title = "GCC | Global Capability Centres | Team One Architects";
 const description = "Global standards. Indian context. TOA brings workplace strategy, design and end-to-end delivery to Global Capability Centres for WebMD, ERGO, Columbia Ship Management, Volkswagen and Generac.";
 const url = "https://architect-sparkle-revamp.lovable.app/gcc";
 export const Route = createFileRoute("/gcc")({

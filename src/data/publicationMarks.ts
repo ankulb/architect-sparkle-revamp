@@ -76,7 +76,7 @@ export const publicationMarks: Record<string, string> = {
   "Sugermint": sugermint.url,
   "Magic Bricks": magicbricks.url,
   "Magicbricks": magicbricks.url,
-  "Magicbricks — The Property Show": magicbricks.url,
+  "Magicbricks: The Property Show": magicbricks.url,
   "Interior & Decor": interiorDecor.url,
   "Interior & Decor Magaine": interiorDecor.url,
   "Construction Week": constructionWeek.url,

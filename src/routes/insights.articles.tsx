@@ -12,7 +12,7 @@ import { Button } from "@/components/ui/button";
 import pressImage from "@/assets/dynamic/press-landscape.jpg";
 
 const PAGE = 40;
-const title = "Articles & Coverage Index — Team One Architects";
+const title = "Articles & Coverage Index | Team One Architects";
 const description =
   "A selected index of articles, columns and features carrying Team One Architects' perspective, month by month, with links to original stories.";
 const url = "https://architect-sparkle-revamp.lovable.app/insights/articles";

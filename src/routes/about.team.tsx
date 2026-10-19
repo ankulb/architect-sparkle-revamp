@@ -6,7 +6,7 @@ import { PeopleGrid } from "@/components/about/PeopleGrid";
 import { Reveal } from "@/components/Reveal";
 import { team } from "@/data/about";
 
-const title = "Our Team — Team One Architects";
+const title = "Our Team | Team One Architects";
 const description = "Meet the leadership team shaping Team One Architects and its multidisciplinary practice.";
 const url = "https://architect-sparkle-revamp.lovable.app/about/team";
 

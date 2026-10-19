@@ -9,7 +9,7 @@ import logoAsset from "@/assets/toa-logo.png.asset.json";
 import architectureImage from "@/assets/hero/architecture-urban-design.jpg.asset.json";
 
 const title = "Get In Touch | Team One Architects";
-const description = "Let's build the next landmark together. Tell us about your vision and Team One Architects will help you shape it into space — Mumbai and Pune offices.";
+const description = "Let's build the next landmark together. Tell us about your vision and Team One Architects will help you shape it into space, with offices in Mumbai and Pune.";
 const pageUrl = "https://architect-sparkle-revamp.lovable.app/contact";
 
 const inquirySchema = z.object({

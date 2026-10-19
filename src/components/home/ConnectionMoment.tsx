@@ -222,7 +222,7 @@ export function ConnectionMoment() {
           }}
         >
           <p className="mx-auto mb-9 max-w-xl text-xl font-light italic leading-relaxed text-muted-foreground sm:text-2xl">
-            From the first conversation to the final cornerstone — every great
+            From the first conversation to the final cornerstone, every great
             project is built on a foundation of trust.
           </p>
           <Link

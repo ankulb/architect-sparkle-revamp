@@ -47,7 +47,7 @@ const sectors: Record<string, Sector> = {
     slug: "banking-finance",
     name: "Banking & Finance",
     discipline: "Workspace Interiors",
-    lead: "Workplaces for banks, brokerages and financial institutions — environments where trust, security and precision meet the warmth of a modern, people-first office.",
+    lead: "Workplaces for banks, brokerages and financial institutions, environments where trust, security and precision meet the warmth of a modern, people-first office.",
     phrases: ["Trading Floors", "Client Experience", "Brand Identity"],
     image: axisSecuritiesImage.url,
     clients: [
@@ -61,7 +61,7 @@ const sectors: Record<string, Sector> = {
     slug: "it-software",
     name: interiorPlacements.ttec,
     discipline: "Workspace Interiors",
-    lead: "Agile workplaces for technology companies — campuses and offices engineered for focus, collaboration and the speed of innovation.",
+    lead: "Agile workplaces for technology companies, campuses and offices engineered for focus, collaboration and the speed of innovation.",
     phrases: ["Agile Workplaces", "Innovation Hubs", "Campus Design"],
     image: `${UP}/2026/03/DSC03610-HDR-1024x683.jpg`,
     clients: [
@@ -77,7 +77,7 @@ const sectors: Record<string, Sector> = {
     slug: "engineering",
     name: "Engineering & Industrial",
     discipline: "Workspace Interiors",
-    lead: "Precision environments for engineering leaders — offices and experience centres that mirror the rigour of the work happening inside them.",
+    lead: "Precision environments for engineering leaders, offices and experience centres that mirror the rigour of the work happening inside them.",
     phrases: ["Experience Centres", "Precision Planning", "Technical Workplaces"],
     image: `${UP}/2025/08/ad2c6b9e-662a-4bb2-b913-063d1304a2a0.jpg`,
     clients: [
@@ -95,7 +95,7 @@ const sectors: Record<string, Sector> = {
     slug: "health-pharma",
     name: interiorPlacements.webmd,
     discipline: "Workspace Interiors",
-    lead: "Healthcare and pharmaceutical environments where compliance, care and calm come together — spaces designed around the people they serve.",
+    lead: "Healthcare and pharmaceutical environments where compliance, care and calm come together, spaces designed around the people they serve.",
     phrases: ["Healing Environments", "Compliance by Design", "Care-centred Spaces"],
     image: `${UP}/2026/05/DSC_8289-1024x681.jpg`,
     clients: [
@@ -111,7 +111,7 @@ const sectors: Record<string, Sector> = {
     slug: "media",
     name: "Media & Communications",
     discipline: "Workspace Interiors",
-    lead: "Studios and creative workplaces for media houses — spaces that keep pace with production, storytelling and the always-on news cycle.",
+    lead: "Studios and creative workplaces for media houses, spaces that keep pace with production, storytelling and the always-on news cycle.",
     phrases: ["Creative Studios", "Production Spaces", "Storytelling Hubs"],
     image: `${UP}/2026/03/titan-1-1024x690.jpg`,
     clients: [{ name: "Digital Domain", projectSlug: "digital-domain" }, { name: "MSL Group", projectSlug: "msl-group" }, { name: "Prasad Studios", projectSlug: "prasad-studios" }],
@@ -120,7 +120,7 @@ const sectors: Record<string, Sector> = {
     slug: "shipping",
     name: "Logistics & Shipping",
     discipline: "Workspace Interiors",
-    lead: "Workplaces for logistics and shipping leaders — efficient, connected offices built for teams that keep the world moving.",
+    lead: "Workplaces for logistics and shipping leaders, efficient, connected offices built for teams that keep the world moving.",
     phrases: ["Logistics Hubs", "Connected Workplaces", "Operational Clarity"],
     image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1600&q=80",
     clients: [
@@ -133,7 +133,7 @@ const sectors: Record<string, Sector> = {
     slug: "telecom",
     name: "Telecom",
     discipline: "Workspace Interiors",
-    lead: "Workplaces for telecom and digital-infrastructure leaders — connected, resilient offices for teams that keep networks running.",
+    lead: "Workplaces for telecom and digital-infrastructure leaders, connected, resilient offices for teams that keep networks running.",
     phrases: ["Connected Workplaces", "Digital Infrastructure", "Brand-led Interiors"],
     image: nxtraGallery[0],
     clients: [{ name: "Nxtra", projectSlug: "nxtra" }],
@@ -142,7 +142,7 @@ const sectors: Record<string, Sector> = {
     slug: "green-field",
     name: "Green Field",
     discipline: "Architecture & Urban Design",
-    lead: "Ground-up developments imagined from a blank site — hospitality, mixed-use and institutional projects shaped from first principles.",
+    lead: "Ground-up developments imagined from a blank site, hospitality, mixed-use and institutional projects shaped from first principles.",
     phrases: ["Ground-up Developments", "Hospitality", "Placemaking"],
     image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1600&q=80",
     clients: [{ name: "Hyatt", projectSlug: "hyatt" }],
@@ -152,7 +152,7 @@ const sectors: Record<string, Sector> = {
     slug: "civic-institutional",
     name: "Civic & Institutional",
     discipline: "Architecture & Urban Design",
-    lead: "Institutional landmarks — government headquarters, schools and universities designed as civic architecture that earns its place in the public realm.",
+    lead: "Institutional landmarks, government headquarters, schools and universities designed as civic architecture that earns its place in the public realm.",
     phrases: ["Civic Landmarks", "Institutional Design", "Public Architecture"],
     image: mmrdaImage.url,
     clients: [
@@ -165,7 +165,7 @@ const sectors: Record<string, Sector> = {
     slug: "commercial",
     name: "Commercial",
     discipline: "Architecture & Urban Design",
-    lead: "From corporate towers to production floors, commercial architecture that balances performance, identity and longevity — buildings designed to serve businesses and their people for decades.",
+    lead: "From corporate towers to production floors, commercial architecture that balances performance, identity and longevity, buildings designed to serve businesses and their people for decades.",
     phrases: ["Commercial Towers", "Workplace Architecture", "Industrial & Logistics"],
     image: congoImage.url,
     clients: [
@@ -178,7 +178,7 @@ const sectors: Record<string, Sector> = {
     slug: "data-centres",
     name: "Data Centres",
     discipline: "Architecture & Urban Design",
-    lead: "Mission-critical infrastructure architecture — data centres engineered for redundancy, cooling efficiency and operational resilience at scale.",
+    lead: "Mission-critical infrastructure architecture, data centres engineered for redundancy, cooling efficiency and operational resilience at scale.",
     phrases: ["Mission-Critical", "Infrastructure", "Resilient Design"],
     image: dcCampusImage.url,
     clients: [
@@ -190,7 +190,7 @@ const sectors: Record<string, Sector> = {
     slug: "transit-infrastructure",
     name: "Transit Infrastructure",
     discipline: "Architecture & Urban Design",
-    lead: "Transportation and transit infrastructure — architecture that keeps cities moving, from stations to interchanges and mobility hubs.",
+    lead: "Transportation and transit infrastructure, architecture that keeps cities moving, from stations to interchanges and mobility hubs.",
     phrases: ["Transit", "Mobility", "Public Infrastructure"],
     image: `${UP}/2026/03/786928477867589-copy-650x650.jpg`,
     clients: [],
@@ -208,7 +208,7 @@ const sectors: Record<string, Sector> = {
     slug: "luxury-housing-residential",
     name: "Luxury Housing & Residential",
     discipline: "Architecture & Urban Design",
-    lead: "Bespoke residences and luxury housing — architecture of restraint, permanence and tactile quality for clients who expect both.",
+    lead: "Bespoke residences and luxury housing, architecture of restraint, permanence and tactile quality for clients who expect both.",
     phrases: ["Boutique Residences", "Facades", "Thermal Comfort"],
     image: dewanisImage.url,
     clients: [{ name: "Dewani's Residence, Nagpur", projectSlug: "dewanis-residence-nagpur" }],
@@ -217,7 +217,7 @@ const sectors: Record<string, Sector> = {
     slug: "hospitality",
     name: "Hospitality",
     discipline: "Architecture & Urban Design",
-    lead: "Hotels, recreation and convention architecture — destinations designed around the guest experience, from arrival to retreat.",
+    lead: "Hotels, recreation and convention architecture, destinations designed around the guest experience, from arrival to retreat.",
     phrases: ["Guest Experience", "Convention Centres", "Destination Design"],
     image: rrccImage.url,
     clients: [
@@ -230,7 +230,7 @@ const sectors: Record<string, Sector> = {
     slug: "healthcare",
     name: "Healthcare",
     discipline: "Architecture & Urban Design",
-    lead: "Healthcare and research architecture — facilities where clinical precision, healing environments and climatic responsiveness meet.",
+    lead: "Healthcare and research architecture, facilities where clinical precision, healing environments and climatic responsiveness meet.",
     phrases: ["Healing Architecture", "Research Facilities", "Climate-Responsive"],
     image: ccrhImage.url,
     clients: [{ name: "CIDCO-CCRH", projectSlug: "ccrh" }],
@@ -239,7 +239,7 @@ const sectors: Record<string, Sector> = {
     slug: "sustainable-practices",
     name: "Sustainable Practices",
     discipline: "Architecture & Urban Design",
-    lead: "Architecture rooted in sustainability — buildings that use local materials, passive strategies and climatic design to tread lightly on their context.",
+    lead: "Architecture rooted in sustainability, buildings that use local materials, passive strategies and climatic design to tread lightly on their context.",
     phrases: ["Passive Design", "Local Materials", "Climate Response"],
     image: gandhiImage.url,
     clients: [{ name: "Gandhi Museum, Jaipur", projectSlug: "gandhi-museum-jaipur" }],
@@ -248,7 +248,7 @@ const sectors: Record<string, Sector> = {
     slug: "adaptive-reuse",
     name: "Adaptive Reuse",
     discipline: "Architecture & Urban Design",
-    lead: "Breathing new life into existing structures — adaptive reuse that respects heritage while creating contemporary, functional spaces.",
+    lead: "Breathing new life into existing structures, adaptive reuse that respects heritage while creating contemporary, functional spaces.",
     phrases: ["Heritage", "Reuse", "Contextual Design"],
     image: `${UP}/2026/03/02-2-1024x687.png`,
     clients: [],
@@ -285,11 +285,11 @@ export const Route = createFileRoute("/expertise/$sector")({
   head: ({ loaderData }) => {
     if (!loaderData) {
       return {
-        meta: [{ title: "Sector not found — Team One Architects" }, { name: "robots", content: "noindex" }],
+        meta: [{ title: "Sector not found | Team One Architects" }, { name: "robots", content: "noindex" }],
       };
     }
     const { sector } = loaderData;
-    const title = `${sector.name} — ${sector.discipline} — Team One Architects`;
+    const title = `${sector.name} | ${sector.discipline} | Team One Architects`;
     const description = sector.lead;
     return {
       meta: [

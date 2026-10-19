@@ -7,7 +7,7 @@ import { Reveal } from "@/components/Reveal";
 import { GridBackdrop } from "@/components/graphics/GridBackdrop";
 import { board } from "@/data/about";
 
-const title = "Board of Directors — Team One Architects";
+const title = "Board of Directors | Team One Architects";
 const description =
   "Meet the directors guiding Team One Architects across design, workplace strategy, craft, stewardship and sustainability.";
 const url = "https://architect-sparkle-revamp.lovable.app/about/board";

@@ -7,7 +7,7 @@ import { Reveal } from "@/components/Reveal";
 import { GridBackdrop } from "@/components/graphics/GridBackdrop";
 import { life } from "@/data/about";
 
-const title = "Life at TOA — Team One Architects";
+const title = "Life at TOA | Team One Architects";
 const description =
   "Where spaces are built, and so are people. Inside the high-energy, ownership-driven culture of Team One Architects.";
 const url = "https://architect-sparkle-revamp.lovable.app/about/life";

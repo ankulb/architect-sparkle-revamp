@@ -162,7 +162,7 @@ export const dynamicSections = [
     title: "Recognised for design and workplace excellence",
     image: awardsHero.image,
     excerpt: "IGBC-certified projects and a Great Place To Work certification.",
-    body: "Our portfolio includes a growing roster of IGBC-certified green buildings, alongside a Great Place To Work certification for the studio itself — recognition of both what we build and how we build it.",
+    body: "Our portfolio includes a growing roster of IGBC-certified green buildings, alongside a Great Place To Work certification for the studio itself, recognition of both what we build and how we build it.",
     href: "/insights/awards" as string | undefined,
   },
   {
@@ -170,7 +170,7 @@ export const dynamicSections = [
     title: "TOA in the press",
     image: pressImage.url,
     excerpt: "Featured in leading design, business and lifestyle publications.",
-    body: "Our projects and points of view have been covered across design, business and lifestyle media — spanning workplace futures, sustainable urbanism and India's evolving design language.",
+    body: "Our projects and points of view have been covered across design, business and lifestyle media, spanning workplace futures, sustainable urbanism and India's evolving design language.",
     href: "/insights/news" as string | undefined,
   },
   {
@@ -178,7 +178,7 @@ export const dynamicSections = [
     title: "Design in service of community",
     image: csrImage.url,
     excerpt: "Pro-bono civic work, education and climate-positive initiatives.",
-    body: "We partner with foundations working in education, livelihood and community upliftment — contributing design, planning and mentorship alongside financial support.",
+    body: "We partner with foundations working in education, livelihood and community upliftment, contributing design, planning and mentorship alongside financial support.",
     href: "/about/csr" as string | undefined,
   },
   {
@@ -186,7 +186,7 @@ export const dynamicSections = [
     title: "Building for a climate-positive future",
     image: sustainabilityImage.url,
     excerpt: "IGBC, LEED and WELL-aligned practices woven into every project.",
-    body: "Energy modelling, passive design and low-carbon materials are non-negotiables in our studio — helping clients meet ambitious ESG targets while creating healthier places to live and work.",
+    body: "Energy modelling, passive design and low-carbon materials are non-negotiables in our studio, helping clients meet ambitious ESG targets while creating healthier places to live and work.",
     href: undefined as string | undefined,
   },
   {
@@ -195,7 +195,7 @@ export const dynamicSections = [
     title: "Partnering across borders",
     image: collaborationImage.url,
     excerpt: "Coordinating with clients and consultants across 50+ international cities.",
-    body: "With studios in Mumbai, Pune, Hyderabad, Bengaluru and Singapore, we collaborate with engineering, landscape and specialist design partners worldwide — 75% of our client base is multinational.",
+    body: "With studios in Mumbai, Pune, Hyderabad, Bengaluru and Singapore, we collaborate with engineering, landscape and specialist design partners worldwide; 75% of our client base is multinational.",
     href: undefined as string | undefined,
   },
   {
@@ -203,7 +203,7 @@ export const dynamicSections = [
     title: "Ideas that shape tomorrow's cities",
     image: researchImage.url,
     excerpt: "White papers, keynotes and studios exploring the future of the built environment.",
-    body: "Our research spans mission-critical infrastructure, mixed-use urbanism and AI-ready campuses — feeding directly back into project work and industry conversation.",
+    body: "Our research spans mission-critical infrastructure, mixed-use urbanism and AI-ready campuses, feeding directly back into project work and industry conversation.",
     href: undefined as string | undefined,
   },
   {
@@ -211,7 +211,7 @@ export const dynamicSections = [
     title: "Workplaces for global capability centres",
     image: gccTile.url,
     excerpt: "Strategy, design and delivery for Global Capability Centre environments in India.",
-    body: "As organisations establish and scale Global Capability Centres in India, we translate global standards into workplaces designed for the Indian context — spaces that support how global teams work, connect and grow.",
+    body: "As organisations establish and scale Global Capability Centres in India, we translate global standards into workplaces designed for the Indian context, spaces that support how global teams work, connect and grow.",
     href: "/gcc" as string | undefined,
   },
 ] as const;
@@ -246,7 +246,7 @@ export const stats = [
 
 export const about = {
   intro:
-    "As a leading architecture and urban design company founded in 2001, TOA brings together visionary thinking, deep technical expertise, and a commitment to creating purposeful spaces that endure. With headquarters in Mumbai, we've partnered with clients across the world to deliver sustainable architecture, cutting-edge office interior design, and award-winning commercial building design — blending aesthetics, functionality, and innovation at every step.",
+    "As a leading architecture and urban design company founded in 2001, TOA brings together visionary thinking, deep technical expertise, and a commitment to creating purposeful spaces that endure. With headquarters in Mumbai, we've partnered with clients across the world to deliver sustainable architecture, cutting-edge office interior design, and award-winning commercial building design, blending aesthetics, functionality, and innovation at every step.",
   image: `${UP}/2025/07/TOA-Team-e1758107663494-1024x535.jpg`,
 };
 
@@ -255,7 +255,7 @@ export const responsibilities = {
   items: [
     {
       title: "Design with Purpose",
-      body: "We design with a responsibility toward people, communities and the planet. Our projects reflect intentional thinking — not just visual appeal.",
+      body: "We design with a responsibility toward people, communities and the planet. Our projects reflect intentional thinking, not just visual appeal.",
     },
     {
       title: "Sustainability at the Core",
