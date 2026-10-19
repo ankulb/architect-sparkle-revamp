@@ -136,7 +136,7 @@ function ProjectPage() {
         ["Status", detail.status],
         ["Year", detail.year ?? detail.date],
         ["Category", detail.category],
-      ].filter(([, v]) => Boolean(v))
+      ].filter(([, v]) => Boolean(v)) as [string, ReactNode][]
     : [];
 
   return (
