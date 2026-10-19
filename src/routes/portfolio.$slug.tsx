@@ -15,7 +15,7 @@ export const Route = createFileRoute("/portfolio/$slug")({
   head: ({ params }) => {
     const detail = projectDetails[params.slug];
     const meta = detail ?? projects.find((p) => p.slug === params.slug);
-    const title = `${meta?.title ?? "Project"}, Team One Architects`;
+    const title = `${meta?.title ?? "Project"} | Team One Architects`;
     const description =
       detail?.description[0] ??
       "A project by Team One Architects: architecture, interiors and urban design that endures.";

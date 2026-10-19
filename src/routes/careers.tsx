@@ -8,7 +8,7 @@ import { Reveal } from "@/components/Reveal";
 import { careersPage, jobs, jobUrl } from "@/data/careers";
 import { careers } from "@/data/home";
 
-const title = "Careers, Team One Architects";
+const title = "Careers | Team One Architects";
 const description =
   "Join Team One Architects. Explore open roles in design, projects, purchase, sales and HR across Mumbai and Pune.";
 

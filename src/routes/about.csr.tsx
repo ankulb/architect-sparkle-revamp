@@ -9,7 +9,7 @@ import { Reveal } from "@/components/Reveal";
 import { GridBackdrop } from "@/components/graphics/GridBackdrop";
 import { csr } from "@/data/about";
 
-const title = "CSR, Team One Architects";
+const title = "CSR | Team One Architects";
 const description =
   "Our commitment to social impact. Team One Architects partners with foundations across education, community development and infrastructure.";
 const url = "https://architect-sparkle-revamp.lovable.app/about/csr";

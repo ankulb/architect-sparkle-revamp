@@ -9,7 +9,7 @@ import { GridBackdrop } from "@/components/graphics/GridBackdrop";
 import { mediaCoverage, type MediaCoverageItem, type MediaCoverageType } from "@/data/mediaCoverage";
 import pressImage from "@/assets/dynamic/press-landscape.jpg";
 
-const title = "Videos, Podcasts & Interviews, Team One Architects";
+const title = "Videos, Podcasts & Interviews | Team One Architects";
 const description = "Watch and listen to selected conversations, interviews and media appearances featuring Team One Architects.";
 const url = "https://architect-sparkle-revamp.lovable.app/insights/media";
 

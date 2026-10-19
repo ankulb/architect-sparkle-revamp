@@ -47,7 +47,7 @@ const leadingCoverage = leadingPublications.flatMap(([, names]) => {
 });
 
 
-const title = "News & Media, Team One Architects";
+const title = "News & Media | Team One Architects";
 const description = "Explore selected press coverage featuring Team One Architects, its projects and perspectives on the built environment.";
 const url = "https://architect-sparkle-revamp.lovable.app/insights/news";
 

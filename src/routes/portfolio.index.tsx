@@ -9,7 +9,7 @@ import { BlueprintReveal } from "@/components/graphics/BlueprintReveal";
 import { ProjectGrid } from "@/components/portfolio/ProjectGrid";
 import { projects, categories } from "@/data/portfolio";
 
-const title = "Portfolio, Team One Architects";
+const title = "Portfolio | Team One Architects";
 const description =
   "Selected work from Team One Architects: corporate interiors and commercial & institutional architecture shaping how people live, work and gather.";
 const url = "https://architect-sparkle-revamp.lovable.app/portfolio";
