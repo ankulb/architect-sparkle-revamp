@@ -170,7 +170,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
   webmd: {
     slug: "webmd", title: "WebMD", client: "WebMD", category: INTERIORS,
     sector: interiorPlacements.webmd, sectorLabel: "Digital Healthcare", service: "Workspace Interiors",
-    location: "Mumbai", status: "Completed",
+    location: "Mumbai", area: "65,000 sq. ft.", status: "Completed",
     image: webmdGallery[2], gallery: webmdGallery,
     description: [
       "WebMD is a globally recognised digital healthcare information platform delivering research-based medical content and wellness resources. Its workplace reflects a structured, transparent and technology-driven identity, balancing high-density seating with clear circulation, collaboration and employee comfort.",
