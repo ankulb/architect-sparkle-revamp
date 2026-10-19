@@ -52,27 +52,6 @@ function LifePage() {
           </div>
         </section>
 
-        {life.blocks[0]?.image && (
-          <section className="border-b border-border px-3 py-3 md:px-6 md:py-6">
-            <motion.figure
-              initial={{ opacity: 0, clipPath: "inset(8% 0 8% 0)" }}
-              whileInView={{ opacity: 1, clipPath: "inset(0% 0 0% 0)" }}
-              viewport={{ once: true, amount: 0.18 }}
-              transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
-              className="relative mx-auto max-w-[1800px] overflow-hidden"
-            >
-              <img
-                src={life.blocks[0].image}
-                alt="The Team One Architects team together at Family Day"
-                loading="lazy"
-                className="aspect-[4/3] w-full object-cover object-center sm:aspect-[16/8]"
-              />
-              <figcaption className="absolute bottom-0 left-0 border-r border-t border-border bg-background/90 px-5 py-3 text-[10px] font-medium uppercase tracking-[0.24em] text-muted-foreground backdrop-blur-sm">
-                Together, by design
-              </figcaption>
-            </motion.figure>
-          </section>
-        )}
 
         <section aria-label="Life at TOA stories">
           {life.blocks.map((block, i) => (
