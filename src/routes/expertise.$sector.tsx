@@ -182,7 +182,7 @@ const sectors: Record<string, Sector> = {
     phrases: ["Mission-Critical", "Infrastructure", "Resilient Design"],
     image: dcCampusImage.url,
     clients: [
-      { name: "DC Campus, Navi Mumbai", projectSlug: "dc-campus-navi-mumbai" },
+      { name: "DC Campus", projectSlug: "dc-campus-navi-mumbai" },
       { name: "BSE Data Recovery Centre", projectSlug: "bse-data-recovery-hyderabad" },
     ],
   },
@@ -202,7 +202,7 @@ const sectors: Record<string, Sector> = {
     lead: "Integrated developments where residential, commercial and recreational precincts converge into a single, self-sustaining ecosystem.",
     phrases: ["Master Planning", "Integrated Living", "Urban Ecosystems"],
     image: khalapurImage.url,
-    clients: [{ name: "Mixed-Use Villas & High-Rise at Khalapur", projectSlug: "mixed-use-villas-high-rise-at-khalapur" }],
+    clients: [{ name: "Mixed-Use Villas & High-Rise", projectSlug: "mixed-use-villas-high-rise-at-khalapur" }],
   },
   "luxury-housing-residential": {
     slug: "luxury-housing-residential",
@@ -211,7 +211,7 @@ const sectors: Record<string, Sector> = {
     lead: "Bespoke residences and luxury housing, architecture of restraint, permanence and tactile quality for clients who expect both.",
     phrases: ["Boutique Residences", "Facades", "Thermal Comfort"],
     image: dewanisImage.url,
-    clients: [{ name: "Dewani's Residence, Nagpur", projectSlug: "dewanis-residence-nagpur" }],
+    clients: [{ name: "Dewani's Residence", projectSlug: "dewanis-residence-nagpur" }],
   },
   "hospitality": {
     slug: "hospitality",
@@ -222,7 +222,7 @@ const sectors: Record<string, Sector> = {
     image: rrccImage.url,
     clients: [
       { name: "Recreation, Retail & Convention Complex", projectSlug: "recreation-retail-convention-complex" },
-      { name: "Recreation Block, Daund", projectSlug: "recreational-block" },
+      { name: "Recreation Block", projectSlug: "recreational-block" },
       { name: "Hyatt", projectSlug: "hyatt" },
     ],
   },
@@ -242,7 +242,7 @@ const sectors: Record<string, Sector> = {
     lead: "Architecture rooted in sustainability, buildings that use local materials, passive strategies and climatic design to tread lightly on their context.",
     phrases: ["Passive Design", "Local Materials", "Climate Response"],
     image: gandhiImage.url,
-    clients: [{ name: "Gandhi Museum, Jaipur", projectSlug: "gandhi-museum-jaipur" }],
+    clients: [{ name: "Gandhi Museum", projectSlug: "gandhi-museum-jaipur" }],
   },
   "adaptive-reuse": {
     slug: "adaptive-reuse",
