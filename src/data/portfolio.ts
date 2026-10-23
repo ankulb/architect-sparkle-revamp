@@ -93,11 +93,11 @@ export const projects: Project[] = [
   { slug: "atomberg", title: "ATOMBERG", category: INTERIORS, location: "Pune", image: `${UP}/2026/03/01.-Reception-Atomberg-AI-1024x683.png` },
   { slug: "ccrh", title: "CIDCO-CCRH", category: ARCHITECTURE, location: "Navi Mumbai", image: cidcoCcrhGallery[0] },
   { slug: "apicore", title: "APICORE", category: INTERIORS, location: "Mumbai", image: apicoreGallery[0] },
-  { slug: "hindustan-platinum-mumbai", title: "HPL, Mumbai", category: INTERIORS, location: "Mumbai", image: `${UP}/2025/08/DSC08801-copy.jpg` },
+  { slug: "hindustan-platinum-mumbai", title: "HPL", category: INTERIORS, location: "Mumbai", image: `${UP}/2025/08/DSC08801-copy.jpg` },
   { slug: "axis-securities", title: "Axis Securities", category: INTERIORS, image: axisSecuritiesGallery[0] },
   { slug: "federal-bank", title: "Federal Bank", category: INTERIORS, image: federalBankGallery[0] },
   { slug: "icici", title: "ICICI Securities", category: INTERIORS, location: "Mumbai", image: iciciSecuritiesGallery[0] },
-  { slug: "lincoln-international-bkc-mumbai", title: "Lincoln International, BKC Mumbai", category: INTERIORS, location: "Mumbai", image: `${UP}/2025/08/H2A6507.jpg` },
+  { slug: "lincoln-international-bkc-mumbai", title: "Lincoln International", category: INTERIORS, location: "Mumbai", image: `${UP}/2025/08/H2A6507.jpg` },
   { slug: "columbia-ship-management", title: "Columbia Ship Management", category: INTERIORS, location: "Navi Mumbai", image: columbiaShipManagementGallery[0] },
   { slug: "titan", title: "TITAN", category: INTERIORS, image: `${UP}/2026/03/titan-1-1024x690.jpg` },
   { slug: "ergo-technologies", title: "ERGO Technologies", category: INTERIORS, location: "Powai, Mumbai", image: ergoTechnologiesGallery[0] },
@@ -105,23 +105,23 @@ export const projects: Project[] = [
   { slug: "msl-group", title: "MSL Group", category: INTERIORS, location: "Mumbai", image: mslGroupGallery[0] },
   { slug: "prasad-studios", title: "Prasad Studios", category: INTERIORS, location: "Mumbai", image: prasadStudiosGallery[0] },
 
-  { slug: "johnson-controls-gcc-offices", title: "Johnson Controls GCC Offices", category: INTERIORS, location: "Mumbai, Pune & Bengaluru", image: `${UP}/2025/08/ad2c6b9e-662a-4bb2-b913-063d1304a2a0.jpg` },
-  { slug: "ideaforge-headquarters-mumbai", title: "IdeaForge Headquarters, Mumbai", category: INTERIORS, location: "Mumbai", image: `${UP}/2025/08/DSC03610-HDR.jpg` },
+  { slug: "johnson-controls-gcc-offices", title: "Johnson Controls", category: INTERIORS, location: "Mumbai, Pune & Bengaluru", image: `${UP}/2025/08/ad2c6b9e-662a-4bb2-b913-063d1304a2a0.jpg` },
+  { slug: "ideaforge-headquarters-mumbai", title: "IdeaForge Headquarters", category: INTERIORS, location: "Mumbai", image: `${UP}/2025/08/DSC03610-HDR.jpg` },
   { slug: "intangles", title: "INTANGLES", category: INTERIORS, image: `${UP}/2026/03/4-1-1024x682.jpg` },
   { slug: "indira-ivf", title: "Indira IVF", category: INTERIORS, image: `${UP}/2026/05/DSC_8289-1024x681.jpg` },
-  { slug: "infinx-mumbai-office", title: "INFINX Office, Mumbai", category: INTERIORS, location: "Mumbai, Navi Mumbai, Hyderabad & Madurai", image: `${UP}/2026/03/Infinix_Backlight_0_5_Strict-1024x683.jpg` },
+  { slug: "infinx-mumbai-office", title: "INFINX Office", category: INTERIORS, location: "Mumbai, Navi Mumbai, Hyderabad & Madurai", image: `${UP}/2026/03/Infinix_Backlight_0_5_Strict-1024x683.jpg` },
 
   // Architecture & Urban Design
   { slug: "mmrda-headquarters", title: "MMRDA Headquarters", category: ARCHITECTURE, location: "Mumbai", image: mmrdaGallery[0] },
   { slug: "jio-school", title: "JIO School", category: ARCHITECTURE, location: "Mumbai", image: jioSchoolGallery[0] },
-  { slug: "lfu-university-dharashiv", title: "Lift for Upliftment University, Dharashiv", category: ARCHITECTURE, location: "Dharashiv, Maharashtra", image: lfuUniversityGallery[0] },
-  { slug: "dc-campus-navi-mumbai", title: "DC Campus, Navi Mumbai", category: ARCHITECTURE, location: "Navi Mumbai", image: dcCampusGallery[0] },
-  { slug: "bse-data-recovery-hyderabad", title: "BSE Data Recovery Centre, Hyderabad", category: ARCHITECTURE, location: "Hyderabad", image: bseDataRecoveryGallery[0] },
-  { slug: "mixed-use-villas-high-rise-at-khalapur", title: "Mixed-Use Villas & High-Rise at Khalapur", category: ARCHITECTURE, location: "Khalapur", image: mixedUseKhalapurGallery[0] },
-  { slug: "dewanis-residence-nagpur", title: "Dewani's Residence, Nagpur", category: ARCHITECTURE, location: "Nagpur", image: dewanisResidenceGallery[0] },
-  { slug: "recreation-retail-convention-complex", title: "Recreation, Retail & Convention Complex, Nagpur", category: ARCHITECTURE, location: "Nagpur", image: rrccNagpurGallery[0] },
-  { slug: "recreational-block", title: "Recreation Block, Daund", category: ARCHITECTURE, location: "Daund, Maharashtra", image: recreationBlockDaundGallery[0] },
-  { slug: "gandhi-museum-jaipur", title: "Gandhi Museum, Jaipur", category: ARCHITECTURE, location: "Jaipur", image: gandhiMuseumGallery[0] },
+  { slug: "lfu-university-dharashiv", title: "Lift for Upliftment University", category: ARCHITECTURE, location: "Dharashiv, Maharashtra", image: lfuUniversityGallery[0] },
+  { slug: "dc-campus-navi-mumbai", title: "DC Campus", category: ARCHITECTURE, location: "Navi Mumbai", image: dcCampusGallery[0] },
+  { slug: "bse-data-recovery-hyderabad", title: "BSE Data Recovery Centre", category: ARCHITECTURE, location: "Hyderabad", image: bseDataRecoveryGallery[0] },
+  { slug: "mixed-use-villas-high-rise-at-khalapur", title: "Mixed-Use Villas & High-Rise", category: ARCHITECTURE, location: "Khalapur", image: mixedUseKhalapurGallery[0] },
+  { slug: "dewanis-residence-nagpur", title: "Dewani's Residence", category: ARCHITECTURE, location: "Nagpur", image: dewanisResidenceGallery[0] },
+  { slug: "recreation-retail-convention-complex", title: "Recreation, Retail & Convention Complex", category: ARCHITECTURE, location: "Nagpur", image: rrccNagpurGallery[0] },
+  { slug: "recreational-block", title: "Recreation Block", category: ARCHITECTURE, location: "Daund, Maharashtra", image: recreationBlockDaundGallery[0] },
+  { slug: "gandhi-museum-jaipur", title: "Gandhi Museum", category: ARCHITECTURE, location: "Jaipur", image: gandhiMuseumGallery[0] },
   { slug: "commercial-office-building", title: "Kinshasa Business Centre", category: ARCHITECTURE, location: "Kinshasa, DR Congo", image: congoOfficeGallery[0] },
   { slug: "fujitsu-pune", title: "Fujitsu", category: ARCHITECTURE, location: "Pune", image: fujitsuPuneGallery[0] },
   { slug: "brose-pune", title: "Brose", category: ARCHITECTURE, location: "Pune", image: brosePuneGallery[0] },
@@ -140,8 +140,8 @@ export const projects: Project[] = [
   { slug: "strux-one", title: "Strux One (Veeam)", category: INTERIORS, location: "Pune", image: struxOneGallery[0] },
   { slug: "sava-global-healthcare", title: "Sava Global Healthcare", category: INTERIORS, location: "Pune", image: savaGallery[0] },
   { slug: "everllence", title: "Everllence", category: INTERIORS, image: everlanceGallery[0] },
-  { slug: "generac-pune", title: "Generac, Pune", category: INTERIORS, location: "Pune", image: generacPuneGallery[15] },
-  { slug: "atlas-copco", title: "Atlas Copco, Pune", category: INTERIORS, location: "Pune", image: generacTile.url },
+  { slug: "generac-pune", title: "Generac", category: INTERIORS, location: "Pune", image: generacPuneGallery[15] },
+  { slug: "atlas-copco", title: "Atlas Copco", category: INTERIORS, location: "Pune", image: generacTile.url },
 ];
 
 /** Per-city areas rendered the way the write-ups phrase them: "City 00,000 sq. ft. / City ...". */
@@ -281,7 +281,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
   },
   "generac-pune": {
     slug: "generac-pune",
-    title: "Generac, Pune",
+    title: "Generac",
     category: INTERIORS,
     sector: "Engineering & Industrial",
     sectorLabel: "Power & Engineering",
@@ -301,7 +301,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
   },
   "atlas-copco": {
     slug: "atlas-copco",
-    title: "Atlas Copco, Pune",
+    title: "Atlas Copco",
     category: INTERIORS,
     sector: "Engineering & Industrial",
     sectorLabel: "Manufacturing",
@@ -631,7 +631,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
   },
   "ideaforge-headquarters-mumbai": {
     slug: "ideaforge-headquarters-mumbai",
-    title: "IdeaForge Headquarters, Mumbai",
+    title: "IdeaForge Headquarters",
     category: INTERIORS,
     sector: "Technology & Software",
     client: "IdeaForge",
@@ -671,7 +671,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
   },
   "johnson-controls-gcc-offices": {
     slug: "johnson-controls-gcc-offices",
-    title: "Johnson Controls GCC Offices",
+    title: "Johnson Controls",
     category: INTERIORS,
     sector: "Engineering & Industrial",
     client: "Johnson Controls",
@@ -791,7 +791,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
   },
   "infinx-mumbai-office": {
     slug: "infinx-mumbai-office",
-    title: "INFINX Office, Mumbai",
+    title: "INFINX Office",
     category: INTERIORS,
     sector: "Healthcare & Pharma",
     client: "Infinx",
@@ -873,7 +873,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
 
   "lfu-university-dharashiv": {
     slug: "lfu-university-dharashiv",
-    title: "Lift for Upliftment University, Dharashiv",
+    title: "Lift for Upliftment University",
     category: ARCHITECTURE,
     sector: "Civic & Institutional",
     sectorLabel: "Greenfield",
@@ -892,7 +892,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
 
   "dc-campus-navi-mumbai": {
     slug: "dc-campus-navi-mumbai",
-    title: "DC Campus, Navi Mumbai",
+    title: "DC Campus",
     category: ARCHITECTURE,
     sector: "Data Centres",
     sectorLabel: "IT and Commercial",
@@ -912,7 +912,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
 
   "bse-data-recovery-hyderabad": {
     slug: "bse-data-recovery-hyderabad",
-    title: "BSE Data Recovery Centre, Hyderabad",
+    title: "BSE Data Recovery Centre",
     category: ARCHITECTURE,
     sector: "Data Centres",
     sectorLabel: "BFSI",
@@ -932,7 +932,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
 
   "mixed-use-villas-high-rise-at-khalapur": {
     slug: "mixed-use-villas-high-rise-at-khalapur",
-    title: "Mixed-Use Villas & High-Rise at Khalapur",
+    title: "Mixed-Use Villas & High-Rise",
     category: ARCHITECTURE,
     sector: "Mixed Use",
     sectorLabel: "Greenfield",
@@ -952,7 +952,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
 
   "dewanis-residence-nagpur": {
     slug: "dewanis-residence-nagpur",
-    title: "Dewani's Residence, Nagpur",
+    title: "Dewani's Residence",
     category: ARCHITECTURE,
     sector: "Luxury Housing & Residential",
     sectorLabel: "Residential",
@@ -972,7 +972,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
 
   "recreation-retail-convention-complex": {
     slug: "recreation-retail-convention-complex",
-    title: "Recreation, Retail & Convention Complex, Nagpur",
+    title: "Recreation, Retail & Convention Complex",
     category: ARCHITECTURE,
     sector: "Hospitality",
     sectorLabel: "Hospitality",
@@ -992,7 +992,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
 
   "recreational-block": {
     slug: "recreational-block",
-    title: "Recreation Block, Daund",
+    title: "Recreation Block",
     category: ARCHITECTURE,
     sector: "Hospitality",
     sectorLabel: "Hospitality",
@@ -1032,7 +1032,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
 
   "gandhi-museum-jaipur": {
     slug: "gandhi-museum-jaipur",
-    title: "Gandhi Museum, Jaipur",
+    title: "Gandhi Museum",
     category: ARCHITECTURE,
     sector: "Sustainable Practices",
     sectorLabel: "Museum and Institutional",
