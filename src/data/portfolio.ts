@@ -1,3 +1,4 @@
+import savaHero from "@/assets/projects/sava-hero.png.asset.json";
 import { interiorPlacements } from "./interiorPlacements";
 import {
   webmdGallery,
@@ -89,7 +90,7 @@ export type ProjectDetail = Project & {
 export const projects: Project[] = [
   { slug: "webmd", title: "WebMD", category: INTERIORS, image: webmdGallery[2] },
   { slug: "ttec", title: "TTEC", category: INTERIORS, location: "Mumbai", image: ttecGallery[0] },
-  { slug: "nxtra", title: "Nxtra", category: INTERIORS, image: nxtraGallery[0] },
+  { slug: "nxtra", title: "NXTRA Office", category: INTERIORS, image: nxtraGallery[0] },
   { slug: "atomberg", title: "ATOMBERG", category: INTERIORS, location: "Pune", image: `${UP}/2026/03/01.-Reception-Atomberg-AI-1024x683.png` },
   { slug: "ccrh", title: "CIDCO-CCRH", category: ARCHITECTURE, location: "Navi Mumbai", image: cidcoCcrhGallery[0] },
   { slug: "apicore", title: "APICORE", category: INTERIORS, location: "Mumbai", image: apicoreGallery[0] },
@@ -138,7 +139,7 @@ export const projects: Project[] = [
   { slug: "sedemac", title: "Sedemac", category: INTERIORS, location: "Baner, Pune", image: sedmacGallery[0] },
   { slug: "grihum-housing-finance", title: "Grihum Housing Finance", category: INTERIORS, location: "Mumbai", image: grihumHousingFinanceGallery[0] },
   { slug: "strux-one", title: "Strux One (Veeam)", category: INTERIORS, location: "Pune", image: struxOneGallery[0] },
-  { slug: "sava-global-healthcare", title: "Sava Global Healthcare", category: INTERIORS, location: "Pune", image: savaGallery[0] },
+  { slug: "sava-global-healthcare", title: "Sava Global Healthcare", category: INTERIORS, location: "Pune", image: savaHero.url },
   { slug: "everllence", title: "Everllence", category: INTERIORS, image: everlanceGallery[0] },
   { slug: "generac-pune", title: "Generac", category: INTERIORS, location: "Pune", image: generacPuneGallery[15] },
   { slug: "atlas-copco", title: "Atlas Copco", category: INTERIORS, location: "Pune", image: generacTile.url },
@@ -192,10 +193,16 @@ export const projectDetails: Record<string, ProjectDetail> = {
     ],
   },
   nxtra: {
-    slug: "nxtra", title: "Nxtra", client: "Nxtra", category: INTERIORS,
-    sector: "Telecom", service: "Workspace Interiors", image: nxtraGallery[0], gallery: nxtraGallery,
+    slug: "nxtra", title: "NXTRA Office", client: "NXTRA", category: INTERIORS,
+    sector: "Telecom", sectorLabel: "Telecom / Digital Infrastructure",
+    location: "Airoli, Navi Mumbai", area: "10,000 sq. ft.", status: "Completed", year: "2026",
+    service: "Corporate Interiors", image: nxtraGallery[0], gallery: nxtraGallery,
     description: [
-      "The Nxtra workplace pairs a branded reception in deep red and warm stone with open workstation bays, meeting and conference rooms, focus cabins and a pantry. Black slatted ceilings, wood-clad columns and red-accented carpets carry the brand palette through the floor.",
+      "The NXTRA office at Airoli, is envisioned as a contemporary workplace that reflects the relationship between technology, connectivity, and human experience.",
+      "A distinctive red-and-white brand palette establishes the visual identity, with the reception featuring an illuminated NXTRA logo, a bold red backdrop, and an India map installation that reinforces the idea of nationwide connectivity. Clean architectural lines, warm wood textures, and integrated lighting create a consistent design language throughout the office.",
+      "Open-plan workstations, glazed meeting rooms, and dedicated telephone booths support different modes of working, balancing collaboration with focused communication. The boardroom and meeting spaces introduce a refined material palette, while flexible hot desks and informal breakout areas encourage interaction and adaptability.",
+      "The pantry, cafeteria, and executive café extend this experience beyond the workstation. From warm timber finishes and botanical graphics to relaxed dining spaces and recreational amenities, these environments foster connection, comfort, and a sense of belonging.",
+      "Bringing together brand storytelling, functional planning, and contemporary workplace design, the NXTRA office translates a technology-led identity into a cohesive environment designed around the people who use it.",
     ],
   },
 
@@ -251,14 +258,14 @@ export const projectDetails: Record<string, ProjectDetail> = {
     area: "12,300 sq. ft. (carpet)",
     status: "Completed",
     service: "Corporate Interiors",
-    image: savaGallery[0],
+    image: savaHero.url,
     description: [
       "The design follows a simple, clean and welcoming aesthetic, creating a space that feels comfortable, personal and effortlessly stylish. Soft, muted colours form the base palette, keeping the overall environment calm and soothing without introducing any loud or overpowering elements.",
       "A subtle Boho Café theme adds warmth and character through natural textures, relaxed furniture, earthy accents and thoughtfully curated décor. The space is designed to feel informal and inviting, encouraging people to pause, connect and enjoy the environment.",
       "To bring in a sense of familiarity and cultural character, Indian-inspired wallpapers and patterns are introduced selectively as feature elements. These add personality and a personal touch while complementing the soft, contemporary backdrop.",
       "Overall, the design aims to create a calm, warm and contemporary café-like environment, simple in its expression, rich in character and comfortable enough to feel like a space one naturally wants to spend time in.",
     ],
-    gallery: savaGallery,
+    gallery: [savaHero.url, ...savaGallery],
   },
   everllence: {
     slug: "everllence",

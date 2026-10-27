@@ -1,3 +1,5 @@
+import adityaInterview from "@/assets/media/aditya-interview.png.asset.json";
+
 export type MediaCoverageType = "video" | "podcast" | "interview";
 
 export type MediaCoverageItem = {
@@ -7,6 +9,7 @@ export type MediaCoverageItem = {
   url: string;
   videoId?: string;
   summary?: string;
+  image?: string;
 };
 
 export const mediaCoverage: MediaCoverageItem[] = [
@@ -33,6 +36,7 @@ export const mediaCoverage: MediaCoverageItem[] = [
     publication: "Sugermint",
     title: "Designing for Tomorrow: A Conversation with Aditya Yamsanwar of TOA",
     url: "https://sugermint.com/aditya-yamsanwar/",
+    image: adityaInterview.url,
     summary:
       "An in-depth conversation on workplace strategy, technology and the evolving relationship between people and the spaces they occupy.",
   },

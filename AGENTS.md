@@ -15,3 +15,4 @@
 - Derive logo-backed, deduplicated press display from the full immutable coverage archive in one shared module, so News and Articles remain consistent without losing source records.
 - Keep new interior project galleries and facts in shared portfolio data and derive GCC case-study images from that data; this prevents divergent pages and invented missing facts.
 - Model multi-city project facts as a per-city list (city with its own area) in shared portfolio data and derive the combined one-line area from it, so the facts panel can render each site separately without re-typing the write-up wording.
+- Job applications go through one server function that stores the CV in a private bucket and the row in a service-role-only table, so applicant data is never readable from the browser.
