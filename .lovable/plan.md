@@ -24,18 +24,22 @@
 - Technical: upload image-23.png to `src/assets/csr/seedling.png.asset.json`, then replace `csrImage.url` in `csr.images` in `src/data/about.ts`.
 - Note: the new photo has a small "teamonearchitects.com" watermark at the bottom.
 
-## Careers: job descriptions and an application pop-up
-- Add the four job descriptions you sent (job brief, responsibilities, what we expect) to the matching open roles. Each of these roles gets a "View details" option that opens the full description.
-  - Design Head: Pune
-  - Project Manager: Mumbai and Pune
-  - Site Engineer / Site Supervisor: Mumbai Site Supervisor / Engineer and Pune Site Engineer
-  - Senior Quality Engineer: matched to the Pune "Quality Control Engineer" role and renamed to Senior Quality Engineer. Tell me if these should be two separate roles.
-- Every role's Apply button opens a pop-up form instead of an email draft. The form asks for name, email, phone, years of experience, a CV upload (PDF or Word, up to 10 MB), and an optional cover note or portfolio link.
-- Each application is saved to a private list with its CV. It's never visible to the public. You'll find it in Cloud → Database → job applications.
-- HR (hr1@toa.org.in) gets an email for each application, with a link to the CV. Email can't carry the CV as an attachment. To send these emails, the site needs a verified sender domain you own, such as toa.org.in. If none is set up, I'll show you the setup step. Applications are still saved in the meantime.
+## Careers: only the current openings
+- Replace every role listed today with these 5, in this order:
+  - **Mumbai:** Operations Head; Senior Procurement Executive; VP – Business Development; Quality Check – Quantity Check (using the Senior Quality Engineer description)
+  - **Pune:** Business Development (3–5 years)
+- Each role shows its full description from your files: job brief, responsibilities and what we expect. You didn't send a description for Operations Head, so it shows only its title and city until you do.
+- The Head – Finance & Accounts description is left off because it isn't on your list. The Design Head, Project Manager and Site Engineer descriptions are left off as well.
+- Every Apply button opens a pop-up form. It asks for name, email, phone, years of experience, a CV upload (PDF or Word, up to 10 MB), and an optional cover note or portfolio link.
+- Each application is saved to a private list with its CV. You'll find it in Cloud → Database → job applications.
+- HR (hr1@toa.org.in) gets an email for each application, with a link to the CV. To send these emails, the site needs a verified sender domain you own, such as toa.org.in. If none is set up, I'll show you the setup step. Applications are still saved in the meantime.
 
-## Technical details (Careers)
+## Sava project page
+- Make your new photo of the reception, with the SAVA Healthcare logo on the wall, the main image for the Sava page and its project card.
+
+## Technical details (Careers, Sava)
 - Turn on Lovable Cloud. Create a `job_applications` table with grants and row-level security, and no public read access. Create a private `resumes` storage bucket.
-- The form is validated with zod on both the browser side and the server side. A server function checks the input, uploads the CV, inserts the row, then sends the HR notification email through the managed app-email template, with an idempotency key based on the application id.
-- In `src/data/careers.ts`, add optional `brief`, `responsibilities` and `requirements` fields to jobs. Build a shared `ApplyDialog` component.
-- Test: submit one application, confirm it was saved and the email was logged, then delete the test entry.
+- Validate input with zod on both the browser and the server. A server function uploads the CV, inserts the row, then sends the HR notification email through a managed app-email template, keyed on the application id.
+- Rewrite `jobs` in `src/data/careers.ts` with optional `brief`, `responsibilities`, `requirements`, `experience` fields. Build a shared `ApplyDialog` component and an expandable description in `careers.tsx`.
+- Upload image-24.png as `src/assets/projects/sava-hero.png.asset.json` and use it as Sava's `image`, placed first in its gallery. The photo is vertical, so set its crop position so the reception desk and logo stay in view.
+- Test: submit one application, confirm it was saved and the email was logged, then delete the test entry. Check the Careers and Sava pages on desktop and mobile.
