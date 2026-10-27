@@ -18,3 +18,8 @@
 - `src/data/portfolio.ts`: update the Nxtra entry: title, facts, area, sector label and description. The address stays `/portfolio/nxtra`.
 - Upload image-22.png with lovable-assets to `src/assets/media/aditya-interview.png.asset.json`. Add an optional `image` field to `MediaCoverageItem`, then make `MediaCard` render it with object-cover and no play icon.
 - Check the team page, the Nxtra page and the media page.
+
+## CSR page
+- The banner photo appears again in the photo pair under "Objective". Swap that second copy for your new photo of hands holding a seedling. The banner photo stays as it is.
+- Technical: upload image-23.png to `src/assets/csr/seedling.png.asset.json`, then replace `csrImage.url` in `csr.images` in `src/data/about.ts`.
+- Note: the new photo has a small "teamonearchitects.com" watermark at the bottom.
