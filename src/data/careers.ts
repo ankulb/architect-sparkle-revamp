@@ -145,6 +145,3 @@ export const jobs: Job[] = [
     ],
   },
 ];
-
-export const applyUrl = (email: string, j: Job) =>
-  `mailto:${email}?subject=${encodeURIComponent(`Application: ${j.title} (${j.location})`)}`;

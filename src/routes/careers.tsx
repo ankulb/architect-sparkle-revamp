@@ -1,11 +1,13 @@
 import { useMemo, useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, ChevronDown } from "lucide-react";
+import { ApplyDialog } from "@/components/careers/ApplyDialog";
+import type { Job } from "@/data/careers";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { PageHero } from "@/components/about/PageHero";
 import { Reveal } from "@/components/Reveal";
-import { careersPage, jobs, applyUrl } from "@/data/careers";
+import { careersPage, jobs } from "@/data/careers";
 import { careers } from "@/data/home";
 
 const title = "Careers | Team One Architects";
@@ -32,6 +34,8 @@ const unique = (k: "category" | "location") => ["All", ...Array.from(new Set(job
 function CareersPage() {
   const [cat, setCat] = useState("All");
   const [loc, setLoc] = useState("All");
+  const [applyJob, setApplyJob] = useState<Job | null>(null);
+  const [open, setOpen] = useState<string | null>(null);
   const list = useMemo(
     () => jobs.filter((j) => (cat === "All" || j.category === cat) && (loc === "All" || j.location === loc)),
     [cat, loc],
@@ -72,33 +76,60 @@ function CareersPage() {
               </div>
             </div>
             <ul className="mt-10 border-t border-border">
-              {list.map((j) => (
-                <li key={`${j.location}-${j.title}`} className="border-b border-border">
-                  <a
-                    href={applyUrl(careersPage.email, j)}
-                    className="group flex flex-wrap items-center justify-between gap-4 py-6"
-                  >
-                    <span className="max-w-xl">
-                      <span className="font-display block text-xl font-light tracking-tight transition-colors group-hover:text-gold sm:text-2xl">
-                        {j.title}
+              {list.map((j) => {
+                const key = `${j.location}-${j.title}`;
+                const expanded = open === key;
+                const hasJd = !!j.brief;
+                return (
+                  <li key={key} className="border-b border-border">
+                    <div className="flex flex-wrap items-center justify-between gap-4 py-6">
+                      <button
+                        type="button"
+                        disabled={!hasJd}
+                        onClick={() => setOpen(expanded ? null : key)}
+                        aria-expanded={expanded}
+                        className="group max-w-xl text-left"
+                      >
+                        <span className="font-display flex items-center gap-3 text-xl font-light tracking-tight transition-colors group-enabled:group-hover:text-gold sm:text-2xl">
+                          {j.title}
+                          {hasJd && <ChevronDown className={`h-5 w-5 text-gold transition-transform ${expanded ? "rotate-180" : ""}`} />}
+                        </span>
+                        {j.experience && <span className="mt-1 block text-sm text-muted-foreground">{j.experience} experience</span>}
+                      </button>
+                      <span className="flex items-center gap-6 text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground">
+                        <span>{j.category}</span>
+                        <span>{j.location}</span>
+                        <button type="button" onClick={() => setApplyJob(j)} className="inline-flex items-center gap-1 uppercase tracking-[0.18em] text-gold hover:underline">
+                          Apply <ArrowUpRight className="h-4 w-4" />
+                        </button>
                       </span>
-                      {j.openings && j.openings > 1 ? <span className="mt-1 block text-sm text-muted-foreground">{j.openings} openings</span> : null}
-                    </span>
-                    <span className="flex items-center gap-6 text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground">
-                      <span>{j.category}</span>
-                      <span>{j.location}</span>
-                      <span className="inline-flex items-center gap-1 text-gold">
-                        Apply <ArrowUpRight className="h-4 w-4" />
-                      </span>
-                    </span>
-                  </a>
-                </li>
-              ))}
+                    </div>
+                    {expanded && hasJd && (
+                      <div className="grid gap-10 pb-10 text-muted-foreground md:grid-cols-2">
+                        <p className="leading-relaxed md:col-span-2">{j.brief}</p>
+                        {j.responsibilities && (
+                          <div>
+                            <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-foreground">Responsibilities</h3>
+                            <ul className="mt-4 list-disc space-y-2 pl-5 leading-relaxed">{j.responsibilities.map((r) => <li key={r}>{r}</li>)}</ul>
+                          </div>
+                        )}
+                        {j.requirements && (
+                          <div>
+                            <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-foreground">What we expect</h3>
+                            <ul className="mt-4 list-disc space-y-2 pl-5 leading-relaxed">{j.requirements.map((r) => <li key={r}>{r}</li>)}</ul>
+                          </div>
+                        )}
+                      </div>
+                    )}
+                  </li>
+                );
+              })}
               {list.length === 0 && <li className="py-10 text-muted-foreground">No roles match these filters right now.</li>}
             </ul>
           </div>
         </section>
       </main>
+      <ApplyDialog job={applyJob} onClose={() => setApplyJob(null)} />
       <Footer />
     </div>
   );
