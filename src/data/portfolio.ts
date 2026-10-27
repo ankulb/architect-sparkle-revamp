@@ -89,7 +89,7 @@ export type ProjectDetail = Project & {
 export const projects: Project[] = [
   { slug: "webmd", title: "WebMD", category: INTERIORS, image: webmdGallery[2] },
   { slug: "ttec", title: "TTEC", category: INTERIORS, location: "Mumbai", image: ttecGallery[0] },
-  { slug: "nxtra", title: "Nxtra", category: INTERIORS, image: nxtraGallery[0] },
+  { slug: "nxtra", title: "NXTRA Office", category: INTERIORS, image: nxtraGallery[0] },
   { slug: "atomberg", title: "ATOMBERG", category: INTERIORS, location: "Pune", image: `${UP}/2026/03/01.-Reception-Atomberg-AI-1024x683.png` },
   { slug: "ccrh", title: "CIDCO-CCRH", category: ARCHITECTURE, location: "Navi Mumbai", image: cidcoCcrhGallery[0] },
   { slug: "apicore", title: "APICORE", category: INTERIORS, location: "Mumbai", image: apicoreGallery[0] },
@@ -192,10 +192,16 @@ export const projectDetails: Record<string, ProjectDetail> = {
     ],
   },
   nxtra: {
-    slug: "nxtra", title: "Nxtra", client: "Nxtra", category: INTERIORS,
-    sector: "Telecom", service: "Workspace Interiors", image: nxtraGallery[0], gallery: nxtraGallery,
+    slug: "nxtra", title: "NXTRA Office", client: "NXTRA", category: INTERIORS,
+    sector: "Telecom", sectorLabel: "Telecom / Digital Infrastructure",
+    location: "Airoli, Navi Mumbai", area: "10,000 sq. ft.", status: "Completed", year: "2026",
+    service: "Corporate Interiors", image: nxtraGallery[0], gallery: nxtraGallery,
     description: [
-      "The Nxtra workplace pairs a branded reception in deep red and warm stone with open workstation bays, meeting and conference rooms, focus cabins and a pantry. Black slatted ceilings, wood-clad columns and red-accented carpets carry the brand palette through the floor.",
+      "The NXTRA office at Airoli, is envisioned as a contemporary workplace that reflects the relationship between technology, connectivity, and human experience.",
+      "A distinctive red-and-white brand palette establishes the visual identity, with the reception featuring an illuminated NXTRA logo, a bold red backdrop, and an India map installation that reinforces the idea of nationwide connectivity. Clean architectural lines, warm wood textures, and integrated lighting create a consistent design language throughout the office.",
+      "Open-plan workstations, glazed meeting rooms, and dedicated telephone booths support different modes of working, balancing collaboration with focused communication. The boardroom and meeting spaces introduce a refined material palette, while flexible hot desks and informal breakout areas encourage interaction and adaptability.",
+      "The pantry, cafeteria, and executive café extend this experience beyond the workstation. From warm timber finishes and botanical graphics to relaxed dining spaces and recreational amenities, these environments foster connection, comfort, and a sense of belonging.",
+      "Bringing together brand storytelling, functional planning, and contemporary workplace design, the NXTRA office translates a technology-led identity into a cohesive environment designed around the people who use it.",
     ],
   },
 

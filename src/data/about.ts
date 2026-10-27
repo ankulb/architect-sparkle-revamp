@@ -1,3 +1,4 @@
+import csrSeedling from "@/assets/csr/seedling.png.asset.json";
 // Content sourced from the About section of teamonearchitects.com.
 import toaTeamPhoto from "@/assets/toa-team.jpg.asset.json";
 import dhartiLogo from "@/assets/brands/dharti.svg.asset.json";
@@ -187,8 +188,8 @@ export const team = {
     { name: "Hiral Parekh", role: "Design Lead", image: `${UP}/2025/10/WhatsApp-Image-2025-10-30-at-2.48.45-PM-2.jpeg`, linkedin: "https://www.linkedin.com/in/hiral-parekh-100204211/" },
     { name: "Hiral Chouhan", role: "Design Lead", image: `${UP}/2025/10/WhatsApp-Image-2025-10-30-at-2.48.45-PM-1.jpeg`, linkedin: "https://www.linkedin.com/in/hiral-chauhan-01839a26" },
     { name: "Alpesh Parab", role: "Sr. Associate Designer", image: `${UP}/2025/10/WhatsApp-Image-2025-10-30-at-2.48.46-PM.jpeg`, linkedin: "https://www.linkedin.com/in/alpesh-parab-2b298214b/" },
-    { name: "Rahul Mane", role: "Leadership Team", image: rahulManePhoto.url, linkedin: "https://www.linkedin.com/in/rahul-mane-4494aa155/" },
-    { name: "Bharat Kukreja", role: "Leadership Team", image: bharatKukrejaPhoto.url, linkedin: "https://www.linkedin.com/in/bharat-kukreja-72145927/" },
+    { name: "Rahul Mane", role: "VP Operations", image: rahulManePhoto.url, linkedin: "https://www.linkedin.com/in/rahul-mane-4494aa155/" },
+    { name: "Bharat Kukreja", role: "Deputy General Manager", image: bharatKukrejaPhoto.url, linkedin: "https://www.linkedin.com/in/bharat-kukreja-72145927/" },
   ],
 };
 
@@ -342,7 +343,7 @@ export const csr = {
     kicker: "Our CSR Objective",
     body: "Team One Architects (TOA) is committed to contributing to society through meaningful Corporate Social Responsibility initiatives that support education, inclusive development, and community infrastructure. Our objective is to empower institutions that create opportunities for underserved communities by improving learning environments and enabling long-term social impact. Through sustained partnerships, TOA aims to help build stronger and more equitable foundations for future generations.",
   },
-  images: [csrImage.url, `${UP}/2026/03/csr-1-650x540.png`],
+  images: [csrSeedling.url, `${UP}/2026/03/csr-1-650x540.png`],
   partners: [
     {
       name: "Lift for Upliftment",
