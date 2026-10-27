@@ -57,6 +57,10 @@ function MediaCard({ item }: { item: MediaCoverageItem }) {
             className="absolute inset-0 h-full w-full"
           />
         </div>
+      ) : item.image ? (
+        <div className="relative aspect-video overflow-hidden bg-card lg:aspect-auto lg:min-h-[420px]">
+          <img src={item.image} alt={item.title} loading="lazy" className="absolute inset-0 h-full w-full object-cover object-top" />
+        </div>
       ) : (
         <div className="flex aspect-video items-center justify-center bg-card lg:aspect-auto lg:min-h-[420px]">
           <Play className="h-12 w-12 text-gold" />
