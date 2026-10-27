@@ -1,3 +1,4 @@
+import savaHero from "@/assets/projects/sava-hero.png.asset.json";
 import { interiorPlacements } from "./interiorPlacements";
 import {
   webmdGallery,
@@ -138,7 +139,7 @@ export const projects: Project[] = [
   { slug: "sedemac", title: "Sedemac", category: INTERIORS, location: "Baner, Pune", image: sedmacGallery[0] },
   { slug: "grihum-housing-finance", title: "Grihum Housing Finance", category: INTERIORS, location: "Mumbai", image: grihumHousingFinanceGallery[0] },
   { slug: "strux-one", title: "Strux One (Veeam)", category: INTERIORS, location: "Pune", image: struxOneGallery[0] },
-  { slug: "sava-global-healthcare", title: "Sava Global Healthcare", category: INTERIORS, location: "Pune", image: savaGallery[0] },
+  { slug: "sava-global-healthcare", title: "Sava Global Healthcare", category: INTERIORS, location: "Pune", image: savaHero.url },
   { slug: "everllence", title: "Everllence", category: INTERIORS, image: everlanceGallery[0] },
   { slug: "generac-pune", title: "Generac", category: INTERIORS, location: "Pune", image: generacPuneGallery[15] },
   { slug: "atlas-copco", title: "Atlas Copco", category: INTERIORS, location: "Pune", image: generacTile.url },
@@ -257,14 +258,14 @@ export const projectDetails: Record<string, ProjectDetail> = {
     area: "12,300 sq. ft. (carpet)",
     status: "Completed",
     service: "Corporate Interiors",
-    image: savaGallery[0],
+    image: savaHero.url,
     description: [
       "The design follows a simple, clean and welcoming aesthetic, creating a space that feels comfortable, personal and effortlessly stylish. Soft, muted colours form the base palette, keeping the overall environment calm and soothing without introducing any loud or overpowering elements.",
       "A subtle Boho Café theme adds warmth and character through natural textures, relaxed furniture, earthy accents and thoughtfully curated décor. The space is designed to feel informal and inviting, encouraging people to pause, connect and enjoy the environment.",
       "To bring in a sense of familiarity and cultural character, Indian-inspired wallpapers and patterns are introduced selectively as feature elements. These add personality and a personal touch while complementing the soft, contemporary backdrop.",
       "Overall, the design aims to create a calm, warm and contemporary café-like environment, simple in its expression, rich in character and comfortable enough to feel like a space one naturally wants to spend time in.",
     ],
-    gallery: savaGallery,
+    gallery: [savaHero.url, ...savaGallery],
   },
   everllence: {
     slug: "everllence",
