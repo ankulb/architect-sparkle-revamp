@@ -23,3 +23,19 @@
 - The banner photo appears again in the photo pair under "Objective". Swap that second copy for your new photo of hands holding a seedling. The banner photo stays as it is.
 - Technical: upload image-23.png to `src/assets/csr/seedling.png.asset.json`, then replace `csrImage.url` in `csr.images` in `src/data/about.ts`.
 - Note: the new photo has a small "teamonearchitects.com" watermark at the bottom.
+
+## Careers: job descriptions and an application pop-up
+- Add the four job descriptions you sent (job brief, responsibilities, what we expect) to the matching open roles. Each of these roles gets a "View details" option that opens the full description.
+  - Design Head: Pune
+  - Project Manager: Mumbai and Pune
+  - Site Engineer / Site Supervisor: Mumbai Site Supervisor / Engineer and Pune Site Engineer
+  - Senior Quality Engineer: matched to the Pune "Quality Control Engineer" role and renamed to Senior Quality Engineer. Tell me if these should be two separate roles.
+- Every role's Apply button opens a pop-up form instead of an email draft. The form asks for name, email, phone, years of experience, a CV upload (PDF or Word, up to 10 MB), and an optional cover note or portfolio link.
+- Each application is saved to a private list with its CV. It's never visible to the public. You'll find it in Cloud → Database → job applications.
+- HR (hr1@toa.org.in) gets an email for each application, with a link to the CV. Email can't carry the CV as an attachment. To send these emails, the site needs a verified sender domain you own, such as toa.org.in. If none is set up, I'll show you the setup step. Applications are still saved in the meantime.
+
+## Technical details (Careers)
+- Turn on Lovable Cloud. Create a `job_applications` table with grants and row-level security, and no public read access. Create a private `resumes` storage bucket.
+- The form is validated with zod on both the browser side and the server side. A server function checks the input, uploads the CV, inserts the row, then sends the HR notification email through the managed app-email template, with an idempotency key based on the application id.
+- In `src/data/careers.ts`, add optional `brief`, `responsibilities` and `requirements` fields to jobs. Build a shared `ApplyDialog` component.
+- Test: submit one application, confirm it was saved and the email was logged, then delete the test entry.
