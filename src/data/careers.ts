@@ -1,4 +1,3 @@
-const JOBS = "https://teamonearchitects.com/jobs";
 
 export type Job = {
   title: string;
