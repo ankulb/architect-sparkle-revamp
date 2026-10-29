@@ -415,7 +415,7 @@ export const life = {
     eyebrow: "Life at TOA",
     title: "Where spaces are built. And so are people.",
     lead: "We don't just create workplaces; we build a team that owns, builds and evolves with every project.",
-    image: `${UP}/2026/04/TOA-Family-Day-2025-copy-1.jpg`,
+    image: "/__l5e/assets-v1/9f938cb7-d515-4558-8dcd-45f30286a20d/toa-family-day-2025.jpg",
     faceSafe: true,
     phrases: [
       "Where spaces are built. And so are people.",
