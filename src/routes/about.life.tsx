@@ -6,6 +6,11 @@ import { PageHero } from "@/components/about/PageHero";
 import { Reveal } from "@/components/Reveal";
 import { GridBackdrop } from "@/components/graphics/GridBackdrop";
 import { life } from "@/data/about";
+import { LoopVideo } from "@/components/LoopVideo";
+import officeVideo from "@/assets/life-office.mp4.asset.json";
+import officePoster from "@/assets/life-office.jpg.asset.json";
+import thaiVideo from "@/assets/life-thai.mp4.asset.json";
+import thaiPoster from "@/assets/life-thai.jpg.asset.json";
 
 const title = "Life at TOA | Team One Architects";
 const description =
@@ -48,6 +53,34 @@ function LifePage() {
               className="font-display max-w-4xl text-3xl font-light leading-[1.18] text-foreground sm:text-4xl lg:text-5xl"
             >
               {life.intro}
+            </Reveal>
+          </div>
+        </section>
+
+        <section aria-label="Inside the studio" className="border-b border-border bg-card/40">
+          <div className="mx-auto grid max-w-[1200px] items-center gap-10 px-6 py-20 md:grid-cols-[minmax(0,1fr)_minmax(0,380px)] md:gap-16 md:px-10 md:py-28">
+            <div>
+              <Reveal as="p" className="text-xs font-medium uppercase tracking-[0.28em] text-gold">
+                Inside the studio
+              </Reveal>
+              <Reveal
+                as="h2"
+                delay={1}
+                className="font-display mt-6 text-3xl font-medium leading-tight text-foreground sm:text-4xl"
+              >
+                A day in our office
+              </Reveal>
+              <Reveal delay={2} className="mt-6 max-w-lg text-lg leading-relaxed text-muted-foreground">
+                Ideas, conversations and the everyday energy of the people who design and deliver TOA's workplaces.
+              </Reveal>
+            </div>
+            <Reveal delay={1}>
+              <LoopVideo
+                src={officeVideo.url}
+                poster={officePoster.url}
+                label="Office culture at Team One Architects"
+                className="mx-auto aspect-[9/16] w-full max-w-[380px] rounded-[28px] border border-border shadow-2xl"
+              />
             </Reveal>
           </div>
         </section>
@@ -95,6 +128,36 @@ function LifePage() {
               </div>
             </article>
           ))}
+        </section>
+
+        <section aria-label="Beyond the studio" className="border-b border-border">
+          <div className="mx-auto max-w-[1600px] px-6 py-20 md:px-10 md:py-28">
+            <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+              <div>
+                <Reveal as="p" className="text-xs font-medium uppercase tracking-[0.28em] text-gold">
+                  Beyond the studio
+                </Reveal>
+                <Reveal
+                  as="h2"
+                  delay={1}
+                  className="font-display mt-5 text-3xl font-medium leading-tight text-foreground sm:text-4xl"
+                >
+                  The team, together in Thailand
+                </Reveal>
+              </div>
+              <Reveal delay={2} className="max-w-md text-base leading-relaxed text-muted-foreground">
+                Time away from the drawing board builds the trust we bring back to every project.
+              </Reveal>
+            </div>
+            <Reveal delay={1} className="mt-10">
+              <LoopVideo
+                src={thaiVideo.url}
+                poster={thaiPoster.url}
+                label="Team One Architects team trip to Thailand"
+                className="aspect-video w-full border border-border"
+              />
+            </Reveal>
+          </div>
         </section>
 
         <section className="border-b border-border bg-card/40">
